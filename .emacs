@@ -16,6 +16,9 @@
 ;;; * smooth-scroll
 ;;; * solarized-theme
 ;;;
+;;; Other packages:
+;;; * aspell
+;;;
 ;;; To use local version of Common Lisp Hyper Spec, download it and place in
 ;;; ~/.emacs.d/HyperSpec/
 ;;;
@@ -51,7 +54,7 @@
 (require 'scheme)
 (require 'rainbow-delimiters)
 
-(load-file "~/quicklisp/slime-helper.elc")
+(load-file "~/quicklisp/slime-helper.elc") ; byte-compiled for speed
 
 (unless (server-running-p)
   (server-start))
@@ -66,12 +69,13 @@
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-save-default                 nil     ; don't ever create autosaves
- browse-url-generic-program        "icecat" ; GNU IceCat
+ browse-url-generic-program       "icecat" ; GNU IceCat
  browse-url-browser-function       'browse-url-generic
  column-number-mode                t       ; display column number
  common-lisp-hyperspec-root        "~/.emacs.d/HyperSpec/"
  delete-by-moving-to-trash         t       ; in dired mode
  display-time-24hr-format          t       ; 24 hours format for time
+ erc-nick                          "mrkkrp" ; my nick
  fci-rule-column                   80      ; position of rule column
  fill-column                       76      ; set fill column
  gnus-permanently-visible-groups   ""      ; always show all groups
@@ -123,13 +127,16 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
-;;                                Bindings                                ;;
+;;                         Bindings and Commands                          ;;
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar *basic-buffers*
   '("*scratch*"
-    "*Messages*"))
+    "*Messages*"
+    "irc.freenode.net:6667"
+    "#lisp"
+    "#emacs"))
 
 (defun purge-buffers ()
   (interactive)
