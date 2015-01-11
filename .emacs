@@ -69,7 +69,7 @@
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-save-default                 nil     ; don't ever create autosaves
- browse-url-generic-program       "icecat" ; GNU IceCat
+ browse-url-generic-program        "icecat" ; GNU IceCat
  browse-url-browser-function       'browse-url-generic
  column-number-mode                t       ; display column number
  common-lisp-hyperspec-root        "~/.emacs.d/HyperSpec/"
@@ -127,7 +127,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
-;;                         Bindings and Commands                          ;;
+;;                                Bindings                                ;;
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
