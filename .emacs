@@ -44,15 +44,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq package-archives
-      '(("gnu"       . "http://elpa.gnu.org/packages/")
+      '(("gnu"       . "https://elpa.gnu.org/packages/")
         ("marmalade" . "https://marmalade-repo.org/packages/")
         ("melpa"     . "http://melpa.milkbox.net/packages/")))
+
 (package-initialize)
 
 (require 'server)
 (require 'smooth-scroll)
-(require 'scheme)
-(require 'rainbow-delimiters)
 
 (load-file "~/quicklisp/slime-helper.elc") ; byte-compiled for speed
 
@@ -65,17 +64,16 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; variable                        value   description
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-save-default                 nil     ; don't ever create autosaves
  browse-url-generic-program        "icecat" ; GNU IceCat
- browse-url-browser-function       'browse-url-generic
+ browse-url-browser-function       'browse-url-generic ; use GNU IceCat
  column-number-mode                t       ; display column number
  common-lisp-hyperspec-root        "~/.emacs.d/HyperSpec/"
  delete-by-moving-to-trash         t       ; in dired mode
  display-time-24hr-format          t       ; 24 hours format for time
- erc-nick                          "mrkkrp" ; my nick
+ erc-nick                          "mrkkrp"
  fci-rule-column                   80      ; position of rule column
  fill-column                       76      ; set fill column
  gnus-permanently-visible-groups   ""      ; always show all groups
@@ -109,7 +107,6 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; mode                          value    description
 (delete-selection-mode             1)     ; delete selection mode enabled
 (display-time-mode                 1)     ; displaying time
 (menu-bar-mode                    -1)     ; hide menu bar
@@ -136,9 +133,13 @@
     "*Messages*"
     "irc.freenode.net:6667"
     "#lisp"
-    "#emacs"))
+    "#emacs")
+  "These are the buffers that I don't want to purge with
+PURGE-BUFFERS command.")
 
 (defun purge-buffers ()
+  "Kill all buffer except those that have names listed in
+*BASIC-BUFFERS*."
   (interactive)
   (dolist (x (remove-if (lambda (x)
                           (find (buffer-name x)
@@ -149,6 +150,27 @@
   (switch-to-buffer (car *basic-buffers*))
   (delete-other-windows))
 
+(defun save-buffer-with-cleanup (&optional arg)
+  "Delete trailing whitespace and save current buffer. Argument
+of this function is passed to SAVE-BUFFER."
+  (interactive)
+  (delete-trailing-whitespace)
+  (save-buffer arg))
+
+(defun revert-buffer-without-talk ()
+  "Revert current buffer without any confirmation."
+  (interactive)
+  (revert-buffer nil t))
+
+(defun compile-c ()
+  "Start compiling some C code. Don't ask anything. Makefile
+should be in the parent directory of current directory. (Works
+well for me because I always keep C sources in 'src'
+subdirectory."
+  (interactive)
+  (compile "cd .. ; make -k"))
+
+(global-set-key (kbd "C-x C-s") 'save-buffer-with-cleanup)
 (global-set-key (kbd "C-c ,")   'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   'end-of-buffer)
 (global-set-key (kbd "M-g")     'magit-status)
@@ -159,9 +181,18 @@
 (global-set-key (kbd "C-c M-h") 'haskell-mode)
 (global-set-key (kbd "C-c h")   'slime-hyperspec-lookup)
 (global-set-key (kbd "C-c p")   'purge-buffers)
+(global-set-key (kbd "C-c c")   'comment-region)
+(global-set-key (kbd "C-c u")   'uncomment-region)
+(global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
 (define-key slime-repl-mode-map (kbd "C-c r") 'slime-restart-inferior-lisp)
+(eval-after-load "cc-mode"
+  '(progn
+     (define-key c-mode-map (kbd "C-c C-l") 'compile-c)))
+(eval-after-load "inf-haskell"
+  '(progn
+     (define-key inferior-haskell-mode-map (kbd "<tab>") 'dabbrev-expand)))
 (eval-after-load "calendar"
-  `(progn
+  '(progn
      (define-key calendar-mode-map (kbd "M-]") 'calendar-forward-month)
      (define-key calendar-mode-map (kbd "M-[") 'calendar-backward-month)))
 
@@ -181,52 +212,48 @@
     haskell-indent-mode
     haskell-doc-mode
     magit-auto-revert-mode
-    smooth-scroll-mode))
+    smooth-scroll-mode)
+  "Collection of minor modes that should not appear on the status
+line.")
 
 (defun purge-minor-modes ()
-  (interactive)
+  "Puts empty strings for minor modes in *HIDDEN-MINOR-MODES*
+into MINOR-MODE-ALIST, effectively evicting them from the status
+line."
   (dolist (x *hidden-minor-modes*)
     (let ((trg (cdr (assoc x minor-mode-alist))))
       (when trg
         (setcar trg "")))))
 
+(defun prepare-prog-mode ()
+  "This function enables some minor modes when user works on some
+source."
+  (auto-fill-mode 1)
+  (setq-local comment-auto-fill-only-comments t)
+  (flyspell-prog-mode)
+  (flycheck-mode))
+
+(defun electric-indent-disable-locally ()
+  "The name of the functions speaks for itself."
+  (electric-indent-local-mode 0))
+
 (add-hook 'after-change-major-mode-hook 'purge-minor-modes)
-(add-hook 'text-mode-hook 'auto-fill-mode)
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (auto-fill-mode 1)
-            (setq-local comment-auto-fill-only-comments t)
-            (flyspell-prog-mode)
-            (flycheck-mode)))
+(add-hook 'text-mode-hook               'auto-fill-mode)
+(add-hook 'text-mode-hook               'flyspell-mode)
+(add-hook 'prog-mode-hook               'prepare-prog-mode)
 (add-hook 'after-change-major-mode-hook 'fci-mode)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'scheme-mode-hook     'rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook    'rainbow-delimiters-mode)
-;; (add-hook 'slime-mode-hook
-;;           (lambda nil
-;;             (unless (slime-connected-p)
-;;                     (save-excursion (slime)))))
-(add-hook 'slime-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'haskell-mode-hook 'inf-haskell-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook
-          (lambda ()
-            (electric-indent-local-mode 0)))
-(add-hook 'inferior-haskell-mode-hook
-          (lambda ()
-            (define-key (current-local-map) (kbd "<tab>") 'dabbrev-expand)))
-(add-hook 'c-mode-hook
-          (lambda ()
-            (define-key c-mode-map (kbd "C-c C-l")
-              (lambda ()
-                (interactive)
-                (compile "make -k")))))
+(add-hook 'emacs-lisp-mode-hook         'rainbow-delimiters-mode)
+(add-hook 'scheme-mode-hook             'rainbow-delimiters-mode)
+(add-hook 'clojure-mode-hook            'rainbow-delimiters-mode)
+(add-hook 'slime-mode-hook              'rainbow-delimiters-mode)
+(add-hook 'haskell-mode-hook            'inf-haskell-mode)
+(add-hook 'haskell-mode-hook            'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook            'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook            'electric-indent-disable-locally)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
-;;                          Only Under System X                           ;;
+;;                        Only Under Window System                        ;;
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
