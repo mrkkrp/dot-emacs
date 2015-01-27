@@ -247,7 +247,15 @@ subdirectory."
      (define-key calendar-mode-map (kbd "M-]") 'calendar-forward-month)
      (define-key calendar-mode-map (kbd "M-[") 'calendar-backward-month)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                        ;;
+;;                                Aliases                                 ;;
+;;                                                                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defalias 'qr 'query-replace)
+(defalias 'sh 'shell)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
