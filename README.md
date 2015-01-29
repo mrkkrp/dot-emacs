@@ -35,8 +35,8 @@ You need two such lines: one for SMTP and another one for IMAP. For example,
 I use:
 
 ```
-machine smtp.openmailbox.org port 587 login markkarpov@opmbx.org password "foo"
-machine imap.openmailbox.org port 993 login markkarpov@opmbx.org password "foo"
+machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
+machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
 ```
 
 Yes, my password is strong. By the way, it's not quite right to keep
