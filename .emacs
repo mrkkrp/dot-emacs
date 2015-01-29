@@ -149,6 +149,7 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(blink-cursor-mode                 0) ; my cursor doesn't blink
 (delete-selection-mode             1) ; delete selection mode enabled
 (display-time-mode                 1) ; displaying time
 (menu-bar-mode                    -1) ; hide menu bar
