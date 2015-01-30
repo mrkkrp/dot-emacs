@@ -111,6 +111,12 @@
  column-number-mode                t       ; display column number
  common-lisp-hyperspec-root        "~/.emacs.d/HyperSpec/"
  delete-by-moving-to-trash         t       ; in dired mode
+ dired-auto-revert-buffer          t       ; automatically revert buffer
+ dired-dwim-target                 t       ; guess target directory
+ dired-keep-marker-copy            nil     ; don't mark copied files
+ dired-listing-switches            "-GAlh" ; ls command arguments
+ dired-recursive-copies            'always ; don't ask me, just do it
+ dired-recursive-deletes           'always ; see above
  display-time-24hr-format          t       ; 24 hours format for time
  erc-nick                          "mrkkrp"
  fci-rule-column                   80      ; position of rule column
@@ -305,6 +311,7 @@ source."
 (add-hook 'clojure-mode-hook            'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook         'rainbow-delimiters-mode)
 (add-hook 'emacs-startup-hook           'purge-buffers)
+(add-hook 'erc-mode-hook                'flyspell-mode)
 (add-hook 'haskell-mode-hook            'electric-indent-disable-locally)
 (add-hook 'haskell-mode-hook            'inf-haskell-mode)
 (add-hook 'haskell-mode-hook            'turn-on-haskell-doc-mode)
