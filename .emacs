@@ -260,6 +260,8 @@ subdirectory."
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defalias 'cl 'calendar)
+(defalias 'lp 'list-packages)
 (defalias 'qr 'query-replace)
 (defalias 'sh 'shell)
 (defalias 'yes-or-no-p 'y-or-n-p)
