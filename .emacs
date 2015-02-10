@@ -44,7 +44,9 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(eval-when-compile (require 'cl)) ; add Common Lisp functions
 (require 'package)
+(require 'bytecomp)
 
 (add-to-list
  'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -70,17 +72,16 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(eval-when-compile (require 'cl)) ; add Common Lisp functions
-(require 'server)
 (require 'smooth-scroll)
-(require 'bytecomp)
 
 ;; Let's load SLIME with Slime Helper, if there is 'slime-helper.el' file,
 ;; we byte-compile it and entire SLIME, and next time we will be able to
 ;; load SLIME faster. If there is more recent version of 'slime-helper.el'
 ;; available, we should recompile it (and SLIME).
-(defvar slime-helper-el "~/quicklisp/slime-helper.el")
-(defvar slime-helper-elc (byte-compile-dest-file slime-helper-el))
+(defvar slime-helper-el  (expand-file-name "~/quicklisp/slime-helper.el")
+  "Path to SLIME helper that comes with Quicklisp.")
+(defvar slime-helper-elc (byte-compile-dest-file slime-helper-el)
+  "Path to byte compiled SLIME helper.")
 
 (when (and (file-exists-p slime-helper-el)
            (or (not (file-exists-p slime-helper-elc))
@@ -93,6 +94,28 @@
 (when (and (file-exists-p slime-helper-elc)
            (not (find 'slime features)))
   (load-file slime-helper-elc))
+
+;; Here we check if we have Hyper Spec. If not, we just download it and
+;; decompress automatically.
+(defvar hyper-spec-parent (expand-file-name "~/.emacs.d/")
+  "Parent directory where Common Lisp Hyper Spec is stored.")
+(defvar hyper-spec-dir (concat hyper-spec-parent "HyperSpec/")
+  "Directory where Common Lisp Hyper Spec is supposed to be.")
+
+(unless (file-exists-p hyper-spec-dir)
+  (let ((temp-file (make-temp-file "emacs")))
+    (url-copy-file
+     "ftp://ftp.lispworks.com/pub/software_tools/reference/HyperSpec-7-0.tar.gz"
+     temp-file
+     t)
+    (shell-command (concat "tar -xzf \""
+                           temp-file
+                           "\" -C \""
+                           hyper-spec-parent
+                           "\""))
+    (delete-file temp-file)))
+
+(require 'server)
 
 (unless (server-running-p)
   (server-start))
@@ -109,7 +132,7 @@
  browse-url-generic-program        "icecat" ; GNU IceCat
  browse-url-browser-function       'browse-url-generic ; use GNU IceCat
  column-number-mode                t       ; display column number
- common-lisp-hyperspec-root        "~/.emacs.d/HyperSpec/"
+ common-lisp-hyperspec-root        hyper-spec-dir
  delete-by-moving-to-trash         t       ; in dired mode
  dired-auto-revert-buffer          t       ; automatically revert buffer
  dired-dwim-target                 t       ; guess target directory
