@@ -225,6 +225,20 @@ subdirectory."
                                   (region-end))
               (read-string "DuckDuckGo: "))))))
 
+(defun visit-file (filename)
+  "Visit specified file FILENAME. If the file does not exist,
+print a message about the fact."
+  (let ((filename (expand-file-name filename)))
+    (if (file-exists-p filename)
+        (find-file filename)
+      (message (concat filename " does not exist")))))
+
+(defmacro vff (filename)
+  "Generate function to visit specified file."
+    `(lambda ()
+       (interactive)
+       (visit-file ,filename)))
+
 (global-set-key (kbd "C-c ,")   'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   'end-of-buffer)
 (global-set-key (kbd "M-g")     'magit-status)
@@ -239,6 +253,8 @@ subdirectory."
 (global-set-key (kbd "C-c u")   'uncomment-region)
 (global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
 (global-set-key (kbd "C-c s")   'search-online)
+(global-set-key (kbd "C-c t")   (vff "~/todo.org"))
+(global-set-key (kbd "C-c e")   (vff "~/.emacs"))
 (eval-after-load "slime"
   '(progn
      (define-key slime-repl-mode-map
