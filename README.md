@@ -17,7 +17,7 @@ FTP, untar it, and make it work.
 
 I have written a function to upgrade all packages without displaying
 `*Packages*` buffer. This function directly finds all obsolete packages,
-asks if user want to upgrade and he/she really wants to, install fresh
+asks if user want to upgrade and if he/she really wants to, install fresh
 versions of packages automatically deleting obsolete versions.
 
 To send emails with Emacs and read emails with GNUS, you need to create a
