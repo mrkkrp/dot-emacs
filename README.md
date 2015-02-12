@@ -1,31 +1,29 @@
 # Emacs Configuration Files
 
-My Emacs and GNUS configuration files. I wrote these files slowly borrowing
-useful things that I saw in Emacs configuration files of other people and
-official GNU Emacs manuals. Something is taken from so-called 'Emacs
-Prelude'. I don't like it, I think it has too many unnecessary lines of
-code. Moreover, Emacs configuration is always unique for every Emacs user,
-how can so many people blindly accept solutions made by 'Emacs Prelude'
-author?
+These are my Emacs and GNUS configuration files. I wrote these files slowly
+borrowing useful things that I saw in Emacs configuration files of other
+people and official GNU Emacs manuals.
 
-In this file you will find only really convenient things that I'm used
-to. Well, your taste may be different, or course, but I hope that at least
-partly this `.emacs` and `.gnus` files will be useful to you.
-
-This `.emacs` file also defines function to search Internet with
-DuckDuckGo. It generates such URLs so DuckDuckGo operates in HTML mode,
-without any proprietary Java Script. Also the URLs include parameters to
-remove ads (well, a sponsored link in results is not a big deal anyway). It
-also forces DuckDuckGo work only via HTTPS. By the way, it's a good idea to
-try GNU IceCat, because it has a feature 'HTTPS everywhere' and many other
-useful features.
+The `.emacs` file defines function to search Internet with DuckDuckGo. It
+generates such URLs so DuckDuckGo operates in HTML mode, without any
+proprietary Java Script. Also the URLs include parameters to remove ads
+(well, a sponsored link in results is not a big deal anyway). It also forces
+DuckDuckGo work only via HTTPS.
 
 Also, here is some automation to install all necessary packages and some
-automation to compile/recompile SLIME (works smoothly with Quicklisp).
+automation to compile/recompile SLIME (works smoothly with Quicklisp). If
+you don't have local copy of Common Lisp Hyper Spec it can download it via
+FTP, untar it, and make it work.
+
+I have written a function to upgrade all packages without displaying
+`*Packages*` buffer. This function directly finds all obsolete packages,
+asks if user want to upgrade and he/she really wants to, install fresh
+versions of packages automatically deleting obsolete versions.
 
 To send emails with Emacs and read emails with GNUS, you need to create a
-file called `.authinfo` in your home directory. This file should have the
-following form:
+file called `.authinfo.gpg` in your home directory. As its extension
+suggest, you better encrypt this sort of information. The file should have
+the following form:
 
 ```
 machine HOST port NUMBER login NAME password VALUE
@@ -39,14 +37,46 @@ machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
 machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
 ```
 
-Yes, my password is strong. By the way, it's not quite right to keep
-passwords in plain text. It's better to use encryption for passwords, I will
-add something for it later.
-
 To use spell-checking you need to install `aspell` from repositories of your
-favorite GNU/Linux distribution. It's a good idea to use fully free
-GNU/Linux system that uses Linux-libre kernel and has no proprietary
-software on it.
+favorite GNU/Linux distribution.
+
+## Shortcuts
+
+New shortcuts:
+
+Shortcut           | Description
+--------           | -----------
+<kbd>C-c ,</kbd>   | go to beginning of buffer
+<kbd>C-c .</kbd>   | go to end of buffer
+<kbd>C-c M-h</kbd> | Haskell mode
+<kbd>C-c M-j</kbd> | Cider jack in
+<kbd>C-c M-l</kbd> | SLIME
+<kbd>C-c M-s</kbd> | run Scheme
+<kbd>C-c c</kbd>   | comment region
+<kbd>C-c e</kbd>   | open `~/.emacs`
+<kbd>C-c h</kbd>   | SLIME Hyper Spec lookup
+<kbd>C-c l</kbd>   | upgrade all packages
+<kbd>C-c p</kbd>   | purge all buffers (except for 'basic')
+<kbd>C-c r</kbd>   | revert current buffer
+<kbd>C-c s</kbd>   | search online with DuckDuckGo
+<kbd>C-c t</kbd>   | open `~/todo.org`
+<kbd>C-c u</kbd>   | uncomment region
+<kbd>M-g</kbd>     | magit status
+<kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
+<kbd>C-c C-l</kbd> | C mode: compile project
+<kbd>M-]</kbd>     | Calendar: forward month
+<kbd>M-[</kbd>     | Calendar: backward month
+
+## Aliases
+
+Use them with <kbd>M-x</kbd>.
+
+Alias | Original command
+----- | ----------------
+`cl`  | `calendar`
+`lp`  | `list-packages`
+`qr`  | `query-replace`
+`sh`  | `shell`
 
 # License
 
