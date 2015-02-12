@@ -266,7 +266,7 @@ print a message about the fact."
   (let ((filename (expand-file-name filename)))
     (if (file-exists-p filename)
         (find-file filename)
-      (message (concat filename " does not exist")))))
+      (message (concat filename " does not exist.")))))
 
 (defmacro vff (filename)
   "Generate function to visit specified file."
@@ -287,7 +287,7 @@ print a message about the fact."
           (push (cadr (assq package package-archive-contents))
                 upgrades))))
     (if (null upgrades)
-        (message "all packages are up to date")
+        (message "All packages are up to date.")
       (when (yes-or-no-p
              (message "Upgrade %d package%s (%s)? "
                       (length upgrades)
