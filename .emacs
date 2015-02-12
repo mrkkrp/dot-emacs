@@ -302,21 +302,21 @@ print a message about the fact."
 
 (global-set-key (kbd "C-c ,")   'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   'end-of-buffer)
-(global-set-key (kbd "M-g")     'magit-status)
-(global-set-key (kbd "C-x o")   'ace-window)
-(global-set-key (kbd "C-c M-s") 'run-scheme)
+(global-set-key (kbd "C-c M-h") 'haskell-mode)
 (global-set-key (kbd "C-c M-j") 'cider-jack-in)
 (global-set-key (kbd "C-c M-l") 'slime)
-(global-set-key (kbd "C-c M-h") 'haskell-mode)
-(global-set-key (kbd "C-c h")   'slime-hyperspec-lookup)
-(global-set-key (kbd "C-c p")   'purge-buffers)
+(global-set-key (kbd "C-c M-s") 'run-scheme)
 (global-set-key (kbd "C-c c")   'comment-region)
-(global-set-key (kbd "C-c u")   'uncomment-region)
+(global-set-key (kbd "C-c e")   (vff "~/.emacs"))
+(global-set-key (kbd "C-c h")   'slime-hyperspec-lookup)
+(global-set-key (kbd "C-c l")   'upgrade-all-packages)
+(global-set-key (kbd "C-c p")   'purge-buffers)
 (global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
 (global-set-key (kbd "C-c s")   'search-online)
 (global-set-key (kbd "C-c t")   (vff "~/todo.org"))
-(global-set-key (kbd "C-c e")   (vff "~/.emacs"))
-(global-set-key (kbd "C-c l")   'upgrade-all-packages)
+(global-set-key (kbd "C-c u")   'uncomment-region)
+(global-set-key (kbd "C-x o")   'ace-window)
+(global-set-key (kbd "M-g")     'magit-status)
 (eval-after-load "slime"
   '(progn
      (define-key slime-repl-mode-map
@@ -324,9 +324,6 @@ print a message about the fact."
 (eval-after-load "cc-mode"
   '(progn
      (define-key c-mode-map (kbd "C-c C-l") 'compile-c)))
-(eval-after-load "inf-haskell"
-  '(progn
-     (define-key inferior-haskell-mode-map (kbd "<tab>") 'dabbrev-expand)))
 (eval-after-load "calendar"
   '(progn
      (define-key calendar-mode-map (kbd "M-]") 'calendar-forward-month)
