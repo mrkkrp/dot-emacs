@@ -68,9 +68,21 @@
   "List of packages that must be installed.")
 
 ;; install all the packages automatically if they are not installed
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(defun delete-compile-log-window ()
+  "Just delete the *Compile-Log* window, pretty obvious."
+  (when (get-buffer "*Compile-Log*")
+    (dolist (window (get-buffer-window-list "*Compile-Log*"))
+      (delete-window window))))
+
 (dolist (package vital-packages)
   (unless (package-installed-p package)
     (package-install package)))
+
+(delete-compile-log-window) ; clearing after installation of the packages
 
 (require 'smooth-scroll)
 
@@ -262,6 +274,32 @@ print a message about the fact."
        (interactive)
        (visit-file ,filename)))
 
+(defun upgrade-all-packages ()
+  "Upgrade all packages automatically."
+  (interactive)
+  (package-refresh-contents)
+  (let (upgrades)
+    (cl-flet ((get-version (name where)
+                (package-desc-version (cadr (assq name where)))))
+      (dolist (package (mapcar #'car package-alist))
+        (when (version-list-< (get-version package package-alist)
+                              (get-version package package-archive-contents))
+          (push (cadr (assq package package-archive-contents))
+                upgrades))))
+    (if (null upgrades)
+        (message "all packages are up to date")
+      (when (yes-or-no-p
+             (message "Upgrade %d package%s (%s)? "
+                      (length upgrades)
+                      (if (= (length upgrades) 1) "" "s")
+                      (mapconcat #'package-desc-full-name upgrades ", ")))
+        (dolist (package-desc upgrades)
+          (let ((old-package (cadr (assq (package-desc-name package-desc)
+                                         package-alist))))
+            (package-install package-desc)
+            (package-delete  old-package)))
+        (delete-compile-log-window)))))
+
 (global-set-key (kbd "C-c ,")   'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   'end-of-buffer)
 (global-set-key (kbd "M-g")     'magit-status)
@@ -278,6 +316,7 @@ print a message about the fact."
 (global-set-key (kbd "C-c s")   'search-online)
 (global-set-key (kbd "C-c t")   (vff "~/todo.org"))
 (global-set-key (kbd "C-c e")   (vff "~/.emacs"))
+(global-set-key (kbd "C-c l")   'upgrade-all-packages)
 (eval-after-load "slime"
   '(progn
      (define-key slime-repl-mode-map
@@ -351,7 +390,6 @@ source."
 (add-hook 'before-save-hook             'delete-trailing-whitespace)
 (add-hook 'clojure-mode-hook            'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook         'rainbow-delimiters-mode)
-(add-hook 'emacs-startup-hook           'purge-buffers)
 (add-hook 'erc-mode-hook                'flyspell-mode)
 (add-hook 'haskell-mode-hook            'electric-indent-disable-locally)
 (add-hook 'haskell-mode-hook            'inf-haskell-mode)
