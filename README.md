@@ -54,7 +54,6 @@ Shortcut           | Description
 <kbd>C-c M-s</kbd> | run Scheme
 <kbd>C-c c</kbd>   | comment region
 <kbd>C-c e</kbd>   | open `~/.emacs`
-<kbd>C-c h</kbd>   | SLIME Hyper Spec lookup
 <kbd>C-c l</kbd>   | upgrade all packages
 <kbd>C-c p</kbd>   | purge all buffers (except for 'basic')
 <kbd>C-c r</kbd>   | revert current buffer
@@ -63,6 +62,8 @@ Shortcut           | Description
 <kbd>C-c u</kbd>   | uncomment region
 <kbd>M-g</kbd>     | magit status
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
+<kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
+<kbd>C-c h</kbd>   | Haskell: Hoogle query
 <kbd>C-c C-l</kbd> | C mode: compile project
 <kbd>M-]</kbd>     | Calendar: forward month
 <kbd>M-[</kbd>     | Calendar: backward month

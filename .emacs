@@ -308,7 +308,6 @@ print a message about the fact."
 (global-set-key (kbd "C-c M-s") 'run-scheme)
 (global-set-key (kbd "C-c c")   'comment-region)
 (global-set-key (kbd "C-c e")   (vff "~/.emacs"))
-(global-set-key (kbd "C-c h")   'slime-hyperspec-lookup)
 (global-set-key (kbd "C-c l")   'upgrade-all-packages)
 (global-set-key (kbd "C-c p")   'purge-buffers)
 (global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
@@ -321,9 +320,15 @@ print a message about the fact."
   '(progn
      (define-key slime-repl-mode-map
        (kbd "C-c r") 'slime-restart-inferior-lisp)))
+(eval-after-load "lisp-mode"
+  '(progn
+     (define-key lisp-mode-map (kbd "C-c h") 'slime-hyperspec-lookup)))
 (eval-after-load "cc-mode"
   '(progn
      (define-key c-mode-map (kbd "C-c C-l") 'compile-c)))
+(eval-after-load "haskell-mode"
+  '(progn
+     (define-key haskell-mode-map (kbd "C-c h") 'haskell-hoogle)))
 (eval-after-load "calendar"
   '(progn
      (define-key calendar-mode-map (kbd "M-]") 'calendar-forward-month)
