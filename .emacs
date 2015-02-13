@@ -18,9 +18,6 @@
 ;;; Other packages (OS level):
 ;;; * aspell
 ;;;
-;;; To use local version of Common Lisp Hyper Spec, download it and place in
-;;; ~/.emacs.d/HyperSpec/
-;;;
 ;;; Copyright (c) 2015 Mark Karpov
 ;;;
 ;;; This program is free software: you can redistribute it and/or modify it
