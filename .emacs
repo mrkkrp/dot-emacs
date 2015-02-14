@@ -311,7 +311,7 @@ print a message about the fact."
 (global-set-key (kbd "C-c M-l") 'slime)
 (global-set-key (kbd "C-c M-s") 'run-scheme)
 (global-set-key (kbd "C-c e")   (vff "~/.emacs"))
-(global-set-key (kbd "C-c t")   (vff "~/todo.org"))
+(global-set-key (kbd "C-c t")   (vff (car org-agenda-files)))
 (global-set-key (kbd "C-c a")   'org-agenda-list)
 (global-set-key (kbd "C-x o")   'ace-window)
 (global-set-key (kbd "M-g")     'magit-status)
@@ -322,7 +322,7 @@ print a message about the fact."
 (eval-after-load "lisp-mode"
   '(define-key lisp-mode-map       (kbd "C-c h") 'slime-hyperspec-lookup))
 (eval-after-load "cc-mode"
-  '(define-key c-mode-map        (kbd "C-c C-l") 'compile-c))
+  '(define-key c-mode-map          (kbd "C-c C-l") 'compile-c))
 (eval-after-load "haskell-mode"
   '(define-key haskell-mode-map    (kbd "C-c h") 'haskell-hoogle))
 (eval-after-load "calendar"
@@ -344,7 +344,7 @@ print a message about the fact."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
-;;                                 Hooks                                  ;;
+;;                             Hooks & Advice                             ;;
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -398,6 +398,8 @@ source."
 (add-hook 'slime-mode-hook              'rainbow-delimiters-mode)
 (add-hook 'text-mode-hook               'auto-fill-mode)
 (add-hook 'text-mode-hook               'flyspell-mode)
+
+(advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
