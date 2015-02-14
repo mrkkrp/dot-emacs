@@ -164,6 +164,8 @@
  make-backup-files                 nil     ; don't create backups
  major-mode                        'text-mode ; default mode is text mode
  minibuffer-eldef-shorten-default  t       ; shorten defaults in minibuffer
+ org-agenda-files                  '("~/todo.org")
+ org-catch-invisible-edits         'show   ; make point visible
  python-indent-guess-indent-offset nil     ; don't guess indent offset
  python-indent-offset              4       ; indent offset for python mode
  require-final-newline             t       ; always requite it
@@ -211,27 +213,26 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar basic-buffers
-  '("*scratch*"
-    "*Messages*"
-    "irc.freenode.net:6667"
-    "#lisp"
-    "#emacs")
-  "These are the buffers that I don't want to purge with
-PURGE-BUFFERS command.")
+  '("^\*scratch\*"
+    "^\*Messages\*"
+    "^irc\.freenode\.net:6667"
+    "^#.?")
+  "These are regexps to match names of buffers that I don't want
+to purge with PURGE-BUFFERS command.")
 
 (defun purge-buffers ()
   "Kill all buffer except those that have names listed in
 BASIC-BUFFERS."
   (interactive)
-  (dolist (x (remove-if (lambda (x)
-                          (find (buffer-name x)
-                                basic-buffers
-                                :test #'string-equal))
-                        (buffer-list)))
-    (kill-buffer x)
-    (message (buffer-name x)))
-  (switch-to-buffer (car basic-buffers))
-  (delete-other-windows))
+  (let ((redundant-buffers
+         (remove-if (lambda (name)
+                      (some (lambda (regexp)
+                              (string-match-p regexp name))
+                            basic-buffers))
+                    (mapcar #'buffer-name (buffer-list)))))
+    (mapc #'kill-buffer redundant-buffers)
+    (switch-to-buffer "*scratch*")
+    (delete-other-windows)))
 
 (defun revert-buffer-without-talk ()
   "Revert current buffer without any confirmation."
@@ -299,33 +300,31 @@ print a message about the fact."
 
 (global-set-key (kbd "C-c ,")   'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   'end-of-buffer)
+(global-set-key (kbd "C-c c")   'comment-region)
+(global-set-key (kbd "C-c u")   'uncomment-region)
+(global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
+(global-set-key (kbd "C-c p")   'purge-buffers)
+(global-set-key (kbd "C-c s")   'search-online)
+(global-set-key (kbd "C-c g")   'upgrade-all-packages)
 (global-set-key (kbd "C-c M-h") 'haskell-mode)
 (global-set-key (kbd "C-c M-j") 'cider-jack-in)
 (global-set-key (kbd "C-c M-l") 'slime)
 (global-set-key (kbd "C-c M-s") 'run-scheme)
-(global-set-key (kbd "C-c c")   'comment-region)
 (global-set-key (kbd "C-c e")   (vff "~/.emacs"))
-(global-set-key (kbd "C-c l")   'upgrade-all-packages)
-(global-set-key (kbd "C-c p")   'purge-buffers)
-(global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
-(global-set-key (kbd "C-c s")   'search-online)
 (global-set-key (kbd "C-c t")   (vff "~/todo.org"))
-(global-set-key (kbd "C-c u")   'uncomment-region)
+(global-set-key (kbd "C-c a")   'org-agenda-list)
 (global-set-key (kbd "C-x o")   'ace-window)
 (global-set-key (kbd "M-g")     'magit-status)
+
+(define-key emacs-lisp-mode-map    (kbd "C-c h") 'slime-hyperspec-lookup)
 (eval-after-load "slime"
-  '(progn
-     (define-key slime-repl-mode-map
-       (kbd "C-c r") 'slime-restart-inferior-lisp)))
+  '(define-key slime-repl-mode-map (kbd "C-c r") 'slime-restart-inferior-lisp))
 (eval-after-load "lisp-mode"
-  '(progn
-     (define-key lisp-mode-map (kbd "C-c h") 'slime-hyperspec-lookup)))
+  '(define-key lisp-mode-map       (kbd "C-c h") 'slime-hyperspec-lookup))
 (eval-after-load "cc-mode"
-  '(progn
-     (define-key c-mode-map (kbd "C-c C-l") 'compile-c)))
+  '(define-key c-mode-map        (kbd "C-c C-l") 'compile-c))
 (eval-after-load "haskell-mode"
-  '(progn
-     (define-key haskell-mode-map (kbd "C-c h") 'haskell-hoogle)))
+  '(define-key haskell-mode-map    (kbd "C-c h") 'haskell-hoogle))
 (eval-after-load "calendar"
   '(progn
      (define-key calendar-mode-map (kbd "M-]") 'calendar-forward-month)
