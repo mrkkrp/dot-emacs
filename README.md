@@ -48,18 +48,19 @@ Shortcut           | Description
 --------           | -----------
 <kbd>C-c ,</kbd>   | go to beginning of buffer
 <kbd>C-c .</kbd>   | go to end of buffer
+<kbd>C-c c</kbd>   | comment region
+<kbd>C-c u</kbd>   | uncomment region
+<kbd>C-c r</kbd>   | revert current buffer
+<kbd>C-c p</kbd>   | purge all buffers (except for 'basic')
+<kbd>C-c s</kbd>   | search online with DuckDuckGo
+<kbd>C-c g</kbd>   | upgrade all packages
 <kbd>C-c M-h</kbd> | Haskell mode
 <kbd>C-c M-j</kbd> | Cider jack in
 <kbd>C-c M-l</kbd> | SLIME
 <kbd>C-c M-s</kbd> | run Scheme
-<kbd>C-c c</kbd>   | comment region
 <kbd>C-c e</kbd>   | open `~/.emacs`
-<kbd>C-c l</kbd>   | upgrade all packages
-<kbd>C-c p</kbd>   | purge all buffers (except for 'basic')
-<kbd>C-c r</kbd>   | revert current buffer
-<kbd>C-c s</kbd>   | search online with DuckDuckGo
 <kbd>C-c t</kbd>   | open `~/todo.org`
-<kbd>C-c u</kbd>   | uncomment region
+<kbd>C-c a</kbd>   | org agenda (week)
 <kbd>M-g</kbd>     | magit status
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
