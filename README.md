@@ -22,7 +22,7 @@ versions of packages automatically deleting obsolete versions.
 
 To send emails with Emacs and read emails with GNUS, you need to create a
 file called `.authinfo.gpg` in your home directory. As its extension
-suggest, you better encrypt this sort of information. The file should have
+suggests, you better encrypt this sort of information. The file should have
 the following form:
 
 ```
