@@ -234,19 +234,6 @@ BASIC-BUFFERS."
     (switch-to-buffer "*scratch*")
     (delete-other-windows)))
 
-(defun revert-buffer-without-talk ()
-  "Revert current buffer without any confirmation."
-  (interactive)
-  (revert-buffer nil t))
-
-(defun compile-c ()
-  "Start compiling some C code. Don't ask anything. Makefile
-should be in the parent directory of current directory. (Works
-well for me because I always keep C sources in 'src'
-subdirectory."
-  (interactive)
-  (compile "cd .. ; make -k"))
-
 (defun search-online ()
   "Search Internet with DuckDuckGo."
   (interactive)
@@ -257,20 +244,6 @@ subdirectory."
                 (buffer-substring (region-beginning)
                                   (region-end))
               (read-string "DuckDuckGo: "))))))
-
-(defun visit-file (filename)
-  "Visit specified file FILENAME. If the file does not exist,
-print a message about the fact."
-  (let ((filename (expand-file-name filename)))
-    (if (file-exists-p filename)
-        (find-file filename)
-      (message (concat filename " does not exist.")))))
-
-(defmacro vff (filename)
-  "Generate function to visit specified file."
-    `(lambda ()
-       (interactive)
-       (visit-file ,filename)))
 
 (defun upgrade-all-packages ()
   "Upgrade all packages automatically."
@@ -298,11 +271,25 @@ print a message about the fact."
             (package-delete  old-package)))
         (delete-compile-log-window)))))
 
+(defun visit-file (filename)
+  "Visit specified file FILENAME. If the file does not exist,
+print a message about the fact."
+  (let ((filename (expand-file-name filename)))
+    (if (file-exists-p filename)
+        (find-file filename)
+      (message (concat filename " does not exist.")))))
+
+(defmacro vff (filename)
+  "Generate function to visit specified file."
+  `(lambda ()
+     (interactive)
+     (visit-file ,filename)))
+
 (global-set-key (kbd "C-c ,")   'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   'end-of-buffer)
 (global-set-key (kbd "C-c c")   'comment-region)
 (global-set-key (kbd "C-c u")   'uncomment-region)
-(global-set-key (kbd "C-c r")   'revert-buffer-without-talk)
+(global-set-key (kbd "C-c r")   'revert-buffer)
 (global-set-key (kbd "C-c p")   'purge-buffers)
 (global-set-key (kbd "C-c s")   'search-online)
 (global-set-key (kbd "C-c g")   'upgrade-all-packages)
@@ -322,7 +309,7 @@ print a message about the fact."
 (eval-after-load "lisp-mode"
   '(define-key lisp-mode-map       (kbd "C-c h") 'slime-hyperspec-lookup))
 (eval-after-load "cc-mode"
-  '(define-key c-mode-map          (kbd "C-c C-l") 'compile-c))
+  '(define-key c-mode-map          (kbd "C-c C-l") 'compile))
 (eval-after-load "haskell-mode"
   '(define-key haskell-mode-map    (kbd "C-c h") 'haskell-hoogle))
 (eval-after-load "calendar"
@@ -399,7 +386,16 @@ source."
 (add-hook 'text-mode-hook               'auto-fill-mode)
 (add-hook 'text-mode-hook               'flyspell-mode)
 
-(advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)
+(defmacro ira (&rest args)
+  "Make lambda that always interactively returns list of this
+macro's arguments ignoring any arguments passed to it."
+  `(lambda (&rest rest)
+     (interactive)
+     ',args))
+
+(advice-add 'org-agenda-todo :after       #'org-save-all-org-buffers)
+(advice-add 'revert-buffer   :filter-args (ira nil t))
+(advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
