@@ -212,6 +212,23 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defun transpose-line-down ()
+  "Move current line and cursor down."
+  (interactive)
+  (let ((col (current-column)))
+    (next-line)
+    (transpose-lines 1)
+    (previous-line)
+    (move-to-column col)))
+
+(defun transpose-line-up ()
+  "Move current line and cursor up."
+  (interactive)
+  (let ((col (current-column)))
+    (transpose-lines 1)
+    (previous-line 2)
+    (move-to-column col)))
+
 (defvar basic-buffers
   '("^\*scratch\*"
     "^\*Messages\*"
@@ -301,6 +318,8 @@ print a message about the fact."
 (global-set-key (kbd "C-c t")   (vff (car org-agenda-files)))
 (global-set-key (kbd "C-c a")   #'org-agenda-list)
 (global-set-key (kbd "C-x o")   #'ace-window)
+(global-set-key (kbd "M-p")     #'transpose-line-up)
+(global-set-key (kbd "M-n")     #'transpose-line-down)
 (global-set-key (kbd "M-g")     #'magit-status)
 
 (defmacro defkey (file keymap key def)
