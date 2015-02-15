@@ -303,19 +303,21 @@ print a message about the fact."
 (global-set-key (kbd "C-x o")   'ace-window)
 (global-set-key (kbd "M-g")     'magit-status)
 
-(define-key emacs-lisp-mode-map    (kbd "C-c h") 'slime-hyperspec-lookup)
-(eval-after-load "slime"
-  '(define-key slime-repl-mode-map (kbd "C-c r") 'slime-restart-inferior-lisp))
-(eval-after-load "lisp-mode"
-  '(define-key lisp-mode-map       (kbd "C-c h") 'slime-hyperspec-lookup))
-(eval-after-load "cc-mode"
-  '(define-key c-mode-map          (kbd "C-c C-l") 'compile))
-(eval-after-load "haskell-mode"
-  '(define-key haskell-mode-map    (kbd "C-c h") 'haskell-hoogle))
-(eval-after-load "calendar"
-  '(progn
-     (define-key calendar-mode-map (kbd "M-]") 'calendar-forward-month)
-     (define-key calendar-mode-map (kbd "M-[") 'calendar-backward-month)))
+(defmacro defkey (file keymap key def)
+  "Little helper to write mode-specific key definitions prettier."
+  `(eval-after-load ',file
+     '(define-key
+        (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
+        (kbd ,key) ,def)))
+
+(defkey lisp-mode    emacs-lisp       "C-c h"   'slime-hyperspec-lookup)
+(defkey lisp-mode    lisp             "C-c h"   'slime-hyperspec-lookup)
+(defkey slime        slime-repl       "C-c r"   'slime-restart-inferior-lisp)
+(defkey haskell-mode haskell          "C-c h"   'haskell-hoogle)
+(defkey inf-haskell  inferior-haskell "C-c h"   'haskell-hoogle)
+(defkey cc-mode      c                "C-c C-l" 'compile)
+(defkey calendar     calendar         "M-]"     'calendar-forward-month)
+(defkey calendar     calendar         "M-["     'calendar-backward-month)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
