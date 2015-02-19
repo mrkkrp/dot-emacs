@@ -61,9 +61,12 @@ Shortcut           | Description
 <kbd>C-c e</kbd>   | open `~/.emacs`
 <kbd>C-c t</kbd>   | open `~/todo.org`
 <kbd>C-c a</kbd>   | org agenda (week)
-<kbd>M-g</kbd>     | magit status
+<kbd>C-c i</kbd>   | correct word before point
 <kbd>M-p</kbd>     | transpose line up
 <kbd>M-n</kbd>     | transpose line down
+<kbd>M-g</kbd>     | magit status
+<kbd>F5</kbd>      | find file
+<kbd>F8</kbd>      | toggle Russian input
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
 <kbd>C-c h</kbd>   | Haskell: Hoogle query

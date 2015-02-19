@@ -302,6 +302,17 @@ print a message about the fact."
      (interactive)
      (visit-file ,filename)))
 
+(defun toggle-russian-input ()
+  "Switch between Russian input method and normal input method."
+  (interactive)
+  (if current-input-method
+      (progn
+        (deactivate-input-method)
+        (ispell-change-dictionary "default"))
+    (progn
+      (set-input-method 'russian-computer)
+      (ispell-change-dictionary "ru"))))
+
 (global-set-key (kbd "C-c ,")   #'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   #'end-of-buffer)
 (global-set-key (kbd "C-c c")   #'comment-region)
@@ -318,9 +329,12 @@ print a message about the fact."
 (global-set-key (kbd "C-c t")   (vff (car org-agenda-files)))
 (global-set-key (kbd "C-c a")   #'org-agenda-list)
 (global-set-key (kbd "C-x o")   #'ace-window)
+(global-set-key (kbd "C-c i")   #'flyspell-correct-word-before-point)
 (global-set-key (kbd "M-p")     #'transpose-line-up)
 (global-set-key (kbd "M-n")     #'transpose-line-down)
 (global-set-key (kbd "M-g")     #'magit-status)
+(global-set-key (kbd "<f5>")    #'find-file)
+(global-set-key (kbd "<f8>")    #'toggle-russian-input)
 
 (defmacro defkey (file keymap key def)
   "Little helper to write mode-specific key definitions prettier."
@@ -433,6 +447,7 @@ macro's arguments ignoring any arguments passed to it."
   (set-face-attribute 'variable-pitch
                       nil
                       :family "Inconsolata")
+  (set-fontset-font t 'cyrillic "Ubuntu Mono")
   (load-theme 'solarized-dark t)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                          '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
