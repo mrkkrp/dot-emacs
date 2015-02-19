@@ -41,7 +41,7 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(eval-when-compile (require 'cl)) ; add Common Lisp functions
+(require 'cl)
 (require 'package)
 (require 'bytecomp)
 
@@ -69,17 +69,15 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(defun delete-compile-log-window ()
+(defun delete-window-by-name (name)
   "Just delete the *Compile-Log* window, pretty obvious."
-  (when (get-buffer "*Compile-Log*")
-    (dolist (window (get-buffer-window-list "*Compile-Log*"))
+  (when (get-buffer name)
+    (dolist (window (get-buffer-window-list name))
       (delete-window window))))
 
 (dolist (package vital-packages)
   (unless (package-installed-p package)
     (package-install package)))
-
-(delete-compile-log-window) ; clearing after installation of the packages
 
 (require 'smooth-scroll)
 
@@ -90,7 +88,7 @@
 (defvar slime-helper-el  (expand-file-name "~/quicklisp/slime-helper.el")
   "Path to SLIME helper that comes with Quicklisp.")
 (defvar slime-helper-elc (byte-compile-dest-file slime-helper-el)
-  "Path to byte compiled SLIME helper.")
+  "Path to byte-compiled SLIME helper.")
 
 (when (and (file-exists-p slime-helper-el)
            (or (not (file-exists-p slime-helper-elc))
@@ -123,6 +121,10 @@
                            hyper-spec-parent
                            "\""))
     (delete-file temp-file)))
+
+;; Clearing after compilation...
+(delete-window-by-name "*Compile-Log*")
+(delete-window-by-name "*Shell Command Output*")
 
 (require 'server)
 
@@ -216,9 +218,9 @@
   "Move current line and cursor down."
   (interactive)
   (let ((col (current-column)))
-    (next-line)
+    (forward-line    1)
     (transpose-lines 1)
-    (previous-line)
+    (forward-line   -1)
     (move-to-column col)))
 
 (defun transpose-line-up ()
@@ -226,7 +228,7 @@
   (interactive)
   (let ((col (current-column)))
     (transpose-lines 1)
-    (previous-line 2)
+    (forward-line   -2)
     (move-to-column col)))
 
 (defvar basic-buffers
@@ -286,7 +288,18 @@ BASIC-BUFFERS."
                                          package-alist))))
             (package-install package-desc)
             (package-delete  old-package)))
-        (delete-compile-log-window)))))
+        (delete-window-by-name "*Compile-Log*")))))
+
+(defun compile-init-file ()
+  (interactive)
+  (let ((compiled (byte-compile-dest-file user-init-file)))
+    (if (or (not (file-exists-p compiled))
+            (file-newer-than-file-p user-init-file
+                                    compiled))
+        (progn
+          (byte-compile-file user-init-file)
+          (delete-window-by-name "*Compile-Log*"))
+      (message "Byte compiled init file exists and it's up to date."))))
 
 (defun visit-file (filename)
   "Visit specified file FILENAME. If the file does not exist,
@@ -295,12 +308,6 @@ print a message about the fact."
     (if (file-exists-p filename)
         (find-file filename)
       (message (concat filename " does not exist.")))))
-
-(defmacro vff (filename)
-  "Generate function to visit specified file."
-  `(lambda ()
-     (interactive)
-     (visit-file ,filename)))
 
 (defun toggle-russian-input ()
   "Switch between Russian input method and normal input method."
@@ -312,6 +319,12 @@ print a message about the fact."
     (progn
       (set-input-method 'russian-computer)
       (ispell-change-dictionary "ru"))))
+
+(defmacro vff (filename)
+  "Generate function to visit specified file."
+  `(lambda ()
+     (interactive)
+     (visit-file ,filename)))
 
 (global-set-key (kbd "C-c ,")   #'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   #'end-of-buffer)
@@ -325,7 +338,8 @@ print a message about the fact."
 (global-set-key (kbd "C-c M-j") #'cider-jack-in)
 (global-set-key (kbd "C-c M-l") #'slime)
 (global-set-key (kbd "C-c M-s") #'run-scheme)
-(global-set-key (kbd "C-c e")   (vff "~/.emacs"))
+(global-set-key (kbd "C-c b")   #'compile-init-file)
+(global-set-key (kbd "C-c e")   (vff user-init-file))
 (global-set-key (kbd "C-c t")   (vff (car org-agenda-files)))
 (global-set-key (kbd "C-c a")   #'org-agenda-list)
 (global-set-key (kbd "C-x o")   #'ace-window)
@@ -334,6 +348,7 @@ print a message about the fact."
 (global-set-key (kbd "M-n")     #'transpose-line-down)
 (global-set-key (kbd "M-g")     #'magit-status)
 (global-set-key (kbd "<f5>")    #'find-file)
+(global-set-key (kbd "<f6>")    #'dired-other-window)
 (global-set-key (kbd "<f8>")    #'toggle-russian-input)
 
 (defmacro defkey (file keymap key def)
