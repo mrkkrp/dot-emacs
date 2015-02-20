@@ -64,7 +64,7 @@
     solarized-theme)
   "List of packages that must be installed.")
 
-;; install all the packages automatically if they are not installed
+;; Install all the packages automatically if they are not installed.
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -85,6 +85,7 @@
 ;; we byte-compile it and entire SLIME, and next time we will be able to
 ;; load SLIME faster. If there is more recent version of 'slime-helper.el'
 ;; available, we should recompile it (and SLIME).
+
 (defvar slime-helper-el  (expand-file-name "~/quicklisp/slime-helper.el")
   "Path to SLIME helper that comes with Quicklisp.")
 (defvar slime-helper-elc (byte-compile-dest-file slime-helper-el)
@@ -104,6 +105,7 @@
 
 ;; Here we check if we have Hyper Spec. If not, we just download it and
 ;; decompress automatically.
+
 (defvar hyper-spec-parent (expand-file-name "~/.emacs.d/")
   "Parent directory where Common Lisp Hyper Spec is stored.")
 (defvar hyper-spec-dir (concat hyper-spec-parent "HyperSpec/")
@@ -123,6 +125,7 @@
     (delete-file temp-file)))
 
 ;; Clearing after compilation...
+
 (delete-window-by-name "*Compile-Log*")
 (delete-window-by-name "*Shell Command Output*")
 
@@ -316,9 +319,8 @@ print a message about the fact."
       (progn
         (deactivate-input-method)
         (ispell-change-dictionary "default"))
-    (progn
-      (set-input-method 'russian-computer)
-      (ispell-change-dictionary "ru"))))
+    (set-input-method 'russian-computer)
+    (ispell-change-dictionary "ru")))
 
 (defmacro vff (filename)
   "Generate function to visit specified file."
