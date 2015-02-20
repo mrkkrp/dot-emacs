@@ -458,13 +458,11 @@ macro's arguments ignoring any arguments passed to it."
 (when window-system
   (set-face-attribute 'default
                       nil
-                      :family "Inconsolata"
-                      :height 120
-                      :weight 'bold)
+                      :family "Ubuntu Mono"
+                      :height 120)
   (set-face-attribute 'variable-pitch
                       nil
-                      :family "Inconsolata")
-  (set-fontset-font t 'cyrillic "Ubuntu Mono")
+                      :family "Ubuntu Mono")
   (load-theme 'solarized-dark t)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                          '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
