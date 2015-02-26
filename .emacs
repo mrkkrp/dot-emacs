@@ -10,6 +10,7 @@
 ;;; * flycheck
 ;;; * haskell-mode
 ;;; * magit
+;;; * markdown-mode
 ;;; * prolog
 ;;; * rainbow-delimiters
 ;;; * smooth-scroll
@@ -58,6 +59,7 @@
     flycheck
     haskell-mode
     magit
+    markdown-mode
     prolog
     rainbow-delimiters
     smooth-scroll
