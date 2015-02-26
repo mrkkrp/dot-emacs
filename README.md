@@ -87,7 +87,7 @@ Alias | Original command
 `qr`  | `query-replace`
 `sh`  | `shell`
 
-# License
+## License
 
 Copyright (c) 2015 Mark Karpov
 
