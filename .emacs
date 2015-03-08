@@ -322,7 +322,18 @@ print a message about the fact."
         (deactivate-input-method)
         (ispell-change-dictionary "default"))
     (set-input-method 'russian-computer)
-    (ispell-change-dictionary "ru")))
+    (ispell-change-dictionary "Ru")))
+
+(defun slime-in-package ()
+  "Load specified package and switch to it."
+  (interactive)
+  (let ((pkg-name (read-string "Package name: ")))
+    (slime-repl-eval-string
+     (concat "(progn (asdf:load-system :"
+             pkg-name
+             ")(cl:in-package :"
+             pkg-name
+             "))"))))
 
 (defmacro vff (filename)
   "Generate function to visit specified file."
@@ -364,6 +375,7 @@ print a message about the fact."
 
 (defkey lisp-mode    emacs-lisp       "C-c h"   #'slime-hyperspec-lookup)
 (defkey lisp-mode    lisp             "C-c h"   #'slime-hyperspec-lookup)
+(defkey slime        slime-repl       "C-c i"   #'slime-in-package)
 (defkey slime        slime-repl       "C-c r"   #'slime-restart-inferior-lisp)
 (defkey haskell-mode haskell          "C-c h"   #'haskell-hoogle)
 (defkey inf-haskell  inferior-haskell "C-c h"   #'haskell-hoogle)

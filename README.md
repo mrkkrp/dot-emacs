@@ -71,6 +71,7 @@ Shortcut           | Description
 <kbd>F8</kbd>      | toggle Russian input
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
+<kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package
 <kbd>C-c h</kbd>   | Haskell: Hoogle query
 <kbd>C-c C-l</kbd> | C mode: compile project
 <kbd>M-]</kbd>     | Calendar: forward month
