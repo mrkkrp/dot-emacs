@@ -2,22 +2,9 @@
 ;;;
 ;;; Commentary:
 ;;;
-;;; Used packages (automatically installed if needed):
-;;; * ace-window
-;;; * cider
-;;; * color-theme
-;;; * fill-column-indicator
-;;; * flycheck
-;;; * haskell-mode
-;;; * magit
-;;; * markdown-mode
-;;; * prolog
-;;; * rainbow-delimiters
-;;; * smooth-scroll
-;;; * solarized-theme
-;;;
-;;; Other packages (OS level):
-;;; * aspell
+;;; In order to use spell-checking you need to install the following
+;;; packages (OS level):
+;;; * aspell{,-en,-ru,-fr}
 ;;;
 ;;; Copyright (c) 2015 Mark Karpov
 ;;;
@@ -341,6 +328,12 @@ print a message about the fact."
      (interactive)
      (visit-file ,filename)))
 
+(defmacro partial (fnc &rest args)
+  "Partially apply arguments ARGS to function FNC."
+  `(lambda (&rest rest)
+     (interactive)
+     (apply ,fnc ,@args rest)))
+
 (global-set-key (kbd "C-c ,")   #'beginning-of-buffer)
 (global-set-key (kbd "C-c .")   #'end-of-buffer)
 (global-set-key (kbd "C-c c")   #'comment-region)
@@ -362,9 +355,16 @@ print a message about the fact."
 (global-set-key (kbd "M-p")     #'transpose-line-up)
 (global-set-key (kbd "M-n")     #'transpose-line-down)
 (global-set-key (kbd "M-g")     #'magit-status)
+(global-set-key (kbd "<f1>")    #'save-buffer)
+(global-set-key (kbd "<f2>")    #'save-buffer)
 (global-set-key (kbd "<f5>")    #'find-file)
-(global-set-key (kbd "<f6>")    #'dired-other-window)
+(global-set-key (kbd "<f6>")    #'find-file-other-window)
 (global-set-key (kbd "<f8>")    #'toggle-russian-input)
+(global-set-key (kbd "<f9>")    (partial #'kill-buffer nil))
+(global-set-key (kbd "<f10>")   (partial #'kill-buffer nil))
+(global-set-key (kbd "<f12>")   #'tetris)
+(global-set-key (kbd "<escape>")  #'delete-window)
+(global-set-key (kbd "<C-return>") #'ace-window)
 
 (defmacro defkey (file keymap key def)
   "Little helper to write mode-specific key definitions prettier."
@@ -375,10 +375,13 @@ print a message about the fact."
 
 (defkey lisp-mode    emacs-lisp       "C-c h"   #'slime-hyperspec-lookup)
 (defkey lisp-mode    lisp             "C-c h"   #'slime-hyperspec-lookup)
+(defkey slime        slime            "M-p"     #'transpose-line-up)
+(defkey slime        slime            "M-n"     #'transpose-line-down)
 (defkey slime        slime-repl       "C-c i"   #'slime-in-package)
 (defkey slime        slime-repl       "C-c r"   #'slime-restart-inferior-lisp)
 (defkey haskell-mode haskell          "C-c h"   #'haskell-hoogle)
 (defkey inf-haskell  inferior-haskell "C-c h"   #'haskell-hoogle)
+(defkey cc-mode      c                "C-c ."   #'end-of-buffer)
 (defkey cc-mode      c                "C-c C-l" #'compile)
 (defkey calendar     calendar         "M-]"     #'calendar-forward-month)
 (defkey calendar     calendar         "M-["     #'calendar-backward-month)
@@ -393,6 +396,7 @@ print a message about the fact."
 (defalias 'lp 'list-packages)
 (defalias 'qr 'query-replace)
 (defalias 'sh 'shell)
+(defalias 'sl 'sort-lines)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

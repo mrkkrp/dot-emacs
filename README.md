@@ -66,9 +66,14 @@ Shortcut           | Description
 <kbd>M-p</kbd>     | transpose line up
 <kbd>M-n</kbd>     | transpose line down
 <kbd>M-g</kbd>     | magit status
-<kbd>F5</kbd>      | find file
-<kbd>F6</kbd>      | Dired in other window
+<kbd>F1</kbd> and <kbd>F2</kbd> | save buffer
+<kbd>F5</kbd>      | find file (also Dired)
+<kbd>F6</kbd>      | find file in other window (also Dired)
 <kbd>F8</kbd>      | toggle Russian input
+<kbd>F9</kbd> and <kbd>F10</kbd> | kill current buffer
+<kbd>F12</kbd>     | tetris
+<kbd>escape</kbd>  | delete window
+<kbd>C-return</kbd> | ace window
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
 <kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package
@@ -79,7 +84,7 @@ Shortcut           | Description
 
 ## Aliases
 
-Use them with <kbd>M-x</kbd>.
+Use them with <kbd>M-x</kbd> (I use <kbd>Menu</kbd>).
 
 Alias | Original command
 ----- | ----------------
@@ -87,6 +92,7 @@ Alias | Original command
 `lp`  | `list-packages`
 `qr`  | `query-replace`
 `sh`  | `shell`
+`sl`  | `sort-lines`
 
 ## License
 
