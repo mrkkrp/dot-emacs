@@ -367,6 +367,7 @@ print a message about the fact."
 (global-set-key (kbd "<escape>")  #'delete-window)
 (global-set-key (kbd "<C-return>") #'ace-window)
 (global-set-key (kbd "<menu>")  nil)
+(global-set-key (kbd "<menu> c a") #'calc)
 (global-set-key (kbd "<menu> c l") #'calendar)
 (global-set-key (kbd "<menu> e r") #'erc)
 (global-set-key (kbd "<menu> g n") #'gnus)

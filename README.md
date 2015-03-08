@@ -74,6 +74,7 @@ Shortcut           | Description
 <kbd>F12</kbd>     | tetris
 <kbd>escape</kbd>  | delete window
 <kbd>C-return</kbd> | ace window
+<kbd>menu c a</kbd> | Calc
 <kbd>menu c l</kbd> | Calendar
 <kbd>menu e r</kbd> | ERC
 <kbd>menu g n</kbd> | GNUS
