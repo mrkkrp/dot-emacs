@@ -74,6 +74,13 @@ Shortcut           | Description
 <kbd>F12</kbd>     | tetris
 <kbd>escape</kbd>  | delete window
 <kbd>C-return</kbd> | ace window
+<kbd>menu c l</kbd> | Calendar
+<kbd>menu e r</kbd> | ERC
+<kbd>menu g n</kbd> | GNUS
+<kbd>menu l p</kbd> | list packages
+<kbd>menu q r</kbd> | query replace
+<kbd>menu s h</kbd> | shell
+<kbd>menu s l</kbd> | sort lines
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
 <kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package
@@ -81,18 +88,6 @@ Shortcut           | Description
 <kbd>C-c C-l</kbd> | C mode: compile project
 <kbd>M-]</kbd>     | Calendar: forward month
 <kbd>M-[</kbd>     | Calendar: backward month
-
-## Aliases
-
-Use them with <kbd>M-x</kbd> (I use <kbd>Menu</kbd>).
-
-Alias | Original command
------ | ----------------
-`cl`  | `calendar`
-`lp`  | `list-packages`
-`qr`  | `query-replace`
-`sh`  | `shell`
-`sl`  | `sort-lines`
 
 ## License
 

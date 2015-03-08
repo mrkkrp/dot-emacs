@@ -169,6 +169,7 @@
  send-mail-function                'smtpmail-send-it
  smtpmail-smtp-server              "smtp.openmailbox.org"
  smtpmail-smtp-service             587
+ suggest-key-bindings              nil
  tab-width                         4       ; tag width for text-mode
  user-full-name                    "Mark Karpov"
  user-mail-address                 "markkarpov@opmbx.org"
@@ -365,6 +366,14 @@ print a message about the fact."
 (global-set-key (kbd "<f12>")   #'tetris)
 (global-set-key (kbd "<escape>")  #'delete-window)
 (global-set-key (kbd "<C-return>") #'ace-window)
+(global-set-key (kbd "<menu>")  nil)
+(global-set-key (kbd "<menu> c l") #'calendar)
+(global-set-key (kbd "<menu> e r") #'erc)
+(global-set-key (kbd "<menu> g n") #'gnus)
+(global-set-key (kbd "<menu> l p") #'list-packages)
+(global-set-key (kbd "<menu> q r") #'query-replace)
+(global-set-key (kbd "<menu> s h") #'shell)
+(global-set-key (kbd "<menu> s l") #'sort-lines)
 
 (defmacro defkey (file keymap key def)
   "Little helper to write mode-specific key definitions prettier."
@@ -392,12 +401,7 @@ print a message about the fact."
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defalias 'cl 'calendar)
-(defalias 'lp 'list-packages)
-(defalias 'qr 'query-replace)
-(defalias 'sh 'shell)
-(defalias 'sl 'sort-lines)
-(defalias 'yes-or-no-p 'y-or-n-p)
+(defalias 'yes-or-no-p #'y-or-n-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
@@ -466,6 +470,7 @@ macro's arguments ignoring any arguments passed to it."
 (advice-add 'org-agenda-todo :after       #'org-save-all-org-buffers)
 (advice-add 'revert-buffer   :filter-args (ira nil t))
 (advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
+(advice-add 'save-buffers-kill-terminal :filter-args (ira t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
