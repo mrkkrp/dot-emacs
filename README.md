@@ -42,7 +42,9 @@ favorite GNU/Linux distribution.
 
 ## Shortcuts
 
-New shortcuts:
+Don't use hairy default Emacs shortcuts. All frequently used commands must
+be as simple as possible. Prefer single keys and key sequences to
+key-chords, it's good for your health.
 
 Shortcut           | Description
 --------           | -----------
@@ -54,10 +56,6 @@ Shortcut           | Description
 <kbd>C-c p</kbd>   | purge all buffers (except for 'basic')
 <kbd>C-c s</kbd>   | search online with DuckDuckGo
 <kbd>C-c g</kbd>   | upgrade all packages
-<kbd>C-c M-h</kbd> | Haskell mode
-<kbd>C-c M-j</kbd> | Cider jack in
-<kbd>C-c M-l</kbd> | SLIME
-<kbd>C-c M-s</kbd> | run Scheme
 <kbd>C-c b</kbd>   | byte compile initialization file
 <kbd>C-c e</kbd>   | open initialization file
 <kbd>C-c t</kbd>   | open org agenda file
@@ -71,21 +69,25 @@ Shortcut           | Description
 <kbd>F5</kbd>      | find file (also Dired)
 <kbd>F6</kbd>      | find file in other window (also Dired)
 <kbd>F8</kbd>      | toggle Russian input
-<kbd>F9</kbd> and <kbd>F10</kbd> | kill current buffer
+<kbd>F9</kbd>      | kill current buffer
+<kbd>F10</kbd>     | delete other windows
 <kbd>F11</kbd>     | switch to buffer
 <kbd>F12</kbd>     | save buffers and kill terminal (exit)
 <kbd>escape</kbd>  | delete window
 <kbd>C-return</kbd>| duplicate line
-<kbd>up</kbd>      | buffer move up
-<kbd>down</kbd>    | buffer move down
-<kbd>left</kbd>    | buffer move left
-<kbd>right</kbd>   | buffer move right
+<kbd>up</kbd>      | move buffer up
+<kbd>down</kbd>    | move buffer down
+<kbd>left</kbd>    | move buffer left
+<kbd>right</kbd>   | move buffer right
 <kbd>menu c a</kbd>| Calc
+<kbd>menu c i</kbd>| Cider Jack-in
 <kbd>menu c l</kbd>| Calendar
 <kbd>menu e r</kbd>| ERC
 <kbd>menu g n</kbd>| GNUS
+<kbd>menu l i</kbd>| SLIME
 <kbd>menu l p</kbd>| list packages
 <kbd>menu q r</kbd>| query replace
+<kbd>menu s c</kbd>| Scheme
 <kbd>menu s h</kbd>| shell
 <kbd>menu s l</kbd>| sort lines
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
