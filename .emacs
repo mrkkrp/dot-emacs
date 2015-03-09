@@ -40,6 +40,7 @@
 
 (defvar vital-packages
   '(ace-window
+    buffer-move
     cider
     color-theme
     fill-column-indicator
@@ -224,6 +225,22 @@
     (forward-line   -2)
     (move-to-column col)))
 
+(defun duplicate-line ()
+  "Copy current line and yank its copy under the current
+line. Position of point shifts one line down."
+  (interactive)
+  (let ((col (current-column)))
+    (kill-ring-save
+     (progn
+       (move-beginning-of-line 1)
+       (point))
+     (progn
+       (forward-line 1)
+       (point)))
+    (yank)
+    (forward-line -1)
+    (move-to-column col)))
+
 (defvar basic-buffers
   '("^\*scratch\*"
     "^\*Messages\*"
@@ -356,17 +373,23 @@ print a message about the fact."
 (global-set-key (kbd "M-p")     #'transpose-line-up)
 (global-set-key (kbd "M-n")     #'transpose-line-down)
 (global-set-key (kbd "M-g")     #'magit-status)
-(global-set-key (kbd "<f1>")    #'save-buffer)
+(global-set-key (kbd "<f1>")    #'ace-window)
 (global-set-key (kbd "<f2>")    #'save-buffer)
 (global-set-key (kbd "<f5>")    #'find-file)
 (global-set-key (kbd "<f6>")    #'find-file-other-window)
 (global-set-key (kbd "<f8>")    #'toggle-russian-input)
 (global-set-key (kbd "<f9>")    (partial #'kill-buffer nil))
 (global-set-key (kbd "<f10>")   (partial #'kill-buffer nil))
-(global-set-key (kbd "<f12>")   #'tetris)
-(global-set-key (kbd "<escape>")  #'delete-window)
-(global-set-key (kbd "<C-return>") #'ace-window)
-(global-set-key (kbd "<menu>")  nil)
+(global-set-key (kbd "<f11>")   #'switch-to-buffer)
+(global-set-key (kbd "<f12>")   #'save-buffers-kill-terminal)
+
+(global-set-key (kbd "<escape>")   #'delete-window)
+(global-set-key (kbd "<C-return>") #'duplicate-line)
+(global-set-key (kbd "<up>")       #'buf-move-up)
+(global-set-key (kbd "<down>")     #'buf-move-down)
+(global-set-key (kbd "<left>")     #'buf-move-left)
+(global-set-key (kbd "<right>")    #'buf-move-right)
+(global-set-key (kbd "<menu>")     nil)
 (global-set-key (kbd "<menu> c a") #'calc)
 (global-set-key (kbd "<menu> c l") #'calendar)
 (global-set-key (kbd "<menu> e r") #'erc)
