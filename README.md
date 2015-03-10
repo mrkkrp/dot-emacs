@@ -2,7 +2,8 @@
 
 These are my Emacs and GNUS configuration files. I wrote these files slowly
 borrowing useful things that I saw in Emacs configuration files of other
-people and official GNU Emacs manuals.
+people and official GNU Emacs manuals. However, I've written quite a bit of
+stuff myself, because I couldn't find decent solutions.
 
 The `.emacs` file defines function to search Internet with DuckDuckGo. It
 generates such URLs so DuckDuckGo operates in HTML mode, without any
@@ -11,9 +12,7 @@ proprietary Java Script. Also the URLs include parameters to remove ads
 DuckDuckGo work only via HTTPS.
 
 Also, here is some automation to install all necessary packages and some
-automation to compile/recompile SLIME (works smoothly with Quicklisp). If
-you don't have local copy of Common Lisp Hyper Spec it can download it via
-FTP, untar it, and make it work.
+automation to compile/recompile SLIME (works smoothly with Quicklisp).
 
 I have written a function to upgrade all packages without displaying
 `*Packages*` buffer. This function directly finds all obsolete packages,
@@ -44,7 +43,7 @@ favorite GNU/Linux distribution.
 
 Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences to
-key-chords, it's good for your health.
+key-chords. Even if it's not faster, it's good for your health.
 
 Shortcut           | Description
 --------           | -----------
