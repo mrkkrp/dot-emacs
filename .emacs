@@ -60,7 +60,7 @@
   (package-refresh-contents))
 
 (defun delete-window-by-name (name)
-  "Just delete the *Compile-Log* window, pretty obvious."
+  "Delete all windows that display buffer with name NAME."
   (when (get-buffer name)
     (dolist (window (get-buffer-window-list name))
       (delete-window window))))
@@ -71,9 +71,9 @@
 
 (require 'smooth-scroll)
 
-;; Let's load SLIME with Slime Helper, if there is 'slime-helper.el' file,
+;; Let's load SLIME with Slime Helper, if there is `slime-helper.el' file,
 ;; we byte-compile it and entire SLIME, and next time we will be able to
-;; load SLIME faster. If there is more recent version of 'slime-helper.el'
+;; load SLIME faster. If there is more recent version of `slime-helper.el'
 ;; available, we should recompile it (and SLIME).
 
 (defvar slime-helper-el  (expand-file-name "~/quicklisp/slime-helper.el")
@@ -92,27 +92,6 @@
 (when (and (file-exists-p slime-helper-elc)
            (not (find 'slime features)))
   (load-file slime-helper-elc))
-
-;; Here we check if we have Hyper Spec. If not, we just download it and
-;; decompress automatically.
-
-(defvar hyper-spec-parent (expand-file-name "~/.emacs.d/")
-  "Parent directory where Common Lisp Hyper Spec is stored.")
-(defvar hyper-spec-dir (concat hyper-spec-parent "HyperSpec/")
-  "Directory where Common Lisp Hyper Spec is supposed to be.")
-
-(unless (file-exists-p hyper-spec-dir)
-  (let ((temp-file (make-temp-file "emacs")))
-    (url-copy-file
-     "ftp://ftp.lispworks.com/pub/software_tools/reference/HyperSpec-7-0.tar.gz"
-     temp-file
-     t)
-    (shell-command (concat "tar -xzf \""
-                           temp-file
-                           "\" -C \""
-                           hyper-spec-parent
-                           "\""))
-    (delete-file temp-file)))
 
 ;; Clearing after compilation...
 
@@ -136,7 +115,6 @@
  browse-url-generic-program        "icecat" ; GNU IceCat
  browse-url-browser-function       'browse-url-generic ; use GNU IceCat
  column-number-mode                t       ; display column number
- common-lisp-hyperspec-root        hyper-spec-dir
  delete-by-moving-to-trash         t       ; in dired mode
  dired-auto-revert-buffer          t       ; automatically revert buffer
  dired-dwim-target                 t       ; guess target directory
