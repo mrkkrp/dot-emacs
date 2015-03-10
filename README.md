@@ -74,10 +74,10 @@ Shortcut           | Description
 <kbd>F12</kbd>     | save buffers and kill terminal (exit)
 <kbd>escape</kbd>  | delete window
 <kbd>C-return</kbd>| duplicate line
-<kbd>up</kbd>      | move buffer up
-<kbd>down</kbd>    | move buffer down
-<kbd>left</kbd>    | move buffer left
-<kbd>right</kbd>   | move buffer right
+<kbd>S-up</kbd>    | move buffer up
+<kbd>S-down</kbd>  | move buffer down
+<kbd>S-left</kbd>  | move buffer left
+<kbd>S-right</kbd> | move buffer right
 <kbd>menu c a</kbd>| Calc
 <kbd>menu c i</kbd>| Cider Jack-in
 <kbd>menu c l</kbd>| Calendar
