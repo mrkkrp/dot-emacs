@@ -89,6 +89,7 @@ Shortcut           | Description
 <kbd>menu s c</kbd>| Scheme
 <kbd>menu s h</kbd>| shell
 <kbd>menu s l</kbd>| sort lines
+<kbd>menu t e</kbd>| tetris
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
 <kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package

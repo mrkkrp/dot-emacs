@@ -375,6 +375,7 @@ print a message about the fact."
 (global-set-key (kbd "<menu> s c") #'run-scheme)
 (global-set-key (kbd "<menu> s h") #'shell)
 (global-set-key (kbd "<menu> s l") #'sort-lines)
+(global-set-key (kbd "<menu> t e") #'tetris)
 
 (defmacro defkey (file keymap key def)
   "Little helper to write mode-specific key definitions prettier."
