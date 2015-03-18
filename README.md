@@ -62,7 +62,6 @@ Shortcut           | Description
 <kbd>C-c i</kbd>   | correct word before point
 <kbd>M-p</kbd>     | transpose line up
 <kbd>M-n</kbd>     | transpose line down
-<kbd>M-g</kbd>     | magit status
 <kbd>F1</kbd>      | ace window
 <kbd>F2</kbd>      | save buffer
 <kbd>F5</kbd>      | find file (also Dired)
@@ -82,13 +81,18 @@ Shortcut           | Description
 <kbd>menu c i</kbd>| Cider Jack-in
 <kbd>menu c l</kbd>| Calendar
 <kbd>menu e r</kbd>| ERC
+<kbd>menu g l</kbd>| goto line
 <kbd>menu g n</kbd>| GNUS
 <kbd>menu l i</kbd>| SLIME
 <kbd>menu l p</kbd>| list packages
+<kbd>menu m a</kbd>| magit status
+<kbd>menu m m</kbd>| push mark
 <kbd>menu q r</kbd>| query replace
+<kbd>menu r e</kbd>| jump to marked position without popping
 <kbd>menu s c</kbd>| Scheme
 <kbd>menu s h</kbd>| shell
 <kbd>menu s l</kbd>| sort lines
+<kbd>menu s s</kbd>| switch to scratch buffer
 <kbd>menu t e</kbd>| tetris
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
