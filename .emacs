@@ -237,7 +237,13 @@ BASIC-BUFFERS."
                               (string-match-p regexp name))
                             basic-buffers))
                     (mapcar #'buffer-name (buffer-list)))))
-    (mapc #'kill-buffer redundant-buffers)
+    (mapc (lambda (name)
+            (kill-buffer
+             (if (get-buffer name)
+                 name
+               (subseq name 0 (or (position ?< name :from-end t)
+                                  (length name))))))
+          redundant-buffers)
     (switch-to-buffer "*scratch*")
     (delete-other-windows)))
 
