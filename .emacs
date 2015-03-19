@@ -490,6 +490,9 @@ macro's arguments ignoring any arguments passed to it."
 (advice-add 'revert-buffer   :filter-args (ira nil t))
 (advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
 (advice-add 'save-buffers-kill-terminal :filter-args (ira t))
+(advice-add 'inferior-haskell-load-file :after
+            (lambda (&optional reload)
+              (select-window (car (get-buffer-window-list "*haskell*")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
