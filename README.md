@@ -103,8 +103,6 @@ Shortcut           | Description
 <kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package
 <kbd>C-c h</kbd>   | Haskell: Hoogle query
 <kbd>C-c C-l</kbd> | C mode: compile project
-<kbd>M-]</kbd>     | Calendar: forward month
-<kbd>M-[</kbd>     | Calendar: backward month
 
 ## License
 
