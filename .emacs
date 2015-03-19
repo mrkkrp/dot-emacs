@@ -186,6 +186,10 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defun point-mid ()
+  "Return middle position of point in the buffer."
+  (/ (- (point-max) (point-min)) 2))
+
 (defun transpose-line-down ()
   "Move current line and cursor down."
   (interactive)
@@ -218,6 +222,13 @@ line. Position of point shifts one line down."
     (yank)
     (forward-line -1)
     (move-to-column col)))
+
+(defun show-date (&optional stamp)
+  "Show current date in the minibuffer. If STAMP is not NIL,
+insert date into currently active buffer."
+  (interactive)
+  (funcall (if stamp #'insert #'message)
+           (format-time-string "%A, %d %B %Y")))
 
 (defvar basic-buffers
   '("^\*scratch\*"
@@ -324,20 +335,12 @@ print a message about the fact."
              pkg-name
              "))"))))
 
-(defmacro vff (filename)
-  "Generate function to visit specified file."
-  `(lambda ()
-     (interactive)
-     (visit-file ,filename)))
-
-(defmacro partial (fnc &rest args)
-  "Partially apply arguments ARGS to function FNC."
+(defmacro cmd (fnc &rest args)
+  "Interactively invoke function FNC with arguments ARGS."
   `(lambda (&rest rest)
      (interactive)
-     (apply ,fnc ,@args rest)))
+     (apply,fnc ,@args rest)))
 
-(global-set-key (kbd "C-c ,") #'beginning-of-buffer)
-(global-set-key (kbd "C-c .") #'end-of-buffer)
 (global-set-key (kbd "C-c c") #'comment-region)
 (global-set-key (kbd "C-c u") #'uncomment-region)
 (global-set-key (kbd "C-c r") #'revert-buffer)
@@ -345,23 +348,21 @@ print a message about the fact."
 (global-set-key (kbd "C-c s") #'search-online)
 (global-set-key (kbd "C-c g") #'upgrade-all-packages)
 (global-set-key (kbd "C-c b") #'compile-init-file)
-(global-set-key (kbd "C-c e") (vff user-init-file))
-(global-set-key (kbd "C-c t") (vff (car org-agenda-files)))
+(global-set-key (kbd "C-c e") (cmd #'visit-file user-init-file))
+(global-set-key (kbd "C-c t") (cmd #'visit-file (car org-agenda-files)))
 (global-set-key (kbd "C-c a") #'org-agenda-list)
 (global-set-key (kbd "C-x o") #'ace-window)
 (global-set-key (kbd "C-c i") #'flyspell-correct-word-before-point)
 (global-set-key (kbd "M-p")   #'transpose-line-up)
 (global-set-key (kbd "M-n")   #'transpose-line-down)
-(global-set-key (kbd "<f1>")  #'ace-window)
 (global-set-key (kbd "<f2>")  #'save-buffer)
 (global-set-key (kbd "<f5>")  #'find-file)
 (global-set-key (kbd "<f6>")  #'find-file-other-window)
 (global-set-key (kbd "<f8>")  #'toggle-russian-input)
-(global-set-key (kbd "<f9>")  (partial #'kill-buffer nil))
+(global-set-key (kbd "<f9>")  (cmd #'kill-buffer nil))
 (global-set-key (kbd "<f10>") #'delete-other-windows)
 (global-set-key (kbd "<f11>") #'switch-to-buffer)
 (global-set-key (kbd "<f12>") #'save-buffers-kill-terminal)
-
 (global-set-key (kbd "<escape>")   #'delete-window)
 (global-set-key (kbd "<C-return>") #'duplicate-line)
 (global-set-key (kbd "<S-up>")     #'buf-move-up)
@@ -369,23 +370,30 @@ print a message about the fact."
 (global-set-key (kbd "<S-left>")   #'buf-move-left)
 (global-set-key (kbd "<S-right>")  #'buf-move-right)
 (global-set-key (kbd "<menu>")     nil)
+(global-set-key (kbd "<menu> ,")   (cmd #'push-mark))
+(global-set-key (kbd "<menu> .")   (cmd #'goto-char (mark)))
+(global-set-key (kbd "<menu> /")   (cmd #'goto-char (point-mid)))
+(global-set-key (kbd "<menu> <")   (cmd #'goto-char (point-min)))
+(global-set-key (kbd "<menu> >")   (cmd #'goto-char (point-max)))
 (global-set-key (kbd "<menu> c a") #'calc)
 (global-set-key (kbd "<menu> c i") #'cider-jack-in)
 (global-set-key (kbd "<menu> c l") #'calendar)
+(global-set-key (kbd "<menu> d a") (cmd #'show-date))
 (global-set-key (kbd "<menu> e r") #'erc)
 (global-set-key (kbd "<menu> g l") #'goto-line)
 (global-set-key (kbd "<menu> g n") #'gnus)
+(global-set-key (kbd "<menu> h r") #'split-window-below)
 (global-set-key (kbd "<menu> l i") #'slime)
 (global-set-key (kbd "<menu> l p") #'list-packages)
 (global-set-key (kbd "<menu> m a") #'magit-status)
-(global-set-key (kbd "<menu> m m") (partial #'push-mark))
 (global-set-key (kbd "<menu> q r") #'query-replace)
-(global-set-key (kbd "<menu> r e") (partial #'goto-char (mark)))
 (global-set-key (kbd "<menu> s c") #'run-scheme)
 (global-set-key (kbd "<menu> s h") #'shell)
 (global-set-key (kbd "<menu> s l") #'sort-lines)
-(global-set-key (kbd "<menu> s s") (partial #'switch-to-buffer "*scratch*"))
+(global-set-key (kbd "<menu> s s") (cmd #'switch-to-buffer "*scratch*"))
+(global-set-key (kbd "<menu> s t") (cmd #'show-date t))
 (global-set-key (kbd "<menu> t e") #'tetris)
+(global-set-key (kbd "<menu> v r") #'split-window-right)
 
 (defmacro defkey (file keymap key def)
   "Little helper to write mode-specific key definitions prettier."
@@ -404,10 +412,7 @@ print a message about the fact."
 (defkey inf-haskell   inferior-haskell "C-c h"   #'haskell-hoogle)
 (defkey haskell-cabal haskell-cabal    "M-p"     #'transpose-line-up)
 (defkey haskell-cabal haskell-cabal    "M-n"     #'transpose-line-down)
-(defkey cc-mode       c                "C-c ."   #'end-of-buffer)
 (defkey cc-mode       c                "C-c C-l" #'compile)
-(defkey calendar      calendar         "M-]"     #'calendar-forward-month)
-(defkey calendar      calendar         "M-["     #'calendar-backward-month)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;

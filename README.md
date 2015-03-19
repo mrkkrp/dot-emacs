@@ -47,8 +47,6 @@ key-chords. Even if it's not faster, it's good for your health.
 
 Shortcut           | Description
 --------           | -----------
-<kbd>C-c ,</kbd>   | go to beginning of buffer
-<kbd>C-c .</kbd>   | go to end of buffer
 <kbd>C-c c</kbd>   | comment region
 <kbd>C-c u</kbd>   | uncomment region
 <kbd>C-c r</kbd>   | revert current buffer
@@ -62,7 +60,6 @@ Shortcut           | Description
 <kbd>C-c i</kbd>   | correct word before point
 <kbd>M-p</kbd>     | transpose line up
 <kbd>M-n</kbd>     | transpose line down
-<kbd>F1</kbd>      | ace window
 <kbd>F2</kbd>      | save buffer
 <kbd>F5</kbd>      | find file (also Dired)
 <kbd>F6</kbd>      | find file in other window (also Dired)
@@ -77,23 +74,30 @@ Shortcut           | Description
 <kbd>S-down</kbd>  | move buffer down
 <kbd>S-left</kbd>  | move buffer left
 <kbd>S-right</kbd> | move buffer right
+<kbd>menu ,</kbd>  | push mark
+<kbd>menu .</kbd>  | jump to marked position without popping
+<kbd>menu /</kbd>  | middle of the buffer
+<kbd>menu <</kbd>  | beginning of the buffer
+<kbd>menu ></kbd>  | end of the buffer
 <kbd>menu c a</kbd>| Calc
 <kbd>menu c i</kbd>| Cider Jack-in
 <kbd>menu c l</kbd>| Calendar
+<kbd>menu d a</kbd>| show date in the minibuffer
 <kbd>menu e r</kbd>| ERC
 <kbd>menu g l</kbd>| goto line
 <kbd>menu g n</kbd>| GNUS
+<kbd>menu h r</kbd>| split window (horizontal)
 <kbd>menu l i</kbd>| SLIME
 <kbd>menu l p</kbd>| list packages
 <kbd>menu m a</kbd>| magit status
-<kbd>menu m m</kbd>| push mark
 <kbd>menu q r</kbd>| query replace
-<kbd>menu r e</kbd>| jump to marked position without popping
 <kbd>menu s c</kbd>| Scheme
 <kbd>menu s h</kbd>| shell
 <kbd>menu s l</kbd>| sort lines
 <kbd>menu s s</kbd>| switch to scratch buffer
+<kbd>menu s t</kbd>| insert date
 <kbd>menu t e</kbd>| tetris
+<kbd>menu v r</kbd>| split window (vertical)
 <kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
 <kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package
