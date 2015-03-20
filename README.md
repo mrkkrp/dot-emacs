@@ -79,6 +79,7 @@ Shortcut           | Description
 <kbd>menu /</kbd>  | middle of the buffer
 <kbd>menu <</kbd>  | beginning of the buffer
 <kbd>menu ></kbd>  | end of the buffer
+<kbd>menu a p</kbd>| apropos
 <kbd>menu c a</kbd>| Calc
 <kbd>menu c i</kbd>| Cider Jack-in
 <kbd>menu c l</kbd>| Calendar
