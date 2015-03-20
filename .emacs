@@ -48,6 +48,7 @@
     buffer-move
     cider
     color-theme
+    f
     fill-column-indicator
     flycheck
     ghc
@@ -76,6 +77,7 @@
     (package-install package)))
 
 (require 'smooth-scroll)
+(require 'f)
 
 ;; Let's load SLIME with Slime Helper, if there is `slime-helper.el' file,
 ;; we byte-compile it and entire SLIME, and next time we will be able to
@@ -134,6 +136,7 @@
  fill-column                       76      ; set fill column
  gc-cons-threshold                 10240000 ; garbage collection every 10 Mb
  gnus-permanently-visible-groups   ""      ; always show all groups
+ haskell-ask-also-kill-buffers     nil     ; don't ask
  indent-tabs-mode                  nil     ; identation only with spaces
  inferior-lisp-program             "sbcl"  ; SBCL
  inhibit-startup-screen            t       ; remove welcome screen
@@ -381,6 +384,7 @@ print a message about the fact."
 (global-set-key (kbd "<menu> /")   (cmd #'goto-char (point-mid)))
 (global-set-key (kbd "<menu> <")   (cmd #'goto-char (point-min)))
 (global-set-key (kbd "<menu> >")   (cmd #'goto-char (point-max)))
+(global-set-key (kbd "<menu> a p") #'apropos)
 (global-set-key (kbd "<menu> c a") #'calc)
 (global-set-key (kbd "<menu> c i") #'cider-jack-in)
 (global-set-key (kbd "<menu> c l") #'calendar)
@@ -465,9 +469,28 @@ source."
   (flyspell-prog-mode)
   (flycheck-mode))
 
-(defun electric-indent-disable-locally ()
-  "The name of the function speaks for itself."
-  (electric-indent-local-mode 0))
+(defun haskell-mode-helper ()
+  "Here we tell flycheck how to respect cabal sandbox, disable
+electric indent, turn on interactive Haskell mode and more."
+  (let ((cabal-sandbox-config
+         (cl-do ((path default-directory (f-dirname path))
+                 temp)
+             ((or temp (null path)) temp)
+           (let ((file (f-join path "cabal.sandbox.config")))
+             (when (file-exists-p file)
+               (setq temp file))))))
+    (when cabal-sandbox-config
+      (setq-local flycheck-ghc-package-databases
+                  (list
+                   (with-temp-buffer
+                     (insert-file-contents cabal-sandbox-config)
+                     (search-forward "package-db: ")
+                     (string-trim
+                      (buffer-substring (point) (line-end-position))))))))
+  (electric-indent-local-mode 0)
+  (interactive-haskell-mode)
+  (turn-on-haskell-doc-mode)
+  (turn-on-haskell-indent))
 
 (add-hook 'after-change-major-mode-hook #'fci-mode)
 (add-hook 'after-change-major-mode-hook #'purge-minor-modes)
@@ -475,10 +498,7 @@ source."
 (add-hook 'clojure-mode-hook            #'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
 (add-hook 'erc-mode-hook                #'flyspell-mode)
-(add-hook 'haskell-mode-hook            #'electric-indent-disable-locally)
-(add-hook 'haskell-mode-hook            #'interactive-haskell-mode)
-(add-hook 'haskell-mode-hook            #'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook            #'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook            #'haskell-mode-helper)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'scheme-mode-hook             #'rainbow-delimiters-mode)
 (add-hook 'slime-mode-hook              #'rainbow-delimiters-mode)
@@ -496,6 +516,7 @@ macro's arguments ignoring any arguments passed to it."
 (advice-add 'revert-buffer   :filter-args (ira nil t))
 (advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
 (advice-add 'save-buffers-kill-terminal :filter-args (ira t))
+(advice-add 'haskell-session-new-assume-from-cabal :override (lambda ()))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
