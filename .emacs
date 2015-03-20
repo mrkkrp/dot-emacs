@@ -6,6 +6,11 @@
 ;;; packages (OS level):
 ;;; * aspell{,-en,-ru,-fr}
 ;;;
+;;; For Haskell development install (with cabal):
+;;; * happy
+;;; * alex
+;;; * ghc-mod
+;;;
 ;;; Copyright (c) 2015 Mark Karpov
 ;;;
 ;;; This program is free software: you can redistribute it and/or modify it
@@ -45,6 +50,7 @@
     color-theme
     fill-column-indicator
     flycheck
+    ghc
     haskell-mode
     magit
     markdown-mode
@@ -112,8 +118,8 @@
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-save-default                 nil     ; don't ever create autosaves
- browse-url-generic-program        "icecat" ; GNU IceCat
  browse-url-browser-function       'browse-url-generic ; use GNU IceCat
+ browse-url-generic-program        "icecat" ; GNU IceCat
  column-number-mode                t       ; display column number
  delete-by-moving-to-trash         t       ; in dired mode
  dired-auto-revert-buffer          t       ; automatically revert buffer
@@ -134,8 +140,8 @@
  initial-scratch-message           ";; Lisp Interaction\n\n" ; scratch msg
  kill-read-only-ok                 t       ; don't rise errors, it's OK
  large-file-warning-threshold      10240000 ; warn when opening >10 Mb file
- make-backup-files                 nil     ; don't create backups
  major-mode                        'text-mode ; default mode is text mode
+ make-backup-files                 nil     ; don't create backups
  minibuffer-eldef-shorten-default  t       ; shorten defaults in minibuffer
  org-agenda-files                  '("~/todo.org")
  org-catch-invisible-edits         'show   ; make point visible
@@ -470,7 +476,7 @@ source."
 (add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
 (add-hook 'erc-mode-hook                #'flyspell-mode)
 (add-hook 'haskell-mode-hook            #'electric-indent-disable-locally)
-(add-hook 'haskell-mode-hook            #'inf-haskell-mode)
+(add-hook 'haskell-mode-hook            #'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook            #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook            #'turn-on-haskell-indent)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
@@ -490,9 +496,6 @@ macro's arguments ignoring any arguments passed to it."
 (advice-add 'revert-buffer   :filter-args (ira nil t))
 (advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
 (advice-add 'save-buffers-kill-terminal :filter-args (ira t))
-(advice-add 'inferior-haskell-load-file :after
-            (lambda (&optional reload)
-              (select-window (car (get-buffer-window-list "*haskell*")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
