@@ -48,9 +48,9 @@
     buffer-move
     cider
     color-theme
-    f
     fill-column-indicator
     flycheck
+    flycheck-haskell
     ghc
     haskell-mode
     magit
@@ -77,7 +77,6 @@
     (package-install package)))
 
 (require 'smooth-scroll)
-(require 'f)
 
 ;; Let's load SLIME with Slime Helper, if there is `slime-helper.el' file,
 ;; we byte-compile it and entire SLIME, and next time we will be able to
@@ -470,23 +469,7 @@ source."
   (flycheck-mode))
 
 (defun haskell-mode-helper ()
-  "Here we tell flycheck how to respect cabal sandbox, disable
-electric indent, turn on interactive Haskell mode and more."
-  (let ((cabal-sandbox-config
-         (cl-do ((path default-directory (f-dirname path))
-                 temp)
-             ((or temp (null path)) temp)
-           (let ((file (f-join path "cabal.sandbox.config")))
-             (when (file-exists-p file)
-               (setq temp file))))))
-    (when cabal-sandbox-config
-      (setq-local flycheck-ghc-package-databases
-                  (list
-                   (with-temp-buffer
-                     (insert-file-contents cabal-sandbox-config)
-                     (search-forward "package-db: ")
-                     (string-trim
-                      (buffer-substring (point) (line-end-position))))))))
+  "Some auxiliary things for Haskell support."
   (electric-indent-local-mode 0)
   (interactive-haskell-mode)
   (turn-on-haskell-doc-mode)
@@ -498,6 +481,7 @@ electric indent, turn on interactive Haskell mode and more."
 (add-hook 'clojure-mode-hook            #'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
 (add-hook 'erc-mode-hook                #'flyspell-mode)
+(add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook            #'haskell-mode-helper)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'scheme-mode-hook             #'rainbow-delimiters-mode)
