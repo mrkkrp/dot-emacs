@@ -136,6 +136,7 @@
  gc-cons-threshold                 10240000 ; garbage collection every 10 Mb
  gnus-permanently-visible-groups   ""      ; always show all groups
  haskell-ask-also-kill-buffers     nil     ; don't ask
+ haskell-process-show-debug-tips   nil     ; don't show anything
  indent-tabs-mode                  nil     ; identation only with spaces
  inferior-lisp-program             "sbcl"  ; SBCL
  inhibit-startup-screen            t       ; remove welcome screen
@@ -411,17 +412,17 @@ print a message about the fact."
         (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
         (kbd ,key) ,def)))
 
+(defkey cc-mode       c                "C-c C-l" #'compile)
+(defkey haskell    haskell-interactive "C-c h"   #'haskell-hoogle)
+(defkey haskell-cabal haskell-cabal    "M-n"     #'transpose-line-down)
+(defkey haskell-cabal haskell-cabal    "M-p"     #'transpose-line-up)
+(defkey haskell-mode  haskell          "C-c h"   #'haskell-hoogle)
 (defkey lisp-mode     emacs-lisp       "C-c h"   #'slime-hyperspec-lookup)
 (defkey lisp-mode     lisp             "C-c h"   #'slime-hyperspec-lookup)
-(defkey slime         slime            "M-p"     #'transpose-line-up)
 (defkey slime         slime            "M-n"     #'transpose-line-down)
+(defkey slime         slime            "M-p"     #'transpose-line-up)
 (defkey slime         slime-repl       "C-c i"   #'slime-in-package)
 (defkey slime         slime-repl       "C-c r"   #'slime-restart-inferior-lisp)
-(defkey haskell-mode  haskell          "C-c h"   #'haskell-hoogle)
-(defkey inf-haskell   inferior-haskell "C-c h"   #'haskell-hoogle)
-(defkey haskell-cabal haskell-cabal    "M-p"     #'transpose-line-up)
-(defkey haskell-cabal haskell-cabal    "M-n"     #'transpose-line-down)
-(defkey cc-mode       c                "C-c C-l" #'compile)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
