@@ -331,7 +331,7 @@ print a message about the fact."
         (deactivate-input-method)
         (ispell-change-dictionary "default"))
     (set-input-method 'russian-computer)
-    (ispell-change-dictionary "Ru")))
+    (ispell-change-dictionary "ru")))
 
 (defun slime-in-package ()
   "Load specified package and switch to it."
