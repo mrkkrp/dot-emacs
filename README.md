@@ -85,12 +85,14 @@ Shortcut           | Description
 <kbd>menu c l</kbd>| Calendar
 <kbd>menu d a</kbd>| show date in the minibuffer
 <kbd>menu e r</kbd>| ERC
+<kbd>menu g d</kbd>| GDB
 <kbd>menu g l</kbd>| goto line
 <kbd>menu g n</kbd>| GNUS
 <kbd>menu h r</kbd>| split window (horizontal)
 <kbd>menu l i</kbd>| SLIME
 <kbd>menu l p</kbd>| list packages
 <kbd>menu m a</kbd>| magit status
+<kbd>menu m n</kbd>| man
 <kbd>menu q r</kbd>| query replace
 <kbd>menu s c</kbd>| Scheme
 <kbd>menu s h</kbd>| shell
