@@ -145,6 +145,7 @@
  large-file-warning-threshold      10240000 ; warn when opening >10 Mb file
  major-mode                        'text-mode ; default mode is text mode
  make-backup-files                 nil     ; don't create backups
+ Man-width                         fill-column ; fill column for man pages
  minibuffer-eldef-shorten-default  t       ; shorten defaults in minibuffer
  org-agenda-files                  '("~/todo.org")
  org-catch-invisible-edits         'show   ; make point visible
