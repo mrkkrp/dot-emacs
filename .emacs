@@ -175,6 +175,7 @@
 (blink-cursor-mode                 0) ; my cursor doesn't blink
 (delete-selection-mode             1) ; delete selection mode enabled
 (display-time-mode                 1) ; displaying time
+(global-auto-revert-mode           1) ; revert buffers automatically
 (menu-bar-mode                    -1) ; hide menu bar
 (minibuffer-electric-default-mode  1) ; electric minibuffer
 (put 'downcase-region  'disabled nil) ; don't ask anything when I use it
@@ -182,10 +183,9 @@
 (put 'upcase-region    'disabled nil) ; see above
 (scroll-bar-mode                  -1) ; disable scroll bar
 (show-paren-mode                   1) ; highlight parenthesis
-(tool-bar-mode                    -1) ; hide tool bar
 (smooth-scroll-mode                t) ; smooth scroll
+(tool-bar-mode                    -1) ; hide tool bar
 (which-function-mode               1) ; displays current function
-(global-auto-revert-mode           1) ; revert buffers automatically
 ;; open .pl files as Prolog files, not Perl files
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
@@ -482,9 +482,12 @@ source."
 (add-hook 'after-change-major-mode-hook #'purge-minor-modes)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 (add-hook 'clojure-mode-hook            #'rainbow-delimiters-mode)
+(add-hook 'dired-mode-hook              #'hl-line-mode)
 (add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
 (add-hook 'erc-mode-hook                #'flyspell-mode)
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
+(add-hook 'gnus-group-mode-hook         #'hl-line-mode)
+(add-hook 'gnus-summary-mode-hook       #'hl-line-mode)
 (add-hook 'haskell-mode-hook            #'haskell-mode-helper)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'scheme-mode-hook             #'rainbow-delimiters-mode)
