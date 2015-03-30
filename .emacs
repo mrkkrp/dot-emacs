@@ -390,6 +390,7 @@ print a message about the fact."
 (global-set-key (kbd "<menu> c i") #'cider-jack-in)
 (global-set-key (kbd "<menu> c l") #'calendar)
 (global-set-key (kbd "<menu> d a") (cmd #'show-date))
+(global-set-key (kbd "<menu> d i") #'diff)
 (global-set-key (kbd "<menu> e r") #'erc)
 (global-set-key (kbd "<menu> g d") #'gdb)
 (global-set-key (kbd "<menu> g l") #'goto-line)

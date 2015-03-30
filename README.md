@@ -84,6 +84,7 @@ Shortcut           | Description
 <kbd>menu c i</kbd>| Cider Jack-in
 <kbd>menu c l</kbd>| Calendar
 <kbd>menu d a</kbd>| show date in the minibuffer
+<kbd>menu d i</kbd>| Diff
 <kbd>menu e r</kbd>| ERC
 <kbd>menu g d</kbd>| GDB
 <kbd>menu g l</kbd>| goto line
