@@ -53,6 +53,8 @@
     flycheck-haskell
     ghc
     haskell-mode
+    ido-hacks
+    ido-ubiquitous
     magit
     markdown-mode
     prolog
@@ -137,6 +139,13 @@
  gnus-permanently-visible-groups   ""      ; always show all groups
  haskell-ask-also-kill-buffers     nil     ; don't ask
  haskell-process-show-debug-tips   nil     ; don't show anything
+ ido-auto-merge-work-directories-length -1 ; disable it
+ ido-create-new-buffer             'always
+ ido-decorations                   '("" "" "·" "…" "" "" "[no match]"
+                                     "[matched]" "[not readable]"
+                                     "[too big]" "[confirm]")
+ ido-enable-flex-matching          t
+ ido-everywhere                    t
  indent-tabs-mode                  nil     ; identation only with spaces
  inferior-lisp-program             "sbcl"  ; SBCL
  inhibit-startup-screen            t       ; remove welcome screen
@@ -154,12 +163,13 @@
  require-final-newline             t       ; always requite it
  resize-mini-windows               t       ; grow and shrink
  ring-bell-function                'ignore ; no annoying alarms
- scroll-step                       1       ; convenient scrolling
+ scroll-margin                     3
+ scroll-step                       1
  send-mail-function                'smtpmail-send-it
  smtpmail-smtp-server              "smtp.openmailbox.org"
  smtpmail-smtp-service             587
  suggest-key-bindings              nil
- tab-width                         4       ; tag width for text-mode
+ tab-width                         4       ; tab width for text-mode
  user-full-name                    "Mark Karpov"
  user-mail-address                 "markkarpov@opmbx.org"
  safe-local-variable-values        '((Syntax  . ANSI-Common-Lisp)
@@ -173,22 +183,27 @@
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(blink-cursor-mode                 0) ; my cursor doesn't blink
+(blink-cursor-mode                 0) ; my cursor doesn't blink, man
 (delete-selection-mode             1) ; delete selection mode enabled
 (display-time-mode                 1) ; displaying time
 (global-auto-revert-mode           1) ; revert buffers automatically
+(ido-mode                          1) ; ido for switch-buffer and find-file
+(ido-ubiquitous-mode               1) ; use ido everywhere
 (menu-bar-mode                    -1) ; hide menu bar
 (minibuffer-electric-default-mode  1) ; electric minibuffer
-(put 'downcase-region  'disabled nil) ; don't ask anything when I use it
-(put 'erase-buffer     'disabled nil) ; see above
-(put 'upcase-region    'disabled nil) ; see above
 (scroll-bar-mode                  -1) ; disable scroll bar
 (show-paren-mode                   1) ; highlight parenthesis
 (smooth-scroll-mode                t) ; smooth scroll
 (tool-bar-mode                    -1) ; hide tool bar
 (which-function-mode               1) ; displays current function
+
 ;; open .pl files as Prolog files, not Perl files
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
+
+(put 'dired-do-copy    'ido      nil) ; use ido there
+(put 'downcase-region  'disabled nil) ; don't ask anything when I use it
+(put 'erase-buffer     'disabled nil) ; see above
+(put 'upcase-region    'disabled nil) ; see above
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
@@ -324,6 +339,18 @@ print a message about the fact."
         (find-file filename)
       (message (concat filename " does not exist.")))))
 
+(defvar scrolling-mode-enabled nil
+  "Whether or not `scrolling-mode' is enabled. See below.")
+
+(defun scrolling-mode ()
+  "Highlight current line, move it to center of the screen, turn
+on `scroll-lock-mode'."
+  (interactive)
+  (let ((switch (if scrolling-mode-enabled 0 1)))
+    (scroll-lock-mode switch)
+    (hl-line-mode     switch)
+    (setq scrolling-mode-enabled (not scrolling-mode-enabled))))
+
 (defun toggle-russian-input ()
   "Switch between Russian input method and normal input method."
   (interactive)
@@ -368,6 +395,7 @@ print a message about the fact."
 (global-set-key (kbd "<f2>")  #'save-buffer)
 (global-set-key (kbd "<f5>")  #'find-file)
 (global-set-key (kbd "<f6>")  #'find-file-other-window)
+(global-set-key (kbd "<f7>")  #'scrolling-mode)
 (global-set-key (kbd "<f8>")  #'toggle-russian-input)
 (global-set-key (kbd "<f9>")  (cmd #'kill-buffer nil))
 (global-set-key (kbd "<f10>") #'delete-other-windows)
