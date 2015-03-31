@@ -146,6 +146,7 @@
                                      "[too big]" "[confirm]")
  ido-enable-flex-matching          t
  ido-everywhere                    t
+ ido-max-window-height             1       ; don't want too many completions
  indent-tabs-mode                  nil     ; identation only with spaces
  inferior-lisp-program             "sbcl"  ; SBCL
  inhibit-startup-screen            t       ; remove welcome screen
@@ -343,8 +344,7 @@ print a message about the fact."
   "Whether or not `scrolling-mode' is enabled. See below.")
 
 (defun scrolling-mode ()
-  "Highlight current line, move it to center of the screen, turn
-on `scroll-lock-mode'."
+  "Highlight current line and turn on `scroll-lock-mode'."
   (interactive)
   (let ((switch (if scrolling-mode-enabled 0 1)))
     (scroll-lock-mode switch)
