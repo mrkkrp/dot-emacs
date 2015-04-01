@@ -322,6 +322,7 @@ BASIC-BUFFERS."
         (delete-window-by-name "*Compile-Log*")))))
 
 (defun compile-init-file ()
+  "Byte compile init file."
   (interactive)
   (let ((compiled (byte-compile-dest-file user-init-file)))
     (if (or (not (file-exists-p compiled))
@@ -340,26 +341,15 @@ print a message about the fact."
         (find-file filename)
       (message (concat filename " does not exist.")))))
 
-(defvar scrolling-mode-enabled nil
-  "Whether or not `scrolling-mode' is enabled. See below.")
-
-(defun scrolling-mode ()
-  "Highlight current line and turn on `scroll-lock-mode'."
-  (interactive)
-  (let ((switch (if scrolling-mode-enabled 0 1)))
-    (scroll-lock-mode switch)
-    (hl-line-mode     switch)
-    (setq scrolling-mode-enabled (not scrolling-mode-enabled))))
-
-(defun toggle-russian-input ()
-  "Switch between Russian input method and normal input method."
-  (interactive)
-  (if current-input-method
+(defun tim (input-method dictionary)
+  "Switch between given input method (and aspell dictionary) and
+normal input method."
+  (if (eq current-input-method input-method)
       (progn
         (deactivate-input-method)
         (ispell-change-dictionary "default"))
-    (set-input-method 'russian-computer)
-    (ispell-change-dictionary "ru")))
+    (set-input-method input-method)
+    (ispell-change-dictionary dictionary)))
 
 (defun slime-in-package ()
   "Load specified package and switch to it."
@@ -395,8 +385,8 @@ print a message about the fact."
 (global-set-key (kbd "<f2>")  #'save-buffer)
 (global-set-key (kbd "<f5>")  #'find-file)
 (global-set-key (kbd "<f6>")  #'find-file-other-window)
-(global-set-key (kbd "<f7>")  #'scrolling-mode)
-(global-set-key (kbd "<f8>")  #'toggle-russian-input)
+(global-set-key (kbd "<f7>")  (cmd #'tim "french-keyboard"  "fr"))
+(global-set-key (kbd "<f8>")  (cmd #'tim "russian-computer" "ru"))
 (global-set-key (kbd "<f9>")  (cmd #'kill-buffer nil))
 (global-set-key (kbd "<f10>") #'delete-other-windows)
 (global-set-key (kbd "<f11>") #'switch-to-buffer)
