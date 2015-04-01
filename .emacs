@@ -414,6 +414,7 @@ normal input method."
 (global-set-key (kbd "<menu> g l") #'goto-line)
 (global-set-key (kbd "<menu> g n") #'gnus)
 (global-set-key (kbd "<menu> h r") #'split-window-below)
+(global-set-key (kbd "<menu> l b") #'list-buffers)
 (global-set-key (kbd "<menu> l i") #'slime)
 (global-set-key (kbd "<menu> l p") #'list-packages)
 (global-set-key (kbd "<menu> m a") #'magit-status)
@@ -452,7 +453,8 @@ normal input method."
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defalias 'yes-or-no-p #'y-or-n-p)
+(defalias 'list-buffers #'ibuffer)
+(defalias 'yes-or-no-p  #'y-or-n-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
@@ -509,6 +511,7 @@ source."
 (add-hook 'gnus-group-mode-hook         #'hl-line-mode)
 (add-hook 'gnus-summary-mode-hook       #'hl-line-mode)
 (add-hook 'haskell-mode-hook            #'haskell-mode-helper)
+(add-hook 'ibuffer-mode-hook            #'hl-line-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'scheme-mode-hook             #'rainbow-delimiters-mode)
 (add-hook 'slime-mode-hook              #'rainbow-delimiters-mode)
