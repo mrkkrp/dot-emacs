@@ -500,6 +500,11 @@ source."
   (turn-on-haskell-doc-mode)
   (turn-on-haskell-indent))
 
+(defun ido-key-bindings ()
+  "Helper to define some non-standard key bindings in ido mode."
+  (define-key ido-completion-map (kbd "C-b") #'ido-prev-match)
+  (define-key ido-completion-map (kbd "C-f") #'ido-next-match))
+
 (add-hook 'after-change-major-mode-hook #'fci-mode)
 (add-hook 'after-change-major-mode-hook #'purge-minor-modes)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
@@ -512,6 +517,7 @@ source."
 (add-hook 'gnus-summary-mode-hook       #'hl-line-mode)
 (add-hook 'haskell-mode-hook            #'haskell-mode-helper)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
+(add-hook 'ido-setup-hook               #'ido-key-bindings)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'scheme-mode-hook             #'rainbow-delimiters-mode)
 (add-hook 'slime-mode-hook              #'rainbow-delimiters-mode)
