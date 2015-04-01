@@ -111,6 +111,7 @@ Shortcut           | Description
 <kbd>C-c C-l</kbd> | C mode: compile project
 <kbd>C-f</kbd>     | ido mode: next completion
 <kbd>C-b</kbd>     | ido mode: previous completion
+<kbd>b</kbd>       | Dired: up directory
 
 ## License
 

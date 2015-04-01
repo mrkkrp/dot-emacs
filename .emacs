@@ -436,6 +436,7 @@ normal input method."
         (kbd ,key) ,def)))
 
 (defkey cc-mode       c                "C-c C-l" #'compile)
+(defkey dired         dired            "b"       #'dired-up-directory)
 (defkey haskell    haskell-interactive "C-c h"   #'haskell-hoogle)
 (defkey haskell-cabal haskell-cabal    "M-n"     #'transpose-line-down)
 (defkey haskell-cabal haskell-cabal    "M-p"     #'transpose-line-up)
