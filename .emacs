@@ -141,12 +141,11 @@
  haskell-process-show-debug-tips   nil     ; don't show anything
  ido-auto-merge-work-directories-length -1 ; disable it
  ido-create-new-buffer             'always
- ido-decorations                   '("" "" "·" "…" "" "" "[no match]"
-                                     "[matched]" "[not readable]"
-                                     "[too big]" "[confirm]")
+ ido-decorations                   '("" "" "·" "…" "" "" " no match"
+                                     " matched" " not readable"
+                                     " too big" " confirm")
  ido-enable-flex-matching          t
  ido-everywhere                    t
- ido-max-window-height             1       ; don't want too many completions
  indent-tabs-mode                  nil     ; identation only with spaces
  inferior-lisp-program             "sbcl"  ; SBCL
  inhibit-startup-screen            t       ; remove welcome screen
@@ -202,6 +201,7 @@
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
 (put 'dired-do-copy    'ido      nil) ; use ido there
+(put 'dired-do-rename  'ido      nil) ; see above
 (put 'downcase-region  'disabled nil) ; don't ask anything when I use it
 (put 'erase-buffer     'disabled nil) ; see above
 (put 'upcase-region    'disabled nil) ; see above
