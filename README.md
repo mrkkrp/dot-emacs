@@ -63,8 +63,8 @@ Shortcut           | Description
 <kbd>F2</kbd>      | save buffer
 <kbd>F5</kbd>      | find file (also Dired)
 <kbd>F6</kbd>      | find file in other window (also Dired)
-<kbd>F7</kbd>      | toggle scrolling mode
-<kbd>F8</kbd>      | toggle Russian input
+<kbd>F7</kbd>      | toggle French input method
+<kbd>F8</kbd>      | toggle Russian input method
 <kbd>F9</kbd>      | kill current buffer
 <kbd>F10</kbd>     | delete other windows
 <kbd>F11</kbd>     | switch to buffer
