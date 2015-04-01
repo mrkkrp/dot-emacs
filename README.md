@@ -91,6 +91,7 @@ Shortcut           | Description
 <kbd>menu g l</kbd>| goto line
 <kbd>menu g n</kbd>| GNUS
 <kbd>menu h r</kbd>| split window (horizontal)
+<kbd>menu l b</kbd>| list buffers
 <kbd>menu l i</kbd>| SLIME
 <kbd>menu l p</kbd>| list packages
 <kbd>menu m a</kbd>| magit status
