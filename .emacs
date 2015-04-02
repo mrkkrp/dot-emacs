@@ -207,6 +207,7 @@
                   "^\*Flycheck error messages\*"
                   "^\*Help\*"
                   "^\*Ibuffer\*"
+                  "^\*Ido Completions\*"
                   "^\*Messages\*"
                   "^\*scratch\*"))
   (add-to-list 'ido-ignore-buffers buffer))
