@@ -44,23 +44,23 @@
 (package-initialize)
 
 (defvar vital-packages
-  '(ace-window
-    buffer-move
-    cider
-    color-theme
-    fill-column-indicator
-    flycheck
-    flycheck-haskell
-    ghc
-    haskell-mode
-    ido-hacks
-    ido-ubiquitous
-    magit
-    markdown-mode
-    prolog
-    rainbow-delimiters
-    smooth-scroll
-    solarized-theme)
+  '(ace-window            ; switching between windows
+    buffer-move           ; move buffers easily
+    cider                 ; for Clojure development
+    color-theme           ; to use `solarized-theme'
+    fill-column-indicator ; paints vertical line on the right
+    flycheck              ; checking code on the fly
+    flycheck-haskell      ; for cabal sandboxes, etc.
+    ghc                   ; improves Haskell REPL experience
+    haskell-mode          ; for Haskell development
+    ido-hacks             ; various ido goodies
+    ido-ubiquitous        ; use ido in more places
+    magit                 ; Emacs mode for git
+    markdown-mode         ; for markdown editing
+    prolog                ; for Prolog development
+    rainbow-delimiters    ; use it for Lisps
+    smooth-scroll         ; pretty scrolling experience
+    solarized-theme)      ; my favorite color theme
   "List of packages that must be installed.")
 
 ;; Install all the packages automatically if they are not installed.
@@ -123,6 +123,7 @@
  auto-save-default                 nil     ; don't ever create autosaves
  browse-url-browser-function       'browse-url-generic ; use GNU IceCat
  browse-url-generic-program        "icecat" ; GNU IceCat
+ calendar-week-start-day           1       ; Monday
  column-number-mode                t       ; display column number
  delete-by-moving-to-trash         t       ; in dired mode
  dired-auto-revert-buffer          t       ; automatically revert buffer
@@ -132,6 +133,7 @@
  dired-recursive-copies            'always ; don't ask me, just do it
  dired-recursive-deletes           'always ; see above
  display-time-24hr-format          t       ; 24 hours format for time
+ echo-keystrokes                   0.1     ; show keystrokes asap
  erc-nick                          "mrkkrp"
  fci-rule-column                   80      ; position of rule column
  fill-column                       76      ; set fill column
@@ -199,6 +201,15 @@
 
 ;; open .pl files as Prolog files, not Perl files
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
+
+(dolist (buffer '("^\*Backtrace\*"
+                  "^\*Compile-Log\*"
+                  "^\*Flycheck error messages\*"
+                  "^\*Help\*"
+                  "^\*Ibuffer\*"
+                  "^\*Messages\*"
+                  "^\*scratch\*"))
+  (add-to-list 'ido-ignore-buffers buffer))
 
 (put 'dired-do-copy    'ido      nil) ; use ido there
 (put 'dired-do-rename  'ido      nil) ; see above
@@ -512,6 +523,7 @@ source."
 (add-hook 'clojure-mode-hook            #'rainbow-delimiters-mode)
 (add-hook 'dired-mode-hook              #'hl-line-mode)
 (add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook         #'eldoc-mode)
 (add-hook 'erc-mode-hook                #'flyspell-mode)
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'gnus-group-mode-hook         #'hl-line-mode)
@@ -519,6 +531,7 @@ source."
 (add-hook 'haskell-mode-hook            #'haskell-mode-helper)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
 (add-hook 'ido-setup-hook               #'ido-key-bindings)
+(add-hook 'lisp-interaction-mode-hook   #'eldoc-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'scheme-mode-hook             #'rainbow-delimiters-mode)
 (add-hook 'slime-mode-hook              #'rainbow-delimiters-mode)
