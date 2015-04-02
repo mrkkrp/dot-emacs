@@ -124,6 +124,11 @@
  browse-url-browser-function       'browse-url-generic ; use GNU IceCat
  browse-url-generic-program        "icecat" ; GNU IceCat
  calendar-week-start-day           1       ; Monday
+ cider-docview-fill-column         76      ; some Cider's variables
+ cider-repl-display-in-current-window t    ; ^
+ cider-repl-result-prefix          ";; => "; ^
+ cider-show-error-buffer           nil     ; ^
+ cider-stacktrace-fill-column      76      ; ^
  column-number-mode                t       ; display column number
  delete-by-moving-to-trash         t       ; in dired mode
  dired-auto-revert-buffer          t       ; automatically revert buffer
@@ -144,9 +149,8 @@
  haskell-process-show-debug-tips   nil     ; don't show anything
  ido-auto-merge-work-directories-length -1 ; disable it
  ido-create-new-buffer             'always
- ido-decorations                   '("" "" "·" "…" "" "" " no match"
-                                     " matched" " not readable"
-                                     " too big" " confirm")
+ ido-decorations                   '("" "" "·" "…" "" "" " no match" " matched"
+                                     " not readable" " too big" " confirm")
  ido-enable-flex-matching          t
  ido-everywhere                    t
  indent-tabs-mode                  nil     ; identation only with spaces
@@ -154,11 +158,12 @@
  inhibit-startup-screen            t       ; remove welcome screen
  initial-scratch-message           ";; Lisp Interaction\n\n" ; scratch msg
  kill-read-only-ok                 t       ; don't rise errors, it's OK
+ Man-width                         fill-column ; fill column for man pages
  large-file-warning-threshold      10240000 ; warn when opening >10 Mb file
  major-mode                        'text-mode ; default mode is text mode
  make-backup-files                 nil     ; don't create backups
- Man-width                         fill-column ; fill column for man pages
  minibuffer-eldef-shorten-default  t       ; shorten defaults in minibuffer
+ nrepl-buffer-name-show-port       nil
  org-agenda-files                  '("~/todo.org")
  org-catch-invisible-edits         'show   ; make point visible
  python-indent-guess-indent-offset nil     ; don't guess indent offset
@@ -399,10 +404,11 @@ normal input method."
 (global-set-key (kbd "C-c e") (cmd #'visit-file user-init-file))
 (global-set-key (kbd "C-c t") (cmd #'visit-file (car org-agenda-files)))
 (global-set-key (kbd "C-c a") #'org-agenda-list)
-(global-set-key (kbd "C-x o") #'ace-window)
 (global-set-key (kbd "C-c i") #'flyspell-correct-word-before-point)
 (global-set-key (kbd "M-p")   #'transpose-line-up)
 (global-set-key (kbd "M-n")   #'transpose-line-down)
+(global-set-key (kbd "C-x o") #'ace-window)
+(global-set-key (kbd "∇")    #'ace-window)
 (global-set-key (kbd "<f2>")  #'save-buffer)
 (global-set-key (kbd "<f5>")  #'find-file)
 (global-set-key (kbd "<f6>")  #'find-file-other-window)
@@ -418,7 +424,6 @@ normal input method."
 (global-set-key (kbd "<S-down>")   #'buf-move-down)
 (global-set-key (kbd "<S-left>")   #'buf-move-left)
 (global-set-key (kbd "<S-right>")  #'buf-move-right)
-(global-set-key (kbd "∇")    #'ace-window)
 (global-set-key (kbd "<menu>")     nil)
 (global-set-key (kbd "<menu> ,")   (cmd #'push-mark))
 (global-set-key (kbd "<menu> .")   (cmd #'goto-char (mark)))
@@ -581,16 +586,3 @@ macro's arguments ignoring any arguments passed to it."
   (load-theme 'solarized-dark t)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                          '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                                                                        ;;
-;;                                 Cider                                  ;;
-;;                                                                        ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq cider-show-error-buffer              nil
-      cider-docview-fill-column            76
-      cider-stacktrace-fill-column         76
-      nrepl-buffer-name-show-port          nil
-      cider-repl-display-in-current-window t
-      cider-repl-result-prefix             ";; => ")
