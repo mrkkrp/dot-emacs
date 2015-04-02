@@ -52,7 +52,7 @@ C-l</kbd>. All frequently used commands require single key pressing for
 me. So, currently I remap my <kbd>CapsLock</kbd> key to <kbd>∇</kbd> (nabla)
 with help of `xmodmap`. Then I use this key to switch between windows. It's
 really convenient, since switching between windows is probably one of the
-most used commands (I used `ace-window` for this).
+most frequent commands (I use `ace-window` for this).
 
 Shortcut           | Description
 --------           | -----------
