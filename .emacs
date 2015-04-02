@@ -129,7 +129,7 @@
  dired-auto-revert-buffer          t       ; automatically revert buffer
  dired-dwim-target                 t       ; guess target directory
  dired-keep-marker-copy            nil     ; don't mark copied files
- dired-listing-switches            "-GAlh" ; ls command arguments
+ dired-listing-switches            "-GAlh --group-directories-first"
  dired-recursive-copies            'always ; don't ask me, just do it
  dired-recursive-deletes           'always ; see above
  display-time-24hr-format          t       ; 24 hours format for time
