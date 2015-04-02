@@ -45,7 +45,7 @@ Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences to
 key-chords. Even if it's not faster, it's good for your health.
 
-Many people advice remapping <kbd>CapsLock</kbd> key to <kbd>Ctrl</kbd>. I
+Many people advise remapping <kbd>CapsLock</kbd> key to <kbd>Ctrl</kbd>. I
 don't feel like I need more convenient <kbd>Ctrl</kbd>, maybe it's because I
 don't use any complex (mortal combat style) key stokes like <kbd>C-c C-o
 C-l</kbd>. All frequently used commands require single key pressing for
