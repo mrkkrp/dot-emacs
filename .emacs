@@ -418,6 +418,7 @@ normal input method."
 (global-set-key (kbd "<S-down>")   #'buf-move-down)
 (global-set-key (kbd "<S-left>")   #'buf-move-left)
 (global-set-key (kbd "<S-right>")  #'buf-move-right)
+(global-set-key (kbd "∇")    #'ace-window)
 (global-set-key (kbd "<menu>")     nil)
 (global-set-key (kbd "<menu> ,")   (cmd #'push-mark))
 (global-set-key (kbd "<menu> .")   (cmd #'goto-char (mark)))
