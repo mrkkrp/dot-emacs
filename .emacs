@@ -133,6 +133,7 @@
  dired-recursive-copies            'always ; don't ask me, just do it
  dired-recursive-deletes           'always ; see above
  display-time-24hr-format          t       ; 24 hours format for time
+ display-time-default-load-average nil     ; don't clutter my status line
  echo-keystrokes                   0.1     ; show keystrokes asap
  erc-nick                          "mrkkrp"
  fci-rule-column                   80      ; position of rule column
@@ -211,6 +212,9 @@
                   "^\*Messages\*"
                   "^\*scratch\*"))
   (add-to-list 'ido-ignore-buffers buffer))
+
+(eval-after-load 'which-func
+  '(setq which-func-format (list (cadr which-func-format))))
 
 (put 'dired-do-copy    'ido      nil) ; use ido there
 (put 'dired-do-rename  'ido      nil) ; see above
