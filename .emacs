@@ -205,12 +205,17 @@
 
 (dolist (buffer '("^\*Backtrace\*"
                   "^\*Compile-Log\*"
+                  "^\*Completions\*"
                   "^\*Flycheck error messages\*"
                   "^\*Help\*"
                   "^\*Ibuffer\*"
                   "^\*Ido Completions\*"
                   "^\*Messages\*"
-                  "^\*scratch\*"))
+                  "^\*inferior-lisp\*"
+                  "^\*scratch\*"
+                  "^\*slime-compilation\*"
+                  "^\*slime-description\*"
+                  "^\*slime-events\*"))
   (add-to-list 'ido-ignore-buffers buffer))
 
 (eval-after-load 'which-func
@@ -485,10 +490,12 @@ normal input method."
     eldoc-mode
     flycheck-mode
     flyspell-mode
-    inf-haskell-mode
-    haskell-indent-mode
     haskell-doc-mode
+    haskell-indent-mode
+    inf-haskell-mode
+    ispell-minor-mode
     magit-auto-revert-mode
+    slime-mode
     smooth-scroll-mode)
   "Collection of minor modes that should not appear on the status
 line.")
