@@ -501,6 +501,7 @@ normal input method."
     haskell-doc-mode
     haskell-indent-mode
     inf-haskell-mode
+    interactive-haskell-mode
     ispell-minor-mode
     magit-auto-revert-mode
     slime-mode
@@ -508,14 +509,32 @@ normal input method."
   "Collection of minor modes that should not appear on the status
 line.")
 
-(defun purge-minor-modes ()
-  "Puts empty strings for minor modes in HIDDEN-MINOR-MODES into
+(defvar major-mode-alias
+  '((c-mode                   . "C")
+    (clojure-mode             . "c")
+    (dired-mode               . "δ")
+    (emacs-lisp-mode          . "ε")
+    (haskell-mode             . "H")
+    (haskell-interactive-mode . "i")
+    (lisp-interaction-mode    . "i")
+    (lisp-mode                . "λ")
+    (markdown-mode            . "M")
+    (prolog-mode              . "P")
+    (sh-mode                  . "sh"))
+  "Shorter alias for some major modes.")
+
+(defun fix-mode-representation ()
+  "Put empty strings for minor modes in HIDDEN-MINOR-MODES into
 MINOR-MODE-ALIST, effectively evicting them from the status
-line."
+line. Substitute names of some major modes using values from
+MAJOR-MODE-NAMES."
   (dolist (x hidden-minor-modes)
     (let ((trg (cdr (assoc x minor-mode-alist))))
       (when trg
-        (setcar trg "")))))
+        (setcar trg ""))))
+  (let ((mode-alias (cdr (assoc major-mode major-mode-alias))))
+    (when mode-alias
+      (setq mode-name mode-alias))))
 
 (defun prepare-prog-mode ()
   "This function enables some minor modes when user works on some
@@ -538,7 +557,7 @@ source."
   (define-key ido-completion-map (kbd "C-f") #'ido-next-match))
 
 (add-hook 'after-change-major-mode-hook #'fci-mode)
-(add-hook 'after-change-major-mode-hook #'purge-minor-modes)
+(add-hook 'after-change-major-mode-hook #'fix-mode-representation)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 (add-hook 'clojure-mode-hook            #'rainbow-delimiters-mode)
 (add-hook 'dired-mode-hook              #'hl-line-mode)
