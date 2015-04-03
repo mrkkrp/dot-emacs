@@ -45,15 +45,6 @@ Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences to
 key-chords. Even if it's not faster, it's good for your health.
 
-Many people advise remapping <kbd>CapsLock</kbd> key to <kbd>Ctrl</kbd>. I
-don't feel like I need more convenient <kbd>Ctrl</kbd>, maybe it's because I
-don't use any complex (mortal combat style) key stokes like <kbd>C-c C-o
-C-l</kbd>. All frequently used commands require single key pressing for
-me. So, currently I remap my <kbd>CapsLock</kbd> key to <kbd>∇</kbd> (nabla)
-with help of `xmodmap`. Then I use this key to switch between windows. It's
-really convenient, since switching between windows is probably one of the
-most frequent commands (I use `ace-window` for this).
-
 Shortcut           | Description
 --------           | -----------
 <kbd>C-c c</kbd>   | comment region
@@ -67,9 +58,9 @@ Shortcut           | Description
 <kbd>C-c t</kbd>   | open org agenda file
 <kbd>C-c a</kbd>   | org agenda (week)
 <kbd>C-c i</kbd>   | correct word before point
+<kbd>C-'</kbd>     | switch to other buffer
 <kbd>M-p</kbd>     | transpose line up
 <kbd>M-n</kbd>     | transpose line down
-<kbd>∇</kbd>       | switch to other buffer
 <kbd>F2</kbd>      | save buffer
 <kbd>F5</kbd>      | find file (also Dired)
 <kbd>F6</kbd>      | find file in other window (also Dired)

@@ -405,10 +405,10 @@ normal input method."
 (global-set-key (kbd "C-c t") (cmd #'visit-file (car org-agenda-files)))
 (global-set-key (kbd "C-c a") #'org-agenda-list)
 (global-set-key (kbd "C-c i") #'flyspell-correct-word-before-point)
+(global-set-key (kbd "C-x o") #'ace-window)
+(global-set-key (kbd "C-'")   #'ace-window)
 (global-set-key (kbd "M-p")   #'transpose-line-up)
 (global-set-key (kbd "M-n")   #'transpose-line-down)
-(global-set-key (kbd "C-x o") #'ace-window)
-(global-set-key (kbd "∇")    #'ace-window)
 (global-set-key (kbd "<f2>")  #'save-buffer)
 (global-set-key (kbd "<f5>")  #'find-file)
 (global-set-key (kbd "<f6>")  #'find-file-other-window)
@@ -474,6 +474,8 @@ normal input method."
 (defkey slime         slime            "M-p"     #'transpose-line-up)
 (defkey slime         slime-repl       "C-c i"   #'slime-in-package)
 (defkey slime         slime-repl       "C-c r"   #'slime-restart-inferior-lisp)
+(defkey markdown-mode markdown         "M-n"     #'transpose-line-down)
+(defkey markdown-mode markdown         "M-p"     #'transpose-line-up)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
