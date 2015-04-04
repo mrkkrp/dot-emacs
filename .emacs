@@ -210,11 +210,10 @@
 
 (dolist (buffer '("^\*Backtrace\*"
                   "^\*Compile-Log\*"
-                  "^\*Completions\*"
+                  "^\*.+Completions\*"
                   "^\*Flycheck error messages\*"
                   "^\*Help\*"
                   "^\*Ibuffer\*"
-                  "^\*Ido Completions\*"
                   "^\*Messages\*"
                   "^\*inferior-lisp\*"
                   "^\*scratch\*"
@@ -286,7 +285,7 @@ insert date into currently active buffer."
   '("^\*scratch\*"
     "^\*Messages\*"
     "^irc\.freenode\.net:6667"
-    "^#.?")
+    "^#.+")
   "These are regexps to match names of buffers that I don't want
 to purge with PURGE-BUFFERS command.")
 
@@ -512,15 +511,17 @@ line.")
 (defvar major-mode-alias
   '((c-mode                   . "C")
     (clojure-mode             . "c")
+    (diff-mode                . "Δ")
     (dired-mode               . "δ")
     (emacs-lisp-mode          . "ε")
     (haskell-mode             . "H")
-    (haskell-interactive-mode . "i")
-    (lisp-interaction-mode    . "i")
+    (haskell-interactive-mode . "iH")
+    (lisp-interaction-mode    . "iε")
     (lisp-mode                . "λ")
     (markdown-mode            . "M")
     (prolog-mode              . "P")
-    (sh-mode                  . "sh"))
+    (sh-mode                  . "sh")
+    (slime-repl-mode          . "iλ"))
   "Shorter alias for some major modes.")
 
 (defun fix-mode-representation ()
