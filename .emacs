@@ -47,7 +47,6 @@
   '(ace-window            ; switching between windows
     buffer-move           ; move buffers easily
     cider                 ; for Clojure development
-    color-theme           ; to use `solarized-theme'
     fill-column-indicator ; paints vertical line on the right
     flycheck              ; checking code on the fly
     flycheck-haskell      ; for cabal sandboxes, etc.
@@ -158,6 +157,7 @@
  inhibit-startup-screen            t       ; remove welcome screen
  initial-scratch-message           ";; Lisp Interaction\n\n" ; scratch msg
  kill-read-only-ok                 t       ; don't rise errors, it's OK
+ magit-last-seen-setup-instructions "1.4.0"
  Man-width                         fill-column ; fill column for man pages
  large-file-warning-threshold      10240000 ; warn when opening >10 Mb file
  major-mode                        'text-mode ; default mode is text mode
@@ -470,6 +470,7 @@ normal input method."
 (defkey haskell-mode  haskell          "C-c h"   #'haskell-hoogle)
 (defkey lisp-mode     emacs-lisp       "C-c h"   #'slime-hyperspec-lookup)
 (defkey lisp-mode     lisp             "C-c h"   #'slime-hyperspec-lookup)
+(defkey org           org              "C-'"     #'ace-window)
 (defkey slime         slime            "M-n"     #'transpose-line-down)
 (defkey slime         slime            "M-p"     #'transpose-line-up)
 (defkey slime         slime-repl       "C-c i"   #'slime-in-package)
