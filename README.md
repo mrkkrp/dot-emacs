@@ -113,6 +113,7 @@ Shortcut           | Description
 <kbd>C-f</kbd>     | ido mode: next completion
 <kbd>C-b</kbd>     | ido mode: previous completion
 <kbd>b</kbd>       | Dired: up directory
+<kbd>z</kbd>       | Dired: change to WDired mode
 
 ## License
 

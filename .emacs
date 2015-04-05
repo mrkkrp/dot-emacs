@@ -463,6 +463,7 @@ normal input method."
 
 (defkey cc-mode       c                "C-c C-l" #'compile)
 (defkey dired         dired            "b"       #'dired-up-directory)
+(defkey dired         dired            "z"       #'wdired-change-to-wdired-mode)
 (defkey haskell    haskell-interactive "C-c h"   #'haskell-hoogle)
 (defkey haskell-cabal haskell-cabal    "M-n"     #'transpose-line-down)
 (defkey haskell-cabal haskell-cabal    "M-p"     #'transpose-line-up)
@@ -514,14 +515,15 @@ line.")
     (diff-mode                . "Δ")
     (dired-mode               . "δ")
     (emacs-lisp-mode          . "ε")
-    (haskell-mode             . "H")
     (haskell-interactive-mode . "iH")
+    (haskell-mode             . "H")
     (lisp-interaction-mode    . "iε")
     (lisp-mode                . "λ")
     (markdown-mode            . "M")
     (prolog-mode              . "P")
     (sh-mode                  . "sh")
-    (slime-repl-mode          . "iλ"))
+    (slime-repl-mode          . "iλ")
+    (wdired-mode              . "wδ"))
   "Shorter alias for some major modes.")
 
 (defun fix-mode-representation ()
@@ -585,11 +587,12 @@ macro's arguments ignoring any arguments passed to it."
      (interactive)
      ',args))
 
+(advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
+(advice-add 'haskell-session-new-assume-from-cabal :override (lambda ()))
 (advice-add 'org-agenda-todo :after       #'org-save-all-org-buffers)
 (advice-add 'revert-buffer   :filter-args (ira nil t))
-(advice-add 'compile         :filter-args (ira "cd .. ; make -k"))
 (advice-add 'save-buffers-kill-terminal :filter-args (ira t))
-(advice-add 'haskell-session-new-assume-from-cabal :override (lambda ()))
+(advice-add 'wdired-change-to-dired-mode :after #'fix-mode-representation)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
