@@ -1,13 +1,13 @@
 # Emacs Configuration Files
 
 What can I say... I'm productive like a devil now. Emacs is something that
-encourage its users to think about their productivity and once you started
+encourages its users to think about their productivity and once you started
 to search for ways to improve your workflow and efficiency -- sky is the
 limit.
 
 What is so special about these configuration files? Well, first of all,
-`.emacs` file contains all the interesting things. And it's just `600+`
-lines long, look at it and you will find it quite dense. It's also pretty
+`.emacs` file contains all the interesting things. And it's just 600+ lines
+long, look at it and you will find it quite dense. It's also pretty
 lightweight and requires only 16 packages to work.
 
 ## Features
@@ -29,12 +29,12 @@ Some minor features I have implemented (nothing special):
 
 I use `solarized-dark` theme. It's the only theme I can use, seriously. My
 font of choice is `Ubuntu Mono`, because it's easy to get on Arch Linux and
-it supports all scripts that I need: Latin, Cyrillic, Greek, and how knows
+it supports all scripts that I need: Latin, Cyrillic, Greek, and who knows
 what else (I like strange symbols), it's also quite pretty. (Use Infinality
-if you use Arch Linux, your eyes deserve it). I had been a big fan of
+if you use Arch Linux, your eyes deserve it.) I had been a big fan of
 Inconsolata before I switched to Ubuntu Mono. The reason for switching is
 that there is no normal version of the font supporting Cyrillic script (yes,
-I've tried modifications à la Inconsolata-lcg, they suck or I'm not
+I've tried modifications à la Inconsolata LCG, they suck or I'm not
 sufficiently dedicated person to make them look normally). I also enable
 `hl-line-mode` in modes like `dired` for prettiness (see code).
 
@@ -94,8 +94,8 @@ possible, but we cannot use only one key after the introducing key, because
 total number of combinations won't be satisfactory. But we can use two keys
 after introducing key (<kbd>menu</kbd> in my case, if you don't have
 <kbd>menu</kbd> on your keyboard you can remap something with help of
-specialized software), then we get `26 × 26 = 676` combinations! Not bad at
-all. There are enough combinations, so you can choose those that have some
+specialized software), then we get 26 × 26 = 676 combinations! Not bad at
+all. There are enough combinations for you to prefer those that have some
 mnemonic value. Give this technique a try and you will see how productive
 you can be!
 
