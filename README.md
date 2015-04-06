@@ -84,6 +84,7 @@ Shortcut            | Description
 <kbd>menu c a</kbd> | Calc
 <kbd>menu c i</kbd> | Cider Jack-in
 <kbd>menu c l</kbd> | Calendar
+<kbd>menu c s</kbd> | set coding system
 <kbd>menu d a</kbd> | show date in the minibuffer
 <kbd>menu d i</kbd> | Diff
 <kbd>menu e r</kbd> | ERC
