@@ -120,8 +120,8 @@
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-save-default                 nil     ; don't ever create autosaves
- browse-url-browser-function       'browse-url-generic ; use GNU IceCat
- browse-url-generic-program        "icecat" ; GNU IceCat
+ browse-url-browser-function       'browse-url-generic
+ browse-url-generic-program        "icecat"
  calendar-week-start-day           1       ; Monday
  cider-docview-fill-column         76      ; some Cider's variables
  cider-repl-display-in-current-window t    ; ^
@@ -135,7 +135,7 @@
  dired-keep-marker-copy            nil     ; don't mark copied files
  dired-listing-switches            "-GAlh --group-directories-first"
  dired-recursive-copies            'always ; don't ask me, just do it
- dired-recursive-deletes           'always ; see above
+ dired-recursive-deletes           'always ; ^
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
  echo-keystrokes                   0.1     ; show keystrokes asap
@@ -152,10 +152,11 @@
                                      " not readable" " too big" " confirm")
  ido-enable-flex-matching          t
  ido-everywhere                    t
- indent-tabs-mode                  nil     ; identation only with spaces
- inferior-lisp-program             "sbcl"  ; SBCL
+ indent-tabs-mode                  nil     ; only spaces
+ indicate-buffer-boundaries        t
+ inferior-lisp-program             "sbcl"
  inhibit-startup-screen            t       ; remove welcome screen
- initial-scratch-message           ";; Lisp Interaction\n\n" ; scratch msg
+ initial-scratch-message           ";; Μὴ μοῦ τοὺς κύκλους τάραττε\n\n"
  kill-read-only-ok                 t       ; don't rise errors, it's OK
  magit-last-seen-setup-instructions "1.4.0"
  Man-width                         fill-column ; fill column for man pages
@@ -166,9 +167,7 @@
  nrepl-buffer-name-show-port       nil
  org-agenda-files                  '("~/todo.org")
  org-catch-invisible-edits         'show   ; make point visible
- python-indent-guess-indent-offset nil     ; don't guess indent offset
- python-indent-offset              4       ; indent offset for python mode
- require-final-newline             t       ; always requite it
+ require-final-newline             t
  resize-mini-windows               t       ; grow and shrink
  ring-bell-function                'ignore ; no annoying alarms
  scroll-margin                     3
@@ -223,13 +222,14 @@
   (add-to-list 'ido-ignore-buffers buffer))
 
 (eval-after-load 'which-func
-  '(setq which-func-format (list (cadr which-func-format))))
+  '(setq which-func-format  (list (cadr which-func-format))
+         which-func-unknown "⊥"))
 
 (put 'dired-do-copy    'ido      nil) ; use ido there
-(put 'dired-do-rename  'ido      nil) ; see above
-(put 'downcase-region  'disabled nil) ; don't ask anything when I use it
-(put 'erase-buffer     'disabled nil) ; see above
-(put 'upcase-region    'disabled nil) ; see above
+(put 'dired-do-rename  'ido      nil) ; ^
+(put 'downcase-region  'disabled nil) ; don't ever doubt my power
+(put 'erase-buffer     'disabled nil) ; ^
+(put 'upcase-region    'disabled nil) ; ^
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
@@ -507,11 +507,12 @@ normal input method."
     magit-auto-revert-mode
     slime-mode
     smooth-scroll-mode)
-  "Collection of minor modes that should not appear on the status
+  "Collection of minor modes that should not appear in the mode
 line.")
 
 (defvar major-mode-alias
   '((c-mode                   . "C")
+    (cider-repl-mode          . "ic")
     (clojure-mode             . "c")
     (diff-mode                . "Δ")
     (dired-mode               . "δ")
@@ -521,6 +522,7 @@ line.")
     (lisp-interaction-mode    . "iε")
     (lisp-mode                . "λ")
     (markdown-mode            . "M")
+    (prolog-inferior-mode     . "iP")
     (prolog-mode              . "P")
     (sh-mode                  . "sh")
     (slime-repl-mode          . "iλ")
