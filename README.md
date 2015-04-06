@@ -1,23 +1,44 @@
 # Emacs Configuration Files
 
-These are my Emacs and GNUS configuration files. I wrote these files slowly
-borrowing useful things that I saw in Emacs configuration files of other
-people and official GNU Emacs manuals. However, I've written quite a bit of
-stuff myself, because I couldn't find decent solutions.
+What can I say... I'm productive like a devil now. Emacs is something that
+encourage its users to think about their productivity and once you started
+to search for ways to improve your workflow and efficiency -- sky is the
+limit.
 
-The `.emacs` file defines function to search Internet with DuckDuckGo. It
-generates such URLs so DuckDuckGo operates in HTML mode, without any
-proprietary Java Script. Also the URLs include parameters to remove ads
-(well, a sponsored link in results is not a big deal anyway). It also forces
-DuckDuckGo work only via HTTPS.
+What is so special about these configuration files? Well, first of all,
+`.emacs` file contains all the interesting things. And it's just `600+`
+lines long, look at it and you will find it quite dense. It's also pretty
+lightweight and requires only 16 packages to work.
 
-Also, here is some automation to install all necessary packages and some
-automation to compile/recompile SLIME (works smoothly with Quicklisp).
+## Features
 
-I have written a function to upgrade all packages without displaying
-`*Packages*` buffer. This function directly finds all obsolete packages,
-asks if user want to upgrade and if he/she really wants to, install fresh
-versions of packages automatically deleting obsolete versions.
+Some minor features I have implemented (nothing special):
+
+* automatic installation of all necessary packages;
+* automation to compile/recompile SLIME (works smoothly with Quicklisp);
+* transposition and duplication of lines;
+* purging of buffers (except for "basic" ones);
+* searching online with DuckDuckGo (you can use Google if you can tolerate
+  spying);
+* upgrading of all packages without displaying of `*Packages*` buffer;
+* smart switching between default input method, French, and Russian;
+* some mode line wizardly (can't use `smart-mode-line`, sorry);
+* many little hacks that make everything work smoothly and look sexy.
+
+## Visual
+
+I use `solarized-dark` theme. It's the only theme I can use, seriously. My
+font of choice is `Ubuntu Mono`, because it's easy to get on Arch Linux and
+it supports all scripts that I need: Latin, Cyrillic, Greek, and how knows
+what else (I like strange symbols), it's also quite pretty. (Use Infinality
+if you use Arch Linux, your eyes deserve it). I had been a big fan of
+Inconsolata before I switched to Ubuntu Mono. The reason for switching is
+that there is no normal version of the font supporting Cyrillic script (yes,
+I've tried modifications à la Inconsolata-lcg, they suck or I'm not
+sufficiently dedicated person to make them look normally). I also enable
+`hl-line-mode` in modes like `dired` for prettiness (see code).
+
+## GNUS
 
 To send emails with Emacs and read emails with GNUS, you need to create a
 file called `.authinfo.gpg` in your home directory. As its extension
@@ -41,9 +62,42 @@ favorite GNU/Linux distribution.
 
 ## Shortcuts
 
+If you do text editing professionally and you have no ergonomic keyboard,
+get one. I use "Truly Ergonomic Keyboard" (no, they don't pay me for the
+advertising). If you're using a laptop, remap <kbd>CapsLock</kbd> to
+<kbd>Ctrl</kbd> now! Your pinky will thank you later.
+
 Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences to
-key-chords. Even if it's not faster, it's good for your health.
+key-chords. Even if it's not faster, it's better for your health.
+
+I make use of <kbd>F</kbd> keys. There are not so many of them (I could bind
+only 9 commands this way, since <kbd>F1</kbd>, <kbd>F3</kbd>, and
+<kbd>F4</kbd> are already used by Emacs) so we have to use them
+wisely. <kbd>F</kbd> keys are precious because single key pressing is the
+most efficient thing you can do and on most keyboards you can easily reach
+the keys.
+
+Next, Emacs allows us to define some custom key bindings that start with
+<kbd>C-c</kbd> prefix. I've assigned some commands this way. The bad thing
+about these shortcuts is that you have to start them with a chord
+<kbd>C-c</kbd>, while it's way better than <kbd>C-c C-o C-l</kbd> (such
+shortcuts shouldn't be used at all!), I don't like to press several keys
+simultaneously (unless such a combination is self-sufficient, like
+<kbd>C-n</kbd>). Also, there are not so many combinations starting with this
+common prefix, if we want to avoid too long key sequences.
+
+Here key sequences starting with "introducing key" come into play. We can
+choose single key, whose seul rôle will be starting key sequences. How long
+should every such a key sequence be?  Of course we want it to be as short as
+possible, but we cannot use only one key after the introducing key, because
+total number of combinations won't be satisfactory. But we can use two keys
+after introducing key (<kbd>menu</kbd> in my case, if you don't have
+<kbd>menu</kbd> on your keyboard you can remap something with help of
+specialized software), then we get `26 × 26 = 676` combinations! Not bad at
+all. There are enough combinations, so you can choose those that have some
+mnemonic value. Give this technique a try and you will see how productive
+you can be!
 
 Shortcut            | Description
 --------            | -----------
