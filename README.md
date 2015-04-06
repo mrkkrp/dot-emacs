@@ -45,75 +45,78 @@ Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences to
 key-chords. Even if it's not faster, it's good for your health.
 
-Shortcut           | Description
---------           | -----------
-<kbd>C-c c</kbd>   | comment region
-<kbd>C-c u</kbd>   | uncomment region
-<kbd>C-c r</kbd>   | revert current buffer
-<kbd>C-c p</kbd>   | purge all buffers (except for 'basic')
-<kbd>C-c s</kbd>   | search online with DuckDuckGo
-<kbd>C-c g</kbd>   | upgrade all packages
-<kbd>C-c b</kbd>   | byte compile initialization file
-<kbd>C-c e</kbd>   | open initialization file
-<kbd>C-c t</kbd>   | open org agenda file
-<kbd>C-c a</kbd>   | org agenda (week)
-<kbd>C-c i</kbd>   | correct word before point
-<kbd>C-'</kbd>     | switch to other buffer
-<kbd>M-p</kbd>     | transpose line up
-<kbd>M-n</kbd>     | transpose line down
-<kbd>F2</kbd>      | save buffer
-<kbd>F5</kbd>      | find file (also Dired)
-<kbd>F6</kbd>      | find file in other window (also Dired)
-<kbd>F7</kbd>      | toggle French input method
-<kbd>F8</kbd>      | toggle Russian input method
-<kbd>F9</kbd>      | kill current buffer
-<kbd>F10</kbd>     | delete other windows
-<kbd>F11</kbd>     | switch to buffer
-<kbd>F12</kbd>     | save buffers and kill terminal (exit)
-<kbd>escape</kbd>  | delete window
-<kbd>C-return</kbd>| duplicate line
-<kbd>S-up</kbd>    | move buffer up
-<kbd>S-down</kbd>  | move buffer down
-<kbd>S-left</kbd>  | move buffer left
-<kbd>S-right</kbd> | move buffer right
-<kbd>menu ,</kbd>  | push mark
-<kbd>menu .</kbd>  | jump to marked position without popping
-<kbd>menu /</kbd>  | middle of the buffer
-<kbd>menu <</kbd>  | beginning of the buffer
-<kbd>menu ></kbd>  | end of the buffer
-<kbd>menu a p</kbd>| apropos
-<kbd>menu c a</kbd>| Calc
-<kbd>menu c i</kbd>| Cider Jack-in
-<kbd>menu c l</kbd>| Calendar
-<kbd>menu d a</kbd>| show date in the minibuffer
-<kbd>menu d i</kbd>| Diff
-<kbd>menu e r</kbd>| ERC
-<kbd>menu g d</kbd>| GDB
-<kbd>menu g l</kbd>| goto line
-<kbd>menu g n</kbd>| GNUS
-<kbd>menu h r</kbd>| split window (horizontal)
-<kbd>menu l b</kbd>| list buffers
-<kbd>menu l i</kbd>| SLIME
-<kbd>menu l p</kbd>| list packages
-<kbd>menu m a</kbd>| magit status
-<kbd>menu m n</kbd>| man
-<kbd>menu q r</kbd>| query replace
-<kbd>menu s c</kbd>| Scheme
-<kbd>menu s h</kbd>| shell
-<kbd>menu s l</kbd>| sort lines
-<kbd>menu s s</kbd>| switch to scratch buffer
-<kbd>menu s t</kbd>| insert date
-<kbd>menu t e</kbd>| tetris
-<kbd>menu v r</kbd>| split window (vertical)
-<kbd>C-c r</kbd>   | SLIME: restart inferior Lisp
-<kbd>C-c h</kbd>   | SLIME: Hyper Spec lookup
-<kbd>C-c i</kdb>   | SLIME: load ASDF system switch to package
-<kbd>C-c h</kbd>   | Haskell: Hoogle query
-<kbd>C-c C-l</kbd> | C mode: compile project
-<kbd>C-f</kbd>     | ido mode: next completion
-<kbd>C-b</kbd>     | ido mode: previous completion
-<kbd>b</kbd>       | Dired: up directory
-<kbd>z</kbd>       | Dired: change to WDired mode
+Shortcut            | Description
+--------            | -----------
+<kbd>C-c r</kbd>    | revert current buffer
+<kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
+<kbd>C-c s</kbd>    | search online with DuckDuckGo
+<kbd>C-c g</kbd>    | upgrade all packages
+<kbd>C-c b</kbd>    | byte compile initialization file
+<kbd>C-c e</kbd>    | open initialization file
+<kbd>C-c t</kbd>    | open org agenda file
+<kbd>C-c a</kbd>    | org agenda (week)
+<kbd>C-c i</kbd>    | correct word before point
+<kbd>C-'</kbd>      | switch to other buffer
+<kbd>M-p</kbd>      | transpose line up
+<kbd>M-n</kbd>      | transpose line down
+<kbd>F2</kbd>       | save buffer
+<kbd>F5</kbd>       | find file (also Dired)
+<kbd>F6</kbd>       | find file in other window (also Dired)
+<kbd>F7</kbd>       | toggle French input method
+<kbd>F8</kbd>       | toggle Russian input method
+<kbd>F9</kbd>       | kill current buffer
+<kbd>F10</kbd>      | delete other windows
+<kbd>F11</kbd>      | switch to buffer
+<kbd>F12</kbd>      | save buffers and kill terminal (exit)
+<kbd>escape</kbd>   | delete window
+<kbd>C-return</kbd> | duplicate line
+<kbd>S-up</kbd>     | move buffer up
+<kbd>S-down</kbd>   | move buffer down
+<kbd>S-left</kbd>   | move buffer left
+<kbd>S-right</kbd>  | move buffer right
+<kbd>menu ,</kbd>   | push mark
+<kbd>menu .</kbd>   | jump to marked position without popping
+<kbd>menu /</kbd>   | middle of the buffer
+<kbd>menu <</kbd>   | beginning of the buffer
+<kbd>menu ></kbd>   | end of the buffer
+<kbd>menu a p</kbd> | apropos
+<kbd>menu a r</kbd> | align regexp
+<kbd>menu c a</kbd> | Calc
+<kbd>menu c i</kbd> | Cider Jack-in
+<kbd>menu c l</kbd> | Calendar
+<kbd>menu d a</kbd> | show date in the minibuffer
+<kbd>menu d i</kbd> | Diff
+<kbd>menu e r</kbd> | ERC
+<kbd>menu g d</kbd> | GDB
+<kbd>menu g l</kbd> | goto line
+<kbd>menu g n</kbd> | GNUS
+<kbd>menu h r</kbd> | split window (horizontal)
+<kbd>menu k r</kbd> | kill rectangle
+<kbd>menu l b</kbd> | list buffers
+<kbd>menu l i</kbd> | SLIME
+<kbd>menu l p</kbd> | list packages
+<kbd>menu m a</kbd> | magit status
+<kbd>menu m n</kbd> | man
+<kbd>menu q r</kbd> | query replace
+<kbd>menu r n</kbd> | rectangle number lines
+<kbd>menu s c</kbd> | Scheme
+<kbd>menu s h</kbd> | shell
+<kbd>menu s l</kbd> | sort lines
+<kbd>menu s r</kbd> | string rectangle
+<kbd>menu s s</kbd> | switch to scratch buffer
+<kbd>menu s t</kbd> | insert date
+<kbd>menu t e</kbd> | tetris
+<kbd>menu v r</kbd> | split window (vertical)
+<kbd>menu y r</kbd> | yank rectangle
+<kbd>C-c r</kbd>    | SLIME: restart inferior Lisp
+<kbd>C-c h</kbd>    | SLIME: Hyper Spec lookup
+<kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
+<kbd>C-c h</kbd>    | Haskell: Hoogle query
+<kbd>C-c C-l</kbd>  | C mode: compile project
+<kbd>C-f</kbd>      | ido mode: next completion
+<kbd>C-b</kbd>      | ido mode: previous completion
+<kbd>b</kbd>        | Dired: up directory
+<kbd>z</kbd>        | Dired: change to WDired mode
 
 ## License
 
