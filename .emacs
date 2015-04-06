@@ -153,7 +153,6 @@
  ido-enable-flex-matching          t
  ido-everywhere                    t
  indent-tabs-mode                  nil     ; only spaces
- indicate-buffer-boundaries        t
  inferior-lisp-program             "sbcl"
  inhibit-startup-screen            t       ; remove welcome screen
  initial-scratch-message           ";; Μὴ μοῦ τοὺς κύκλους τάραττε\n\n"
