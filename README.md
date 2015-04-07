@@ -134,6 +134,7 @@ Shortcut            | Description
 <kbd>menu /</kbd>   | middle of the buffer
 <kbd>menu <</kbd>   | beginning of the buffer
 <kbd>menu ></kbd>   | end of the buffer
+<kbd>menu a b</kbd> | toggle abbrev mode
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
 <kbd>menu c a</kbd> | Calc
