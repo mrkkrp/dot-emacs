@@ -11,7 +11,7 @@
 ;;; * alex
 ;;; * ghc-mod
 ;;;
-;;; Copyright (c) 2015 Mark Karpov
+;;; Copyright © 2015 Mark Karpov
 ;;;
 ;;; This program is free software: you can redistribute it and/or modify it
 ;;; under the terms of the GNU General Public License as published by the
@@ -169,6 +169,7 @@
  require-final-newline             t
  resize-mini-windows               t       ; grow and shrink
  ring-bell-function                'ignore ; no annoying alarms
+ save-abbrevs                      nil     ; I keep all the stuff here
  scroll-margin                     3
  scroll-step                       1
  send-mail-function                'smtpmail-send-it
@@ -404,6 +405,7 @@ normal input method."
         (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
         (kbd ,key) ,def)))
 
+(gkbd "C-c c"      #'expand-abbrev)
 (gkbd "C-c r"      #'revert-buffer)
 (gkbd "C-c p"      #'purge-buffers)
 (gkbd "C-c s"      #'search-online)
@@ -438,11 +440,13 @@ normal input method."
 (gkbd "<menu> /"   (cmd #'goto-char (point-mid)))
 (gkbd "<menu> <"   (cmd #'goto-char (point-min)))
 (gkbd "<menu> >"   (cmd #'goto-char (point-max)))
+(gkbd "<menu> a b" #'abbrev-mode)
 (gkbd "<menu> a p" #'apropos)
 (gkbd "<menu> a r" #'align-regexp)
 (gkbd "<menu> c a" #'calc)
 (gkbd "<menu> c i" #'cider-jack-in)
 (gkbd "<menu> c l" #'calendar)
+(gkbd "<menu> c r" #'copy-rectangle-as-kill)
 (gkbd "<menu> c s" #'set-buffer-file-coding-system)
 (gkbd "<menu> d a" (cmd #'show-date))
 (gkbd "<menu> d i" #'diff)
@@ -488,12 +492,51 @@ normal input method."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
-;;                                Aliases                                 ;;
+;;                        Aliases & Abbreviations                         ;;
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defalias 'list-buffers #'ibuffer)
 (defalias 'yes-or-no-p  #'y-or-n-p)
+
+(define-abbrev-table 'global-abbrev-table
+  '(("8apeq"  "≈") ; approximately equal
+    ("8bull" "•")  ; bullet
+    ("8copy" "©")  ; copyright sign
+    ("8dagg" "†")  ; dagger
+    ("8dagr" "‡")  ; crossed dagger
+    ("8dash" "—")  ; em dash
+    ("8dda"  "⇓") ; double downwards arrow
+    ("8degr" "°")  ; degree
+    ("8delt" "Δ")  ; delta
+    ("8dla"  "⇐") ; double leftwards arrow
+    ("8dra"  "⇒") ; double rightwards arrow
+    ("8dua"  "⇑") ; double upwards arrow
+    ("8elip" "…")  ; elipsis
+    ("8guil" "«»") ; guillemets
+    ("8ineg" "∫")  ; integral
+    ("8ineq" "≠")  ; inequality
+    ("8inf"  "∞")  ; infinity
+    ("8intr" "·")  ; interpunct
+    ("8mnpl" "∓")  ; minus-plus
+    ("8mult" "×")  ; multiplication
+    ("8nabl" "∇")  ; nabla
+    ("8num"  "№")  ; numero sign
+    ("8obel" "÷")  ; obelus
+    ("8pi"   "π")  ; pi
+    ("8plmn" "±")  ; plus-minus
+    ("8pnd"  "£")  ; pound
+    ("8prod" "∏")  ; product
+    ("8qed"  "■")  ; quod erat demonstrandum
+    ("8root" "√")  ; root
+    ("8rub"  "₽")  ; Russian ruble
+    ("8sda"  "↓") ; simple downwards arrow
+    ("8sect" "§")  ; section
+    ("8sla"  "←") ; simple leftwards arrow
+    ("8sra"  "→") ; simple rightwards arrow
+    ("8sua"  "↑") ; simple upwards arrow
+    ("8sum"  "∑"))  ; summation
+  "Abbreviations to insert some Unicode characters automatically.")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                        ;;
@@ -501,53 +544,37 @@ normal input method."
 ;;                                                                        ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defvar hidden-minor-modes
-  '(abbrev-mode
-    auto-fill-function
-    eldoc-mode
-    flycheck-mode
-    flyspell-mode
-    haskell-doc-mode
-    haskell-indent-mode
-    inf-haskell-mode
-    interactive-haskell-mode
-    ispell-minor-mode
-    magit-auto-revert-mode
-    slime-mode
-    smooth-scroll-mode
-    subword-mode
-    superword-mode)
-  "Collection of minor modes that should not appear in the mode
-line.")
+(defvar minor-mode-alias
+  '((abbrev-mode              . "")     (inf-haskell-mode         . "")
+    (auto-fill-function       . "")     (interactive-haskell-mode . "")
+    (eldoc-mode               . "")     (ispell-minor-mode        . "")
+    (flycheck-mode            . "")     (magit-auto-revert-mode   . "")
+    (flyspell-mode            . "")     (slime-mode               . "")
+    (haskell-doc-mode         . "")     (smooth-scroll-mode       . "")
+    (haskell-indent-mode      . "")     (subword-mode             . "")
+                                        (superword-mode           . ""))
+  "Alias for minor modes.")
 
 (defvar major-mode-alias
-  '((c-mode                   . "C")
-    (cider-repl-mode          . "ic")
-    (clojure-mode             . "c")
-    (diff-mode                . "Δ")
-    (dired-mode               . "δ")
-    (emacs-lisp-mode          . "ε")
-    (haskell-interactive-mode . "iH")
-    (haskell-mode             . "H")
-    (lisp-interaction-mode    . "iε")
-    (lisp-mode                . "λ")
-    (markdown-mode            . "M")
-    (prolog-inferior-mode     . "iP")
-    (prolog-mode              . "P")
-    (sh-mode                  . "sh")
-    (slime-repl-mode          . "iλ")
-    (wdired-mode              . "wδ"))
-  "Shorter alias for some major modes.")
+  '((c-mode                   . "C")    (lisp-interaction-mode    . "iε")
+    (cider-repl-mode          . "ic")   (lisp-mode                . "λ")
+    (clojure-mode             . "c")    (markdown-mode            . "M")
+    (diff-mode                . "Δ")    (prolog-inferior-mode     . "iP")
+    (dired-mode               . "δ")    (prolog-mode              . "P")
+    (emacs-lisp-mode          . "ε")    (sh-mode                  . "sh")
+    (haskell-interactive-mode . "iH")   (slime-repl-mode          . "iλ")
+    (haskell-mode             . "H")    (wdired-mode              . "wδ"))
+  "Alias for major modes.")
 
 (defun fix-mode-representation ()
   "Put empty strings for minor modes in HIDDEN-MINOR-MODES into
 MINOR-MODE-ALIST, effectively evicting them from the status
 line. Substitute names of some major modes using values from
 MAJOR-MODE-NAMES."
-  (dolist (x hidden-minor-modes)
-    (let ((trg (cdr (assoc x minor-mode-alist))))
+  (dolist (x minor-mode-alias)
+    (let ((trg (cdr (assoc (car x) minor-mode-alist))))
       (when trg
-        (setcar trg ""))))
+        (setcar trg (cdr x)))))
   (let ((mode-alias (cdr (assoc major-mode major-mode-alias))))
     (when mode-alias
       (setq mode-name mode-alias))))
@@ -572,13 +599,14 @@ source."
   (define-key ido-completion-map (kbd "C-b") #'ido-prev-match)
   (define-key ido-completion-map (kbd "C-f") #'ido-next-match))
 
+(add-hook 'after-change-major-mode-hook #'abbrev-mode)
 (add-hook 'after-change-major-mode-hook #'fci-mode)
 (add-hook 'after-change-major-mode-hook #'fix-mode-representation)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 (add-hook 'clojure-mode-hook            #'rainbow-delimiters-mode)
 (add-hook 'dired-mode-hook              #'hl-line-mode)
-(add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook         #'eldoc-mode)
+(add-hook 'emacs-lisp-mode-hook         #'rainbow-delimiters-mode)
 (add-hook 'erc-mode-hook                #'flyspell-mode)
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'gnus-group-mode-hook         #'hl-line-mode)

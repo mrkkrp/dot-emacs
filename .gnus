@@ -2,7 +2,7 @@
 ;;;
 ;;; .gnus, configuration file for GNUS
 ;;;
-;;; Copyright (c) 2015 Mark Karpov
+;;; Copyright © 2015 Mark Karpov
 ;;;
 ;;; The configuration file is free software: you can redistribute it and/or
 ;;; modify it under the terms of the GNU General Public License as published

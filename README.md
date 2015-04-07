@@ -1,8 +1,8 @@
 # Emacs Configuration Files
 
-What can I say... I'm productive like a devil now. Emacs is something that
+What can I say… I'm productive like a devil now. Emacs is something that
 encourages its users to think about their productivity and once you started
-to search for ways to improve your workflow and efficiency -- sky is the
+to search for ways to improve your workflow and efficiency — sky is the
 limit.
 
 What is so special about these configuration files? Well, first of all,
@@ -101,6 +101,7 @@ you can be!
 
 Shortcut            | Description
 --------            | -----------
+<kbd>C-c c</kbd>    | expand abbreviation before point
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
@@ -138,6 +139,7 @@ Shortcut            | Description
 <kbd>menu c a</kbd> | Calc
 <kbd>menu c i</kbd> | Cider Jack-in
 <kbd>menu c l</kbd> | Calendar
+<kbd>menu c r</kbd> | copy rectangle
 <kbd>menu c s</kbd> | set coding system
 <kbd>menu d a</kbd> | show date in the minibuffer
 <kbd>menu d i</kbd> | Diff
@@ -175,6 +177,6 @@ Shortcut            | Description
 
 ## License
 
-Copyright (c) 2015 Mark Karpov
+Copyright © 2015 Mark Karpov
 
 Distributed under GNU GPL, version 3.
