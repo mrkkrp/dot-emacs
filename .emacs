@@ -500,18 +500,18 @@ normal input method."
 (defalias 'yes-or-no-p  #'y-or-n-p)
 
 (define-abbrev-table 'global-abbrev-table
-  '(("8apeq"  "≈") ; approximately equal
+  '(("8apeq" "≈")  ; approximately equal
     ("8bull" "•")  ; bullet
     ("8copy" "©")  ; copyright sign
     ("8dagg" "†")  ; dagger
     ("8dagr" "‡")  ; crossed dagger
     ("8dash" "—")  ; em dash
-    ("8dda"  "⇓") ; double downwards arrow
+    ("8dda"  "⇓")  ; double downwards arrow
     ("8degr" "°")  ; degree
     ("8delt" "Δ")  ; delta
-    ("8dla"  "⇐") ; double leftwards arrow
-    ("8dra"  "⇒") ; double rightwards arrow
-    ("8dua"  "⇑") ; double upwards arrow
+    ("8dla"  "⇐")  ; double leftwards arrow
+    ("8dra"  "⇒")  ; double rightwards arrow
+    ("8dua"  "⇑")  ; double upwards arrow
     ("8elip" "…")  ; elipsis
     ("8guil" "«»") ; guillemets
     ("8ineg" "∫")  ; integral
@@ -530,12 +530,12 @@ normal input method."
     ("8qed"  "■")  ; quod erat demonstrandum
     ("8root" "√")  ; root
     ("8rub"  "₽")  ; Russian ruble
-    ("8sda"  "↓") ; simple downwards arrow
+    ("8sda"  "↓")  ; simple downwards arrow
     ("8sect" "§")  ; section
-    ("8sla"  "←") ; simple leftwards arrow
-    ("8sra"  "→") ; simple rightwards arrow
-    ("8sua"  "↑") ; simple upwards arrow
-    ("8sum"  "∑"))  ; summation
+    ("8sla"  "←")  ; simple leftwards arrow
+    ("8sra"  "→")  ; simple rightwards arrow
+    ("8sua"  "↑")  ; simple upwards arrow
+    ("8sum"  "∑")) ; summation
   "Abbreviations to insert some Unicode characters automatically.")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
