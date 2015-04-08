@@ -38,7 +38,7 @@
 (add-to-list 'major-mode-alias '(haskell-interactive-mode . "iH"))
 (add-to-list 'major-mode-alias '(haskell-mode             . "H"))
 
-(add-hook 'haskell-mode-hook #'electric-indent-local-mode)
+(add-hook 'haskell-mode-hook (ε #'electric-indent-local-mode 0))
 (add-hook 'haskell-mode-hook #'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook #'turn-on-haskell-indent)
