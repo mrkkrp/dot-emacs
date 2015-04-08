@@ -98,6 +98,7 @@
 (π "<menu> c r" #'copy-rectangle-as-kill)
 (π "<menu> c s" #'set-buffer-file-coding-system)
 (π "<menu> d a" (ε #'show-date))
+(π "<menu> d c" #'describe-char)
 (π "<menu> d i" #'diff)
 (π "<menu> e r" #'erc)
 (π "<menu> g d" #'gdb)
