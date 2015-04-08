@@ -5,11 +5,6 @@ encourages its users to think about their productivity and once you started
 to search for ways to improve your workflow and efficiency — sky is the
 limit.
 
-What is so special about these configuration files? Well, first of all,
-`.emacs` file contains all the interesting things. And it's just 600+ lines
-long, look at it and you will find it quite dense. It's also pretty
-lightweight and requires only 16 packages to work.
-
 ## Features
 
 Some minor features I have implemented (nothing special):
@@ -106,7 +101,7 @@ Shortcut            | Description
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c g</kbd>    | upgrade all packages
-<kbd>C-c b</kbd>    | byte compile initialization file
+<kbd>C-c b</kbd>    | byte compile initialization files
 <kbd>C-c e</kbd>    | open initialization file
 <kbd>C-c t</kbd>    | open org agenda file
 <kbd>C-c a</kbd>    | org agenda (week)
