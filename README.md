@@ -141,6 +141,7 @@ Shortcut            | Description
 <kbd>menu d c</kbd> | describe char
 <kbd>menu d i</kbd> | Diff
 <kbd>menu e r</kbd> | ERC
+<kbd>menu e s</kbd> | Emacs Shell
 <kbd>menu g d</kbd> | GDB
 <kbd>menu g l</kbd> | goto line
 <kbd>menu g n</kbd> | GNUS
