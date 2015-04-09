@@ -30,16 +30,10 @@
                    (#x2207 . #x220e)
                    (#x2266 . #xfffd)))
     (set-fontset-font t range "DejaVu Sans Mono"))
-  (set-face-attribute 'default
-                      nil
-                      :family "Ubuntu Mono"
-                      :height 120)
-  (set-face-attribute 'variable-pitch
-                      nil
-                      :family "Ubuntu Mono")
+  (set-face-attribute 'default nil :family "Ubuntu Mono" :height 120)
+  (set-face-attribute 'variable-pitch nil :family "Ubuntu Mono")
   (load-theme 'solarized-dark t)
-  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                         '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
+  (toggle-frame-fullscreen))
 
 (provide 'mk-visual)
 
