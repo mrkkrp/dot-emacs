@@ -34,8 +34,8 @@
  dired-recursive-copies    'always  ; don't ask me, just do it
  dired-recursive-deletes   'always) ; ^
 
-(τ dired dired "b" #'dired-up-directory)
-(τ dired dired "z" #'wdired-change-to-wdired-mode)
+(τ dired dired "b"   #'dired-up-directory)
+(τ dired dired "z"   #'wdired-change-to-wdired-mode)
 
 (add-to-list 'major-mode-alias '(dired-mode  . "δ"))
 (add-to-list 'major-mode-alias '(wdired-mode . "wδ"))

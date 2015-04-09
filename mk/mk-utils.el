@@ -73,7 +73,7 @@ Position of point shifts one line down."
 If STAMP is not NIL, insert date into currently active buffer."
   (interactive)
   (funcall (if stamp #'insert #'message)
-           (format-time-string "%A, %d %B %Y")))
+           (format-time-string "%A, %e %B %Y")))
 
 (defvar basic-buffers
   '("^\*scratch\*"

@@ -27,7 +27,8 @@
 
 (setq
  org-agenda-files          '("~/todo.org")
- org-catch-invisible-edits 'show) ; make point visible
+ org-catch-invisible-edits 'show ; make point visible
+ org-elipsis               "…")
 
 (τ org org "C-'" #'ace-window)
 

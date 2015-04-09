@@ -33,6 +33,7 @@
  echo-keystrokes                  0.1     ; show keystrokes asap
  gc-cons-threshold                10240000 ; garbage collection every 10 Mb
  indent-tabs-mode                 nil     ; only spaces
+ indicate-empty-lines             t       ; show where buffer's content ends
  inhibit-startup-screen           t       ; remove welcome screen
  initial-scratch-message          ";; Μὴ μοῦ τοὺς κύκλους τάραττε\n\n"
  kill-read-only-ok                t       ; don't rise errors, it's OK
@@ -101,6 +102,7 @@
 (π "<menu> d c" #'describe-char)
 (π "<menu> d i" #'diff)
 (π "<menu> e r" #'erc)
+(π "<menu> e s" #'eshell)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'goto-line)
 (π "<menu> g n" #'gnus)
@@ -123,8 +125,9 @@
 (π "<menu> v r" #'split-window-right)
 (π "<menu> y r" #'yank-rectangle)
 
-(defalias 'list-buffers #'ibuffer)
-(defalias 'yes-or-no-p  #'y-or-n-p)
+(defalias 'display-startup-echo-area-message (ε #'show-date))
+(defalias 'list-buffers                      #'ibuffer)
+(defalias 'yes-or-no-p                       #'y-or-n-p)
 
 (add-hook 'after-change-major-mode-hook #'apply-mode-alias)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)

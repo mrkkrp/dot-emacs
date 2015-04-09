@@ -27,11 +27,13 @@
 
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
+ auto-revert-verbose               nil     ; be quiet
  column-number-mode                t       ; display column number
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
  fci-rule-column                   80      ; position of rule column
  fill-column                       76      ; set fill column
+ global-auto-revert-non-file-buffers t     ; mainly for Dired
  ido-auto-merge-work-directories-length -1 ; disable it
  ido-create-new-buffer             'always
  ido-decorations          '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")

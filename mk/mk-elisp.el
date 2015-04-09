@@ -25,6 +25,8 @@
 
 (require 'mk-utils)
 
+(setq eldoc-idle-delay 0.1) ; default is way too long
+
 (τ lisp-mode emacs-lisp "C-c h" #'slime-hyperspec-lookup)
 
 (add-to-list 'major-mode-alias '(emacs-lisp-mode       . "ε"))
