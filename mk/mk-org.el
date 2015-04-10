@@ -25,8 +25,13 @@
 
 (require 'mk-utils)
 
+(defun org-files ()
+  "Return list of all org files."
+  (directory-files (expand-file-name "org" user-emacs-directory)
+                   t "\\`.*\\.org\\'" t))
+
 (setq
- org-agenda-files          '("~/todo.org")
+ org-agenda-files          (org-files)
  org-catch-invisible-edits 'show ; make point visible
  org-elipsis               "…")
 

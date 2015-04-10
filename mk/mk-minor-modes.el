@@ -47,12 +47,12 @@
 (global-subword-mode               1) ; move through camel case, etc.
 (ido-mode                          1) ; ido for switch-buffer and find-file
 (ido-ubiquitous-mode               1) ; use ido everywhere
-(menu-bar-mode                    -1) ; hide menu bar
+(menu-bar-mode                     0) ; hide menu bar
 (minibuffer-electric-default-mode  1) ; electric minibuffer
-(scroll-bar-mode                  -1) ; disable scroll bar
+(scroll-bar-mode                   0) ; disable scroll bar
 (show-paren-mode                   1) ; highlight parenthesis
-(smooth-scroll-mode                t) ; smooth scroll
-(tool-bar-mode                    -1) ; hide tool bar
+(smooth-scroll-mode                1) ; smooth scroll
+(tool-bar-mode                     0) ; hide tool bar
 (which-function-mode               1) ; displays current function
 
 (eval-after-load 'which-func
@@ -104,6 +104,7 @@
 
 (add-hook 'after-change-major-mode-hook #'abbrev-mode)
 (add-hook 'after-change-major-mode-hook #'fci-mode)
+(add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
 (add-hook 'ido-setup-hook               #'ido-key-bindings)
