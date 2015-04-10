@@ -80,6 +80,7 @@
 (require 'mk-abbrev)      ; some abbreviations to insert Unicode characters
 (require 'mk-c)           ; various major modes
 (require 'mk-calendar)    ; ^
+(require 'mk-cider)       ; ^
 (require 'mk-diff)        ; ^
 (require 'mk-dired)       ; ^
 (require 'mk-elisp)       ; ^
