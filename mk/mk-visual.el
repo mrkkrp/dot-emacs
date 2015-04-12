@@ -28,6 +28,7 @@
                    (#x2127 . #x2201)
                    (#x2213 . #x2214)
                    (#x2207 . #x220e)
+                   (#x2261 . #x2263)
                    (#x2266 . #xfffd)))
     (set-fontset-font t range "DejaVu Sans Mono"))
   (set-face-attribute 'default nil :family "Ubuntu Mono" :height 120)

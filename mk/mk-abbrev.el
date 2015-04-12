@@ -30,6 +30,7 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(("8apeq" "≈")  ; approximately equal
+    ("8bot"  "⊥")  ; bottom
     ("8bull" "•")  ; bullet
     ("8copy" "©")  ; copyright sign
     ("8dagg" "†")  ; dagger
@@ -37,12 +38,12 @@
     ("8dash" "—")  ; em dash
     ("8dda"  "⇓")  ; double downwards arrow
     ("8degr" "°")  ; degree
-    ("8delt" "Δ")  ; delta
     ("8dla"  "⇐")  ; double leftwards arrow
     ("8dra"  "⇒")  ; double rightwards arrow
     ("8dua"  "⇑")  ; double upwards arrow
     ("8elip" "…")  ; elipsis
     ("8guil" "«»") ; guillemets
+    ("8id"   "≡")  ; identical to
     ("8ineg" "∫")  ; integral
     ("8ineq" "≠")  ; inequality
     ("8inf"  "∞")  ; infinity
@@ -52,7 +53,6 @@
     ("8nabl" "∇")  ; nabla
     ("8num"  "№")  ; numero sign
     ("8obel" "÷")  ; obelus
-    ("8pi"   "π")  ; pi
     ("8plmn" "±")  ; plus-minus
     ("8pnd"  "£")  ; pound
     ("8prod" "∏")  ; product
@@ -64,7 +64,31 @@
     ("8sla"  "←")  ; simple leftwards arrow
     ("8sra"  "→")  ; simple rightwards arrow
     ("8sua"  "↑")  ; simple upwards arrow
-    ("8sum"  "∑")) ; summation
+    ("8sum"  "∑")  ; summation
+    ("8alpha"   "α") ("8Alpha"   "Α")
+    ("8beta"    "β") ("8Betta"   "Β")
+    ("8gamma"   "Y") ("8Gamma"   "Γ")
+    ("8delta"   "δ") ("8Delta"   "Δ")
+    ("8epsilon" "ε") ("8Epsilon" "Ε")
+    ("8zeta"    "ζ") ("8Zeta"    "Ζ")
+    ("8eta"     "η") ("8Eta"     "Η")
+    ("8theta"   "θ") ("8Theta"   "Θ")
+    ("8iota"    "ι") ("8Iota"    "Ι")
+    ("8kappa"   "κ") ("8Kappa"   "Κ")
+    ("8lambda"  "λ") ("8Lambda"  "Λ")
+    ("8mu"      "μ") ("8Mu"      "Μ")
+    ("8nu"      "ν") ("8Nu"      "Ν")
+    ("8xi"      "ξ") ("8Xi"      "Ξ")
+    ("8omicron" "ο") ("8Omicron" "Ο")
+    ("8pi"      "π") ("8Pi"      "Π")
+    ("8rho"     "ρ") ("8Rho"     "Ρ")
+    ("8sigma"   "σ") ("8Sigma"   "Σ") ("8fsigma" "ς")
+    ("8tau"     "τ") ("8Tau"     "Τ")
+    ("8upsilon" "υ") ("8Upsilon" "Υ")
+    ("8phi"     "φ") ("8Phi"     "Φ")
+    ("8chi"     "χ") ("8Chi"     "Χ")
+    ("8psi"     "ψ") ("8Psi"     "Ψ")
+    ("8omega"   "ω") ("8Omega"   "Ω"))
   "Abbreviations to insert some Unicode characters automatically.")
 
 (provide 'mk-abbrev)
