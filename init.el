@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(let ((emacs-version-needed "24.5"))
+(let ((emacs-version-needed "25"))
   (when (version< emacs-version emacs-version-needed)
     (error "Emacs %s is way too old, install at least Emacs %s"
            emacs-version
