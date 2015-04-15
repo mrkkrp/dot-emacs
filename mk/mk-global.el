@@ -122,6 +122,7 @@
 (π "<menu> s s" (ε #'switch-to-buffer "*scratch*"))
 (π "<menu> s t" (ε #'show-date t))
 (π "<menu> t e" #'tetris)
+(π "<menu> v e" #'version)
 (π "<menu> v r" #'split-window-right)
 (π "<menu> y r" #'yank-rectangle)
 

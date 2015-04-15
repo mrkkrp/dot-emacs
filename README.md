@@ -161,6 +161,7 @@ Shortcut            | Description
 <kbd>menu s s</kbd> | switch to scratch buffer
 <kbd>menu s t</kbd> | insert date
 <kbd>menu t e</kbd> | tetris
+<kbd>menu v e</kbd> | show version in minibuffer
 <kbd>menu v r</kbd> | split window (vertical)
 <kbd>menu y r</kbd> | yank rectangle
 <kbd>C-c r</kbd>    | SLIME: restart inferior Lisp
