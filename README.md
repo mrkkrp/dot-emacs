@@ -169,8 +169,6 @@ Shortcut            | Description
 <kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
 <kbd>C-c h</kbd>    | Haskell: Hoogle query
 <kbd>C-c C-l</kbd>  | C mode: compile project
-<kbd>C-f</kbd>      | ido mode: next completion
-<kbd>C-b</kbd>      | ido mode: previous completion
 <kbd>b</kbd>        | Dired: up directory
 <kbd>z</kbd>        | Dired: change to WDired mode
 

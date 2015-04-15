@@ -90,11 +90,6 @@
    (haskell-indent-mode      . "") (subword-mode             . "")
                                    (superword-mode           . "")))
 
-(defun ido-key-bindings ()
-  "Helper to define some non-standard key bindings in ido mode."
-  (define-key ido-completion-map (kbd "C-b") #'ido-prev-match)
-  (define-key ido-completion-map (kbd "C-f") #'ido-next-match))
-
 (defun prepare-prog-mode ()
   "This function enables some minor modes for programming."
   (auto-fill-mode 1)
@@ -107,7 +102,6 @@
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
-(add-hook 'ido-setup-hook               #'ido-key-bindings)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'text-mode-hook               #'auto-fill-mode)
 (add-hook 'text-mode-hook               #'flyspell-mode)
