@@ -107,7 +107,6 @@ Shortcut            | Description
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c i</kbd>    | correct word before point
 <kbd>C-'</kbd>      | switch to other buffer
-<kbd>C-w</kbd>      | delete backward char
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-n</kbd>      | transpose line down
 <kbd>F2</kbd>       | save buffer

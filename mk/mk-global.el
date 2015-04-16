@@ -68,7 +68,6 @@
 (π "C-x o"      #'ace-window)
 (π "C-'"        #'ace-window)
 (π "C-j"        #'newline)
-(π "C-w"        #'delete-backward-char)
 (π "M-p"        #'transpose-line-up)
 (π "M-n"        #'transpose-line-down)
 (π "<f2>"       #'save-buffer)
