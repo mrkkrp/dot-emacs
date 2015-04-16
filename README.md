@@ -107,6 +107,7 @@ Shortcut            | Description
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c i</kbd>    | correct word before point
 <kbd>C-'</kbd>      | switch to other buffer
+<kbd>C-w</kbd>      | delete backward char
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-n</kbd>      | transpose line down
 <kbd>F2</kbd>       | save buffer
@@ -145,6 +146,7 @@ Shortcut            | Description
 <kbd>menu g d</kbd> | GDB
 <kbd>menu g l</kbd> | goto line
 <kbd>menu g n</kbd> | GNUS
+<kbd>menu g r</kbd> | recursive grep
 <kbd>menu h r</kbd> | split window (horizontal)
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
