@@ -12,7 +12,7 @@ Some minor features I have implemented (nothing special):
 * automatic installation of all necessary packages;
 * automation to compile/recompile SLIME (works smoothly with Quicklisp);
 * transposition and duplication of lines;
-* purging of buffers (except for "basic" ones);
+* purging of buffers (except for «basic» ones);
 * searching online with DuckDuckGo (you can use Google if you can tolerate
   spying);
 * upgrading of all packages without displaying of `*Packages*` buffer;
@@ -55,12 +55,51 @@ machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
 To use spell-checking you need to install `aspell` from repositories of your
 favorite GNU/Linux distribution.
 
-## Shortcuts
+## Key Remapping
 
 If you do text editing professionally and you have no ergonomic keyboard,
-get one. I use "Truly Ergonomic Keyboard" (no, they don't pay me for the
-advertising). If you're using a laptop, remap <kbd>CapsLock</kbd> to
-<kbd>Ctrl</kbd> now! Your pinky will thank you later.
+get one. I use «Truly Ergonomic Keyboard» (no, they don't pay me for the
+advertising).
+
+It's common knowledge that if you use a laptop, you should remap <kbd>Caps
+Lock</kbd> to <kbd>Ctrl</kbd> (at least if you're an Emacs user). It's
+undoubtedly true, but what about <kbd>Tab ↹</kbd> key and <kbd>⌫
+Backspace</kbd>? There are three things to consider:
+
+1. You need to press <kbd>⌫ Backspace</kbd> more often or just as often as
+   <kbd>Tab ↹</kbd> (when editing code, in other cases you usually don't
+   need <kbd>Tab ↹</kbd> at all).
+
+2. On standard laptop keyboard <kbd>Tab ↹</kbd> occupies very comfortable
+   position right above <kbd>Caps Lock</kbd>, while <kbd>⌫ Backspace</kbd>
+   is far away and you need to *change* position of your hand a little to
+   reach it.
+
+3. There are no other way in Emacs to invoke `backward-delete-char` command,
+   than via <kbd>⌫ Backspace</kbd>, there is no handy alternative key
+   binding for it, while <kbd>Tab ↹</kbd> has comfortable alternative
+   <kbd>C-i</kbd>.
+
+So why not swap <kbd>Tab ↹</kbd> key and <kbd>⌫ Backspace</kbd>? If you're a
+Linux user, here is `~/.Xmodmap` file that may be helpful:
+
+```
+! Laptop setting:
+! First, make CapsLock third control:
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Caps_Lock = Control_L
+add Control = Control_L
+! Second, swap Tab and BackSpace:
+keysym Tab = BackSpace
+keysym BackSpace = Tab
+```
+
+I recommend changing shortcut for «window cycling», it's usually <kbd>Alt +
+Tab ↹</kbd>, now it should be <kbd>Alt + ⌫ Backspace</kbd>, because this key
+combination is comfortable and shouldn't change.
+
+## Key bindings
 
 Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences to
@@ -82,7 +121,7 @@ simultaneously (unless such a combination is self-sufficient, like
 <kbd>C-n</kbd>). Also, there are not so many combinations starting with this
 common prefix, if we want to avoid too long key sequences.
 
-Here key sequences starting with "introducing key" come into play. We can
+Here key sequences starting with «introducing key» come into play. We can
 choose single key, whose seul rôle will be starting key sequences. How long
 should every such a key sequence be?  Of course we want it to be as short as
 possible, but we cannot use only one key after the introducing key, because
