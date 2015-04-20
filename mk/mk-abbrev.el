@@ -41,7 +41,7 @@
     ("8dla"  "⇐")  ; double leftwards arrow
     ("8dra"  "⇒")  ; double rightwards arrow
     ("8dua"  "⇑")  ; double upwards arrow
-    ("8elip" "…")  ; elipsis
+    ("8elli" "…")  ; ellipsis
     ("8guil" "«»") ; guillemets
     ("8id"   "≡")  ; identical to
     ("8ineg" "∫")  ; integral

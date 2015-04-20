@@ -213,6 +213,61 @@ Shortcut            | Description
 <kbd>b</kbd>        | Dired: up directory
 <kbd>z</kbd>        | Dired: change to WDired mode
 
+## Abbreviations
+
+It's true that standard keyboards have too few keys. We should be able to
+input many-many different fancy symbols and switch languages very easily,
+with one key pressing. I use <kbd>F7</kbd> and <kbd>F8</kbd> for this
+task. Every key performs switching to input method of some language or
+disables input method of that language when this it's already active. This
+way I don't need to «cycle» through all the languages — horrible thing.
+
+But there are also quite a few characters that don't belong to any
+particular keyboard layout or language. To input them I use Emacs
+abbreviations. All my abbreviations start with `8` simply because this key
+is easy to reach.
+
+Here is the transformation table:
+
+Abbreviation  | Result Character | Name of the character
+------------  | ---------------- | ---------------------
+`8apeq`       | ≈                | approximately equal
+`8bot`        | ⊥                | bottom
+`8bull`       | •                | bullet
+`8copy`       | ©                | copyright sign
+`8dagg`       | †                | dagger
+`8dagr`       | ‡                | crossed dagger
+`8dash`       | —                | em dash
+`8dda`        | ⇓                | double downwards arrow
+`8degr`       | °                | degree
+`8dla`        | ⇐                | double leftwards arrow
+`8dra`        | ⇒                | double rightwards arrow
+`8dua`        | ⇑                | double upwards arrow
+`8elli`       | …                | ellipsis
+`8guil`       | «»               | guillemets
+`8id`         | ≡                | identical to
+`8ineg`       | ∫                | integral
+`8ineq`       | ≠                | inequality
+`8inf`        | ∞                | infinity
+`8intr`       | ·                | interpunct
+`8mnpl`       | ∓                | minus-plus
+`8mult`       | ×                | multiplication
+`8nabl`       | ∇                | nabla
+`8num`        | №                | numero sign
+`8obel`       | ÷                | obelus
+`8plmn`       | ±                | plus-minus
+`8pnd`        | £                | pound
+`8prod`       | ∏                | product
+`8qed`        | ■                | quod erat demonstrandum
+`8root`       | √                | root
+`8rub`        | ₽                | Russian ruble
+`8sda`        | ↓                | simple downwards arrow
+`8sect`       | §                | section
+`8sla`        | ←                | simple leftwards arrow
+`8sra`        | →                | simple rightwards arrow
+`8sua`        | ↑                | simple upwards arrow
+`8sum`        | ∑                | summation
+
 ## License
 
 Copyright © 2015 Mark Karpov
