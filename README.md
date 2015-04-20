@@ -268,6 +268,37 @@ Abbreviation  | Result Character | Name of the character
 `8sua`        | ↑                | simple upwards arrow
 `8sum`        | ∑                | summation
 
+There are also entire Greek alphabet:
+
+Abbreviation | Letter | Abbreviation  | Letter
+------------ | ------ | ------------  | ------
+`8Alpha`     | Α      | `8alpha`      | α
+`8Beta`      | Β      | `8beta`       | β
+`8Gamma`     | Γ      | `8gamma`      | Y
+`8Delta`     | Δ      | `8delta`      | δ
+`8Epsilon`   | Ε      | `8epsilon`    | ε
+`8Zeta`      | Ζ      | `8zeta`       | ζ
+`8Eta`       | Η      | `8eta`        | η
+`8Theta`     | Θ      | `8theta`      | θ
+`8Iota`      | Ι      | `8iota`       | ι
+`8Kappa`     | Κ      | `8kappa`      | κ
+`8Lambda`    | Λ      | `8lambda`     | λ
+`8Mu`        | Μ      | `8mu`         | μ
+`8Nu`        | Ν      | `8nu`         | ν
+`8Xi`        | Ξ      | `8xi`         | ξ
+`8Omicron`   | Ο      | `8omicron`    | ο
+`8Pi`        | Π      | `8pi`         | π
+`8Rho`       | Ρ      | `8rho`        | ρ
+`8Sigma`     | Σ      | `8sigma`      | σ
+`8Tau`       | Τ      | `8tau`        | τ
+`8Upsilon`   | Υ      | `8upsilon`    | υ
+`8Phi`       | Φ      | `8phi`        | φ
+`8Chi`       | Χ      | `8chi`        | χ
+`8Psi`       | Ψ      | `8psi`        | ψ
+`8Omega`     | Ω      | `8omega`      | ω
+
+Final sigma ς is written as `8fsigma`.
+
 ## License
 
 Copyright © 2015 Mark Karpov

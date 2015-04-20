@@ -66,7 +66,7 @@
     ("8sua"  "↑")  ; simple upwards arrow
     ("8sum"  "∑")  ; summation
     ("8alpha"   "α") ("8Alpha"   "Α")
-    ("8beta"    "β") ("8Betta"   "Β")
+    ("8beta"    "β") ("8Beta"    "Β")
     ("8gamma"   "Y") ("8Gamma"   "Γ")
     ("8delta"   "δ") ("8Delta"   "Δ")
     ("8epsilon" "ε") ("8Epsilon" "Ε")
