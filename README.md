@@ -102,7 +102,7 @@ combination is comfortable and shouldn't change.
 ## Key bindings
 
 Don't use hairy default Emacs shortcuts. All frequently used commands must
-be as simple as possible. Prefer single keys and key sequences to
+be as simple as possible. Prefer single keys and key sequences over
 key-chords. Even if it's not faster, it's better for your health.
 
 I make use of <kbd>F</kbd> keys. There are not so many of them (I could bind
