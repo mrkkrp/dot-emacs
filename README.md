@@ -20,41 +20,6 @@ Some minor features I have implemented (nothing special):
 * some mode line wizardly (can't use `smart-mode-line`, sorry);
 * many little hacks that make everything work smoothly and look sexy.
 
-## Visual
-
-I use `solarized-dark` theme. It's the only theme I can use, seriously. My
-font of choice is `Ubuntu Mono`, because it's easy to get on Arch Linux and
-it supports all scripts that I need: Latin, Cyrillic, Greek, and who knows
-what else (I like strange symbols), it's also quite pretty. (Use Infinality
-if you use Arch Linux, your eyes deserve it.) I had been a big fan of
-Inconsolata before I switched to Ubuntu Mono. The reason for switching is
-that there is no normal version of the font supporting Cyrillic script (yes,
-I've tried modifications à la Inconsolata LCG, they suck or I'm not
-sufficiently dedicated person to make them look normally). I also enable
-`hl-line-mode` in modes like `dired` for prettiness (see code).
-
-## GNUS
-
-To send emails with Emacs and read emails with GNUS, you need to create a
-file called `.authinfo.gpg` in your home directory. As its extension
-suggests, you better encrypt this sort of information. The file should have
-the following form:
-
-```
-machine HOST port NUMBER login NAME password VALUE
-```
-
-You need two such lines: one for SMTP and another one for IMAP. For example,
-I use:
-
-```
-machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
-machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
-```
-
-To use spell-checking you need to install `aspell` from repositories of your
-favorite GNU/Linux distribution.
-
 ## Key Remapping
 
 If you do text editing professionally and you have no ergonomic keyboard,
@@ -99,7 +64,7 @@ I recommend changing shortcut for «window cycling», it's usually <kbd>Alt +
 Tab ↹</kbd>, now it should be <kbd>Alt + ⌫ Backspace</kbd>, because this key
 combination is comfortable and shouldn't change.
 
-## Key bindings
+## Key Bindings
 
 Don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. Prefer single keys and key sequences over
@@ -298,6 +263,40 @@ Abbreviation | Letter | Abbreviation  | Letter
 `8Omega`     | Ω      | `8omega`      | ω
 
 Final sigma ς is written as `8fsigma`.
+
+## GNUS
+
+To send emails with Emacs and read emails with GNUS, you need to create a
+file called `.authinfo.gpg` in your home directory. As its extension
+suggests, you better encrypt this sort of information. The file should have
+the following form:
+
+```
+machine HOST port NUMBER login NAME password VALUE
+```
+
+You need two such lines: one for SMTP and another one for IMAP. For example,
+I use:
+
+```
+machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
+machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
+```
+
+To use spell-checking you need to install `aspell` from repositories of your
+favorite GNU/Linux distribution.
+
+## Appearance
+
+I use `solarized-dark` theme. It's the only theme I feel comfortable
+with. My font of choice is `Ubuntu Mono`, because it's easy to get on Arch
+Linux and it supports all scripts that I need: Latin, Cyrillic, Greek, and
+who knows what else (I like strange symbols), it's also quite pretty. I had
+been a big fan of Inconsolata before I switched to Ubuntu Mono. The reason
+for switching is that there is no normal version of the font supporting
+Cyrillic script (yes, I've tried modifications à la Inconsolata LCG, they
+suck or I'm not sufficiently dedicated person to make them look normally). I
+also enable `hl-line-mode` in modes like `dired` for prettiness.
 
 ## License
 
