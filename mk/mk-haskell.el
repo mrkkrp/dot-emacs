@@ -31,6 +31,7 @@
  haskell-process-show-debug-tips nil) ; don't show anything
 
 (τ haskell       haskell-interactive "C-c h"   #'haskell-hoogle)
+(τ haskell-cabal haskell-cabal       "C-c h"   #'haskell-hoogle)
 (τ haskell-cabal haskell-cabal       "M-n"     #'transpose-line-down)
 (τ haskell-cabal haskell-cabal       "M-p"     #'transpose-line-up)
 (τ haskell-mode  haskell             "C-c h"   #'haskell-hoogle)
