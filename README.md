@@ -77,9 +77,9 @@ wisely. <kbd>F</kbd> keys are precious because single key pressing is the
 most efficient thing you can do and on most keyboards you can easily reach
 the keys.
 
-Next, Emacs allows us to define some custom key bindings that start with
-<kbd>C-c</kbd> prefix. I've assigned some commands this way. The bad thing
-about these shortcuts is that you have to start them with a chord
+Next, Emacs allows us to define some custom key bindings: <kbd>C-c</kbd>
+prefix followed by a single key. I've assigned some commands this way. The
+bad thing about these shortcuts is that you have to start them with a chord
 <kbd>C-c</kbd>, while it's way better than <kbd>C-c C-o C-l</kbd> (such
 shortcuts shouldn't be used at all!), I don't like to press several keys
 simultaneously (unless such a combination is self-sufficient, like
@@ -178,14 +178,16 @@ Shortcut            | Description
 <kbd>b</kbd>        | Dired: up directory
 <kbd>z</kbd>        | Dired: change to WDired mode
 
-## Abbreviations
+## Keyboard Layouts and Abbreviations
 
 It's true that standard keyboards have too few keys. We should be able to
 input many-many different fancy symbols and switch languages very easily,
 with one key pressing. I use <kbd>F7</kbd> and <kbd>F8</kbd> for this
 task. Every key performs switching to input method of some language or
-disables input method of that language when this it's already active. This
-way I don't need to «cycle» through all the languages — horrible thing.
+disables input method of that language when this it's already active (it
+also switches dictionaries used for spell checking, note that you need to
+install `aspell` for that). This way I don't need to «cycle» through all the
+languages — horrible thing.
 
 But there are also quite a few characters that don't belong to any
 particular keyboard layout or language. To input them I use Emacs
@@ -282,9 +284,6 @@ I use:
 machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
 machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
 ```
-
-To use spell-checking you need to install `aspell` from repositories of your
-favorite GNU/Linux distribution.
 
 ## Appearance
 
