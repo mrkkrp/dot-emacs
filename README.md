@@ -136,6 +136,7 @@ Shortcut            | Description
 <kbd>menu a b</kbd> | toggle abbrev mode
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
+<kbd>menu a s</kbd> | write file (save file as…)
 <kbd>menu c a</kbd> | Calc
 <kbd>menu c i</kbd> | Cider Jack-in
 <kbd>menu c l</kbd> | Calendar
@@ -144,6 +145,7 @@ Shortcut            | Description
 <kbd>menu d a</kbd> | show date in the minibuffer
 <kbd>menu d c</kbd> | describe char
 <kbd>menu d i</kbd> | Diff
+<kbd>menu e e</kbd> | evaluate last s-expression
 <kbd>menu e r</kbd> | ERC
 <kbd>menu e s</kbd> | Emacs Shell
 <kbd>menu g d</kbd> | GDB
