@@ -133,7 +133,7 @@ Shortcut            | Description
 <kbd>menu /</kbd>   | middle of the buffer
 <kbd>menu <</kbd>   | beginning of the buffer
 <kbd>menu ></kbd>   | end of the buffer
-<kbd>menu SPC</kbd> | start special insertion of abbreviation
+<kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a b</kbd> | toggle abbrev mode
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
