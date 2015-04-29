@@ -25,6 +25,7 @@
 ;;; Code:
 
 (require 'mk-utils)
+(require 'mk-abbrev)
 
 (setq-default
  auto-save-default                nil     ; don't ever create autosaves

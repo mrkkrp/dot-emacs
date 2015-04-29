@@ -101,19 +101,6 @@ If STAMP is not NIL, insert date into currently active buffer."
     (switch-to-buffer "*scratch*")
     (delete-other-windows)))
 
-(defun mk-abbrev-insert ()
-  "Read name of abbreviation without leading 8 and automatically insert it.
-Good when need to insert abbreviation with activated input method."
-  (interactive)
-  (let ((col (current-column)))
-    (define-key minibuffer-local-map (kbd "SPC") #'exit-minibuffer)
-    (insert (concat " 8" (read-from-minibuffer "Abbrev: ")))
-    (define-key minibuffer-local-map (kbd "SPC") #'self-insert-command)
-    (expand-abbrev)
-    (move-to-column col)
-    (delete-char 1)
-    (forward-char)))
-
 (defun search-online ()
   "Search Internet with DuckDuckGo."
   (interactive)

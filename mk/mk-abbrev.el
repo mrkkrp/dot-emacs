@@ -94,6 +94,22 @@
     ("8omega"   "ω") ("8Omega"   "Ω"))
   "Abbreviations to insert some Unicode characters automatically.")
 
+(defvar mk-abbrev-map (copy-keymap minibuffer-local-map)
+  "This keymap is used when `mk-abbrev-insert' reads its argument.")
+
+(define-key mk-abbrev-map (kbd "SPC") #'exit-minibuffer)
+
+(defun mk-abbrev-insert ()
+  "Read name of abbreviation without leading 8 and automatically insert it.
+Good when need to insert abbreviation with activated input method."
+  (interactive)
+  (let ((col (current-column)))
+    (insert (concat " 8" (read-from-minibuffer "Abbrev: " nil mk-abbrev-map)))
+    (expand-abbrev)
+    (move-to-column col)
+    (delete-char 1)
+    (forward-char)))
+
 (provide 'mk-abbrev)
 
 ;;; mk-abbrev.el ends here
