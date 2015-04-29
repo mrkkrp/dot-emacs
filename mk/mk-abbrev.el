@@ -39,6 +39,7 @@
     ("8dda"  "⇓")  ; double downwards arrow
     ("8degr" "°")  ; degree
     ("8dla"  "⇐")  ; double leftwards arrow
+    ("8dqu"  "“”") ; double quotation marks
     ("8dra"  "⇒")  ; double rightwards arrow
     ("8dua"  "⇑")  ; double upwards arrow
     ("8elli" "…")  ; ellipsis
@@ -62,6 +63,7 @@
     ("8sda"  "↓")  ; simple downwards arrow
     ("8sect" "§")  ; section
     ("8sla"  "←")  ; simple leftwards arrow
+    ("8squ"  "‘’") ; single quotation marks
     ("8sra"  "→")  ; simple rightwards arrow
     ("8sua"  "↑")  ; simple upwards arrow
     ("8sum"  "∑")  ; summation

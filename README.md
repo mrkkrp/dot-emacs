@@ -133,6 +133,7 @@ Shortcut            | Description
 <kbd>menu /</kbd>   | middle of the buffer
 <kbd>menu <</kbd>   | beginning of the buffer
 <kbd>menu ></kbd>   | end of the buffer
+<kbd>menu SPC</kbd> | start special insertion of abbreviation
 <kbd>menu a b</kbd> | toggle abbrev mode
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
@@ -210,6 +211,7 @@ Abbreviation  | Result Character | Name of the character
 `8dda`        | ⇓                | double downwards arrow
 `8degr`       | °                | degree
 `8dla`        | ⇐                | double leftwards arrow
+`8dqu`        | “”               | double quotation marks
 `8dra`        | ⇒                | double rightwards arrow
 `8dua`        | ⇑                | double upwards arrow
 `8elli`       | …                | ellipsis
@@ -233,6 +235,7 @@ Abbreviation  | Result Character | Name of the character
 `8sda`        | ↓                | simple downwards arrow
 `8sect`       | §                | section
 `8sla`        | ←                | simple leftwards arrow
+`8squ`        | ‘’               | single quotation marks
 `8sra`        | →                | simple rightwards arrow
 `8sua`        | ↑                | simple upwards arrow
 `8sum`        | ∑                | summation
