@@ -44,6 +44,7 @@
     ("8dua"  "⇑")  ; double upwards arrow
     ("8elli" "…")  ; ellipsis
     ("8guil" "«»") ; guillemets
+    ("8hash" "#")  ; number sign or hash sign
     ("8id"   "≡")  ; identical to
     ("8ineg" "∫")  ; integral
     ("8ineq" "≠")  ; inequality
