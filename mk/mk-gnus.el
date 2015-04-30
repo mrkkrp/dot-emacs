@@ -28,23 +28,23 @@
 (setq
  gnus-permanently-visible-groups   ""      ; always show all groups
  send-mail-function                'smtpmail-send-it
- gnus-select-method '(nnimap "opmbx"
-                             (nnimap-address "imap.openmailbox.org")
-                             (nnimap-server-port 993)
-                             (nnimap-stream ssl))
- user-mail-address "markkarpov@opmbx.org"
- user-full-names "Mark Karpov"
- message-send-mail-function 'smtpmail-send-it
- smtpmail-starttls-credentials '(("smtp.openmailbox.org" 587 nil nil))
- smtpmail-auth-credentials '(("smtp.openmailbox.org"       587
-                              "markkarpov@openmailbox.com" nil))
- smtpmail-default-smtp-server "smtp.openmailbox.org"
- smtpmail-smtp-server "smtp.openmailbox.org"
- smtpmail-smtp-service 587
+ gnus-select-method       '(nnimap "openmailbox"
+                                   (nnimap-address     "imap.openmailbox.org")
+                                   (nnimap-server-port 993)
+                                   (nnimap-stream      ssl))
+ user-mail-address                 "markkarpov@openmailbox.org"
+ user-full-names                   "Mark Karpov"
+ message-send-mail-function        'smtpmail-send-it
+ smtpmail-starttls-credentials     '(("smtp.openmailbox.org" 587 nil nil))
+ smtpmail-auth-credentials         '(("smtp.openmailbox.org" 587
+                                      "markkarpov@openmailbox.org" nil))
+ smtpmail-default-smtp-server      "smtp.openmailbox.org"
+ smtpmail-smtp-server              "smtp.openmailbox.org"
+ smtpmail-smtp-service             587
  gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
 
-(add-hook 'gnus-group-mode-hook         #'hl-line-mode)
-(add-hook 'gnus-summary-mode-hook       #'hl-line-mode)
+(add-hook 'gnus-group-mode-hook   #'hl-line-mode)
+(add-hook 'gnus-summary-mode-hook #'hl-line-mode)
 
 (provide 'mk-gnus)
 
