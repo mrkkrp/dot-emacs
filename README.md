@@ -272,6 +272,33 @@ Abbreviation | Letter | Abbreviation  | Letter
 
 Final sigma ς is written as `8fsigma`.
 
+Note that abbreviations are better than key bindings à la <kbd>C-x 8
+…</kbd>, because key bindings are hard to remember and their number is
+insufficient. So, abbreviations with readable names in the the way to go.
+
+However the method of expansion of the abbreviations is not that good at
+all. It's flawed at least in the following ways:
+
+1. User cannot write and expand abbreviations in arbitrary context, she
+   needs to surround them with «non-word-constituent-characters»: spaces or
+   punctuation. So this thing won't work:
+
+   ```
+   “It's difficult8elli” ≠ “It's difficult…”
+   ```
+
+2. When using input method for non-Latin languages user needs to disable
+   input method, type an abbreviation, enable input method again — this is
+   rather awkward.
+
+I've written a function that performs inserting of abbreviation and its
+expanding. This function solves all the problems. Just type <kbd>menu
+SPC</kbd> and enter abbreviation without leading ‘8’, finish typing with
+<kbd>SPC</kbd> and abbreviation will be inserted and expanded. Point will be
+placed after one-character expansions and in between such expansions as
+‘«»’. Since user writes name expansion in the minibuffer, current input
+method is ignored.
+
 ## GNUS
 
 To send emails with Emacs and read emails with GNUS, you need to create a
