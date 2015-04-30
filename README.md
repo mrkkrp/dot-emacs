@@ -241,7 +241,7 @@ Abbreviation  | Result Character | Name of the character
 `8sua`        | ↑                | simple upwards arrow
 `8sum`        | ∑                | summation
 
-There are also entire Greek alphabet:
+There is also entire Greek alphabet:
 
 Abbreviation | Letter | Abbreviation  | Letter
 ------------ | ------ | ------------  | ------
@@ -296,8 +296,8 @@ expanding. This function solves all the problems. Just type <kbd>menu
 SPC</kbd> and enter abbreviation without leading ‘8’, finish typing with
 <kbd>SPC</kbd> and abbreviation will be inserted and expanded. Point will be
 placed after one-character expansions and in between such expansions as
-‘«»’. Since user writes name expansion in the minibuffer, current input
-method is ignored.
+‘«»’. Since user writes abbreviation in the minibuffer, current input method
+is ignored.
 
 ## GNUS
 
