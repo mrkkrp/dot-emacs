@@ -194,8 +194,8 @@ languages — horrible thing.
 
 But there are also quite a few characters that don't belong to any
 particular keyboard layout or language. To input them I use Emacs
-abbreviations. All my abbreviations start with `8` simply because this key
-is easy to reach and not so many normal words start with `8`.
+abbreviations. All my abbreviations start with ‘8’ simply because this key
+is easy to reach and not so many normal words start with ‘8’.
 
 Here is the transformation table:
 
