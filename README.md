@@ -273,7 +273,7 @@ Abbreviation | Letter | Abbreviation  | Letter
 Final sigma ς is written as `8fsigma`.
 
 Note that abbreviations are better than key bindings à la <kbd>C-x 8
-…</kbd>, because key bindings are hard to remember and their number is
+…</kbd>, because the key bindings are hard to remember and their number is
 insufficient. So, abbreviations with readable names in the the way to go.
 
 However the method of expansion of the abbreviations is not that good at
@@ -291,8 +291,8 @@ all. It's flawed at least in the following ways:
    input method, type an abbreviation, enable input method again — this is
    rather awkward.
 
-I've written a function that performs inserting of abbreviation and its
-expanding. This function solves all the problems. Just type <kbd>menu
+I've written a function that performs insertion of abbreviation and its
+expansion. This function solves all the problems. Just type <kbd>menu
 SPC</kbd> and enter abbreviation without leading ‘8’, finish typing with
 <kbd>SPC</kbd> and abbreviation will be inserted and expanded. Point will be
 placed after one-character expansions and in between such expansions as
