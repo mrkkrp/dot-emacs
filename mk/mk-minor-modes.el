@@ -97,7 +97,6 @@
   (flyspell-prog-mode)
   (flycheck-mode))
 
-(add-hook 'after-change-major-mode-hook #'abbrev-mode)
 (add-hook 'after-change-major-mode-hook #'fci-mode)
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
