@@ -56,7 +56,6 @@
                                     (Package . CL-USER)
                                     (Syntax  . COMMON-LISP)))
 
-(π "C-c c"      #'expand-abbrev)
 (π "C-c r"      #'revert-buffer)
 (π "C-c p"      #'purge-buffers)
 (π "C-c s"      #'search-online)

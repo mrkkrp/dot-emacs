@@ -100,7 +100,6 @@ you can be!
 
 Shortcut            | Description
 --------            | -----------
-<kbd>C-c c</kbd>    | expand abbreviation before point
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
