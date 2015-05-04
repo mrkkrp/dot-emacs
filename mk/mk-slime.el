@@ -54,11 +54,12 @@
 
 (setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
 
-(τ lisp-mode lisp       "C-c h" #'slime-hyperspec-lookup)
-(τ slime     slime      "M-n"   #'transpose-line-down)
-(τ slime     slime      "M-p"   #'transpose-line-up)
-(τ slime     slime-repl "C-c i" #'slime-in-package)
-(τ slime     slime-repl "C-c r" #'slime-restart-inferior-lisp)
+(τ lisp-mode  lisp       "C-c h" #'slime-hyperspec-lookup)
+(τ slime      slime      "M-n"   #'transpose-line-down)
+(τ slime      slime      "M-p"   #'transpose-line-up)
+(τ slime      slime-repl "C-c i" #'slime-in-package)
+(τ slime      slime-repl "C-c r" #'slime-restart-inferior-lisp)
+(τ slime-repl slime-repl "<f9>"  (ε #'slime-kill-all-buffers))
 
 (add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
 (add-to-list 'major-mode-alias '(slime-repl-mode . "iλ"))

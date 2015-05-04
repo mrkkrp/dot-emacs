@@ -176,6 +176,7 @@ Shortcut            | Description
 <kbd>C-c h</kbd>    | SLIME: Hyper Spec lookup
 <kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
 <kbd>C-c h</kbd>    | Haskell (including Cabal): Hoogle query
+<kbd>C-c h</kbd>    | Cider and Clojure mode: Clojure Docs
 <kbd>C-c C-l</kbd>  | C mode: compile project
 <kbd>b</kbd>        | Dired: up directory
 <kbd>z</kbd>        | Dired: change to WDired mode
