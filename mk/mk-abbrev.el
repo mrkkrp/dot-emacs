@@ -43,6 +43,7 @@
     ("8dra"  "⇒")  ; double rightwards arrow
     ("8dua"  "⇑")  ; double upwards arrow
     ("8elli" "…")  ; ellipsis
+    ("8fleu" "❧")  ; fleuron
     ("8guil" "«»") ; guillemets
     ("8hash" "#")  ; number sign or hash sign
     ("8id"   "≡")  ; identical to
