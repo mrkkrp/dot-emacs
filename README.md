@@ -159,6 +159,7 @@ Shortcut            | Description
 <kbd>menu l p</kbd> | list packages
 <kbd>menu m a</kbd> | magit status
 <kbd>menu m n</kbd> | man
+<kbd>menu p r</kbd> | print current buffer
 <kbd>menu q e</kbd> | query replace regexp
 <kbd>menu q r</kbd> | query replace
 <kbd>menu r n</kbd> | rectangle number lines

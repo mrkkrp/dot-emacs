@@ -118,6 +118,7 @@
 (π "<menu> l p" #'list-packages)
 (π "<menu> m a" #'magit-status)
 (π "<menu> m n" #'man)
+(π "<menu> p r" #'print-buffer)
 (π "<menu> q e" #'query-replace-regexp)
 (π "<menu> q r" #'query-replace)
 (π "<menu> r n" #'rectangle-number-lines)
