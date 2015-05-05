@@ -25,6 +25,20 @@
 
 (require 'mk-utils)
 
+(defun swi-prolog-search ()
+  "Search for documentation at official site of SWI Prolog."
+  (interactive)
+  (browse-url
+   (concat "http://www.swi-prolog.org/search?for="
+           (url-hexify-string
+            (if mark-active
+                (buffer-substring (region-beginning)
+                                  (region-end))
+              (read-string "Prolog Docs: "))))))
+
+(τ prolog prolog-inferior "C-c h" #'swi-prolog-search)
+(τ prolog prolog          "C-c h" #'swi-prolog-search)
+
 ;; open .pl files as Prolog files, not Perl files
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
