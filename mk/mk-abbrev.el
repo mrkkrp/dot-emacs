@@ -51,6 +51,7 @@
     ("8ineq" "≠")  ; inequality
     ("8inf"  "∞")  ; infinity
     ("8intr" "·")  ; interpunct
+    ("8loze" "◊")  ; lozenge
     ("8mnpl" "∓")  ; minus-plus
     ("8mult" "×")  ; multiplication
     ("8nabl" "∇")  ; nabla
