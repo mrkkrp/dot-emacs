@@ -50,6 +50,7 @@
 
 (τ cider-repl   cider-repl "<f9>"  #'cider-quit)
 (τ cider-repl   cider-repl "C-c h" #'clojure-docs)
+(τ cider-repl   cider-repl "C-c r" #'cider-restart)
 (τ clojure-mode clojure    "C-c h" #'clojure-docs)
 
 (add-to-list 'major-mode-alias '(cider-repl-mode . "ic"))
