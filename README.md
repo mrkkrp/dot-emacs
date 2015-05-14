@@ -163,6 +163,7 @@ Shortcut            | Description
 <kbd>menu q e</kbd> | query replace regexp
 <kbd>menu q r</kbd> | query replace
 <kbd>menu r n</kbd> | rectangle number lines
+<kbd>menu r r</kbd> | reverse region (lines)
 <kbd>menu s c</kbd> | Scheme
 <kbd>menu s h</kbd> | shell
 <kbd>menu s l</kbd> | sort lines

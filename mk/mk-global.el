@@ -122,6 +122,7 @@
 (π "<menu> q e" #'query-replace-regexp)
 (π "<menu> q r" #'query-replace)
 (π "<menu> r n" #'rectangle-number-lines)
+(π "<menu> r r" #'reverse-region)
 (π "<menu> s c" #'run-scheme)
 (π "<menu> s h" #'shell)
 (π "<menu> s l" #'sort-lines)
