@@ -211,6 +211,7 @@ Here is the transformation table:
 Abbreviation  | Result Character | Name of the character
 ------------  | ---------------- | ---------------------
 `8apeq`       | ≈                | approximately equal
+`8astr`       | ⁂                | asterism
 `8bot`        | ⊥                | bottom
 `8bull`       | •                | bullet
 `8copy`       | ©                | copyright sign
@@ -231,6 +232,7 @@ Abbreviation  | Result Character | Name of the character
 `8ineg`       | ∫                | integral
 `8ineq`       | ≠                | inequality
 `8inf`        | ∞                | infinity
+`8inte`       | ‽                | interrobang
 `8intr`       | ·                | interpunct
 `8loze`       | ◊                | lozenge
 `8mnpl`       | ∓                | minus-plus
@@ -249,6 +251,7 @@ Abbreviation  | Result Character | Name of the character
 `8sla`        | ←                | simple leftwards arrow
 `8squ`        | ‘’               | single quotation marks
 `8sra`        | →                | simple rightwards arrow
+`8star`       | ★                | star
 `8sua`        | ↑                | simple upwards arrow
 `8sum`        | ∑                | summation
 
