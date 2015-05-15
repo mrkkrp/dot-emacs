@@ -113,7 +113,7 @@
 (π "<menu> g r" #'rgrep)
 (π "<menu> h e" #'hexl-mode)
 (π "<menu> h r" #'split-window-below)
-(π "<menu> i r"  #'indent-region)
+(π "<menu> i r" #'indent-region)
 (π "<menu> k r" #'kill-rectangle)
 (π "<menu> l b" #'list-buffers)
 (π "<menu> l i" #'slime)
