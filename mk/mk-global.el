@@ -65,6 +65,7 @@
 (π "C-c t"      (ε #'visit-file (car org-agenda-files)))
 (π "C-c a"      #'org-agenda-list)
 (π "C-c i"      #'flyspell-correct-word-before-point)
+(π "C-c C-o"    #'find-file-at-point)
 (π "C-x o"      #'ace-window)
 (π "C-'"        #'ace-window)
 (π "C-j"        #'newline)
