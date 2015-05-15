@@ -152,7 +152,9 @@ Shortcut            | Description
 <kbd>menu g l</kbd> | goto line
 <kbd>menu g n</kbd> | GNUS
 <kbd>menu g r</kbd> | recursive grep
+<kbd>menu h e</kbd> | hexl mode
 <kbd>menu h r</kbd> | split window (horizontal)
+<kbd>menu i r</kbd> | indent region
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
 <kbd>menu l i</kbd> | SLIME
@@ -162,11 +164,14 @@ Shortcut            | Description
 <kbd>menu p r</kbd> | print current buffer
 <kbd>menu q e</kbd> | query replace regexp
 <kbd>menu q r</kbd> | query replace
+<kbd>menu r c</kbd> | copy to register
+<kbd>menu r i</kbd> | insert register
 <kbd>menu r n</kbd> | rectangle number lines
 <kbd>menu r r</kbd> | reverse region (lines)
 <kbd>menu s c</kbd> | Scheme
 <kbd>menu s h</kbd> | shell
 <kbd>menu s l</kbd> | sort lines
+<kbd>menu s n</kbd> | sort numeric fields
 <kbd>menu s r</kbd> | string rectangle
 <kbd>menu s s</kbd> | switch to scratch buffer
 <kbd>menu s t</kbd> | insert date
