@@ -138,6 +138,9 @@ Shortcut            | Description
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
 <kbd>menu a s</kbd> | write file (save file as…)
+<kbd>menu b j</kbd> | jump to bookmark
+<kbd>menu b l</kbd> | list all bookmarks
+<kbd>menu b s</kbd> | set new bookmark
 <kbd>menu c a</kbd> | Calc
 <kbd>menu c i</kbd> | Cider Jack-in
 <kbd>menu c l</kbd> | Calendar
