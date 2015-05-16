@@ -78,7 +78,8 @@
 (require 'mk-global)      ; global settings not specific to any mode
 (require 'mk-minor-modes) ; settings of various minor modes
 (require 'mk-abbrev)      ; some abbreviations to insert Unicode characters
-(require 'mk-c)           ; various major modes
+(require 'mk-bookmark)    ; various major modes
+(require 'mk-c)           ; ^
 (require 'mk-calendar)    ; ^
 (require 'mk-clojure)     ; ^
 (require 'mk-diff)        ; ^
