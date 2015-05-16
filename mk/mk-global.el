@@ -102,6 +102,7 @@
 (π "<menu> c l" #'calendar)
 (π "<menu> c r" #'copy-rectangle-as-kill)
 (π "<menu> c s" #'set-buffer-file-coding-system)
+(π "<menu> c w" #'count-words)
 (π "<menu> d a" (ε #'show-date))
 (π "<menu> d c" #'describe-char)
 (π "<menu> d i" #'diff)

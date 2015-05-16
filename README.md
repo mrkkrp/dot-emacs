@@ -143,6 +143,7 @@ Shortcut            | Description
 <kbd>menu c l</kbd> | Calendar
 <kbd>menu c r</kbd> | copy rectangle
 <kbd>menu c s</kbd> | set coding system
+<kbd>menu c w</kbd> | count words
 <kbd>menu d a</kbd> | show date in the minibuffer
 <kbd>menu d c</kbd> | describe char
 <kbd>menu d i</kbd> | Diff
