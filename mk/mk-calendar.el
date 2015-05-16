@@ -19,18 +19,11 @@
 
 ;;; Commentary:
 
-;;; Fortunately, I'm living in Russia, so let's make calendar appear
-;;; Russian.
+;;; Setting various parameters of calendar here.
 
 ;;; Code:
 
-(setq calendar-week-start-day 1 ; Понедельник
-      calendar-day-name-array ["Воскресенье" "Понедельник" "Вторник"
-                               "Среда" "Четверг" "Пятница" "Суббота"]
-      calendar-day-header-array ["Вс" "Пн" "Вт" "Ср" "Чт" "Пт" "Сб" "Вс"]
-      calendar-month-name-array ["Январь" "Февраль" "Март" "Апрель" "Май"
-                                 "Июнь" "Июль" "Август" "Сентябрь"
-                                 "Октябрь" "Ноябрь" "Декабрь"])
+(setq calendar-week-start-day 1) ; Monday
 
 (provide 'mk-calendar)
 
