@@ -43,7 +43,6 @@
 (blink-cursor-mode                 0) ; my cursor doesn't blink, man
 (delete-selection-mode             1) ; delete selection mode enabled
 (display-time-mode                 1) ; display time
-(electric-pair-mode                1) ; insert brackets / quotation in pairs
 (global-auto-revert-mode           1) ; revert buffers automatically
 ;; (global-subword-mode               1) ; move through camel case, etc.
 (ido-mode                          1) ; ido for switch-buffer and find-file
