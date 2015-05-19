@@ -75,6 +75,11 @@ If STAMP is not NIL, insert date into currently active buffer."
   (funcall (if stamp #'insert #'message)
            (format-time-string "%A, %e %B %Y")))
 
+(defun show-default-dir ()
+  "Show default directory in the minibuffer."
+  (interactive)
+  (message default-directory))
+
 (defvar basic-buffers
   '("^\*scratch\*"
     "^\*Messages\*"
@@ -162,10 +167,16 @@ If the file does not exist, print a message about the fact."
       (message (concat filename " does not exist.")))))
 
 (defmacro ε (fnc &rest args)
-  "Interactively invoke function FNC with arguments ARGS."
+  "Interactively invoke function FNC with arguments ARGS.
+Kind of partial application."
   `(lambda (&rest rest)
      (interactive)
-     (apply,fnc ,@args rest)))
+     (apply ,fnc ,@args rest)))
+
+(defmacro η (fnc)
+  "Return function that ignores its arguments and invokes FNC."
+  `(lambda (&rest rest)
+     (funcall ,fnc)))
 
 (defun α (input-method dictionary)
   "Switch between input methods and Ispell dictionaries.

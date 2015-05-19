@@ -75,9 +75,6 @@
 
 (put 'dired-do-copy    'ido      nil) ; use ido there
 (put 'dired-do-rename  'ido      nil) ; ^
-(put 'downcase-region  'disabled nil) ; don't ever doubt my power
-(put 'erase-buffer     'disabled nil) ; ^
-(put 'upcase-region    'disabled nil) ; ^
 
 (setq
  minor-mode-alias

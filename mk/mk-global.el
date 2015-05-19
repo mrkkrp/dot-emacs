@@ -87,11 +87,9 @@
 (π "<S-left>"   #'buf-move-left)
 (π "<S-right>"  #'buf-move-right)
 (π "<menu>"     nil)
-(π "<menu> ,"   (ε #'push-mark))
-(π "<menu> ."   (ε #'goto-char (mark)))
 (π "<menu> /"   (ε #'goto-char (point-mid)))
-(π "<menu> <"   (ε #'goto-char (point-min)))
-(π "<menu> >"   (ε #'goto-char (point-max)))
+(π "<menu> ,"   (ε #'goto-char (point-min)))
+(π "<menu> ."   (ε #'goto-char (point-max)))
 (π "<menu> SPC" #'mk-abbrev-insert)
 (π "<menu> a b" #'abbrev-mode)
 (π "<menu> a p" #'apropos)
@@ -108,6 +106,7 @@
 (π "<menu> c w" #'count-words)
 (π "<menu> d a" (ε #'show-date))
 (π "<menu> d c" #'describe-char)
+(π "<menu> d d" #'show-default-dir)
 (π "<menu> d i" #'diff)
 (π "<menu> e e" #'eval-last-sexp)
 (π "<menu> e r" #'erc)
@@ -125,6 +124,8 @@
 (π "<menu> l p" #'list-packages)
 (π "<menu> m a" #'magit-status)
 (π "<menu> m n" #'man)
+(π "<menu> n n" #'narrow-to-region)
+(π "<menu> n w" #'widen)
 (π "<menu> p r" #'print-buffer)
 (π "<menu> q e" #'query-replace-regexp)
 (π "<menu> q r" #'query-replace)
@@ -144,6 +145,11 @@
 (π "<menu> v r" #'split-window-right)
 (π "<menu> y r" #'yank-rectangle)
 
+(put 'downcase-region  'disabled nil) ; don't ever question my power
+(put 'erase-buffer     'disabled nil) ; ^
+(put 'narrow-to-region 'disabled nil) ; ^
+(put 'upcase-region    'disabled nil) ; ^
+
 (defalias 'display-startup-echo-area-message (ε #'show-date))
 (defalias 'list-buffers                      #'ibuffer)
 (defalias 'yes-or-no-p                       #'y-or-n-p)
@@ -152,6 +158,7 @@
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 
 (advice-add 'compile                    :filter-args (λ "cd .. ; make -k"))
+(advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
 (advice-add 'revert-buffer              :filter-args (λ nil t))
 (advice-add 'save-buffers-kill-terminal :filter-args (λ t))
 
