@@ -128,11 +128,9 @@ Shortcut            | Description
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
 <kbd>S-right</kbd>  | move buffer right
-<kbd>menu ,</kbd>   | push mark
-<kbd>menu .</kbd>   | jump to marked position without popping
+<kbd>menu ,</kbd>   | beginning of the buffer
+<kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | middle of the buffer
-<kbd>menu <</kbd>   | beginning of the buffer
-<kbd>menu ></kbd>   | end of the buffer
 <kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a b</kbd> | toggle abbrev mode
 <kbd>menu a p</kbd> | apropos
@@ -149,6 +147,7 @@ Shortcut            | Description
 <kbd>menu c w</kbd> | count words
 <kbd>menu d a</kbd> | show date in the minibuffer
 <kbd>menu d c</kbd> | describe char
+<kbd>menu d d</kbd> | show default directory in the minibuffer
 <kbd>menu d i</kbd> | Diff
 <kbd>menu e e</kbd> | evaluate last s-expression
 <kbd>menu e r</kbd> | ERC
@@ -166,6 +165,8 @@ Shortcut            | Description
 <kbd>menu l p</kbd> | list packages
 <kbd>menu m a</kbd> | magit status
 <kbd>menu m n</kbd> | man
+<kbd>menu n n</kbd> | narrow to region
+<kbd>menu n w</kbd> | widen
 <kbd>menu p r</kbd> | print current buffer
 <kbd>menu q e</kbd> | query replace regexp
 <kbd>menu q r</kbd> | query replace
