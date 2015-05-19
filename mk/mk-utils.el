@@ -78,7 +78,7 @@ If STAMP is not NIL, insert date into currently active buffer."
 (defun show-default-dir ()
   "Show default directory in the minibuffer."
   (interactive)
-  (message default-directory))
+  (message (expand-file-name default-directory)))
 
 (defvar basic-buffers
   '("^\*scratch\*"
