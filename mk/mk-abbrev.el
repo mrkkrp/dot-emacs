@@ -67,12 +67,14 @@
     ("8rub"  "₽")  ; Russian ruble
     ("8sda"  "↓")  ; simple downwards arrow
     ("8sect" "§")  ; section
+    ("8sgui" "‹›") ; single arrow guillements
     ("8sla"  "←")  ; simple leftwards arrow
     ("8squ"  "‘’") ; single quotation marks
     ("8sra"  "→")  ; simple rightwards arrow
     ("8star" "★")  ; star
     ("8sua"  "↑")  ; simple upwards arrow
     ("8sum"  "∑")  ; summation
+    ;; Greek alphabet
     ("8alpha"   "α") ("8Alpha"   "Α")
     ("8beta"    "β") ("8Beta"    "Β")
     ("8gamma"   "Y") ("8Gamma"   "Γ")
