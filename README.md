@@ -26,26 +26,26 @@ If you do text editing professionally and you have no ergonomic keyboard,
 get one. I use «Truly Ergonomic Keyboard» (no, they don't pay me for the
 advertising).
 
-It's common knowledge that if you use a laptop, you should remap <kbd>Caps
-Lock</kbd> to <kbd>Ctrl</kbd> (at least if you're an Emacs user). It's
-undoubtedly true, but what about <kbd>Tab ↹</kbd> key and <kbd>⌫
+It's common knowledge that if you use a laptop, you should remap <kbd>⇪ Caps
+Lock</kbd> to <kbd>⎈ Ctrl</kbd> (at least if you're an Emacs user). It's
+undoubtedly true, but what about <kbd>↹ Tab</kbd> key and <kbd>⌫
 Backspace</kbd>? There are three things to consider:
 
 1. You need to press <kbd>⌫ Backspace</kbd> more often or just as often as
-   <kbd>Tab ↹</kbd> (when editing code, in other cases you usually don't
-   need <kbd>Tab ↹</kbd> at all).
+   <kbd>↹ Tab</kbd> (when editing code, in other cases you usually don't
+   need <kbd>↹ Tab</kbd> at all).
 
-2. On standard laptop keyboard <kbd>Tab ↹</kbd> occupies very comfortable
-   position right above <kbd>Caps Lock</kbd>, while <kbd>⌫ Backspace</kbd>
+2. On standard laptop keyboard <kbd>↹ Tab</kbd> occupies very comfortable
+   position right above <kbd>⇪ Caps Lock</kbd>, while <kbd>⌫ Backspace</kbd>
    is far away and you need to *change* position of your hand a little to
    reach it.
 
 3. There are no other way in Emacs to invoke `backward-delete-char` command,
    than via <kbd>⌫ Backspace</kbd>, there is no handy alternative key
-   binding for it, while <kbd>Tab ↹</kbd> has comfortable alternative
+   binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
    <kbd>C-i</kbd>.
 
-So why not swap <kbd>Tab ↹</kbd> key and <kbd>⌫ Backspace</kbd>? If you're a
+So why not swap <kbd>↹ Tab</kbd> key and <kbd>⌫ Backspace</kbd>? If you're a
 Linux user, here is `~/.Xmodmap` file that may be helpful:
 
 ```
@@ -60,9 +60,10 @@ keysym Tab = BackSpace
 keysym BackSpace = Tab
 ```
 
-I recommend changing shortcut for «window cycling», it's usually <kbd>Alt +
-Tab ↹</kbd>, now it should be <kbd>Alt + ⌫ Backspace</kbd>, because this key
-combination is comfortable and shouldn't change.
+I recommend changing shortcut for «window cycling», it's usually <kbd>⎇
+Alt</kbd> + <kbd>↹ Tab</kbd>, now it should be <kbd>⎇ Alt</kbd> + <kbd>⌫
+Backspace</kbd>, because this key combination is comfortable and shouldn't
+change.
 
 ## Key Bindings
 
@@ -91,8 +92,8 @@ choose single key, whose seul rôle will be starting key sequences. How long
 should every such a key sequence be?  Of course we want it to be as short as
 possible, but we cannot use only one key after the introducing key, because
 total number of combinations won't be satisfactory. But we can use two keys
-after introducing key (<kbd>menu</kbd> in my case, if you don't have
-<kbd>menu</kbd> on your keyboard you can remap something with help of
+after introducing key (<kbd>▤ Menu</kbd> in my case, if you don't have
+<kbd>▤ Menu</kbd> on your keyboard you can remap something with help of
 specialized software), then we get 26 × 26 = 676 combinations! Not bad at
 all. There are enough combinations for you to prefer those that have some
 mnemonic value. Give this technique a try and you will see how productive
@@ -159,6 +160,7 @@ Shortcut            | Description
 <kbd>menu h e</kbd> | hexl mode
 <kbd>menu h r</kbd> | split window (horizontal)
 <kbd>menu i r</kbd> | indent region
+<kbd>menu k n</kbd> | insert key name
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
 <kbd>menu l i</kbd> | SLIME
@@ -205,7 +207,7 @@ task. Every key performs switching to input method of some language or
 disables input method of that language when this it's already active (it
 also switches dictionaries used for spell checking, note that you need to
 install `aspell` for that). This way I don't need to «cycle» through all the
-languages — horrible thing.
+languages — a horrible thing.
 
 But there are also quite a few characters that don't belong to any
 particular keyboard layout or language. To input them I use Emacs
