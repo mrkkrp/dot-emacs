@@ -53,6 +53,7 @@
     ("8inf"  "∞")  ; infinity
     ("8inte" "‽")  ; interrobang
     ("8intr" "·")  ; interpunct
+    ("8keyb" "⌨")  ; keyboard
     ("8loze" "◊")  ; lozenge
     ("8mnpl" "∓")  ; minus-plus
     ("8mult" "×")  ; multiplication

@@ -1,4 +1,4 @@
-# Emacs Configuration Files
+# ⌨ Emacs Configuration Files
 
 What can I say… I'm productive like a devil now. Emacs is something that
 encourages its users to think about their productivity and once you started
@@ -242,6 +242,7 @@ Abbreviation  | Result Character | Name of the character
 `8inf`        | ∞                | infinity
 `8inte`       | ‽                | interrobang
 `8intr`       | ·                | interpunct
+`8keyb`       | ⌨                | keyboard
 `8loze`       | ◊                | lozenge
 `8mnpl`       | ∓                | minus-plus
 `8mult`       | ×                | multiplication
