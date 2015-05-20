@@ -324,7 +324,7 @@ placed after one-character expansions and in between such expansions as
 is ignored.
 
 If you need to insert name of some key on the keyboard, try <kbd>menu k
-</kbd>, this invokes `insert-key-name` function that will ask you to enter
+n</kbd>, this invokes `insert-key-name` function that will ask you to enter
 name of the key (IDO powered), so you can do things like: <kbd>menu k n d e
 l RET</kbd> → <kbd>⌦ Del</kbd>.
 
