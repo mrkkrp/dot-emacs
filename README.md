@@ -256,6 +256,7 @@ Abbreviation  | Result Character | Name of the character
 `8rub`        | ₽                | Russian ruble
 `8sda`        | ↓                | simple downwards arrow
 `8sect`       | §                | section
+`8squi`       | ‹›               | single arrow guillements
 `8sla`        | ←                | simple leftwards arrow
 `8squ`        | ‘’               | single quotation marks
 `8sra`        | →                | simple rightwards arrow
