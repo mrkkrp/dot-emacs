@@ -140,6 +140,7 @@ Shortcut            | Description
 <kbd>menu b l</kbd> | list all bookmarks
 <kbd>menu b s</kbd> | set new bookmark
 <kbd>menu c a</kbd> | Calc
+<kbd>menu c c</kbd> | copy entire current buffer
 <kbd>menu c i</kbd> | Cider Jack-in
 <kbd>menu c l</kbd> | Calendar
 <kbd>menu c r</kbd> | copy rectangle
@@ -149,6 +150,7 @@ Shortcut            | Description
 <kbd>menu d c</kbd> | describe char
 <kbd>menu d d</kbd> | show default directory in the minibuffer
 <kbd>menu d i</kbd> | Diff
+<kbd>menu e b</kbd> | erase buffer
 <kbd>menu e e</kbd> | evaluate last s-expression
 <kbd>menu e r</kbd> | ERC
 <kbd>menu e s</kbd> | Emacs Shell

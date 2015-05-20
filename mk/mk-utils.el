@@ -68,6 +68,11 @@ Position of point shifts one line down."
     (forward-line -1)
     (move-to-column col)))
 
+(defun copy-buffer ()
+  "Copy entire buffer into the clipboard."
+  (interactive)
+  (kill-new (buffer-string)))
+
 (defun insert-key-name ()
   "Read a key from the keyboard and insert its name."
   (interactive)
