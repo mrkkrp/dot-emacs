@@ -1,9 +1,8 @@
 # ⌨ Emacs Configuration Files
 
-What can I say… I'm productive like a devil now. Emacs is something that
-encourages its users to think about their productivity and once you started
-to search for ways to improve your workflow and efficiency — sky is the
-limit.
+Emacs is something that encourages its users to think about their
+productivity and once you started to search for ways to improve your
+workflow and efficiency — sky is the limit.
 
 ## Features
 
