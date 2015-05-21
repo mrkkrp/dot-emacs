@@ -72,6 +72,7 @@
     ("8sla"  "←")  ; simple leftwards arrow
     ("8squ"  "‘’") ; single quotation marks
     ("8sra"  "→")  ; simple rightwards arrow
+    ("8srcp" "℗")  ; sound recording copyright symbol
     ("8star" "★")  ; star
     ("8sua"  "↑")  ; simple upwards arrow
     ("8sum"  "∑")  ; summation

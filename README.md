@@ -262,6 +262,7 @@ Abbreviation  | Result Character | Name of the character
 `8sla`        | ←                | simple leftwards arrow
 `8squ`        | ‘’               | single quotation marks
 `8sra`        | →                | simple rightwards arrow
+`8srcp`       | ℗                | sound recording copyright
 `8star`       | ★                | star
 `8sua`        | ↑                | simple upwards arrow
 `8sum`        | ∑                | summation
