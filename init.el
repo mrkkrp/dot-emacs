@@ -32,6 +32,7 @@
 
 (defvar vital-packages
   '(ace-window            ; switching between windows
+    auctex                ; for LaTeX
     buffer-move           ; move buffers easily
     cider                 ; Clojure development
     fill-column-indicator ; shows… fill column indicator
