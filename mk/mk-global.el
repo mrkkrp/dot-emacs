@@ -126,6 +126,7 @@
 (π "<menu> l i" #'slime)
 (π "<menu> l p" #'list-packages)
 (π "<menu> m a" #'magit-status)
+(π "<menu> m d" #'markdown-mode)
 (π "<menu> m n" #'man)
 (π "<menu> n n" #'narrow-to-region)
 (π "<menu> n w" #'widen)

@@ -167,6 +167,7 @@ Shortcut            | Description
 <kbd>menu l i</kbd> | SLIME
 <kbd>menu l p</kbd> | list packages
 <kbd>menu m a</kbd> | magit status
+<kbd>menu m d</kbd> | markdown mode
 <kbd>menu m n</kbd> | man
 <kbd>menu n n</kbd> | narrow to region
 <kbd>menu n w</kbd> | widen
