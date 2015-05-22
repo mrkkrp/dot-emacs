@@ -69,7 +69,7 @@ Position of point shifts one line down."
     (move-to-column col)))
 
 (defun yank-primary ()
-  "Insert Insert the primary selection at the point."
+  "Insert the primary selection at the point."
   (interactive)
   (insert (gui-get-selection)))
 
