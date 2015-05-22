@@ -229,7 +229,7 @@ Abbreviation  | Result Character | Name of the character
 `8dagr`       | ‡                | crossed dagger
 `8dash`       | —                | em dash
 `8dda`        | ⇓                | double downwards arrow
-`8degr`       | °                | degree
+`8deg`        | °                | degree
 `8dla`        | ⇐                | double leftwards arrow
 `8dqu`        | “”               | double quotation marks
 `8dra`        | ⇒                | double rightwards arrow
