@@ -188,6 +188,7 @@ Shortcut            | Description
 <kbd>menu t e</kbd> | tetris
 <kbd>menu v e</kbd> | show version in minibuffer
 <kbd>menu v r</kbd> | split window (vertical)
+<kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle
 <kbd>C-c r</kbd>    | SLIME: restart inferior Lisp
 <kbd>C-c h</kbd>    | SLIME: Hyper Spec lookup
@@ -249,6 +250,7 @@ Abbreviation  | Result Character | Name of the character
 `8mnpl`       | ∓                | minus-plus
 `8mult`       | ×                | multiplication
 `8nabl`       | ∇                | nabla
+`8ndsh`       | –                | en dash
 `8num`        | №                | numero sign
 `8obel`       | ÷                | obelus
 `8plmn`       | ±                | plus-minus
