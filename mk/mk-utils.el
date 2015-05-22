@@ -68,6 +68,11 @@ Position of point shifts one line down."
     (forward-line -1)
     (move-to-column col)))
 
+(defun yank-primary ()
+  "Insert Insert the primary selection at the point."
+  (interactive)
+  (insert (gui-get-selection)))
+
 (defun copy-buffer ()
   "Copy entire buffer into the clipboard."
   (interactive)

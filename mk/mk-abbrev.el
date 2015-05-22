@@ -38,7 +38,7 @@
     ("8dagr" "‡")  ; crossed dagger
     ("8dash" "—")  ; em dash
     ("8dda"  "⇓")  ; double downwards arrow
-    ("8degr" "°")  ; degree
+    ("8deg"  "°")  ; degree
     ("8dla"  "⇐")  ; double leftwards arrow
     ("8dqu"  "“”") ; double quotation marks
     ("8dra"  "⇒")  ; double rightwards arrow
@@ -58,6 +58,7 @@
     ("8mnpl" "∓")  ; minus-plus
     ("8mult" "×")  ; multiplication
     ("8nabl" "∇")  ; nabla
+    ("8ndsh" "–")  ; en dash
     ("8num"  "№")  ; numero sign
     ("8obel" "÷")  ; obelus
     ("8plmn" "±")  ; plus-minus

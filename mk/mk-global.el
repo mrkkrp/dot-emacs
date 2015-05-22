@@ -147,6 +147,7 @@
 (π "<menu> t e" #'tetris)
 (π "<menu> v e" #'version)
 (π "<menu> v r" #'split-window-right)
+(π "<menu> y p" #'yank-primary)
 (π "<menu> y r" #'yank-rectangle)
 
 (put 'downcase-region  'disabled nil) ; don't ever question my power
