@@ -28,7 +28,7 @@
 (defun org-files ()
   "Return list of all org files."
   (directory-files (expand-file-name "org" user-emacs-directory)
-                   t "\\`.*\\.org\\'" t))
+                   t "\\`.*\\.org\\'"))
 
 (setq
  org-agenda-files          (org-files)
