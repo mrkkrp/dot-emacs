@@ -76,8 +76,10 @@ Position of point shifts one line down."
 (defun mark-rest-of-line ()
   "Set region from point to end of current line."
   (interactive)
-  (set-mark (point))
-  (move-end-of-line 1))
+  (set-mark
+   (save-excursion
+     (move-end-of-line 1)
+     (point))))
 
 (defun copy-buffer ()
   "Copy entire buffer into the clipboard."
