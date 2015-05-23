@@ -25,6 +25,8 @@
 
 (setq erc-nick "mrkkrp")
 
+(τ erc erc "C-c C-o" #'find-file-at-point)
+
 (add-hook 'erc-mode-hook #'flyspell-mode)
 
 (provide 'mk-erc)

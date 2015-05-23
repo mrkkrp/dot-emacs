@@ -44,6 +44,7 @@
     ido-ubiquitous        ; use ido everywhere
     magit                 ; Emacs mode for git
     markdown-mode         ; markdown editing
+    multiple-cursors      ; a cool feature…
     prolog                ; Prolog development
     rainbow-delimiters    ; highlight nested parenthesis (for Lisps)
     smooth-scroll         ; scrolling experience

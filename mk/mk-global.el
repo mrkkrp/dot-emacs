@@ -32,6 +32,7 @@
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  echo-keystrokes                  0.1     ; show keystrokes asap
+ enable-recursive-minibuffers     t       ; use minibuffer recursively
  gc-cons-threshold                10240000 ; garbage collection every 10 Mb
  indent-tabs-mode                 nil     ; only spaces
  indicate-empty-lines             t       ; show where buffer's content ends
@@ -41,6 +42,7 @@
  large-file-warning-threshold     10240000 ; warn when opening >10 Mb file
  major-mode                       'text-mode ; default mode is text mode
  make-backup-files                nil     ; don't create backups
+ mc/cmds-to-run-for-all           '(mk-abbrev-insert)
  minibuffer-eldef-shorten-default t       ; shorten defaults in minibuffer
  require-final-newline            t
  resize-mini-windows              t       ; grow and shrink
@@ -120,6 +122,10 @@
 (π "<menu> h e" #'hexl-mode)
 (π "<menu> h r" #'split-window-below)
 (π "<menu> i r" #'indent-region)
+(π "<menu> j l" #'mc/edit-lines)
+(π "<menu> j n" #'mc/mark-next-like-this)
+(π "<menu> j p" #'mc/mark-previous-like-this)
+(π "<menu> j a" #'mc/mark-all-like-this)
 (π "<menu> k n" #'insert-key-name)
 (π "<menu> k r" #'kill-rectangle)
 (π "<menu> l b" #'list-buffers)
@@ -137,6 +143,7 @@
 (π "<menu> r i" #'insert-register)
 (π "<menu> r n" #'rectangle-number-lines)
 (π "<menu> r r" #'reverse-region)
+(π "<menu> s a" #'mark-whole-buffer)
 (π "<menu> s c" #'run-scheme)
 (π "<menu> s h" #'shell)
 (π "<menu> s l" #'sort-lines)
