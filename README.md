@@ -109,7 +109,7 @@ Shortcut            | Description
 <kbd>C-c t</kbd>    | open org agenda file
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c i</kbd>    | correct word before point
-<kbd>C-c C-o</kbd>  | find file at point
+<kbd>C-c C-o</kbd>  | find file at point (work for URLs too)
 <kbd>C-'</kbd>      | switch to other buffer
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-n</kbd>      | transpose line down
@@ -161,6 +161,10 @@ Shortcut            | Description
 <kbd>menu h e</kbd> | hexl mode
 <kbd>menu h r</kbd> | split window (horizontal)
 <kbd>menu i r</kbd> | indent region
+<kbd>menu j a</kbd> | multiple cursors: mark all like this
+<kbd>menu j l</kbd> | multiple cursors: edit lines
+<kbd>menu j n</kbd> | multiple cursors: mark next like this
+<kbd>menu j p</kbd> | multiple cursors: mark previous like this
 <kbd>menu k n</kbd> | insert key name
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
@@ -178,6 +182,7 @@ Shortcut            | Description
 <kbd>menu r i</kbd> | insert register
 <kbd>menu r n</kbd> | rectangle number lines
 <kbd>menu r r</kbd> | reverse region (lines)
+<kbd>menu s a</kbd> | select the whole buffer (mnemonic: «select all»)
 <kbd>menu s c</kbd> | Scheme
 <kbd>menu s h</kbd> | shell
 <kbd>menu s l</kbd> | sort lines
