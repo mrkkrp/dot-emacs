@@ -92,6 +92,8 @@
 (π "<menu> ,"   (ε #'goto-char (point-min)))
 (π "<menu> ."   (ε #'goto-char (point-max)))
 (π "<menu> /"   (ε #'goto-char (point-mid)))
+(π "<menu> 2"   #'mark-word)
+(π "<menu> 3"   #'mark-rest-of-line)
 (π "<menu> SPC" #'mk-abbrev-insert)
 (π "<menu> a b" #'abbrev-mode)
 (π "<menu> a p" #'apropos)

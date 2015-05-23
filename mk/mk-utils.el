@@ -73,6 +73,12 @@ Position of point shifts one line down."
   (interactive)
   (insert (gui-get-selection)))
 
+(defun mark-rest-of-line ()
+  "Set region from point to end of current line."
+  (interactive)
+  (set-mark (point))
+  (move-end-of-line 1))
+
 (defun copy-buffer ()
   "Copy entire buffer into the clipboard."
   (interactive)
