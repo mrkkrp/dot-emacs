@@ -54,6 +54,7 @@
 (smooth-scroll-mode                1) ; smooth scroll
 (tool-bar-mode                     0) ; hide tool bar
 (which-function-mode               1) ; displays current function
+(yas-global-mode                   1) ; enable Yasnippet
 
 (eval-after-load 'which-func
   '(setq which-func-format  (list (cadr which-func-format))
@@ -78,14 +79,14 @@
 
 (setq
  minor-mode-alias
- '((abbrev-mode              . "") (inf-haskell-mode         . "")
-   (auto-fill-function       . "") (interactive-haskell-mode . "")
-   (eldoc-mode               . "") (ispell-minor-mode        . "")
-   (flycheck-mode            . "") (magit-auto-revert-mode   . "")
-   (flyspell-mode            . "") (slime-mode               . "")
-   (haskell-doc-mode         . "") (smooth-scroll-mode       . "")
-   (haskell-indent-mode      . "") (subword-mode             . "")
-                                   (superword-mode           . "")))
+ '((abbrev-mode              . "") (interactive-haskell-mode . "")
+   (auto-fill-function       . "") (ispell-minor-mode        . "")
+   (eldoc-mode               . "") (magit-auto-revert-mode   . "")
+   (flycheck-mode            . "") (slime-mode               . "")
+   (flyspell-mode            . "") (smooth-scroll-mode       . "")
+   (haskell-doc-mode         . "") (subword-mode             . "")
+   (haskell-indent-mode      . "") (superword-mode           . "")
+   (inf-haskell-mode         . "") (yas-minor-mode           . "")))
 
 (defun prepare-prog-mode ()
   "This function enables some minor modes for programming."

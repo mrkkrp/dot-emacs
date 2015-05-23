@@ -48,7 +48,8 @@
     prolog                ; Prolog development
     rainbow-delimiters    ; highlight nested parenthesis (for Lisps)
     smooth-scroll         ; scrolling experience
-    solarized-theme)      ; my favorite color theme
+    solarized-theme       ; my favorite color theme
+    yasnippet)            ; template system
   "List of packages that are required for this setup.")
 
 (require 'cl)
