@@ -128,11 +128,13 @@ Shortcut            | Description
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
 <kbd>S-right</kbd>  | move buffer right
+<kbd>menu menu</kbd>| ace jump char
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | middle of the buffer
 <kbd>menu 2</kbd>   | mark word
 <kbd>menu 3</kbd>   | mark rest of line
+<kbd>menu 5</kbd>   | mark paragraph
 <kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a b</kbd> | toggle abbrev mode
 <kbd>menu a p</kbd> | apropos
