@@ -123,12 +123,12 @@ Shortcut            | Description
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | save buffers and kill terminal (exit)
 <kbd>escape</kbd>   | delete window
+<kbd>return</kbd>   | ace jump char
 <kbd>C-return</kbd> | duplicate line
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
 <kbd>S-right</kbd>  | move buffer right
-<kbd>menu menu</kbd>| ace jump char
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | middle of the buffer
