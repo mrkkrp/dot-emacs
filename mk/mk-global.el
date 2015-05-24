@@ -42,7 +42,6 @@
  large-file-warning-threshold     10240000 ; warn when opening >10 Mb file
  major-mode                       'text-mode ; default mode is text mode
  make-backup-files                nil     ; don't create backups
- mc/cmds-to-run-for-all           '(mk-abbrev-insert)
  minibuffer-eldef-shorten-default t       ; shorten defaults in minibuffer
  require-final-newline            t
  resize-mini-windows              t       ; grow and shrink
