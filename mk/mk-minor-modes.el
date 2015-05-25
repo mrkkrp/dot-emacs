@@ -37,22 +37,24 @@
  ido-create-new-buffer             'always
  ido-decorations          '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
  ido-enable-flex-matching          t
- ido-everywhere                    t)
+ ido-everywhere                    t
+ whitespace-line-column            80
+ whitespace-style                  '(face lines-tail))
 
-(blink-cursor-mode                 0) ; my cursor doesn't blink, man
-(delete-selection-mode             1) ; delete selection mode enabled
-(display-time-mode                 1) ; display time
-(global-auto-revert-mode           1) ; revert buffers automatically
-(ido-mode                          1) ; ido for switch-buffer and find-file
-(ido-ubiquitous-mode               1) ; use ido everywhere
-(menu-bar-mode                     0) ; hide menu bar
-(minibuffer-electric-default-mode  1) ; electric minibuffer
-(scroll-bar-mode                   0) ; disable scroll bar
-(show-paren-mode                   1) ; highlight parenthesis
-(smooth-scroll-mode                1) ; smooth scroll
-(tool-bar-mode                     0) ; hide tool bar
-(which-function-mode               1) ; displays current function
-(yas-global-mode                   1) ; enable Yasnippet
+(blink-cursor-mode                0) ; my cursor doesn't blink, man
+(delete-selection-mode            1) ; delete selection mode enabled
+(display-time-mode                1) ; display time
+(global-auto-revert-mode          1) ; revert buffers automatically
+(ido-mode                         1) ; ido for switch-buffer and find-file
+(ido-ubiquitous-mode              1) ; use ido everywhere
+(menu-bar-mode                    0) ; hide menu bar
+(minibuffer-electric-default-mode 1) ; electric minibuffer
+(scroll-bar-mode                  0) ; disable scroll bar
+(show-paren-mode                  1) ; highlight parenthesis
+(smooth-scroll-mode               1) ; smooth scroll
+(tool-bar-mode                    0) ; hide tool bar
+(which-function-mode              1) ; displays current function
+(yas-global-mode                  1) ; enable Yasnippet
 
 (eval-after-load 'which-func
   '(setq which-func-format  (list (cadr which-func-format))
@@ -77,19 +79,35 @@
 
 (setq
  minor-mode-alias
- '((abbrev-mode          . "") (interactive-haskell-mode . "")
-   (auto-fill-function   . "") (ispell-minor-mode        . "")
-   (eldoc-mode           . "") (magit-auto-revert-mode   . "")
-   (flycheck-mode        . "") (slime-mode               . "")
-   (flyspell-mode        . "") (smooth-scroll-mode       . "")
-   (haskell-doc-mode     . "") (subword-mode             . "")
-   (haskell-indent-mode  . "") (superword-mode           . "")
-   (inf-haskell-mode     . "") (yas-minor-mode           . "")))
+ '((abbrev-mode              . "")
+   (auto-fill-function       . "")
+   (eldoc-mode               . "")
+   (flycheck-mode            . "")
+   (flyspell-mode            . "")
+   (global-whitespace-mode   . "")
+   (haskell-doc-mode         . "")
+   (haskell-indent-mode      . "")
+   (inf-haskell-mode         . "")
+   (interactive-haskell-mode . "")
+   (ispell-minor-mode        . "")
+   (magit-auto-revert-mode   . "")
+   (slime-mode               . "")
+   (smooth-scroll-mode       . "")
+   (subword-mode             . "")
+   (superword-mode           . "")
+   (yas-minor-mode           . "")))
+
+(defun prepare-text-mode ()
+  "Enable some minor mode for plain text editing."
+  (auto-fill-mode  1)
+  (whitespace-mode 1)
+  (flyspell-mode   1))
 
 (defun prepare-prog-mode ()
-  "This function enables some minor modes for programming."
-  (auto-fill-mode 1)
+  "Enables some minor modes for programming."
   (setq-local comment-auto-fill-only-comments t)
+  (auto-fill-mode  1)
+  (whitespace-mode 1)
   (flyspell-prog-mode)
   (flycheck-mode))
 
@@ -97,8 +115,7 @@
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
-(add-hook 'text-mode-hook               #'auto-fill-mode)
-(add-hook 'text-mode-hook               #'flyspell-mode)
+(add-hook 'text-mode-hook               #'prepare-text-mode)
 
 (provide 'mk-minor-modes)
 
