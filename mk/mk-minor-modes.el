@@ -31,7 +31,6 @@
  column-number-mode                t       ; display column number
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
- fci-rule-column                   80      ; position of rule column
  fill-column                       76      ; set fill column
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ido-auto-merge-work-directories-length -1 ; disable it
@@ -78,14 +77,14 @@
 
 (setq
  minor-mode-alias
- '((abbrev-mode              . "") (interactive-haskell-mode . "")
-   (auto-fill-function       . "") (ispell-minor-mode        . "")
-   (eldoc-mode               . "") (magit-auto-revert-mode   . "")
-   (flycheck-mode            . "") (slime-mode               . "")
-   (flyspell-mode            . "") (smooth-scroll-mode       . "")
-   (haskell-doc-mode         . "") (subword-mode             . "")
-   (haskell-indent-mode      . "") (superword-mode           . "")
-   (inf-haskell-mode         . "") (yas-minor-mode           . "")))
+ '((abbrev-mode          . "") (interactive-haskell-mode . "")
+   (auto-fill-function   . "") (ispell-minor-mode        . "")
+   (eldoc-mode           . "") (magit-auto-revert-mode   . "")
+   (flycheck-mode        . "") (slime-mode               . "")
+   (flyspell-mode        . "") (smooth-scroll-mode       . "")
+   (haskell-doc-mode     . "") (subword-mode             . "")
+   (haskell-indent-mode  . "") (superword-mode           . "")
+   (inf-haskell-mode     . "") (yas-minor-mode           . "")))
 
 (defun prepare-prog-mode ()
   "This function enables some minor modes for programming."
@@ -94,7 +93,6 @@
   (flyspell-prog-mode)
   (flycheck-mode))
 
-(add-hook 'after-change-major-mode-hook #'fci-mode)
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)

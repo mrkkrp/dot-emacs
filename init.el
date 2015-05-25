@@ -36,7 +36,6 @@
     auctex                ; for LaTeX
     buffer-move           ; move buffers easily
     cider                 ; Clojure development
-    fill-column-indicator ; shows… fill column indicator
     flycheck              ; checking code on the fly
     flycheck-haskell      ; cabal sandboxes, etc.
     ghc                   ; improves Haskell REPL experience
