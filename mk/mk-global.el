@@ -139,6 +139,7 @@
 (π "<menu> m n" #'man)
 (π "<menu> n n" #'narrow-to-region)
 (π "<menu> n w" #'widen)
+(π "<menu> p i" #'package-install)
 (π "<menu> p r" #'print-buffer)
 (π "<menu> q e" #'query-replace-regexp)
 (π "<menu> q r" #'query-replace)
