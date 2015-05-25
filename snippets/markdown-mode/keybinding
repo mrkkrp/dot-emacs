@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Keybinding
+# key: kbd
+# --
+<kbd>${1:key(s)}</kbd>$0
