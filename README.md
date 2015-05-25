@@ -209,6 +209,7 @@ Shortcut            | Description
 <kbd>menu t e</kbd> | tetris
 <kbd>menu v e</kbd> | show version in minibuffer
 <kbd>menu v r</kbd> | split window (vertical)
+<kbd>menu y a</kbd> | reload all snippets
 <kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle
 <kbd>C-c r</kbd>    | SLIME: restart inferior Lisp
