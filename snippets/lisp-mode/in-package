@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: defmacro
+# key: defmacro
+# --
+(in-package #:${1:package})
