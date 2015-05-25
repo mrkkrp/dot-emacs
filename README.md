@@ -112,19 +112,19 @@ invokes `ace-jump-char-mode`, and look, this is really convenient! Try it!
 
 Shortcut            | Description
 --------            | -----------
-<kbd>C-c r</kbd>    | revert current buffer
-<kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
-<kbd>C-c s</kbd>    | search online with DuckDuckGo
-<kbd>C-c g</kbd>    | upgrade all packages
+<kbd>C-'</kbd>      | switch to other buffer
+<kbd>C-c C-o</kbd>  | find file at point (work for URLs too)
+<kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c b</kbd>    | byte compile initialization files
 <kbd>C-c e</kbd>    | open initialization file
-<kbd>C-c t</kbd>    | open org agenda file
-<kbd>C-c a</kbd>    | org agenda (week)
+<kbd>C-c g</kbd>    | upgrade all packages
 <kbd>C-c i</kbd>    | correct word before point
-<kbd>C-c C-o</kbd>  | find file at point (work for URLs too)
-<kbd>C-'</kbd>      | switch to other buffer
-<kbd>M-p</kbd>      | transpose line up
+<kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
+<kbd>C-c r</kbd>    | revert current buffer
+<kbd>C-c s</kbd>    | search online with DuckDuckGo
+<kbd>C-c t</kbd>    | open org agenda file
 <kbd>M-n</kbd>      | transpose line down
+<kbd>M-p</kbd>      | transpose line up
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
 <kbd>F6</kbd>       | find file in other window (also Dired)
