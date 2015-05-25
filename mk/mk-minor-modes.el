@@ -84,7 +84,6 @@
    (eldoc-mode               . "")
    (flycheck-mode            . "")
    (flyspell-mode            . "")
-   (global-whitespace-mode   . "")
    (haskell-doc-mode         . "")
    (haskell-indent-mode      . "")
    (inf-haskell-mode         . "")
@@ -95,6 +94,7 @@
    (smooth-scroll-mode       . "")
    (subword-mode             . "")
    (superword-mode           . "")
+   (whitespace-mode          . "")
    (yas-minor-mode           . "")))
 
 (defun prepare-text-mode ()
