@@ -38,6 +38,14 @@
  ido-decorations          '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
  ido-enable-flex-matching          t
  ido-everywhere                    t
+ mc/cmds-to-run-for-all            '(beginning-of-visual-line
+                                     duplicate-line
+                                     end-of-visual-line
+                                     kill-visual-line
+                                     mk-abbrev-insert
+                                     transpose-line-down
+                                     transpose-line-up
+                                     yank-primary)
  whitespace-line-column            80
  whitespace-style                  '(face lines-tail))
 
