@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: License
+# key: license
+# --
+## License
+
+Copyright © ${1:`(format-time-string "%Y")`} `user-full-name`
+
+Distributed under ${2:GNU GPL, version 3}.
+$0
