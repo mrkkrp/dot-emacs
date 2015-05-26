@@ -51,7 +51,7 @@
  suggest-key-bindings             nil
  tab-width                        4       ; tab width for text-mode
  user-full-name                   "Mark Karpov"
- user-mail-address                "markkarpov@opmbx.org"
+ user-mail-address                "markkarpov@openmailbox.org"
  safe-local-variable-values       '((Syntax  . ANSI-Common-Lisp)
                                     (Base    . 10)
                                     (Package . CL-USER)

@@ -29,11 +29,9 @@
  gnus-permanently-visible-groups   ""      ; always show all groups
  send-mail-function                'smtpmail-send-it
  gnus-select-method       '(nnimap "openmailbox"
-                                   (nnimap-address     "imap.openmailbox.org")
+                                   (nnimap-address "imap.openmailbox.org")
                                    (nnimap-server-port 993)
-                                   (nnimap-stream      ssl))
- user-mail-address                 "markkarpov@openmailbox.org"
- user-full-names                   "Mark Karpov"
+                                   (nnimap-stream ssl))
  message-send-mail-function        'smtpmail-send-it
  smtpmail-starttls-credentials     '(("smtp.openmailbox.org" 587 nil nil))
  smtpmail-auth-credentials         '(("smtp.openmailbox.org" 587
