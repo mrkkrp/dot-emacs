@@ -1,4 +1,12 @@
-# Compiled
+#*
 *.elc
-# Packaging
 .cask
+.emacs-custom.el
+.mc-lists.el
+auto-save-list/
+bookmarks
+elpa/
+ido.last
+init.elc*
+network-security.data
+org/
