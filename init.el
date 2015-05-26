@@ -75,6 +75,7 @@
   (server-start))
 
 (defvar mk-dir (expand-file-name "mk" user-emacs-directory))
+(setq custom-file (expand-file-name ".emacs-custom.el" user-emacs-directory))
 
 (add-to-list 'load-path mk-dir)
 
