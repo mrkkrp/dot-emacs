@@ -101,6 +101,12 @@
    (whitespace-mode          . "")
    (yas-minor-mode           . "")))
 
+
+(eval-after-load 'multiple-cursors-core
+  '(defun mc/prompt-for-inclusion-in-whitelist (original-command)
+     "Always return T, regardless of ORIGINAL-COMMAND, it just works."
+     t))
+
 (defun prepare-text-mode ()
   "Enable some minor mode for plain text editing."
   (auto-fill-mode  1)
