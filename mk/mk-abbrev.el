@@ -109,16 +109,30 @@
 
 (define-key mk-abbrev-map (kbd "SPC") #'exit-minibuffer)
 
+(defvar mk-abbrev-last nil
+  "Name of last abbrev expanded with `mk-abbrev-insert' function.")
+
 (defun mk-abbrev-insert ()
-  "Read name of abbreviation without leading 8 and automatically insert it.
-Good when need to insert abbreviation with activated input method."
+  "Read name of abbreviation without leading 8 and automatically
+insert it. If input is empty, insert last used abbreviation or if
+there is no such abbreviation yet, do nothing. Good when need to
+insert abbreviation with activated input method."
   (interactive)
-  (let ((col (current-column)))
-    (insert (concat " 8" (read-from-minibuffer "Abbrev: " nil mk-abbrev-map)))
-    (expand-abbrev)
-    (move-to-column col)
-    (delete-char 1)
-    (forward-char)))
+  (let* ((col   (current-column))
+         (input (read-from-minibuffer "Abbrev: " nil mk-abbrev-map))
+         (aname (if (= 0 (length input))
+                    (progn (message "Using previous abbrev: %s"
+                                    mk-abbrev-last)
+                           mk-abbrev-last)
+                  input)))
+    (if (null aname)
+        (message "You haven't expanded any abbrev yet.")
+      (insert (concat " 8" aname))
+      (expand-abbrev)
+      (move-to-column col)
+      (delete-char 1)
+      (forward-char)
+      (setf mk-abbrev-last aname))))
 
 (provide 'mk-abbrev)
 
