@@ -123,6 +123,7 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
+<kbd>M-k</kbd>      | kill till end of line (smart for S-expressions)
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up
 <kbd>F2</kbd>       | save buffer
@@ -136,6 +137,7 @@ Shortcut            | Description
 <kbd>F12</kbd>      | save buffers and kill terminal (exit)
 <kbd>escape</kbd>   | delete window
 <kbd>return</kbd>   | ace jump char
+<kbd>C-backspace</kbd> | backward kill S-expression
 <kbd>C-return</kbd> | duplicate line
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
@@ -143,9 +145,10 @@ Shortcut            | Description
 <kbd>S-right</kbd>  | move buffer right
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
-<kbd>menu /</kbd>   | middle of the buffer
-<kbd>menu 2</kbd>   | mark word
+<kbd>menu /</kbd>   | rectangular selection
+<kbd>menu 2</kbd>   | smartparens: select next thing
 <kbd>menu 3</kbd>   | mark rest of line
+<kbd>menu 4</kbd>   | smartparens: add to previous S-expression
 <kbd>menu 5</kbd>   | mark paragraph
 <kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a b</kbd> | toggle abbrev mode
