@@ -31,25 +31,26 @@
            emacs-version-needed)))
 
 (defvar vital-packages
-  '(ace-jump-mode         ; move cursor effectively
-    ace-window            ; switching between windows
-    auctex                ; for LaTeX
-    buffer-move           ; move buffers easily
-    cider                 ; Clojure development
-    flycheck              ; checking code on the fly
-    flycheck-haskell      ; cabal sandboxes, etc.
-    ghc                   ; improves Haskell REPL experience
-    haskell-mode          ; Haskell development
-    ido-hacks             ; various ido goodies
-    ido-ubiquitous        ; use ido everywhere
-    magit                 ; Emacs mode for git
-    markdown-mode         ; markdown editing
-    multiple-cursors      ; a cool feature…
-    prolog                ; Prolog development
-    rainbow-delimiters    ; highlight nested parenthesis (for Lisps)
-    smooth-scroll         ; scrolling experience
-    solarized-theme       ; my favorite color theme
-    yasnippet)            ; template system
+  '(ace-jump-mode      ; move cursor effectively
+    ace-window         ; switching between windows
+    auctex             ; for LaTeX
+    buffer-move        ; move buffers easily
+    cider              ; Clojure development
+    flycheck           ; checking code on the fly
+    flycheck-haskell   ; cabal sandboxes, etc.
+    ghc                ; improves Haskell REPL experience
+    haskell-mode       ; Haskell development
+    ido-hacks          ; various ido goodies
+    ido-ubiquitous     ; use ido everywhere
+    magit              ; Emacs mode for git
+    markdown-mode      ; markdown editing
+    multiple-cursors   ; a cool feature…
+    prolog             ; Prolog development
+    rainbow-delimiters ; highlight nested parenthesis (for Lisps)
+    smartparens        ; editing of parenthesis of all kinds
+    smooth-scroll      ; scrolling experience
+    solarized-theme    ; my favorite color theme
+    yasnippet)         ; template system
   "List of packages that are required for this setup.")
 
 (require 'cl)

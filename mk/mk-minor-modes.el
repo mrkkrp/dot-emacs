@@ -24,6 +24,7 @@
 ;;; Code:
 
 (require 'mk-utils)
+(require 'smartparens-config)
 
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
@@ -35,11 +36,12 @@
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ido-auto-merge-work-directories-length -1 ; disable it
  ido-create-new-buffer             'always
- ido-decorations          '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
+ ido-decorations '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
  ido-enable-flex-matching          t
  ido-everywhere                    t
  whitespace-line-column            80
- whitespace-style                  '(face lines-tail))
+ whitespace-style                  '(face lines-tail)
+ yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
 
 (blink-cursor-mode                0) ; my cursor doesn't blink, man
 (delete-selection-mode            1) ; delete selection mode enabled
@@ -51,6 +53,7 @@
 (minibuffer-electric-default-mode 1) ; electric minibuffer
 (scroll-bar-mode                  0) ; disable scroll bar
 (show-paren-mode                  1) ; highlight parenthesis
+(smartparens-global-mode          1) ; smart editing of parenthesis
 (smooth-scroll-mode               1) ; smooth scroll
 (tool-bar-mode                    0) ; hide tool bar
 (which-function-mode              1) ; displays current function
@@ -91,6 +94,7 @@
    (ispell-minor-mode        . "")
    (magit-auto-revert-mode   . "")
    (slime-mode               . "")
+   (smartparens-mode         . "")
    (smooth-scroll-mode       . "")
    (subword-mode             . "")
    (superword-mode           . "")
