@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: data
+# key: data
+# --
+data ${1:Type} = $2

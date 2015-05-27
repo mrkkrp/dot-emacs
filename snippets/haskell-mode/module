@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: module
+# key: module
+# --
+module ${1:Main} (${2:main}) where
+$0

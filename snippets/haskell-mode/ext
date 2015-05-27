@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: language extension
+# key: ext
+# --
+{-# LANGUAGE ${1:Extension} #-}
+$0

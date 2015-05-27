@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: case
+# key: case
+# --
+case ${1:var} of
+  ${2:match} -> ${3:value}
+  ${4:match} -> ${5:value}
+  $0
