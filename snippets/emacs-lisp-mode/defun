@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: defun
+# key: defun
+# --
+(defun ${1:fun} (${2:args})${4:
+  "${5:doc}"}${6:
+  (interactive)}
+  $0)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Ending of Emacs lisp source
+# key: ending
+# --
+;;; `(file-name-nondirectory (buffer-file-name))` ends here
