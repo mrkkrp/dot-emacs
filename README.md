@@ -123,6 +123,7 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
+<kbd>M-e</kbd>      | kill S-expressions
 <kbd>M-k</kbd>      | kill till end of line (smart for S-expressions)
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up

@@ -70,6 +70,7 @@
 (π "C-c t"      (ε #'visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
 (π "C-x o"      #'ace-window)
+(π "M-d"        #'sp-kill-sexp)
 (π "M-k"        #'sp-kill-hybrid-sexp)
 (π "M-n"        #'transpose-line-down)
 (π "M-p"        #'transpose-line-up)
