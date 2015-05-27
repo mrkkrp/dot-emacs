@@ -181,6 +181,7 @@ Shortcut            | Description
 <kbd>menu h r</kbd> | split window (horizontal)
 <kbd>menu i r</kbd> | indent region
 <kbd>menu j a</kbd> | multiple cursors: mark all like this
+<kbd>menu j e</kbd> | multiple cursors: edit ends of lines
 <kbd>menu j l</kbd> | multiple cursors: edit lines
 <kbd>menu j n</kbd> | multiple cursors: mark next like this
 <kbd>menu j p</kbd> | multiple cursors: mark previous like this

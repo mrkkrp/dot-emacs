@@ -129,6 +129,7 @@
 (π "<menu> h r" #'split-window-below)
 (π "<menu> i r" #'indent-region)
 (π "<menu> j a" #'mc/mark-all-like-this)
+(π "<menu> j e" #'mc/edit-ends-of-lines)
 (π "<menu> j l" #'mc/edit-lines)
 (π "<menu> j n" #'mc/mark-next-like-this)
 (π "<menu> j p" #'mc/mark-previous-like-this)
