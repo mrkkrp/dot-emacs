@@ -108,7 +108,7 @@ at the keyboard, so it's stupid not to use it for something
 useful. <kbd>C-return</kbd> duplicates current line in such a way that this
 command can be performed repeatedly. This is handy when you need to type
 many similar lines with variations. The <kbd>↵ Return</kbd> key alone
-invokes `ace-jump-char-mode`, and look, this is really convenient! Try it!
+invokes `avy-goto-char`, and look, this is really convenient! Try it!
 
 Shortcut            | Description
 --------            | -----------
@@ -137,7 +137,7 @@ Shortcut            | Description
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | save buffers and kill terminal (exit)
 <kbd>escape</kbd>   | delete window
-<kbd>return</kbd>   | ace jump char
+<kbd>return</kbd>   | avy go to char
 <kbd>C-backspace</kbd> | backward kill S-expression
 <kbd>C-return</kbd> | duplicate line
 <kbd>S-up</kbd>     | move buffer up

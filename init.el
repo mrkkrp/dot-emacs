@@ -31,8 +31,8 @@
            emacs-version-needed)))
 
 (defvar vital-packages
-  '(ace-jump-mode      ; move cursor effectively
-    ace-window         ; switching between windows
+  '(ace-window         ; switching between windows
+    avy                ; move cursor effectively
     auctex             ; for LaTeX
     buffer-move        ; move buffers easily
     cider              ; Clojure development

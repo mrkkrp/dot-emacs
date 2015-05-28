@@ -84,7 +84,7 @@
 (π "<f11>"      #'switch-to-buffer)
 (π "<f12>"      #'save-buffers-kill-terminal)
 (π "<escape>"   #'delete-window)
-(π "<return>"   #'ace-jump-char-mode)
+(π "<return>"   #'avy-goto-char)
 (π "<C-backspace>" #'sp-backward-kill-sexp)
 (π "<C-return>" #'duplicate-line)
 (π "<S-up>"     #'buf-move-up)
