@@ -88,15 +88,15 @@ common prefix, if we want to avoid too long key sequences.
 
 Here key sequences starting with «introducing key» come into play. We can
 choose single key, whose seul rôle will be starting key sequences. How long
-should every such a key sequence be?  Of course we want it to be as short as
-possible, but we cannot use only one key after the introducing key, because
-total number of combinations won't be satisfactory. But we can use two keys
-after introducing key (<kbd>▤ Menu</kbd> in my case, if you don't have
-<kbd>▤ Menu</kbd> on your keyboard you can remap something with help of
-specialized software), then we get 26 × 26 = 676 combinations! Not bad at
-all. There are enough combinations for you to prefer those that have some
-mnemonic value. Give this technique a try and you will see how productive
-you can be!
+should every such a key sequence be?  Of course, we want it to be as short
+as possible, but we cannot use only one key after the introducing key,
+because total number of combinations won't be satisfactory. But we can use
+two keys after the introducing key (<kbd>▤ Menu</kbd> in my case, if you
+don't have <kbd>▤ Menu</kbd> on your keyboard you can remap something with
+help of specialized software), then we get 26 × 26 = 676 combinations! Not
+bad at all. There are enough combinations for you to prefer those that have
+some mnemonic value. Give this technique a try and you will see how
+productive you can be!
 
 Also note that <kbd>↵ Return</kbd> key is pretty useless, because you have
 <kbd>C-j</kbd> and <kbd>C-m</kbd> key bindings. Since <kbd>↵ Return</kbd>
@@ -123,7 +123,7 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
-<kbd>M-e</kbd>      | kill S-expressions
+<kbd>M-d</kbd>      | kill S-expression
 <kbd>M-k</kbd>      | kill till end of line (smart for S-expressions)
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up
