@@ -29,6 +29,7 @@
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
+ avy-style                         'at-full ; can't use the default
  column-number-mode                t       ; display column number
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
@@ -56,12 +57,7 @@
 (smartparens-global-mode          1) ; smart editing of parenthesis
 (smooth-scroll-mode               1) ; smooth scroll
 (tool-bar-mode                    0) ; hide tool bar
-(which-function-mode              1) ; displays current function
 (yas-global-mode                  1) ; enable Yasnippet
-
-(eval-after-load 'which-func
-  '(setq which-func-format  (list (cadr which-func-format))
-         which-func-unknown "⊥"))
 
 (dolist (buffer '("^\*Backtrace\*"
                   "^\*Compile-Log\*"
@@ -100,7 +96,6 @@
    (superword-mode           . "")
    (whitespace-mode          . "")
    (yas-minor-mode           . "")))
-
 
 (eval-after-load 'multiple-cursors-core
   '(defun mc/prompt-for-inclusion-in-whitelist (original-command)
