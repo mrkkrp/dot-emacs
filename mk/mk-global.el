@@ -125,6 +125,7 @@
 (π "<menu> e e" #'eval-last-sexp)
 (π "<menu> e r" #'erc)
 (π "<menu> e s" #'eshell)
+(π "<menu> e v" #'eval-buffer)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'goto-line)
 (π "<menu> g n" #'gnus)
