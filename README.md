@@ -123,8 +123,6 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
-<kbd>M-d</kbd>      | kill S-expression
-<kbd>M-k</kbd>      | kill till end of line (smart for S-expressions)
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-u</kbd>      | fix word: upcase
@@ -141,7 +139,6 @@ Shortcut            | Description
 <kbd>F12</kbd>      | save buffers and kill terminal (exit)
 <kbd>escape</kbd>   | delete window
 <kbd>return</kbd>   | avy go to char
-<kbd>C-backspace</kbd> | backward kill S-expression
 <kbd>C-return</kbd> | duplicate line
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
@@ -150,9 +147,8 @@ Shortcut            | Description
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | rectangular selection
-<kbd>menu 2</kbd>   | smartparens: select next thing
+<kbd>menu 2</kbd>   | mark word
 <kbd>menu 3</kbd>   | mark rest of line
-<kbd>menu 4</kbd>   | smartparens: add to previous S-expression
 <kbd>menu 5</kbd>   | mark paragraph
 <kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a b</kbd> | toggle abbrev mode
@@ -232,6 +228,13 @@ Shortcut            | Description
 <kbd>C-c C-l</kbd>  | C mode: compile project
 <kbd>b</kbd>        | Dired: up directory
 <kbd>z</kbd>        | Dired: change to WDired mode
+<kbd>C-backspace</kbd> | smartparens: backward kill S-expression
+<kbd>menu 2</kbd>   | smartparens: select thing S-expression
+<kbd>menu 4</kbd>   | smartparens: add to previous S-expression
+<kbd>M-d</kbd>      | smartparens: kill S-expression
+<kbd>M-k</kbd>      | smartparens: hybrid kill
+<kbd>M-f</kbd>      | smartparens: forward S-expression
+<kbd>M-b</kbd>      | smartparens: backward S-expression
 
 ## Keyboard Layouts and Abbreviations
 

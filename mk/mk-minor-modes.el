@@ -73,8 +73,8 @@
                   "^\*slime-events\*"))
   (add-to-list 'ido-ignore-buffers buffer))
 
-(put 'dired-do-copy    'ido      nil) ; use ido there
-(put 'dired-do-rename  'ido      nil) ; ^
+(put 'dired-do-copy   'ido nil) ; use ido there
+(put 'dired-do-rename 'ido nil) ; ^
 
 (setq
  minor-mode-alias
@@ -96,6 +96,16 @@
    (superword-mode           . "")
    (whitespace-mode          . "")
    (yas-minor-mode           . "")))
+
+(τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
+(τ smartparens smartparens "<menu> 2"      #'sp-select-next-thing)
+(τ smartparens smartparens "<menu> 4"      #'sp-add-to-previous-sexp)
+(τ smartparens smartparens "M-b"           #'sp-backward-sexp)
+(τ smartparens smartparens "M-d"           #'sp-kill-sexp)
+(τ smartparens smartparens "M-f"           #'sp-forward-sexp)
+(τ smartparens smartparens "M-k"           #'sp-kill-hybrid-sexp)
+
+(advice-add 'sp-add-to-previous-sexp :after #'sp-forward-sexp)
 
 (eval-after-load 'multiple-cursors-core
   '(defun mc/prompt-for-inclusion-in-whitelist (original-command)
