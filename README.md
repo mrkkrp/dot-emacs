@@ -127,6 +127,9 @@ Shortcut            | Description
 <kbd>M-k</kbd>      | kill till end of line (smart for S-expressions)
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up
+<kbd>M-u</kbd>      | fix word: upcase
+<kbd>M-l</kbd>      | fix word: downcase
+<kbd>M-c</kbd>      | fix word: capitalize
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
 <kbd>F6</kbd>       | find file in other window (also Dired)
