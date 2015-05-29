@@ -1,26 +1,26 @@
 ;;; mk-global.el --- Global settings -*- lexical-binding: t; -*-
-;;;
-;;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
-;;;
-;;; This file is not part of GNU Emacs.
-;;;
-;;; This program is free software: you can redistribute it and/or modify it
-;;; under the terms of the GNU General Public License as published by the
-;;; Free Software Foundation, either version 3 of the License, or (at your
-;;; option) any later version.
-;;;
-;;; This program is distributed in the hope that it will be useful, but
-;;; WITHOUT ANY WARRANTY; without even the implied warranty of
-;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-;;; Public License for more details.
-;;;
-;;; You should have received a copy of the GNU General Public License along
-;;; with this program. If not, see <http://www.gnu.org/licenses/>.
+;;
+;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software: you can redistribute it and/or modify it
+;; under the terms of the GNU General Public License as published by the
+;; Free Software Foundation, either version 3 of the License, or (at your
+;; option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+;; Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License along
+;; with this program. If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;;; Here are various settings not specific to any major mode. You can see
-;;; settings of various minor modes in `mk-minor-modes.el'.
+;; Here are various settings not specific to any major mode. You can see
+;; settings of various minor modes in `mk-minor-modes.el'.
 
 ;;; Code:
 
@@ -74,6 +74,9 @@
 (π "M-k"        #'sp-kill-hybrid-sexp)
 (π "M-n"        #'transpose-line-down)
 (π "M-p"        #'transpose-line-up)
+(π "M-u"        #'fix-word-upcase)
+(π "M-l"        #'fix-word-downcase)
+(π "M-c"        #'fix-word-capitalize)
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
@@ -167,10 +170,8 @@
 (π "<menu> y p" #'yank-primary)
 (π "<menu> y r" #'yank-rectangle)
 
-(put 'downcase-region  'disabled nil) ; don't ever question my power
-(put 'erase-buffer     'disabled nil) ; ^
+(put 'erase-buffer     'disabled nil) ; don't ever question my power
 (put 'narrow-to-region 'disabled nil) ; ^
-(put 'upcase-region    'disabled nil) ; ^
 
 (defalias 'display-startup-echo-area-message (ε #'show-date))
 (defalias 'list-buffers                      #'ibuffer)

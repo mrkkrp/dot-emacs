@@ -1,28 +1,28 @@
 ;;; mk-abbrev.el --- Collection of abbreviations -*- lexical-binding: t; -*-
-;;;
-;;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
-;;;
-;;; This file is not part of GNU Emacs.
-;;;
-;;; This program is free software: you can redistribute it and/or modify it
-;;; under the terms of the GNU General Public License as published by the
-;;; Free Software Foundation, either version 3 of the License, or (at your
-;;; option) any later version.
-;;;
-;;; This program is distributed in the hope that it will be useful, but
-;;; WITHOUT ANY WARRANTY; without even the implied warranty of
-;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-;;; Public License for more details.
-;;;
-;;; You should have received a copy of the GNU General Public License along
-;;; with this program. If not, see <http://www.gnu.org/licenses/>.
+;;
+;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software: you can redistribute it and/or modify it
+;; under the terms of the GNU General Public License as published by the
+;; Free Software Foundation, either version 3 of the License, or (at your
+;; option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful, but
+;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+;; Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License along
+;; with this program. If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
-;;; I keep all my abbreviations here. I don't have any abbreviations that
-;;; are specific to some major mode, so I just edit `global-abbrev-table'.
-;;; As you can see I use abbreviations mainly for inserting of Unicode
-;;; symbols that otherwise are difficult to type on standard keyboards.
+;; I keep all my abbreviations here. I don't have any abbreviations that are
+;; specific to some major mode, so I just edit `global-abbrev-table'. As you
+;; can see I use abbreviations mainly for inserting of Unicode symbols that
+;; otherwise are difficult to type on standard keyboards.
 
 ;;; Code:
 
@@ -113,10 +113,10 @@
   "Name of last abbrev expanded with `mk-abbrev-insert' function.")
 
 (defun mk-abbrev-insert ()
-  "Read name of abbreviation without leading 8 and automatically
-insert it. If input is empty, insert last used abbreviation or if
-there is no such abbreviation yet, do nothing. Good when need to
-insert abbreviation with activated input method."
+  "Read name of abbreviation without leading 8 and insert it.
+If input is empty, insert last used abbreviation or if there is
+no such abbreviation yet, do nothing.  Good when need to insert
+abbreviation with activated input method."
   (interactive)
   (let* ((col   (current-column))
          (input (read-from-minibuffer "Abbrev: " nil mk-abbrev-map))
