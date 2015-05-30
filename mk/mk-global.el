@@ -57,23 +57,28 @@
                                     (Package . CL-USER)
                                     (Syntax  . COMMON-LISP)))
 
+;;; Handy translations for use with «Sticky Keys»
+
+(translate-kbd "C-c c" "C-c C-c")
+(translate-kbd "C-c l" "C-c C-l")
+(translate-kbd "C-c o" "C-c C-o")
+(translate-kbd "C-x ;" "C-x C-;")
+
+;;; Global key map
+
 (π "C-'"        #'ace-window)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'compile-init-files)
-(π "C-c c"      (ε #'process-kbd "C-c C-c"))
 (π "C-c e"      (ε #'visit-file mk-dir))
 (π "C-c g"      #'upgrade-all-packages)
 (π "C-c i"      #'flyspell-correct-word-before-point)
-(π "C-c l"      (ε #'process-kbd "C-c C-l"))
-(π "C-c o"      (ε #'process-kbd "C-c C-o"))
 (π "C-c p"      #'purge-buffers)
 (π "C-c r"      #'revert-buffer)
 (π "C-c s"      #'search-online)
 (π "C-c t"      (ε #'visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
 (π "C-x o"      #'ace-window)
-(π "C-x ;"      #'comment-line)
 (π "M-n"        #'transpose-line-down)
 (π "M-p"        #'transpose-line-up)
 (π "M-u"        #'fix-word-upcase)

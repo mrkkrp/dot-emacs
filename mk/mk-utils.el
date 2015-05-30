@@ -217,10 +217,6 @@ If the file does not exist, print a message about the fact."
         (find-file filename)
       (message (concat filename " does not exist.")))))
 
-(defun process-kbd (str)
-  "Invoke key binding as if keys indicated in STR are pressed."
-  (funcall (key-binding (kbd str))))
-
 (defmacro ε (fnc &rest args)
   "Interactively invoke function FNC with arguments ARGS.
 Kind of partial application."
@@ -253,6 +249,11 @@ Switch between given INPUT-METHOD and DICTIONARY and their defaults."
      '(define-key
         (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
         (kbd ,key) ,fnc)))
+
+(defmacro translate-kbd (from to)
+  "Translate combinations of keys FROM to TO combination.
+Effect of this translation is global."
+  `(define-key key-translation-map (kbd ,from) (kbd ,to)))
 
 (defmacro λ (&rest args)
   "Return function that interactively return ARGS."
