@@ -3,5 +3,5 @@
 # name: import
 # key: import
 # --
-import${4:$(if (> (length yas-text) 0) " qualified" "")} ${1:Module}${2: (${3:symbols})}${4: as ${5:Alias}}
+import${2:$(if (> (length yas-text) 0) " qualified" "")} ${1:Module}${2: as ${3:Alias}}${4: (${5:symbols})}
 $0
