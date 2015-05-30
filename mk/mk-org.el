@@ -33,6 +33,7 @@
 (setq
  org-agenda-files          (org-files)
  org-catch-invisible-edits 'show ; make point visible
+ org-completion-use-ido    t
  org-elipsis               "…")
 
 (τ org org "C-'" #'ace-window)

@@ -43,12 +43,14 @@
     haskell-mode       ; Haskell development
     ido-hacks          ; various ido goodies
     ido-ubiquitous     ; use ido everywhere
+    ido-vertical-mode  ; display IDO vertically
     magit              ; Emacs mode for git
     markdown-mode      ; markdown editing
     multiple-cursors   ; a cool feature…
     prolog             ; Prolog development
     rainbow-delimiters ; highlight nested parenthesis (for Lisps)
     smartparens        ; editing of parenthesis of all kinds
+    smex               ; IDO-powered `execute-extended-command'
     smooth-scroll      ; scrolling experience
     solarized-theme    ; my favorite color theme
     yasnippet)         ; template system

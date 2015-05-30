@@ -40,6 +40,8 @@
  ido-decorations '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
  ido-enable-flex-matching          t
  ido-everywhere                    t
+ ido-vertical-decorations          '("\n-> " "" "\n   " "\n   …" "[" "]"
+                                     " ×" " ✔" " ⊥" " ⊥" " ↯" "\n-> " "")
  whitespace-line-column            80
  whitespace-style                  '(face lines-tail)
  yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
@@ -49,7 +51,8 @@
 (display-time-mode                1) ; display time
 (global-auto-revert-mode          1) ; revert buffers automatically
 (ido-mode                         1) ; ido for switch-buffer and find-file
-(ido-ubiquitous-mode              1) ; use ido everywhere
+(ido-ubiquitous-mode              1) ; use IDO everywhere
+(ido-vertical-mode                1) ; display IDO vertically
 (menu-bar-mode                    0) ; hide menu bar
 (minibuffer-electric-default-mode 1) ; electric minibuffer
 (scroll-bar-mode                  0) ; disable scroll bar
