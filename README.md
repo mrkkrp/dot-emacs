@@ -42,6 +42,7 @@ Backspace</kbd>? There are three things to consider:
 3. There are no other way in Emacs to invoke `backward-delete-char` command,
    than via <kbd>⌫ Backspace</kbd>, there is no handy alternative key
    binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
+   binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
    <kbd>C-i</kbd>.
 
 So why not swap <kbd>↹ Tab</kbd> key and <kbd>⌫ Backspace</kbd>? If you're a
@@ -63,6 +64,20 @@ I recommend changing shortcut for «window cycling», it's usually <kbd>⎇
 Alt</kbd> + <kbd>↹ Tab</kbd>, now it should be <kbd>⎇ Alt</kbd> + <kbd>⌫
 Backspace</kbd>, because this key combination is comfortable and shouldn't
 change.
+
+## Sticky Keys
+
+I'm a big fan of «Sticky Keys» feature. Most major operating systems and
+desktop environments provide this feature, it allows to press modifier keys,
+such as <kbd>⎈ Ctrl</kbd>, <kbd>⎇ Alt</kbd>, and <kbd>⇧ Shift</kbd>
+sequentially, instead of pressing multiple keys at a time — that's how all
+computers should work by default. Anyway, for some commands I hold <kbd>⎈
+Ctrl</kbd> (navigation commands and a few others), but there are not so many
+of them.
+
+If you ask yourself if I have RSI or some kind disability, I have to say
+that if you care about your health, you don't need to wait until you have
+RSI to optimize your interaction with computer.
 
 ## Key Bindings
 
