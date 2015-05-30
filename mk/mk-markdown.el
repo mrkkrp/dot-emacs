@@ -25,7 +25,6 @@
 
 (require 'mk-utils)
 
-(τ markdown-mode markdown "C-c o" #'markdown-follow-thing-at-point)
 (τ markdown-mode markdown "M-n"   #'transpose-line-down)
 (τ markdown-mode markdown "M-p"   #'transpose-line-up)
 
