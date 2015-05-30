@@ -217,6 +217,10 @@ If the file does not exist, print a message about the fact."
         (find-file filename)
       (message (concat filename " does not exist.")))))
 
+(defun process-kbd (str)
+  "Invoke key binding as if keys indicated in STR are pressed."
+  (funcall (key-binding (kbd str))))
+
 (defmacro ε (fnc &rest args)
   "Interactively invoke function FNC with arguments ARGS.
 Kind of partial application."
