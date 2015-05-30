@@ -16,7 +16,7 @@ Some minor features I have implemented (nothing special):
   spying);
 * upgrading of all packages without displaying of `*Packages*` buffer;
 * smart switching between default input method, French, and Russian;
-* some mode line wizardly (can't use `smart-mode-line`, sorry);
+* some mode line wizardry (can't use `smart-mode-line`, sorry);
 * many little hacks that make everything work smoothly and look sexy.
 
 ## Key Remapping
@@ -361,7 +361,8 @@ SPC</kbd> and enter abbreviation without leading ‘8’, finish typing with
 <kbd>SPC</kbd> and abbreviation will be inserted and expanded. Point will be
 placed after one-character expansions and in between such expansions as
 ‘«»’. Since user writes abbreviation in the minibuffer, current input method
-is ignored.
+is ignored. Also, you can repeat insertion of previously used abbreviations
+by pressing just <kbd>menu SPC SPC</kbd>.
 
 If you need to insert name of some key on the keyboard, try <kbd>menu k
 n</kbd>, this invokes `insert-key-name` function that will ask you to enter
