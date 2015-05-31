@@ -1,8 +1,8 @@
-#*
 *.elc
 .cask
 .emacs-custom.el
 .mc-lists.el
+\#*
 auto-save-list/
 bookmarks
 elpa/

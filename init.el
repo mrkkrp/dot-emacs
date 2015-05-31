@@ -41,6 +41,7 @@
     flycheck             ; checking code on the fly
     flycheck-haskell     ; cabal sandboxes, etc.
     ghc                  ; improves Haskell REPL experience
+    gitignore-mode       ; for editing of .gitignore files
     haskell-mode         ; Haskell development
     ido-hacks            ; various ido goodies
     ido-ubiquitous       ; use ido everywhere
