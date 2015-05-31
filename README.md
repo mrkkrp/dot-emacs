@@ -117,11 +117,9 @@ key has two semantics: end of input and new line, it's logical that we have
 two flavors of <kbd>↵ Return</kbd> key here. But what's about the <kbd>↵
 Return</kbd> key itself? It's of no use, unless GPG pops up with its
 thing. At the same time <kbd>↵ Return</kbd> occupies a comfortable position
-at the keyboard, so it's stupid not to use it for something
-useful. <kbd>C-return</kbd> duplicates current line in such a way that this
-command can be performed repeatedly. This is handy when you need to type
-many similar lines with variations. The <kbd>↵ Return</kbd> key alone
-invokes `avy-goto-char`, and look, this is really convenient! Try it!
+at the keyboard, so it's stupid not to use it for something useful. For me,
+<kbd>↵ Return</kbd> key invokes `avy-goto-char`, and look, this is really
+convenient! Try it!
 
 Shortcut            | Description
 --------            | -----------
@@ -138,6 +136,7 @@ Shortcut            | Description
 <kbd>C-c t</kbd>    | open org agenda file
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up
+<kbd>M-r</kbd>      | duplicate line
 <kbd>M-u</kbd>      | fix word: upcase
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-c</kbd>      | fix word: capitalize
@@ -152,7 +151,6 @@ Shortcut            | Description
 <kbd>F12</kbd>      | save buffers and kill terminal (exit)
 <kbd>escape</kbd>   | delete window
 <kbd>return</kbd>   | avy go to char
-<kbd>C-return</kbd> | duplicate line
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left

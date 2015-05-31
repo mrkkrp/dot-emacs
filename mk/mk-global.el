@@ -59,10 +59,11 @@
 
 ;;; Handy translations for use with «Sticky Keys»
 
-(translate-kbd "C-c c" "C-c C-c")
-(translate-kbd "C-c l" "C-c C-l")
-(translate-kbd "C-c o" "C-c C-o")
-(translate-kbd "C-x ;" "C-x C-;")
+(translate-kbd "<C-return>" "<return>")
+(translate-kbd "C-c c"      "C-c C-c")
+(translate-kbd "C-c l"      "C-c C-l")
+(translate-kbd "C-c o"      "C-c C-o")
+(translate-kbd "C-x ;"      "C-x C-;")
 
 ;;; Global key map
 
@@ -81,6 +82,7 @@
 (π "C-x o"      #'ace-window)
 (π "M-n"        #'transpose-line-down)
 (π "M-p"        #'transpose-line-up)
+(π "M-r"        #'duplicate-line)
 (π "M-u"        #'fix-word-upcase)
 (π "M-l"        #'fix-word-downcase)
 (π "M-c"        #'fix-word-capitalize)
@@ -96,7 +98,6 @@
 (π "<f12>"      #'save-buffers-kill-terminal)
 (π "<escape>"   #'delete-window)
 (π "<return>"   #'avy-goto-char)
-(π "<C-return>" #'duplicate-line)
 (π "<S-up>"     #'buf-move-up)
 (π "<S-down>"   #'buf-move-down)
 (π "<S-left>"   #'buf-move-left)
