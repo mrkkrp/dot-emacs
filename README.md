@@ -12,11 +12,10 @@ Some minor features I have implemented (nothing special):
 * automation to compile/recompile SLIME (works smoothly with Quicklisp);
 * transposition and duplication of lines;
 * purging of buffers (except for «basic» ones);
-* searching online with DuckDuckGo (you can use Google if you can tolerate
-  spying);
+* searching online with DuckDuckGo;
 * upgrading of all packages without displaying of `*Packages*` buffer;
 * smart switching between default input method, French, and Russian;
-* some mode line wizardry (can't use `smart-mode-line`, sorry);
+* some mode line wizardry (can't use `smart-mode-line` or `powerline`);
 * many little hacks that make everything work smoothly and look sexy.
 
 ## Key Remapping
@@ -41,7 +40,6 @@ Backspace</kbd>? There are three things to consider:
 
 3. There are no other way in Emacs to invoke `backward-delete-char` command,
    than via <kbd>⌫ Backspace</kbd>, there is no handy alternative key
-   binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
    binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
    <kbd>C-i</kbd>.
 
