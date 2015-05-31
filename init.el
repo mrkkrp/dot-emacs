@@ -57,7 +57,7 @@
     yasnippet)           ; template system
   "List of packages that are required for this setup.")
 
-(require 'cl)
+(require 'cl-lib)
 (require 'package)
 (require 'bytecomp)
 
