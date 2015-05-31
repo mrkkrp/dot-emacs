@@ -31,29 +31,30 @@
            emacs-version-needed)))
 
 (defvar vital-packages
-  '(ace-window         ; switching between windows
-    avy                ; move cursor effectively
-    auctex             ; for LaTeX
-    buffer-move        ; move buffers easily
-    cider              ; Clojure development
-    fix-word           ; upcase/downcase/capitalize
-    flycheck           ; checking code on the fly
-    flycheck-haskell   ; cabal sandboxes, etc.
-    ghc                ; improves Haskell REPL experience
-    haskell-mode       ; Haskell development
-    ido-hacks          ; various ido goodies
-    ido-ubiquitous     ; use ido everywhere
-    ido-vertical-mode  ; display IDO vertically
-    magit              ; Emacs mode for git
-    markdown-mode      ; markdown editing
-    multiple-cursors   ; a cool feature…
-    prolog             ; Prolog development
-    rainbow-delimiters ; highlight nested parenthesis (for Lisps)
-    smartparens        ; editing of parenthesis of all kinds
-    smex               ; IDO-powered `execute-extended-command'
-    smooth-scroll      ; scrolling experience
-    solarized-theme    ; my favorite color theme
-    yasnippet)         ; template system
+  '(ace-window           ; switching between windows
+    avy                  ; move cursor effectively
+    auctex               ; for LaTeX
+    buffer-move          ; move buffers easily
+    cider                ; Clojure development
+    common-lisp-snippets ; Yasnippets for Common Lisp
+    fix-word             ; upcase/downcase/capitalize
+    flycheck             ; checking code on the fly
+    flycheck-haskell     ; cabal sandboxes, etc.
+    ghc                  ; improves Haskell REPL experience
+    haskell-mode         ; Haskell development
+    ido-hacks            ; various ido goodies
+    ido-ubiquitous       ; use ido everywhere
+    ido-vertical-mode    ; display IDO vertically
+    magit                ; Emacs mode for git
+    markdown-mode        ; markdown editing
+    multiple-cursors     ; a cool feature…
+    prolog               ; Prolog development
+    rainbow-delimiters   ; highlight nested parenthesis (for Lisps)
+    smartparens          ; editing of parenthesis of all kinds
+    smex                 ; IDO-powered `execute-extended-command'
+    smooth-scroll        ; scrolling experience
+    solarized-theme      ; my favorite color theme
+    yasnippet)           ; template system
   "List of packages that are required for this setup.")
 
 (require 'cl)
