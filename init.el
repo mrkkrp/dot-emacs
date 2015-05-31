@@ -55,6 +55,7 @@
     smex                 ; IDO-powered `execute-extended-command'
     smooth-scroll        ; scrolling experience
     solarized-theme      ; my favorite color theme
+    whole-line-or-region ; operate on current line if there is no region
     yasnippet)           ; template system
   "List of packages that are required for this setup.")
 

@@ -60,6 +60,7 @@
 (smartparens-global-mode          1) ; smart editing of parenthesis
 (smooth-scroll-mode               1) ; smooth scroll
 (tool-bar-mode                    0) ; hide tool bar
+(whole-line-or-region-mode        1) ; operate on current line
 (yas-global-mode                  1) ; enable Yasnippet
 
 (dolist (buffer '("^\*Backtrace\*"
@@ -81,24 +82,25 @@
 
 (setq
  minor-mode-alias
- '((abbrev-mode              . "")
-   (auto-fill-function       . "")
-   (eldoc-mode               . "")
-   (flycheck-mode            . "")
-   (flyspell-mode            . "")
-   (haskell-doc-mode         . "")
-   (haskell-indent-mode      . "")
-   (inf-haskell-mode         . "")
-   (interactive-haskell-mode . "")
-   (ispell-minor-mode        . "")
-   (magit-auto-revert-mode   . "")
-   (slime-mode               . "")
-   (smartparens-mode         . "")
-   (smooth-scroll-mode       . "")
-   (subword-mode             . "")
-   (superword-mode           . "")
-   (whitespace-mode          . "")
-   (yas-minor-mode           . "")))
+ '((abbrev-mode               . "")
+   (auto-fill-function        . "")
+   (eldoc-mode                . "")
+   (flycheck-mode             . "")
+   (flyspell-mode             . "")
+   (haskell-doc-mode          . "")
+   (haskell-indent-mode       . "")
+   (inf-haskell-mode          . "")
+   (interactive-haskell-mode  . "")
+   (ispell-minor-mode         . "")
+   (magit-auto-revert-mode    . "")
+   (slime-mode                . "")
+   (smartparens-mode          . "")
+   (smooth-scroll-mode        . "")
+   (subword-mode              . "")
+   (superword-mode            . "")
+   (whitespace-mode           . "")
+   (whole-line-or-region-mode . "")
+   (yas-minor-mode            . "")))
 
 (τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
 (τ smartparens smartparens "<menu> 2"      #'sp-select-next-thing)
