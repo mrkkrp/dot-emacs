@@ -3,7 +3,7 @@
 # name: defun
 # key: defun
 # --
-(defun ${1:fun} (${2:args})${4:
-  "${5:doc}"}${6:
-  (interactive)}
+(defun ${1:fun} (${2:args})${3:
+  "${4:doc}"}${5:
+  (interactive${6: "p"})}
   $0)
