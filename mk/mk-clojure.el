@@ -27,6 +27,7 @@
 
 (setq
  cider-docview-fill-column            fill-column
+ cider-mode-line '(:eval (format " %s" (cider--modeline-info)))
  cider-repl-display-in-current-window t
  cider-repl-result-prefix             ";; => "
  cider-show-error-buffer              nil
