@@ -23,8 +23,8 @@
 
 ;;; Code:
 
-(setq magit-last-seen-setup-instructions "1.4.0"
-      magit-completing-read-function     #'magit-ido-completing-read)
+(setq magit-completing-read-function     #'magit-ido-completing-read
+      magit-last-seen-setup-instructions "1.4.0")
 
 (provide 'mk-magit)
 

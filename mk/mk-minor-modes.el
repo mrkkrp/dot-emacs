@@ -56,7 +56,7 @@
 (menu-bar-mode                    0) ; hide menu bar
 (minibuffer-electric-default-mode 1) ; electric minibuffer
 (scroll-bar-mode                  0) ; disable scroll bar
-(show-paren-mode                  1) ; highlight parenthesis
+(show-paren-mode                  1) ; highlight matching parenthesis
 (smartparens-global-mode          1) ; smart editing of parenthesis
 (smooth-scroll-mode               1) ; smooth scroll
 (tool-bar-mode                    0) ; hide tool bar
@@ -77,9 +77,6 @@
                   "^\*slime-events\*"))
   (add-to-list 'ido-ignore-buffers buffer))
 
-(put 'dired-do-copy   'ido nil) ; use ido there
-(put 'dired-do-rename 'ido nil) ; ^
-
 (setq
  minor-mode-alias
  '((abbrev-mode               . "")
@@ -87,13 +84,8 @@
    (eldoc-mode                . "")
    (flycheck-mode             . "")
    (flyspell-mode             . "")
-   (haskell-doc-mode          . "")
-   (haskell-indent-mode       . "")
-   (inf-haskell-mode          . "")
-   (interactive-haskell-mode  . "")
    (ispell-minor-mode         . "")
    (magit-auto-revert-mode    . "")
-   (slime-mode                . "")
    (smartparens-mode          . "")
    (smooth-scroll-mode        . "")
    (subword-mode              . "")
@@ -132,7 +124,6 @@
   (flycheck-mode))
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
-(add-hook 'flycheck-mode-hook           #'flycheck-haskell-setup)
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'text-mode-hook               #'prepare-text-mode)

@@ -39,10 +39,16 @@
 (add-to-list 'major-mode-alias '(haskell-interactive-mode . "iH"))
 (add-to-list 'major-mode-alias '(haskell-mode             . "H"))
 
-(add-hook 'haskell-mode-hook (ε #'electric-indent-local-mode 0))
-(add-hook 'haskell-mode-hook #'interactive-haskell-mode)
-(add-hook 'haskell-mode-hook #'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook #'turn-on-haskell-indent)
+(add-to-list 'minor-mode-alias '(haskell-doc-mode          . ""))
+(add-to-list 'minor-mode-alias '(haskell-indent-mode       . ""))
+(add-to-list 'minor-mode-alias '(inf-haskell-mode          . ""))
+(add-to-list 'minor-mode-alias '(interactive-haskell-mode  . ""))
+
+(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
+(add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook  #'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook  #'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook  (ε #'electric-indent-local-mode 0))
 
 (advice-add 'haskell-session-new-assume-from-cabal :override (lambda ()))
 
