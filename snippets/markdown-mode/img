@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # contributor: Mark Karpov
-# name: Keybinding
-# key: kbd
+# name: Image
+# key: img
 # --
-<kbd>${1:key(s)}</kbd>
+![${1:Alt Text}](${2:URL})
