@@ -38,6 +38,8 @@
 
 (τ org org "C-'" #'ace-window)
 
+(add-to-list 'major-mode-alias '(org-agenda-mode . "Org-Agenda"))
+
 (advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)
 
 (provide 'mk-org)
