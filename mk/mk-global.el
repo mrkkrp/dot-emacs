@@ -64,6 +64,7 @@
 (translate-kbd "C-c l"      "C-c C-l")
 (translate-kbd "C-c o"      "C-c C-o")
 (translate-kbd "C-x ;"      "C-x C-;")
+(translate-kbd "C-x o"      "C-x C-o")
 
 ;;; Global key map
 
@@ -172,6 +173,7 @@
 (π "<menu> s s" (ε #'switch-to-buffer "*scratch*"))
 (π "<menu> s t" (ε #'show-date t))
 (π "<menu> t e" #'tetris)
+(π "<menu> u t" #'untabify)
 (π "<menu> v e" #'version)
 (π "<menu> v r" #'split-window-right)
 (π "<menu> y a" #'yas-reload-all)
