@@ -3,5 +3,5 @@
 # name: language extension
 # key: ext
 # --
-{-# LANGUAGE ${1:Extension} #-}
+{-# LANGUAGE ${1:OverloadedStrings} #-}
 $0

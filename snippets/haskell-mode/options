@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: compiler options
+# key: opts
+# --
+{-# OPTIONS ${1:-fno-warn-orphans} #-}
+$0
