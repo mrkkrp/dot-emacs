@@ -30,7 +30,6 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(("8apeq" "≈")  ; approximately equal
-    ("8astr" "⁂")  ; asterism
     ("8bot"  "⊥")  ; bottom
     ("8bull" "•")  ; bullet
     ("8copy" "©")  ; copyright sign

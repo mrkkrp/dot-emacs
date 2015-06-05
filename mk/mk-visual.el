@@ -24,15 +24,8 @@
 ;;; Code:
 
 (when window-system
-  (dolist (range '((#x2045 . #x2112)
-                   (#x2127 . #x2201)
-                   (#x2213 . #x2214)
-                   (#x2207 . #x220e)
-                   (#x2261 . #x2263)
-                   (#x2266 . #xfffd)))
-    (set-fontset-font t range "DejaVu Sans Mono"))
-  (set-face-attribute 'default nil :family "Ubuntu Mono" :height 120)
-  (set-face-attribute 'variable-pitch nil :family "Ubuntu Mono")
+  (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 105)
+  (set-face-attribute 'variable-pitch nil :family "DejaVu Sans Mono")
   (load-theme 'solarized-dark t)
   (toggle-frame-fullscreen))
 

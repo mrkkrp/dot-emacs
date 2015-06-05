@@ -269,7 +269,6 @@ Here is the transformation table:
 Abbreviation  | Result Character | Name of the character
 ------------  | ---------------- | ---------------------
 `8apeq`       | ≈                | approximately equal
-`8astr`       | ⁂                | asterism
 `8bot`        | ⊥                | bottom
 `8bull`       | •                | bullet
 `8copy`       | ©                | copyright sign
@@ -403,14 +402,15 @@ machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
 ## Appearance
 
 I use `solarized-dark` theme. It's the only theme I feel comfortable
-with. My font of choice is `Ubuntu Mono`, because it's easy to get on Arch
-Linux and it supports all scripts that I need: Latin, Cyrillic, Greek, and
-who knows what else (I like strange symbols), it's also quite pretty. I had
-been a big fan of Inconsolata before I switched to Ubuntu Mono. The reason
-for switching is that there is no normal version of the font supporting
-Cyrillic script (yes, I've tried modifications à la Inconsolata LCG, they
-suck or I'm not sufficiently dedicated person to make them look normally). I
-also enable `hl-line-mode` in modes like `dired` for prettiness.
+with. My font of choice is `DejaVu Sans Mono`, because it's free, easy to
+get on Arch Linux and it supports all scripts that I need: Latin, Cyrillic,
+Greek, and who knows what else (I like strange symbols), it's also quite
+pretty. I had been a big fan of `Inconsolata` (and then `Ubuntu Mono`)
+before I switched to `DejaVu Sans Mono`. The reason for switching is that
+there is no normal version of the font supporting Cyrillic script (yes, I've
+tried modifications à la Inconsolata LCG, they suck or I'm not sufficiently
+dedicated person to make them look normally). I also enable `hl-line-mode`
+in modes like `dired` for prettiness.
 
 ## License
 
