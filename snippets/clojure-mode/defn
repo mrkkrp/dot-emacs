@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: defn
+# key: defn
+# --
+(defn ${1:name}${2:
+  "${3:doc}"
+ } [${4:args}]
+  $0)

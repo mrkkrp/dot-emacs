@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: defmulti
+# key: defmm
+# --
+(defmulti ${1:name}${2:
+  "${3:doc}"
+ } ${4:dispatch-fn})
+$0

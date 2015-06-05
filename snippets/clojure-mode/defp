@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: defprotocol
+# key: defp
+# --
+(defprotocol ${1:Name}${2:
+  "${3:doc}"}
+  $0)

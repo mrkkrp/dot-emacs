@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: condp
+# key: condp
+# --
+(condp ${1:predicate} ${2:value}
+  $0)

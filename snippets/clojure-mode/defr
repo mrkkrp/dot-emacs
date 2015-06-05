@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: defrecord
+# key: defr
+# --
+(defrecord ${1:Name} [${2:fields}]$0)
