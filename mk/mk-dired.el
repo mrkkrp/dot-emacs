@@ -26,13 +26,14 @@
 (require 'mk-utils)
 
 (setq
- delete-by-moving-to-trash t        ; in dired mode
- dired-auto-revert-buffer  t        ; automatically revert buffer
- dired-dwim-target         t        ; guess target directory
- dired-keep-marker-copy    nil      ; don't mark copied files
- dired-listing-switches    "-GAlh --group-directories-first"
- dired-recursive-copies    'always  ; don't ask me, just do it
- dired-recursive-deletes   'always) ; ^
+ delete-by-moving-to-trash          t        ; in dired mode
+ dired-auto-revert-buffer           t        ; automatically revert buffer
+ dired-dwim-target                  t        ; guess target directory
+ dired-keep-marker-copy             nil      ; don't mark copied files
+ dired-listing-switches             "-GAlh --group-directories-first"
+ dired-recursive-copies             'always  ; don't ask me, just do it
+ dired-recursive-deletes            'always  ; ^
+ wdired-allow-to-change-permissions t)       ; change permissions with Dired
 
 (τ dired dired "b" #'dired-up-directory)
 (τ dired dired "z" #'wdired-change-to-wdired-mode)
