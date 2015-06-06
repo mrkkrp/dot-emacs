@@ -61,6 +61,7 @@
 
 (translate-kbd "<C-return>" "<return>")
 (translate-kbd "C-c c"      "C-c C-c")
+(translate-kbd "C-c k"      "C-c C-k")
 (translate-kbd "C-c l"      "C-c C-l")
 (translate-kbd "C-c o"      "C-c C-o")
 (translate-kbd "C-x ;"      "C-x C-;")
@@ -134,6 +135,8 @@
 (π "<menu> e r" #'erc)
 (π "<menu> e s" #'eshell)
 (π "<menu> e v" #'eval-buffer)
+(π "<menu> f f" #'find-function)
+(π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'goto-line)
 (π "<menu> g n" #'gnus)

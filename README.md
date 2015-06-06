@@ -185,6 +185,8 @@ Shortcut            | Description
 <kbd>menu e r</kbd> | ERC
 <kbd>menu e s</kbd> | Emacs Shell
 <kbd>menu e v</kbd> | eval buffer
+<kbd>menu f f</kbd> | find Emacs Lisp function
+<kbd>menu f v</kbd> | find Emacs Lisp variable
 <kbd>menu g d</kbd> | GDB
 <kbd>menu g l</kbd> | goto line
 <kbd>menu g n</kbd> | GNUS
