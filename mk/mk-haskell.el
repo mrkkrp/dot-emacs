@@ -30,11 +30,13 @@
  haskell-ask-also-kill-buffers   nil  ; don't ask
  haskell-process-show-debug-tips nil) ; don't show anything
 
-(τ haskell       haskell-interactive "C-c h"   #'haskell-hoogle)
-(τ haskell-cabal haskell-cabal       "C-c h"   #'haskell-hoogle)
-(τ haskell-cabal haskell-cabal       "M-n"     #'transpose-line-down)
-(τ haskell-cabal haskell-cabal       "M-p"     #'transpose-line-up)
-(τ haskell-mode  haskell             "C-c h"   #'haskell-hoogle)
+(τ haskell          haskell-interactive "C-c h" #'haskell-hoogle)
+(τ haskell-cabal    haskell-cabal       "C-c h" #'haskell-hoogle)
+(τ haskell-cabal    haskell-cabal       "M-n"   #'transpose-line-down)
+(τ haskell-cabal    haskell-cabal       "M-p"   #'transpose-line-up)
+(τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
+(τ haskell-mode     haskell             "C-c h" #'haskell-hoogle)
+(τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
 
 (add-to-list 'major-mode-alias '(haskell-interactive-mode . "iH"))
 (add-to-list 'major-mode-alias '(haskell-mode             . "H"))
