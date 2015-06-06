@@ -35,8 +35,22 @@
  dired-recursive-deletes            'always  ; ^
  wdired-allow-to-change-permissions t)       ; change permissions with Dired
 
-(τ dired dired "b" #'dired-up-directory)
-(τ dired dired "z" #'wdired-change-to-wdired-mode)
+(defun dired-first-file ()
+  "Jump to the first file in current directory."
+  (interactive)
+  (beginning-of-buffer)
+  (dired-next-line 2))
+
+(defun dired-last-file ()
+  "Jump to the last file in current directory."
+  (interactive)
+  (end-of-buffer)
+  (dired-previous-line 1))
+
+(τ dired dired "<menu> ," #'dired-first-file)
+(τ dired dired "<menu> ." #'dired-last-file)
+(τ dired dired "b"        #'dired-up-directory)
+(τ dired dired "z"        #'wdired-change-to-wdired-mode)
 
 (put 'dired-do-copy   'ido nil) ; use ido there
 (put 'dired-do-rename 'ido nil) ; ^
