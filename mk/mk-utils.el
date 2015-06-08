@@ -35,27 +35,34 @@ Note that the buffer itself is not killed."
   "Return middle position of point in the buffer."
   (/ (- (point-max) (point-min)) 2))
 
-(defun transpose-line-down ()
-  "Move current line and cursor down."
-  (interactive)
-  (let ((col (current-column)))
-    (forward-line    1)
-    (transpose-lines 1)
-    (forward-line   -1)
-    (move-to-column col)))
+(defun transpose-line-down (&optional arg)
+  "Move current line and cursor down.
+Argument ARG, if supplied, specifies how many times the operation
+should be performed."
+  (interactive "p")
+  (dotimes (_ (or arg 1))
+    (let ((col (current-column)))
+      (forward-line    1)
+      (transpose-lines 1)
+      (forward-line   -1)
+      (move-to-column col))))
 
-(defun transpose-line-up ()
-  "Move current line and cursor up."
-  (interactive)
-  (let ((col (current-column)))
-    (transpose-lines 1)
-    (forward-line   -2)
-    (move-to-column col)))
+(defun transpose-line-up (&optional arg)
+  "Move current line and cursor up.
+Argument ARG, if supplied, specifies how many times the operation
+should be performed."
+  (interactive "p")
+  (dotimes (_ (or arg 1))
+    (let ((col (current-column)))
+      (transpose-lines 1)
+      (forward-line   -2)
+      (move-to-column col))))
 
 (defun duplicate-line (&optional arg)
   "Copy current line and yank its copy under the current line.
-Position of point shifts one line down.  ARG, if supplied,
-specifies how many times the operation should be performed."
+Position of point shifts one line down.  Argument ARG, if
+supplied, specifies how many times the operation should be
+performed."
   (interactive "p")
   (dotimes (_ (or arg 1))
     (let ((col (current-column)))
