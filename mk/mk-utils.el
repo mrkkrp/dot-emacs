@@ -52,21 +52,23 @@ Note that the buffer itself is not killed."
     (forward-line   -2)
     (move-to-column col)))
 
-(defun duplicate-line ()
+(defun duplicate-line (&optional arg)
   "Copy current line and yank its copy under the current line.
-Position of point shifts one line down."
-  (interactive)
-  (let ((col (current-column)))
-    (kill-ring-save
-     (progn
-       (move-beginning-of-line 1)
-       (point))
-     (progn
-       (forward-line 1)
-       (point)))
-    (yank)
-    (forward-line -1)
-    (move-to-column col)))
+Position of point shifts one line down.  ARG, if supplied,
+specifies how many times the operation should be performed."
+  (interactive "p")
+  (dotimes (_ (or arg 1))
+    (let ((col (current-column)))
+      (kill-ring-save
+       (progn
+         (move-beginning-of-line 1)
+         (point))
+       (progn
+         (forward-line 1)
+         (point)))
+      (yank)
+      (forward-line -1)
+      (move-to-column col))))
 
 (defun yank-primary ()
   "Insert the primary selection at the point."
@@ -226,7 +228,7 @@ Kind of partial application."
 
 (defmacro η (fnc)
   "Return function that ignores its arguments and invokes FNC."
-  `(lambda (&rest rest)
+  `(lambda (&rest _)
      (funcall ,fnc)))
 
 (defun α (input-method dictionary)
@@ -257,7 +259,7 @@ Effect of this translation is global."
 
 (defmacro λ (&rest args)
   "Return function that interactively return ARGS."
-  `(lambda (&rest rest)
+  `(lambda (&rest _)
      (interactive)
      ',args))
 
