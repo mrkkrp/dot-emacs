@@ -226,6 +226,18 @@ If the file does not exist, print a message about the fact."
         (find-file filename)
       (message (concat filename " does not exist.")))))
 
+(defun switch-theme (theme)
+  "Switch to THEME, loading it if necessairy."
+  (interactive
+   (list
+    (intern
+     (completing-read "Switch to theme: "
+                      (mapcar 'symbol-name
+                              (custom-available-themes))))))
+  (dolist (enabled-theme custom-enabled-themes)
+    (disable-theme enabled-theme))
+  (load-theme theme t))
+
 (defmacro ε (fnc &rest args)
   "Interactively invoke function FNC with arguments ARGS.
 Kind of partial application."
