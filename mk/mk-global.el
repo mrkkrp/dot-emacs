@@ -136,6 +136,7 @@
 (π "<menu> e s" #'eshell)
 (π "<menu> e v" #'eval-buffer)
 (π "<menu> f f" #'find-function)
+(π "<menu> f o" #'set-font)
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'goto-line)

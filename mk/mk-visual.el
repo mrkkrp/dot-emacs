@@ -24,8 +24,7 @@
 ;;; Code:
 
 (when window-system
-  (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 105)
-  (set-face-attribute 'variable-pitch nil :family "DejaVu Sans Mono")
+  (set-font "DejaVu Sans Mono" 105)
   (load-theme 'solarized-dark t)
   (toggle-frame-fullscreen))
 

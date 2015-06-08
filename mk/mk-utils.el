@@ -238,6 +238,16 @@ If the file does not exist, print a message about the fact."
     (disable-theme enabled-theme))
   (load-theme theme t))
 
+(defun set-font (font &optional height)
+  "Set font FONT as main font for all frames.
+HEIGHT, if supplied, specifies height of letters to use."
+  (interactive
+   (list (completing-read "Use font: " (font-family-list)) nil))
+  (set-face-attribute 'default nil :family font)
+  (when height
+    (set-face-attribute 'default nil :height height))
+  (set-face-attribute 'variable-pitch nil :family font))
+
 (defmacro ε (fnc &rest args)
   "Interactively invoke function FNC with arguments ARGS.
 Kind of partial application."
