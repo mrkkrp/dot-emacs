@@ -272,6 +272,7 @@ Here is the transformation table:
 
 Abbreviation  | Result Character | Name of the character
 ------------  | ---------------- | ---------------------
+`8acc`        | ́                | accent mark
 `8apeq`       | ≈                | approximately equal
 `8bot`        | ⊥                | bottom
 `8bull`       | •                | bullet

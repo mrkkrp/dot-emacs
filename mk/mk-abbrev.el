@@ -29,7 +29,8 @@
 (setq save-abbrevs nil)
 
 (define-abbrev-table 'global-abbrev-table
-  '(("8apeq" "≈")  ; approximately equal
+  '(("8acc" "́")  ; accent
+    ("8apeq" "≈")  ; approximately equal
     ("8bot"  "⊥")  ; bottom
     ("8bull" "•")  ; bullet
     ("8copy" "©")  ; copyright sign
