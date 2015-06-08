@@ -25,16 +25,16 @@
 
 (require 'mk-utils)
 
-(defun swi-prolog-search ()
-  "Search for documentation at official site of SWI Prolog."
-  (interactive)
+(defun swi-prolog-search (symbol)
+  "Search for SYMBOL at official site of SWI Prolog."
+  (interactive
+   (list (if mark-active
+             (buffer-substring (region-beginning)
+                               (region-end))
+           (read-string "Prolog Docs: "))))
   (browse-url
    (concat "http://www.swi-prolog.org/search?for="
-           (url-hexify-string
-            (if mark-active
-                (buffer-substring (region-beginning)
-                                  (region-end))
-              (read-string "Prolog Docs: "))))))
+           (url-hexify-string symbol))))
 
 (τ prolog prolog-inferior "C-c h" #'swi-prolog-search)
 (τ prolog prolog          "C-c h" #'swi-prolog-search)

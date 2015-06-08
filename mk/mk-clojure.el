@@ -34,20 +34,20 @@
  cider-stacktrace-fill-column         fill-column
  nrepl-buffer-name-show-port          nil)
 
-(defun clojure-docs ()
-  "Find documentation for given symbol online."
-  (interactive)
-  (let ((input (if mark-active
-                   (buffer-substring (region-beginning)
-                                     (region-end))
-                 (read-string "ClojureDocs: "))))
-    (destructuring-bind (x &optional y)
-        (split-string input "/")
-      (browse-url
-       (concat "http://clojuredocs.org/clojure."
-               (if y x "core")
-               (if (string= "" y) "" "/")
-               (url-hexify-string (or y x)))))))
+(defun clojure-docs (symbol)
+  "Find documentation for given symbol SYMBOL online."
+  (interactive
+   (list (if mark-active
+             (buffer-substring (region-beginning)
+                               (region-end))
+           (read-string "Clojure Docs: "))))
+  (destructuring-bind (x &optional y)
+      (split-string symbol "/")
+    (browse-url
+     (concat "http://clojuredocs.org/clojure."
+             (if y x "core")
+             (if (string= "" y) "" "/")
+             (url-hexify-string (or y x))))))
 
 (τ cider-repl   cider-repl "<f9>"  #'cider-quit)
 (τ cider-repl   cider-repl "C-c h" #'clojure-docs)
