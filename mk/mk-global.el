@@ -162,6 +162,7 @@
 (π "<menu> n w" #'widen)
 (π "<menu> p i" #'package-install)
 (π "<menu> p r" #'print-buffer)
+(π "<menu> p y" #'run-python)
 (π "<menu> q e" #'query-replace-regexp)
 (π "<menu> q r" #'query-replace)
 (π "<menu> r c" #'copy-to-register)
