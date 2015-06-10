@@ -50,6 +50,8 @@
 (τ python python "C-c C-l" #'python-shell-send-buffer)
 (τ python python "C-c C-c" #'python-shell-send-defun)
 
+(add-hook 'python-mode-hook (ε #'electric-indent-local-mode 0))
+
 (advice-add 'python-shell-send-buffer :before #'python-shell-ensure-proc)
 (advice-add 'python-shell-send-defun  :before #'python-shell-ensure-proc)
 
