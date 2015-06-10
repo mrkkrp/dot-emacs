@@ -42,6 +42,9 @@
  ido-everywhere                    t
  ido-vertical-decorations          '("\n-> " "" "\n   " "\n   …" "[" "]"
                                      " ×" " ✔" " ⊥" " ⊥" " ↯" "\n-> " "")
+ sp-highlight-pair-overlay         nil
+ sp-highlight-wrap-overlay         nil
+ sp-highlight-wrap-tag-overlay     nil
  whitespace-line-column            80
  whitespace-style                  '(face lines-tail)
  yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
