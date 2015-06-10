@@ -41,6 +41,14 @@
   (delete-window-by-name "*Compile-Log*") ; clearing
   (delete-window-by-name "*Shell Command Output*"))
 
+(setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
+
+(add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
+(add-to-list 'major-mode-alias '(slime-repl-mode . "iλ"))
+(add-to-list 'minor-mode-alias '(slime-mode      . ""))
+(add-to-list 'mk-search-prefix '(lisp-mode       . "common lisp"))
+(add-to-list 'mk-search-prefix '(slime-repl-mode . "common lisp"))
+
 (defun slime-in-package ()
   "Load specified package and switch to it."
   (interactive)
@@ -52,19 +60,12 @@
              pkg-name
              "))"))))
 
-(setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
-
 (τ lisp-mode  lisp       "C-c h" #'slime-hyperspec-lookup)
 (τ slime      slime      "M-n"   #'transpose-line-down)
 (τ slime      slime      "M-p"   #'transpose-line-up)
 (τ slime      slime-repl "C-c i" #'slime-in-package)
 (τ slime      slime-repl "C-c r" #'slime-restart-inferior-lisp)
 (τ slime-repl slime-repl "<f9>"  (ε #'slime-kill-all-buffers))
-
-(add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
-(add-to-list 'major-mode-alias '(slime-repl-mode . "iλ"))
-
-(add-to-list 'minor-mode-alias '(slime-mode      . ""))
 
 (add-hook 'slime-mode-hook #'rainbow-delimiters-mode)
 

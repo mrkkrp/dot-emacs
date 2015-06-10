@@ -34,6 +34,11 @@
  cider-stacktrace-fill-column         fill-column
  nrepl-buffer-name-show-port          nil)
 
+(add-to-list 'major-mode-alias '(cider-repl-mode . "ic"))
+(add-to-list 'major-mode-alias '(clojure-mode    . "c"))
+(add-to-list 'mk-search-prefix '(cider-repl-mode . "clojure"))
+(add-to-list 'mk-search-prefix '(clojure-mode    . "clojure"))
+
 (defun clojure-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
   (interactive
@@ -53,9 +58,6 @@
 (τ cider-repl   cider-repl "C-c h" #'clojure-docs)
 (τ cider-repl   cider-repl "C-c r" #'cider-restart)
 (τ clojure-mode clojure    "C-c h" #'clojure-docs)
-
-(add-to-list 'major-mode-alias '(cider-repl-mode . "ic"))
-(add-to-list 'major-mode-alias '(clojure-mode    . "c"))
 
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 

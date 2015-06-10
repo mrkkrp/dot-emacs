@@ -29,6 +29,11 @@
 
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
+(add-to-list 'major-mode-alias '(inferior-python-mode . "iπ"))
+(add-to-list 'major-mode-alias '(python-mode          . "π"))
+(add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
+(add-to-list 'mk-search-prefix '(python-mode          . "python"))
+
 (when (executable-find "ipython")
   (setq
    python-shell-interpreter          "ipython"
@@ -45,9 +50,6 @@
   (interactive)
   (unless (python-shell-get-process)
     (run-python nil nil t)))
-
-(add-to-list 'major-mode-alias '(inferior-python-mode . "iπ"))
-(add-to-list 'major-mode-alias '(python-mode          . "π"))
 
 (τ python python "C-c C-l" #'python-shell-send-buffer)
 (τ python python "C-c C-c" #'python-shell-send-defun)

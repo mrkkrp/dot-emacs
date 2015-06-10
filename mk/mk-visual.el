@@ -23,8 +23,10 @@
 
 ;;; Code:
 
+(require 'mk-utils)
+
 (when window-system
-  (set-font "DejaVu Sans Mono" 105)
+  (mk-set-font "DejaVu Sans Mono" 105)
   (load-theme 'solarized-dark t)
   (toggle-frame-fullscreen))
 

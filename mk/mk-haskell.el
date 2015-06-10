@@ -32,6 +32,15 @@
 
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-mode)
 
+(add-to-list 'major-mode-alias '(haskell-interactive-mode . "iH"))
+(add-to-list 'major-mode-alias '(haskell-mode             . "H"))
+(add-to-list 'minor-mode-alias '(haskell-doc-mode         . ""))
+(add-to-list 'minor-mode-alias '(haskell-indent-mode      . ""))
+(add-to-list 'minor-mode-alias '(inf-haskell-mode         . ""))
+(add-to-list 'minor-mode-alias '(interactive-haskell-mode . ""))
+(add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
+(add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
+
 (τ haskell          haskell-interactive "C-c h" #'haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "C-c h" #'haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "M-n"   #'transpose-line-down)
@@ -39,14 +48,6 @@
 (τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
 (τ haskell-mode     haskell             "C-c h" #'haskell-hoogle)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
-
-(add-to-list 'major-mode-alias '(haskell-interactive-mode . "iH"))
-(add-to-list 'major-mode-alias '(haskell-mode             . "H"))
-
-(add-to-list 'minor-mode-alias '(haskell-doc-mode          . ""))
-(add-to-list 'minor-mode-alias '(haskell-indent-mode       . ""))
-(add-to-list 'minor-mode-alias '(inf-haskell-mode          . ""))
-(add-to-list 'minor-mode-alias '(interactive-haskell-mode  . ""))
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)

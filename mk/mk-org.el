@@ -36,9 +36,9 @@
  org-completion-use-ido    t
  org-elipsis               "…")
 
-(τ org org "C-'" #'ace-window)
-
 (add-to-list 'major-mode-alias '(org-agenda-mode . "Org-Agenda"))
+
+(τ org org "C-'" #'ace-window)
 
 (advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)
 

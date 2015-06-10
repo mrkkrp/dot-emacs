@@ -19,10 +19,12 @@
 
 ;;; Commentary:
 
-;; I've collected various auxiliary functions here, to avoid cluttering of
+;; I've collected various auxiliary functions here to avoid cluttering of
 ;; other files.
 
 ;;; Code:
+
+(require 'cl-lib)
 
 (defun delete-window-by-name (name)
   "Delete all windows that display buffer with name NAME.
@@ -30,10 +32,6 @@ Note that the buffer itself is not killed."
   (when (get-buffer name)
     (dolist (window (get-buffer-window-list name))
       (delete-window window))))
-
-(defun point-mid ()
-  "Return middle position of point in the buffer."
-  (/ (- (point-max) (point-min)) 2))
 
 (defun transpose-line-down (&optional arg)
   "Move current line and cursor down.
@@ -78,7 +76,7 @@ performed."
       (move-to-column col))))
 
 (defun yank-primary ()
-  "Insert the primary selection at the point."
+  "Insert contents of the primary selection at the point."
   (interactive)
   (insert (gui-get-selection)))
 
@@ -95,37 +93,42 @@ performed."
   (interactive)
   (kill-new (buffer-string)))
 
+(defvar keyboard-key-name
+  '(("alt"       . "⎇")
+    ("backspace" . "⌫")
+    ("caps lock" . "⇪")
+    ("command"   . "⌘")
+    ("control"   . "⎈")
+    ("ctrl"      . "⎈")
+    ("del"       . "⌦")
+    ("delete"    . "⌦")
+    ("down"      . "↓")
+    ("end"       . "↘")
+    ("enter"     . "↵")
+    ("esc"       . "⎋")
+    ("escape"    . "⎋")
+    ("home"      . "↖")
+    ("left"      . "←")
+    ("menu"      . "▤")
+    ("meta"      . "◆")
+    ("option"    . "⌥")
+    ("page down" . "⇟")
+    ("page up"   . "⇞")
+    ("return"    . "↵")
+    ("right"     . "→")
+    ("shift"     . "⇧")
+    ("tab"       . "↹")
+    ("up"        . "↑")
+    ("windows"   . "❖"))
+  "Names of various keys on the keyboard.
+It's used in `insert-key-name' function.")
+
 (defun insert-key-name ()
   "Read a key from the keyboard and insert its name."
   (interactive)
-  (let* ((items '(("alt"       . "⎇")
-                  ("backspace" . "⌫")
-                  ("caps lock" . "⇪")
-                  ("command"   . "⌘")
-                  ("control"   . "⎈")
-                  ("ctrl"      . "⎈")
-                  ("del"       . "⌦")
-                  ("delete"    . "⌦")
-                  ("down"      . "↓")
-                  ("end"       . "↘")
-                  ("enter"     . "↵")
-                  ("esc"       . "⎋")
-                  ("escape"    . "⎋")
-                  ("home"      . "↖")
-                  ("left"      . "←")
-                  ("menu"      . "▤")
-                  ("meta"      . "◆")
-                  ("option"    . "⌥")
-                  ("page down" . "⇟")
-                  ("page up"   . "⇞")
-                  ("return"    . "↵")
-                  ("right"     . "→")
-                  ("shift"     . "⇧")
-                  ("tab"       . "↹")
-                  ("up"        . "↑")
-                  ("windows"   . "❖")))
-         (β (ido-completing-read "Key name: " (mapcar #'car items)))
-         (ξ (cdr (assoc (string-trim (downcase β)) items))))
+  (let* ((β (ido-completing-read "Key name: "
+                                 (mapcar #'car keyboard-key-name)))
+         (ξ (cdr (assoc (string-trim (downcase β)) keyboard-key-name))))
     (insert (concat "<kbd>" ξ (when ξ " ") (capitalize β) "</kbd>"))))
 
 (defun show-date (&optional stamp)
@@ -148,7 +151,7 @@ If STAMP is not NIL, insert date into currently active buffer."
   "These are regexps to match names of buffers that I don't want to purge.")
 
 (defun purge-buffers ()
-  "Kill all buffer except those that have names listed in BASIC-BUFFERS."
+  "Kill all buffers except for those that have names listed in `basic-buffers'."
   (interactive)
   (let ((redundant-buffers
          (remove-if (lambda (name)
@@ -166,19 +169,28 @@ If STAMP is not NIL, insert date into currently active buffer."
     (switch-to-buffer "*scratch*")
     (delete-other-windows)))
 
-(defun search-online ()
-  "Search Internet with DuckDuckGo."
-  (interactive)
+(defvar mk-search-prefix nil
+  "This is an alist that contains some prefixes for online search query.
+Prefixes are picked up according to currect major mode.")
+
+(defun mk-search (what)
+  "Search Internet for WHAT thing, with DuckDuckGo.
+When called interactively, it uses prefix corresponding to
+current major mode, as specified in `mk-search-prefix'."
+  (interactive
+   (list (if mark-active
+             (buffer-substring (region-beginning)
+                               (region-end))
+           (let ((prefix (cdr (assoc major-mode
+                                     mk-search-prefix))))
+             (read-string "DuckDuckGo: "
+                          (when prefix (concat prefix " ")))))))
   (browse-url
    (concat "https://duckduckgo.com/html/?k1=-1&q="
-           (url-hexify-string
-            (if mark-active
-                (buffer-substring (region-beginning)
-                                  (region-end))
-              (read-string "DuckDuckGo: "))))))
+           (url-hexify-string what))))
 
 (defun upgrade-all-packages ()
-  "Upgrade all packages automatically."
+  "Upgrade all packages automatically without showing any special buffer."
   (interactive)
   (package-refresh-contents)
   (let (upgrades)
@@ -204,7 +216,7 @@ If STAMP is not NIL, insert date into currently active buffer."
         (delete-window-by-name "*Compile-Log*")))))
 
 (defun compile-init-files ()
-  "Byte compile init files."
+  "Byte compile init files (all *.el files under `mk-dir' directory)."
   (interactive)
   (let (once)
     (dolist (item (cons user-init-file
@@ -218,8 +230,8 @@ If STAMP is not NIL, insert date into currently active buffer."
         (delete-window-by-name "*Compile-Log*")
       (message "Byte compiled init files exist and are up to date."))))
 
-(defun eval-last-sexp* ()
-  "Evaluate last S-expression and substitute it with the result."
+(defun mk-eval-last-sexp ()
+  "Evaluate last S-expression and replace it with the result."
   (interactive)
   (let ((value (eval (elisp--preceding-sexp))))
     (kill-sexp -1)
@@ -243,8 +255,8 @@ If the file does not exist, print a message about the fact."
     (split-window-sensibly)
     (other-window 1)))
 
-(defun switch-theme (theme)
-  "Switch to THEME, loading it if necessairy."
+(defun mk-switch-theme (theme)
+  "Switch to theme THEME, loading it if necessairy."
   (interactive
    (list
     (intern
@@ -255,7 +267,7 @@ If the file does not exist, print a message about the fact."
     (disable-theme enabled-theme))
   (load-theme theme t))
 
-(defun set-font (font &optional height)
+(defun mk-set-font (font &optional height)
   "Set font FONT as main font for all frames.
 HEIGHT, if supplied, specifies height of letters to use."
   (interactive
@@ -274,7 +286,7 @@ Kind of partial application."
 
 (defmacro η (fnc)
   "Return function that ignores its arguments and invokes FNC."
-  `(lambda (&rest _)
+  `(lambda (&rest _rest)
      (funcall ,fnc)))
 
 (defun α (input-method dictionary)
@@ -298,16 +310,16 @@ Switch between given INPUT-METHOD and DICTIONARY and their defaults."
         (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
         (kbd ,key) ,fnc)))
 
+(defmacro λ (&rest args)
+  "Return function that interactively return ARGS."
+  `(lambda (&rest _rest)
+     (interactive)
+     ',args))
+
 (defmacro translate-kbd (from to)
   "Translate combinations of keys FROM to TO combination.
 Effect of this translation is global."
   `(define-key key-translation-map (kbd ,from) (kbd ,to)))
-
-(defmacro λ (&rest args)
-  "Return function that interactively return ARGS."
-  `(lambda (&rest _)
-     (interactive)
-     ',args))
 
 (defvar minor-mode-alias nil
   "Alias for minor modes.")
@@ -316,7 +328,7 @@ Effect of this translation is global."
   "Alias for major modes.")
 
 (defun apply-mode-alias ()
-  "Use alias from MINOR-MODE-ALIAS and MAJOR-MODE-ALIAS."
+  "Use alias from `minor-mode-alias' and `major-mode-alias'."
   (dolist (x minor-mode-alias)
     (let ((trg (cdr (assoc (car x) minor-mode-alist))))
       (when trg

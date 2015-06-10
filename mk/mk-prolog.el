@@ -25,6 +25,13 @@
 
 (require 'mk-utils)
 
+(add-to-list 'auto-mode-alist  '("\\.pl\\'" . prolog-mode))
+
+(add-to-list 'major-mode-alias '(prolog-inferior-mode . "iP"))
+(add-to-list 'major-mode-alias '(prolog-mode          . "P"))
+(add-to-list 'mk-search-prefix '(prolog-inferior-mode . "prolog"))
+(add-to-list 'mk-search-prefix '(prolog-mode          . "prolog"))
+
 (defun swi-prolog-search (symbol)
   "Search for SYMBOL at official site of SWI Prolog."
   (interactive
@@ -38,12 +45,6 @@
 
 (τ prolog prolog-inferior "C-c h" #'swi-prolog-search)
 (τ prolog prolog          "C-c h" #'swi-prolog-search)
-
-;; open .pl files as Prolog files, not Perl files
-(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
-
-(add-to-list 'major-mode-alias '(prolog-inferior-mode . "iP"))
-(add-to-list 'major-mode-alias '(prolog-mode          . "P"))
 
 (provide 'mk-prolog)
 

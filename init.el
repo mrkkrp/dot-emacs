@@ -60,7 +60,6 @@
     yasnippet)           ; template system
   "List of packages that are required for this setup.")
 
-(require 'cl-lib)
 (require 'package)
 (require 'bytecomp)
 
@@ -82,7 +81,9 @@
 (unless (server-running-p)
   (server-start))
 
-(defvar mk-dir (expand-file-name "mk" user-emacs-directory))
+(defvar mk-dir (expand-file-name "mk" user-emacs-directory)
+  "This is directory where all the configuration files are kept.")
+
 (setq custom-file (expand-file-name ".emacs-custom.el" user-emacs-directory))
 
 (add-to-list 'load-path mk-dir)

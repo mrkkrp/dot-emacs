@@ -25,10 +25,10 @@
 
 (require 'mk-utils)
 
-(τ markdown-mode markdown "M-n"   #'transpose-line-down)
-(τ markdown-mode markdown "M-p"   #'transpose-line-up)
-
 (add-to-list 'major-mode-alias '(markdown-mode . "M"))
+
+(τ markdown-mode markdown "M-n" #'transpose-line-down)
+(τ markdown-mode markdown "M-p" #'transpose-line-up)
 
 (provide 'mk-markdown)
 

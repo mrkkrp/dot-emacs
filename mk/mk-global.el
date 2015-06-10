@@ -24,8 +24,8 @@
 
 ;;; Code:
 
-(require 'mk-utils)
 (require 'mk-abbrev)
+(require 'mk-utils)
 
 (setq-default
  auto-save-default                nil     ; don't ever create autosaves
@@ -45,7 +45,7 @@
  minibuffer-eldef-shorten-default t       ; shorten defaults in minibuffer
  require-final-newline            t
  resize-mini-windows              t       ; grow and shrink
- ring-bell-function               'ignore ; bells?
+ ring-bell-function               'ignore ; bells‽
  scroll-margin                    3
  scroll-step                      1
  suggest-key-bindings             nil
@@ -56,6 +56,9 @@
                                     (Base    . 10)
                                     (Package . CL-USER)
                                     (Syntax  . COMMON-LISP)))
+
+(put 'erase-buffer     'disabled nil) ; don't ever question my power
+(put 'narrow-to-region 'disabled nil) ; ^
 
 ;;; Handy translations for use with «Sticky Keys»
 
@@ -78,12 +81,12 @@
 (π "C-c i"      #'flyspell-correct-word-before-point)
 (π "C-c p"      #'purge-buffers)
 (π "C-c r"      #'revert-buffer)
-(π "C-c s"      #'search-online)
+(π "C-c s"      #'mk-search)
 (π "C-c t"      (ε #'visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
 (π "C-x o"      #'ace-window)
 (π "M-c"        #'fix-word-capitalize)
-(π "M-e"        #'eval-last-sexp*)
+(π "M-e"        #'mk-eval-last-sexp)
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'transpose-line-down)
@@ -139,7 +142,7 @@
 (π "<menu> e s" #'eshell)
 (π "<menu> e v" #'eval-buffer)
 (π "<menu> f f" #'find-function)
-(π "<menu> f o" #'set-font)
+(π "<menu> f o" #'mk-set-font)
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'goto-line)
@@ -181,16 +184,13 @@
 (π "<menu> s s" (ε #'switch-to-buffer "*scratch*"))
 (π "<menu> s t" (ε #'show-date t))
 (π "<menu> t e" #'tetris)
-(π "<menu> t h" #'switch-theme)
+(π "<menu> t h" #'mk-switch-theme)
 (π "<menu> u t" (ε #'untabify (point-min) (point-max)))
 (π "<menu> v e" #'version)
 (π "<menu> v r" #'split-window-right)
 (π "<menu> y a" #'yas-reload-all)
 (π "<menu> y p" #'yank-primary)
 (π "<menu> y r" #'yank-rectangle)
-
-(put 'erase-buffer     'disabled nil) ; don't ever question my power
-(put 'narrow-to-region 'disabled nil) ; ^
 
 (defalias 'display-startup-echo-area-message (ε #'show-date))
 (defalias 'list-buffers                      #'ibuffer)

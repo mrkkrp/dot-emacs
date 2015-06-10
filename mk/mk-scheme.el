@@ -19,7 +19,9 @@
 
 ;;; Commentary:
 
-;; Scheme mode settings.
+;; Scheme mode settings. I don't really program Scheme, but one time I
+;; wanted to. I would probably have added some stuff here if I were more
+;; interested in programming Scheme.
 
 ;;; Code:
 

@@ -25,9 +25,10 @@
 
 (require 'mk-utils)
 
-(τ cc-mode c "C-c C-l" #'compile)
-
 (add-to-list 'major-mode-alias '(c-mode . "C"))
+(add-to-list 'mk-search-prefix '(c-mode . "c"))
+
+(τ cc-mode c "C-c C-l" #'compile)
 
 (provide 'mk-c)
 
