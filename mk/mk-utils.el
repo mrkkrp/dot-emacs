@@ -233,6 +233,16 @@ If the file does not exist, print a message about the fact."
         (find-file filename)
       (message (concat filename " does not exist.")))))
 
+(defun double-buffer ()
+  "Show currect buffer in other window."
+  (interactive)
+  (if (> (length (window-list)) 1)
+      (let ((original-buffer (buffer-name)))
+        (other-window 1)
+        (switch-to-buffer original-buffer))
+    (split-window-sensibly)
+    (other-window 1)))
+
 (defun switch-theme (theme)
   "Switch to THEME, loading it if necessairy."
   (interactive

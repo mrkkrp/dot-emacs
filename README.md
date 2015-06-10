@@ -178,6 +178,7 @@ Shortcut            | Description
 <kbd>menu c s</kbd> | set coding system
 <kbd>menu c w</kbd> | count words
 <kbd>menu d a</kbd> | show date in the minibuffer
+<kbd>menu d b</kbd> | double buffer: show current buffer in other window
 <kbd>menu d c</kbd> | describe char
 <kbd>menu d d</kbd> | show default directory in the minibuffer
 <kbd>menu d i</kbd> | Diff

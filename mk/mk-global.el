@@ -128,6 +128,7 @@
 (π "<menu> c s" #'set-buffer-file-coding-system)
 (π "<menu> c w" #'count-words)
 (π "<menu> d a" (ε #'show-date))
+(π "<menu> d b" #'double-buffer)
 (π "<menu> d c" #'describe-char)
 (π "<menu> d d" #'show-default-dir)
 (π "<menu> d i" #'diff)
