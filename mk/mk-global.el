@@ -84,6 +84,7 @@
 (π "C-x o"      #'ace-window)
 (π "M-c"        #'fix-word-capitalize)
 (π "M-e"        #'eval-last-sexp*)
+(π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'transpose-line-down)
 (π "M-p"        #'transpose-line-up)

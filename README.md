@@ -141,6 +141,7 @@ Shortcut            | Description
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
+<kbd>M-j</kbd>      | join the next line and the current one
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
 <kbd>F6</kbd>       | find file in other window (also Dired)
