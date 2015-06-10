@@ -140,6 +140,7 @@ Shortcut            | Description
 <kbd>M-u</kbd>      | fix word: upcase
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-c</kbd>      | fix word: capitalize
+<kbd>M-e</kbd>      | replace last S-expression with its result
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
 <kbd>F6</kbd>       | find file in other window (also Dired)

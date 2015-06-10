@@ -218,6 +218,13 @@ If STAMP is not NIL, insert date into currently active buffer."
         (delete-window-by-name "*Compile-Log*")
       (message "Byte compiled init files exist and are up to date."))))
 
+(defun eval-last-sexp* ()
+  "Evaluate last S-expression and substitute it with the result."
+  (interactive)
+  (let ((value (eval (elisp--preceding-sexp))))
+    (kill-sexp -1)
+    (insert (format "%s" value))))
+
 (defun visit-file (filename)
   "Visit specified file FILENAME.
 If the file does not exist, print a message about the fact."
