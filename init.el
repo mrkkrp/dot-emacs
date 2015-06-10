@@ -32,6 +32,7 @@
 
 (defvar vital-packages
   '(ace-window           ; switching between windows
+    aggressive-indent    ; aggressive indentation
     avy                  ; move cursor effectively
     auctex               ; for LaTeX
     buffer-move          ; move buffers easily

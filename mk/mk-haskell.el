@@ -30,6 +30,8 @@
  haskell-ask-also-kill-buffers   nil  ; don't ask
  haskell-process-show-debug-tips nil) ; don't show anything
 
+(add-to-list 'aggressive-indent-excluded-modes 'haskell-mode)
+
 (τ haskell          haskell-interactive "C-c h" #'haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "C-c h" #'haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "M-n"   #'transpose-line-down)
@@ -50,7 +52,6 @@
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook  #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook  #'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook  (ε #'electric-indent-local-mode 0))
 
 (advice-add 'haskell-session-new-assume-from-cabal :override (lambda ()))
 

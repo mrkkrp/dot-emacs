@@ -49,6 +49,8 @@
 (blink-cursor-mode                0) ; my cursor doesn't blink, man
 (delete-selection-mode            1) ; delete selection mode enabled
 (display-time-mode                1) ; display time
+(electric-indent-mode            -1) ; I use aggressive indent mode instead
+(global-aggressive-indent-mode    1) ; turn aggressive indent on globally
 (global-auto-revert-mode          1) ; revert buffers automatically
 (ido-mode                         1) ; ido for switch-buffer and find-file
 (ido-ubiquitous-mode              1) ; use IDO everywhere
@@ -80,6 +82,7 @@
 (setq
  minor-mode-alias
  '((abbrev-mode                  . "")
+   (aggressive-indent-mode       . "")
    (auto-fill-function           . "")
    (compilation-shell-minor-mode . "")
    (eldoc-mode                   . "")
