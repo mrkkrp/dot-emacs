@@ -27,7 +27,7 @@
 
 (add-to-list 'mk-search-prefix '(latex-mode . "latex"))
 
-(advice-add 'TeX-insert-quote :filter-args (λ t))
+(advice-add 'TeX-insert-quote :filter-args (σ t))
 
 (provide 'mk-tex)
 

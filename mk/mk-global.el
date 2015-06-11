@@ -97,8 +97,8 @@
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
-(π "<f7>"       (ε #'α "french-keyboard"  "fr"))
-(π "<f8>"       (ε #'α "russian-computer" "ru"))
+(π "<f7>"       (ε #'mk-use-lang "french-keyboard"  "fr"))
+(π "<f8>"       (ε #'mk-use-lang "russian-computer" "ru"))
 (π "<f9>"       (ε #'kill-buffer nil))
 (π "<f10>"      #'delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
@@ -200,12 +200,12 @@
 (add-hook 'after-change-major-mode-hook #'apply-mode-alias)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 
-(advice-add 'compile                    :filter-args (λ "cd .. ; make -k"))
+(advice-add 'compile                    :filter-args (σ "cd .. ; make -k"))
 (advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
-(advice-add 'revert-buffer              :filter-args (λ nil t))
-(advice-add 'save-buffers-kill-terminal :filter-args (λ t))
-(advice-add 'scroll-up-command          :filter-args (λ 1))
-(advice-add 'scroll-down-command        :filter-args (λ 1))
+(advice-add 'revert-buffer              :filter-args (σ nil t))
+(advice-add 'save-buffers-kill-terminal :filter-args (σ t))
+(advice-add 'scroll-up-command          :filter-args (σ 1))
+(advice-add 'scroll-down-command        :filter-args (σ 1))
 
 (provide 'mk-global)
 

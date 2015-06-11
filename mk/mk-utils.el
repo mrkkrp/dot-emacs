@@ -277,6 +277,22 @@ HEIGHT, if supplied, specifies height of letters to use."
     (set-face-attribute 'default nil :height height))
   (set-face-attribute 'variable-pitch nil :family font))
 
+(defun mk-use-lang (input-method dictionary)
+  "Switch between input methods and Ispell dictionaries.
+Switch between given INPUT-METHOD and DICTIONARY and their defaults."
+  (if (eq current-input-method input-method)
+      (progn
+        (deactivate-input-method)
+        (ispell-change-dictionary "default"))
+    (set-input-method input-method)
+    (ispell-change-dictionary dictionary)))
+
+(defmacro σ (&rest args)
+  "Return function that interactively return ARGS."
+  `(lambda (&rest _rest)
+     (interactive)
+     ',args))
+
 (defmacro ε (fnc &rest args)
   "Interactively invoke function FNC with arguments ARGS.
 Kind of partial application."
@@ -289,16 +305,6 @@ Kind of partial application."
   `(lambda (&rest _rest)
      (funcall ,fnc)))
 
-(defun α (input-method dictionary)
-  "Switch between input methods and Ispell dictionaries.
-Switch between given INPUT-METHOD and DICTIONARY and their defaults."
-  (if (eq current-input-method input-method)
-      (progn
-        (deactivate-input-method)
-        (ispell-change-dictionary "default"))
-    (set-input-method input-method)
-    (ispell-change-dictionary dictionary)))
-
 (defun π (key fnc)
   "Set global key binding that binds KEY to FNC."
   (global-set-key (kbd key) fnc))
@@ -309,12 +315,6 @@ Switch between given INPUT-METHOD and DICTIONARY and their defaults."
      '(define-key
         (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
         (kbd ,key) ,fnc)))
-
-(defmacro λ (&rest args)
-  "Return function that interactively return ARGS."
-  `(lambda (&rest _rest)
-     (interactive)
-     ',args))
 
 (defmacro translate-kbd (from to)
   "Translate combinations of keys FROM to TO combination.
