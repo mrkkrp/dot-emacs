@@ -62,6 +62,7 @@
 
 ;;; Handy translations for use with «Sticky Keys»
 
+(translate-kbd "<C-menu>"   "<menu>")
 (translate-kbd "<C-return>" "<return>")
 (translate-kbd "C-c c"      "C-c C-c")
 (translate-kbd "C-c k"      "C-c C-k")
