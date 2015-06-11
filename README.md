@@ -134,14 +134,14 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
+<kbd>M-c</kbd>      | fix word: capitalize
+<kbd>M-e</kbd>      | replace last S-expression with its result
+<kbd>M-j</kbd>      | join the next line and the current one
+<kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-n</kbd>      | transpose line down
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-r</kbd>      | duplicate line
 <kbd>M-u</kbd>      | fix word: upcase
-<kbd>M-l</kbd>      | fix word: downcase
-<kbd>M-c</kbd>      | fix word: capitalize
-<kbd>M-e</kbd>      | replace last S-expression with its result
-<kbd>M-j</kbd>      | join the next line and the current one
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
 <kbd>F6</kbd>       | find file in other window (also Dired)
