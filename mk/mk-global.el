@@ -204,6 +204,8 @@
 (advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
 (advice-add 'revert-buffer              :filter-args (λ nil t))
 (advice-add 'save-buffers-kill-terminal :filter-args (λ t))
+(advice-add 'scroll-up-command          :filter-args (λ 1))
+(advice-add 'scroll-down-command        :filter-args (λ 1))
 
 (provide 'mk-global)
 

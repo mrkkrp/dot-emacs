@@ -63,7 +63,6 @@
 (scroll-bar-mode                  0) ; disable scroll bar
 (show-paren-mode                  1) ; highlight matching parenthesis
 (smartparens-global-mode          1) ; smart editing of parenthesis
-(smooth-scroll-mode               1) ; smooth scroll
 (tool-bar-mode                    0) ; hide tool bar
 (whole-line-or-region-mode        1) ; operate on current line
 (yas-global-mode                  1) ; enable Yasnippet

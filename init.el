@@ -54,7 +54,6 @@
     rainbow-delimiters   ; highlight nested parenthesis (for Lisps)
     smartparens          ; editing of parenthesis of all kinds
     smex                 ; IDO-powered `execute-extended-command'
-    smooth-scroll        ; scrolling experience
     solarized-theme      ; my favorite color theme
     whole-line-or-region ; operate on current line if there is no region
     yasnippet)           ; template system
@@ -75,7 +74,6 @@
   (unless (package-installed-p package) ; ^
     (package-install package)))         ; ^
 
-(require 'smooth-scroll)
 (require 'server)
 
 (unless (server-running-p)
