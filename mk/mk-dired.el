@@ -33,29 +33,37 @@
  dired-listing-switches             "-GAlh --group-directories-first"
  dired-recursive-copies             'always  ; don't ask me, just do it
  dired-recursive-deletes            'always  ; ^
+ image-dired-show-all-from-dir      127      ; a bit more
  wdired-allow-to-change-permissions t)       ; change permissions with Dired
 
 (put 'dired-do-copy   'ido nil) ; use ido there
 (put 'dired-do-rename 'ido nil) ; ^
 
-(add-to-list 'major-mode-alias '(dired-mode  . "δ"))
-(add-to-list 'major-mode-alias '(wdired-mode . "↯δ"))
+(add-to-list 'major-mode-alias '(dired-mode                 . "δ"))
+(add-to-list 'major-mode-alias '(image-dired-thumbnail-mode . "◊δ"))
+(add-to-list 'major-mode-alias '(wdired-mode                . "↯δ"))
 
 (defun dired-first-file ()
   "Jump to the first file in current directory."
   (interactive)
-  (beginning-of-buffer)
+  (goto-char (point-min))
   (dired-next-line 2))
 
 (defun dired-last-file ()
   "Jump to the last file in current directory."
   (interactive)
-  (end-of-buffer)
+  (goto-char (point-max))
   (dired-previous-line 1))
+
+(defun image-dired-show-current ()
+  "Make preview and show all images in current directory."
+  (interactive)
+  (image-dired-show-all-from-dir dired-directory))
 
 (τ dired dired "<menu> ," #'dired-first-file)
 (τ dired dired "<menu> ." #'dired-last-file)
 (τ dired dired "b"        #'dired-up-directory)
+(τ dired dired "i"        #'image-dired-show-current)
 (τ dired dired "z"        #'wdired-change-to-wdired-mode)
 
 (add-hook 'dired-mode-hook #'hl-line-mode)

@@ -288,10 +288,9 @@ Switch between given INPUT-METHOD and DICTIONARY and their defaults."
     (ispell-change-dictionary dictionary)))
 
 (defmacro σ (&rest args)
-  "Return function that interactively return ARGS."
+  "Return function that returns ARGS."
   `(lambda (&rest _rest)
-     (interactive)
-     ',args))
+     (list ,@args)))
 
 (defmacro ε (fnc &rest args)
   "Interactively invoke function FNC with arguments ARGS.
