@@ -55,6 +55,12 @@
   (goto-char (point-max))
   (dired-previous-line 1))
 
+(defun dired-open-external (file)
+  "Open specified FILE in application that's preferred by OS."
+  (interactive
+   (list (dired-get-filename)))
+  (call-process "xdg-open" nil 0 nil file))
+
 (defun image-dired-show-current ()
   "Make preview and show all images in current directory."
   (interactive)
@@ -63,6 +69,7 @@
 (τ dired dired "<menu> ," #'dired-first-file)
 (τ dired dired "<menu> ." #'dired-last-file)
 (τ dired dired "b"        #'dired-up-directory)
+(τ dired dired "e"        #'dired-open-external)
 (τ dired dired "i"        #'image-dired-show-current)
 (τ dired dired "z"        #'wdired-change-to-wdired-mode)
 
