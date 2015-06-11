@@ -33,8 +33,8 @@
 (defvar vital-packages
   '(ace-window           ; switching between windows
     aggressive-indent    ; aggressive indentation
-    avy                  ; move cursor effectively
     auctex               ; for LaTeX
+    avy                  ; move cursor effectively
     buffer-move          ; move buffers easily
     cider                ; Clojure development
     common-lisp-snippets ; Yasnippets for Common Lisp
