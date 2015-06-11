@@ -56,7 +56,7 @@
   (dired-previous-line 1))
 
 (defun dired-open-external (file)
-  "Open specified FILE in application that's preferred by OS."
+  "Open specified FILE with application determined by the OS."
   (interactive
    (list (dired-get-filename)))
   (call-process "xdg-open" nil 0 nil file))
