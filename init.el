@@ -72,7 +72,7 @@
 
 (dolist (package package-selected-packages)
   (unless (package-installed-p package)
-    (package-install package t)))
+    (package-install package)))
 
 (require 'server)
 

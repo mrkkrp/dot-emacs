@@ -79,7 +79,7 @@
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'compile-init-files)
 (π "C-c e"      (ε #'visit-file mk-dir))
-(π "C-c g"      #'upgrade-all-packages)
+(π "C-c g"      #'package-upgrade-all)
 (π "C-c i"      #'flyspell-correct-word-before-point)
 (π "C-c p"      #'purge-buffers)
 (π "C-c r"      #'revert-buffer)
@@ -205,6 +205,7 @@
 
 (advice-add 'compile                    :filter-args (σ "cd .. ; make -k"))
 (advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
+(advice-add 'package-install            :filter-args #'pkgi-filter-args)
 (advice-add 'revert-buffer              :filter-args (σ nil t))
 (advice-add 'save-buffers-kill-terminal :filter-args (σ t))
 

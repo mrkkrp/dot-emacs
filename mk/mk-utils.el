@@ -199,13 +199,13 @@ current major mode, as specified in `mk-search-prefix'."
    (concat "https://duckduckgo.com/html/?k1=-1&q="
            (url-hexify-string what))))
 
-(defun upgrade-all-packages ()
+(defun package-upgrade-all ()
   "Upgrade all packages automatically without showing any special buffer."
   (interactive)
   (package-refresh-contents)
   (let (upgrades)
     (cl-flet ((get-version (name where)
-                (package-desc-version (cadr (assq name where)))))
+                           (package-desc-version (cadr (assq name where)))))
       (dolist (package (mapcar #'car package-alist))
         (when (version-list-< (get-version package package-alist)
                               (get-version package package-archive-contents))
@@ -224,6 +224,13 @@ current major mode, as specified in `mk-search-prefix'."
             (package-install package-desc)
             (package-delete  old-package)))
         (delete-window-by-name "*Compile-Log*")))))
+
+(defun pkgi-filter-args (pkg &optional _dont-select)
+  "How to filter arguments of `package-install' command.
+PKG is passed to the command, while DONT-SELECT is always T, so
+one can select any packages only by manually adding them to
+`package-selected-packages' variable."
+  (list pkg t))
 
 (defun compile-init-files ()
   "Byte compile init files (all *.el files under `mk-dir' directory)."
