@@ -215,6 +215,7 @@ Shortcut            | Description
 <kbd>menu m n</kbd> | man
 <kbd>menu n n</kbd> | narrow to region
 <kbd>menu n w</kbd> | widen
+<kbd>menu p a</kbd> | package autoremove
 <kbd>menu p i</kbd> | install package
 <kbd>menu p r</kbd> | print current buffer
 <kbd>menu q e</kbd> | query replace regexp

@@ -169,6 +169,7 @@
 (π "<menu> m n" #'man)
 (π "<menu> n n" #'narrow-to-region)
 (π "<menu> n w" #'widen)
+(π "<menu> p a" #'package-autoremove)
 (π "<menu> p i" #'package-install)
 (π "<menu> p r" #'print-buffer)
 (π "<menu> p y" #'run-python)

@@ -30,34 +30,34 @@
            emacs-version
            emacs-version-needed)))
 
-(defvar vital-packages
-  '(ace-window           ; switching between windows
-    aggressive-indent    ; aggressive indentation
-    auctex               ; for LaTeX
-    avy                  ; move cursor effectively
-    buffer-move          ; move buffers easily
-    cider                ; Clojure development
-    common-lisp-snippets ; Yasnippets for Common Lisp
-    fix-word             ; upcase/downcase/capitalize
-    flycheck             ; checking code on the fly
-    flycheck-haskell     ; cabal sandboxes, etc.
-    ghc                  ; improves Haskell REPL experience
-    gitignore-mode       ; for editing of .gitignore files
-    haskell-mode         ; Haskell development
-    ido-hacks            ; various ido goodies
-    ido-ubiquitous       ; use ido everywhere
-    ido-vertical-mode    ; display IDO vertically
-    magit                ; Emacs mode for git
-    markdown-mode        ; markdown editing
-    multiple-cursors     ; a cool feature…
-    prolog               ; Prolog development
-    rainbow-delimiters   ; highlight nested parenthesis (for Lisps)
-    smartparens          ; editing of parenthesis of all kinds
-    smex                 ; IDO-powered `execute-extended-command'
-    solarized-theme      ; my favorite color theme
-    whole-line-or-region ; operate on current line if there is no region
-    yasnippet)           ; template system
-  "List of packages that are required for this setup.")
+(setq
+ package-selected-packages
+ '(ace-window           ; switching between windows
+   aggressive-indent    ; aggressive indentation
+   auctex               ; for LaTeX
+   avy                  ; move cursor effectively
+   buffer-move          ; move buffers easily
+   cider                ; Clojure development
+   common-lisp-snippets ; Yasnippets for Common Lisp
+   fix-word             ; upcase/downcase/capitalize
+   flycheck             ; checking code on the fly
+   flycheck-haskell     ; cabal sandboxes, etc.
+   ghc                  ; improves Haskell REPL experience
+   gitignore-mode       ; for editing of .gitignore files
+   haskell-mode         ; Haskell development
+   ido-hacks            ; various ido goodies
+   ido-ubiquitous       ; use ido everywhere
+   ido-vertical-mode    ; display IDO vertically
+   magit                ; Emacs mode for git
+   markdown-mode        ; markdown editing
+   multiple-cursors     ; a cool feature…
+   prolog               ; Prolog development
+   rainbow-delimiters   ; highlight nested parenthesis (for Lisps)
+   smartparens          ; editing of parenthesis of all kinds
+   smex                 ; IDO-powered `execute-extended-command'
+   solarized-theme      ; my favorite color theme
+   whole-line-or-region ; operate on current line if there is no region
+   yasnippet))          ; template system
 
 (require 'package)
 (require 'bytecomp)
@@ -67,12 +67,12 @@
 
 (package-initialize)
 
-(unless package-archive-contents ; Ensure all the packages are installed.
-  (package-refresh-contents))    ; ^
+(unless package-archive-contents
+  (package-refresh-contents))
 
-(dolist (package vital-packages)        ; ^
-  (unless (package-installed-p package) ; ^
-    (package-install package)))         ; ^
+(dolist (package package-selected-packages)
+  (unless (package-installed-p package)
+    (package-install package t)))
 
 (require 'server)
 
