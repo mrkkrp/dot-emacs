@@ -129,6 +129,7 @@ Shortcut            | Description
 <kbd>C-c b</kbd>    | byte compile initialization files
 <kbd>C-c e</kbd>    | open initialization file
 <kbd>C-c g</kbd>    | upgrade all packages
+<kbd>C-c h</kbd>    | lookup language specific documentation online
 <kbd>C-c i</kbd>    | correct word before point
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
 <kbd>C-c r</kbd>    | revert current buffer
@@ -239,22 +240,20 @@ Shortcut            | Description
 <kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle
 <kbd>C-c r</kbd>    | SLIME: restart inferior Lisp
-<kbd>C-c h</kbd>    | SLIME: Hyper Spec lookup
 <kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
-<kbd>C-c h</kbd>    | Haskell (including Cabal): Hoogle query
-<kbd>C-c h</kbd>    | Cider and Clojure mode: Clojure Docs
 <kbd>C-c r</kbd>    | Cider: restart Cider
-<kbd>C-c h</kbd>    | Prolog: search on official site of SWI Prolog
 <kbd>C-c C-l</kbd>  | C mode: compile project
 <kbd>b</kbd>        | Dired: up directory
+<kbd>e</kbd>        | Dired: open with external application
+<kbd>i</kbd>        | Dired: show images in current directory
 <kbd>z</kbd>        | Dired: change to WDired mode
-<kbd>C-backspace</kbd> | smartparens: backward kill S-expression
-<kbd>menu 2</kbd>   | smartparens: select thing S-expression
-<kbd>menu 4</kbd>   | smartparens: add to previous S-expression
-<kbd>M-d</kbd>      | smartparens: kill S-expression
-<kbd>M-k</kbd>      | smartparens: hybrid kill
-<kbd>M-f</kbd>      | smartparens: forward S-expression
-<kbd>M-b</kbd>      | smartparens: backward S-expression
+<kbd>C-backspace</kbd> | Smartparens: backward kill S-expression
+<kbd>menu 2</kbd>   | Smartparens: select thing S-expression
+<kbd>menu 4</kbd>   | Smartparens: add to previous S-expression
+<kbd>M-d</kbd>      | Smartparens: kill S-expression
+<kbd>M-k</kbd>      | Smartparens: hybrid kill
+<kbd>M-f</kbd>      | Smartparens: forward S-expression
+<kbd>M-b</kbd>      | Smartparens: backward S-expression
 
 ## Keyboard Layouts and Abbreviations
 
