@@ -30,7 +30,6 @@
 (add-to-list 'major-mode-alias '(emacs-lisp-mode       . "ε"))
 (add-to-list 'major-mode-alias '(lisp-interaction-mode . "iε"))
 (add-to-list 'mk-search-prefix '(emacs-lisp-mode       . "emacs lisp"))
-(add-to-list 'mk-search-prefix '(lisp-interaction-mode . "emacs lisp"))
 
 (τ lisp-mode emacs-lisp       "C-c h" #'slime-hyperspec-lookup)
 (τ lisp-mode lisp-interaction "C-c h" #'slime-hyperspec-lookup)
