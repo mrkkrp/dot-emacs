@@ -34,11 +34,7 @@
 
 (defun swi-prolog-search (symbol)
   "Search for SYMBOL at official site of SWI Prolog."
-  (interactive
-   (list (if mark-active
-             (buffer-substring (region-beginning)
-                               (region-end))
-           (read-string "Prolog Docs: "))))
+  (interactive (list (grab-input "Prolog Docs: ")))
   (browse-url
    (concat "http://www.swi-prolog.org/search?for="
            (url-hexify-string symbol))))

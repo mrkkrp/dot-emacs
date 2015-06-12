@@ -169,6 +169,19 @@ If STAMP is not NIL, insert date into currently active buffer."
     (switch-to-buffer "*scratch*")
     (delete-other-windows)))
 
+(defun grab-input (prompt &optional initial-input add-space)
+  "Grab input from user.
+If there is an active region, use its contents.  PROMPT is a
+prompt to show, INITIAL-INPUT is the initial input.  If
+INITIAL-INPUT and ADD-SPACE are not NIL, add one space after the
+initial input."
+  (if mark-active
+      (buffer-substring (region-beginning)
+                        (region-end))
+    (read-string prompt
+                 (concat initial-input
+                         (when (and initial-input add-space) " ")))))
+
 (defvar mk-search-prefix nil
   "This is an alist that contains some prefixes for online search query.
 Prefixes are picked up according to currect major mode.")
@@ -178,13 +191,10 @@ Prefixes are picked up according to currect major mode.")
 When called interactively, it uses prefix corresponding to
 current major mode, as specified in `mk-search-prefix'."
   (interactive
-   (list (if mark-active
-             (buffer-substring (region-beginning)
-                               (region-end))
-           (let ((prefix (cdr (assoc major-mode
-                                     mk-search-prefix))))
-             (read-string "DuckDuckGo: "
-                          (when prefix (concat prefix " ")))))))
+   (list (grab-input "DuckDuckGo: "
+                     (cdr (assoc major-mode
+                                 mk-search-prefix))
+                     t)))
   (browse-url
    (concat "https://duckduckgo.com/html/?k1=-1&q="
            (url-hexify-string what))))

@@ -51,8 +51,18 @@
   (unless (python-shell-get-process)
     (run-python nil nil t)))
 
-(τ python python "C-c C-l" #'python-shell-send-buffer)
-(τ python python "C-c C-c" #'python-shell-send-defun)
+(defun python-docs (symbol)
+  "Find documentation for given symbol SYMBOL online."
+  (interactive (list (grab-input "Python Docs: ")))
+  (browse-url
+   (concat "https://docs.python.org/3/search.html?q="
+           (url-hexify-string symbol)
+           "&check_keywords=yes&area=default")))
+
+(τ python inferior-python "C-c h"   #'python-docs)
+(τ python python          "C-c C-c" #'python-shell-send-defun)
+(τ python python          "C-c C-l" #'python-shell-send-buffer)
+(τ python python          "C-c h"   #'python-docs)
 
 (advice-add 'python-shell-send-buffer :before #'python-shell-ensure-proc)
 (advice-add 'python-shell-send-defun  :before #'python-shell-ensure-proc)

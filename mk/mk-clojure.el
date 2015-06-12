@@ -41,11 +41,7 @@
 
 (defun clojure-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive
-   (list (if mark-active
-             (buffer-substring (region-beginning)
-                               (region-end))
-           (read-string "Clojure Docs: "))))
+  (interactive (list (grab-input "Clojure Docs: ")))
   (destructuring-bind (x &optional y)
       (split-string symbol "/")
     (browse-url
