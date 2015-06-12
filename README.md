@@ -128,7 +128,6 @@ Shortcut            | Description
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c b</kbd>    | byte compile initialization files
 <kbd>C-c e</kbd>    | open initialization file
-<kbd>C-c g</kbd>    | upgrade all packages
 <kbd>C-c h</kbd>    | lookup language specific documentation online
 <kbd>C-c i</kbd>    | correct word before point
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
@@ -218,6 +217,8 @@ Shortcut            | Description
 <kbd>menu p a</kbd> | package autoremove
 <kbd>menu p i</kbd> | install package
 <kbd>menu p r</kbd> | print current buffer
+<kbd>menu p u</kbd> | upgrade all packages
+<kbd>menu p y</kbd> | run Python
 <kbd>menu q e</kbd> | query replace regexp
 <kbd>menu q r</kbd> | query replace
 <kbd>menu r c</kbd> | copy to register
