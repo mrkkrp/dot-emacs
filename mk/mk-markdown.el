@@ -27,8 +27,10 @@
 
 (add-to-list 'major-mode-alias '(markdown-mode . "M"))
 
-(τ markdown-mode markdown "M-n" #'transpose-line-down)
-(τ markdown-mode markdown "M-p" #'transpose-line-up)
+(τ markdown-mode markdown "C-c C-l" #'markdown-export)
+(τ markdown-mode markdown "C-c C-v" #'markdown-preview)
+(τ markdown-mode markdown "M-n"     #'transpose-line-down)
+(τ markdown-mode markdown "M-p"     #'transpose-line-up)
 
 (provide 'mk-markdown)
 

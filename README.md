@@ -249,6 +249,8 @@ Shortcut            | Description
 <kbd>e</kbd>        | Dired: open with external application
 <kbd>i</kbd>        | Dired: show images in current directory
 <kbd>z</kbd>        | Dired: change to WDired mode
+<kbd>C-c C-l</kbd>  | Markdown: export
+<kbd>C-c C-v</kbd>  | Markdown: preview
 <kbd>C-backspace</kbd> | Smartparens: backward kill S-expression
 <kbd>menu 2</kbd>   | Smartparens: select thing S-expression
 <kbd>menu 4</kbd>   | Smartparens: add to previous S-expression
