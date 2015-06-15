@@ -26,12 +26,11 @@
 
 (require 'cl-lib)
 
-(defun delete-window-by-name (name)
-  "Delete all windows that display buffer with name NAME.
-Note that the buffer itself is not killed."
-  (when (get-buffer name)
-    (dolist (window (get-buffer-window-list name))
-      (delete-window window))))
+(defun switch-back (buffer)
+  "In window that displays buffer BUFFER switch to previous buffer."
+  (when (get-buffer buffer)
+    (dolist (window (get-buffer-window-list buffer))
+      (switch-to-prev-buffer window t))))
 
 (defun transpose-line-down (&optional arg)
   "Move current line and cursor down.
@@ -223,7 +222,7 @@ current major mode, as specified in `mk-search-prefix'."
                                          package-alist))))
             (package-install package-desc)
             (package-delete  old-package)))
-        (delete-window-by-name "*Compile-Log*")))))
+        (switch-back "*Compile-Log*")))))
 
 (defun pkgi-filter-args (pkg &optional _dont-select)
   "How to filter arguments of `package-install' command.
@@ -244,7 +243,7 @@ one can select any packages only by manually adding them to
           (byte-compile-file item)
           (setq once t))))
     (if once
-        (delete-window-by-name "*Compile-Log*")
+        (switch-back "*Compile-Log*")
       (message "Byte compiled init files exist and are up to date."))))
 
 (defun mk-eval-last-sexp ()

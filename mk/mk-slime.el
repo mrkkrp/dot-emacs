@@ -38,8 +38,8 @@
   (when (and (file-exists-p helper-elc)
              (not (find 'slime features)))
     (load-file helper-elc))
-  (delete-window-by-name "*Compile-Log*") ; clearing
-  (delete-window-by-name "*Shell Command Output*"))
+  (switch-back "*Compile-Log*")
+  (switch-back "*Shell Command Output*"))
 
 (setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
 
