@@ -37,7 +37,7 @@
  indent-tabs-mode                 nil     ; only spaces
  indicate-empty-lines             t       ; show where buffer's content ends
  inhibit-startup-screen           t       ; remove welcome screen
- initial-scratch-message          ";; Μὴ μοῦ τοὺς κύκλους τάραττε\n\n"
+ initial-scratch-message          (concat ";; GNU Emacs " emacs-version "\n\n")
  kill-read-only-ok                t       ; don't rise errors, it's OK
  large-file-warning-threshold     10240000 ; warn when opening >10 Mb file
  major-mode                       'text-mode ; default mode is text mode
