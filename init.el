@@ -99,6 +99,7 @@
 (require 'mk-erc)         ; ^
 (require 'mk-gnus)        ; ^
 (require 'mk-haskell)     ; ^
+(require 'mk-lisp)        ; ^
 (require 'mk-magit)       ; ^
 (require 'mk-man)         ; ^
 (require 'mk-markdown)    ; ^
@@ -106,7 +107,6 @@
 (require 'mk-prolog)      ; ^
 (require 'mk-python)      ; ^
 (require 'mk-scheme)      ; ^
-(require 'mk-slime)       ; ^
 (require 'mk-tex)         ; ^
 (require 'mk-texinfo)     ; ^
 (require 'mk-visual)      ; control appearance

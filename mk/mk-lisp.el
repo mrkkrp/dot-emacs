@@ -1,4 +1,4 @@
-;;; mk-slime.el --- SLIME settings -*- lexical-binding: t; -*-
+;;; mk-lisp.el --- Commons Lisp settings -*- lexical-binding: t; -*-
 ;;
 ;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
 ;;
@@ -34,7 +34,9 @@
                  (file-newer-than-file-p helper-el helper-elc)))
     (byte-compile-file helper-el t)
     (shell-command
-     (concat "cd \"" slime-path "\" ; make compile contrib-compile")))
+     (concat "cd "
+             (shell-quote-argument slime-path)
+             " ; make compile contrib-compile")))
   (when (and (file-exists-p helper-elc)
              (not (find 'slime features)))
     (load-file helper-elc))
@@ -69,6 +71,6 @@
 
 (add-hook 'slime-mode-hook #'rainbow-delimiters-mode)
 
-(provide 'mk-slime)
+(provide 'mk-lisp)
 
-;;; mk-slime.el ends here
+;;; mk-lisp.el ends here
