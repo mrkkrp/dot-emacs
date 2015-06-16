@@ -261,6 +261,8 @@ Shortcut            | Description
 <kbd>z</kbd>        | Dired: change to WDired mode
 <kbd>C-c C-l</kbd>  | Markdown: export
 <kbd>C-c C-v</kbd>  | Markdown: preview
+<kbd>C-c C-l</kbd>  | TeX: export to PDF
+<kbd>C-c C-v</kbd>  | TeX: preview (as PDF via OS-preferred tool)
 <kbd>C-c C-l</kbd>  | Texinfo: export
 <kbd>C-c C-v</kbd>  | Texinfo: preview
 <kbd>C-backspace</kbd> | Smartparens: backward kill S-expression
