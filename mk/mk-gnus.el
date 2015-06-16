@@ -53,7 +53,8 @@
 Configuration is supposed to be stored in
 `gnus-saved-window-config'.  However, if it's NIL, nothing will
 be understaken to restore the configuraiton."
-  (set-window-configuration gnus-saved-window-config))
+  (when gnus-saved-window-config
+    (set-window-configuration gnus-saved-window-config)))
 
 (add-hook 'gnus-group-mode-hook   #'hl-line-mode)
 (add-hook 'gnus-summary-mode-hook #'hl-line-mode)
