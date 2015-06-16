@@ -108,6 +108,7 @@
 (require 'mk-scheme)      ; ^
 (require 'mk-slime)       ; ^
 (require 'mk-tex)         ; ^
+(require 'mk-texinfo)     ; ^
 (require 'mk-visual)      ; control appearance
 
 ;;; init.el ends here
