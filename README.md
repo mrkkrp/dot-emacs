@@ -9,13 +9,23 @@ workflow and efficiency — sky is the limit.
 Some minor features I have implemented (nothing special):
 
 * automatic installation of all necessary packages;
+
 * automation to compile/recompile SLIME (works smoothly with Quicklisp);
+
 * transposition and duplication of lines;
+
 * purging of buffers (except for «basic» ones);
-* searching online with DuckDuckGo;
+
+* searching online with DuckDuckGo (it also knows how to prefix my search
+  query depending on major mode, so if I edit Python source, my query will
+  start with `"python "` automatically, it's configurable thing);
+
 * upgrading of all packages without displaying of `*Packages*` buffer;
+
 * smart switching between default input method, French, and Russian;
+
 * some mode line wizardry (can't use `smart-mode-line` or `powerline`);
+
 * many little hacks that make everything work smoothly and look sexy.
 
 ## Key Remapping
@@ -412,6 +422,8 @@ I use:
 machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
 machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
 ```
+
+Also, I've taught GNUS to restore my window configuration when I exit it.
 
 ## Appearance
 
