@@ -253,7 +253,7 @@ If the file does not exist, print a message about the fact."
   (let ((filename (expand-file-name filename)))
     (if (file-exists-p filename)
         (find-file filename)
-      (message (concat filename " does not exist.")))))
+      (message "%s does not exist." filename))))
 
 (defun double-buffer ()
   "Show currect buffer in other window."
