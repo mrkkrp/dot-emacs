@@ -34,15 +34,15 @@
 Output goes to OUTPUT-BUFFER-NAME, or, if it's not supplied, to
 buffer named by `texinfo-html-output-buffer-name'.  Return name
 of the buffer."
-  (save-window-excursion
-    (let ((output-buffer-name (or output-buffer-name
-                                  texinfo-html-output-buffer-name))
-          (buffer-file-name (buffer-file-name))
-          (css-file (car (directory-files default-directory
-                                          t
-                                          "\\`.*\\.css\\'"))))
-      (if (not buffer-file-name)
-          (error "Must be visiting a file")
+  (let ((output-buffer-name (or output-buffer-name
+                                texinfo-html-output-buffer-name))
+        (buffer-file-name (buffer-file-name))
+        (css-file (car (directory-files default-directory
+                                        t
+                                        "\\`.*\\.css\\'"))))
+    (if (not buffer-file-name)
+        (error "Must be visiting a file")
+      (save-window-excursion
         (shell-command
          (concat "texi2html -o - "
                  (when css-file
