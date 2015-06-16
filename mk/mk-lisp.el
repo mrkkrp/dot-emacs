@@ -29,19 +29,18 @@
 
 (let* ((helper-el  (expand-file-name "~/quicklisp/slime-helper.el"))
        (helper-elc (byte-compile-dest-file helper-el)))
-  (when (and (file-exists-p helper-el)
-             (or (not (file-exists-p helper-elc))
-                 (file-newer-than-file-p helper-el helper-elc)))
-    (byte-compile-file helper-el t)
-    (shell-command
-     (concat "cd "
-             (shell-quote-argument slime-path)
-             " ; make compile contrib-compile")))
-  (when (and (file-exists-p helper-elc)
-             (not (find 'slime features)))
-    (load-file helper-elc))
-  (switch-back "*Compile-Log*")
-  (switch-back "*Shell Command Output*"))
+  (save-window-excursion
+    (when (and (file-exists-p helper-el)
+               (or (not (file-exists-p helper-elc))
+                   (file-newer-than-file-p helper-el helper-elc)))
+      (byte-compile-file helper-el t)
+      (shell-command
+       (concat "cd "
+               (shell-quote-argument slime-path)
+               " ; make compile contrib-compile")))
+    (when (and (file-exists-p helper-elc)
+               (not (find 'slime features)))
+      (load-file helper-elc))))
 
 (setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
 

@@ -26,12 +26,6 @@
 
 (require 'cl-lib)
 
-(defun switch-back (buffer)
-  "In window that displays buffer BUFFER switch to previous buffer."
-  (when (get-buffer buffer)
-    (dolist (window (get-buffer-window-list buffer))
-      (switch-to-prev-buffer window t))))
-
 (defun transpose-line-down (&optional arg)
   "Move current line and cursor down.
 Argument ARG, if supplied, specifies how many times the operation
@@ -217,12 +211,12 @@ current major mode, as specified in `mk-search-prefix'."
                       (length upgrades)
                       (if (= (length upgrades) 1) "" "s")
                       (mapconcat #'package-desc-full-name upgrades ", ")))
-        (dolist (package-desc upgrades)
-          (let ((old-package (cadr (assq (package-desc-name package-desc)
-                                         package-alist))))
-            (package-install package-desc)
-            (package-delete  old-package)))
-        (switch-back "*Compile-Log*")))))
+        (save-window-excursion
+          (dolist (package-desc upgrades)
+            (let ((old-package (cadr (assq (package-desc-name package-desc)
+                                           package-alist))))
+              (package-install package-desc)
+              (package-delete  old-package))))))))
 
 (defun pkgi-filter-args (pkg &optional _dont-select)
   "How to filter arguments of `package-install' command.
@@ -235,15 +229,15 @@ one can select any packages only by manually adding them to
   "Byte compile init files (all *.el files under `mk-dir' directory)."
   (interactive)
   (let (once)
-    (dolist (item (cons user-init-file
-                        (directory-files mk-dir t "\\`.*\\.el\\'" t)))
-      (let ((compiled (byte-compile-dest-file item)))
-        (when (or (not (file-exists-p compiled))
-                  (file-newer-than-file-p item compiled))
-          (byte-compile-file item)
-          (setq once t))))
-    (if once
-        (switch-back "*Compile-Log*")
+    (save-window-excursion
+      (dolist (item (cons user-init-file
+                          (directory-files mk-dir t "\\`.*\\.el\\'" t)))
+        (let ((compiled (byte-compile-dest-file item)))
+          (when (or (not (file-exists-p compiled))
+                    (file-newer-than-file-p item compiled))
+            (byte-compile-file item)
+            (setq once t)))))
+    (unless once
       (message "Byte compiled init files exist and are up to date."))))
 
 (defun mk-eval-last-sexp ()

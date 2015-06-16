@@ -25,6 +25,9 @@
 
 (require 'mk-utils)
 
+(defvar gnus-saved-window-config nil
+  "Saved window configuration that will be restored when you exit GNUS.")
+
 (setq
  gnus-permanently-visible-groups   ""      ; always show all groups
  send-mail-function                'smtpmail-send-it
@@ -41,8 +44,22 @@
  smtpmail-smtp-service             587
  gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
 
+(defun gnus-save-window-config (&rest _rest)
+  "Save current window configuration in `gnus-saved-window-config'."
+  (setq gnus-saved-window-config (current-window-configuration)))
+
+(defun gnus-restore-window-config (&rest _rest)
+  "Restore window configuration after exiting GNUS.
+Configuration is supposed to be stored in
+`gnus-saved-window-config'.  However, if it's NIL, nothing will
+be understaken to restore the configuraiton."
+  (set-window-configuration gnus-saved-window-config))
+
 (add-hook 'gnus-group-mode-hook   #'hl-line-mode)
 (add-hook 'gnus-summary-mode-hook #'hl-line-mode)
+
+(advice-add 'gnus            :before #'gnus-save-window-config)
+(advice-add 'gnus-group-exit :after  #'gnus-restore-window-config)
 
 (provide 'mk-gnus)
 
