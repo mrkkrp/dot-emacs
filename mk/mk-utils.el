@@ -32,7 +32,7 @@ This function is different from `shell-quote-argument' in that it
 can be invoked repeatedly in Yasnippet without backslash flood.
 Don't use it when you need to fill out long input, because it
 reiterates all the text at every key press."
-  (shell-quote-argument (remove ?\\ arg)))
+  (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
 
 (defun transpose-line-down (&optional arg)
   "Move current line and cursor down.

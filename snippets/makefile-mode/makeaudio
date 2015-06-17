@@ -8,7 +8,7 @@
 # Makefile for audio works
 #
 # This script requires the following tools: make, pdflatex, flac, lame,
-# wav2, mkm3u
+# wav2, mkm3u, lsa
 #
 # Copyright © 2015 Mark Karpov
 #
@@ -38,7 +38,7 @@ flac : cdda-master/*.wav \$(M_BOOKLET)
 	mkdir -vp flac-master
 	wav2 -Fni -o flac-master/ -l \$(M_ALBUM) -a \$(M_ARTIST) -y \$(M_YEAR) \\
 	cdda-master/*.wav
-	cd flac-master ; mkm3u > \$(M_ALBUM).m3u
+	cd flac-master ; mkm3u > \$(M_ALBUM).m3u ; lsa -tbp > \$(M_ALBUM).txt
 	cp -v \$(M_BOOKLET) flac-master/
 	touch flac
 
