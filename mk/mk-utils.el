@@ -26,6 +26,14 @@
 
 (require 'cl-lib)
 
+(defun shell-quote-arg (arg)
+  "Quote ARG for using in shell.
+This function is different from `shell-quote-argument' in that it
+can be invoked repeatedly in Yasnippet without backslash flood.
+Don't use it when you need to fill out long input, because it
+reiterates all the text at every key press."
+  (shell-quote-argument (remove ?\\ arg)))
+
 (defun transpose-line-down (&optional arg)
   "Move current line and cursor down.
 Argument ARG, if supplied, specifies how many times the operation
