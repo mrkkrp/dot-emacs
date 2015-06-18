@@ -23,6 +23,17 @@
 
 ;;; Code:
 
+(defun eshell-other-window (fnc &optional arg)
+  "Open Emacs shell (via FNC) in other window.
+ARG is argument to pass to Emacs shell."
+  (let ((eshell-buffer (funcall fnc arg)))
+    (switch-to-prev-buffer)
+    (switch-to-buffer-other-window eshell-buffer)))
+
+(defalias 'e #'find-file) ; to open files easily
+
+(advice-add 'eshell :around #'eshell-other-window)
+
 (provide 'mk-eshell)
 
 ;;; mk-eshell.el ends here
