@@ -226,12 +226,12 @@ current major mode, as specified in `mk-search-prefix'."
               (package-install package-desc)
               (package-delete  old-package))))))))
 
-(defun pkgi-filter-args (pkg &optional _dont-select)
+(defun pkgi-filter-args (args)
   "How to filter arguments of `package-install' command.
-PKG is passed to the command, while DONT-SELECT is always T, so
-one can select any packages only by manually adding them to
-`package-selected-packages' variable."
-  (list pkg t))
+First element of ARGS is passed to the command, while the second
+is always T, so one can select any packages only by manually
+adding them to `package-selected-packages' variable."
+  (list (car args) t))
 
 (defun compile-init-files ()
   "Byte compile init files (all *.el files under `mk-dir' directory)."
@@ -306,7 +306,7 @@ Switch between given INPUT-METHOD and DICTIONARY and their defaults."
     (ispell-change-dictionary dictionary)))
 
 (defmacro σ (&rest args)
-  "Return function that returns ARGS."
+  "Return function that returns list of ARGS."
   `(lambda (&rest _rest)
      (list ,@args)))
 
