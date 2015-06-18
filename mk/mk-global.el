@@ -123,6 +123,7 @@
 (π "<menu> a r" #'align-regexp)
 (π "<menu> a s" #'write-file)
 (π "<menu> b j" #'bookmark-jump)
+(π "<menu> b k" #'bookmark-jump-other-window)
 (π "<menu> b l" #'bookmark-bmenu-list)
 (π "<menu> b s" #'bookmark-set)
 (π "<menu> c a" #'calc)

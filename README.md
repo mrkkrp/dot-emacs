@@ -179,6 +179,7 @@ Shortcut            | Description
 <kbd>menu a r</kbd> | align regexp
 <kbd>menu a s</kbd> | write file (save file as…)
 <kbd>menu b j</kbd> | jump to bookmark
+<kbd>menu b k</kbd> | jump to bookmark in other window
 <kbd>menu b l</kbd> | list all bookmarks
 <kbd>menu b s</kbd> | set new bookmark
 <kbd>menu c a</kbd> | Calc
