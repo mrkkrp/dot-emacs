@@ -6,7 +6,8 @@
 auto-save-list/
 bookmarks
 elpa/
-eshell/
+eshell/history
+eshell/lastdir
 ido.last
 image-dired/
 init.elc*
