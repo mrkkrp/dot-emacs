@@ -44,6 +44,8 @@
 
 (setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
 
+(add-to-list 'aggressive-indent-excluded-modes 'slime-repl-mode)
+
 (add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
 (add-to-list 'major-mode-alias '(slime-repl-mode . "iλ"))
 (add-to-list 'minor-mode-alias '(slime-mode      . ""))
@@ -68,7 +70,8 @@
 (τ slime      slime-repl "C-c r" #'slime-restart-inferior-lisp)
 (τ slime-repl slime-repl "<f9>"  (ε #'slime-kill-all-buffers))
 
-(add-hook 'slime-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)
+(add-hook 'slime-repl-mode-hook #'electric-indent-mode)
 
 (provide 'mk-lisp)
 
