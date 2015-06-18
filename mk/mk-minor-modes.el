@@ -40,8 +40,8 @@
  ido-decorations '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
  ido-enable-flex-matching          t
  ido-everywhere                    t
- ido-vertical-decorations          '("\n-> " "" "\n   " "\n   …" "[" "]"
-                                     " ×" " ✔" " ⊥" " ⊥" " ↯" "\n-> " "")
+ ido-vertical-decorations          '("\n→ " "" "\n  " "\n  …" "[" "]"
+                                     " ×" " ✔" " ⊥" " ⊥" " ↯" "\n→ " "")
  sp-highlight-pair-overlay         nil
  sp-highlight-wrap-overlay         nil
  sp-highlight-wrap-tag-overlay     nil
