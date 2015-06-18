@@ -197,7 +197,6 @@ Shortcut            | Description
 <kbd>menu e b</kbd> | erase buffer
 <kbd>menu e e</kbd> | evaluate last s-expression
 <kbd>menu e r</kbd> | ERC
-<kbd>menu e s</kbd> | Emacs Shell
 <kbd>menu e v</kbd> | eval buffer
 <kbd>menu f f</kbd> | find Emacs Lisp function
 <kbd>menu f o</kbd> | set specified font
@@ -238,7 +237,7 @@ Shortcut            | Description
 <kbd>menu r r</kbd> | reverse region (lines)
 <kbd>menu s a</kbd> | select the whole buffer (mnemonic: «select all»)
 <kbd>menu s c</kbd> | Scheme
-<kbd>menu s h</kbd> | shell
+<kbd>menu s h</kbd> | Emacs shell
 <kbd>menu s l</kbd> | sort lines
 <kbd>menu s n</kbd> | sort numeric fields
 <kbd>menu s r</kbd> | string rectangle

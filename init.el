@@ -62,8 +62,7 @@
 (require 'package)
 (require 'bytecomp)
 
-(add-to-list
- 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (package-initialize)
 
@@ -97,6 +96,7 @@
 (require 'mk-dired)       ; ^
 (require 'mk-elisp)       ; ^
 (require 'mk-erc)         ; ^
+(require 'mk-eshell)      ; ^
 (require 'mk-gnus)        ; ^
 (require 'mk-haskell)     ; ^
 (require 'mk-lisp)        ; ^
