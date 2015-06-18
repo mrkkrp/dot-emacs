@@ -47,7 +47,6 @@
 
 (defun python-shell-ensure-proc (&rest _rest)
   "Make sure that python process is running for current buffer."
-  (interactive)
   (unless (python-shell-get-process)
     (run-python nil nil t)))
 
