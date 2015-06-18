@@ -34,6 +34,8 @@ ARG is argument to pass to Emacs shell."
     (switch-to-prev-buffer)
     (switch-to-buffer-other-window eshell-buffer)))
 
+(add-hook 'eshell-mode-hook #'smartparens-mode)
+
 (advice-add 'eshell :around #'eshell-other-window)
 
 (provide 'mk-eshell)
