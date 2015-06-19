@@ -31,6 +31,8 @@
  auto-save-default                nil     ; don't ever create autosaves
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
+ compilation-read-command         nil
+ compile-command                  "cd .. ; make -k"
  echo-keystrokes                  0.1     ; show keystrokes asap
  enable-recursive-minibuffers     t       ; use minibuffer recursively
  gc-cons-threshold                10240000 ; garbage collection every 10 Mb
@@ -203,7 +205,6 @@
 (add-hook 'after-change-major-mode-hook #'apply-mode-alias)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 
-(advice-add 'compile                    :filter-args (σ "cd .. ; make -k"))
 (advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
 (advice-add 'package-install            :filter-args #'pkgi-filter-args)
 (advice-add 'revert-buffer              :filter-args (σ nil t))
