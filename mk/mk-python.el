@@ -48,7 +48,9 @@
 (defun python-shell-ensure-proc (&rest _rest)
   "Make sure that python process is running for current buffer."
   (unless (python-shell-get-process)
-    (run-python nil nil t)))
+    (let ((win (get-buffer-window)))
+      (run-python nil nil t)
+      (select-window win))))
 
 (defun python-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
@@ -65,6 +67,7 @@
 
 (advice-add 'python-shell-send-buffer :before #'python-shell-ensure-proc)
 (advice-add 'python-shell-send-defun  :before #'python-shell-ensure-proc)
+(advice-add 'run-python               :after  (η #'python-shell-switch-to-shell))
 
 (provide 'mk-python)
 
