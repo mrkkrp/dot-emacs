@@ -239,7 +239,7 @@ adding them to `package-selected-packages' variable."
   (let (once)
     (save-window-excursion
       (dolist (item (cons user-init-file
-                          (directory-files mk-dir t "\\`.*\\.el\\'" t)))
+                          (directory-files mk-dir t "\\`[^#].*\\.el\\'" t)))
         (let ((compiled (byte-compile-dest-file item)))
           (when (or (not (file-exists-p compiled))
                     (file-newer-than-file-p item compiled))
