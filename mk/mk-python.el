@@ -29,6 +29,9 @@
 
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
+(eval-after-load 'python
+  '(add-to-list 'python-shell-completion-native-disabled-interpreters "ipython"))
+
 (add-to-list 'major-mode-alias '(inferior-python-mode . "iπ"))
 (add-to-list 'major-mode-alias '(python-mode          . "π"))
 (add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
@@ -39,11 +42,6 @@
    python-shell-interpreter          "ipython"
    python-shell-prompt-output-regexp "Out\\[[0-9 +]\\]: "
    python-shell-prompt-regexp        "In \\[[0-9]+\\]: "))
-
-(eval-after-load 'python
-  '(defun python-shell-completion-native-try ()
-     "Return NIL, so we get no completion, but don't hang Emacs."
-     nil))
 
 (defun python-shell-ensure-proc (&rest _rest)
   "Make sure that python process is running for current buffer."
