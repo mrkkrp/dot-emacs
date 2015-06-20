@@ -71,7 +71,7 @@
 (τ slime-repl slime-repl "<f9>"  (ε #'slime-kill-all-buffers))
 
 (add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)
-(add-hook 'slime-repl-mode-hook #'electric-indent-mode)
+(add-hook 'slime-repl-mode-hook #'electric-indent-local-mode)
 
 (provide 'mk-lisp)
 
