@@ -156,12 +156,13 @@ If STAMP is not NIL, insert date into currently active buffer."
   "Kill all buffers except for those that have names listed in `basic-buffers'."
   (interactive)
   (dolist (buffer (buffer-list))
-    (when (and (buffer-name buffer)
-               (notany (lambda (regexp)
-                         (string-match-p regexp
-                                         (buffer-name buffer)))
-                       basic-buffers))
-      (kill-buffer buffer)))
+    (let ((buffer-name (buffer-name buffer)))
+      (when (and buffer-name
+                 (notany (lambda (regexp)
+                           (string-match-p regexp
+                                           buffer-name))
+                         basic-buffers))
+        (kill-buffer buffer))))
   (switch-to-buffer "*scratch*")
   (delete-other-windows))
 
