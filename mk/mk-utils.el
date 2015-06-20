@@ -29,9 +29,8 @@
 (defun shell-quote-arg (arg)
   "Quote ARG for using in shell.
 This function is different from `shell-quote-argument' in that it
-can be invoked repeatedly in Yasnippet without backslash flood.
-Don't use it when you need to fill out long input, because it
-reiterates all the text at every key press."
+can be used for text transformations in Yasnippet without
+backslash flood."
   (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
 
 (defun transpose-line-down (&optional arg)
@@ -134,7 +133,7 @@ It's used in `insert-key-name' function.")
 
 (defun show-date (&optional stamp)
   "Show current date in the minibuffer.
-If STAMP is not NIL, insert date into currently active buffer."
+If STAMP is not NIL, insert date at point."
   (interactive)
   (funcall (if stamp #'insert #'message)
            (format-time-string "%A, %e %B %Y")))
@@ -144,7 +143,7 @@ If STAMP is not NIL, insert date into currently active buffer."
   (interactive)
   (message (expand-file-name default-directory)))
 
-(defvar basic-buffers
+(defvar mk-basic-buffers
   '("^\*scratch\*"
     "^\*Messages\*"
     "^\*Compile-Log\*"
@@ -153,7 +152,7 @@ If STAMP is not NIL, insert date into currently active buffer."
   "These are regexps to match names of buffers that I don't want to purge.")
 
 (defun purge-buffers ()
-  "Kill all buffers except for those that have names listed in `basic-buffers'."
+  "Kill all buffers except for those that match regexps in `basic-buffers'."
   (interactive)
   (dolist (buffer (buffer-list))
     (let ((buffer-name (buffer-name buffer)))
@@ -161,17 +160,17 @@ If STAMP is not NIL, insert date into currently active buffer."
                  (notany (lambda (regexp)
                            (string-match-p regexp
                                            buffer-name))
-                         basic-buffers))
+                         mk-basic-buffers))
         (kill-buffer buffer))))
   (switch-to-buffer "*scratch*")
   (delete-other-windows))
 
 (defun grab-input (prompt &optional initial-input add-space)
   "Grab input from user.
-If there is an active region, use its contents.  PROMPT is a
-prompt to show, INITIAL-INPUT is the initial input.  If
-INITIAL-INPUT and ADD-SPACE are not NIL, add one space after the
-initial input."
+If there is an active region, use its contents, otherwise read
+text from the minibuffer.  PROMPT is a prompt to show,
+INITIAL-INPUT is the initial input.  If INITIAL-INPUT and
+ADD-SPACE are not NIL, add one space after the initial input."
   (if mark-active
       (buffer-substring (region-beginning)
                         (region-end))
@@ -197,7 +196,7 @@ current major mode, as specified in `mk-search-prefix'."
            (url-hexify-string what))))
 
 (defun package-upgrade-all ()
-  "Upgrade all packages automatically without showing any special buffer."
+  "Upgrade all packages automatically without showing *Packages* buffer."
   (interactive)
   (package-refresh-contents)
   (let (upgrades)
@@ -208,19 +207,19 @@ current major mode, as specified in `mk-search-prefix'."
                               (get-version package package-archive-contents))
           (push (cadr (assq package package-archive-contents))
                 upgrades))))
-    (if (null upgrades)
-        (message "All packages are up to date.")
-      (when (yes-or-no-p
-             (message "Upgrade %d package%s (%s)? "
-                      (length upgrades)
-                      (if (= (length upgrades) 1) "" "s")
-                      (mapconcat #'package-desc-full-name upgrades ", ")))
-        (save-window-excursion
-          (dolist (package-desc upgrades)
-            (let ((old-package (cadr (assq (package-desc-name package-desc)
-                                           package-alist))))
-              (package-install package-desc)
-              (package-delete  old-package))))))))
+    (if upgrades
+        (when (yes-or-no-p
+               (message "Upgrade %d package%s (%s)? "
+                        (length upgrades)
+                        (if (= (length upgrades) 1) "" "s")
+                        (mapconcat #'package-desc-full-name upgrades ", ")))
+          (save-window-excursion
+            (dolist (package-desc upgrades)
+              (let ((old-package (cadr (assq (package-desc-name package-desc)
+                                             package-alist))))
+                (package-install package-desc)
+                (package-delete  old-package)))))
+      (message "All packages are up to date."))))
 
 (defun pkgi-filter-args (args)
   "How to filter arguments of `package-install' command.
@@ -253,14 +252,15 @@ adding them to `package-selected-packages' variable."
 
 (defun visit-file (filename)
   "Visit specified file FILENAME.
-If the file does not exist, print a message about the fact."
+If the file does not exist, print a message about the fact, but
+don't create new empty buffer."
   (let ((filename (expand-file-name filename)))
     (if (file-exists-p filename)
         (find-file filename)
       (message "%s does not exist." filename))))
 
 (defun double-buffer ()
-  "Show currect buffer in other window."
+  "Show currect buffer in other window and switch to that window."
   (interactive)
   (if (> (length (window-list)) 1)
       (let ((original-buffer (buffer-name)))
@@ -270,7 +270,9 @@ If the file does not exist, print a message about the fact."
     (other-window 1)))
 
 (defun mk-switch-theme (theme)
-  "Switch to theme THEME, loading it if necessairy."
+  "Switch to theme THEME, loading it if necessary.
+This command disables all enabled themes before loading theme
+THEME.  This is what you usually want."
   (interactive
    (list
     (intern
@@ -301,6 +303,29 @@ Switch between given INPUT-METHOD and DICTIONARY and their defaults."
     (set-input-method input-method)
     (ispell-change-dictionary dictionary)))
 
+(defmacro translate-kbd (from to)
+  "Translate combinations of keys FROM to TO combination.
+Effect of this translation is global."
+  `(define-key key-translation-map (kbd ,from) (kbd ,to)))
+
+(defvar minor-mode-alias nil
+  "Alias for minor modes.")
+
+(defvar major-mode-alias nil
+  "Alias for major modes.")
+
+(defun apply-mode-alias ()
+  "Use alias from `minor-mode-alias' and `major-mode-alias'."
+  (dolist (x minor-mode-alias)
+    (let ((trg (cdr (assoc (car x) minor-mode-alist))))
+      (when trg
+        (setcar trg (cdr x)))))
+  (let ((mode-alias (cdr (assoc major-mode major-mode-alias))))
+    (when mode-alias
+      (setq mode-name mode-alias))))
+
+;; My little helpers from Greece…
+
 (defmacro σ (&rest args)
   "Return function that returns list of ARGS."
   `(lambda (&rest _rest)
@@ -328,27 +353,6 @@ Kind of partial application."
      '(define-key
         (symbol-value (intern (concat (symbol-name ',keymap) "-mode-map")))
         (kbd ,key) ,fnc)))
-
-(defmacro translate-kbd (from to)
-  "Translate combinations of keys FROM to TO combination.
-Effect of this translation is global."
-  `(define-key key-translation-map (kbd ,from) (kbd ,to)))
-
-(defvar minor-mode-alias nil
-  "Alias for minor modes.")
-
-(defvar major-mode-alias nil
-  "Alias for major modes.")
-
-(defun apply-mode-alias ()
-  "Use alias from `minor-mode-alias' and `major-mode-alias'."
-  (dolist (x minor-mode-alias)
-    (let ((trg (cdr (assoc (car x) minor-mode-alist))))
-      (when trg
-        (setcar trg (cdr x)))))
-  (let ((mode-alias (cdr (assoc major-mode major-mode-alias))))
-    (when mode-alias
-      (setq mode-name mode-alias))))
 
 (provide 'mk-utils)
 
