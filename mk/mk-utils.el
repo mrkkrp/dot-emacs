@@ -147,6 +147,7 @@ If STAMP is not NIL, insert date into currently active buffer."
 (defvar basic-buffers
   '("^\*scratch\*"
     "^\*Messages\*"
+    "^\*Compile-Log\*"
     "^irc\.freenode\.net:6667"
     "^#.+")
   "These are regexps to match names of buffers that I don't want to purge.")
@@ -154,21 +155,15 @@ If STAMP is not NIL, insert date into currently active buffer."
 (defun purge-buffers ()
   "Kill all buffers except for those that have names listed in `basic-buffers'."
   (interactive)
-  (let ((redundant-buffers
-         (remove-if (lambda (name)
-                      (some (lambda (regexp)
-                              (string-match-p regexp name))
-                            basic-buffers))
-                    (mapcar #'buffer-name (buffer-list)))))
-    (mapc (lambda (name)
-            (kill-buffer
-             (if (get-buffer name)
-                 name
-               (subseq name 0 (or (position ?< name :from-end t)
-                                  (length name))))))
-          redundant-buffers)
-    (switch-to-buffer "*scratch*")
-    (delete-other-windows)))
+  (dolist (buffer (buffer-list))
+    (when (and (buffer-name buffer)
+               (notany (lambda (regexp)
+                         (string-match-p regexp
+                                         (buffer-name buffer)))
+                       basic-buffers))
+      (kill-buffer buffer)))
+  (switch-to-buffer "*scratch*")
+  (delete-other-windows))
 
 (defun grab-input (prompt &optional initial-input add-space)
   "Grab input from user.

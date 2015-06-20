@@ -207,6 +207,7 @@
 
 (advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
 (advice-add 'package-install            :filter-args #'pkgi-filter-args)
+(advice-add 'process-kill-buffer-query-function :override (σ t))
 (advice-add 'revert-buffer              :filter-args (σ nil t))
 (advice-add 'save-buffers-kill-terminal :filter-args (σ t))
 
