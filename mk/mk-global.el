@@ -105,7 +105,7 @@
 (π "<f9>"       (ε #'kill-buffer nil))
 (π "<f10>"      #'delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
-(π "<f12>"      #'save-buffers-kill-terminal)
+(π "<f12>"      #'exit-emacs)
 (π "<escape>"   #'delete-window)
 (π "<return>"   #'avy-goto-char)
 (π "<S-up>"     #'buf-move-up)
@@ -209,7 +209,6 @@
 (advice-add 'package-install            :filter-args #'pkgi-filter-args)
 (advice-add 'process-kill-buffer-query-function :override (σ t))
 (advice-add 'revert-buffer              :filter-args (σ nil t))
-(advice-add 'save-buffers-kill-terminal :filter-args (σ t))
 
 (provide 'mk-global)
 

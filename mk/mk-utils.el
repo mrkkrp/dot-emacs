@@ -324,6 +324,14 @@ Effect of this translation is global."
     (when mode-alias
       (setq mode-name mode-alias))))
 
+(defun exit-emacs (&optional arg)
+  "Exit Emacs: save all file-visiting buffers, kill terminal.
+If ARG is given and it's not NIL, don't ask user if he wants to
+exit."
+  (interactive "P")
+  (when (or arg (yes-or-no-p "Exit Emacs?"))
+    (save-buffers-kill-terminal)))
+
 ;; My little helpers from Greece…
 
 (defmacro σ (&rest args)

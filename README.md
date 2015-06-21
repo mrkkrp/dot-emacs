@@ -160,7 +160,7 @@ Shortcut            | Description
 <kbd>F9</kbd>       | kill current buffer
 <kbd>F10</kbd>      | delete other windows
 <kbd>F11</kbd>      | switch to buffer
-<kbd>F12</kbd>      | save buffers and kill terminal (exit)
+<kbd>F12</kbd>      | exit Emacs
 <kbd>escape</kbd>   | delete window
 <kbd>return</kbd>   | avy go to char
 <kbd>S-up</kbd>     | move buffer up
