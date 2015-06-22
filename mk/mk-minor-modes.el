@@ -36,7 +36,6 @@
  fill-column                       76      ; set fill column
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ido-auto-merge-work-directories-length -1 ; disable it
- ido-context-switch-command        nil     ; to suppress a warning
  ido-create-new-buffer             'always
  ido-decorations '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
  ido-enable-flex-matching          t
