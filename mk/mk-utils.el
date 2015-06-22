@@ -80,6 +80,27 @@ performed."
   (interactive)
   (insert (gui-get-selection)))
 
+(defun file-name-to-kill-ring (arg)
+  "Put name of file into kill ring.
+If user's visiting a buffer that's associated with a file, use
+name of the file.  If major mode is `dired-mode', use name of
+file at point, but if point is not placed at any file, put name
+of actual directory into kill ring.  Argument ARG, if given,
+makes result string be quoted as for yanking into shell."
+  (interactive "P")
+  (let ((φ (if (find major-mode
+                     '(dired-mode wdired-mode))
+               (or (dired-get-filename nil t)
+                   default-directory)
+             (buffer-file-name))))
+    (when φ
+      (message "%s → kill ring"
+               (kill-new
+                (expand-file-name
+                 (if arg
+                     (shell-quote-argument φ)
+                   φ)))))))
+
 (defun mark-rest-of-line ()
   "Set region from point to end of current line."
   (interactive)

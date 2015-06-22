@@ -145,6 +145,7 @@
 (π "<menu> e r" #'erc)
 (π "<menu> e v" #'eval-buffer)
 (π "<menu> f f" #'find-function)
+(π "<menu> f n" #'file-name-to-kill-ring)
 (π "<menu> f o" #'mk-set-font)
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
