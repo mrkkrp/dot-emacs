@@ -56,12 +56,17 @@ be understaken to restore the configuraiton."
   (when gnus-saved-window-config
     (set-window-configuration gnus-saved-window-config)))
 
+(defun gnus-go-to-inbox (&rest _rest)
+  "Go to line that has title \"INBOX\"."
+  (search-forward "INBOX"))
+
 (τ gnus     gnus-article "o" #'ace-link-gnus)
 (τ gnus-sum gnus-summary "o" #'ace-link-gnus)
 
 (add-hook 'gnus-group-mode-hook   #'hl-line-mode)
 (add-hook 'gnus-summary-mode-hook #'hl-line-mode)
 
+(advice-add 'gnus            :after  #'gnus-go-to-inbox)
 (advice-add 'gnus            :before #'gnus-save-window-config)
 (advice-add 'gnus-group-exit :after  #'gnus-restore-window-config)
 
