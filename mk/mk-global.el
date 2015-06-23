@@ -62,6 +62,8 @@
 (put 'erase-buffer     'disabled nil) ; don't ever question my power
 (put 'narrow-to-region 'disabled nil) ; ^
 
+(ace-link-setup-default) ; use ace-link in various major modes
+
 ;;; Handy translations for use with «Sticky Keys»
 
 (translate-kbd "<C-menu>"   "<menu>")
@@ -93,6 +95,7 @@
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'transpose-line-down)
+(π "M-o"        #'ace-link-org)
 (π "M-p"        #'transpose-line-up)
 (π "M-r"        #'duplicate-line)
 (π "M-u"        #'fix-word-upcase)

@@ -56,6 +56,9 @@ be understaken to restore the configuraiton."
   (when gnus-saved-window-config
     (set-window-configuration gnus-saved-window-config)))
 
+(τ gnus     gnus-article "o" #'ace-link-gnus)
+(τ gnus-sum gnus-summary "o" #'ace-link-gnus)
+
 (add-hook 'gnus-group-mode-hook   #'hl-line-mode)
 (add-hook 'gnus-summary-mode-hook #'hl-line-mode)
 

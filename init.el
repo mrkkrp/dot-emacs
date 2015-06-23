@@ -32,7 +32,8 @@
 
 (setq
  package-selected-packages
- '(ace-window           ; switching between windows
+ '(ace-link             ; quickly follow links
+   ace-window           ; switching between windows
    aggressive-indent    ; aggressive indentation
    auctex               ; for LaTeX
    avy                  ; move cursor effectively

@@ -149,6 +149,7 @@ Shortcut            | Description
 <kbd>M-j</kbd>      | join the next line and the current one
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-n</kbd>      | transpose line down
+<kbd>M-o</kbd>      | ace link
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-r</kbd>      | duplicate line
 <kbd>M-u</kbd>      | fix word: upcase
