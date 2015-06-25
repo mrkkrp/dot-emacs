@@ -100,6 +100,7 @@
 (require 'mk-eshell)      ; ^
 (require 'mk-gnus)        ; ^
 (require 'mk-haskell)     ; ^
+(require 'mk-ibuffer)     ; ^
 (require 'mk-lisp)        ; ^
 (require 'mk-magit)       ; ^
 (require 'mk-man)         ; ^
