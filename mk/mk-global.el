@@ -24,6 +24,7 @@
 
 ;;; Code:
 
+(require 'misc)
 (require 'mk-abbrev)
 (require 'mk-utils)
 
@@ -100,6 +101,7 @@
 (π "M-r"        #'duplicate-line)
 (π "M-u"        #'fix-word-upcase)
 (π "M-x"        #'smex)
+(π "M-z"        #'zap-up-to-char)
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
