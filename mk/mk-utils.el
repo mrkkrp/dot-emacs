@@ -114,6 +114,18 @@ makes result string be quoted as for yanking into shell."
   (interactive)
   (kill-new (buffer-string)))
 
+(defun mk-first-line (&optional arg)
+  "Go to beginning of current buffer and ARG lines down."
+  (interactive "p")
+  (goto-char (point-min))
+  (forward-line (or arg 0)))
+
+(defun mk-last-line (&optional arg)
+  "Go to end of current buffer and ARG lines up."
+  (interactive "p")
+  (goto-char (point-max))
+  (forward-line (- (or arg 0))))
+
 (defvar keyboard-key-name
   '(("alt"       . "⎇")
     ("backspace" . "⌫")
