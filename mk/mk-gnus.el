@@ -60,8 +60,10 @@ be understaken to restore the configuraiton."
   "Go to line that has title \"INBOX\"."
   (search-forward "INBOX"))
 
-(τ gnus     gnus-article "o" #'ace-link-gnus)
-(τ gnus-sum gnus-summary "o" #'ace-link-gnus)
+(τ gnus       gnus-article "o"        #'ace-link-gnus)
+(τ gnus-group gnus-group   "<menu> ." (ε #'mk-last-line 1))
+(τ gnus-sum   gnus-summary "<menu> ." (ε #'mk-last-line 1))
+(τ gnus-sum   gnus-summary "o"        #'ace-link-gnus)
 
 (add-hook 'gnus-group-mode-hook   #'hl-line-mode)
 (add-hook 'gnus-summary-mode-hook #'hl-line-mode)
