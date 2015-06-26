@@ -176,6 +176,30 @@ If STAMP is not NIL, insert date at point."
   (interactive)
   (message (expand-file-name default-directory)))
 
+(defvar quick-to-die nil
+  "List of major modes that are preferred to be killed, not buried.")
+
+(defvar preferred-death nil
+  "Alist describing how to kill buffers with various major modes.")
+
+(defun kill-or-bury-alive (&optional arg)
+  "Kill or bury current buffer.
+
+This is universal killing mechanism.  When argument ARG is given
+and it's not NIL, kill current buffer.  Otherwise behavior of
+this command varies.  If current buffer has major mode listed in
+`quick-to-die' list, kill it immediately, otherwise just bury it.
+
+Various major modes can be killed differently.  Add a
+pair (major-mode-name . killing-function) to `preferred-death'
+variable to choose something fancy.  Standard `kill-buffer' is
+used as fallback."
+  (interactive "P")
+  (if (or arg (find major-mode quick-to-die))
+      (funcall (or (cdr (assoc major-mode preferred-death))
+                   (kill-buffer)))
+    (bury-buffer)))
+
 (defvar mk-basic-buffers
   '("^\*scratch\*"
     "^\*Messages\*"

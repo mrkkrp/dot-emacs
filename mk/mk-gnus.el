@@ -44,6 +44,13 @@
  smtpmail-smtp-service             587
  gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")
 
+(add-to-list 'preferred-death (cons 'gnus-article-mode #'gnus-summary-exit))
+(add-to-list 'preferred-death (cons 'gnus-group-mode #'gnus-group-exit))
+(add-to-list 'preferred-death (cons 'gnus-summary-mode #'gnus-summary-exit))
+(add-to-list 'quick-to-die    'gnus-article-mode)
+(add-to-list 'quick-to-die    'gnus-group-mode)
+(add-to-list 'quick-to-die    'gnus-summary-mode)
+
 (defun gnus-save-window-config (&rest _rest)
   "Save current window configuration in `gnus-saved-window-config'."
   (setq gnus-saved-window-config (current-window-configuration)))

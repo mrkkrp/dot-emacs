@@ -38,6 +38,7 @@
 (add-to-list 'major-mode-alias '(clojure-mode    . "c"))
 (add-to-list 'mk-search-prefix '(cider-repl-mode . "clojure"))
 (add-to-list 'mk-search-prefix '(clojure-mode    . "clojure"))
+(add-to-list 'preferred-death  (cons 'cider-repl-mode #'cider-quit))
 
 (defun clojure-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
@@ -50,7 +51,6 @@
              (if (string= "" y) "" "/")
              (url-hexify-string (or y x))))))
 
-(τ cider-repl   cider-repl "<f9>"  #'cider-quit)
 (τ cider-repl   cider-repl "C-c h" #'clojure-docs)
 (τ cider-repl   cider-repl "C-c r" #'cider-restart)
 (τ clojure-mode clojure    "C-c h" #'clojure-docs)

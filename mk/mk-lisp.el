@@ -51,6 +51,7 @@
 (add-to-list 'minor-mode-alias '(slime-mode      . ""))
 (add-to-list 'mk-search-prefix '(lisp-mode       . "common lisp"))
 (add-to-list 'mk-search-prefix '(slime-repl-mode . "common lisp"))
+(add-to-list 'preferred-death  (cons 'slime-repl-mode #'slime-kill-all-buffers))
 
 (defun slime-in-package ()
   "Load specified package and switch to it."
@@ -68,7 +69,6 @@
 (τ slime      slime      "M-p"   #'transpose-line-up)
 (τ slime      slime-repl "C-c i" #'slime-in-package)
 (τ slime      slime-repl "C-c r" #'slime-restart-inferior-lisp)
-(τ slime-repl slime-repl "<f9>"  (ε #'slime-kill-all-buffers))
 
 (add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)
 (add-hook 'slime-repl-mode-hook #'electric-indent-local-mode)
