@@ -29,7 +29,8 @@
  ibuffer-expert t
  ibuffer-saved-filter-groups
  '(("default"
-    ("Dired" (mode     . dired-mode))
+    ("Dired" (or (mode . dired-mode)
+                 (mode . wdired-mode)))
     ("Emacs" (or (name . "^\\*scratch\\*$")
                  (name . "^\\*Messages\\*$")))
     ("ERC"   (mode     . erc-mode))
