@@ -107,7 +107,7 @@
 (π "<f6>"       #'find-file-other-window)
 (π "<f7>"       (ε #'mk-use-lang "french-keyboard"  "fr"))
 (π "<f8>"       (ε #'mk-use-lang "russian-computer" "ru"))
-(π "<f9>"       #'bury-buffer)
+(π "<f9>"       #'kill-this-buffer)
 (π "<f10>"      #'delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
 (π "<f12>"      #'exit-emacs)
