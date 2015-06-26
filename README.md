@@ -141,7 +141,7 @@ Shortcut            | Description
 <kbd>C-c h</kbd>    | lookup language specific documentation online
 <kbd>C-c i</kbd>    | correct word before point
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
-<kbd>C-c r</kbd>    | revert current buffer
+<kbd>C-c r</kbd>    | revert current buffer (restart/reset REPL in some modes)
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
 <kbd>M-c</kbd>      | fix word: capitalize
@@ -253,9 +253,7 @@ Shortcut            | Description
 <kbd>menu y a</kbd> | reload all snippets
 <kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle
-<kbd>C-c r</kbd>    | SLIME: restart inferior Lisp
 <kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
-<kbd>C-c r</kbd>    | Cider: restart Cider
 <kbd>C-c C-l</kbd>  | C mode: compile project
 <kbd>b</kbd>        | Dired: up directory
 <kbd>e</kbd>        | Dired: open with external application

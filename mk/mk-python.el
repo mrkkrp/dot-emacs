@@ -58,7 +58,14 @@
            (url-hexify-string symbol)
            "&check_keywords=yes&area=default")))
 
+(defun ipython-reset ()
+  "Reset iPython shell."
+  (interactive)
+  (comint-send-string (python-shell-get-process)
+                      "%reset\ny\n"))
+
 (τ python inferior-python "C-c h"   #'python-docs)
+(τ python inferior-python "C-c r"   #'ipython-reset)
 (τ python python          "C-c C-c" #'python-shell-send-defun)
 (τ python python          "C-c C-l" #'python-shell-send-buffer)
 (τ python python          "C-c h"   #'python-docs)
