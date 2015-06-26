@@ -158,7 +158,7 @@ Shortcut            | Description
 <kbd>F6</kbd>       | find file in other window (also Dired)
 <kbd>F7</kbd>       | toggle French input method
 <kbd>F8</kbd>       | toggle Russian input method
-<kbd>F9</kbd>       | kill current buffer
+<kbd>F9</kbd>       | bury buffer
 <kbd>F10</kbd>      | delete other windows
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | exit Emacs
