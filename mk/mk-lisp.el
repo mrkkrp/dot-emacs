@@ -45,7 +45,6 @@
 (setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
 
 (add-to-list 'aggressive-indent-excluded-modes 'slime-repl-mode)
-
 (add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
 (add-to-list 'major-mode-alias '(slime-repl-mode . "iλ"))
 (add-to-list 'minor-mode-alias '(slime-mode      . ""))

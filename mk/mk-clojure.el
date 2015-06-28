@@ -34,6 +34,7 @@
  cider-stacktrace-fill-column         fill-column
  nrepl-buffer-name-show-port          nil)
 
+(add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
 (add-to-list 'major-mode-alias '(cider-repl-mode . "ic"))
 (add-to-list 'major-mode-alias '(clojure-mode    . "c"))
 (add-to-list 'mk-search-prefix '(cider-repl-mode . "clojure"))
@@ -55,6 +56,7 @@
 (τ cider-repl   cider-repl "C-c r" #'cider-restart)
 (τ clojure-mode clojure    "C-c h" #'clojure-docs)
 
+(add-hook 'cider-repl        #'electric-indent-local-mode)
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
 
 (provide 'mk-clojure)

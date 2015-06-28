@@ -30,8 +30,8 @@
  haskell-ask-also-kill-buffers   nil  ; don't ask
  haskell-process-show-debug-tips nil) ; don't show anything
 
+(add-to-list 'aggressive-indent-excluded-modes 'haskell-interactive-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-mode)
-
 (add-to-list 'major-mode-alias '(haskell-interactive-mode . "iH"))
 (add-to-list 'major-mode-alias '(haskell-mode             . "H"))
 (add-to-list 'minor-mode-alias '(haskell-doc-mode         . ""))
