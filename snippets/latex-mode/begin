@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: begin
+# key: begin
+# --
+\begin{${1:env}}
+$0
+\end{$1}
