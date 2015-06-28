@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: title
+# key: title
+# --
+\title{${1:title}}
+\author{${2:author}}
+\date{${3:`(format-time-string "%e %B %Y")`}}
+\maketitle
