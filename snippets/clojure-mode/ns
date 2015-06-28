@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: ns
+# key: ns
+# --
+(ns `(clojure-expected-ns)`
+  $0)
