@@ -257,7 +257,7 @@ Shortcut            | Description
 <kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle
 <kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
-<kbd>C-c C-l</kbd>  | C mode: compile project
+<kbd>C-c C-c</kbd>  | Haskell: Cabal interface
 <kbd>b</kbd>        | Dired: up directory
 <kbd>e</kbd>        | Dired: open with external application
 <kbd>i</kbd>        | Dired: show images in current directory
