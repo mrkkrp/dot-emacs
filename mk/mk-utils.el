@@ -160,8 +160,8 @@ It's used in `insert-key-name' function.")
 (defun insert-key-name (key-name)
   "Insert name of keyboard key KEY-NAME."
   (interactive
-   (list (ido-completing-read "Key name: "
-                              (mapcar #'car keyboard-key-name))))
+   (list (completing-read "Key name: "
+                          (mapcar #'car keyboard-key-name))))
   (let ((ξ (cdr (assoc (string-trim (downcase key-name)) keyboard-key-name))))
     (insert (concat "<kbd>" ξ (when ξ " ") (capitalize key-name) "</kbd>"))))
 
