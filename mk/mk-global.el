@@ -33,7 +33,6 @@
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  compilation-read-command         nil
- compile-command                  "cd .. ; make -k"
  echo-keystrokes                  0.1     ; show keystrokes asap
  enable-recursive-minibuffers     t       ; use minibuffer recursively
  gc-cons-threshold                10240000 ; garbage collection every 10 Mb
