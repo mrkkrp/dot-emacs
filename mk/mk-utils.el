@@ -382,47 +382,52 @@ Effect of this translation is global."
     (when mode-alias
       (setq mode-name mode-alias))))
 
-(defun mk-find-file (filename)
-  "Find file named FILENAME traversing through parent directories.
-Return absolute path to that file or NIL on failure."
-  (cl-do ((path default-directory (f-dirname path))
-          temp)
-      ((or temp (null path)) temp)
-    (let ((file (f-join path filename)))
-      (when (file-exists-p file)
-        (setq temp file)))))
+(defun mk-find-file (regexp)
+  "Find file whose name satisfies REGEXP traversing upwards.
+Return absolute path to directory containing that file or NIL on
+failure."
+  (f-traverse-upwards
+   (lambda (path)
+     (directory-files path t regexp t))
+   default-directory))
 
 (defun mk-make ()
   "Find makefile of current project and execute `make'."
   (interactive)
-  (let ((dir (f-dirname (mk-find-file "makefile"))))
-    (compile
-     (format "cd %s ; make -k"
-             (shell-quote-argument dir)))))
+  (let ((dir (mk-find-file "\\`[Mm]akefile\\'")))
+    (if dir
+        (compile
+         (format "cd %s ; make -k"
+                 (shell-quote-argument dir)))
+      (message "Cannot find makefile for this project."))))
 
 (defun mk-install ()
   "Find `install.sh' script of current project and execute it.
 `sudo' is used automatically, you'll need to enter your `sudo'
 password."
   (interactive)
-  (let ((dir (f-dirname (mk-find-file "install.sh"))))
-    (save-window-excursion
-      (compile
-       (format "cd %s ; sudo sh install.sh"
-               (shell-quote-argument dir))
-       t))))
+  (let ((dir (mk-find-file "\\`install.sh\\'")))
+    (if dir
+        (save-window-excursion
+          (compile
+           (format "cd %s ; sudo sh install.sh"
+                   (shell-quote-argument dir))
+           t))
+      (message "Cannot find ‘install.sh’ file for this project."))))
 
 (defun mk-uninstall ()
   "Find `uninstall.sh' script of current project and execute it.
 `sudo' is used automatically, you'll need to enter your `sudo'
 password."
   (interactive)
-  (let ((dir (f-dirname (mk-find-file "uninstall.sh"))))
-    (save-window-excursion
-      (compile
-       (format "cd %s ; sudo sh uninstall.sh"
-               (shell-quote-argument dir))
-       t))))
+  (let ((dir (mk-find-file "\\`uninstall.sh\\'")))
+    (if dir
+        (save-window-excursion
+          (compile
+           (format "cd %s ; sudo sh uninstall.sh"
+                   (shell-quote-argument dir))
+           t))
+      (message "Cannot find ‘uninstall.sh’ file for this project."))))
 
 (defun exit-emacs (&optional arg)
   "Exit Emacs: save all file-visiting buffers, kill terminal.
