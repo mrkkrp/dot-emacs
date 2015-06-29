@@ -286,92 +286,91 @@ languages — a horrible thing.
 
 But there are also quite a few characters that don't belong to any
 particular keyboard layout or language. To input them I use Emacs
-abbreviations. All my abbreviations start with ‘8’ simply because this key
-is easy to reach and not so many normal words start with ‘8’.
+abbreviations.
 
 Here is the transformation table:
 
 Abbreviation  | Result Character | Name of the character
 ------------  | ---------------- | ---------------------
-`8acc`        | ́                | accent mark
-`8apeq`       | ≈                | approximately equal
-`8bot`        | ⊥                | bottom
-`8bull`       | •                | bullet
-`8copy`       | ©                | copyright sign
-`8dagg`       | †                | dagger
-`8dagr`       | ‡                | crossed dagger
-`8dash`       | —                | em dash
-`8dda`        | ⇓                | double downwards arrow
-`8deg`        | °                | degree
-`8dla`        | ⇐                | double leftwards arrow
-`8dqu`        | “”               | double quotation marks
-`8dra`        | ⇒                | double rightwards arrow
-`8dua`        | ⇑                | double upwards arrow
-`8elli`       | …                | ellipsis
-`8fleu`       | ❧                | fleuron
-`8guil`       | «»               | guillemets
-`8hash`       | #                | number sign or hash sign
-`8id`         | ≡                | identical to
-`8ineg`       | ∫                | integral
-`8ineq`       | ≠                | inequality
-`8inf`        | ∞                | infinity
-`8inte`       | ‽                | interrobang
-`8intr`       | ·                | interpunct
-`8keyb`       | ⌨                | keyboard
-`8loze`       | ◊                | lozenge
-`8mnpl`       | ∓                | minus-plus
-`8mult`       | ×                | multiplication
-`8nabl`       | ∇                | nabla
-`8ndsh`       | –                | en dash
-`8num`        | №                | numero sign
-`8obel`       | ÷                | obelus
-`8plmn`       | ±                | plus-minus
-`8pnd`        | £                | pound
-`8prod`       | ∏                | product
-`8qed`        | ■                | quod erat demonstrandum
-`8root`       | √                | root
-`8rub`        | ₽                | Russian ruble
-`8sda`        | ↓                | simple downwards arrow
-`8sect`       | §                | section
-`8squi`       | ‹›               | single arrow guillements
-`8sla`        | ←                | simple leftwards arrow
-`8squ`        | ‘’               | single quotation marks
-`8sra`        | →                | simple rightwards arrow
-`8srcp`       | ℗                | sound recording copyright
-`8star`       | ★                | star
-`8sua`        | ↑                | simple upwards arrow
-`8sum`        | ∑                | summation
+`acc`        | ́                | accent mark
+`apeq`       | ≈                | approximately equal
+`bot`        | ⊥                | bottom
+`bull`       | •                | bullet
+`copy`       | ©                | copyright sign
+`dagg`       | †                | dagger
+`dagr`       | ‡                | crossed dagger
+`dash`       | —                | em dash
+`dda`        | ⇓                | double downwards arrow
+`deg`        | °                | degree
+`dla`        | ⇐                | double leftwards arrow
+`dqu`        | “”               | double quotation marks
+`dra`        | ⇒                | double rightwards arrow
+`dua`        | ⇑                | double upwards arrow
+`elli`       | …                | ellipsis
+`fleu`       | ❧                | fleuron
+`guil`       | «»               | guillemets
+`hash`       | #                | number sign or hash sign
+`id`         | ≡                | identical to
+`ineg`       | ∫                | integral
+`ineq`       | ≠                | inequality
+`inf`        | ∞                | infinity
+`inte`       | ‽                | interrobang
+`intr`       | ·                | interpunct
+`keyb`       | ⌨                | keyboard
+`loze`       | ◊                | lozenge
+`mnpl`       | ∓                | minus-plus
+`mult`       | ×                | multiplication
+`nabl`       | ∇                | nabla
+`ndsh`       | –                | en dash
+`num`        | №                | numero sign
+`obel`       | ÷                | obelus
+`plmn`       | ±                | plus-minus
+`pnd`        | £                | pound
+`prod`       | ∏                | product
+`qed`        | ■                | quod erat demonstrandum
+`root`       | √                | root
+`rub`        | ₽                | Russian ruble
+`sda`        | ↓                | simple downwards arrow
+`sect`       | §                | section
+`squi`       | ‹›               | single arrow guillements
+`sla`        | ←                | simple leftwards arrow
+`squ`        | ‘’               | single quotation marks
+`sra`        | →                | simple rightwards arrow
+`srcp`       | ℗                | sound recording copyright
+`star`       | ★                | star
+`sua`        | ↑                | simple upwards arrow
+`sum`        | ∑                | summation
 
 There is also entire Greek alphabet:
 
 Abbreviation | Letter | Abbreviation  | Letter
 ------------ | ------ | ------------  | ------
-`8Alpha`     | Α      | `8alpha`      | α
-`8Beta`      | Β      | `8beta`       | β
-`8Gamma`     | Γ      | `8gamma`      | Y
-`8Delta`     | Δ      | `8delta`      | δ
-`8Epsilon`   | Ε      | `8epsilon`    | ε
-`8Zeta`      | Ζ      | `8zeta`       | ζ
-`8Eta`       | Η      | `8eta`        | η
-`8Theta`     | Θ      | `8theta`      | θ
-`8Iota`      | Ι      | `8iota`       | ι
-`8Kappa`     | Κ      | `8kappa`      | κ
-`8Lambda`    | Λ      | `8lambda`     | λ
-`8Mu`        | Μ      | `8mu`         | μ
-`8Nu`        | Ν      | `8nu`         | ν
-`8Xi`        | Ξ      | `8xi`         | ξ
-`8Omicron`   | Ο      | `8omicron`    | ο
-`8Pi`        | Π      | `8pi`         | π
-`8Rho`       | Ρ      | `8rho`        | ρ
-`8Sigma`     | Σ      | `8sigma`      | σ
-`8Tau`       | Τ      | `8tau`        | τ
-`8Upsilon`   | Υ      | `8upsilon`    | υ
-`8Phi`       | Φ      | `8phi`        | φ
-`8Chi`       | Χ      | `8chi`        | χ
-`8Psi`       | Ψ      | `8psi`        | ψ
-`8Omega`     | Ω      | `8omega`      | ω
+`Alpha`     | Α      | `alpha`      | α
+`Beta`      | Β      | `beta`       | β
+`Gamma`     | Γ      | `gamma`      | Y
+`Delta`     | Δ      | `delta`      | δ
+`Epsilon`   | Ε      | `epsilon`    | ε
+`Zeta`      | Ζ      | `zeta`       | ζ
+`Eta`       | Η      | `eta`        | η
+`Theta`     | Θ      | `theta`      | θ
+`Iota`      | Ι      | `iota`       | ι
+`Kappa`     | Κ      | `kappa`      | κ
+`Lambda`    | Λ      | `lambda`     | λ
+`Mu`        | Μ      | `mu`         | μ
+`Nu`        | Ν      | `nu`         | ν
+`Xi`        | Ξ      | `xi`         | ξ
+`Omicron`   | Ο      | `omicron`    | ο
+`Pi`        | Π      | `pi`         | π
+`Rho`       | Ρ      | `rho`        | ρ
+`Sigma`     | Σ      | `sigma`      | σ
+`Tau`       | Τ      | `tau`        | τ
+`Upsilon`   | Υ      | `upsilon`    | υ
+`Phi`       | Φ      | `phi`        | φ
+`Chi`       | Χ      | `chi`        | χ
+`Psi`       | Ψ      | `psi`        | ψ
+`Omega`     | Ω      | `omega`      | ω
 
-Final sigma ς is written as `8fsigma`.
+Final sigma ς is written as `fsigma`.
 
 Note that abbreviations are better than key bindings à la <kbd>C-x 8
 …</kbd>, because the key bindings are hard to remember and their number is
@@ -385,7 +384,7 @@ all. It's flawed at least in the following ways:
    punctuation. So this thing won't work:
 
    ```
-   “It's difficult8elli” ≠ “It's difficult…”
+   “It's difficultelli” ≠ “It's difficult…”
    ```
 
 2. When using input method for non-Latin languages user needs to disable
@@ -394,12 +393,14 @@ all. It's flawed at least in the following ways:
 
 I've written a function that performs insertion of abbreviation and its
 expansion. This function solves all the problems. Just type <kbd>menu
-SPC</kbd> and enter abbreviation without leading ‘8’, finish typing with
-<kbd>SPC</kbd> and abbreviation will be inserted and expanded. Point will be
-placed after one-character expansions and in between such expansions as
-‘«»’. Since user writes abbreviation in the minibuffer, current input method
-is ignored. Also, you can repeat insertion of previously used abbreviations
-by pressing just <kbd>menu SPC SPC</kbd>.
+SPC</kbd> and enter abbreviation, finish typing with <kbd>SPC</kbd> and
+abbreviation will be inserted and expanded. Point is usually placed after
+expansions, but the function is smart enough to place point in the middle of
+two-character expansions that are pairs of quotes, like ‘«»’; wrapping of
+selected text also works for this kind of expansions. Since user writes
+abbreviation in the minibuffer, current input method has no effect. Also,
+user can repeat insertion of previously used abbreviations by pressing just
+<kbd>menu SPC SPC</kbd>.
 
 If you need to insert name of some key on the keyboard, try <kbd>menu k
 n</kbd>, this invokes `insert-key-name` function that will ask you to enter

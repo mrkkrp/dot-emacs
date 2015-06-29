@@ -29,79 +29,79 @@
 (setq save-abbrevs nil)
 
 (define-abbrev-table 'global-abbrev-table
-  '(("8acc" "́")  ; accent
-    ("8apeq" "≈")  ; approximately equal
-    ("8bot"  "⊥")  ; bottom
-    ("8bull" "•")  ; bullet
-    ("8copy" "©")  ; copyright sign
-    ("8dagg" "†")  ; dagger
-    ("8dagr" "‡")  ; crossed dagger
-    ("8dash" "—")  ; em dash
-    ("8dda"  "⇓")  ; double downwards arrow
-    ("8deg"  "°")  ; degree
-    ("8dla"  "⇐")  ; double leftwards arrow
-    ("8dqu"  "“”") ; double quotation marks
-    ("8dra"  "⇒")  ; double rightwards arrow
-    ("8dua"  "⇑")  ; double upwards arrow
-    ("8elli" "…")  ; ellipsis
-    ("8fleu" "❧")  ; fleuron
-    ("8guil" "«»") ; guillemets
-    ("8hash" "#")  ; number sign or hash sign
-    ("8id"   "≡")  ; identical to
-    ("8ineg" "∫")  ; integral
-    ("8ineq" "≠")  ; inequality
-    ("8inf"  "∞")  ; infinity
-    ("8inte" "‽")  ; interrobang
-    ("8intr" "·")  ; interpunct
-    ("8keyb" "⌨")  ; keyboard
-    ("8loze" "◊")  ; lozenge
-    ("8mnpl" "∓")  ; minus-plus
-    ("8mult" "×")  ; multiplication
-    ("8nabl" "∇")  ; nabla
-    ("8ndsh" "–")  ; en dash
-    ("8num"  "№")  ; numero sign
-    ("8obel" "÷")  ; obelus
-    ("8plmn" "±")  ; plus-minus
-    ("8pnd"  "£")  ; pound
-    ("8prod" "∏")  ; product
-    ("8qed"  "■")  ; quod erat demonstrandum
-    ("8root" "√")  ; root
-    ("8rub"  "₽")  ; Russian ruble
-    ("8sda"  "↓")  ; simple downwards arrow
-    ("8sect" "§")  ; section
-    ("8sgui" "‹›") ; single arrow guillements
-    ("8sla"  "←")  ; simple leftwards arrow
-    ("8squ"  "‘’") ; single quotation marks
-    ("8sra"  "→")  ; simple rightwards arrow
-    ("8srcp" "℗")  ; sound recording copyright symbol
-    ("8star" "★")  ; star
-    ("8sua"  "↑")  ; simple upwards arrow
-    ("8sum"  "∑")  ; summation
+  '(("acc" "́")  ; accent
+    ("apeq" "≈")  ; approximately equal
+    ("bot"  "⊥")  ; bottom
+    ("bull" "•")  ; bullet
+    ("copy" "©")  ; copyright sign
+    ("dagg" "†")  ; dagger
+    ("dagr" "‡")  ; crossed dagger
+    ("dash" "—")  ; em dash
+    ("dda"  "⇓")  ; double downwards arrow
+    ("deg"  "°")  ; degree
+    ("dla"  "⇐")  ; double leftwards arrow
+    ("dqu"  "“”") ; double quotation marks
+    ("dra"  "⇒")  ; double rightwards arrow
+    ("dua"  "⇑")  ; double upwards arrow
+    ("elli" "…")  ; ellipsis
+    ("fleu" "❧")  ; fleuron
+    ("guil" "«»") ; guillemets
+    ("hash" "#")  ; number sign or hash sign
+    ("id"   "≡")  ; identical to
+    ("ineg" "∫")  ; integral
+    ("ineq" "≠")  ; inequality
+    ("inf"  "∞")  ; infinity
+    ("inte" "‽")  ; interrobang
+    ("intr" "·")  ; interpunct
+    ("keyb" "⌨")  ; keyboard
+    ("loze" "◊")  ; lozenge
+    ("mnpl" "∓")  ; minus-plus
+    ("mult" "×")  ; multiplication
+    ("nabl" "∇")  ; nabla
+    ("ndsh" "–")  ; en dash
+    ("num"  "№")  ; numero sign
+    ("obel" "÷")  ; obelus
+    ("plmn" "±")  ; plus-minus
+    ("pnd"  "£")  ; pound
+    ("prod" "∏")  ; product
+    ("qed"  "■")  ; quod erat demonstrandum
+    ("root" "√")  ; root
+    ("rub"  "₽")  ; Russian ruble
+    ("sda"  "↓")  ; simple downwards arrow
+    ("sect" "§")  ; section
+    ("sgui" "‹›") ; single arrow guillements
+    ("sla"  "←")  ; simple leftwards arrow
+    ("squ"  "‘’") ; single quotation marks
+    ("sra"  "→")  ; simple rightwards arrow
+    ("srcp" "℗")  ; sound recording copyright symbol
+    ("star" "★")  ; star
+    ("sua"  "↑")  ; simple upwards arrow
+    ("sum"  "∑")  ; summation
     ;; Greek alphabet
-    ("8alpha"   "α") ("8Alpha"   "Α")
-    ("8beta"    "β") ("8Beta"    "Β")
-    ("8gamma"   "Y") ("8Gamma"   "Γ")
-    ("8delta"   "δ") ("8Delta"   "Δ")
-    ("8epsilon" "ε") ("8Epsilon" "Ε")
-    ("8zeta"    "ζ") ("8Zeta"    "Ζ")
-    ("8eta"     "η") ("8Eta"     "Η")
-    ("8theta"   "θ") ("8Theta"   "Θ")
-    ("8iota"    "ι") ("8Iota"    "Ι")
-    ("8kappa"   "κ") ("8Kappa"   "Κ")
-    ("8lambda"  "λ") ("8Lambda"  "Λ")
-    ("8mu"      "μ") ("8Mu"      "Μ")
-    ("8nu"      "ν") ("8Nu"      "Ν")
-    ("8xi"      "ξ") ("8Xi"      "Ξ")
-    ("8omicron" "ο") ("8Omicron" "Ο")
-    ("8pi"      "π") ("8Pi"      "Π")
-    ("8rho"     "ρ") ("8Rho"     "Ρ")
-    ("8sigma"   "σ") ("8Sigma"   "Σ") ("8fsigma" "ς")
-    ("8tau"     "τ") ("8Tau"     "Τ")
-    ("8upsilon" "υ") ("8Upsilon" "Υ")
-    ("8phi"     "φ") ("8Phi"     "Φ")
-    ("8chi"     "χ") ("8Chi"     "Χ")
-    ("8psi"     "ψ") ("8Psi"     "Ψ")
-    ("8omega"   "ω") ("8Omega"   "Ω"))
+    ("alpha"   "α") ("Alpha"   "Α")
+    ("beta"    "β") ("Beta"    "Β")
+    ("gamma"   "Y") ("Gamma"   "Γ")
+    ("delta"   "δ") ("Delta"   "Δ")
+    ("epsilon" "ε") ("Epsilon" "Ε")
+    ("zeta"    "ζ") ("Zeta"    "Ζ")
+    ("eta"     "η") ("Eta"     "Η")
+    ("theta"   "θ") ("Theta"   "Θ")
+    ("iota"    "ι") ("Iota"    "Ι")
+    ("kappa"   "κ") ("Kappa"   "Κ")
+    ("lambda"  "λ") ("Lambda"  "Λ")
+    ("mu"      "μ") ("Mu"      "Μ")
+    ("nu"      "ν") ("Nu"      "Ν")
+    ("xi"      "ξ") ("Xi"      "Ξ")
+    ("omicron" "ο") ("Omicron" "Ο")
+    ("pi"      "π") ("Pi"      "Π")
+    ("rho"     "ρ") ("Rho"     "Ρ")
+    ("sigma"   "σ") ("Sigma"   "Σ") ("fsigma" "ς")
+    ("tau"     "τ") ("Tau"     "Τ")
+    ("upsilon" "υ") ("Upsilon" "Υ")
+    ("phi"     "φ") ("Phi"     "Φ")
+    ("chi"     "χ") ("Chi"     "Χ")
+    ("psi"     "ψ") ("Psi"     "Ψ")
+    ("omega"   "ω") ("Omega"   "Ω"))
   "Abbreviations to insert some Unicode characters automatically.")
 
 (defvar mk-abbrev-map (copy-keymap minibuffer-local-map)
@@ -113,24 +113,46 @@
   "Name of last abbrev expanded with `mk-abbrev-insert' function.")
 
 (defun mk-abbrev-insert (&optional abbrev)
-  "Read name of abbreviation ABBREV without leading 8 and insert it.
+  "Read name of abbreviation ABBREV and insert it.
 If input is empty (or it's NIL if the function is called
 non-interactively), insert last used abbreviation or if there is
 no such abbreviation yet, do nothing.  Good when need to insert
-abbreviation with activated input method."
+abbreviation with activated input method.
+
+This command is smart enough to place point inside abbreviations
+that are pairs of quoting characters, otherwise point is placed
+after the expansion.
+
+If there is an active region and expansion is a pair of quoting
+characters, wrap them around the region."
   (interactive
    (list
     (let ((input (read-from-minibuffer "Abbrev: " nil mk-abbrev-map)))
       (when (> (length input) 0)
         input))))
-  (let ((col (current-column))
-        (abr (or abbrev mk-abbrev-last)))
-    (insert (concat " 8" abr))
-    (expand-abbrev)
-    (move-to-column col)
-    (delete-char 1)
-    (forward-char)
-    (setf mk-abbrev-last abr)))
+  (let* ((abbrev    (or abbrev mk-abbrev-last))
+         (expansion (abbrev-expansion abbrev))
+         (pairp (and (= (length expansion) 2)
+                     (eq (get-char-code-property
+                          (elt expansion 0)
+                          'general-category)
+                         'Pi)
+                     (eq (get-char-code-property
+                          (elt expansion 1)
+                          'general-category)
+                         'Pf))))
+    (when expansion
+      (if (and pairp mark-active)
+          (let ((beg (region-beginning))
+                (end (1+ (region-end))))
+            (goto-char beg)
+            (insert (elt expansion 0))
+            (goto-char end)
+            (insert (elt expansion 1)))
+        (insert expansion)
+        (when pairp
+          (backward-char 1)))
+      (setf mk-abbrev-last abbrev))))
 
 (provide 'mk-abbrev)
 
