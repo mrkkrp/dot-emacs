@@ -223,6 +223,7 @@ Shortcut            | Description
 <kbd>menu l p</kbd> | list packages
 <kbd>menu m a</kbd> | magit status
 <kbd>menu m d</kbd> | markdown mode
+<kbd>menu m k</kbd> | make current project
 <kbd>menu m n</kbd> | man
 <kbd>menu n n</kbd> | narrow to region
 <kbd>menu n w</kbd> | widen
@@ -250,6 +251,8 @@ Shortcut            | Description
 <kbd>menu u t</kbd> | untabify
 <kbd>menu v e</kbd> | show version in minibuffer
 <kbd>menu v r</kbd> | split window (vertical)
+<kbd>menu x i</kbd> | install current project (via `install.sh`)
+<kbd>menu x u</kbd> | uninstall current project (via `uninstall.sh`)
 <kbd>menu y a</kbd> | reload all snippets
 <kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle

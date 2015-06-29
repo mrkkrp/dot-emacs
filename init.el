@@ -40,6 +40,7 @@
    buffer-move          ; move buffers easily
    cider                ; Clojure development
    common-lisp-snippets ; Yasnippets for Common Lisp
+   f                    ; modern API for working with files and dirs
    fix-word             ; upcase/downcase/capitalize
    flycheck             ; checking code on the fly
    flycheck-haskell     ; cabal sandboxes, etc.

@@ -33,8 +33,7 @@
   (interactive (list (grab-input "C Docs: ")))
   (man (concat "3 " symbol)))
 
-(τ cc-mode c "C-c C-l" #'compile)
-(τ cc-mode c "C-c h"   #'c-docs)
+(τ cc-mode c "C-c h" #'c-docs)
 
 (provide 'mk-c)
 

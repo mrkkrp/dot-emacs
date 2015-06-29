@@ -25,6 +25,7 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'f)
 
 (defun shell-quote-arg (arg)
   "Quote ARG for using in shell.
@@ -380,6 +381,48 @@ Effect of this translation is global."
   (let ((mode-alias (cdr (assoc major-mode major-mode-alias))))
     (when mode-alias
       (setq mode-name mode-alias))))
+
+(defun mk-find-file (filename)
+  "Find file named FILENAME traversing through parent directories.
+Return absolute path to that file or NIL on failure."
+  (cl-do ((path default-directory (f-dirname path))
+          temp)
+      ((or temp (null path)) temp)
+    (let ((file (f-join path filename)))
+      (when (file-exists-p file)
+        (setq temp file)))))
+
+(defun mk-make ()
+  "Find makefile of current project and execute `make'."
+  (interactive)
+  (let ((dir (f-dirname (mk-find-file "makefile"))))
+    (compile
+     (format "cd %s ; make -k"
+             (shell-quote-argument dir)))))
+
+(defun mk-install ()
+  "Find `install.sh' script of current project and execute it.
+`sudo' is used automatically, you'll need to enter your `sudo'
+password."
+  (interactive)
+  (let ((dir (f-dirname (mk-find-file "install.sh"))))
+    (save-window-excursion
+      (compile
+       (format "cd %s ; sudo sh install.sh"
+               (shell-quote-argument dir))
+       t))))
+
+(defun mk-uninstall ()
+  "Find `uninstall.sh' script of current project and execute it.
+`sudo' is used automatically, you'll need to enter your `sudo'
+password."
+  (interactive)
+  (let ((dir (f-dirname (mk-find-file "uninstall.sh"))))
+    (save-window-excursion
+      (compile
+       (format "cd %s ; sudo sh uninstall.sh"
+               (shell-quote-argument dir))
+       t))))
 
 (defun exit-emacs (&optional arg)
   "Exit Emacs: save all file-visiting buffers, kill terminal.
