@@ -157,13 +157,13 @@ makes result string be quoted as for yanking into shell."
   "Names of various keys on the keyboard.
 It's used in `insert-key-name' function.")
 
-(defun insert-key-name ()
-  "Read a key from the keyboard and insert its name."
-  (interactive)
-  (let* ((β (ido-completing-read "Key name: "
-                                 (mapcar #'car keyboard-key-name)))
-         (ξ (cdr (assoc (string-trim (downcase β)) keyboard-key-name))))
-    (insert (concat "<kbd>" ξ (when ξ " ") (capitalize β) "</kbd>"))))
+(defun insert-key-name (key-name)
+  "Insert name of keyboard key KEY-NAME."
+  (interactive
+   (list (ido-completing-read "Key name: "
+                              (mapcar #'car keyboard-key-name))))
+  (let ((ξ (cdr (assoc (string-trim (downcase key-name)) keyboard-key-name))))
+    (insert (concat "<kbd>" ξ (when ξ " ") (capitalize key-name) "</kbd>"))))
 
 (defun show-date (&optional stamp)
   "Show current date in the minibuffer.
