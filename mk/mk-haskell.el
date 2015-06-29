@@ -41,14 +41,53 @@
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
 
-(τ haskell          haskell-interactive "C-c h" #'haskell-hoogle)
-(τ haskell          haskell-interactive "C-c r" #'haskell-process-restart)
-(τ haskell-cabal    haskell-cabal       "C-c h" #'haskell-hoogle)
-(τ haskell-cabal    haskell-cabal       "M-n"   #'transpose-line-down)
-(τ haskell-cabal    haskell-cabal       "M-p"   #'transpose-line-up)
-(τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
-(τ haskell-mode     haskell             "C-c h" #'haskell-hoogle)
-(τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
+(defvar mk-cabal-operations
+  '((build          . "cabal build")
+    (check          . "cabal check")
+    (clean          . "cabal clean")
+    (configure      . "cabal configure --enable-tests --enable-benchmarks")
+    (init           . "cabal init")
+    (install        . "cabal update ; \
+cabal install --only-dependencies --enable-tests --enable-benchmarks")
+    (run            . "cabal run")
+    (sandbox-delete . "cabal sandbox delete")
+    (sandbox-init   . "cabal sandbox init")
+    (test           . "cabal test"))
+  "Collection of operations supported by `mk-cabal-action'.")
+
+(defun mk-cabal-action (command)
+  "Perform a Cabal command COMMAND.
+COMMAND can be one of the operations listed in
+`mk-cabal-operations'.  Completing read is used if the command is
+called interactively."
+  (interactive
+   (list
+    (intern
+     (completing-read
+      "Cabal operation: "
+      (mapcar #'symbol-name
+              (mapcar #'car mk-cabal-operations))
+      nil
+      t))))
+  (let ((dir (mk-find-file "\\`.+\\.cabal\\'")))
+    (if dir
+        (compile
+         (format "cd %s ; %s"
+                 dir
+                 (cdr (assoc command mk-cabal-operations))))
+      (message "Please create ‘.cabal’ file for the project."))))
+
+(τ haskell          haskell-interactive "C-c C-c" #'mk-cabal-action)
+(τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
+(τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
+(τ haskell          interactive-haskell "C-c C-c" #'mk-cabal-action)
+(τ haskell-cabal    haskell-cabal       "C-c C-c" #'mk-cabal-action)
+(τ haskell-cabal    haskell-cabal       "C-c h"   #'haskell-hoogle)
+(τ haskell-cabal    haskell-cabal       "M-n"     #'transpose-line-down)
+(τ haskell-cabal    haskell-cabal       "M-p"     #'transpose-line-up)
+(τ haskell-commands haskell             "M-."     #'haskell-mode-jump-to-def)
+(τ haskell-mode     haskell             "C-c h"   #'haskell-hoogle)
+(τ haskell-mode     haskell             "M-,"     #'pop-tag-mark)
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
