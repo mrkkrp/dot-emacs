@@ -65,8 +65,8 @@ called interactively."
     (intern
      (completing-read
       "Cabal operation: "
-      (mapcar #'symbol-name
-              (mapcar #'car mk-cabal-operations))
+      (mapcar (lambda (x) (symbol-name (car x)))
+              mk-cabal-operations)
       nil
       t))))
   (let ((dir (mk-find-file "\\`.+\\.cabal\\'")))
