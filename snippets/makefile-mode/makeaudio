@@ -25,8 +25,8 @@
 # You should have received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
-M_ALBUM   = ${1:Album$(shell-quote-arg yas-text)}
-M_ARTIST  = ${2:Artist$(shell-quote-arg yas-text)}
+M_ALBUM   = ${1:Album$(mk-shell-quote-arg yas-text)}
+M_ARTIST  = ${2:Artist$(mk-shell-quote-arg yas-text)}
 M_YEAR    = ${3:`(format-time-string "%Y")`}
 M_BOOKLET = booklet/\$(M_ALBUM).pdf
 $0

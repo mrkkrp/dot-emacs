@@ -52,7 +52,7 @@
 
 (defun python-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (grab-input "Python Docs: ")))
+  (interactive (list (mk-grab-input "Python Docs: ")))
   (browse-url
    (concat "https://docs.python.org/3/search.html?q="
            (url-hexify-string symbol)

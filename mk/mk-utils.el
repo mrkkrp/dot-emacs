@@ -27,7 +27,7 @@
 (require 'cl-lib)
 (require 'f)
 
-(defun shell-quote-arg (arg)
+(defun mk-shell-quote-arg (arg)
   "Quote ARG for using in shell.
 This function is different from `shell-quote-argument' in that it
 can be used for text transformations in Yasnippet without
@@ -111,7 +111,7 @@ makes result string be quoted as for yanking into shell."
      (point))))
 
 (defun copy-buffer ()
-  "Copy entire buffer into the clipboard."
+  "Put entire buffer into the kill ring."
   (interactive)
   (kill-new (buffer-string)))
 
@@ -223,7 +223,7 @@ used as fallback."
   (switch-to-buffer "*scratch*")
   (delete-other-windows))
 
-(defun grab-input (prompt &optional initial-input add-space)
+(defun mk-grab-input (prompt &optional initial-input add-space)
   "Grab input from user.
 If there is an active region, use its contents, otherwise read
 text from the minibuffer.  PROMPT is a prompt to show,
@@ -245,10 +245,10 @@ Prefixes are picked up according to currect major mode.")
 When called interactively, it uses prefix corresponding to
 current major mode, as specified in `mk-search-prefix'."
   (interactive
-   (list (grab-input "DuckDuckGo: "
-                     (cdr (assoc major-mode
-                                 mk-search-prefix))
-                     t)))
+   (list (mk-grab-input "DuckDuckGo: "
+                        (cdr (assoc major-mode
+                                    mk-search-prefix))
+                        t)))
   (browse-url
    (concat "https://duckduckgo.com/html/?k1=-1&q="
            (url-hexify-string what))))
@@ -308,7 +308,7 @@ adding them to `package-selected-packages' variable."
     (kill-sexp -1)
     (insert (format "%s" value))))
 
-(defun visit-file (filename)
+(defun mk-visit-file (filename)
   "Visit specified file FILENAME.
 If the file does not exist, print a message about the fact, but
 don't create new empty buffer."
@@ -317,7 +317,7 @@ don't create new empty buffer."
         (find-file filename)
       (message "%s does not exist." filename))))
 
-(defun double-buffer ()
+(defun mk-double-buffer ()
   "Show currect buffer in other window and switch to that window."
   (interactive)
   (if (> (length (window-list)) 1)

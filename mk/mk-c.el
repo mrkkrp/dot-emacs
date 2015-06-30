@@ -30,7 +30,7 @@
 
 (defun c-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (grab-input "C Docs: ")))
+  (interactive (list (mk-grab-input "C Docs: ")))
   (man (concat "3 " symbol)))
 
 (τ cc-mode c "C-c h" #'c-docs)
