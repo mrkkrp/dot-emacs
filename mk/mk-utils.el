@@ -259,12 +259,16 @@ current major mode, as specified in `mk-search-prefix'."
   (package-refresh-contents)
   (let (upgrades)
     (cl-flet ((get-version (name where)
-                           (package-desc-version (cadr (assq name where)))))
+                (let ((pkg (cadr (assq name where))))
+                  (when pkg
+                    (package-desc-version pkg)))))
       (dolist (package (mapcar #'car package-alist))
-        (when (version-list-< (get-version package package-alist)
-                              (get-version package package-archive-contents))
-          (push (cadr (assq package package-archive-contents))
-                upgrades))))
+        (let ((in-archive (get-version package package-archive-contents)))
+          (when (and in-archive
+                     (version-list-< (get-version package package-alist)
+                                     in-archive))
+            (push (cadr (assq package package-archive-contents))
+                  upgrades)))))
     (if upgrades
         (when (yes-or-no-p
                (message "Upgrade %d package%s (%s)? "
