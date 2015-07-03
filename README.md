@@ -195,6 +195,7 @@ Shortcut            | Description
 <kbd>menu d c</kbd> | describe char
 <kbd>menu d d</kbd> | show default directory in the minibuffer
 <kbd>menu d i</kbd> | Diff
+<kbd>menu e ;</kbd> | evaluate expression
 <kbd>menu e b</kbd> | erase buffer
 <kbd>menu e e</kbd> | evaluate last s-expression
 <kbd>menu e r</kbd> | ERC

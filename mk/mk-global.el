@@ -144,6 +144,7 @@
 (π "<menu> d c" #'describe-char)
 (π "<menu> d d" #'show-default-dir)
 (π "<menu> d i" #'diff)
+(π "<menu> e ;" #'eval-expression)
 (π "<menu> e b" #'erase-buffer)
 (π "<menu> e e" #'eval-last-sexp)
 (π "<menu> e r" #'erc)
