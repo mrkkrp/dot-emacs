@@ -28,7 +28,7 @@
 
 (setq save-abbrevs nil)
 
-(define-abbrev-table 'global-abbrev-table
+(define-abbrev-table 'mk-abbrev-table
   '(("acc" "́")  ; accent
     ("apeq" "≈")  ; approximately equal
     ("bot"  "⊥")  ; bottom
@@ -131,7 +131,7 @@ characters, wrap them around the region."
       (when (> (length input) 0)
         input))))
   (let* ((abbrev    (or abbrev mk-abbrev-last))
-         (expansion (abbrev-expansion abbrev))
+         (expansion (abbrev-expansion abbrev mk-abbrev-table))
          (pairp (and (= (length expansion) 2)
                      (eq (get-char-code-property
                           (elt expansion 0)
