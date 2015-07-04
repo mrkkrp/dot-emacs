@@ -54,7 +54,7 @@ Backspace</kbd>? There are three things to consider:
    <kbd>C-i</kbd>.
 
 So why not swap <kbd>↹ Tab</kbd> key and <kbd>⌫ Backspace</kbd>? If you're a
-Linux user, here is `~/.Xmodmap` file that may be helpful:
+GNU/Linux user, here is `~/.Xmodmap` file that may be helpful:
 
 ```
 ! Laptop setting:
