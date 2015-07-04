@@ -184,6 +184,7 @@
 (π "<menu> p y" #'run-python)
 (π "<menu> q e" #'query-replace-regexp)
 (π "<menu> q r" #'query-replace)
+(π "<menu> r b" #'report-emacs-bug)
 (π "<menu> r c" #'copy-to-register)
 (π "<menu> r i" #'insert-register)
 (π "<menu> r n" #'rectangle-number-lines)

@@ -236,6 +236,7 @@ Shortcut            | Description
 <kbd>menu p y</kbd> | run Python
 <kbd>menu q e</kbd> | query replace regexp
 <kbd>menu q r</kbd> | query replace
+<kbd>menu r b</kbd> | report Emacs bug
 <kbd>menu r c</kbd> | copy to register
 <kbd>menu r i</kbd> | insert register
 <kbd>menu r n</kbd> | rectangle number lines
