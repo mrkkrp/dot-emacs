@@ -101,6 +101,8 @@
    (whole-line-or-region-mode    . "")
    (yas-minor-mode               . "")))
 
+(τ flyspell flyspell "C-;" #'flyspell-correct-word-before-point)
+
 (τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
 (τ smartparens smartparens "<menu> 2"      #'sp-select-next-thing)
 (τ smartparens smartparens "<menu> 4"      #'sp-add-to-previous-sexp)

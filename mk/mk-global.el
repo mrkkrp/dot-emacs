@@ -84,7 +84,6 @@
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'compile-init-files)
 (π "C-c e"      (ε #'mk-visit-file mk-dir))
-(π "C-c i"      #'flyspell-correct-word-before-point)
 (π "C-c p"      #'purge-buffers)
 (π "C-c r"      #'revert-buffer)
 (π "C-c s"      #'mk-search)
