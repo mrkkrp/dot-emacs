@@ -168,6 +168,7 @@ Shortcut            | Description
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
 <kbd>S-right</kbd>  | move buffer right
+<kbd>menu menu</kbd>| smex (translation to <kbd>M-x</kbd>)
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | rectangular selection

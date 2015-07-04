@@ -66,15 +66,16 @@
 
 ;;; Handy translations for use with «Sticky Keys»
 
-(translate-kbd "<C-menu>"   "<menu>")
-(translate-kbd "<C-return>" "<return>")
-(translate-kbd "C-c c"      "C-c C-c")
-(translate-kbd "C-c k"      "C-c C-k")
-(translate-kbd "C-c l"      "C-c C-l")
-(translate-kbd "C-c o"      "C-c C-o")
-(translate-kbd "C-c v"      "C-c C-v")
-(translate-kbd "C-x ;"      "C-x C-;")
-(translate-kbd "C-x o"      "C-x C-o")
+(translate-kbd "<C-menu>"      "<menu>")
+(translate-kbd "<C-return>"    "<return>")
+(translate-kbd "<menu> <menu>" "M-x")
+(translate-kbd "C-c c"         "C-c C-c")
+(translate-kbd "C-c k"         "C-c C-k")
+(translate-kbd "C-c l"         "C-c C-l")
+(translate-kbd "C-c o"         "C-c C-o")
+(translate-kbd "C-c v"         "C-c C-v")
+(translate-kbd "C-x ;"         "C-x C-;")
+(translate-kbd "C-x o"         "C-x C-o")
 
 ;;; Global key map
 
