@@ -52,6 +52,7 @@ cabal install --only-dependencies --enable-tests --enable-benchmarks")
     (run            . "cabal run")
     (sandbox-delete . "cabal sandbox delete")
     (sandbox-init   . "cabal sandbox init")
+    (sdist          . "cabal sdist")
     (test           . "cabal test --test-option=\"--maximum-test-size=50\""))
   "Collection of operations supported by `mk-cabal-action'.")
 
