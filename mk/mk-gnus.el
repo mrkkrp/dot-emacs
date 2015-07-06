@@ -29,6 +29,7 @@
   "Saved window configuration that will be restored when you exit GNUS.")
 
 (setq
+ gnus-novice-user                  nil
  gnus-permanently-visible-groups   ""      ; always show all groups
  send-mail-function                'smtpmail-send-it
  gnus-select-method       '(nnimap "openmailbox"
@@ -70,6 +71,7 @@ be understaken to restore the configuraiton."
 (τ gnus       gnus-article "o"        #'ace-link-gnus)
 (τ gnus-group gnus-group   "<menu> ." (ε #'mk-last-line 1))
 (τ gnus-sum   gnus-summary "<menu> ." (ε #'mk-last-line 1))
+(τ gnus-sum   gnus-summary "d"        #'gnus-summary-delete-article)
 (τ gnus-sum   gnus-summary "o"        #'ace-link-gnus)
 
 (add-hook 'gnus-group-mode-hook   #'hl-line-mode)
@@ -78,6 +80,7 @@ be understaken to restore the configuraiton."
 (advice-add 'gnus            :after  #'gnus-go-to-inbox)
 (advice-add 'gnus            :before #'gnus-save-window-config)
 (advice-add 'gnus-group-exit :after  #'gnus-restore-window-config)
+(advice-add 'gnus-summary-delete-article :after (η #'next-line))
 
 (provide 'mk-gnus)
 
