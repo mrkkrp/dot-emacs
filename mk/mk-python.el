@@ -29,9 +29,6 @@
 
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
-(eval-after-load 'python
-  '(add-to-list 'python-shell-completion-native-disabled-interpreters "ipython"))
-
 (add-to-list 'major-mode-alias '(inferior-python-mode . "iπ"))
 (add-to-list 'major-mode-alias '(python-mode          . "π"))
 (add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
