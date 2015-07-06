@@ -23,11 +23,13 @@
 
 ;;; Code:
 
+(require 'dired-x)
 (require 'mk-utils)
 
 (setq
  delete-by-moving-to-trash          t        ; in dired mode
  dired-auto-revert-buffer           t        ; automatically revert buffer
+ dired-clean-up-buffers-too         t        ; kill buffers for deleted files
  dired-dwim-target                  t        ; guess target directory
  dired-keep-marker-copy             nil      ; don't mark copied files
  dired-listing-switches             "-GAlh --group-directories-first"
