@@ -224,6 +224,8 @@ Shortcut            | Description
 <kbd>menu l i</kbd> | SLIME
 <kbd>menu l p</kbd> | list packages
 <kbd>menu m a</kbd> | magit status
+<kbd>menu m c</kbd> | magit clone
+<kbd>menu m i</kbd> | magit init
 <kbd>menu m d</kbd> | markdown mode
 <kbd>menu m k</kbd> | make current project
 <kbd>menu m n</kbd> | man
