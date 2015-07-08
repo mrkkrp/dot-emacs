@@ -41,6 +41,8 @@
 (put 'dired-do-copy   'ido nil) ; use ido there
 (put 'dired-do-rename 'ido nil) ; ^
 
+(mk-disable-ido 'dired-create-directory)
+
 (add-to-list 'major-mode-alias '(dired-mode                 . "δ"))
 (add-to-list 'major-mode-alias '(image-dired-thumbnail-mode . "◊δ"))
 (add-to-list 'major-mode-alias '(wdired-mode                . "↯δ"))

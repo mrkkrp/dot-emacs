@@ -34,6 +34,18 @@ can be used for text transformations in Yasnippet without
 backslash flood."
   (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
 
+(defun mk-anti-ido-advice (func &rest args)
+  "Temporarily disable IDO and call function FUNC with arguments ARGS."
+  (interactive)
+  (let ((read-file-name-function #'read-file-name-default))
+    (if (called-interactively-p 'any)
+        (call-interactively func)
+      (apply func args))))
+
+(defun mk-disable-ido (command)
+  "Disable IDO when command COMMAND is called."
+  (advice-add command :around #'mk-anti-ido-advice))
+
 (defun transpose-line-down (&optional arg)
   "Move current line and cursor down.
 Argument ARG, if supplied, specifies how many times the operation
