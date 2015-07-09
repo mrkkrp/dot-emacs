@@ -47,6 +47,7 @@
    ghc                  ; improves Haskell REPL experience
    gitignore-mode       ; for editing of .gitignore files
    haskell-mode         ; Haskell development
+   highlight-symbol     ; automatic and manual symbol highlighting
    ido-hacks            ; various ido goodies
    ido-ubiquitous       ; use ido everywhere
    ido-vertical-mode    ; display IDO vertically

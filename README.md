@@ -209,8 +209,10 @@ Shortcut            | Description
 <kbd>menu g l</kbd> | goto line
 <kbd>menu g n</kbd> | GNUS
 <kbd>menu g r</kbd> | recursive grep
+<kbd>menu h a</kbd> | highlight symbol: remove all
 <kbd>menu h e</kbd> | hexl mode
 <kbd>menu h r</kbd> | split window (horizontal)
+<kbd>menu h s</kbd> | highlight symbol
 <kbd>menu i r</kbd> | indent region
 <kbd>menu j a</kbd> | multiple cursors: mark all like this
 <kbd>menu j e</kbd> | multiple cursors: edit ends of lines
