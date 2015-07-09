@@ -405,7 +405,7 @@ failure."
   (f-traverse-upwards
    (lambda (path)
      (directory-files path t regexp t))
-   default-directory))
+   (expand-file-name default-directory)))
 
 (defun mk-make ()
   "Find makefile of current project and execute `make'."
