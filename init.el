@@ -112,7 +112,6 @@
 (require 'mk-org)         ; ^
 (require 'mk-prolog)      ; ^
 (require 'mk-python)      ; ^
-(require 'mk-scheme)      ; ^
 (require 'mk-tex)         ; ^
 (require 'mk-texinfo)     ; ^
 (require 'mk-visual)      ; control appearance

@@ -23,6 +23,8 @@
 
 ;;; Code:
 
+(require 'aggressive-indent)
+(require 'cider)
 (require 'mk-utils)
 
 (setq

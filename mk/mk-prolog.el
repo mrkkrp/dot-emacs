@@ -23,6 +23,7 @@
 
 ;;; Code:
 
+(require 'aggressive-indent)
 (require 'mk-utils)
 
 (add-to-list 'aggressive-indent-excluded-modes 'prolog-inferior-mode)

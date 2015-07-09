@@ -25,7 +25,9 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'dired)
 (require 'f)
+(require 'subr-x)
 
 (defun mk-shell-quote-arg (arg)
   "Quote ARG for using in shell.
@@ -101,8 +103,8 @@ file at point, but if point is not placed at any file, put name
 of actual directory into kill ring.  Argument ARG, if given,
 makes result string be quoted as for yanking into shell."
   (interactive "P")
-  (let ((φ (if (find major-mode
-                     '(dired-mode wdired-mode))
+  (let ((φ (if (cl-find major-mode
+                        '(dired-mode wdired-mode))
                (or (dired-get-filename nil t)
                    default-directory)
              (buffer-file-name))))
@@ -208,7 +210,7 @@ pair (major-mode-name . killing-function) to `preferred-death'
 variable to choose something fancy.  Standard `kill-buffer' is
 used as fallback."
   (interactive "P")
-  (if (or arg (find major-mode quick-to-die))
+  (if (or arg (cl-find major-mode quick-to-die))
       (funcall (or (cdr (assoc major-mode preferred-death))
                    (kill-buffer)))
     (bury-buffer)))
@@ -227,10 +229,10 @@ used as fallback."
   (dolist (buffer (buffer-list))
     (let ((buffer-name (buffer-name buffer)))
       (when (and buffer-name
-                 (notany (lambda (regexp)
-                           (string-match-p regexp
-                                           buffer-name))
-                         mk-basic-buffers))
+                 (cl-notany (lambda (regexp)
+                              (string-match-p regexp
+                                              buffer-name))
+                            mk-basic-buffers))
         (kill-buffer buffer))))
   (switch-to-buffer "*scratch*")
   (delete-other-windows))

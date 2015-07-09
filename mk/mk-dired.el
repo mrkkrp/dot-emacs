@@ -24,7 +24,9 @@
 ;;; Code:
 
 (require 'dired-x)
+(require 'image-dired)
 (require 'mk-utils)
+(require 'wdired)
 
 (setq
  delete-by-moving-to-trash          t        ; in dired mode
@@ -35,7 +37,7 @@
  dired-listing-switches             "-GAlh --group-directories-first"
  dired-recursive-copies             'always  ; don't ask me, just do it
  dired-recursive-deletes            'always  ; ^
- image-dired-show-all-from-dir      127      ; a bit more
+ image-dired-show-all-from-dir-max-files 127 ; a bit more
  wdired-allow-to-change-permissions t)       ; change permissions with Dired
 
 (put 'dired-do-copy   'ido nil) ; use ido there

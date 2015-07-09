@@ -23,6 +23,7 @@
 
 ;;; Code:
 
+(require 'markdown-mode)
 (require 'mk-utils)
 
 (add-to-list 'major-mode-alias '(markdown-mode . "M"))

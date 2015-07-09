@@ -23,6 +23,8 @@
 
 ;;; Code:
 
+(require 'man)
+
 (setq Man-width fill-column)
 
 (provide 'mk-man)

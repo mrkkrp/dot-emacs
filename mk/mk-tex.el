@@ -67,4 +67,4 @@ produced."
 
 (provide 'mk-tex)
 
-;; mk-tex.el ends here
+;;; mk-tex.el ends here

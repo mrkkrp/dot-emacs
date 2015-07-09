@@ -23,7 +23,11 @@
 
 ;;; Code:
 
+(require 'flyspell)
+(require 'ido)
 (require 'mk-utils)
+(require 'multiple-cursors)
+(require 'smartparens)
 (require 'smartparens-config)
 
 (setq-default
@@ -116,10 +120,10 @@
 
 (advice-add 'sp-add-to-previous-sexp :after #'sp-forward-sexp)
 
-(eval-after-load 'multiple-cursors-core
-  '(defun mc/prompt-for-inclusion-in-whitelist (original-command)
-     "Always return T, regardless of ORIGINAL-COMMAND, just do it."
-     t))
+;; (eval-after-load 'multiple-cursors-core
+(defun mc/prompt-for-inclusion-in-whitelist (_original-command)
+  "Always return T, regardless of ORIGINAL-COMMAND, just do it."
+  t);)
 
 (defun prepare-text-mode ()
   "Enable some minor mode for plain text editing."

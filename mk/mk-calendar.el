@@ -23,6 +23,8 @@
 
 ;;; Code:
 
+(require 'calendar)
+
 (setq calendar-week-start-day 1) ; Monday
 
 (provide 'mk-calendar)

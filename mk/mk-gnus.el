@@ -23,7 +23,11 @@
 
 ;;; Code:
 
+(require 'gnus)
+(require 'gnus-group)
+(require 'gnus-sum)
 (require 'mk-utils)
+(require 'smtpmail)
 
 (defvar gnus-saved-window-config nil
   "Saved window configuration that will be restored when you exit GNUS.")
@@ -37,9 +41,6 @@
                                    (nnimap-server-port 993)
                                    (nnimap-stream ssl))
  message-send-mail-function        'smtpmail-send-it
- smtpmail-starttls-credentials     '(("smtp.openmailbox.org" 587 nil nil))
- smtpmail-auth-credentials         '(("smtp.openmailbox.org" 587
-                                      "markkarpov@openmailbox.org" nil))
  smtpmail-default-smtp-server      "smtp.openmailbox.org"
  smtpmail-smtp-server              "smtp.openmailbox.org"
  smtpmail-smtp-service             587
@@ -80,7 +81,7 @@ be understaken to restore the configuraiton."
 (advice-add 'gnus            :after  #'gnus-go-to-inbox)
 (advice-add 'gnus            :before #'gnus-save-window-config)
 (advice-add 'gnus-group-exit :after  #'gnus-restore-window-config)
-(advice-add 'gnus-summary-delete-article :after (η #'next-line))
+(advice-add 'gnus-summary-delete-article :after (η #'forward-line))
 
 (provide 'mk-gnus)
 

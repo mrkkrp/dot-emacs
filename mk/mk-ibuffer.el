@@ -23,6 +23,8 @@
 
 ;;; Code:
 
+(require 'ibuf-ext)
+(require 'ibuffer)
 (require 'mk-utils)
 
 (setq

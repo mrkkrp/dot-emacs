@@ -23,6 +23,9 @@
 
 ;;; Code:
 
+(require 'erc)
+(require 'mk-utils)
+
 (setq erc-nick "mrkkrp")
 
 (τ erc erc "C-c C-o" #'find-file-at-point)

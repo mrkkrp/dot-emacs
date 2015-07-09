@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(require 'aggressive-indent)
+(require 'haskell)
 (require 'mk-utils)
 
 (setq

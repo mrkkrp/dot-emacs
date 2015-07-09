@@ -23,7 +23,9 @@
 
 ;;; Code:
 
+(require 'aggressive-indent)
 (require 'mk-utils)
+(require 'python)
 
 (setq-default python-indent-offset 4)
 

@@ -24,6 +24,7 @@
 ;;; Code:
 
 (require 'mk-utils)
+(require 'org)
 
 (defun org-files ()
   "Return list of all org files."
@@ -33,8 +34,7 @@
 (setq
  org-agenda-files          (org-files)
  org-catch-invisible-edits 'show ; make point visible
- org-completion-use-ido    t
- org-elipsis               "…")
+ org-completion-use-ido    t)
 
 (add-to-list 'major-mode-alias '(org-agenda-mode . "Org-Agenda"))
 

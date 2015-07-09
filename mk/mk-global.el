@@ -27,6 +27,8 @@
 (require 'misc)
 (require 'mk-abbrev)
 (require 'mk-utils)
+(require 'org)
+(require 'yasnippet)
 
 (setq-default
  auto-save-default                nil     ; don't ever create autosaves
