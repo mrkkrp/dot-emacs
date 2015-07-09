@@ -50,6 +50,7 @@
  whitespace-style                  '(face lines-tail)
  yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
 
+(ace-popup-menu-mode              1) ; replace GUI popup menus
 (blink-cursor-mode                0) ; my cursor doesn't blink, man
 (delete-selection-mode            1) ; delete selection mode enabled
 (display-time-mode                1) ; display time

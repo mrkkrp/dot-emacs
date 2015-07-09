@@ -33,6 +33,7 @@
 (setq
  package-selected-packages
  '(ace-link             ; quickly follow links
+   ace-popup-menu       ; replace GUI popup menus
    ace-window           ; switching between windows
    aggressive-indent    ; aggressive indentation
    auctex               ; for LaTeX
