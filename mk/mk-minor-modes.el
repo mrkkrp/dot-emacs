@@ -42,6 +42,7 @@
  ido-vertical-decorations          '("\n→ " "" "\n  " "\n  …" "[" "]"
                                      " ×" " ✔" " ⊥" " ⊥" " ↯" "\n→ " "")
  ido-vertical-define-keys          'C-n-and-C-p-only
+ ispell-dictionary                 "en"    ; default dictionary
  sp-highlight-pair-overlay         nil
  sp-highlight-wrap-overlay         nil
  sp-highlight-wrap-tag-overlay     nil
