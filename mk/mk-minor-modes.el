@@ -33,6 +33,8 @@
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
  fill-column                       76      ; set fill column
+ flycheck-emacs-lisp-initialize-packages t ; always initialize packages
+ flycheck-emacs-lisp-load-path     'inherit
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ido-auto-merge-work-directories-length -1 ; disable it
  ido-create-new-buffer             'always
