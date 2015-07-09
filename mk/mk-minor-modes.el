@@ -134,6 +134,7 @@
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'ibuffer-mode-hook            #'hl-line-mode)
+(add-hook 'prog-mode-hook               #'hl-todo-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'text-mode-hook               #'prepare-text-mode)
 

@@ -48,6 +48,7 @@
    gitignore-mode       ; for editing of .gitignore files
    haskell-mode         ; Haskell development
    highlight-symbol     ; automatic and manual symbol highlighting
+   hl-todo              ; highlight TODO and similar words
    ido-hacks            ; various ido goodies
    ido-ubiquitous       ; use ido everywhere
    ido-vertical-mode    ; display IDO vertically
