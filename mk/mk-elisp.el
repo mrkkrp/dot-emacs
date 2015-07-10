@@ -24,6 +24,7 @@
 ;;; Code:
 
 (require 'mk-utils)
+(require 'slime)
 
 (setq eldoc-idle-delay 0.1) ; default is way too long
 

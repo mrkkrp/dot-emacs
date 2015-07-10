@@ -25,24 +25,13 @@
 
 ;;; Code:
 
+(require 'aggressive-indent)
 (require 'mk-utils)
+(require 'slime)
+(require 'slime-repl)
 
-(let* ((helper-el  (expand-file-name "~/quicklisp/slime-helper.el"))
-       (helper-elc (byte-compile-dest-file helper-el)))
-  (save-window-excursion
-    (when (and (file-exists-p helper-el)
-               (or (not (file-exists-p helper-elc))
-                   (file-newer-than-file-p helper-el helper-elc)))
-      (byte-compile-file helper-el t)
-      (shell-command
-       (concat "cd "
-               (shell-quote-argument slime-path)
-               " ; make compile contrib-compile")))
-    (when (and (file-exists-p helper-elc)
-               (not (find 'slime features)))
-      (load-file helper-elc))))
-
-(setq inferior-lisp-program "sbcl") ; Steel Bank Common Lisp
+(setq inferior-lisp-program "sbcl"
+      slime-contribs '(slime-fancy))
 
 (add-to-list 'aggressive-indent-excluded-modes 'slime-repl-mode)
 (add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
@@ -63,11 +52,11 @@
              pkg-name
              "))"))))
 
-(τ lisp-mode  lisp       "C-c h" #'slime-hyperspec-lookup)
-(τ slime      slime      "M-n"   #'transpose-line-down)
-(τ slime      slime      "M-p"   #'transpose-line-up)
-(τ slime      slime-repl "C-c i" #'slime-in-package)
-(τ slime      slime-repl "C-c r" #'slime-restart-inferior-lisp)
+(τ lisp-mode lisp       "C-c h" #'slime-hyperspec-lookup)
+(τ slime     slime      "M-n"   #'transpose-line-down)
+(τ slime     slime      "M-p"   #'transpose-line-up)
+(τ slime     slime-repl "C-c i" #'slime-in-package)
+(τ slime     slime-repl "C-c r" #'slime-restart-inferior-lisp)
 
 (add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)
 (add-hook 'slime-repl-mode-hook #'electric-indent-local-mode)

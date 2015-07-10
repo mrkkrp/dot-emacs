@@ -58,6 +58,7 @@
    multiple-cursors     ; a cool feature…
    prolog               ; Prolog development
    rainbow-delimiters   ; highlight nested parenthesis (for Lisps)
+   slime                ; Superior Lisp Interaction Mode for Emacs
    smartparens          ; editing of parenthesis of all kinds
    smex                 ; IDO-powered `execute-extended-command'
    solarized-theme      ; my favorite color theme
