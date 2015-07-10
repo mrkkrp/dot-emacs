@@ -23,7 +23,8 @@
 
 ;;; Code:
 
-(require 'man)
+(eval-when-compile
+  (require 'man))
 
 (setq Man-width fill-column)
 

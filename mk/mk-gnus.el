@@ -23,11 +23,13 @@
 
 ;;; Code:
 
-(require 'gnus)
-(require 'gnus-group)
-(require 'gnus-sum)
+(eval-when-compile
+  (require 'gnus)
+  (require 'gnus-group)
+  (require 'gnus-sum)
+  (require 'smtpmail))
+
 (require 'mk-utils)
-(require 'smtpmail)
 
 (defvar gnus-saved-window-config nil
   "Saved window configuration that will be restored when you exit GNUS.")

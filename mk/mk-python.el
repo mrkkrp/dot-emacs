@@ -23,9 +23,11 @@
 
 ;;; Code:
 
-(require 'aggressive-indent)
+(eval-when-compile
+  (require 'aggressive-indent)
+  (require 'python))
+
 (require 'mk-utils)
-(require 'python)
 
 (setq-default python-indent-offset 4)
 

@@ -23,7 +23,9 @@
 
 ;;; Code:
 
-(require 'markdown-mode)
+(eval-when-compile
+  (require 'markdown-mode))
+
 (require 'mk-utils)
 
 (add-to-list 'major-mode-alias '(markdown-mode . "M"))

@@ -24,8 +24,10 @@
 
 ;;; Code:
 
-(require 'aggressive-indent)
-(require 'haskell)
+(eval-when-compile
+  (require 'aggressive-indent)
+  (require 'haskell))
+
 (require 'mk-utils)
 
 (setq

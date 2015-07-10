@@ -23,7 +23,8 @@
 
 ;;; Code:
 
-(require 'magit)
+(eval-when-compile
+  (require 'magit))
 
 (setq magit-completing-read-function #'magit-ido-completing-read)
 

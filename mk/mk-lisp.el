@@ -25,10 +25,12 @@
 
 ;;; Code:
 
-(require 'aggressive-indent)
+(eval-when-compile
+  (require 'aggressive-indent)
+  (require 'slime)
+  (require 'slime-repl))
+
 (require 'mk-utils)
-(require 'slime)
-(require 'slime-repl)
 
 (setq inferior-lisp-program "sbcl"
       slime-contribs '(slime-fancy))

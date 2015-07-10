@@ -23,8 +23,10 @@
 
 ;;; Code:
 
-(require 'ibuf-ext)
-(require 'ibuffer)
+(eval-when-compile
+  (require 'ibuf-ext)
+  (require 'ibuffer))
+
 (require 'mk-utils)
 
 (setq

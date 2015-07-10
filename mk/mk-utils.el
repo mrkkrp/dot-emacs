@@ -24,8 +24,10 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'dired))
+
 (require 'cl-lib)
-(require 'dired)
 (require 'f)
 (require 'subr-x)
 

@@ -23,7 +23,8 @@
 
 ;;; Code:
 
-(require 'calendar)
+(eval-when-compile
+  (require 'calendar))
 
 (setq calendar-week-start-day 1) ; Monday
 

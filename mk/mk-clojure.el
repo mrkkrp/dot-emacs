@@ -23,8 +23,10 @@
 
 ;;; Code:
 
-(require 'aggressive-indent)
-(require 'cider)
+(eval-when-compile
+  (require 'aggressive-indent)
+  (require 'cider))
+
 (require 'mk-utils)
 
 (setq

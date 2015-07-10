@@ -23,8 +23,10 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'org))
+
 (require 'mk-utils)
-(require 'org)
 
 (defun org-files ()
   "Return list of all org files."

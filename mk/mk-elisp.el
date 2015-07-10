@@ -23,8 +23,10 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'slime))
+
 (require 'mk-utils)
-(require 'slime)
 
 (setq eldoc-idle-delay 0.1) ; default is way too long
 

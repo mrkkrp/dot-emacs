@@ -23,10 +23,12 @@
 
 ;;; Code:
 
-(require 'dired-x)
-(require 'image-dired)
+(eval-when-compile
+  (require 'dired-x)
+  (require 'image-dired)
+  (require 'wdired))
+
 (require 'mk-utils)
-(require 'wdired)
 
 (setq
  delete-by-moving-to-trash          t        ; in dired mode

@@ -23,7 +23,9 @@
 
 ;;; Code:
 
-(require 'erc)
+(eval-when-compile
+  (require 'erc))
+
 (require 'mk-utils)
 
 (setq erc-nick "mrkkrp")
