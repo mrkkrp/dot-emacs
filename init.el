@@ -62,6 +62,7 @@
    smartparens          ; Tricks for working with all kinds of parenthesis
    smex                 ; M-x interface with IDO-style fuzzy matching
    solarized-theme      ; The Solarized color theme
+   visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
    yasnippet))          ; Yet another snippet extension for Emacs
 

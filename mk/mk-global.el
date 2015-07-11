@@ -188,7 +188,7 @@
 (π "<menu> p r" #'print-buffer)
 (π "<menu> p u" #'package-upgrade-all)
 (π "<menu> p y" #'run-python)
-(π "<menu> q e" #'query-replace-regexp)
+(π "<menu> q e" #'vr/query-replace)
 (π "<menu> q r" #'query-replace)
 (π "<menu> r b" #'report-emacs-bug)
 (π "<menu> r c" #'copy-to-register)
