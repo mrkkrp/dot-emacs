@@ -27,10 +27,10 @@
   (require 'flyspell)
   (require 'ido)
   (require 'multiple-cursors)
-  (require 'smartparens)
-  (require 'smartparens-config))
+  (require 'smartparens))
 
 (require 'mk-utils)
+(require 'smartparens-config)
 
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
