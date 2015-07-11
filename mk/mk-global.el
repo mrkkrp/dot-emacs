@@ -157,7 +157,7 @@
 (π "<menu> f o" #'mk-set-font)
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
-(π "<menu> g l" #'goto-line)
+(π "<menu> g l" #'avy-goto-line)
 (π "<menu> g n" #'gnus)
 (π "<menu> g r" #'rgrep)
 (π "<menu> h a" #'highlight-symbol-remove-all)

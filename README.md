@@ -163,7 +163,7 @@ Shortcut            | Description
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | exit Emacs
 <kbd>escape</kbd>   | delete window
-<kbd>return</kbd>   | avy go to char
+<kbd>return</kbd>   | go to char (avy)
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
@@ -206,7 +206,7 @@ Shortcut            | Description
 <kbd>menu f o</kbd> | set specified font
 <kbd>menu f v</kbd> | find Emacs Lisp variable
 <kbd>menu g d</kbd> | GDB
-<kbd>menu g l</kbd> | goto line
+<kbd>menu g l</kbd> | go to line (avy)
 <kbd>menu g n</kbd> | GNUS
 <kbd>menu g r</kbd> | recursive grep
 <kbd>menu h a</kbd> | highlight symbol: remove all
