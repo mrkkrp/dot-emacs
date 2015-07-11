@@ -220,7 +220,6 @@ Shortcut            | Description
 <kbd>menu j l</kbd> | multiple cursors: edit lines
 <kbd>menu j n</kbd> | multiple cursors: mark next like this
 <kbd>menu j p</kbd> | multiple cursors: mark previous like this
-<kbd>menu k n</kbd> | insert key name
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
 <kbd>menu l i</kbd> | SLIME
@@ -411,11 +410,6 @@ selected text also works for this kind of expansions. Since user writes
 abbreviation in the minibuffer, current input method has no effect. Also,
 user can repeat insertion of previously used abbreviations by pressing just
 <kbd>menu SPC SPC</kbd>.
-
-If you need to insert name of some key on the keyboard, try <kbd>menu k
-n</kbd>, this invokes `insert-key-name` function that will ask you to enter
-name of the key (IDO powered), so you can do things like: <kbd>menu k n d e
-l RET</kbd> → <kbd>⌦ Del</kbd>.
 
 ## GNUS
 

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Delete Key
+# key: delete
+# --
+<kbd>⌦ Delete</kbd>

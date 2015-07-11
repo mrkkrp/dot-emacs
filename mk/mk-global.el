@@ -171,7 +171,6 @@
 (π "<menu> j l" #'mc/edit-lines)
 (π "<menu> j n" #'mc/mark-next-like-this)
 (π "<menu> j p" #'mc/mark-previous-like-this)
-(π "<menu> k n" #'insert-key-name)
 (π "<menu> k r" #'kill-rectangle)
 (π "<menu> l b" #'list-buffers)
 (π "<menu> l i" #'slime)

@@ -143,44 +143,6 @@ makes result string be quoted as for yanking into shell."
   (goto-char (point-max))
   (forward-line (- (or arg 0))))
 
-(defvar keyboard-key-name
-  '(("alt"       . "⎇")
-    ("backspace" . "⌫")
-    ("caps lock" . "⇪")
-    ("command"   . "⌘")
-    ("control"   . "⎈")
-    ("ctrl"      . "⎈")
-    ("del"       . "⌦")
-    ("delete"    . "⌦")
-    ("down"      . "↓")
-    ("end"       . "↘")
-    ("enter"     . "↵")
-    ("esc"       . "⎋")
-    ("escape"    . "⎋")
-    ("home"      . "↖")
-    ("left"      . "←")
-    ("menu"      . "▤")
-    ("meta"      . "◆")
-    ("option"    . "⌥")
-    ("page down" . "⇟")
-    ("page up"   . "⇞")
-    ("return"    . "↵")
-    ("right"     . "→")
-    ("shift"     . "⇧")
-    ("tab"       . "↹")
-    ("up"        . "↑")
-    ("windows"   . "❖"))
-  "Names of various keys on the keyboard.
-It's used in `insert-key-name' function.")
-
-(defun insert-key-name (key-name)
-  "Insert name of keyboard key KEY-NAME."
-  (interactive
-   (list (completing-read "Key name: "
-                          (mapcar #'car keyboard-key-name))))
-  (let ((ξ (cdr (assoc (string-trim (downcase key-name)) keyboard-key-name))))
-    (insert (concat "<kbd>" ξ (when ξ " ") (capitalize key-name) "</kbd>"))))
-
 (defun show-date (&optional stamp)
   "Show current date in the minibuffer.
 If STAMP is not NIL, insert date at point."
