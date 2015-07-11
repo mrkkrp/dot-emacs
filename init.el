@@ -32,38 +32,38 @@
 
 (setq
  package-selected-packages
- '(ace-link             ; quickly follow links
-   ace-popup-menu       ; replace GUI popup menus
-   ace-window           ; switching between windows
-   aggressive-indent    ; aggressive indentation
-   auctex               ; for LaTeX
-   avy                  ; move cursor effectively
-   buffer-move          ; move buffers easily
-   cider                ; Clojure development
+ '(ace-link             ; Quickly follow links
+   ace-popup-menu       ; Replace GUI popup menus
+   ace-window           ; Quickly switch windows
+   aggressive-indent    ; Keep code always indented
+   auctex               ; Integrated environment for *TeX*
+   avy                  ; Move cursor effectively
+   buffer-move          ; Move buffers easily
+   cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
-   f                    ; modern API for working with files and dirs
-   fix-word             ; upcase/downcase/capitalize
-   flycheck             ; checking code on the fly
-   flycheck-haskell     ; cabal sandboxes, etc.
-   ghc                  ; improves Haskell REPL experience
-   gitignore-mode       ; for editing of .gitignore files
-   haskell-mode         ; Haskell development
-   highlight-symbol     ; automatic and manual symbol highlighting
-   hl-todo              ; highlight TODO and similar words
-   ido-hacks            ; various ido goodies
-   ido-ubiquitous       ; use ido everywhere
-   ido-vertical-mode    ; display IDO vertically
-   magit                ; Emacs mode for git
-   markdown-mode        ; markdown editing
-   multiple-cursors     ; a cool feature…
-   prolog               ; Prolog development
-   rainbow-delimiters   ; highlight nested parenthesis (for Lisps)
+   f                    ; Modern API for working with files and dirs
+   fix-word             ; Convenient word transformation
+   flycheck             ; On-the-fly syntax checking
+   flycheck-haskell     ; Flycheck: Cabal projects and sandboxes
+   ghc                  ; Improve Haskell REPL experience
+   gitignore-mode       ; Major mode for editing .gitignore files
+   haskell-mode         ; A Haskell editing mode
+   highlight-symbol     ; Automatic and manual symbol highlighting
+   hl-todo              ; Highlight TODO and similar keywords
+   ido-hacks            ; Put more IDO in your IDO
+   ido-ubiquitous       ; Use IDO (nearly) everywhere
+   ido-vertical-mode    ; Makes IDO-mode display vertically
+   magit                ; A Git porcelain inside Emacs
+   markdown-mode        ; Major mode for Markdown-formatted text files
+   multiple-cursors     ; Multiple cursors for Emacs
+   org                  ; Outline-based template notes management
+   rainbow-delimiters   ; Highlight brackets according to their depth
    slime                ; Superior Lisp Interaction Mode for Emacs
-   smartparens          ; editing of parenthesis of all kinds
-   smex                 ; IDO-powered `execute-extended-command'
-   solarized-theme      ; my favorite color theme
-   whole-line-or-region ; operate on current line if there is no region
-   yasnippet))          ; template system
+   smartparens          ; Tricks for working with all kinds of parenthesis
+   smex                 ; M-x interface with IDO-style fuzzy matching
+   solarized-theme      ; The Solarized color theme
+   whole-line-or-region ; Operate on current line if region undefined
+   yasnippet))          ; Yet another snippet extension for Emacs
 
 (require 'package)
 (require 'bytecomp)
