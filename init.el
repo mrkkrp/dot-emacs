@@ -113,6 +113,7 @@
 (require 'mk-man)         ; ^
 (require 'mk-markdown)    ; ^
 (require 'mk-org)         ; ^
+(require 'mk-package)     ; ^
 (require 'mk-prolog)      ; ^
 (require 'mk-python)      ; ^
 (require 'mk-tex)         ; ^
