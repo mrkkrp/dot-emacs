@@ -110,7 +110,7 @@
 (π "<f7>"       (ε #'mk-use-lang "french-keyboard"  "fr"))
 (π "<f8>"       (ε #'mk-use-lang "russian-computer" "ru"))
 (π "<f9>"       #'kill-or-bury-alive)
-(π "<f10>"      #'delete-other-windows)
+(π "<f10>"      #'zygospore-toggle-delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
 (π "<f12>"      #'exit-emacs)
 (π "<escape>"   #'delete-window)

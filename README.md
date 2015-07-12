@@ -159,7 +159,7 @@ Shortcut            | Description
 <kbd>F7</kbd>       | toggle French input method
 <kbd>F8</kbd>       | toggle Russian input method
 <kbd>F9</kbd>       | kill or bury alive
-<kbd>F10</kbd>      | delete other windows
+<kbd>F10</kbd>      | delete other windows (reversible)
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | exit Emacs
 <kbd>escape</kbd>   | delete window
