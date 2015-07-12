@@ -122,10 +122,6 @@
 
 (advice-add 'sp-add-to-previous-sexp :after #'sp-forward-sexp)
 
-(defun mc/prompt-for-inclusion-in-whitelist (_original-command)
-  "Always return T, regardless of ORIGINAL-COMMAND, just do it."
-  t)
-
 (defun prepare-text-mode ()
   "Enable some minor mode for plain text editing."
   (auto-fill-mode  1)
@@ -145,6 +141,9 @@
 (add-hook 'prog-mode-hook               #'hl-todo-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'text-mode-hook               #'prepare-text-mode)
+
+(advice-add 'mc/prompt-for-inclusion-in-whitelist :override
+            (lambda (_original-command) t))
 
 (provide 'mk-minor-modes)
 
