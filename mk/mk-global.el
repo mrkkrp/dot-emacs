@@ -31,6 +31,7 @@
 (require 'yasnippet)
 
 (setq-default
+ apropos-do-all                   t       ; more extensive search
  auto-save-default                nil     ; don't ever create autosaves
  avy-style                         'at-full ; can't use the default
  browse-url-browser-function      'browse-url-generic
