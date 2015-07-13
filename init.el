@@ -54,6 +54,7 @@
    ido-hacks            ; Put more IDO in your IDO
    ido-ubiquitous       ; Use IDO (nearly) everywhere
    ido-vertical-mode    ; Makes IDO-mode display vertically
+   kill-or-bury-alive   ; Precise control over buffer killing in Emacs
    magit                ; A Git porcelain inside Emacs
    markdown-mode        ; Major mode for Markdown-formatted text files
    multiple-cursors     ; Multiple cursors for Emacs

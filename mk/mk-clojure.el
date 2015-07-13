@@ -43,7 +43,8 @@
 (add-to-list 'major-mode-alias '(clojure-mode    . "c"))
 (add-to-list 'mk-search-prefix '(cider-repl-mode . "clojure"))
 (add-to-list 'mk-search-prefix '(clojure-mode    . "clojure"))
-(add-to-list 'preferred-death  (cons 'cider-repl-mode #'cider-quit))
+
+(kill-or-bury-alive-kill-with 'cider-repl-mode #'cider-quit t)
 
 (defun clojure-docs (symbol)
   "Find documentation for given symbol SYMBOL online."

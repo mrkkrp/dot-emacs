@@ -88,7 +88,7 @@
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'compile-init-files)
 (π "C-c e"      (ε #'mk-visit-file mk-dir))
-(π "C-c p"      #'purge-buffers)
+(π "C-c p"      #'kill-or-bury-alive-purge-buffers)
 (π "C-c r"      #'revert-buffer)
 (π "C-c s"      #'mk-search)
 (π "C-c t"      (ε #'mk-visit-file (car org-agenda-files)))

@@ -41,7 +41,8 @@
 (add-to-list 'minor-mode-alias '(slime-mode      . ""))
 (add-to-list 'mk-search-prefix '(lisp-mode       . "common lisp"))
 (add-to-list 'mk-search-prefix '(slime-repl-mode . "common lisp"))
-(add-to-list 'preferred-death  (cons 'slime-repl-mode #'slime-kill-all-buffers))
+
+(kill-or-bury-alive-kill-with 'slime-repl-mode #'slime-kill-all-buffers t)
 
 (defun slime-in-package ()
   "Load specified package and switch to it."
