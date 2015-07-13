@@ -1,6 +1,6 @@
 ;;; mk-abbrev.el --- Collection of abbreviations -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
+;; Copyright © 2015 Mark Karpov <markkarpov@openmailbox.org>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -19,8 +19,8 @@
 
 ;;; Commentary:
 
-;; I keep all my abbreviations here. I don't have any abbreviations that are
-;; specific to some major mode, so I just edit `global-abbrev-table'. As you
+;; I keep all my abbreviations here. I don't want to mess with some existing
+;; abbrev table, so I've created dedicated `mk-abbrev-table' thing. As you
 ;; can see I use abbreviations mainly for inserting of Unicode symbols that
 ;; otherwise are difficult to type on standard keyboards.
 

@@ -1,6 +1,6 @@
 ;;; mk-bookmark.el --- Bookmark related changes  -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015 Mark Karpov <markkarpov@opmbx.org>
+;; Copyright © 2015 Mark Karpov <markkarpov@openmailbox.org>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
