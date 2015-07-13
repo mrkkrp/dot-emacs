@@ -68,7 +68,7 @@
    visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
    yasnippet            ; Yet another snippet extension for Emacs
-   zygospore))          ; reversible version of `delete-other-windows'
+   zygospore))          ; Reversible version of `delete-other-windows'
 
 (require 'package)
 (require 'bytecomp)

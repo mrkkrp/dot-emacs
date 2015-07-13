@@ -36,7 +36,7 @@ Package/Repo | Source | Description
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | [![MELPA](http://melpa.org/packages/ghc-badge.svg)](http://melpa.org/#/ghc) | Improve Haskell REPL experience
 [gitignore-mode](https://github.com/magit/git-modes) | [![MELPA](http://melpa.org/packages/gitignore-mode-badge.svg)](http://melpa.org/#/gitignore-mode) | Major mode for editing .gitignore files
 [haskell-mode](https://github.com/haskell/haskell-mode) | [![MELPA](http://melpa.org/packages/haskell-mode-badge.svg)](http://melpa.org/#/haskell-mode) | A Haskell editing mode
-[highlight-link](https://github.com/mrkkrp/highlight-link) † | — | Highlight lines in list-like buffers
+[highlight-line](https://github.com/mrkkrp/highlight-line) † | — | Highlight lines in list-like buffers
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | [![MELPA](http://melpa.org/packages/highlight-symbol-badge.svg)](http://melpa.org/#/highlight-symbol) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | [![MELPA](http://melpa.org/packages/hl-todo-badge.svg)](http://melpa.org/#/hl-todo) | Highlight TODO and similar keywords
 [ido-hacks](https://github.com/scottjad/ido-hacks) | [![MELPA](http://melpa.org/packages/ido-hacks-badge.svg)](http://melpa.org/#/ido-hacks) | Put more IDO in your IDO
@@ -61,13 +61,15 @@ Package/Repo | Source | Description
   people find them useful too.
 
 Thanks to all Emacs developers, GNU team and all the people who hack Emacs
-and publish their code so others can benefit from it. This is something
+and publish their code so others can use it. The whole thing is something
+you can contribute to, improve it and help other by doing so. This is truly
 exiting.
 
 ## Features
 
-Some minor features I have implemented (nothing special, decent things
-published as separate packages, you people can benefit from my digging):
+Some minor features I have implemented (nothing special, interesting things
+are usually published as separate packages, so people can benefit from my
+hacking):
 
 * automatic installation of all necessary packages (including packages from
   directly cloned git repositories);
@@ -88,7 +90,7 @@ published as separate packages, you people can benefit from my digging):
 
 If you do text editing professionally and you have no ergonomic keyboard,
 get one. I use «Truly Ergonomic Keyboard» (no, they don't pay me for the
-advertising).
+advertising… I think they should).
 
 It's common knowledge that if you use a laptop, you should remap <kbd>⇪ Caps
 Lock</kbd> to <kbd>⎈ Ctrl</kbd> (at least if you're an Emacs user). It's
@@ -104,7 +106,7 @@ Backspace</kbd>? There are three things to consider:
    is far away and you need to *change* position of your hand a little to
    reach it.
 
-3. There are no other way in Emacs to invoke `backward-delete-char` command,
+3. There is no other way in Emacs to invoke `backward-delete-char` command,
    than via <kbd>⌫ Backspace</kbd>, there is no handy alternative key
    binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
    <kbd>C-i</kbd>.
@@ -145,9 +147,9 @@ RSI to optimize your interaction with computer.
 
 ## Key Bindings
 
-Don't use hairy default Emacs shortcuts. All frequently used commands must
-be as simple as possible. Prefer single keys and key sequences over
-key-chords. Even if it's not faster, it's better for your health.
+I don't use hairy default Emacs shortcuts. All frequently used commands must
+be as simple as possible. I prefer single keys and key sequences over
+key-chords. Even if it's not faster, it's better for health.
 
 I make use of <kbd>F</kbd> keys. There are not so many of them (I could bind
 only 9 commands this way, since <kbd>F1</kbd>, <kbd>F3</kbd>, and
@@ -159,9 +161,10 @@ the keys.
 Next, Emacs allows us to define some custom key bindings: <kbd>C-c</kbd>
 prefix followed by a single key. I've assigned some commands this way. The
 bad thing about these shortcuts is that you have to start them with a chord
-<kbd>C-c</kbd>, while it's way better than <kbd>C-c C-o C-l</kbd> (such
-shortcuts shouldn't be used at all!), I don't like to press several keys
-simultaneously (unless such a combination is self-sufficient, like
+<kbd>C-c</kbd> (this paragraph is a bit obsolete I wrote it before I started
+using «Sticky Keys»), while it's way better than <kbd>C-c C-o C-l</kbd>
+(such shortcuts shouldn't be used at all!), I don't like to press several
+keys simultaneously (unless such a combination is self-sufficient, like
 <kbd>C-n</kbd>). Also, there are not so many combinations starting with this
 common prefix, if we want to avoid too long key sequences.
 
@@ -172,17 +175,19 @@ as possible, but we cannot use only one key after the introducing key,
 because total number of combinations won't be satisfactory. But we can use
 two keys after the introducing key (<kbd>▤ Menu</kbd> in my case, if you
 don't have <kbd>▤ Menu</kbd> on your keyboard you can remap something with
-help of specialized software), then we get 26 × 26 = 676 combinations! Not
-bad at all. There are enough combinations for you to prefer those that have
-some mnemonic value. Give this technique a try and you will see how
-productive you can be!
+help of specialized software), then we get 26 × 26 = 676 combinations! (In
+practice you get even more because of punctuation and numbers.) Not bad at
+all. There are enough combinations for us to prefer those that have some
+mnemonic value. Give this technique a try and you will see how productive
+you can be!
 
-Also note that <kbd>↵ Return</kbd> key is pretty useless, because you have
+Also note that <kbd>↵ Return</kbd> key is pretty useless, because we have
 <kbd>C-j</kbd> and <kbd>C-m</kbd> key bindings. Since <kbd>↵ Return</kbd>
 key has two semantics: end of input and new line, it's logical that we have
 two flavors of <kbd>↵ Return</kbd> key here. But what's about the <kbd>↵
-Return</kbd> key itself? It's of no use, unless GPG pops up with its
-thing. At the same time <kbd>↵ Return</kbd> occupies a comfortable position
+Return</kbd> key itself? It's of no use, unless GPG pops up with its thing
+(work is being done to enter passphrase for GPG via minibuffer, Emacs
+way). At the same time <kbd>↵ Return</kbd> occupies a comfortable position
 at the keyboard, so it's stupid not to use it for something useful. For me,
 <kbd>↵ Return</kbd> key invokes `avy-goto-char`, and look, this is really
 convenient! Try it!
@@ -442,10 +447,11 @@ Note that abbreviations are better than key bindings à la <kbd>C-x 8
 insufficient. So, abbreviations with readable names in the the way to go.
 
 However the method of expansion of the abbreviations is not that good at
-all. It's flawed at least in the following ways:
+all. It's flawed at least in the following ways (*flawed* in the context of
+my use-case, of course):
 
-1. User cannot write and expand abbreviations in arbitrary context, she
-   needs to surround them with «non-word-constituent-characters»: spaces or
+1. User cannot write and expand abbreviations in arbitrary context, he needs
+   to surround them with «non-word-constituent-characters»: spaces or
    punctuation. So this thing won't work:
 
    ```
@@ -495,11 +501,10 @@ with. My font of choice is `DejaVu Sans Mono`, because it's free, easy to
 get on Arch Linux and it supports all scripts that I need: Latin, Cyrillic,
 Greek, and who knows what else (I like strange symbols), it's also quite
 pretty. I had been a big fan of `Inconsolata` (and then `Ubuntu Mono`)
-before I switched to `DejaVu Sans Mono`. The reason for switching is that
+before I've switched to `DejaVu Sans Mono`. The reason for switching is that
 there is no normal version of the font supporting Cyrillic script (yes, I've
 tried modifications à la Inconsolata LCG, they suck or I'm not sufficiently
-dedicated person to make them look normally). I also enable `hl-line-mode`
-in modes like `dired` for prettiness.
+dedicated person to make them look normally).
 
 ## License
 
