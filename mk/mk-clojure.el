@@ -46,7 +46,7 @@
 
 (kill-or-bury-alive-kill-with 'cider-repl-mode #'cider-quit t)
 
-(defun clojure-docs (symbol)
+(defun mk-clojure-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
   (interactive (list (mk-grab-input "Clojure Docs: ")))
   (cl-destructuring-bind (x &optional y)
@@ -57,9 +57,9 @@
              (if (string= "" y) "" "/")
              (url-hexify-string (or y x))))))
 
-(τ cider-repl   cider-repl "C-c h" #'clojure-docs)
+(τ cider-repl   cider-repl "C-c h" #'mk-clojure-docs)
 (τ cider-repl   cider-repl "C-c r" #'cider-restart)
-(τ clojure-mode clojure    "C-c h" #'clojure-docs)
+(τ clojure-mode clojure    "C-c h" #'mk-clojure-docs)
 
 (add-hook 'cider-repl        #'electric-indent-local-mode)
 (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)

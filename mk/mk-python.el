@@ -51,7 +51,7 @@
       (run-python nil nil t)
       (select-window win))))
 
-(defun python-docs (symbol)
+(defun mk-python-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
   (interactive (list (mk-grab-input "Python Docs: ")))
   (browse-url
@@ -65,11 +65,11 @@
   (comint-send-string (python-shell-get-process)
                       "%reset\ny\n"))
 
-(τ python inferior-python "C-c h"   #'python-docs)
+(τ python inferior-python "C-c h"   #'mk-python-docs)
 (τ python inferior-python "C-c r"   #'ipython-reset)
 (τ python python          "C-c C-c" #'python-shell-send-defun)
 (τ python python          "C-c C-l" #'python-shell-send-buffer)
-(τ python python          "C-c h"   #'python-docs)
+(τ python python          "C-c h"   #'mk-python-docs)
 
 (advice-add 'python-shell-send-buffer :before #'python-shell-ensure-proc)
 (advice-add 'python-shell-send-defun  :before #'python-shell-ensure-proc)

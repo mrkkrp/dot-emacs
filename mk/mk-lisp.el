@@ -44,7 +44,7 @@
 
 (kill-or-bury-alive-kill-with 'slime-repl-mode #'slime-kill-all-buffers t)
 
-(defun slime-in-package ()
+(defun mk-slime-in-package ()
   "Load specified package and switch to it."
   (interactive)
   (let ((pkg-name (read-string "Package name: ")))
@@ -55,10 +55,10 @@
              pkg-name
              "))"))))
 
-(τ lisp-mode lisp       "C-c h" #'slime-hyperspec-lookup)
+(τ lisp-mode lisp       "C-c h" #'hyperspec-lookup)
 (τ slime     slime      "M-n"   #'mk-transpose-line-down)
 (τ slime     slime      "M-p"   #'mk-transpose-line-up)
-(τ slime     slime-repl "C-c i" #'slime-in-package)
+(τ slime     slime-repl "C-c i" #'mk-slime-in-package)
 (τ slime     slime-repl "C-c r" #'slime-restart-inferior-lisp)
 
 (add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)

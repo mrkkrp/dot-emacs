@@ -34,15 +34,15 @@
 (add-to-list 'mk-search-prefix    '(prolog-inferior-mode . "prolog"))
 (add-to-list 'mk-search-prefix    '(prolog-mode          . "prolog"))
 
-(defun swi-prolog-search (symbol)
+(defun mk-swi-prolog-search (symbol)
   "Search for SYMBOL at official site of SWI Prolog."
   (interactive (list (mk-grab-input "Prolog Docs: ")))
   (browse-url
    (concat "http://www.swi-prolog.org/search?for="
            (url-hexify-string symbol))))
 
-(τ prolog prolog-inferior "C-c h" #'swi-prolog-search)
-(τ prolog prolog          "C-c h" #'swi-prolog-search)
+(τ prolog prolog-inferior "C-c h" #'mk-swi-prolog-search)
+(τ prolog prolog          "C-c h" #'mk-swi-prolog-search)
 
 (provide 'mk-prolog)
 

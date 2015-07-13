@@ -28,12 +28,12 @@
 (add-to-list 'mk-major-mode-alias '(c-mode . "C"))
 (add-to-list 'mk-search-prefix    '(c-mode . "c"))
 
-(defun c-docs (symbol)
+(defun mk-c-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
   (interactive (list (mk-grab-input "C Docs: ")))
   (man (concat "3 " symbol)))
 
-(τ cc-mode c "C-c h" #'c-docs)
+(τ cc-mode c "C-c h" #'mk-c-docs)
 
 (provide 'mk-c)
 
