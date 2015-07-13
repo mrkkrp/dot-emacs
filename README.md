@@ -4,6 +4,15 @@ Emacs is something that encourages its users to think about their
 productivity and once you started to search for ways to improve your
 workflow and efficiency — sky is the limit.
 
+* [Features](#features)
+* [Key Remapping](#key-remapping)
+* [Sticky Keys](#sticky-keys)
+* [Key Bindings](#key-bindings)
+* [Keyboard Layouts and Abbreviations](#keyboard-layouts-and-abbreviations)
+* [GNUS](#gnus)
+* [Appearance](#appearance)
+* [License](#license)
+
 ## Features
 
 Some minor features I have implemented (nothing special):
