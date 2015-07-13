@@ -30,6 +30,8 @@
            emacs-version
            emacs-version-needed)))
 
+;; Install packages from MELPA and ELPA.
+
 (setq
  package-selected-packages
  '(ace-link             ; Quickly follow links
@@ -48,7 +50,6 @@
    ghc                  ; Improve Haskell REPL experience
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode
-   highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    ido-hacks            ; Put more IDO in your IDO
@@ -83,10 +84,31 @@
   (unless (package-installed-p package)
     (package-install package)))
 
+;; Now we should be able to install directly from git repositories.
+
+(defvar package-selected-git-packages
+  '((highlight-line . "https://github.com/mrkkrp/highlight-line.git"))
+  "Alist of packages that are installed from git repositories.")
+
+(defun package-install-git (address)
+  "Install package directly from git repository at ADDRESS.
+This functionality requires git installed."
+  (let ((temp-dir (make-temp-file "emacs-package-" t)))
+    (magit-clone address temp-dir)
+    (package-install-file temp-dir)))
+
+(dolist (package package-selected-git-packages)
+  (unless (package-installed-p (car package))
+    (package-install-git (cdr package))))
+
+;; Start Emacs server.
+
 (require 'server)
 
 (unless (server-running-p)
   (server-start))
+
+;; Set up directories.
 
 (defvar mk-dir (expand-file-name "mk" user-emacs-directory)
   "This is directory where all the configuration files are kept.")
@@ -94,6 +116,8 @@
 (setq custom-file (expand-file-name ".emacs-custom.el" user-emacs-directory))
 
 (add-to-list 'load-path mk-dir)
+
+;; Require meat of the configuration.
 
 (require 'mk-global)      ; global settings not specific to any mode
 (require 'mk-minor-modes) ; settings of various minor modes
