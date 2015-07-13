@@ -43,7 +43,7 @@
                  (mode . shell-mode)))))
  ibuffer-show-empty-filter-groups nil)
 
-(add-to-list 'major-mode-alias '(ibuffer-mode . "iβ"))
+(add-to-list 'mk-major-mode-alias '(ibuffer-mode . "iβ"))
 
 (defun mk-ibuffer-setup ()
   "Execute some code to prepare iBuffer for operation."

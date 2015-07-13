@@ -8,13 +8,10 @@ workflow and efficiency — sky is the limit.
 
 Some minor features I have implemented (nothing special):
 
-* automatic installation of all necessary packages;
+* automatic installation of all necessary packages (including packages from
+  directly cloned git repositories);
 
-* automation to compile/recompile SLIME (works smoothly with Quicklisp);
-
-* transposition and duplication of lines;
-
-* purging of buffers (except for «basic» ones);
+* many peculiar editing primitives;
 
 * searching online with DuckDuckGo (it also knows how to prefix my search
   query depending on major mode, so if I edit Python source, my query will
@@ -24,9 +21,7 @@ Some minor features I have implemented (nothing special):
 
 * smart switching between default input method, French, and Russian;
 
-* some mode line wizardry (can't use `smart-mode-line` or `powerline`);
-
-* many little hacks that make everything work smoothly and look sexy.
+* some mode line wizardry (can't use `smart-mode-line` or `powerline`).
 
 ## Key Remapping
 
@@ -144,6 +139,7 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer (restart/reset REPL in some modes)
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
+<kbd>C-z</kbd>      | copy rest of the line
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
 <kbd>M-j</kbd>      | join the next line and the current one
@@ -173,10 +169,9 @@ Shortcut            | Description
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | rectangular selection
 <kbd>menu 2</kbd>   | mark word
-<kbd>menu 3</kbd>   | mark rest of line
 <kbd>menu 5</kbd>   | mark paragraph
 <kbd>menu SPC</kbd> | special insertion of abbreviation
-<kbd>menu a b</kbd> | toggle abbrev mode
+<kbd>menu a g</kbd> | toggle aggressive indent mode
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
 <kbd>menu a s</kbd> | write file (save file as…)

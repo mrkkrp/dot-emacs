@@ -78,22 +78,22 @@
 (whole-line-or-region-mode        1) ; operate on current line
 (yas-global-mode                  1) ; enable Yasnippet
 
-(dolist (buffer '("^\*Backtrace\*"
-                  "^\*Compile-Log\*"
-                  "^\*.+Completions\*"
-                  "^\*Flycheck error messages\*"
-                  "^\*Help\*"
-                  "^\*Ibuffer\*"
-                  "^\*Messages\*"
-                  "^\*inferior-lisp\*"
-                  "^\*scratch\*"
-                  "^\*slime-compilation\*"
-                  "^\*slime-description\*"
-                  "^\*slime-events\*"))
+(dolist (buffer '("^\\*Backtrace\\*$"
+                  "^\\*Compile-Log\\*$"
+                  "^\\*.+Completions\\*$"
+                  "^\\*Flycheck error messages\\*$"
+                  "^\\*Help\\*$"
+                  "^\\*Ibuffer\\*$"
+                  "^\\*Messages\\*$"
+                  "^\\*inferior-lisp\\*$"
+                  "^\\*scratch\\*$"
+                  "^\\*slime-compilation\\*$"
+                  "^\\*slime-description\\*$"
+                  "^\\*slime-events\\*$"))
   (add-to-list 'ido-ignore-buffers buffer))
 
 (setq
- minor-mode-alias
+ mk-minor-mode-alias
  '((abbrev-mode                  . "")
    (aggressive-indent-mode       . "")
    (auto-fill-function           . "")
@@ -123,13 +123,13 @@
 
 (advice-add 'sp-add-to-previous-sexp :after #'sp-forward-sexp)
 
-(defun prepare-text-mode ()
+(defun mk-prepare-text-mode ()
   "Enable some minor mode for plain text editing."
   (auto-fill-mode  1)
   (whitespace-mode 1)
   (flyspell-mode   1))
 
-(defun prepare-prog-mode ()
+(defun mk-prepare-prog-mode ()
   "Enables some minor modes for programming."
   (setq-local comment-auto-fill-only-comments t)
   (auto-fill-mode  1)
@@ -139,8 +139,8 @@
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'prog-mode-hook               #'hl-todo-mode)
-(add-hook 'prog-mode-hook               #'prepare-prog-mode)
-(add-hook 'text-mode-hook               #'prepare-text-mode)
+(add-hook 'prog-mode-hook               #'mk-prepare-prog-mode)
+(add-hook 'text-mode-hook               #'mk-prepare-text-mode)
 
 (advice-add 'mc/prompt-for-inclusion-in-whitelist :override
             (lambda (_original-command) t))

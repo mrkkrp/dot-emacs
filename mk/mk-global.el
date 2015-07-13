@@ -24,11 +24,12 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'org)
+  (require 'yasnippet))
+
 (require 'misc)
-(require 'mk-abbrev)
 (require 'mk-utils)
-(require 'org)
-(require 'yasnippet)
 
 (setq-default
  apropos-do-all                   t       ; more extensive search
@@ -52,6 +53,7 @@
  require-final-newline            t
  resize-mini-windows              t       ; grow and shrink
  ring-bell-function               'ignore ; bells‽
+ save-abbrevs                     nil
  scroll-margin                    3
  scroll-step                      1
  suggest-key-bindings             nil
@@ -68,25 +70,25 @@
 
 (ace-link-setup-default) ; use ace-link in various major modes
 
-;;; Handy translations for use with «Sticky Keys»
+;; Handy translations for use with «Sticky Keys»
 
-(translate-kbd "<C-menu>"      "<menu>")
-(translate-kbd "<C-return>"    "<return>")
-(translate-kbd "<menu> <menu>" "M-x")
-(translate-kbd "C-c c"         "C-c C-c")
-(translate-kbd "C-c k"         "C-c C-k")
-(translate-kbd "C-c l"         "C-c C-l")
-(translate-kbd "C-c o"         "C-c C-o")
-(translate-kbd "C-c v"         "C-c C-v")
-(translate-kbd "C-x ;"         "C-x C-;")
-(translate-kbd "C-x o"         "C-x C-o")
+(mk-translate-kbd "<C-menu>"      "<menu>")
+(mk-translate-kbd "<C-return>"    "<return>")
+(mk-translate-kbd "<menu> <menu>" "M-x")
+(mk-translate-kbd "C-c c"         "C-c C-c")
+(mk-translate-kbd "C-c k"         "C-c C-k")
+(mk-translate-kbd "C-c l"         "C-c C-l")
+(mk-translate-kbd "C-c o"         "C-c C-o")
+(mk-translate-kbd "C-c v"         "C-c C-v")
+(mk-translate-kbd "C-x ;"         "C-x C-;")
+(mk-translate-kbd "C-x o"         "C-x C-o")
 
-;;; Global key map
+;; Global Key Map
 
 (π "C-'"        #'ace-window)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
-(π "C-c b"      #'compile-init-files)
+(π "C-c b"      #'mk-compile-init-files)
 (π "C-c e"      (ε #'mk-visit-file mk-dir))
 (π "C-c p"      #'kill-or-bury-alive-purge-buffers)
 (π "C-c r"      #'revert-buffer)
@@ -94,14 +96,15 @@
 (π "C-c t"      (ε #'mk-visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
 (π "C-x o"      #'ace-window)
+(π "C-z"        #'mk-copy-rest-of-line)
 (π "M-c"        #'fix-word-capitalize)
 (π "M-e"        #'mk-eval-last-sexp)
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
-(π "M-n"        #'transpose-line-down)
+(π "M-n"        #'mk-transpose-line-down)
 (π "M-o"        #'ace-link-org)
-(π "M-p"        #'transpose-line-up)
-(π "M-r"        #'duplicate-line)
+(π "M-p"        #'mk-transpose-line-up)
+(π "M-r"        #'mk-duplicate-line)
 (π "M-u"        #'fix-word-upcase)
 (π "M-x"        #'smex)
 (π "M-z"        #'zap-up-to-char)
@@ -113,7 +116,7 @@
 (π "<f9>"       #'kill-or-bury-alive)
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
-(π "<f12>"      #'exit-emacs)
+(π "<f12>"      #'mk-exit-emacs)
 (π "<escape>"   #'delete-window)
 (π "<return>"   #'avy-goto-char)
 (π "<S-up>"     #'buf-move-up)
@@ -125,10 +128,9 @@
 (π "<menu> ."   #'end-of-buffer)
 (π "<menu> /"   #'rectangle-mark-mode)
 (π "<menu> 2"   #'mark-word)
-(π "<menu> 3"   #'mark-rest-of-line)
 (π "<menu> 5"   #'mark-paragraph)
 (π "<menu> SPC" #'mk-abbrev-insert)
-(π "<menu> a b" #'abbrev-mode)
+(π "<menu> a g" #'aggressive-indent-mode)
 (π "<menu> a p" #'apropos)
 (π "<menu> a r" #'align-regexp)
 (π "<menu> a s" #'write-file)
@@ -137,16 +139,16 @@
 (π "<menu> b l" #'bookmark-bmenu-list)
 (π "<menu> b s" #'bookmark-set)
 (π "<menu> c a" #'calc)
-(π "<menu> c c" #'copy-buffer)
+(π "<menu> c c" #'mk-copy-buffer)
 (π "<menu> c i" #'cider-jack-in)
 (π "<menu> c l" #'calendar)
 (π "<menu> c r" #'copy-rectangle-as-kill)
 (π "<menu> c s" #'set-buffer-file-coding-system)
 (π "<menu> c w" #'count-words)
-(π "<menu> d a" (ε #'show-date))
+(π "<menu> d a" (ε #'mk-show-date))
 (π "<menu> d b" #'mk-double-buffer)
 (π "<menu> d c" #'describe-char)
-(π "<menu> d d" #'show-default-dir)
+(π "<menu> d d" #'mk-show-default-dir)
 (π "<menu> d i" #'diff)
 (π "<menu> e ;" #'eval-expression)
 (π "<menu> e b" #'erase-buffer)
@@ -154,7 +156,7 @@
 (π "<menu> e r" #'erc)
 (π "<menu> e v" #'eval-buffer)
 (π "<menu> f f" #'find-function)
-(π "<menu> f n" #'file-name-to-kill-ring)
+(π "<menu> f n" #'mk-file-name-to-kill-ring)
 (π "<menu> f o" #'mk-set-font)
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
@@ -203,7 +205,7 @@
 (π "<menu> s n" #'sort-numeric-fields)
 (π "<menu> s r" #'string-rectangle)
 (π "<menu> s s" (ε #'switch-to-buffer "*scratch*"))
-(π "<menu> s t" (ε #'show-date t))
+(π "<menu> s t" (ε #'mk-show-date t))
 (π "<menu> t e" #'tetris)
 (π "<menu> t h" #'mk-switch-theme)
 (π "<menu> u t" (ε #'untabify (point-min) (point-max)))
@@ -212,20 +214,20 @@
 (π "<menu> x i" #'mk-install)
 (π "<menu> x u" #'mk-uninstall)
 (π "<menu> y a" #'yas-reload-all)
-(π "<menu> y p" #'yank-primary)
+(π "<menu> y p" #'mk-yank-primary)
 (π "<menu> y r" #'yank-rectangle)
 
-(defalias 'display-startup-echo-area-message (ε #'show-date))
+(defalias 'display-startup-echo-area-message (ε #'mk-show-date))
 (defalias 'list-buffers                      #'ibuffer)
 (defalias 'yes-or-no-p                       #'y-or-n-p)
 
-(add-hook 'after-change-major-mode-hook #'apply-mode-alias)
+(add-hook 'after-change-major-mode-hook #'mk-apply-mode-alias)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 
-(advice-add 'narrow-to-region           :after       (η #'keyboard-quit))
-(advice-add 'package-install            :filter-args #'pkgi-filter-args)
+(advice-add 'narrow-to-region :after (η #'keyboard-quit))
+(advice-add 'package-install  :filter-args (lambda (args) (list (car args) t)))
 (advice-add 'process-kill-buffer-query-function :override (σ t))
-(advice-add 'revert-buffer              :filter-args (σ nil t))
+(advice-add 'revert-buffer     :filter-args (σ nil t))
 
 (provide 'mk-global)
 

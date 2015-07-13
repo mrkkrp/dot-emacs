@@ -24,6 +24,7 @@
 ;;; Code:
 
 (eval-when-compile
+  (require 'dired)
   (require 'dired-x)
   (require 'image-dired)
   (require 'wdired))
@@ -47,45 +48,45 @@
 
 (mk-disable-ido 'dired-create-directory)
 
-(add-to-list 'major-mode-alias '(dired-mode                 . "δ"))
-(add-to-list 'major-mode-alias '(image-dired-thumbnail-mode . "◊δ"))
-(add-to-list 'major-mode-alias '(wdired-mode                . "↯δ"))
+(add-to-list 'mk-major-mode-alias '(dired-mode                 . "δ"))
+(add-to-list 'mk-major-mode-alias '(image-dired-thumbnail-mode . "◊δ"))
+(add-to-list 'mk-major-mode-alias '(wdired-mode                . "↯δ"))
 
-(defun dired-first-file ()
+(defun mk-dired-first-file ()
   "Jump to the first file in current directory."
   (interactive)
   (goto-char (point-min))
   (dired-next-line 2))
 
-(defun dired-last-file ()
+(defun mk-dired-last-file ()
   "Jump to the last file in current directory."
   (interactive)
   (goto-char (point-max))
   (dired-previous-line 1))
 
-(defun dired-open-external (file)
+(defun mk-dired-open-external (file)
   "Open specified FILE with application determined by the OS."
   (interactive
    (list (dired-get-filename)))
   (call-process "xdg-open" nil 0 nil file))
 
-(defun image-dired-show-current ()
+(defun mk-image-dired-show-current ()
   "Make preview and show all images in current directory."
   (interactive)
   (image-dired-show-all-from-dir dired-directory))
 
-(τ dired dired   "<menu> ," #'dired-first-file)
-(τ dired dired   "<menu> ." #'dired-last-file)
+(τ dired dired   "<menu> ," #'mk-dired-first-file)
+(τ dired dired   "<menu> ." #'mk-dired-last-file)
 (τ dired dired   "b"        #'dired-up-directory)
-(τ dired dired   "e"        #'dired-open-external)
-(τ dired dired   "i"        #'image-dired-show-current)
+(τ dired dired   "e"        #'mk-dired-open-external)
+(τ dired dired   "i"        #'mk-image-dired-show-current)
 (τ dired dired   "z"        #'wdired-change-to-wdired-mode)
-(τ wdired wdired "<menu> ," #'dired-first-file)
-(τ wdired wdired "<menu> ." #'dired-last-file)
+(τ wdired wdired "<menu> ," #'mk-dired-first-file)
+(τ wdired wdired "<menu> ." #'mk-dired-last-file)
 
 (add-hook 'dired-mode-hook #'toggle-truncate-lines)
 
-(advice-add 'wdired-change-to-dired-mode :after #'apply-mode-alias)
+(advice-add 'wdired-change-to-dired-mode :after #'mk-apply-mode-alias)
 
 (provide 'mk-dired)
 

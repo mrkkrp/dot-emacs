@@ -36,11 +36,11 @@
       slime-contribs '(slime-fancy))
 
 (add-to-list 'aggressive-indent-excluded-modes 'slime-repl-mode)
-(add-to-list 'major-mode-alias '(lisp-mode       . "λ"))
-(add-to-list 'major-mode-alias '(slime-repl-mode . "iλ"))
-(add-to-list 'minor-mode-alias '(slime-mode      . ""))
-(add-to-list 'mk-search-prefix '(lisp-mode       . "common lisp"))
-(add-to-list 'mk-search-prefix '(slime-repl-mode . "common lisp"))
+(add-to-list 'mk-major-mode-alias '(lisp-mode       . "λ"))
+(add-to-list 'mk-major-mode-alias '(slime-repl-mode . "iλ"))
+(add-to-list 'mk-minor-mode-alias '(slime-mode      . ""))
+(add-to-list 'mk-search-prefix    '(lisp-mode       . "common lisp"))
+(add-to-list 'mk-search-prefix    '(slime-repl-mode . "common lisp"))
 
 (kill-or-bury-alive-kill-with 'slime-repl-mode #'slime-kill-all-buffers t)
 
@@ -56,8 +56,8 @@
              "))"))))
 
 (τ lisp-mode lisp       "C-c h" #'slime-hyperspec-lookup)
-(τ slime     slime      "M-n"   #'transpose-line-down)
-(τ slime     slime      "M-p"   #'transpose-line-up)
+(τ slime     slime      "M-n"   #'mk-transpose-line-down)
+(τ slime     slime      "M-p"   #'mk-transpose-line-up)
 (τ slime     slime-repl "C-c i" #'slime-in-package)
 (τ slime     slime-repl "C-c r" #'slime-restart-inferior-lisp)
 

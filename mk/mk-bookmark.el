@@ -25,7 +25,7 @@
 
 (require 'mk-utils)
 
-(add-to-list 'major-mode-alias '(bookmark-bmenu-mode . "→"))
+(add-to-list 'mk-major-mode-alias '(bookmark-bmenu-mode . "→"))
 
 (provide 'mk-bookmark)
 

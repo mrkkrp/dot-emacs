@@ -29,10 +29,10 @@
 (require 'mk-utils)
 
 (add-to-list 'aggressive-indent-excluded-modes 'prolog-inferior-mode)
-(add-to-list 'major-mode-alias '(prolog-inferior-mode . "iP"))
-(add-to-list 'major-mode-alias '(prolog-mode          . "P"))
-(add-to-list 'mk-search-prefix '(prolog-inferior-mode . "prolog"))
-(add-to-list 'mk-search-prefix '(prolog-mode          . "prolog"))
+(add-to-list 'mk-major-mode-alias '(prolog-inferior-mode . "iP"))
+(add-to-list 'mk-major-mode-alias '(prolog-mode          . "P"))
+(add-to-list 'mk-search-prefix    '(prolog-inferior-mode . "prolog"))
+(add-to-list 'mk-search-prefix    '(prolog-mode          . "prolog"))
 
 (defun swi-prolog-search (symbol)
   "Search for SYMBOL at official site of SWI Prolog."

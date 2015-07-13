@@ -110,19 +110,15 @@ This functionality requires git installed."
 
 ;; Set up directories.
 
-(defvar mk-dir (expand-file-name "mk" user-emacs-directory)
-  "This is directory where all the configuration files are kept.")
-
 (setq custom-file (expand-file-name ".emacs-custom.el" user-emacs-directory))
-
+(setq mk-dir      (expand-file-name "mk" user-emacs-directory))
 (add-to-list 'load-path mk-dir)
 
 ;; Require meat of the configuration.
 
-(require 'mk-global)      ; global settings not specific to any mode
-(require 'mk-minor-modes) ; settings of various minor modes
-(require 'mk-abbrev)      ; some abbreviations to insert Unicode characters
-(require 'mk-bookmark)    ; various major modes
+(require 'mk-global)      ; global settings
+(require 'mk-minor-modes) ; minor modes
+(require 'mk-bookmark)    ; major modes
 (require 'mk-c)           ; ^
 (require 'mk-calendar)    ; ^
 (require 'mk-clojure)     ; ^

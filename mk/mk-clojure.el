@@ -39,10 +39,10 @@
  nrepl-buffer-name-show-port          nil)
 
 (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
-(add-to-list 'major-mode-alias '(cider-repl-mode . "ic"))
-(add-to-list 'major-mode-alias '(clojure-mode    . "c"))
-(add-to-list 'mk-search-prefix '(cider-repl-mode . "clojure"))
-(add-to-list 'mk-search-prefix '(clojure-mode    . "clojure"))
+(add-to-list 'mk-major-mode-alias '(cider-repl-mode . "ic"))
+(add-to-list 'mk-major-mode-alias '(clojure-mode    . "c"))
+(add-to-list 'mk-search-prefix    '(cider-repl-mode . "clojure"))
+(add-to-list 'mk-search-prefix    '(clojure-mode    . "clojure"))
 
 (kill-or-bury-alive-kill-with 'cider-repl-mode #'cider-quit t)
 

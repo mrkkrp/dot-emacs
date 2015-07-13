@@ -38,7 +38,7 @@
  org-catch-invisible-edits 'show ; make point visible
  org-completion-use-ido    t)
 
-(add-to-list 'major-mode-alias '(org-agenda-mode . "Org-Agenda"))
+(add-to-list 'mk-major-mode-alias '(org-agenda-mode . "Org-Agenda"))
 
 (τ org org "C-'" #'ace-window)
 

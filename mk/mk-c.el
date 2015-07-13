@@ -25,8 +25,8 @@
 
 (require 'mk-utils)
 
-(add-to-list 'major-mode-alias '(c-mode . "C"))
-(add-to-list 'mk-search-prefix '(c-mode . "c"))
+(add-to-list 'mk-major-mode-alias '(c-mode . "C"))
+(add-to-list 'mk-search-prefix    '(c-mode . "c"))
 
 (defun c-docs (symbol)
   "Find documentation for given symbol SYMBOL online."

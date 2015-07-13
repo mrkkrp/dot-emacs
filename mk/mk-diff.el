@@ -25,7 +25,7 @@
 
 (require 'mk-utils)
 
-(add-to-list 'major-mode-alias '(diff-mode . "Δ"))
+(add-to-list 'mk-major-mode-alias '(diff-mode . "Δ"))
 
 (provide 'mk-diff)
 
