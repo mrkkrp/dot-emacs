@@ -48,6 +48,7 @@
    ghc                  ; Improve Haskell REPL experience
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode
+   highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    ido-hacks            ; Put more IDO in your IDO
@@ -113,7 +114,6 @@
 (require 'mk-man)         ; ^
 (require 'mk-markdown)    ; ^
 (require 'mk-org)         ; ^
-(require 'mk-package)     ; ^
 (require 'mk-prolog)      ; ^
 (require 'mk-python)      ; ^
 (require 'mk-tex)         ; ^

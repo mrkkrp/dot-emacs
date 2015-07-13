@@ -27,8 +27,6 @@
 
 (add-to-list 'major-mode-alias '(bookmark-bmenu-mode . "→"))
 
-(add-hook 'bookmark-bmenu-mode-hook #'hl-line-mode)
-
 (provide 'mk-bookmark)
 
 ;;; mk-bookmark.el ends here

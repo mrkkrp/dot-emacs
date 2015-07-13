@@ -65,6 +65,7 @@
 (electric-indent-mode             0) ; I use aggressive indent mode instead
 (global-aggressive-indent-mode    1) ; turn aggressive indent on globally
 (global-auto-revert-mode          1) ; revert buffers automatically
+(highlight-line-mode              1) ; highlight lines in list-like buffers
 (ido-mode                         1) ; ido for switch-buffer and find-file
 (ido-ubiquitous-mode              1) ; use IDO everywhere
 (ido-vertical-mode                1) ; display IDO vertically
@@ -137,7 +138,6 @@
   (flycheck-mode))
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
-(add-hook 'ibuffer-mode-hook            #'hl-line-mode)
 (add-hook 'prog-mode-hook               #'hl-todo-mode)
 (add-hook 'prog-mode-hook               #'prepare-prog-mode)
 (add-hook 'text-mode-hook               #'prepare-text-mode)

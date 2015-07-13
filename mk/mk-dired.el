@@ -83,7 +83,6 @@
 (τ wdired wdired "<menu> ," #'dired-first-file)
 (τ wdired wdired "<menu> ." #'dired-last-file)
 
-(add-hook 'dired-mode-hook #'hl-line-mode)
 (add-hook 'dired-mode-hook #'toggle-truncate-lines)
 
 (advice-add 'wdired-change-to-dired-mode :after #'apply-mode-alias)

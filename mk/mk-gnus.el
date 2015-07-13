@@ -77,9 +77,6 @@ be understaken to restore the configuraiton."
 (τ gnus-sum   gnus-summary "d"        #'gnus-summary-delete-article)
 (τ gnus-sum   gnus-summary "o"        #'ace-link-gnus)
 
-(add-hook 'gnus-group-mode-hook   #'hl-line-mode)
-(add-hook 'gnus-summary-mode-hook #'hl-line-mode)
-
 (advice-add 'gnus            :after  #'gnus-go-to-inbox)
 (advice-add 'gnus            :before #'gnus-save-window-config)
 (advice-add 'gnus-group-exit :after  #'gnus-restore-window-config)
