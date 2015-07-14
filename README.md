@@ -293,12 +293,13 @@ Shortcut            | Description
 <kbd>menu l b</kbd> | list buffers
 <kbd>menu l i</kbd> | SLIME
 <kbd>menu l p</kbd> | list packages
-<kbd>menu m a</kbd> | magit status
+<kbd>menu m a</kbd> | magit dispatch popup
 <kbd>menu m c</kbd> | magit clone
-<kbd>menu m i</kbd> | magit init
 <kbd>menu m d</kbd> | markdown mode
+<kbd>menu m i</kbd> | magit init
 <kbd>menu m k</kbd> | make current project
 <kbd>menu m n</kbd> | man
+<kbd>menu m s</kbd> | magit status
 <kbd>menu n n</kbd> | narrow to region
 <kbd>menu n w</kbd> | widen
 <kbd>menu p a</kbd> | package autoremove
