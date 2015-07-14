@@ -15,26 +15,7 @@ install:
     fi
 
 script:
-  - emacs --version
-  - echo "Attempting initial startup..."
-  - emacs -nw --batch \
-          --eval '(let ((debug-on-error t)
-                        (user-emacs-directory default-directory)
-                        (user-init-file (expand-file-name "init.el"))
-                        (load-path (delq default-directory load-path)))
-                    (load-file user-init-file)
-                    (run-hooks (quote after-init-hook))
-                    (mk-compile-init-files))'
-  - echo "Initial startup successful"
-  - echo "Attempting secondary startup..."
-  - time emacs -nw --batch \
-          --eval '(let ((debug-on-error t)
-                        (user-emacs-directory default-directory)
-                        (user-init-file (expand-file-name "init.el"))
-                        (load-path (delq default-directory load-path)))
-                    (load-file user-init-file)
-                    (run-hooks (quote after-init-hook)))'
-  - echo "Secondary startup successful"
+  - python test-startup.py
 
 notifications:
   email: false
