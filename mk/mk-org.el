@@ -30,8 +30,9 @@
 
 (defun org-files ()
   "Return list of all org files."
-  (directory-files (expand-file-name "org" user-emacs-directory)
-                   t "\\`.*\\.org\\'"))
+  (let ((org-dir (expand-file-name "org" user-emacs-directory)))
+    (when (file-exists-p org-dir)
+      (directory-files org-dir t "\\`.*\\.org\\'"))))
 
 (setq
  org-agenda-files          (org-files)
