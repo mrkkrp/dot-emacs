@@ -82,7 +82,7 @@
 
 (dolist (package package-selected-packages)
   (unless (package-installed-p package)
-    (package-install package)))
+    (package-install package t)))
 
 ;; Set up directories.
 

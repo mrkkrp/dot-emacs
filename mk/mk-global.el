@@ -53,7 +53,6 @@
  require-final-newline            t
  resize-mini-windows              t       ; grow and shrink
  ring-bell-function               'ignore ; bells‽
- save-abbrevs                     nil
  scroll-margin                    3
  scroll-step                      1
  suggest-key-bindings             nil

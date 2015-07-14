@@ -314,6 +314,8 @@ exit."
 
 ;; Improved Abbrev System
 
+(setq save-abbrevs nil)
+
 (define-abbrev-table 'mk-abbrev-table
   '(("acc" "́")  ; accent
     ("apeq" "≈")  ; approximately equal
