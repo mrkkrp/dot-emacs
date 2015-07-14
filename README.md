@@ -1,5 +1,13 @@
 # ⌨ Emacs Configuration Files
 
+[![License GPL 3](https://img.shields.io/badge/license-GPL_3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.txt)
+[![Build Status](https://travis-ci.org/mrkkrp/dot-emacs.svg?branch=master)](https://travis-ci.org/mrkkrp/dot-emacs)
+
+*This is my personal configuration, that means it's highly experimental. It
+ requires Emacs trunk to work because it uses features that are missing in
+ released versions of Emacs. If you would like to try this, clone Emacs
+ repository and build it yourself.*
+
 Emacs is something that encourages its users to think about their
 productivity and once you started to search for ways to improve your
 workflow and efficiency — sky is the limit.
