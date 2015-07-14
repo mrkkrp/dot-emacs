@@ -20,7 +20,10 @@
 ;;; Commentary:
 
 ;; I've collected various auxiliary functions here to avoid cluttering of
-;; other files.
+;; other files. Note that this file is loaded before installation of some
+;; packages (those that are installed directly from git repositories). Thus,
+;; we should use here only packages listed in `package-selected-packages',
+;; not `package-selected-git-packages'.
 
 ;;; Code:
 
@@ -126,10 +129,14 @@ don't create new empty buffer."
     (split-window-sensibly)
     (other-window 1)))
 
-
-
-
 ;; Missing Commands for Package System
+
+(defun package-install-git (address)
+  "Install package directly from git repository at ADDRESS.
+This functionality requires git installed."
+  (let ((temp-dir (make-temp-file "emacs-package-" t)))
+    (magit-clone address temp-dir)
+    (package-install-file temp-dir)))
 
 (defun package-upgrade-all ()
   "Upgrade all packages automatically without showing *Packages* buffer."
