@@ -35,9 +35,13 @@
  apropos-do-all                   t       ; more extensive search
  auto-save-default                nil     ; don't ever create autosaves
  avy-style                         'at-full ; can't use the default
+ backup-by-copying                t
+ backup-directory-alist
+ (list (cons "." (expand-file-name "backups" user-emacs-directory)))
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  compilation-read-command         nil
+ delete-old-versions              t       ;  delete excess backups silently
  echo-keystrokes                  0.1     ; show keystrokes asap
  enable-recursive-minibuffers     t       ; use minibuffer recursively
  gc-cons-threshold                10240000 ; garbage collection every 10 Mb
@@ -45,10 +49,12 @@
  indicate-empty-lines             t       ; show where buffer's content ends
  inhibit-startup-screen           t       ; remove welcome screen
  initial-scratch-message          (concat ";; GNU Emacs " emacs-version "\n\n")
+ kept-new-versions                4
+ kept-old-versions                2
  kill-read-only-ok                t       ; don't rise errors, it's OK
  large-file-warning-threshold     10240000 ; warn when opening >10 Mb file
  major-mode                       'text-mode ; default mode is text mode
- make-backup-files                nil     ; don't create backups
+ make-backup-files                t       ; yes, create them
  minibuffer-eldef-shorten-default t       ; shorten defaults in minibuffer
  require-final-newline            t
  resize-mini-windows              t       ; grow and shrink
@@ -59,6 +65,7 @@
  tab-width                        4       ; tab width for text-mode
  user-full-name                   "Mark Karpov"
  user-mail-address                "markkarpov@openmailbox.org"
+ version-control                  t ; make numeric backups unconditionally
  safe-local-variable-values       '((Syntax  . ANSI-Common-Lisp)
                                     (Base    . 10)
                                     (Package . CL-USER)

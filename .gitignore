@@ -4,6 +4,7 @@
 .mc-lists.el
 \#*
 auto-save-list/
+backups/
 bookmarks
 elpa/
 eshell/history
