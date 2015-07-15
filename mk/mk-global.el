@@ -32,8 +32,8 @@
 (require 'mk-utils)
 
 (setq-default
- apropos-do-all                   t       ; more extensive search
- auto-save-default                nil     ; don't ever create autosaves
+ apropos-do-all                   t ; more extensive search
+ auto-save-default                nil ; don't ever create autosaves
  avy-style                         'at-full ; can't use the default
  backup-by-copying                t
  backup-directory-alist
@@ -41,35 +41,36 @@
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  compilation-read-command         nil
- delete-old-versions              t       ;  delete excess backups silently
- echo-keystrokes                  0.1     ; show keystrokes asap
- enable-recursive-minibuffers     t       ; use minibuffer recursively
+ delete-old-versions              t ;  delete excess backups silently
+ echo-keystrokes                  0.1 ; show keystrokes asap
+ enable-recursive-minibuffers     t ; use minibuffer recursively
  gc-cons-threshold                10240000 ; garbage collection every 10 Mb
- indent-tabs-mode                 nil     ; only spaces
- indicate-empty-lines             t       ; show where buffer's content ends
- inhibit-startup-screen           t       ; remove welcome screen
+ indent-tabs-mode                 nil ; only spaces
+ indicate-empty-lines             t ; show where buffer's content ends
+ inhibit-startup-screen           t ; remove welcome screen
  initial-scratch-message          (concat ";; GNU Emacs " emacs-version "\n\n")
  kept-new-versions                4
  kept-old-versions                2
- kill-read-only-ok                t       ; don't rise errors, it's OK
+ kill-read-only-ok                t ; don't rise errors, it's OK
  large-file-warning-threshold     10240000 ; warn when opening >10 Mb file
  major-mode                       'text-mode ; default mode is text mode
- make-backup-files                t       ; yes, create them
- minibuffer-eldef-shorten-default t       ; shorten defaults in minibuffer
+ make-backup-files                t ; yes, create them
+ minibuffer-eldef-shorten-default t ; shorten defaults in minibuffer
  require-final-newline            t
- resize-mini-windows              t       ; grow and shrink
+ resize-mini-windows              t ; grow and shrink
  ring-bell-function               'ignore ; bells‽
+ safe-local-variable-values
+ '((Syntax  . ANSI-Common-Lisp)
+   (Base    . 10)
+   (Package . CL-USER)
+   (Syntax  . COMMON-LISP))
  scroll-margin                    3
  scroll-step                      1
  suggest-key-bindings             nil
- tab-width                        4       ; tab width for text-mode
+ tab-width                        4 ; tab width for text-mode
  user-full-name                   "Mark Karpov"
  user-mail-address                "markkarpov@openmailbox.org"
- version-control                  t ; make numeric backups unconditionally
- safe-local-variable-values       '((Syntax  . ANSI-Common-Lisp)
-                                    (Base    . 10)
-                                    (Package . CL-USER)
-                                    (Syntax  . COMMON-LISP)))
+ version-control                  t) ; make numeric backups unconditionally
 
 (put 'erase-buffer     'disabled nil) ; don't ever question my power
 (put 'narrow-to-region 'disabled nil) ; ^
