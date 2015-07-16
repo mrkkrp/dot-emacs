@@ -139,9 +139,11 @@ don't create new empty buffer."
   "Install package directly from git repository at ADDRESS.
 
 This functionality requires git installed."
-  (let ((temp-dir (make-temp-file "emacs-package-" t)))
-    (magit-clone address temp-dir)
-    (package-install-file temp-dir)))
+  (interactive (list (read-string "Address: ")))
+  (save-window-excursion
+    (let ((temp-dir (make-temp-file "emacs-package-" t)))
+      (magit-clone address temp-dir)
+      (package-install-file temp-dir))))
 
 (defun package-upgrade-all ()
   "Upgrade all packages automatically without showing *Packages* buffer."
