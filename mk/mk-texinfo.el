@@ -31,6 +31,7 @@
 
 (defun texinfo-html-standalone (&optional output-buffer-name)
   "Generate standalone HTML version of currently open Texinfo document.
+
 Output goes to OUTPUT-BUFFER-NAME, or, if it's not supplied, to
 buffer named by `texinfo-html-output-buffer-name'.  Return name
 of the buffer."
@@ -55,6 +56,7 @@ of the buffer."
 
 (defun texinfo-html-preview (&optional output-buffer-name)
   "Preview current Texinfo file as HTML document.
+
 When OUTPUT-BUFFER-NAME is given, insert the output in the buffer
 with that name."
   (interactive)
@@ -62,6 +64,7 @@ with that name."
 
 (defun texinfo-html-export (&optional output-file)
   "Translate current Texinfo file into an HTML document.
+
 Result file will be named as specified by OUTPUT-FILE argument.
 If it's NIL, name of result file will be produced by replacing of
 .tex extension with .html extension.  This command is smart

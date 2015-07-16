@@ -30,6 +30,7 @@
 
 (defun eshell-other-window (fnc &optional arg)
   "Open Emacs shell (via FNC) in other window.
+
 ARG is argument to pass to Emacs shell."
   (let ((eshell-buffer (funcall fnc arg)))
     (switch-to-prev-buffer)

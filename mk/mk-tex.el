@@ -30,6 +30,7 @@
 
 (defun pdf-latex-generate (&optional output-dir)
   "Generate PDF document from currently opened LaTeX document.
+
 If given, OUTPUT-DIR specifies directory where all the temporary
 and result files a are stored.  If it's not given, new directory
 with unique name is used instead.  Return name of PDF file

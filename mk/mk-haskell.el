@@ -62,6 +62,7 @@ cabal install --only-dependencies --enable-tests --enable-benchmarks")
 
 (defun mk-cabal-action (command)
   "Perform a Cabal command COMMAND.
+
 COMMAND can be one of the operations listed in
 `mk-cabal-operations'.  Completing read is used if the command is
 called interactively."

@@ -62,6 +62,7 @@
 
 (defun gnus-restore-window-config (&rest _rest)
   "Restore window configuration after exiting GNUS.
+
 Configuration is supposed to be stored in
 `gnus-saved-window-config'.  However, if it's NIL, nothing will
 be understaken to restore the configuraiton."

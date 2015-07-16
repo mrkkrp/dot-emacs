@@ -41,6 +41,7 @@
 
 (defun mk-transpose-line-down (&optional arg)
   "Move current line and cursor down.
+
 Argument ARG, if supplied, specifies how many times the operation
 should be performed."
   (interactive "p")
@@ -53,6 +54,7 @@ should be performed."
 
 (defun mk-transpose-line-up (&optional arg)
   "Move current line and cursor up.
+
 Argument ARG, if supplied, specifies how many times the operation
 should be performed."
   (interactive "p")
@@ -64,6 +66,7 @@ should be performed."
 
 (defun mk-duplicate-line (&optional arg)
   "Copy current line and yank its copy under the current line.
+
 Position of point shifts one line down.  Argument ARG, if
 supplied, specifies how many times the operation should be
 performed."
@@ -112,12 +115,13 @@ performed."
 
 (defun mk-visit-file (filename)
   "Visit specified file FILENAME.
+
 If the file does not exist, print a message about the fact, but
 don't create new empty buffer."
   (let ((filename (expand-file-name filename)))
     (if (file-exists-p filename)
         (find-file filename)
-      (message "%s does not exist." filename))))
+      (message "%s does not exist" filename))))
 
 (defun mk-double-buffer ()
   "Show currect buffer in other window and switch to that window."
@@ -133,6 +137,7 @@ don't create new empty buffer."
 
 (defun package-install-git (address)
   "Install package directly from git repository at ADDRESS.
+
 This functionality requires git installed."
   (let ((temp-dir (make-temp-file "emacs-package-" t)))
     (magit-clone address temp-dir)
@@ -168,10 +173,107 @@ This functionality requires git installed."
                 (package-delete  old-package)))))
       (message "All packages are up to date."))))
 
+;; Utility Functions
+
+(defun mk-shell-quote-arg (arg)
+  "Quote ARG for using in shell.
+
+This function is different from `shell-quote-argument' in that it
+can be used for text transformations in Yasnippet without
+backslash flood."
+  (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
+
+(defun mk-anti-ido-advice (func &rest args)
+  "Temporarily disable IDO and call function FUNC with arguments ARGS."
+  (interactive)
+  (let ((read-file-name-function #'read-file-name-default))
+    (if (called-interactively-p 'any)
+        (call-interactively func)
+      (apply func args))))
+
+(defun mk-disable-ido (command)
+  "Disable IDO when command COMMAND is called."
+  (advice-add command :around #'mk-anti-ido-advice))
+
+(defun mk-use-lang (input-method dictionary)
+  "Switch between input methods and Ispell dictionaries.
+
+Switch between given INPUT-METHOD and DICTIONARY and their defaults."
+  (if (eq current-input-method input-method)
+      (progn
+        (deactivate-input-method)
+        (ispell-change-dictionary "default"))
+    (set-input-method input-method)
+    (ispell-change-dictionary dictionary)))
+
+(defun mk-grab-input (prompt &optional initial-input add-space)
+  "Grab input from user.
+
+If there is an active region, use its contents, otherwise read
+text from the minibuffer.  PROMPT is a prompt to show,
+INITIAL-INPUT is the initial input.  If INITIAL-INPUT and
+ADD-SPACE are not NIL, add one space after the initial input."
+  (if mark-active
+      (buffer-substring (region-beginning)
+                        (region-end))
+    (read-string prompt
+                 (concat initial-input
+                         (when (and initial-input add-space) " ")))))
+
+(defmacro mk-translate-kbd (from to)
+  "Translate combinations of keys FROM to TO combination.
+
+Effect of this translation is global."
+  `(define-key key-translation-map (kbd ,from) (kbd ,to)))
+
+(defvar mk-minor-mode-alias nil
+  "Alias for minor modes.")
+
+(defvar mk-major-mode-alias nil
+  "Alias for major modes.")
+
+(defun mk-apply-mode-alias ()
+  "Use alias from `mk-minor-mode-alias' and `mk-major-mode-alias'."
+  (dolist (x mk-minor-mode-alias)
+    (let ((trg (cdr (assoc (car x) minor-mode-alist))))
+      (when trg
+        (setcar trg (cdr x)))))
+  (let ((mode-alias (cdr (assoc major-mode mk-major-mode-alias))))
+    (when mode-alias
+      (setq mode-name mode-alias))))
+
+(defun mk-find-file (regexp)
+  "Find file whose name satisfies REGEXP traversing upwards.
+
+Return absolute path to directory containing that file or NIL on
+failure."
+  (let ((dir (f-traverse-upwards
+              (lambda (path)
+                (directory-files path t regexp t))
+              (expand-file-name default-directory))))
+    (when dir
+      (file-name-as-directory dir))))
+
+(defmacro mk-with-directory-of-file (regexp &rest body)
+  "Find file with name matching REGEXP and operate in its directory.
+
+Searching for file is performed with `mk-find-file'.  If the
+function returns NIL, don't execute BODY.  Otherwise temporarily
+bind `default-directory' to directory of found file and execute
+BODY."
+  (declare (indent defun))
+  (let ((dir (cl-gensym)))
+    `(let ((,dir (mk-find-file ,regexp)))
+       (if ,dir
+           (let ((default-directory ,dir))
+             ,@body)
+         (message ,(format "Cannot find file matching %s" regexp))))))
+
 ;; Utility Commands
 
 (defun mk-switch-theme (theme)
   "Switch to theme THEME, loading it if necessary.
+
 This command disables all enabled themes before loading theme
 THEME.  This is what you usually want."
   (interactive
@@ -186,6 +288,7 @@ THEME.  This is what you usually want."
 
 (defun mk-set-font (font &optional height)
   "Set font FONT as main font for all frames.
+
 HEIGHT, if supplied, specifies height of letters to use."
   (interactive
    (list (completing-read "Use font: " (font-family-list)) nil))
@@ -196,6 +299,7 @@ HEIGHT, if supplied, specifies height of letters to use."
 
 (defun mk-show-date (&optional stamp)
   "Show current date in the minibuffer.
+
 If STAMP is not NIL, insert date at point."
   (interactive)
   (funcall (if stamp #'insert #'message)
@@ -208,6 +312,7 @@ If STAMP is not NIL, insert date at point."
 
 (defun mk-file-name-to-kill-ring (arg)
   "Put name of file into kill ring.
+
 If user's visiting a buffer that's associated with a file, use
 name of the file.  If major mode is `dired-mode', use name of
 file at point, but if point is not placed at any file, put name
@@ -229,10 +334,12 @@ makes result string be quoted as for yanking into shell."
 
 (defvar mk-search-prefix nil
   "This is an alist that contains some prefixes for online search query.
+
 Prefixes are picked up according to currect major mode.")
 
 (defun mk-search (what)
   "Search Internet for WHAT thing, with DuckDuckGo.
+
 When called interactively, it uses prefix corresponding to
 current major mode, as specified in `mk-search-prefix'."
   (interactive
@@ -257,55 +364,44 @@ current major mode, as specified in `mk-search-prefix'."
             (byte-compile-file item)
             (setq once t)))))
     (unless once
-      (message "Byte compiled init files exist and are up to date."))))
+      (message "Byte compiled init files exist and are up to date"))))
 
 (defun mk-eval-last-sexp ()
   "Evaluate last S-expression and replace it with the result."
   (interactive)
   (let ((value (eval (elisp--preceding-sexp))))
     (kill-sexp -1)
-    (insert (format "%s" value))))
+    (insert (format "%S" value))))
 
 (defun mk-make ()
   "Find makefile of current project and execute `make'."
   (interactive)
-  (let ((dir (mk-find-file "\\`[Mm]akefile\\'")))
-    (if dir
-        (compile
-         (format "cd %s ; make -k"
-                 (shell-quote-argument dir)))
-      (message "Cannot find makefile for this project."))))
+  (mk-with-directory-of-file "\\`[Mm]akefile\\'"
+    (compile "make -k")))
 
 (defun mk-install ()
   "Find `install.sh' script of current project and execute it.
+
 `sudo' is used automatically, you'll need to enter your `sudo'
 password."
   (interactive)
-  (let ((dir (mk-find-file "\\`install.sh\\'")))
-    (if dir
-        (save-window-excursion
-          (compile
-           (format "cd %s ; sudo sh install.sh"
-                   (shell-quote-argument dir))
-           t))
-      (message "Cannot find ‘install.sh’ file for this project."))))
+  (mk-with-directory-of-file "\\`install.sh\\'"
+    (save-window-excursion
+      (compile "sudo sh install.sh" t))))
 
 (defun mk-uninstall ()
   "Find `uninstall.sh' script of current project and execute it.
+
 `sudo' is used automatically, you'll need to enter your `sudo'
 password."
   (interactive)
-  (let ((dir (mk-find-file "\\`uninstall.sh\\'")))
-    (if dir
-        (save-window-excursion
-          (compile
-           (format "cd %s ; sudo sh uninstall.sh"
-                   (shell-quote-argument dir))
-           t))
-      (message "Cannot find ‘uninstall.sh’ file for this project."))))
+  (mk-with-directory-of-file "\\`uninstall.sh\\'"
+    (save-window-excursion
+      (compile "sudo sh uninstall.sh" t))))
 
 (defun mk-exit-emacs (&optional arg)
   "Exit Emacs: save all file-visiting buffers, kill terminal.
+
 If ARG is given and it's not NIL, don't ask user if he wants to
 exit."
   (interactive "P")
@@ -402,6 +498,7 @@ exit."
 
 (defun mk-abbrev-insert (&optional abbrev)
   "Read name of abbreviation ABBREV and insert it.
+
 If input is empty (or it's NIL if the function is called
 non-interactively), insert last used abbreviation or if there is
 no such abbreviation yet, do nothing.  Good when need to insert
@@ -442,80 +539,6 @@ characters, wrap them around the region."
           (backward-char 1)))
       (setf mk-abbrev-last abbrev))))
 
-;; Utility Functions
-
-(defun mk-shell-quote-arg (arg)
-  "Quote ARG for using in shell.
-This function is different from `shell-quote-argument' in that it
-can be used for text transformations in Yasnippet without
-backslash flood."
-  (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
-
-(defun mk-anti-ido-advice (func &rest args)
-  "Temporarily disable IDO and call function FUNC with arguments ARGS."
-  (interactive)
-  (let ((read-file-name-function #'read-file-name-default))
-    (if (called-interactively-p 'any)
-        (call-interactively func)
-      (apply func args))))
-
-(defun mk-disable-ido (command)
-  "Disable IDO when command COMMAND is called."
-  (advice-add command :around #'mk-anti-ido-advice))
-
-(defun mk-use-lang (input-method dictionary)
-  "Switch between input methods and Ispell dictionaries.
-Switch between given INPUT-METHOD and DICTIONARY and their defaults."
-  (if (eq current-input-method input-method)
-      (progn
-        (deactivate-input-method)
-        (ispell-change-dictionary "default"))
-    (set-input-method input-method)
-    (ispell-change-dictionary dictionary)))
-
-(defun mk-grab-input (prompt &optional initial-input add-space)
-  "Grab input from user.
-If there is an active region, use its contents, otherwise read
-text from the minibuffer.  PROMPT is a prompt to show,
-INITIAL-INPUT is the initial input.  If INITIAL-INPUT and
-ADD-SPACE are not NIL, add one space after the initial input."
-  (if mark-active
-      (buffer-substring (region-beginning)
-                        (region-end))
-    (read-string prompt
-                 (concat initial-input
-                         (when (and initial-input add-space) " ")))))
-
-(defmacro mk-translate-kbd (from to)
-  "Translate combinations of keys FROM to TO combination.
-Effect of this translation is global."
-  `(define-key key-translation-map (kbd ,from) (kbd ,to)))
-
-(defvar mk-minor-mode-alias nil
-  "Alias for minor modes.")
-
-(defvar mk-major-mode-alias nil
-  "Alias for major modes.")
-
-(defun mk-apply-mode-alias ()
-  "Use alias from `mk-minor-mode-alias' and `mk-major-mode-alias'."
-  (dolist (x mk-minor-mode-alias)
-    (let ((trg (cdr (assoc (car x) minor-mode-alist))))
-      (when trg
-        (setcar trg (cdr x)))))
-  (let ((mode-alias (cdr (assoc major-mode mk-major-mode-alias))))
-    (when mode-alias
-      (setq mode-name mode-alias))))
-
-(defun mk-find-file (regexp)
-  "Find file whose name satisfies REGEXP traversing upwards.
-Return absolute path to directory containing that file or NIL on
-failure."
-  (f-traverse-upwards
-   (lambda (path)
-     (directory-files path t regexp t))
-   (expand-file-name default-directory)))
-
 ;; My little helpers from Greece…
 
 (defmacro σ (&rest args)
@@ -524,8 +547,7 @@ failure."
      (list ,@args)))
 
 (defmacro ε (fnc &rest args)
-  "Interactively invoke function FNC with arguments ARGS.
-Kind of partial application."
+  "Interactively invoke function FNC with arguments ARGS."
   `(lambda (&rest rest)
      (interactive)
      (apply ,fnc ,@args rest)))
