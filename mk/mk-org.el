@@ -28,14 +28,9 @@
 
 (require 'mk-utils)
 
-(defun org-files ()
-  "Return list of all org files."
-  (let ((org-dir (expand-file-name "org" user-emacs-directory)))
-    (when (file-exists-p org-dir)
-      (directory-files org-dir t "\\`.*\\.org\\'"))))
-
 (setq
- org-agenda-files          (org-files)
+ org-agenda-files
+ (f-glob "*.org" (f-expand "org" user-emacs-directory))
  org-catch-invisible-edits 'show ; make point visible
  org-completion-use-ido    t)
 

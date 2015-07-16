@@ -86,12 +86,14 @@
 
 ;; Set up directories.
 
-(defvar mk-dir (expand-file-name "mk" user-emacs-directory)
+(require 'f)
+
+(defvar mk-dir (f-expand "mk" user-emacs-directory)
   "This is directory where all the configuration files are kept.")
 
 (add-to-list 'load-path mk-dir)
 
-(setq custom-file (expand-file-name ".emacs-custom.el" user-emacs-directory))
+(setq custom-file (f-expand ".emacs-custom.el" user-emacs-directory))
 
 ;; Now we should be able to install directly from git repositories.
 

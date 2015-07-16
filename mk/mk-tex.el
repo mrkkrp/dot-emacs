@@ -37,9 +37,9 @@ with unique name is used instead.  Return name of PDF file
 produced."
   (let* ((output-dir (or output-dir (make-temp-file "pdflatex" t)))
          (buffer-file-name (buffer-file-name))
-         (output-pdf (concat (file-name-as-directory output-dir)
-                             (file-name-base buffer-file-name)
-                             ".pdf")))
+         (output-pdf (f-join output-dir
+                             (f-swap-ext (f-base buffer-file-name)
+                                         "pdf"))))
     (if (not buffer-file-name)
         (error "Must be visiting a file")
       (save-window-excursion

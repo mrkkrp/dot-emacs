@@ -38,9 +38,7 @@ of the buffer."
   (let ((output-buffer-name (or output-buffer-name
                                 texinfo-html-output-buffer-name))
         (buffer-file-name (buffer-file-name))
-        (css-file (car (directory-files default-directory
-                                        t
-                                        "\\`.*\\.css\\'"))))
+        (css-file (car (f-glob "*.css" default-directory))))
     (if (not buffer-file-name)
         (error "Must be visiting a file")
       (save-window-excursion

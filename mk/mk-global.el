@@ -37,7 +37,7 @@
  avy-style                         'at-full ; can't use the default
  backup-by-copying                t
  backup-directory-alist
- (list (cons "." (expand-file-name "backups" user-emacs-directory)))
+ (list (cons "." (f-expand "backups" user-emacs-directory)))
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  compilation-read-command         nil
@@ -235,7 +235,7 @@
 (advice-add 'narrow-to-region :after (η #'keyboard-quit))
 (advice-add 'package-install  :filter-args (lambda (args) (list (car args) t)))
 (advice-add 'process-kill-buffer-query-function :override (σ t))
-(advice-add 'revert-buffer     :filter-args (σ nil t))
+(advice-add 'revert-buffer    :filter-args (σ nil t))
 
 (provide 'mk-global)
 

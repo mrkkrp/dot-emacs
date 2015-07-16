@@ -66,8 +66,7 @@
 
 (defun mk-dired-open-external (file)
   "Open specified FILE with application determined by the OS."
-  (interactive
-   (list (dired-get-filename)))
+  (interactive (list (dired-get-filename)))
   (call-process "xdg-open" nil 0 nil file))
 
 (defun mk-image-dired-show-current ()

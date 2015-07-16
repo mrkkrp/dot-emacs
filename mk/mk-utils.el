@@ -34,7 +34,7 @@
 (require 'f)
 (require 'subr-x)
 
-(defvar mk-dir (expand-file-name "mk" user-emacs-directory)
+(defvar mk-dir (f-expand "mk" user-emacs-directory)
   "This is directory where all the configuration files are kept.")
 
 ;; Text Editing
@@ -118,8 +118,8 @@ performed."
 
 If the file does not exist, print a message about the fact, but
 don't create new empty buffer."
-  (let ((filename (expand-file-name filename)))
-    (if (file-exists-p filename)
+  (let ((filename (f-full filename)))
+    (if (f-exists? filename)
         (find-file filename)
       (message "%s does not exist" filename))))
 
@@ -250,9 +250,9 @@ failure."
   (let ((dir (f-traverse-upwards
               (lambda (path)
                 (directory-files path t regexp t))
-              (expand-file-name default-directory))))
+              (f-full default-directory))))
     (when dir
-      (file-name-as-directory dir))))
+      (f-slash dir))))
 
 (defmacro mk-with-directory-of-file (regexp &rest body)
   "Find file with name matching REGEXP and operate in its directory.
@@ -308,7 +308,7 @@ If STAMP is not NIL, insert date at point."
 (defun mk-show-default-dir ()
   "Show default directory in the minibuffer."
   (interactive)
-  (message (expand-file-name default-directory)))
+  (message (f-full default-directory)))
 
 (defun mk-file-name-to-kill-ring (arg)
   "Put name of file into kill ring.
@@ -356,10 +356,10 @@ current major mode, as specified in `mk-search-prefix'."
   (interactive)
   (let (once)
     (save-window-excursion
-      (dolist (item (cons user-init-file
+      (dolist (item (cons (f-full user-init-file)
                           (directory-files mk-dir t "\\`[^#].*\\.el\\'" t)))
         (let ((compiled (byte-compile-dest-file item)))
-          (when (or (not (file-exists-p compiled))
+          (when (or (not (f-file? compiled))
                     (file-newer-than-file-p item compiled))
             (byte-compile-file item)
             (setq once t)))))
