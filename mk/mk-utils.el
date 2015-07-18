@@ -173,7 +173,7 @@ This functionality requires git installed."
                                              package-alist))))
                 (package-install package-desc)
                 (package-delete  old-package)))))
-      (message "All packages are up to date."))))
+      (message "All packages are up to date"))))
 
 ;; Utility Functions
 
