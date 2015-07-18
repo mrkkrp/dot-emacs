@@ -50,6 +50,7 @@
    ghc                  ; Improve Haskell REPL experience
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode
+   highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    ido-hacks            ; Put more IDO in your IDO
@@ -58,6 +59,7 @@
    kill-or-bury-alive   ; Precise control over buffer killing in Emacs
    magit                ; A Git porcelain inside Emacs
    markdown-mode        ; Major mode for Markdown-formatted text files
+   mk-abbrev            ; Peculiar way to use Emacs abbrevs
    multiple-cursors     ; Multiple cursors for Emacs
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
@@ -81,7 +83,8 @@
   (package-refresh-contents))
 
 (dolist (package package-selected-packages)
-  (unless (package-installed-p package)
+  (when (and (assq package package-archive-contents)
+             (not (package-installed-p package)))
     (package-install package t)))
 
 ;; Set up directories.
