@@ -88,6 +88,7 @@
 (mk-translate-kbd "C-c o"         "C-c C-o")
 (mk-translate-kbd "C-c v"         "C-c C-v")
 (mk-translate-kbd "C-x ;"         "C-x C-;")
+(mk-translate-kbd "C-x C-b"       "C-x b")
 (mk-translate-kbd "C-x o"         "C-x C-o")
 
 ;; Global Key Map
