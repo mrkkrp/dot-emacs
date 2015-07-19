@@ -378,7 +378,7 @@ current major mode, as specified in `mk-search-prefix'."
 (defun mk-make ()
   "Find makefile of current project and execute `make'."
   (interactive)
-  (mk-with-directory-of-file "\\`[Mm]akefile\\'"
+  (mk-with-directory-of-file "^[Mm]akefile$"
     (compile "make -k")))
 
 (defun mk-install ()
@@ -387,7 +387,7 @@ current major mode, as specified in `mk-search-prefix'."
 `sudo' is used automatically, you'll need to enter your `sudo'
 password."
   (interactive)
-  (mk-with-directory-of-file "\\`install.sh\\'"
+  (mk-with-directory-of-file "^install.sh$"
     (save-window-excursion
       (compile "sudo sh install.sh" t))))
 
@@ -397,7 +397,7 @@ password."
 `sudo' is used automatically, you'll need to enter your `sudo'
 password."
   (interactive)
-  (mk-with-directory-of-file "\\`uninstall.sh\\'"
+  (mk-with-directory-of-file "^uninstall.sh$"
     (save-window-excursion
       (compile "sudo sh uninstall.sh" t))))
 
