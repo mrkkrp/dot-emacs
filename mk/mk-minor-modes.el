@@ -121,7 +121,8 @@
 (τ smartparens smartparens "M-f"           #'sp-forward-sexp)
 (τ smartparens smartparens "M-k"           #'sp-kill-hybrid-sexp)
 
-(advice-add 'sp-add-to-previous-sexp :after #'sp-forward-sexp)
+(advice-add 'sp-add-to-previous-sexp :after (η #'just-one-space))
+(advice-add 'sp-add-to-previous-sexp :after (η #'sp-forward-sexp))
 
 (defun mk-prepare-text-mode ()
   "Enable some minor mode for plain text editing."
