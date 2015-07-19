@@ -102,6 +102,7 @@
 (π "C-c s"      #'mk-search)
 (π "C-c t"      (ε #'mk-visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
+(π "C-x k"      #'kill-or-bury-alive)
 (π "C-x o"      #'ace-window)
 (π "C-z"        #'mk-copy-rest-of-line)
 (π "M-c"        #'fix-word-capitalize)
