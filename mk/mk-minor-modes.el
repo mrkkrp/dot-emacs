@@ -114,12 +114,12 @@
 (τ flyspell flyspell "C-;" #'flyspell-correct-word-before-point)
 
 (τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
-(τ smartparens smartparens "<menu> 2"      #'sp-select-next-thing)
-(τ smartparens smartparens "<menu> 4"      #'sp-add-to-previous-sexp)
 (τ smartparens smartparens "M-b"           #'sp-backward-sexp)
 (τ smartparens smartparens "M-d"           #'sp-kill-sexp)
 (τ smartparens smartparens "M-f"           #'sp-forward-sexp)
+(τ smartparens smartparens "M-g"           #'sp-select-next-thing)
 (τ smartparens smartparens "M-k"           #'sp-kill-hybrid-sexp)
+(τ smartparens smartparens "M-t"           #'sp-add-to-previous-sexp)
 
 (advice-add 'sp-add-to-previous-sexp :after (η #'just-one-space))
 (advice-add 'sp-add-to-previous-sexp :after (η #'sp-forward-sexp))

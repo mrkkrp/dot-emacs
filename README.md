@@ -217,6 +217,7 @@ Shortcut            | Description
 <kbd>C-z</kbd>      | copy rest of the line
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
+<kbd>M-g</kbd>      | mark word
 <kbd>M-j</kbd>      | join the next line and the current one
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-n</kbd>      | transpose line down
@@ -243,8 +244,6 @@ Shortcut            | Description
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | rectangular selection
-<kbd>menu 2</kbd>   | mark word
-<kbd>menu 5</kbd>   | mark paragraph
 <kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a g</kbd> | toggle aggressive indent mode
 <kbd>menu a p</kbd> | apropos
@@ -346,12 +345,12 @@ Shortcut            | Description
 <kbd>C-c C-l</kbd>  | Texinfo: export
 <kbd>C-c C-v</kbd>  | Texinfo: preview
 <kbd>C-backspace</kbd> | Smartparens: backward kill S-expression
-<kbd>menu 2</kbd>   | Smartparens: select thing S-expression
-<kbd>menu 4</kbd>   | Smartparens: add to previous S-expression
-<kbd>M-d</kbd>      | Smartparens: kill S-expression
-<kbd>M-k</kbd>      | Smartparens: hybrid kill
-<kbd>M-f</kbd>      | Smartparens: forward S-expression
 <kbd>M-b</kbd>      | Smartparens: backward S-expression
+<kbd>M-d</kbd>      | Smartparens: kill S-expression
+<kbd>M-f</kbd>      | Smartparens: forward S-expression
+<kbd>M-g</kbd>      | Smartparens: select next S-expression
+<kbd>M-k</kbd>      | Smartparens: hybrid kill
+<kbd>M-t</kbd>      | Smartparens: add to previous S-expression
 
 ## Keyboard Layouts and Abbreviations
 
