@@ -26,7 +26,8 @@
 (eval-when-compile
   (require 'magit))
 
-(setq magit-completing-read-function #'magit-ido-completing-read)
+(setq magit-completing-read-function #'magit-ido-completing-read
+      magit-push-always-verify       nil)
 
 (provide 'mk-magit)
 
