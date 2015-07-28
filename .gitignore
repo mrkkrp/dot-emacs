@@ -15,3 +15,4 @@ init.elc*
 network-security.data
 org/
 smex-items
+tramp
