@@ -47,6 +47,8 @@
 
 (τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
+(τ haskell          interactive-haskell "M-n"     #'mk-transpose-line-down)
+(τ haskell          interactive-haskell "M-p"     #'mk-transpose-line-up)
 (τ haskell-cabal    haskell-cabal       "C-c h"   #'haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "M-n"     #'mk-transpose-line-down)
 (τ haskell-cabal    haskell-cabal       "M-p"     #'mk-transpose-line-up)
