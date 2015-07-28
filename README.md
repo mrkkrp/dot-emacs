@@ -37,6 +37,7 @@ Package/Repo | Source | Description
 [buffer-move](https://github.com/lukhas/buffer-move) | [![MELPA](http://melpa.org/packages/buffer-move-badge.svg)](http://melpa.org/#/buffer-move) | Move buffers easily
 [cider](https://github.com/clojure-emacs/cider) | [![MELPA](http://melpa.org/packages/cider-badge.svg)](http://melpa.org/#/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | [![MELPA](http://melpa.org/packages/common-lisp-snippets-badge.svg)](http://melpa.org/#/common-lisp-snippets) | Yasnippets for Common Lisp
+[ebal](https://github.com/mrkkrp/ebal) † | [![MELPA](http://melpa.org/packages/ebal-badge.svg)](http://melpa.org/#/ebal) | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | [![MELPA](http://melpa.org/packages/f-badge.svg)](http://melpa.org/#/f) | Modern API for working with files and dirs
 [fix-word](https://github.com/mrkkrp/fix-word) † | [![MELPA](http://melpa.org/packages/fix-word-badge.svg)](http://melpa.org/#/fix-word) | Convenient word transformation
 [flycheck](https://github.com/flycheck/flycheck) | [![MELPA](http://melpa.org/packages/flycheck-badge.svg)](http://melpa.org/#/flycheck) | On-the-fly syntax checking
@@ -279,7 +280,8 @@ Shortcut            | Description
 <kbd>menu g n</kbd> | GNUS
 <kbd>menu g r</kbd> | recursive grep
 <kbd>menu h a</kbd> | highlight symbol: remove all
-<kbd>menu h e</kbd> | hexl mode
+<kbd>menu h e</kbd> | Ebal: execute
+<kbd>menu h i</kbd> | Ebal: init
 <kbd>menu h r</kbd> | split window (horizontal)
 <kbd>menu h s</kbd> | highlight symbol
 <kbd>menu i r</kbd> | indent region

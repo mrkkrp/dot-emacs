@@ -45,49 +45,8 @@
 (add-to-list 'mk-search-prefix    '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix    '(haskell-mode             . "haskell"))
 
-(defvar mk-cabal-operations
-  '((build          . "cabal build")
-    (check          . "cabal check")
-    (clean          . "cabal clean")
-    (configure      . "cabal configure --enable-tests --enable-benchmarks")
-    (init           . "cabal init")
-    (install        . "cabal update ; \
-cabal install --only-dependencies --enable-tests --enable-benchmarks")
-    (run            . "cabal run")
-    (sandbox-delete . "cabal sandbox delete")
-    (sandbox-init   . "cabal sandbox init")
-    (sdist          . "cabal sdist")
-    (test           . "cabal test --test-option=\"--maximum-test-size=50\""))
-  "Collection of operations supported by `mk-cabal-action'.")
-
-(defun mk-cabal-action (command)
-  "Perform a Cabal command COMMAND.
-
-COMMAND can be one of the operations listed in
-`mk-cabal-operations'.  Completing read is used if the command is
-called interactively."
-  (interactive
-   (list
-    (intern
-     (completing-read
-      "Cabal operation: "
-      (mapcar (lambda (x) (symbol-name (car x)))
-              mk-cabal-operations)
-      nil
-      t))))
-  (let ((dir (mk-find-file "\\`.+\\.cabal\\'")))
-    (if dir
-        (compile
-         (format "cd %s ; %s"
-                 dir
-                 (cdr (assoc command mk-cabal-operations))))
-      (message "Please create ‘.cabal’ file for the project."))))
-
-(τ haskell          haskell-interactive "C-c C-c" #'mk-cabal-action)
 (τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
-(τ haskell          interactive-haskell "C-c C-c" #'mk-cabal-action)
-(τ haskell-cabal    haskell-cabal       "C-c C-c" #'mk-cabal-action)
 (τ haskell-cabal    haskell-cabal       "C-c h"   #'haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "M-n"     #'mk-transpose-line-down)
 (τ haskell-cabal    haskell-cabal       "M-p"     #'mk-transpose-line-up)
