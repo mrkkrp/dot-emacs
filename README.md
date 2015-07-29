@@ -245,6 +245,7 @@ Shortcut            | Description
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | rectangular selection
+<kbd>menu - -</kbd> | center line
 <kbd>menu SPC</kbd> | special insertion of abbreviation
 <kbd>menu a g</kbd> | toggle aggressive indent mode
 <kbd>menu a p</kbd> | apropos

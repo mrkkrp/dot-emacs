@@ -137,6 +137,7 @@
 (π "<menu> ,"   #'beginning-of-buffer)
 (π "<menu> ."   #'end-of-buffer)
 (π "<menu> /"   #'rectangle-mark-mode)
+(π "<menu> - -" #'center-line)
 (π "<menu> SPC" #'mk-abbrev-insert)
 (π "<menu> a g" #'aggressive-indent-mode)
 (π "<menu> a p" #'apropos)
