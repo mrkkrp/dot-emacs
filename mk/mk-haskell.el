@@ -42,6 +42,7 @@
 (add-to-list 'mk-minor-mode-alias '(haskell-indent-mode      . ""))
 (add-to-list 'mk-minor-mode-alias '(inf-haskell-mode         . ""))
 (add-to-list 'mk-minor-mode-alias '(interactive-haskell-mode . ""))
+(add-to-list 'mk-search-prefix    '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix    '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix    '(haskell-mode             . "haskell"))
 
