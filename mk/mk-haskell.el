@@ -61,8 +61,6 @@
 (add-hook 'haskell-mode-hook  #'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook  #'turn-on-haskell-indent)
 
-(advice-add 'haskell-session-new-assume-from-cabal :override (lambda ()))
-
 (provide 'mk-haskell)
 
 ;;; mk-haskell.el ends here
