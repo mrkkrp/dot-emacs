@@ -70,6 +70,7 @@
    solarized-theme      ; The Solarized color theme
    visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
+   yaml-mode            ; Major mode for editing YAML serialization format
    yasnippet            ; Yet another snippet extension for Emacs
    zygospore))          ; Reversible version of `delete-other-windows'
 
