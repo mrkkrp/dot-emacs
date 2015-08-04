@@ -31,8 +31,9 @@
 (require 'mk-utils)
 
 (setq
- haskell-ask-also-kill-buffers   nil  ; don't ask
- haskell-process-show-debug-tips nil) ; don't show anything
+ haskell-ask-also-kill-buffers         nil  ; don't ask
+ haskell-process-load-or-reload-prompt t    ; please ask
+ haskell-process-show-debug-tips       nil) ; don't show anything
 
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-cabal-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-interactive-mode)
