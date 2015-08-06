@@ -29,7 +29,9 @@
 
 (require 'mk-utils)
 
-(setq-default python-indent-offset 4)
+(setq-default
+ python-fill-docstring-style 'django
+ python-indent-offset        4)
 
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
