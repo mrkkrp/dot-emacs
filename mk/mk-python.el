@@ -65,6 +65,31 @@
   (comint-send-string (python-shell-get-process)
                       "%reset\ny\n"))
 
+(defun mk-python-setup-django (shell &rest args)
+  "Run Python shell via SHELL with arguments ARGS.
+
+This sets DJANGO_SETTINGS_MODULE environment variable
+automatically and calls the shell from appropriate directory
+automatically."
+  (let ((django-dir (mk-find-file "^manage.py$")))
+    (if django-dir
+        (let* ((default-directory django-dir)
+               (manage (f-expand "manage.py"))
+               (settings-module
+                (with-temp-buffer
+                  (insert-file-contents manage)
+                  (re-search-forward
+                   "os\\.environ\\.setdefault(\"DJANGO_SETTINGS_MODULE\", \"\\(.+\\)\")"
+                   nil t)
+                  (match-string-no-properties 1))))
+          (setenv "DJANGO_SETTINGS_MODULE" settings-module)
+          (apply shell args)
+          (comint-send-string
+           (python-shell-get-process)
+           "import django\ndjango.setup()\n"))
+      (apply shell args)
+      (message "Started plain Python shell"))))
+
 (τ python inferior-python "C-c h"   #'mk-python-docs)
 (τ python inferior-python "C-c r"   #'ipython-reset)
 (τ python python          "C-c C-c" #'python-shell-send-defun)
@@ -74,6 +99,7 @@
 (advice-add 'python-shell-send-buffer :before #'python-shell-ensure-proc)
 (advice-add 'python-shell-send-defun  :before #'python-shell-ensure-proc)
 (advice-add 'run-python               :after  (η #'python-shell-switch-to-shell))
+(advice-add 'run-python               :around #'mk-python-setup-django)
 
 (provide 'mk-python)
 
