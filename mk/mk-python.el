@@ -67,6 +67,15 @@
   (comint-send-string (python-shell-get-process)
                       "%reset\ny\n"))
 
+(defun mk-python-run-dev-server ()
+  "Run development server for current Django project."
+  (interactive)
+  (mk-with-directory-of-file "^manage.py$"
+    (let ((compilation-buffer-name-function
+           (lambda (_major-mode)
+             (format "*%s-server*" (f-filename default-directory)))))
+      (compile "python manage.py runserver" t))))
+
 (defun mk-python-setup-django (shell &rest args)
   "Run Python shell via SHELL with arguments ARGS.
 
