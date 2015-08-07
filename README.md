@@ -67,6 +67,7 @@ Package/Repo | Source | Description
 [yaml-mode](https://github.com/yoshiki/yaml-mode) | [![MELPA](http://melpa.org/packages/yaml-mode-badge.svg)](http://melpa.org/#/yaml-mode) | Major mode for editing YAML serialization format
 [yasnippet](https://github.com/capitaomorte/yasnippet) | [![MELPA](http://melpa.org/packages/yasnippet-badge.svg)](http://melpa.org/#/yasnippet) | Yet another snippet extension for Emacs
 [zygospore](https://github.com/louiskottmann/zygospore.el) | [![MELPA](http://melpa.org/packages/zygospore-badge.svg)](http://melpa.org/#/zygospore) | Reversible version of `delete-other-windows`
+[ztree](https://github.com/fourier/ztree) | [![MELPA](http://melpa.org/packages/ztree-badge.svg)](http://melpa.org/#/ztree) | Show directory structure as a tree
 
 † These packages I wrote myself, I can't be sure, but it seems like other
   people find them useful too.
@@ -342,7 +343,8 @@ Shortcut            | Description
 <kbd>b</kbd>        | Dired: up directory
 <kbd>e</kbd>        | Dired: open with external application
 <kbd>i</kbd>        | Dired: show images in current directory
-<kbd>z</kbd>        | Dired: change to WDired mode
+<kbd>w</kbd>        | Dired: change to WDired mode
+<kbd>z</kbd>        | Dired: show directory as a tree
 <kbd>C-c C-l</kbd>  | Markdown: export
 <kbd>C-c C-v</kbd>  | Markdown: preview
 <kbd>C-c C-l</kbd>  | TeX: export to PDF
