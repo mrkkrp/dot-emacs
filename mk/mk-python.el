@@ -61,6 +61,13 @@
            (url-hexify-string symbol)
            "&check_keywords=yes&area=default")))
 
+(defun mk-django-docs (symbol)
+  "Find documentation for given symbol SYMBOL online."
+  (interactive (list (mk-grab-input "Django Docs: ")))
+  (browse-url
+   (concat "https://docs.djangoproject.com/en/1.8/search/?q="
+           (url-hexify-string symbol))))
+
 (defun ipython-reset ()
   "Reset iPython shell."
   (interactive)
@@ -102,10 +109,12 @@ automatically."
       (message "Started plain Python shell"))))
 
 (τ python inferior-python "C-c h"   #'mk-python-docs)
+(τ python inferior-python "C-c i"   #'mk-django-docs)
 (τ python inferior-python "C-c r"   #'ipython-reset)
 (τ python python          "C-c C-c" #'python-shell-send-defun)
 (τ python python          "C-c C-l" #'python-shell-send-buffer)
 (τ python python          "C-c h"   #'mk-python-docs)
+(τ python python          "C-c i"   #'mk-django-docs)
 
 (advice-add 'python-shell-send-buffer :before #'python-shell-ensure-proc)
 (advice-add 'python-shell-send-defun  :before #'python-shell-ensure-proc)
