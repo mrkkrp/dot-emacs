@@ -41,7 +41,7 @@
 (add-to-list 'mk-major-mode-alias '(haskell-interactive-mode . "iH"))
 (add-to-list 'mk-major-mode-alias '(haskell-mode             . "H"))
 (add-to-list 'mk-minor-mode-alias '(haskell-doc-mode         . ""))
-(add-to-list 'mk-minor-mode-alias '(haskell-indent-mode      . ""))
+(add-to-list 'mk-minor-mode-alias '(haskell-indentation-mode . ""))
 (add-to-list 'mk-minor-mode-alias '(inf-haskell-mode         . ""))
 (add-to-list 'mk-minor-mode-alias '(interactive-haskell-mode . ""))
 (add-to-list 'mk-search-prefix    '(haskell-cabal-mode       . "haskell"))
@@ -61,8 +61,8 @@
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
-(add-hook 'haskell-mode-hook  #'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook  #'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook  #'haskell-doc-mode)
+(add-hook 'haskell-mode-hook  #'haskell-indentation-mode)
 
 (provide 'mk-haskell)
 
