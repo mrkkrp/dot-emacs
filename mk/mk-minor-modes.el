@@ -51,6 +51,7 @@
                                      " ×" " ✔" " ⊥" " ⊥" " ↯" "\n→ " "")
  ido-vertical-define-keys          'C-n-and-C-p-only
  ispell-dictionary                 "en"    ; default dictionary
+ show-paren-delay                  0.05
  sp-highlight-pair-overlay         nil
  sp-highlight-wrap-overlay         nil
  sp-highlight-wrap-tag-overlay     nil

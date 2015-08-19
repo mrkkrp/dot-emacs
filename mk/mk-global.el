@@ -38,6 +38,8 @@
  backup-by-copying                t
  backup-directory-alist
  (list (cons "." (f-expand "backups" user-emacs-directory)))
+ blink-matching-delay             0.5
+ blink-matching-paren             'jump-offscreen
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  compilation-read-command         nil
