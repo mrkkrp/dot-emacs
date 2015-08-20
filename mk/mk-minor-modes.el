@@ -29,6 +29,7 @@
   (require 'multiple-cursors)
   (require 'smartparens))
 
+(require 'cl-lib)
 (require 'mk-utils)
 (require 'smartparens-config)
 
@@ -112,7 +113,32 @@
    (whole-line-or-region-mode    . "")
    (yas-minor-mode               . "")))
 
-(τ flyspell flyspell "C-;" #'flyspell-correct-word-before-point)
+(defun flyspell-correct-previous (&optional words)
+  "Correct word before point, reach distant words.
+
+WORDS words at maximum are traversed backward until misspelled
+word is found.  If it's not found, give up.  If argument WORDS is
+not specified, traverse 12 words by default.
+
+Return T if misspelled word is found and NIL otherwise.  Never
+move point."
+  (interactive "P")
+  (let* ((Δ (- (point-max) (point)))
+         (counter (string-to-number (or words "12")))
+         (result
+          (catch 'result
+            (while (>= counter 0)
+              (when (cl-some #'flyspell-overlay-p
+                             (overlays-at (point)))
+                (flyspell-correct-word-before-point)
+                (throw 'result t))
+              (backward-word 1)
+              (setq counter (1- counter))
+              nil))))
+    (goto-char (- (point-max) Δ))
+    result))
+
+(τ flyspell flyspell "C-;" #'flyspell-correct-previous)
 
 (τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
 (τ smartparens smartparens "M-b"           #'sp-backward-sexp)

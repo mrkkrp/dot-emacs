@@ -207,6 +207,7 @@ convenient! Try it!
 Shortcut            | Description
 --------            | -----------
 <kbd>C-'</kbd>      | switch to other buffer
+<kbd>C-;</kbd>      | correct previous misspelled word (long reaching)
 <kbd>C-c C-o</kbd>  | find file at point (work for URLs too)
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c b</kbd>    | byte compile initialization files
