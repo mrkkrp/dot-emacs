@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Language (StackExchange)
+# key: lang
+# --
+<!-- language-all: ${1:lang-el} -->
+$0
