@@ -72,6 +72,7 @@
    whole-line-or-region ; Operate on current line if region undefined
    yaml-mode            ; Major mode for editing YAML serialization format
    yasnippet            ; Yet another snippet extension for Emacs
+   zop-to-char          ; A visual `zap-to-char' command for Emacs
    ztree                ; Show directory structure as a tree
    zygospore))          ; Reversible version of `delete-other-windows'
 

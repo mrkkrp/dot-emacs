@@ -66,8 +66,9 @@ Package/Repo | Source | Description
 [whole-line-or-region](https://github.com/purcell/whole-line-or-region) | [![MELPA](http://melpa.org/packages/whole-line-or-region-badge.svg)](http://melpa.org/#/whole-line-or-region) | Operate on current line if region undefined
 [yaml-mode](https://github.com/yoshiki/yaml-mode) | [![MELPA](http://melpa.org/packages/yaml-mode-badge.svg)](http://melpa.org/#/yaml-mode) | Major mode for editing YAML serialization format
 [yasnippet](https://github.com/capitaomorte/yasnippet) | [![MELPA](http://melpa.org/packages/yasnippet-badge.svg)](http://melpa.org/#/yasnippet) | Yet another snippet extension for Emacs
-[zygospore](https://github.com/louiskottmann/zygospore.el) | [![MELPA](http://melpa.org/packages/zygospore-badge.svg)](http://melpa.org/#/zygospore) | Reversible version of `delete-other-windows`
+[zop-to-char](https://github.com/thierryvolpiatto/zop-to-char) | [![MELPA](http://melpa.org/packages/zop-to-char-badge.svg)](http://melpa.org/#/zop-to-char) | A visual `zap-to-char` command for Emacs
 [ztree](https://github.com/fourier/ztree) | [![MELPA](http://melpa.org/packages/ztree-badge.svg)](http://melpa.org/#/ztree) | Show directory structure as a tree
+[zygospore](https://github.com/louiskottmann/zygospore.el) | [![MELPA](http://melpa.org/packages/zygospore-badge.svg)](http://melpa.org/#/zygospore) | Reversible version of `delete-other-windows`
 
 † These packages I wrote myself, I can't be sure, but it seems like other
   people find them useful too.
@@ -229,6 +230,7 @@ Shortcut            | Description
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-r</kbd>      | duplicate line
 <kbd>M-u</kbd>      | fix word: upcase
+<kbd>M-z</kbd>      | zop up to char
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
 <kbd>F6</kbd>       | find file in other window (also Dired)

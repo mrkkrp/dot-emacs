@@ -72,7 +72,9 @@
  tab-width                        4 ; tab width for text-mode
  user-full-name                   "Mark Karpov"
  user-mail-address                "markkarpov@openmailbox.org"
- version-control                  t) ; make numeric backups unconditionally
+ version-control                  t ; make numeric backups unconditionally
+ zop-to-char-erase-keys           '(?\d)
+ zop-to-char-kill-keys            '(?\C-d ?\C-k ?\C-w))
 
 (put 'erase-buffer     'disabled nil) ; don't ever question my power
 (put 'narrow-to-region 'disabled nil) ; ^
@@ -119,7 +121,7 @@
 (π "M-r"        #'mk-duplicate-line)
 (π "M-u"        #'fix-word-upcase)
 (π "M-x"        #'smex)
-(π "M-z"        #'zap-up-to-char)
+(π "M-z"        #'zop-up-to-char)
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
