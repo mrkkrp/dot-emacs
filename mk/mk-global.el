@@ -34,7 +34,7 @@
 (setq-default
  apropos-do-all                   t ; more extensive search
  auto-save-default                nil ; don't ever create autosaves
- avy-style                         'at-full ; can't use the default
+ avy-style                        'at-full ; can't use the default
  backup-by-copying                t
  backup-directory-alist
  (list (cons "." (f-expand "backups" user-emacs-directory)))

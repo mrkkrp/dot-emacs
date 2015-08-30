@@ -68,7 +68,7 @@
 (global-aggressive-indent-mode    1) ; turn aggressive indent on globally
 (global-auto-revert-mode          1) ; revert buffers automatically
 (highlight-line-mode              1) ; highlight lines in list-like buffers
-(ido-mode                         1) ; ido for switch-buffer and find-file
+(ido-mode                         1) ; ido for `switch-buffer' and `find-file'
 (ido-ubiquitous-mode              1) ; use IDO everywhere
 (ido-vertical-mode                1) ; display IDO vertically
 (menu-bar-mode                    0) ; hide menu bar
