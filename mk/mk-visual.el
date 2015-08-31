@@ -23,11 +23,16 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'smart-mode-line))
+
 (require 'mk-utils)
 
 (when window-system
   (mk-set-font "DejaVu Sans Mono" 105)
   (load-theme 'solarized-dark t)
+  (let ((sml/no-confirm-load-theme t))
+    (sml/setup))
   (toggle-frame-fullscreen))
 
 (provide 'mk-visual)

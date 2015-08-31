@@ -59,6 +59,7 @@ Package/Repo | Source | Description
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
 [slime](https://github.com/slime/slime) | [![MELPA](http://melpa.org/packages/slime-badge.svg)](http://melpa.org/#/slime) | Superior Lisp Interaction Mode for Emacs
+[smart-mode-line](https://github.com/Malabarba/smart-mode-line) | [![MELPA](http://melpa.org/packages/smart-mode-line-badge.svg)](http://melpa.org/#/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | [![MELPA](http://melpa.org/packages/smartparens-badge.svg)](http://melpa.org/#/smartparens) | Tricks for working with all kinds of parenthesis
 [smex](https://github.com/nonsequitur/smex) | [![MELPA](http://melpa.org/packages/smex-badge.svg)](http://melpa.org/#/smex) | M-x interface with IDO-style fuzzy matching
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | [![MELPA](http://melpa.org/packages/solarized-theme-badge.svg)](http://melpa.org/#/solarized-theme) | The Solarized color theme
@@ -95,9 +96,7 @@ hacking):
 
 * upgrading of all packages without displaying of `*Packages*` buffer;
 
-* smart switching between default input method, French, and Russian;
-
-* some mode line wizardry (can't use `smart-mode-line` or `powerline`).
+* smart switching between default input method, French, and Russian.
 
 ## Key Remapping
 

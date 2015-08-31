@@ -65,6 +65,7 @@
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
    slime                ; Superior Lisp Interaction Mode for Emacs
+   smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis
    smex                 ; M-x interface with IDO-style fuzzy matching
    solarized-theme      ; The Solarized color theme
