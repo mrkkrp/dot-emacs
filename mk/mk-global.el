@@ -75,6 +75,7 @@
  user-full-name                   "Mark Karpov"
  user-mail-address                "markkarpov@openmailbox.org"
  version-control                  t ; make numeric backups unconditionally
+ x-underline-at-descent-line      t ; improve rendering (mode line)
  zop-to-char-erase-keys           '(?\d)
  zop-to-char-kill-keys            '(?\C-d ?\C-k ?\C-w))
 
