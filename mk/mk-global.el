@@ -43,6 +43,8 @@
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "icecat"
  compilation-read-command         nil
+ cursor-type                      '(bar . 1) ; thin vertical bar
+ cursor-in-non-selected-windows   nil        ; don't show it there
  delete-old-versions              t ;  delete excess backups silently
  echo-keystrokes                  0.1 ; show keystrokes asap
  enable-recursive-minibuffers     t ; use minibuffer recursively
