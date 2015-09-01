@@ -75,9 +75,7 @@
  user-full-name                   "Mark Karpov"
  user-mail-address                "markkarpov@openmailbox.org"
  version-control                  t ; make numeric backups unconditionally
- x-underline-at-descent-line      t ; improve rendering (mode line)
- zop-to-char-erase-keys           '(?\d)
- zop-to-char-kill-keys            '(?\C-d ?\C-k ?\C-w))
+ x-underline-at-descent-line      t) ; improve rendering (mode line)
 
 (put 'erase-buffer     'disabled nil) ; don't ever question my power
 (put 'narrow-to-region 'disabled nil) ; ^
@@ -124,7 +122,7 @@
 (π "M-r"        #'mk-duplicate-line)
 (π "M-u"        #'fix-word-upcase)
 (π "M-x"        #'smex)
-(π "M-z"        #'zop-up-to-char)
+(π "M-z"        #'zzz-up-to-char)
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
