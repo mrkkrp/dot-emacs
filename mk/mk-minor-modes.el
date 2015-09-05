@@ -152,7 +152,7 @@ move point."
 (advice-add 'sp-add-to-previous-sexp :after (η #'sp-forward-sexp))
 
 (defun mk-prepare-text-mode ()
-  "Enable some minor mode for plain text editing."
+  "Enable some minor modes for text editing."
   (auto-fill-mode  1)
   (whitespace-mode 1)
   (flyspell-mode   1))
