@@ -47,6 +47,7 @@
    f                    ; Modern API for working with files and dirs
    fix-word             ; Convenient word transformation
    flycheck             ; On-the-fly syntax checking
+   flycheck-color-mode-line ; Colorize mode line according to Flycheck status
    flycheck-haskell     ; Flycheck: Cabal projects and sandboxes
    ghc                  ; Improve Haskell REPL experience
    gitignore-mode       ; Major mode for editing .gitignore files

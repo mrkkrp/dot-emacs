@@ -166,6 +166,7 @@ move point."
   (flycheck-mode))
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
+(add-hook 'flycheck-mode-hook           #'flycheck-color-mode-line-mode)
 (add-hook 'prog-mode-hook               #'hl-todo-mode)
 (add-hook 'prog-mode-hook               #'mk-prepare-prog-mode)
 (add-hook 'text-mode-hook               #'mk-prepare-text-mode)

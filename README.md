@@ -41,6 +41,7 @@ Package/Repo | Source | Description
 [f](https://github.com/rejeep/f.el) | [![MELPA](http://melpa.org/packages/f-badge.svg)](http://melpa.org/#/f) | Modern API for working with files and dirs
 [fix-word](https://github.com/mrkkrp/fix-word) † | [![MELPA](http://melpa.org/packages/fix-word-badge.svg)](http://melpa.org/#/fix-word) | Convenient word transformation
 [flycheck](https://github.com/flycheck/flycheck) | [![MELPA](http://melpa.org/packages/flycheck-badge.svg)](http://melpa.org/#/flycheck) | On-the-fly syntax checking
+[flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | [![MELPA](http://melpa.org/packages/flycheck-color-mode-line-badge.svg)](http://melpa.org/#/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
 [flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | [![MELPA](http://melpa.org/packages/flycheck-haskell-badge.svg)](http://melpa.org/#/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | [![MELPA](http://melpa.org/packages/ghc-badge.svg)](http://melpa.org/#/ghc) | Improve Haskell REPL experience
 [gitignore-mode](https://github.com/magit/git-modes) | [![MELPA](http://melpa.org/packages/gitignore-mode-badge.svg)](http://melpa.org/#/gitignore-mode) | Major mode for editing .gitignore files
