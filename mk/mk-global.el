@@ -203,6 +203,7 @@
 (π "<menu> n n" #'narrow-to-region)
 (π "<menu> n w" #'widen)
 (π "<menu> p a" #'package-autoremove)
+(π "<menu> p f" #'package-install-file)
 (π "<menu> p i" #'package-install)
 (π "<menu> p j" #'mk-python-run-dev-server)
 (π "<menu> p r" #'print-buffer)

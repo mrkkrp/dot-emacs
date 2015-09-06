@@ -311,6 +311,7 @@ Shortcut            | Description
 <kbd>menu n n</kbd> | narrow to region
 <kbd>menu n w</kbd> | widen
 <kbd>menu p a</kbd> | package autoremove
+<kbd>menu p f</kbd> | install package from file/directory
 <kbd>menu p i</kbd> | install package
 <kbd>menu p j</kbd> | run Django development server
 <kbd>menu p r</kbd> | print current buffer
