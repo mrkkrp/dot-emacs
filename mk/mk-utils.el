@@ -163,10 +163,10 @@ This functionality requires git installed."
                   upgrades)))))
     (if upgrades
         (when (yes-or-no-p
-               (message "Upgrade %d package%s (%s)? "
-                        (length upgrades)
-                        (if (= (length upgrades) 1) "" "s")
-                        (mapconcat #'package-desc-full-name upgrades ", ")))
+               (format "Upgrade %d package%s (%s)? "
+                       (length upgrades)
+                       (if (= (length upgrades) 1) "" "s")
+                       (mapconcat #'package-desc-full-name upgrades ", ")))
           (save-window-excursion
             (dolist (package-desc upgrades)
               (let ((old-package (cadr (assq (package-desc-name package-desc)
