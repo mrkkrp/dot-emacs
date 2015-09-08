@@ -70,6 +70,7 @@
    smartparens          ; Tricks for working with all kinds of parenthesis
    smex                 ; M-x interface with IDO-style fuzzy matching
    solarized-theme      ; The Solarized color theme
+   vimish-fold          ; Fold text like in Vim
    visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
    yaml-mode            ; Major mode for editing YAML serialization format
