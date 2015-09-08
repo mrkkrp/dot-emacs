@@ -209,12 +209,11 @@ Shortcut            | Description
 --------            | -----------
 <kbd>C-'</kbd>      | switch to other buffer
 <kbd>C-;</kbd>      | correct previous misspelled word (long reaching)
-<kbd>C-c C-o</kbd>  | find file at point (work for URLs too)
+<kbd>C-c C-o</kbd>  | find file at point (works for URLs too)
 <kbd>C-c a</kbd>    | org agenda (week)
-<kbd>C-c b</kbd>    | byte compile initialization files
-<kbd>C-c e</kbd>    | open initialization file
+<kbd>C-c b</kbd>    | byte-compile initialization files
+<kbd>C-c e</kbd>    | open directory with initialization files
 <kbd>C-c h</kbd>    | lookup language specific documentation online
-<kbd>C-c i</kbd>    | correct word before point
 <kbd>C-c p</kbd>    | purge all buffers (except for 'basic')
 <kbd>C-c r</kbd>    | revert current buffer (restart/reset REPL in some modes)
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
@@ -230,6 +229,7 @@ Shortcut            | Description
 <kbd>M-p</kbd>      | transpose line up
 <kbd>M-r</kbd>      | duplicate line
 <kbd>M-u</kbd>      | fix word: upcase
+<kbd>M-x</kbd>      | SMEX
 <kbd>M-z</kbd>      | zzz up to char
 <kbd>F2</kbd>       | save buffer
 <kbd>F5</kbd>       | find file (also Dired)
@@ -251,7 +251,8 @@ Shortcut            | Description
 <kbd>menu .</kbd>   | end of the buffer
 <kbd>menu /</kbd>   | rectangular selection
 <kbd>menu - -</kbd> | center line
-<kbd>menu SPC</kbd> | special insertion of abbreviation
+<kbd>menu SPC</kbd> | mk abbrev: insert
+<kbd>menu a f</kbd> | toggle auto-fill mode
 <kbd>menu a g</kbd> | toggle aggressive indent mode
 <kbd>menu a p</kbd> | apropos
 <kbd>menu a r</kbd> | align regexp
@@ -276,7 +277,7 @@ Shortcut            | Description
 <kbd>menu e b</kbd> | erase buffer
 <kbd>menu e e</kbd> | evaluate last s-expression
 <kbd>menu e r</kbd> | ERC
-<kbd>menu e v</kbd> | eval buffer
+<kbd>menu e v</kbd> | eval current buffer
 <kbd>menu f f</kbd> | find Emacs Lisp function
 <kbd>menu f n</kbd> | put file name into kill ring
 <kbd>menu f o</kbd> | set specified font
@@ -312,7 +313,7 @@ Shortcut            | Description
 <kbd>menu n w</kbd> | widen
 <kbd>menu p a</kbd> | package autoremove
 <kbd>menu p f</kbd> | install package from file/directory
-<kbd>menu p i</kbd> | install package
+<kbd>menu p i</kbd> | install package from package repository
 <kbd>menu p j</kbd> | run Django development server
 <kbd>menu p r</kbd> | print current buffer
 <kbd>menu p u</kbd> | upgrade all packages
@@ -325,14 +326,12 @@ Shortcut            | Description
 <kbd>menu r n</kbd> | rectangle number lines
 <kbd>menu r r</kbd> | reverse region (lines)
 <kbd>menu s a</kbd> | select the whole buffer (mnemonic: «select all»)
-<kbd>menu s c</kbd> | Scheme
 <kbd>menu s h</kbd> | Emacs shell
 <kbd>menu s l</kbd> | sort lines
 <kbd>menu s n</kbd> | sort numeric fields
 <kbd>menu s r</kbd> | string rectangle
 <kbd>menu s s</kbd> | switch to scratch buffer
 <kbd>menu s t</kbd> | insert date
-<kbd>menu t e</kbd> | tetris
 <kbd>menu t h</kbd> | switch to custom color theme
 <kbd>menu u t</kbd> | untabify
 <kbd>menu v a</kbd> | vimish fold: avy
@@ -347,7 +346,6 @@ Shortcut            | Description
 <kbd>menu y p</kbd> | insert the primary selection at the point
 <kbd>menu y r</kbd> | yank rectangle
 <kbd>C-c i</kdb>    | SLIME: load ASDF system switch to package
-<kbd>C-c C-c</kbd>  | Haskell: Cabal interface
 <kbd>b</kbd>        | Dired: up directory
 <kbd>e</kbd>        | Dired: open with external application
 <kbd>i</kbd>        | Dired: show images in current directory
