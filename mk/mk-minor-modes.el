@@ -34,6 +34,9 @@
 (require 'mk-utils)
 (require 'smartparens-config)
 
+(defvar control-mode-cursor-type 'box
+  "How to display cursor in `cursor-mode'.")
+
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
@@ -103,7 +106,7 @@
    (aggressive-indent-mode       . "")
    (auto-fill-function           . "")
    (compilation-shell-minor-mode . "")
-   (control-mode                 . "⎈")
+   (control-mode                 . "")
    (eldoc-mode                   . "")
    (flycheck-mode                . "")
    (flyspell-mode                . "")
@@ -116,6 +119,13 @@
    (whitespace-mode              . "")
    (whole-line-or-region-mode    . "")
    (yas-minor-mode               . "")))
+
+(defun control-mode-change-cursor ()
+  "Change cursor according to state of `control-mode'."
+  (setq cursor-type
+        (if control-mode
+            control-mode-cursor-type
+          (default-value 'cursor-type))))
 
 (defun flyspell-correct-previous (&optional words)
   "Correct word before point, reach distant words.
@@ -175,6 +185,7 @@ move point."
   (whitespace-mode 1))
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
+(add-hook 'control-mode-hook            #'control-mode-change-cursor)
 (add-hook 'flycheck-mode-hook           #'flycheck-color-mode-line-mode)
 (add-hook 'prog-mode-hook               #'hl-todo-mode)
 (add-hook 'prog-mode-hook               #'mk-prepare-prog-mode)
