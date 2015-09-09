@@ -26,8 +26,12 @@
 (eval-when-compile
   (require 'magit))
 
+(require 'mk-utils)
+
 (setq magit-completing-read-function #'magit-ido-completing-read
       magit-push-always-verify       nil)
+
+(τ magit magit "'" #'ace-window)
 
 (provide 'mk-magit)
 

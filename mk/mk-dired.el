@@ -76,6 +76,7 @@
 
 (τ dired dired   "<menu> ," #'mk-dired-first-file)
 (τ dired dired   "<menu> ." #'mk-dired-last-file)
+(τ dired dired   "'"        #'ace-window)
 (τ dired dired   "b"        #'dired-up-directory)
 (τ dired dired   "e"        #'mk-dired-open-external)
 (τ dired dired   "i"        #'mk-image-dired-show-current)
