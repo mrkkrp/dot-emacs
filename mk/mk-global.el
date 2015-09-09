@@ -240,11 +240,22 @@
 (π "<menu> y p" #'mk-yank-primary)
 (π "<menu> y r" #'yank-rectangle)
 
+(defun mk-bind-ace-window ()
+  "Intelligently dynamically bind `ace-window' command.
+
+If current major mode map doesn't bind apostrophe, then bind it
+to `ace-window', otherwise unconditionally bind C-' to it."
+  (π (if (memq (key-binding (kbd "'"))
+               '(nil undefined))
+         "'" "C-'")
+     #'ace-window))
+
 (defalias 'display-startup-echo-area-message (ε #'mk-show-date))
 (defalias 'list-buffers                      #'ibuffer)
 (defalias 'yes-or-no-p                       #'y-or-n-p)
 
 (add-hook 'after-change-major-mode-hook #'mk-apply-mode-alias)
+(add-hook 'after-change-major-mode-hook #'mk-bind-ace-window)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 
 (advice-add 'narrow-to-region :after (η #'keyboard-quit))

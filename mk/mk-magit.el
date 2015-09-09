@@ -31,8 +31,6 @@
 (setq magit-completing-read-function #'magit-ido-completing-read
       magit-push-always-verify       nil)
 
-(τ magit magit "'" #'ace-window)
-
 (provide 'mk-magit)
 
 ;;; mk-magit.el ends here
