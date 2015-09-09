@@ -16,6 +16,7 @@ workflow and efficiency — sky is the limit.
 * [Features](#features)
 * [Key Remapping](#key-remapping)
 * [Sticky Keys](#sticky-keys)
+* [Control Mode](#control-mode)
 * [Key Bindings](#key-bindings)
 * [Keyboard Layouts and Abbreviations](#keyboard-layouts-and-abbreviations)
 * [GNUS](#gnus)
