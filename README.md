@@ -37,6 +37,7 @@ Package/Repo | Source | Description
 [buffer-move](https://github.com/lukhas/buffer-move) | [![MELPA](http://melpa.org/packages/buffer-move-badge.svg)](http://melpa.org/#/buffer-move) | Move buffers easily
 [cider](https://github.com/clojure-emacs/cider) | [![MELPA](http://melpa.org/packages/cider-badge.svg)](http://melpa.org/#/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | [![MELPA](http://melpa.org/packages/common-lisp-snippets-badge.svg)](http://melpa.org/#/common-lisp-snippets) | Yasnippets for Common Lisp
+[control-mode](https://github.com/https://github.com/stephendavidmarsh/control-mode) | [![MELPA](http://melpa.org/packages/control-mode-badge.svg)](http://melpa.org/#/control-mode) | Modal editing for Emacs
 [ebal](https://github.com/mrkkrp/ebal) † | [![MELPA](http://melpa.org/packages/ebal-badge.svg)](http://melpa.org/#/ebal) | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | [![MELPA](http://melpa.org/packages/f-badge.svg)](http://melpa.org/#/f) | Modern API for working with files and dirs
 [fix-word](https://github.com/mrkkrp/fix-word) † | [![MELPA](http://melpa.org/packages/fix-word-badge.svg)](http://melpa.org/#/fix-word) | Convenient word transformation
@@ -64,6 +65,7 @@ Package/Repo | Source | Description
 [smartparens](https://github.com/Fuco1/smartparens) | [![MELPA](http://melpa.org/packages/smartparens-badge.svg)](http://melpa.org/#/smartparens) | Tricks for working with all kinds of parenthesis
 [smex](https://github.com/nonsequitur/smex) | [![MELPA](http://melpa.org/packages/smex-badge.svg)](http://melpa.org/#/smex) | M-x interface with IDO-style fuzzy matching
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | [![MELPA](http://melpa.org/packages/solarized-theme-badge.svg)](http://melpa.org/#/solarized-theme) | The Solarized color theme
+[vimish-fold](https://github.com/mrkkrp/vimish-fold) † | coming soon | Fold text like in Vim
 [visual-regexp](https://github.com/benma/visual-regexp.el) | [![MELPA](http://melpa.org/packages/visual-regexp-badge.svg)](http://melpa.org/#/visual-regexp) | Regexp replace with interactive visual feedback
 [whole-line-or-region](https://github.com/purcell/whole-line-or-region) | [![MELPA](http://melpa.org/packages/whole-line-or-region-badge.svg)](http://melpa.org/#/whole-line-or-region) | Operate on current line if region undefined
 [yaml-mode](https://github.com/yoshiki/yaml-mode) | [![MELPA](http://melpa.org/packages/yaml-mode-badge.svg)](http://melpa.org/#/yaml-mode) | Major mode for editing YAML serialization format
@@ -158,6 +160,32 @@ If you ask yourself if I have RSI or some kind disability, I have to say
 that if you care about your health, you don't need to wait until you have
 RSI to optimize your interaction with computer.
 
+## Control Mode
+
+Currently I'm using `control-mode` that allows to edit text in modal
+fashion. Modal editing is fundamentally better for health and more efficient
+in general. Initially I considered learning `evil` to edit in «vim-style»,
+but I estimated resulting effect not superior to editing with familiar Emacs key
+bindings for basic movement (given I don't know to learn something).
+
+However I find default settings of `control-mode` to be not sufficiently
+ergonomic for two reasons:
+
+1. Switching between «normal» mode and «insert» mode is too
+   hard. <kbd>C-z</kbd> won't work here, so I've chosen a relatively little
+   used key from home row: <kbd>;</kbd>. Single pressing toggles
+   `control-mode`, while <kbd>C-;</kbd> in «insert» mode inserts semicolon
+   `;`.
+
+2. For some reason it initially ignored <kbd>C-i</kbd> and <kbd>C-m</kbd>,
+   I've fixed that because I use these key bindings often.
+
+3. Missing good visual feedback: shape of cursor should change to easily
+   distinguish the both modes.
+
+So, apart from other minor corrections that's how I got into modal editing
+in Emacs without powers of Evil.
+
 ## Key Bindings
 
 I don't use hairy default Emacs shortcuts. All frequently used commands must
@@ -208,7 +236,11 @@ convenient! Try it!
 Shortcut            | Description
 --------            | -----------
 <kbd>C-'</kbd>      | switch to other buffer
-<kbd>C-;</kbd>      | correct previous misspelled word (long reaching)
+<kbd>C-,</kbd>      | avy: goto char
+<kbd>C-.</kbd>      | zzz up to char
+<kbd>C-;</kbd>      | insert semicolon character `;`
+<kbd>;</kbd>        | toggle the control mode
+<kbd>C-SPC</kbd>    | mark command (rectangular with prefix)
 <kbd>C-c C-o</kbd>  | find file at point (works for URLs too)
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c b</kbd>    | byte-compile initialization files
@@ -218,6 +250,7 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer (restart/reset REPL in some modes)
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
+<kbd>C-x ;</kbd>    | comment line
 <kbd>C-z</kbd>      | copy rest of the line
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
@@ -241,7 +274,7 @@ Shortcut            | Description
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | exit Emacs
 <kbd>escape</kbd>   | delete window
-<kbd>return</kbd>   | go to char (avy)
+<kbd>return</kbd>   | correct previous misspelled word
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
@@ -249,7 +282,6 @@ Shortcut            | Description
 <kbd>menu menu</kbd>| smex (translation to <kbd>M-x</kbd>)
 <kbd>menu ,</kbd>   | beginning of the buffer
 <kbd>menu .</kbd>   | end of the buffer
-<kbd>menu /</kbd>   | rectangular selection
 <kbd>menu - -</kbd> | center line
 <kbd>menu SPC</kbd> | mk abbrev: insert
 <kbd>menu a f</kbd> | toggle auto-fill mode
@@ -378,7 +410,8 @@ languages — a horrible thing.
 
 For peculiar use case of Emacs abbreviations see
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev). It now has its own
-repository.
+repository. It's possible that this will be implemented in more flashy way
+some day.
 
 ## GNUS
 
