@@ -99,6 +99,13 @@ performed."
   (interactive)
   (insert (gui-get-selection)))
 
+(defun mk-mark-command (&optional arg)
+  "Set normal mark when ARG is NIL and rectangular otherwise."
+  (interactive "P")
+  (if arg
+      (rectangle-mark-mode 1)
+    (set-mark-command nil)))
+
 ;; Navigation
 
 (defun mk-first-line (&optional arg)

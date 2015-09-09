@@ -30,6 +30,7 @@
   (require 'smartparens))
 
 (require 'cl-lib)
+(require 'control-mode)
 (require 'mk-utils)
 (require 'smartparens-config)
 
@@ -37,6 +38,7 @@
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
  column-number-mode                t       ; display column number
+ control-mode-ignore-events        nil     ; don't ignore anything
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
  fill-column                       76      ; set fill column
@@ -101,6 +103,7 @@
    (aggressive-indent-mode       . "")
    (auto-fill-function           . "")
    (compilation-shell-minor-mode . "")
+   (control-mode                 . "⎈")
    (eldoc-mode                   . "")
    (flycheck-mode                . "")
    (flyspell-mode                . "")
@@ -139,7 +142,10 @@ move point."
     (goto-char (- (point-max) Δ))
     result))
 
-(τ flyspell flyspell "C-;" #'flyspell-correct-previous)
+(τ flyspell flyspell "<return>" #'flyspell-correct-previous)
+(τ flyspell flyspell "C-," nil)
+(τ flyspell flyspell "C-." nil)
+(τ flyspell flyspell "C-;" nil)
 
 (τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
 (τ smartparens smartparens "M-b"           #'sp-backward-sexp)
@@ -155,16 +161,18 @@ move point."
 (defun mk-prepare-text-mode ()
   "Enable some minor modes for text editing."
   (auto-fill-mode  1)
-  (whitespace-mode 1)
-  (flyspell-mode   1))
+  (control-mode    1)
+  (flyspell-mode   1)
+  (whitespace-mode 1))
 
 (defun mk-prepare-prog-mode ()
   "Enables some minor modes for programming."
   (setq-local comment-auto-fill-only-comments t)
   (auto-fill-mode  1)
-  (whitespace-mode 1)
+  (control-mode    1)
+  (flycheck-mode   1)
   (flyspell-prog-mode)
-  (flycheck-mode))
+  (whitespace-mode 1))
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'flycheck-mode-hook           #'flycheck-color-mode-line-mode)
