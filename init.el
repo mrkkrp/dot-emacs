@@ -62,6 +62,7 @@
    magit                ; A Git porcelain inside Emacs
    markdown-mode        ; Major mode for Markdown-formatted text files
    mk-abbrev            ; Peculiar way to use Emacs abbrevs
+   modalka-mode         ; Native modal editing of your own design
    multiple-cursors     ; Multiple cursors for Emacs
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
