@@ -43,7 +43,6 @@
    buffer-move          ; Move buffers easily
    cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
-   control-mode         ; modal editing for Emacs
    ebal                 ; Emacs interface to Cabal
    f                    ; Modern API for working with files and dirs
    fix-word             ; Convenient word transformation

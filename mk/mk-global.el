@@ -101,8 +101,6 @@
 (π "C-'"        #'ace-window)
 (π "C-,"        #'avy-goto-char)
 (π "C-."        #'zzz-up-to-char)
-(π "C-;"        (ε #'insert ";"))
-(π ";"          #'control-mode)
 (π "C-SPC"      #'mk-mark-command)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
@@ -136,6 +134,7 @@
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
 (π "<f12>"      #'mk-exit-emacs)
+(π "<return>"   #'avy-goto-char)
 (π "<escape>"   #'delete-window)
 (π "<S-up>"     #'buf-move-up)
 (π "<S-down>"   #'buf-move-down)
@@ -240,22 +239,11 @@
 (π "<menu> y p" #'mk-yank-primary)
 (π "<menu> y r" #'yank-rectangle)
 
-(defun mk-bind-ace-window ()
-  "Intelligently dynamically bind `ace-window' command.
-
-If current major mode map doesn't bind apostrophe, then bind it
-to `ace-window', otherwise unconditionally bind C-' to it."
-  (π (if (memq (key-binding (kbd "'"))
-               '(nil undefined))
-         "'" "C-'")
-     #'ace-window))
-
 (defalias 'display-startup-echo-area-message (ε #'mk-show-date))
 (defalias 'list-buffers                      #'ibuffer)
 (defalias 'yes-or-no-p                       #'y-or-n-p)
 
 (add-hook 'after-change-major-mode-hook #'mk-apply-mode-alias)
-(add-hook 'after-change-major-mode-hook #'mk-bind-ace-window)
 (add-hook 'before-save-hook             #'delete-trailing-whitespace)
 
 (advice-add 'narrow-to-region :after (η #'keyboard-quit))
