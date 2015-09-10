@@ -38,7 +38,6 @@ Package/Repo | Source | Description
 [buffer-move](https://github.com/lukhas/buffer-move) | [![MELPA](http://melpa.org/packages/buffer-move-badge.svg)](http://melpa.org/#/buffer-move) | Move buffers easily
 [cider](https://github.com/clojure-emacs/cider) | [![MELPA](http://melpa.org/packages/cider-badge.svg)](http://melpa.org/#/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | [![MELPA](http://melpa.org/packages/common-lisp-snippets-badge.svg)](http://melpa.org/#/common-lisp-snippets) | Yasnippets for Common Lisp
-[control-mode](https://github.com/https://github.com/stephendavidmarsh/control-mode) | [![MELPA](http://melpa.org/packages/control-mode-badge.svg)](http://melpa.org/#/control-mode) | Modal editing for Emacs
 [ebal](https://github.com/mrkkrp/ebal) † | [![MELPA](http://melpa.org/packages/ebal-badge.svg)](http://melpa.org/#/ebal) | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | [![MELPA](http://melpa.org/packages/f-badge.svg)](http://melpa.org/#/f) | Modern API for working with files and dirs
 [fix-word](https://github.com/mrkkrp/fix-word) † | [![MELPA](http://melpa.org/packages/fix-word-badge.svg)](http://melpa.org/#/fix-word) | Convenient word transformation
@@ -58,6 +57,7 @@ Package/Repo | Source | Description
 [magit](https://github.com/magit/magit) | [![MELPA](http://melpa.org/packages/magit-badge.svg)](http://melpa.org/#/magit) | A Git porcelain inside Emacs
 [markdown-mode](http://daringfireball.net/projects/markdown/) | [![MELPA](http://melpa.org/packages/markdown-mode-badge.svg)](http://melpa.org/#/markdown-mode) | Major mode for Markdown-formatted text files
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | — | Peculiar way to use Emacs abbrevs
+[modalka](https://github.com/mrkkrp/modalka) † | — | Easily introduce native modal editing of your own design
 [multiple-cursors](https://github.com/magnars/multiple-cursors.el) | [![MELPA](http://melpa.org/packages/multiple-cursors-badge.svg)](http://melpa.org/#/multiple-cursors) | Multiple cursors for Emacs
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
@@ -162,31 +162,83 @@ If you ask yourself if I have RSI or some kind disability, I have to say
 that if you care about your health, you don't need to wait until you have
 RSI to optimize your interaction with computer.
 
-## Control Mode
+## Modalka Mode
 
-Currently I'm using `control-mode` that allows to edit text in modal
+Currently I'm using `modalka-mode` that allows to edit text in modal
 fashion. Modal editing is fundamentally better for health and more efficient
 in general. Initially I considered learning `evil` to edit in «vim-style»,
-but I estimated resulting effect not superior to editing with familiar Emacs key
-bindings for basic movement (given I don't know to learn something).
+but I estimated resulting effect not superior to editing with familiar Emacs
+key bindings for basic movement (given I don't know to learn something).
 
-However I find default settings of `control-mode` to be not sufficiently
-ergonomic for two reasons:
+I'm using the following translation map for modal editing:
 
-1. Switching between «normal» mode and «insert» mode is too
-   hard. <kbd>C-z</kbd> won't work here, so I've chosen a relatively little
-   used key from home row: <kbd>;</kbd>. Single pressing toggles
-   `control-mode`, while <kbd>C-;</kbd> in «insert» mode inserts semicolon
-   `;`.
-
-2. For some reason it initially ignored <kbd>C-i</kbd> and <kbd>C-m</kbd>,
-   I've fixed that because I use these key bindings often.
-
-3. Missing good visual feedback: shape of cursor should change to easily
-   distinguish the both modes.
-
-So, apart from other minor corrections that's how I got into modal editing
-in Emacs without powers of Evil.
+Input          | Result
+-----          | ------
+<kbd>SPC</kbd> | <kbd>C-SPC</kbd>
+<kbd>,</kbd>   | <kbd>C-,</kbd>
+<kbd>-</kbd>   | <kbd>C--</kbd>
+<kbd>/</kbd>   | <kbd>C-/</kbd>
+<kbd>:</kbd>   | <kbd>M-;</kbd>
+<kbd>;</kbd>   | <kbd>C-;</kbd>
+<kbd>?</kbd>   | <kbd>M-/</kbd>
+<kbd>0</kbd>   | <kbd>C-0</kbd>
+<kbd>1</kbd>   | <kbd>C-1</kbd>
+<kbd>2</kbd>   | <kbd>C-2</kbd>
+<kbd>3</kbd>   | <kbd>C-3</kbd>
+<kbd>4</kbd>   | <kbd>C-4</kbd>
+<kbd>5</kbd>   | <kbd>C-5</kbd>
+<kbd>6</kbd>   | <kbd>C-6</kbd>
+<kbd>7</kbd>   | <kbd>C-7</kbd>
+<kbd>8</kbd>   | <kbd>C-8</kbd>
+<kbd>9</kbd>   | <kbd>C-9</kbd>
+<kbd>a</kbd>   | <kbd>C-a</kbd>
+<kbd>b</kbd>   | <kbd>C-b</kbd>
+<kbd>c c</kbd> | <kbd>C-c C-c</kbd>
+<kbd>c k</kbd> | <kbd>C-c C-k</kbd>
+<kbd>c v</kbd> | <kbd>C-c C-v</kbd>
+<kbd>d</kbd>   | <kbd>C-d</kbd>
+<kbd>e</kbd>   | <kbd>C-e</kbd>
+<kbd>f</kbd>   | <kbd>C-f</kbd>
+<kbd>g</kbd>   | <kbd>C-g</kbd>
+<kbd>h</kbd>   | <kbd>M-h</kbd>
+<kbd>i</kbd>   | <kbd>C-i</kbd>
+<kbd>j</kbd>   | <kbd>M-j</kbd>
+<kbd>k</kbd>   | <kbd>C-k</kbd>
+<kbd>l</kbd>   | <kbd>C-l</kbd>
+<kbd>m</kbd>   | <kbd>C-m</kbd>
+<kbd>n</kbd>   | <kbd>C-n</kbd>
+<kbd>o</kbd>   | <kbd>C-o</kbd>
+<kbd>p</kbd>   | <kbd>C-p</kbd>
+<kbd>q</kbd>   | <kbd>M-q</kbd>
+<kbd>r</kbd>   | <kbd>C-r</kbd>
+<kbd>s</kbd>   | <kbd>C-s</kbd>
+<kbd>t</kbd>   | <kbd>M-t</kbd>
+<kbd>u</kbd>   | <kbd>C-u</kbd>
+<kbd>v</kbd>   | <kbd>C-v</kbd>
+<kbd>w</kbd>   | <kbd>C-w</kbd>
+<kbd>x ;</kbd> | <kbd>C-x C-;</kbd>
+<kbd>x o</kbd> | <kbd>C-x C-o</kbd>
+<kbd>y</kbd>   | <kbd>C-y</kbd>
+<kbd>z</kbd>   | <kbd>M-z</kbd>
+<kbd>A</kbd>   | <kbd>M-SPC</kbd>
+<kbd>B</kbd>   | <kbd>M-b</kbd>
+<kbd>C</kbd>   | <kbd>M-c</kbd>
+<kbd>D</kbd>   | <kbd>M-d</kbd>
+<kbd>E</kbd>   | <kbd>M-e</kbd>
+<kbd>F</kbd>   | <kbd>M-f</kbd>
+<kbd>G</kbd>   | <kbd>M-g</kbd>
+<kbd>K</kbd>   | <kbd>M-k</kbd>
+<kbd>L</kbd>   | <kbd>M-l</kbd>
+<kbd>M</kbd>   | <kbd>M-m</kbd>
+<kbd>N</kbd>   | <kbd>M-n</kbd>
+<kbd>O</kbd>   | <kbd>M-o</kbd>
+<kbd>P</kbd>   | <kbd>M-p</kbd>
+<kbd>R</kbd>   | <kbd>M-r</kbd>
+<kbd>U</kbd>   | <kbd>M-u</kbd>
+<kbd>V</kbd>   | <kbd>M-v</kbd>
+<kbd>W</kbd>   | <kbd>M-w</kbd>
+<kbd>Y</kbd>   | <kbd>M-y</kbd>
+<kbd>Z</kbd>   | <kbd>C-z</kbd>
 
 ## Key Bindings
 
@@ -239,9 +291,6 @@ Shortcut            | Description
 --------            | -----------
 <kbd>C-'</kbd>      | switch to other buffer
 <kbd>C-,</kbd>      | avy: goto char
-<kbd>C-.</kbd>      | zzz up to char
-<kbd>C-;</kbd>      | insert semicolon character `;`
-<kbd>;</kbd>        | toggle the control mode
 <kbd>C-SPC</kbd>    | mark command (rectangular with prefix)
 <kbd>C-c C-o</kbd>  | find file at point (works for URLs too)
 <kbd>C-c a</kbd>    | org agenda (week)
@@ -252,7 +301,6 @@ Shortcut            | Description
 <kbd>C-c r</kbd>    | revert current buffer (restart/reset REPL in some modes)
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
-<kbd>C-x ;</kbd>    | comment line
 <kbd>C-z</kbd>      | copy rest of the line
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
@@ -276,7 +324,7 @@ Shortcut            | Description
 <kbd>F11</kbd>      | switch to buffer
 <kbd>F12</kbd>      | exit Emacs
 <kbd>escape</kbd>   | delete window
-<kbd>return</kbd>   | correct previous misspelled word
+<kbd>return</kbd>   | Modalka mode
 <kbd>S-up</kbd>     | move buffer up
 <kbd>S-down</kbd>   | move buffer down
 <kbd>S-left</kbd>   | move buffer left
