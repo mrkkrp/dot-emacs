@@ -245,17 +245,20 @@
 (modalka-define-kbd "," "C-,")
 ;; .
 (modalka-define-kbd "/" "C-/")
+(modalka-define-kbd ":" "M-;")
 (modalka-define-kbd ";" "C-;")
 (modalka-define-kbd "?" "M-/")
 
 (modalka-define-kbd "a" "C-a")
 (modalka-define-kbd "b" "C-b")
-(modalka-define-kbd "c" "C-c")
+(modalka-define-kbd "c c" "C-c C-c")
+(modalka-define-kbd "c k" "C-c C-k")
+(modalka-define-kbd "c v" "C-c C-v")
 (modalka-define-kbd "d" "C-d")
 (modalka-define-kbd "e" "C-e")
 (modalka-define-kbd "f" "C-f")
 (modalka-define-kbd "g" "C-g")
-(modalka-define-kbd "h" "C-h")
+(modalka-define-kbd "h" "M-h")
 (modalka-define-kbd "i" "C-i")
 (modalka-define-kbd "j" "M-j")
 (modalka-define-kbd "k" "C-k")
@@ -271,7 +274,8 @@
 (modalka-define-kbd "u" "C-u")
 (modalka-define-kbd "v" "C-v")
 (modalka-define-kbd "w" "C-w")
-(modalka-define-kbd "x" "C-x")
+(modalka-define-kbd "x ;" "C-x C-;")
+(modalka-define-kbd "x o" "C-x C-o")
 (modalka-define-kbd "y" "C-y")
 (modalka-define-kbd "z" "M-z")
 
@@ -282,7 +286,7 @@
 (modalka-define-kbd "E" "M-e")
 (modalka-define-kbd "F" "M-f")
 (modalka-define-kbd "G" "M-g")
-(modalka-define-kbd "H" "M-h")
+;; H
 ;; I
 ;; J
 (modalka-define-kbd "K" "M-k")
@@ -300,26 +304,6 @@
 (modalka-define-kbd "W" "M-w")
 (modalka-define-kbd "Y" "M-y")
 (modalka-define-kbd "Z" "C-z")
-
-;; For commands starting with <menu> create bindings so they can be used in
-;; `modalka-mode' too.
-
-(defun mk--kbd-walker (keymap prefix)
-  "Walk and replace key bindings in KEYMAP so they work in `modalka-mode'.
-
-PREFIX is key sequence, appends converted keys to it."
-  (unless (keymapp keymap)
-    (error "This thing should be a keymap"))
-  (dolist (item (cdr keymap))
-    (cl-destructuring-bind (k . r) item
-      (let* ((tra (or (cadr (assoc (string k) modalka--translations))
-                      (vector k)))
-             (key (vconcat prefix tra)))
-        (if (keymapp r)
-            (mk--kbd-walker r key)
-          (global-set-key key r))))))
-
-(mk--kbd-walker (cdr (assoc 'menu global-map)) [menu])
 
 ;; Other
 
