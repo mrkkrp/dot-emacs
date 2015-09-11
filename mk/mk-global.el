@@ -315,6 +315,7 @@
 (modalka-define-kbd "U" "M-u")
 (modalka-define-kbd "V" "M-v")
 (modalka-define-kbd "W" "M-w")
+;; X
 (modalka-define-kbd "Y" "M-y")
 (modalka-define-kbd "Z" "C-z")
 

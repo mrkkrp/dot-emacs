@@ -16,7 +16,7 @@ workflow and efficiency — sky is the limit.
 * [Features](#features)
 * [Key Remapping](#key-remapping)
 * [Sticky Keys](#sticky-keys)
-* [Control Mode](#control-mode)
+* [Modal Editing](#modal-editing)
 * [Key Bindings](#key-bindings)
 * [Keyboard Layouts and Abbreviations](#keyboard-layouts-and-abbreviations)
 * [GNUS](#gnus)
@@ -66,8 +66,7 @@ Package/Repo | Source | Description
 [smartparens](https://github.com/Fuco1/smartparens) | [![MELPA](http://melpa.org/packages/smartparens-badge.svg)](http://melpa.org/#/smartparens) | Tricks for working with all kinds of parenthesis
 [smex](https://github.com/nonsequitur/smex) | [![MELPA](http://melpa.org/packages/smex-badge.svg)](http://melpa.org/#/smex) | M-x interface with IDO-style fuzzy matching
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | [![MELPA](http://melpa.org/packages/solarized-theme-badge.svg)](http://melpa.org/#/solarized-theme) | The Solarized color theme
-[vimish-fold](https://github.com/mrkkrp/vimish-fold) † | [![MELPA](http://melpa.org/packages/vimish-fold-badge.svg)](http://melpa.org/#/vimish-fold)
- | Fold text like in Vim
+[vimish-fold](https://github.com/mrkkrp/vimish-fold) † | [![MELPA](http://melpa.org/packages/vimish-fold-badge.svg)](http://melpa.org/#/vimish-fold) | Fold text like in Vim
 [visual-regexp](https://github.com/benma/visual-regexp.el) | [![MELPA](http://melpa.org/packages/visual-regexp-badge.svg)](http://melpa.org/#/visual-regexp) | Regexp replace with interactive visual feedback
 [whole-line-or-region](https://github.com/purcell/whole-line-or-region) | [![MELPA](http://melpa.org/packages/whole-line-or-region-badge.svg)](http://melpa.org/#/whole-line-or-region) | Operate on current line if region undefined
 [yaml-mode](https://github.com/yoshiki/yaml-mode) | [![MELPA](http://melpa.org/packages/yaml-mode-badge.svg)](http://melpa.org/#/yaml-mode) | Major mode for editing YAML serialization format
@@ -162,7 +161,7 @@ If you ask yourself if I have RSI or some kind disability, I have to say
 that if you care about your health, you don't need to wait until you have
 RSI to optimize your interaction with computer.
 
-## Modalka Mode
+## Modal Editing
 
 Currently I'm using `modalka-mode` that allows to edit text in modal
 fashion. Modal editing is fundamentally better for health and more efficient
