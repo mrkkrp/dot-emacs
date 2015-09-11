@@ -57,7 +57,7 @@ Package/Repo | Source | Description
 [magit](https://github.com/magit/magit) | [![MELPA](http://melpa.org/packages/magit-badge.svg)](http://melpa.org/#/magit) | A Git porcelain inside Emacs
 [markdown-mode](http://daringfireball.net/projects/markdown/) | [![MELPA](http://melpa.org/packages/markdown-mode-badge.svg)](http://melpa.org/#/markdown-mode) | Major mode for Markdown-formatted text files
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | — | Peculiar way to use Emacs abbrevs
-[modalka](https://github.com/mrkkrp/modalka) † | — | Easily introduce native modal editing of your own design
+[modalka](https://github.com/mrkkrp/modalka) † | [![MELPA](http://melpa.org/packages/modalka-badge.svg)](http://melpa.org/#/modalka) | Easily introduce native modal editing of your own design
 [multiple-cursors](https://github.com/magnars/multiple-cursors.el) | [![MELPA](http://melpa.org/packages/multiple-cursors-badge.svg)](http://melpa.org/#/multiple-cursors) | Multiple cursors for Emacs
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
