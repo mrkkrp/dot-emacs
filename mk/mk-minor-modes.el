@@ -74,6 +74,7 @@
 (ido-vertical-mode                1) ; display IDO vertically
 (menu-bar-mode                    0) ; hide menu bar
 (minibuffer-electric-default-mode 1) ; electric minibuffer
+(mouse-wheel-mode                 0) ; ignore mouse wheel
 (scroll-bar-mode                  0) ; disable scroll bar
 (show-paren-mode                  1) ; highlight matching parenthesis
 (smartparens-global-mode          1) ; smart editing of parenthesis
@@ -171,7 +172,6 @@ move point."
   (modalka-mode    1)
   (whitespace-mode 1))
 
-(add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))
 (add-hook 'flycheck-mode-hook           #'flycheck-color-mode-line-mode)
 (add-hook 'prog-mode-hook               #'hl-todo-mode)
 (add-hook 'prog-mode-hook               #'mk-prepare-prog-mode)
