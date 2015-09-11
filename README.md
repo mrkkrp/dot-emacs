@@ -61,6 +61,7 @@ Package/Repo | Source | Description
 [multiple-cursors](https://github.com/magnars/multiple-cursors.el) | [![MELPA](http://melpa.org/packages/multiple-cursors-badge.svg)](http://melpa.org/#/multiple-cursors) | Multiple cursors for Emacs
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
+[rich-minority](https://github.com/Malabarba/rich-minority) | [![MELPA](http://melpa.org/packages/rich-minority-badge.svg)](http://melpa.org/#/rich-minority) | Clean-up and beautify the list of minor-modes
 [slime](https://github.com/slime/slime) | [![MELPA](http://melpa.org/packages/slime-badge.svg)](http://melpa.org/#/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | [![MELPA](http://melpa.org/packages/smart-mode-line-badge.svg)](http://melpa.org/#/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | [![MELPA](http://melpa.org/packages/smartparens-badge.svg)](http://melpa.org/#/smartparens) | Tricks for working with all kinds of parenthesis

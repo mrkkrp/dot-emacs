@@ -66,6 +66,7 @@
    multiple-cursors     ; Multiple cursors for Emacs
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
+   rich-minority        ; Clean-up and beautify the list of minor-modes
    slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis

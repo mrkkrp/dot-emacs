@@ -53,6 +53,7 @@
  ido-vertical-define-keys          'C-n-and-C-p-only
  ispell-dictionary                 "en"    ; default dictionary
  modalka-cursor-type               'box
+ rm-whitelist                      "^↑$"
  show-paren-delay                  0.05
  sp-highlight-pair-overlay         nil
  sp-highlight-wrap-overlay         nil
@@ -75,6 +76,7 @@
 (menu-bar-mode                    0) ; hide menu bar
 (minibuffer-electric-default-mode 1) ; electric minibuffer
 (mouse-wheel-mode                 0) ; ignore mouse wheel
+(rich-minority-mode               1) ; hide most minor modes lighters
 (scroll-bar-mode                  0) ; disable scroll bar
 (show-paren-mode                  1) ; highlight matching parenthesis
 (smartparens-global-mode          1) ; smart editing of parenthesis
@@ -96,25 +98,6 @@
                   "^\\*slime-description\\*$"
                   "^\\*slime-events\\*$"))
   (add-to-list 'ido-ignore-buffers buffer))
-
-(setq
- mk-minor-mode-alias
- '((abbrev-mode                  . "")
-   (aggressive-indent-mode       . "")
-   (auto-fill-function           . "")
-   (compilation-shell-minor-mode . "")
-   (eldoc-mode                   . "")
-   (flycheck-mode                . "")
-   (flyspell-mode                . "")
-   (ispell-minor-mode            . "")
-   (magit-auto-revert-mode       . "")
-   (smartparens-mode             . "")
-   (smooth-scroll-mode           . "")
-   (subword-mode                 . "")
-   (superword-mode               . "")
-   (whitespace-mode              . "")
-   (whole-line-or-region-mode    . "")
-   (yas-minor-mode               . "")))
 
 (defun flyspell-correct-previous (&optional words)
   "Correct word before point, reach distant words.
@@ -172,10 +155,10 @@ move point."
   (modalka-mode    1)
   (whitespace-mode 1))
 
-(add-hook 'flycheck-mode-hook           #'flycheck-color-mode-line-mode)
-(add-hook 'prog-mode-hook               #'hl-todo-mode)
-(add-hook 'prog-mode-hook               #'mk-prepare-prog-mode)
-(add-hook 'text-mode-hook               #'mk-prepare-text-mode)
+(add-hook 'flycheck-mode-hook #'flycheck-color-mode-line-mode)
+(add-hook 'prog-mode-hook     #'hl-todo-mode)
+(add-hook 'prog-mode-hook     #'mk-prepare-prog-mode)
+(add-hook 'text-mode-hook     #'mk-prepare-text-mode)
 
 (advice-add 'mc/prompt-for-inclusion-in-whitelist :override
             (lambda (_original-command) t))

@@ -235,18 +235,11 @@ ADD-SPACE are not NIL, add one space after the initial input."
 Effect of this translation is global."
   `(define-key key-translation-map (kbd ,from) (kbd ,to)))
 
-(defvar mk-minor-mode-alias nil
-  "Alias for minor modes.")
-
 (defvar mk-major-mode-alias nil
   "Alias for major modes.")
 
 (defun mk-apply-mode-alias ()
-  "Use alias from `mk-minor-mode-alias' and `mk-major-mode-alias'."
-  (dolist (x mk-minor-mode-alias)
-    (let ((trg (cdr (assoc (car x) minor-mode-alist))))
-      (when trg
-        (setcar trg (cdr x)))))
+  "Use alias from `mk-major-mode-alias'."
   (let ((mode-alias (cdr (assoc major-mode mk-major-mode-alias))))
     (when mode-alias
       (setq mode-name mode-alias))))

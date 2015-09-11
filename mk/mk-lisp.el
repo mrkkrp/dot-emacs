@@ -38,7 +38,6 @@
 (add-to-list 'aggressive-indent-excluded-modes 'slime-repl-mode)
 (add-to-list 'mk-major-mode-alias '(lisp-mode       . "λ"))
 (add-to-list 'mk-major-mode-alias '(slime-repl-mode . "iλ"))
-(add-to-list 'mk-minor-mode-alias '(slime-mode      . ""))
 (add-to-list 'mk-search-prefix    '(lisp-mode       . "common lisp"))
 (add-to-list 'mk-search-prefix    '(slime-repl-mode . "common lisp"))
 
