@@ -52,6 +52,7 @@
                                      " ×" " ✔" " ⊥" " ⊥" " ↯" "\n→ " "")
  ido-vertical-define-keys          'C-n-and-C-p-only
  ispell-dictionary                 "en"    ; default dictionary
+ modalka-cursor-type               'box
  show-paren-delay                  0.05
  sp-highlight-pair-overlay         nil
  sp-highlight-wrap-overlay         nil
@@ -158,6 +159,7 @@ move point."
   "Enable some minor modes for text editing."
   (auto-fill-mode  1)
   (flyspell-mode   1)
+  (modalka-mode    1)
   (whitespace-mode 1))
 
 (defun mk-prepare-prog-mode ()
@@ -166,6 +168,7 @@ move point."
   (auto-fill-mode  1)
   (flycheck-mode   1)
   (flyspell-prog-mode)
+  (modalka-mode    1)
   (whitespace-mode 1))
 
 (add-hook 'after-change-major-mode-hook (ε #'mouse-wheel-mode 0))

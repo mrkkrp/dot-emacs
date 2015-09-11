@@ -25,9 +25,11 @@
 ;;; Code:
 
 (eval-when-compile
+  (require 'modalka)
   (require 'org)
   (require 'yasnippet))
 
+(require 'cl-lib)
 (require 'misc)
 (require 'mk-utils)
 
@@ -93,14 +95,12 @@
 (mk-translate-kbd "C-c o"         "C-c C-o")
 (mk-translate-kbd "C-c v"         "C-c C-v")
 (mk-translate-kbd "C-x ;"         "C-x C-;")
-(mk-translate-kbd "C-x C-b"       "C-x b")
 (mk-translate-kbd "C-x o"         "C-x C-o")
 
 ;; Global Key Map
 
 (π "C-'"        #'ace-window)
 (π "C-,"        #'avy-goto-char)
-(π "C-."        #'zzz-up-to-char)
 (π "C-SPC"      #'mk-mark-command)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
@@ -111,7 +111,6 @@
 (π "C-c s"      #'mk-search)
 (π "C-c t"      (ε #'mk-visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
-(π "C-x ;"      #'comment-line)
 (π "C-z"        #'mk-copy-rest-of-line)
 (π "M-c"        #'fix-word-capitalize)
 (π "M-e"        #'mk-eval-last-sexp)
@@ -134,8 +133,8 @@
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
 (π "<f12>"      #'mk-exit-emacs)
-(π "<return>"   #'avy-goto-char)
 (π "<escape>"   #'delete-window)
+(π "<return>"   #'modalka-mode)
 (π "<S-up>"     #'buf-move-up)
 (π "<S-down>"   #'buf-move-down)
 (π "<S-left>"   #'buf-move-left)
@@ -215,6 +214,7 @@
 (π "<menu> q r" #'query-replace)
 (π "<menu> r b" #'report-emacs-bug)
 (π "<menu> r c" #'copy-to-register)
+(π "<menu> r e" #'revert-buffer)
 (π "<menu> r i" #'insert-register)
 (π "<menu> r n" #'rectangle-number-lines)
 (π "<menu> r r" #'reverse-region)
@@ -238,6 +238,88 @@
 (π "<menu> y a" #'yas-reload-all)
 (π "<menu> y p" #'mk-yank-primary)
 (π "<menu> y r" #'yank-rectangle)
+
+;; Modal Editing
+
+(modalka-define-kbd "SPC" "C-SPC")
+;; '
+(modalka-define-kbd "," "C-,")
+;; .
+(modalka-define-kbd "-" "C--")
+(modalka-define-kbd "/" "C-/")
+(modalka-define-kbd ":" "M-;")
+(modalka-define-kbd ";" "C-;")
+(modalka-define-kbd "?" "M-/")
+
+(modalka-define-kbd "0" "C-0")
+(modalka-define-kbd "1" "C-1")
+(modalka-define-kbd "2" "C-2")
+(modalka-define-kbd "3" "C-3")
+(modalka-define-kbd "4" "C-4")
+(modalka-define-kbd "5" "C-5")
+(modalka-define-kbd "6" "C-6")
+(modalka-define-kbd "7" "C-7")
+(modalka-define-kbd "8" "C-8")
+(modalka-define-kbd "9" "C-9")
+
+(modalka-define-kbd "a" "C-a")
+(modalka-define-kbd "b" "C-b")
+(modalka-define-kbd "c c" "C-c C-c")
+(modalka-define-kbd "c k" "C-c C-k")
+(modalka-define-kbd "c v" "C-c C-v")
+(modalka-define-kbd "d" "C-d")
+(modalka-define-kbd "e" "C-e")
+(modalka-define-kbd "f" "C-f")
+(modalka-define-kbd "g" "C-g")
+(modalka-define-kbd "h" "M-h")
+(modalka-define-kbd "i" "C-i")
+(modalka-define-kbd "j" "M-j")
+(modalka-define-kbd "k" "C-k")
+(modalka-define-kbd "l" "C-l")
+(modalka-define-kbd "m" "C-m")
+(modalka-define-kbd "n" "C-n")
+(modalka-define-kbd "o" "C-o")
+(modalka-define-kbd "p" "C-p")
+(modalka-define-kbd "q" "M-q")
+(modalka-define-kbd "r" "C-r")
+(modalka-define-kbd "s" "C-s")
+(modalka-define-kbd "t" "M-t")
+(modalka-define-kbd "u" "C-u")
+(modalka-define-kbd "v" "C-v")
+(modalka-define-kbd "w" "C-w")
+(modalka-define-kbd "x ;" "C-x C-;")
+(modalka-define-kbd "x o" "C-x C-o")
+(modalka-define-kbd "y" "C-y")
+(modalka-define-kbd "z" "M-z")
+
+(modalka-define-kbd "A" "M-SPC")
+(modalka-define-kbd "B" "M-b")
+(modalka-define-kbd "C" "M-c")
+(modalka-define-kbd "D" "M-d")
+(modalka-define-kbd "E" "M-e")
+(modalka-define-kbd "F" "M-f")
+(modalka-define-kbd "G" "M-g")
+;; H
+;; I
+;; J
+(modalka-define-kbd "K" "M-k")
+(modalka-define-kbd "L" "M-l")
+(modalka-define-kbd "M" "M-m")
+(modalka-define-kbd "N" "M-n")
+(modalka-define-kbd "O" "M-o")
+(modalka-define-kbd "P" "M-p")
+;; Q
+(modalka-define-kbd "R" "M-r")
+;; S
+;; T
+(modalka-define-kbd "U" "M-u")
+(modalka-define-kbd "V" "M-v")
+(modalka-define-kbd "W" "M-w")
+;; X
+(modalka-define-kbd "Y" "M-y")
+(modalka-define-kbd "Z" "C-z")
+
+;; Other
 
 (defalias 'display-startup-echo-area-message (ε #'mk-show-date))
 (defalias 'list-buffers                      #'ibuffer)
