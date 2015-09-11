@@ -322,16 +322,16 @@
 ;; Other
 
 (defalias 'display-startup-echo-area-message (ε #'mk-show-date))
-(defalias 'list-buffers                      #'ibuffer)
-(defalias 'yes-or-no-p                       #'y-or-n-p)
+(defalias 'list-buffers #'ibuffer)
+(defalias 'yes-or-no-p #'y-or-n-p)
 
 (add-hook 'after-change-major-mode-hook #'mk-apply-mode-alias)
-(add-hook 'before-save-hook             #'delete-trailing-whitespace)
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (advice-add 'narrow-to-region :after (η #'keyboard-quit))
-(advice-add 'package-install  :filter-args (lambda (args) (list (car args) t)))
+(advice-add 'package-install :filter-args (lambda (args) (list (car args) t)))
 (advice-add 'process-kill-buffer-query-function :override (σ t))
-(advice-add 'revert-buffer    :filter-args (σ nil t))
+(advice-add 'revert-buffer :filter-args (σ nil t))
 
 (provide 'mk-global)
 
