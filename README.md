@@ -274,17 +274,6 @@ all. There are enough combinations for us to prefer those that have some
 mnemonic value. Give this technique a try and you will see how productive
 you can be!
 
-Also note that <kbd>↵ Return</kbd> key is pretty useless, because we have
-<kbd>C-j</kbd> and <kbd>C-m</kbd> key bindings. Since <kbd>↵ Return</kbd>
-key has two semantics: end of input and new line, it's logical that we have
-two flavors of <kbd>↵ Return</kbd> key here. But what's about the <kbd>↵
-Return</kbd> key itself? It's of no use, unless GPG pops up with its thing
-(work is being done to enter passphrase for GPG via minibuffer, Emacs
-way). At the same time <kbd>↵ Return</kbd> occupies a comfortable position
-at the keyboard, so it's stupid not to use it for something useful. For me,
-<kbd>↵ Return</kbd> key invokes `avy-goto-char`, and look, this is really
-convenient! Try it!
-
 Shortcut            | Description
 --------            | -----------
 <kbd>C-'</kbd>      | switch to other buffer
