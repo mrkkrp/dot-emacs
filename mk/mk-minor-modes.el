@@ -144,7 +144,8 @@ move point."
   "Enable some minor modes for text editing."
   (auto-fill-mode  1)
   (flyspell-mode   1)
-  (modalka-mode    1)
+  (unless (string-equal (buffer-name) "COMMIT_EDITMSG")
+    (modalka-mode  1))
   (whitespace-mode 1))
 
 (defun mk-prepare-prog-mode ()
