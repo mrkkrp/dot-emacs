@@ -40,7 +40,6 @@
    aggressive-indent    ; Keep code always indented
    auctex               ; Integrated environment for *TeX*
    avy                  ; Move cursor effectively
-   buffer-move          ; Move buffers easily
    cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
    ebal                 ; Emacs interface to Cabal
