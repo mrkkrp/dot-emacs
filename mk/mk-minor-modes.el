@@ -157,6 +157,7 @@ move point."
   (modalka-mode    1)
   (whitespace-mode 1))
 
+(add-hook 'compilation-mode-hook #'modalka-mode)
 (add-hook 'flycheck-mode-hook #'flycheck-color-mode-line-mode)
 (add-hook 'prog-mode-hook     #'hl-todo-mode)
 (add-hook 'prog-mode-hook     #'mk-prepare-prog-mode)
