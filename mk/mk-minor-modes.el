@@ -161,9 +161,6 @@ move point."
 (add-hook 'prog-mode-hook     #'mk-prepare-prog-mode)
 (add-hook 'text-mode-hook     #'mk-prepare-text-mode)
 
-(advice-add 'mc/prompt-for-inclusion-in-whitelist :override
-            (lambda (_original-command) t))
-
 (provide 'mk-minor-modes)
 
 ;;; mk-minor-modes.el ends here
