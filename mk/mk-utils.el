@@ -235,15 +235,6 @@ ADD-SPACE are not NIL, add one space after the initial input."
 Effect of this translation is global."
   `(define-key key-translation-map (kbd ,from) (kbd ,to)))
 
-(defvar mk-major-mode-alias nil
-  "Alias for major modes.")
-
-(defun mk-apply-mode-alias ()
-  "Use alias from `mk-major-mode-alias'."
-  (let ((mode-alias (cdr (assoc major-mode mk-major-mode-alias))))
-    (when mode-alias
-      (setq mode-name mode-alias))))
-
 (defun mk-find-file (regexp)
   "Find file whose name satisfies REGEXP traversing upwards.
 

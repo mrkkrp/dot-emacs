@@ -48,10 +48,6 @@
 
 (mk-disable-ido 'dired-create-directory)
 
-(add-to-list 'mk-major-mode-alias '(dired-mode                 . "δ"))
-(add-to-list 'mk-major-mode-alias '(image-dired-thumbnail-mode . "◊δ"))
-(add-to-list 'mk-major-mode-alias '(wdired-mode                . "↯δ"))
-
 (defun mk-dired-first-file ()
   "Jump to the first file in current directory."
   (interactive)

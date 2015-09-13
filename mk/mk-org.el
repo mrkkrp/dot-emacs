@@ -34,8 +34,6 @@
  org-catch-invisible-edits 'show ; make point visible
  org-completion-use-ido    t)
 
-(add-to-list 'mk-major-mode-alias '(org-agenda-mode . "Org-Agenda"))
-
 (τ org org "C-'" #'ace-window)
 
 (advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)

@@ -26,7 +26,6 @@
 (require 'mk-utils)
 
 (add-to-list 'kill-or-bury-alive-must-die-list 'eshell-mode)
-(add-to-list 'mk-major-mode-alias '(eshell-mode . "εsh"))
 
 (defun eshell-other-window (fnc &optional arg)
   "Open Emacs shell (via FNC) in other window.

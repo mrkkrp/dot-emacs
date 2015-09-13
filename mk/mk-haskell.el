@@ -38,8 +38,6 @@
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-cabal-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-interactive-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-mode)
-(add-to-list 'mk-major-mode-alias '(haskell-interactive-mode . "iH"))
-(add-to-list 'mk-major-mode-alias '(haskell-mode             . "H"))
 (add-to-list 'mk-search-prefix    '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix    '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix    '(haskell-mode             . "haskell"))

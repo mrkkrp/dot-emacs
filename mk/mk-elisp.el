@@ -30,9 +30,7 @@
 
 (setq eldoc-idle-delay 0.1) ; default is way too long
 
-(add-to-list 'mk-major-mode-alias '(emacs-lisp-mode       . "ε"))
-(add-to-list 'mk-major-mode-alias '(lisp-interaction-mode . "iε"))
-(add-to-list 'mk-search-prefix    '(emacs-lisp-mode       . "emacs lisp"))
+(add-to-list 'mk-search-prefix '(emacs-lisp-mode . "emacs lisp"))
 
 (τ lisp-mode emacs-lisp       "C-c h" #'hyperspec-lookup)
 (τ lisp-mode lisp-interaction "C-c h" #'hyperspec-lookup)

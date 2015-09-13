@@ -35,10 +35,8 @@
 
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
-(add-to-list 'mk-major-mode-alias '(inferior-python-mode . "iπ"))
-(add-to-list 'mk-major-mode-alias '(python-mode          . "π"))
-(add-to-list 'mk-search-prefix    '(inferior-python-mode . "python"))
-(add-to-list 'mk-search-prefix    '(python-mode          . "python"))
+(add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
+(add-to-list 'mk-search-prefix '(python-mode          . "python"))
 
 (when (executable-find "ipython")
   (setq

@@ -131,11 +131,9 @@
 
 (require 'mk-global)      ; global settings
 (require 'mk-minor-modes) ; minor modes
-(require 'mk-bookmark)    ; major modes
-(require 'mk-c)           ; ^
+(require 'mk-c)           ; major modes
 (require 'mk-calendar)    ; ^
 (require 'mk-clojure)     ; ^
-(require 'mk-diff)        ; ^
 (require 'mk-dired)       ; ^
 (require 'mk-elisp)       ; ^
 (require 'mk-erc)         ; ^

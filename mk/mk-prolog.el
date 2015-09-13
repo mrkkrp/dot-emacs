@@ -29,8 +29,6 @@
 (require 'mk-utils)
 
 (add-to-list 'aggressive-indent-excluded-modes 'prolog-inferior-mode)
-(add-to-list 'mk-major-mode-alias '(prolog-inferior-mode . "iP"))
-(add-to-list 'mk-major-mode-alias '(prolog-mode          . "P"))
 (add-to-list 'mk-search-prefix    '(prolog-inferior-mode . "prolog"))
 (add-to-list 'mk-search-prefix    '(prolog-mode          . "prolog"))
 

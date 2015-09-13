@@ -25,7 +25,6 @@
 
 (require 'mk-utils)
 
-(add-to-list 'mk-major-mode-alias '(c-mode . "C"))
 (add-to-list 'mk-search-prefix    '(c-mode . "c"))
 
 (defun mk-c-docs (symbol)

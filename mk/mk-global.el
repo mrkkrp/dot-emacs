@@ -325,7 +325,6 @@
 (defalias 'list-buffers #'ibuffer)
 (defalias 'yes-or-no-p #'y-or-n-p)
 
-(add-hook 'after-change-major-mode-hook #'mk-apply-mode-alias)
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (advice-add 'narrow-to-region :after (η #'keyboard-quit))
