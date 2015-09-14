@@ -82,8 +82,6 @@
 
 (add-hook 'dired-mode-hook #'toggle-truncate-lines)
 
-(advice-add 'wdired-change-to-dired-mode :after #'mk-apply-mode-alias)
-
 (provide 'mk-dired)
 
 ;;; mk-dired.el ends here
