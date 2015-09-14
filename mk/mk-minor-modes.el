@@ -26,7 +26,6 @@
 (eval-when-compile
   (require 'flyspell)
   (require 'ido)
-  (require 'multiple-cursors)
   (require 'smartparens))
 
 (require 'cl-lib)

@@ -38,9 +38,9 @@
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-cabal-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-interactive-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'haskell-mode)
-(add-to-list 'mk-search-prefix    '(haskell-cabal-mode       . "haskell"))
-(add-to-list 'mk-search-prefix    '(haskell-interactive-mode . "haskell"))
-(add-to-list 'mk-search-prefix    '(haskell-mode             . "haskell"))
+(add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
+(add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
+(add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
 
 (τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
