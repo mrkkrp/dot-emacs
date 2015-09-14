@@ -273,7 +273,7 @@
 (modalka-define-kbd "q" "M-q")
 (modalka-define-kbd "r" "C-r")
 (modalka-define-kbd "s" "C-s")
-(modalka-define-kbd "t" "M-t")
+(modalka-define-kbd "t" "C-t")
 (modalka-define-kbd "u" "C-u")
 (modalka-define-kbd "v" "C-v")
 (modalka-define-kbd "w" "C-w")
@@ -301,7 +301,7 @@
 ;; Q
 (modalka-define-kbd "R" "M-r")
 ;; S
-;; T
+(modalka-define-kbd "T" "M-t")
 (modalka-define-kbd "U" "M-u")
 (modalka-define-kbd "V" "M-v")
 (modalka-define-kbd "W" "M-w")

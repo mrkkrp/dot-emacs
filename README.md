@@ -210,7 +210,7 @@ Input          | Result
 <kbd>q</kbd>   | <kbd>M-q</kbd>
 <kbd>r</kbd>   | <kbd>C-r</kbd>
 <kbd>s</kbd>   | <kbd>C-s</kbd>
-<kbd>t</kbd>   | <kbd>M-t</kbd>
+<kbd>t</kbd>   | <kbd>C-t</kbd>
 <kbd>u</kbd>   | <kbd>C-u</kbd>
 <kbd>v</kbd>   | <kbd>C-v</kbd>
 <kbd>w</kbd>   | <kbd>C-w</kbd>
@@ -232,6 +232,7 @@ Input          | Result
 <kbd>O</kbd>   | <kbd>M-o</kbd>
 <kbd>P</kbd>   | <kbd>M-p</kbd>
 <kbd>R</kbd>   | <kbd>M-r</kbd>
+<kbd>T</kbd>   | <kbd>M-t</kbd>
 <kbd>U</kbd>   | <kbd>M-u</kbd>
 <kbd>V</kbd>   | <kbd>M-v</kbd>
 <kbd>W</kbd>   | <kbd>M-w</kbd>
