@@ -42,6 +42,7 @@
    avy                  ; Move cursor effectively
    cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
+   cyphejor             ; Shorten names of major modes
    ebal                 ; Emacs interface to Cabal
    f                    ; Modern API for working with files and dirs
    fix-word             ; Convenient word transformation

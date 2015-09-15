@@ -37,6 +37,7 @@ Package/Repo | Source | Description
 [avy](https://github.com/abo-abo/avy) | [![MELPA](http://melpa.org/packages/avy-badge.svg)](http://melpa.org/#/avy) | Move cursor effectively
 [cider](https://github.com/clojure-emacs/cider) | [![MELPA](http://melpa.org/packages/cider-badge.svg)](http://melpa.org/#/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | [![MELPA](http://melpa.org/packages/common-lisp-snippets-badge.svg)](http://melpa.org/#/common-lisp-snippets) | Yasnippets for Common Lisp
+[cyphejor](https://github.com/mrkkrp/cyphejor) † | [![MELPA](http://melpa.org/packages/cyphejor-badge.svg)](http://melpa.org/#/cyphejor) | Shorten names of major modes
 [ebal](https://github.com/mrkkrp/ebal) † | [![MELPA](http://melpa.org/packages/ebal-badge.svg)](http://melpa.org/#/ebal) | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | [![MELPA](http://melpa.org/packages/f-badge.svg)](http://melpa.org/#/f) | Modern API for working with files and dirs
 [fix-word](https://github.com/mrkkrp/fix-word) † | [![MELPA](http://melpa.org/packages/fix-word-badge.svg)](http://melpa.org/#/fix-word) | Convenient word transformation

@@ -24,6 +24,7 @@
 ;;; Code:
 
 (eval-when-compile
+  (require 'cyphejor)
   (require 'flyspell)
   (require 'ido)
   (require 'smartparens))
@@ -64,6 +65,7 @@
 
 (ace-popup-menu-mode              1) ; replace GUI popup menus
 (blink-cursor-mode                0) ; my cursor doesn't blink, man
+(cyphejor-mode                    1) ; shorten names of major modes
 (delete-selection-mode            1) ; delete selection mode enabled
 (display-time-mode                1) ; display time
 (electric-indent-mode             0) ; I use aggressive indent mode instead
@@ -84,6 +86,28 @@
 (vimish-fold-global-mode          1) ; persistent test folding
 (whole-line-or-region-mode        1) ; operate on current line
 (yas-global-mode                  1) ; enable Yasnippet
+
+(setq
+ cyphejor-rules
+ '(:upcase
+   ("bookmark"    "→")
+   ("buffer"      "β")
+   ("diff"        "Δ")
+   ("dired"       "δ")
+   ("emacs"       "ε")
+   ("eshell"      "εsh")
+   ("fundamental" "Ⓕ")
+   ("inferior"    "i" :prefix)
+   ("interaction" "i" :prefix)
+   ("interactive" "i" :prefix)
+   ("lisp"        "λ" :postfix)
+   ("menu"        "▤" :postfix)
+   ("mode"        "")
+   ("package"     "↓")
+   ("python"      "π")
+   ("shell"       "sh" :postfix)
+   ("text"        "ξ")
+   ("wdired"      "↯δ")))
 
 (dolist (buffer '("^\\*Backtrace\\*$"
                   "^\\*Compile-Log\\*$"
