@@ -53,7 +53,7 @@
  ispell-dictionary                 "en"    ; default dictionary
  modalka-cursor-type               'box
  rm-whitelist                      "^↑$"
- rm-text-properties                '(("^↑$" 'face 'font-lock-constant-face))
+ rm-text-properties                '(("^↑$" 'face 'font-lock-doc-face))
  show-paren-delay                  0.05
  sp-highlight-pair-overlay         nil
  sp-highlight-wrap-overlay         nil
