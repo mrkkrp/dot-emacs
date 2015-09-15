@@ -191,7 +191,7 @@
 (π "<menu> m k" #'mk-make)
 (π "<menu> m n" #'man)
 (π "<menu> m s" #'magit-status)
-(π "<menu> n n" #'narrow-to-region)
+(π "<menu> n n" #'mk-narrow-to-region)
 (π "<menu> n w" #'widen)
 (π "<menu> p a" #'package-autoremove)
 (π "<menu> p f" #'package-install-file)
@@ -317,7 +317,6 @@
 
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
-(advice-add 'narrow-to-region :after (η #'keyboard-quit))
 (advice-add 'package-install :filter-args (lambda (args) (list (car args) t)))
 (advice-add 'process-kill-buffer-query-function :override (σ t))
 (advice-add 'revert-buffer :filter-args (σ nil t))

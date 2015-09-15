@@ -106,6 +106,12 @@ performed."
       (rectangle-mark-mode 1)
     (set-mark-command nil)))
 
+(defun mk-narrow-to-region ()
+  "Narrow to region and disable the region."
+  (interactive)
+  (call-interactively #'narrow-to-region)
+  (deactivate-mark))
+
 ;; Navigation
 
 (defun mk-first-line (&optional arg)
