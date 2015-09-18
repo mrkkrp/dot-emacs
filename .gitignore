@@ -15,6 +15,7 @@ init.elc*
 network-security.data
 org/
 smex-items
+speed-type/
 tramp
 url/
 vimish-fold/
