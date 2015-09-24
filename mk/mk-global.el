@@ -115,7 +115,7 @@
 (π "C-z"        #'mk-copy-rest-of-line)
 (π "M-c"        #'fix-word-capitalize)
 (π "M-e"        #'mk-eval-last-sexp)
-(π "M-g"        #'mark-word)
+(π "M-h"        #'mark-word)
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'mk-transpose-line-down)
@@ -290,7 +290,7 @@
 (modalka-define-kbd "D" "M-d")
 (modalka-define-kbd "E" "M-e")
 (modalka-define-kbd "F" "M-f")
-(modalka-define-kbd "G" "M-g")
+;; G
 ;; H
 ;; I
 ;; J

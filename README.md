@@ -226,7 +226,6 @@ Input          | Result
 <kbd>D</kbd>   | <kbd>M-d</kbd>
 <kbd>E</kbd>   | <kbd>M-e</kbd>
 <kbd>F</kbd>   | <kbd>M-f</kbd>
-<kbd>G</kbd>   | <kbd>M-g</kbd>
 <kbd>K</kbd>   | <kbd>M-k</kbd>
 <kbd>L</kbd>   | <kbd>M-l</kbd>
 <kbd>M</kbd>   | <kbd>M-m</kbd>
@@ -294,7 +293,7 @@ Shortcut            | Description
 <kbd>C-z</kbd>      | copy rest of the line
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
-<kbd>M-g</kbd>      | mark word
+<kbd>M-h</kbd>      | mark word
 <kbd>M-j</kbd>      | join the next line and the current one
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-n</kbd>      | transpose line down
@@ -424,7 +423,7 @@ Shortcut            | Description
 <kbd>M-b</kbd>      | Smartparens: backward S-expression
 <kbd>M-d</kbd>      | Smartparens: kill S-expression
 <kbd>M-f</kbd>      | Smartparens: forward S-expression
-<kbd>M-g</kbd>      | Smartparens: select next S-expression
+<kbd>M-h</kbd>      | Smartparens: select next S-expression
 <kbd>M-k</kbd>      | Smartparens: hybrid kill
 <kbd>M-t</kbd>      | Smartparens: add to previous S-expression
 

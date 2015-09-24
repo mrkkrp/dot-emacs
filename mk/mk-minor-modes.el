@@ -156,7 +156,7 @@ move point."
 (τ smartparens smartparens "M-b"           #'sp-backward-sexp)
 (τ smartparens smartparens "M-d"           #'sp-kill-sexp)
 (τ smartparens smartparens "M-f"           #'sp-forward-sexp)
-(τ smartparens smartparens "M-g"           #'sp-select-next-thing)
+(τ smartparens smartparens "M-h"           #'sp-select-next-thing)
 (τ smartparens smartparens "M-k"           #'sp-kill-hybrid-sexp)
 (τ smartparens smartparens "M-t"           #'sp-add-to-previous-sexp)
 
