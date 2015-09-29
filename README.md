@@ -397,11 +397,10 @@ Shortcut            | Description
 <kbd>menu t h</kbd> | switch to custom color theme
 <kbd>menu u t</kbd> | untabify
 <kbd>menu v a</kbd> | vimish fold: avy
-<kbd>menu v d</kbd> | vimish fold: delete
 <kbd>menu v e</kbd> | show version in minibuffer
 <kbd>menu v f</kbd> | vimish fold
 <kbd>menu v r</kbd> | split window (vertical)
-<kbd>menu v v</kbd> | vimish fold: toggle
+<kbd>menu v v</kbd> | vimish fold: delete
 <kbd>menu x i</kbd> | install current project (via `install.sh`)
 <kbd>menu x u</kbd> | uninstall current project (via `uninstall.sh`)
 <kbd>menu y a</kbd> | reload all snippets
