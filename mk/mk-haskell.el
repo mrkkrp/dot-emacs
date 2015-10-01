@@ -25,7 +25,6 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'aggressive-indent)
   (require 'haskell))
 
 (require 'mk-utils)
@@ -35,9 +34,6 @@
  haskell-process-load-or-reload-prompt t    ; please ask
  haskell-process-show-debug-tips       nil) ; don't show anything
 
-(add-to-list 'aggressive-indent-excluded-modes 'haskell-cabal-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'haskell-interactive-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'haskell-mode)
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))

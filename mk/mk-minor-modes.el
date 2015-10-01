@@ -69,7 +69,6 @@
 (delete-selection-mode            1) ; delete selection mode enabled
 (display-time-mode                1) ; display time
 (electric-indent-mode             0) ; I use aggressive indent mode instead
-(global-aggressive-indent-mode    1) ; turn aggressive indent on globally
 (global-auto-revert-mode          1) ; revert buffers automatically
 (highlight-line-mode              1) ; highlight lines in list-like buffers
 (ido-mode                         1) ; ido for `switch-buffer' and `find-file'

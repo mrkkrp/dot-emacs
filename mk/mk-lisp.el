@@ -26,7 +26,6 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'aggressive-indent)
   (require 'slime)
   (require 'slime-repl))
 
@@ -35,9 +34,8 @@
 (setq inferior-lisp-program "sbcl"
       slime-contribs '(slime-fancy))
 
-(add-to-list 'aggressive-indent-excluded-modes 'slime-repl-mode)
-(add-to-list 'mk-search-prefix    '(lisp-mode       . "common lisp"))
-(add-to-list 'mk-search-prefix    '(slime-repl-mode . "common lisp"))
+(add-to-list 'mk-search-prefix '(lisp-mode       . "common lisp"))
+(add-to-list 'mk-search-prefix '(slime-repl-mode . "common lisp"))
 
 (kill-or-bury-alive-kill-with 'slime-repl-mode #'slime-kill-all-buffers t)
 
@@ -58,6 +56,7 @@
 (τ slime     slime-repl "C-c i" #'mk-slime-in-package)
 (τ slime     slime-repl "C-c r" #'slime-restart-inferior-lisp)
 
+(add-hook 'lisp-mode-hook       #'aggressive-indent-mode)
 (add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)
 (add-hook 'slime-repl-mode-hook #'electric-indent-local-mode)
 

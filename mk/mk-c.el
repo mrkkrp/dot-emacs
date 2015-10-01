@@ -25,7 +25,7 @@
 
 (require 'mk-utils)
 
-(add-to-list 'mk-search-prefix    '(c-mode . "c"))
+(add-to-list 'mk-search-prefix '(c-mode . "c"))
 
 (defun mk-c-docs (symbol)
   "Find documentation for given symbol SYMBOL online."

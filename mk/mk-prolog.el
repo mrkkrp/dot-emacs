@@ -23,14 +23,10 @@
 
 ;;; Code:
 
-(eval-when-compile
-  (require 'aggressive-indent))
-
 (require 'mk-utils)
 
-(add-to-list 'aggressive-indent-excluded-modes 'prolog-inferior-mode)
-(add-to-list 'mk-search-prefix    '(prolog-inferior-mode . "prolog"))
-(add-to-list 'mk-search-prefix    '(prolog-mode          . "prolog"))
+(add-to-list 'mk-search-prefix '(prolog-inferior-mode . "prolog"))
+(add-to-list 'mk-search-prefix '(prolog-mode          . "prolog"))
 
 (defun mk-swi-prolog-search (symbol)
   "Search for SYMBOL at official site of SWI Prolog."

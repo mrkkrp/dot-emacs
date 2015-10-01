@@ -24,7 +24,6 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'aggressive-indent)
   (require 'python))
 
 (require 'mk-utils)
@@ -32,8 +31,6 @@
 (setq-default
  python-fill-docstring-style 'django
  python-indent-offset        4)
-
-(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
 (add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
 (add-to-list 'mk-search-prefix '(python-mode          . "python"))

@@ -35,6 +35,7 @@
 (τ lisp-mode emacs-lisp       "C-c h" #'hyperspec-lookup)
 (τ lisp-mode lisp-interaction "C-c h" #'hyperspec-lookup)
 
+(add-hook 'emacs-lisp-mode-hook       #'aggressive-indent-mode)
 (add-hook 'emacs-lisp-mode-hook       #'eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook       #'rainbow-delimiters-mode)
 (add-hook 'lisp-interaction-mode-hook #'eldoc-mode)
