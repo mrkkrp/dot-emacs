@@ -140,6 +140,7 @@
 (require 'mk-eshell)      ; ^
 (require 'mk-gnus)        ; ^
 (require 'mk-haskell)     ; ^
+(require 'mk-html)        ; ^
 (require 'mk-ibuffer)     ; ^
 (require 'mk-lisp)        ; ^
 (require 'mk-magit)       ; ^
