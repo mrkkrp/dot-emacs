@@ -289,7 +289,7 @@
 (modalka-define-kbd "D" "M-d")
 (modalka-define-kbd "E" "M-e")
 (modalka-define-kbd "F" "M-f")
-;; G
+(modalka-define-kbd "G" "C-`")
 ;; H
 ;; I
 ;; J

@@ -226,6 +226,7 @@ Input          | Result
 <kbd>D</kbd>   | <kbd>M-d</kbd>
 <kbd>E</kbd>   | <kbd>M-e</kbd>
 <kbd>F</kbd>   | <kbd>M-f</kbd>
+<kbd>G</kbd>   | <kbd>C-`</kbd>
 <kbd>K</kbd>   | <kbd>M-k</kbd>
 <kbd>L</kbd>   | <kbd>M-l</kbd>
 <kbd>M</kbd>   | <kbd>M-m</kbd>
