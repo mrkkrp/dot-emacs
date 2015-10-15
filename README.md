@@ -53,6 +53,7 @@ Package/Repo | Source | Description
 [ido-hacks](https://github.com/scottjad/ido-hacks) | [![MELPA](http://melpa.org/packages/ido-hacks-badge.svg)](http://melpa.org/#/ido-hacks) | Put more IDO in your IDO
 [ido-ubiquitous](https://github.com/DarwinAwardWinner/ido-ubiquitous) | [![MELPA](http://melpa.org/packages/ido-ubiquitous-badge.svg)](http://melpa.org/#/ido-ubiquitous) | Use IDO (nearly) everywhere
 [ido-vertial-mode](https://github.com/creichert/ido-vertical-mode.el) | [![MELPA](http://melpa.org/packages/ido-vertical-mode-badge.svg)](http://melpa.org/#/ido-vertical-mode) | Makes IDO-mode display vertically
+[js2-mode](https://github.com/mooz/js2-mode) | [![MELPA](http://melpa.org/packages/js2-mode-badge.svg)](http://melpa.org/#/js2-mode) | Improved JavaScript editing mode
 [kill-or-bury-alive](https://github.com/mrkkrp/kill-or-bury-alive) † | [![MELPA](http://melpa.org/packages/kill-or-bury-alive-badge.svg)](http://melpa.org/#/kill-or-bury-alive) | Precise control over buffer killing in Emacs
 [magit](https://github.com/magit/magit) | [![MELPA](http://melpa.org/packages/magit-badge.svg)](http://melpa.org/#/magit) | A Git porcelain inside Emacs
 [markdown-mode](http://daringfireball.net/projects/markdown/) | [![MELPA](http://melpa.org/packages/markdown-mode-badge.svg)](http://melpa.org/#/markdown-mode) | Major mode for Markdown-formatted text files
@@ -61,6 +62,7 @@ Package/Repo | Source | Description
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | [![MELPA](http://melpa.org/packages/rich-minority-badge.svg)](http://melpa.org/#/rich-minority) | Clean-up and beautify the list of minor-modes
+[skewer-mode](https://github.com/skeeto/skewer-mode) | [![MELPA](http://melpa.org/packages/skewer-mode-badge.svg)](http://melpa.org/#/skewer-mode) | Live web development with Emacs
 [slime](https://github.com/slime/slime) | [![MELPA](http://melpa.org/packages/slime-badge.svg)](http://melpa.org/#/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | [![MELPA](http://melpa.org/packages/smart-mode-line-badge.svg)](http://melpa.org/#/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | [![MELPA](http://melpa.org/packages/smartparens-badge.svg)](http://melpa.org/#/smartparens) | Tricks for working with all kinds of parenthesis

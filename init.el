@@ -58,6 +58,7 @@
    ido-hacks            ; Put more IDO in your IDO
    ido-ubiquitous       ; Use IDO (nearly) everywhere
    ido-vertical-mode    ; Makes IDO-mode display vertically
+   js2-mode             ; Improved JavaScript editing mode
    kill-or-bury-alive   ; Precise control over buffer killing in Emacs
    magit                ; A Git porcelain inside Emacs
    markdown-mode        ; Major mode for Markdown-formatted text files
@@ -66,6 +67,7 @@
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
+   skewer-mode          ; Live web development in Emacs
    slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis
@@ -142,6 +144,7 @@
 (require 'mk-haskell)     ; ^
 (require 'mk-html)        ; ^
 (require 'mk-ibuffer)     ; ^
+(require 'mk-js)          ; ^
 (require 'mk-lisp)        ; ^
 (require 'mk-magit)       ; ^
 (require 'mk-man)         ; ^
