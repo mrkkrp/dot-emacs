@@ -76,7 +76,8 @@
     (let ((compilation-buffer-name-function
            (lambda (_major-mode)
              (format "*%s-server*" (f-filename default-directory)))))
-      (compile "python manage.py runserver" t))))
+      (compile "python manage.py runserver" t)
+      (browse-url "localhost:8000"))))
 
 (defun mk-python-setup-django (shell &rest args)
   "Run Python shell via SHELL with arguments ARGS.
