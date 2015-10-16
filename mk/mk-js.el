@@ -23,9 +23,36 @@
 
 ;;; Code:
 
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(eval-when-compile
+  (require 'skewer-mode))
 
-(skewer-setup) ; setup hooks
+(require 'mk-utils)
+
+(add-to-list 'mk-search-prefix '(js2-mode . "java script "))
+(add-to-list 'auto-mode-alist  '("\\.js$" . js2-mode))
+
+(defun mk-js-docs (symbol)
+  "Find documentation for given SYMBOL online."
+  (interactive (list (mk-grab-input "Java Script Docs: ")))
+  (browse-url
+   (concat "https://developer.mozilla.org/en-US/search?q="
+           (url-hexify-string symbol)
+           "&topic=js")))
+
+(defun mk-jquery-docs (symbol)
+  "Find documentation for given SYMBOL online."
+  (interactive (list (mk-grab-input "jQuery Docs: ")))
+  (browse-url
+   (concat "https://api.jquery.com/?s="
+           (url-hexify-string symbol))))
+
+(add-hook 'css-mode-hook  #'skewer-css-mode)
+(add-hook 'html-mode-hook #'skewer-html-mode)
+(add-hook 'js2-mode-hook  #'skewer-mode)
+
+(τ js2-mode js2 "C-c C-l" #'skewer-load-buffer)
+(τ js2-mode js2 "C-c h"   #'mk-js-docs)
+(τ js2-mode js2 "C-c i"   #'mk-jquery-docs)
 
 (provide 'mk-js)
 

@@ -219,6 +219,7 @@ Input          | Result
 <kbd>v</kbd>   | <kbd>C-v</kbd>
 <kbd>w</kbd>   | <kbd>C-w</kbd>
 <kbd>x ;</kbd> | <kbd>C-x C-;</kbd>
+<kbd>x e</kbd> | <kbd>C-x C-e</kbd>
 <kbd>x o</kbd> | <kbd>C-x C-o</kbd>
 <kbd>y</kbd>   | <kbd>C-y</kbd>
 <kbd>z</kbd>   | <kbd>M-z</kbd>
@@ -362,6 +363,8 @@ Shortcut            | Description
 <kbd>menu h r</kbd> | split window (horizontal)
 <kbd>menu h s</kbd> | highlight symbol
 <kbd>menu i r</kbd> | indent region
+<kbd>menu j r</kbd> | skewer REPL
+<kbd>menu j s</kbd> | run skewer
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
 <kbd>menu l i</kbd> | SLIME

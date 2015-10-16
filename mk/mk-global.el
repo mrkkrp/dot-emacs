@@ -31,6 +31,7 @@
 
 (require 'cl-lib)
 (require 'misc)
+(require 'mk-python)
 (require 'mk-utils)
 
 (setq-default
@@ -181,6 +182,8 @@
 (π "<menu> h r" #'split-window-below)
 (π "<menu> h s" #'highlight-symbol)
 (π "<menu> i r" #'indent-region)
+(π "<menu> j r" #'skewer-repl)
+(π "<menu> j s" #'run-skewer)
 (π "<menu> k r" #'kill-rectangle)
 (π "<menu> l b" #'list-buffers)
 (π "<menu> l i" #'slime)
@@ -279,6 +282,7 @@
 (modalka-define-kbd "v" "C-v")
 (modalka-define-kbd "w" "C-w")
 (modalka-define-kbd "x ;" "C-x C-;")
+(modalka-define-kbd "x e" "C-x C-e")
 (modalka-define-kbd "x o" "C-x C-o")
 (modalka-define-kbd "y" "C-y")
 (modalka-define-kbd "z" "M-z")
