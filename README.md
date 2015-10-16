@@ -62,6 +62,7 @@ Package/Repo | Source | Description
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | [![MELPA](http://melpa.org/packages/rich-minority-badge.svg)](http://melpa.org/#/rich-minority) | Clean-up and beautify the list of minor-modes
+[shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | [![MELPA](http://melpa.org/packages/shakespeare-mode-badge.svg)](http://melpa.org/#/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
 [skewer-mode](https://github.com/skeeto/skewer-mode) | [![MELPA](http://melpa.org/packages/skewer-mode-badge.svg)](http://melpa.org/#/skewer-mode) | Live web development with Emacs
 [slime](https://github.com/slime/slime) | [![MELPA](http://melpa.org/packages/slime-badge.svg)](http://melpa.org/#/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | [![MELPA](http://melpa.org/packages/smart-mode-line-badge.svg)](http://melpa.org/#/smart-mode-line) | A powerful and beautiful mode-line for Emacs

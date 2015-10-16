@@ -67,6 +67,7 @@
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
+   shakespeare-mode     ; Support for Hamlet, Lucius, and Julius templates
    skewer-mode          ; Live web development in Emacs
    slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
