@@ -20,16 +20,20 @@
 ;;; Commentary:
 
 ;; Everything I tweak for Haskell programming is here. Stuff here requires
-;; `happy', `alex', and `ghc-mod' (with cabal).
+;; `happy', `alex', and `ghc-mod'.
 
 ;;; Code:
 
 (eval-when-compile
+  (require 'ebal)
   (require 'haskell))
 
+(require 'cl-lib)
+(require 'flycheck)
 (require 'mk-utils)
 
 (setq
+ ebal-operation-mode                   'stack
  haskell-ask-also-kill-buffers         nil  ; don't ask
  haskell-process-load-or-reload-prompt t    ; please ask
  haskell-process-show-debug-tips       nil) ; don't show anything
@@ -37,6 +41,10 @@
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
+
+(add-to-list 'flycheck-ghc-args   "-cpp")
+(add-to-list 'flycheck-ghc-args   "-DMIN_VERSION_base(a,b,c)")
+(add-to-list 'flycheck-hlint-args "--cpp-simple")
 
 (τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
