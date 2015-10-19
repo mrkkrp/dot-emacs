@@ -375,6 +375,7 @@ Shortcut            | Description
 <kbd>menu m d</kbd> | markdown mode
 <kbd>menu m i</kbd> | magit init
 <kbd>menu m k</kbd> | make current project
+<kbd>menu m m</kbd> | switch to messages buffer
 <kbd>menu m n</kbd> | man
 <kbd>menu m s</kbd> | magit status
 <kbd>menu n n</kbd> | narrow to region

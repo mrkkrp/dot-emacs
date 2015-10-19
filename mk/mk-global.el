@@ -193,6 +193,7 @@
 (π "<menu> m d" #'markdown-mode)
 (π "<menu> m i" #'magit-init)
 (π "<menu> m k" #'mk-make)
+(π "<menu> m m" (ε #'switch-to-buffer "*Messages*"))
 (π "<menu> m n" #'man)
 (π "<menu> m s" #'magit-status)
 (π "<menu> n n" #'mk-narrow-to-region)
