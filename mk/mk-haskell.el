@@ -42,9 +42,30 @@
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
 
-(add-to-list 'flycheck-ghc-args   "-cpp")
-(add-to-list 'flycheck-ghc-args   "-DMIN_VERSION_base(a,b,c)")
-(add-to-list 'flycheck-hlint-args "--cpp-simple")
+(defun mk-haskell-set-min-versions (lib-list)
+  "Help Flycheck handle Cabal MIN_VERSION_ definitions.
+
+LIB-LIST should of the following form:
+
+  (LIB-NAME V0 V1 V2)
+
+Where LIB-NAME is a string, name of library and V0, V1, V2 are
+version components."
+  (add-to-list 'flycheck-ghc-args   "-cpp")
+  (add-to-list 'flycheck-hlint-args "-XCPP")
+  (dolist (item lib-list)
+    (cl-destructuring-bind (lib a b c) item
+      (add-to-list
+       'flycheck-ghc-args
+       (format "-DMIN_VERSION_%s(a,b,c)=(a<=%d&&b<=%d&&c<=%d)"
+               lib a b c))
+      (add-to-list
+       'flycheck-hlint-args
+       (format "--cpp-define=MIN_VERSION_%s(a,b,c)=(a<=%d&&b<=%d&&c<=%d)"
+               lib a b c)))))
+
+(mk-haskell-set-min-versions
+ '(("base" 4 8 0)))
 
 (τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
