@@ -26,8 +26,7 @@
 
 (eval-when-compile
   (require 'modalka)
-  (require 'org)
-  (require 'yasnippet))
+  (require 'org))
 
 (require 'cl-lib)
 (require 'misc)
@@ -169,6 +168,7 @@
 (π "<menu> e r" #'erc)
 (π "<menu> e v" #'eval-buffer)
 (π "<menu> f f" #'find-function)
+(π "<menu> f l" #'flycheck-list-errors)
 (π "<menu> f n" #'mk-file-name-to-kill-ring)
 (π "<menu> f o" #'mk-set-font)
 (π "<menu> f v" #'find-variable)
