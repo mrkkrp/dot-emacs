@@ -50,11 +50,16 @@
              pkg-name
              "))"))))
 
-(τ lisp-mode lisp       "C-c h" #'hyperspec-lookup)
-(τ slime     slime      "M-n"   #'mk-transpose-line-down)
-(τ slime     slime      "M-p"   #'mk-transpose-line-up)
-(τ slime     slime-repl "C-c i" #'mk-slime-in-package)
-(τ slime     slime-repl "C-c r" #'slime-restart-inferior-lisp)
+(τ lisp-mode     lisp          "C-c h"    #'hyperspec-lookup)
+(τ slime         slime         "M-n"      #'mk-transpose-line-down)
+(τ slime         slime         "M-p"      #'mk-transpose-line-up)
+(τ slime         slime-repl    "C-c i"    #'mk-slime-in-package)
+(τ slime         slime-repl    "C-c r"    #'slime-restart-inferior-lisp)
+(τ slime-autodoc slime-autodoc "SPC"      nil)
+(τ slime-repl    slime-repl    "<return>" nil)
+
+(eval-after-load 'slime ;; fucking SLIME, let me do my editing
+  '(define-key slime-mode-indirect-map (kbd "SPC") nil))
 
 (add-hook 'lisp-mode-hook       #'aggressive-indent-mode)
 (add-hook 'slime-mode-hook      #'rainbow-delimiters-mode)
