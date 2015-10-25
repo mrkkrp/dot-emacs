@@ -43,6 +43,13 @@
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
 
+(defun mk-haskell-hoogle (symbol)
+  "Find documentation for given symbol SYMBOL online."
+  (interactive (list (mk-grab-input "Hoogle: ")))
+  (browse-url
+   (concat "https://www.stackage.org/lts/hoogle?q="
+           (url-hexify-string symbol))))
+
 (defun mk-haskell-set-min-versions (lib-list)
   "Help Flycheck handle Cabal MIN_VERSION_ definitions.
 
@@ -68,15 +75,15 @@ version components."
 (mk-haskell-set-min-versions
  '(("base" 4 8 0)))
 
-(τ haskell          haskell-interactive "C-c h"   #'haskell-hoogle)
+(τ haskell          haskell-interactive "C-c h"   #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
 (τ haskell          interactive-haskell "M-n"     #'mk-transpose-line-down)
 (τ haskell          interactive-haskell "M-p"     #'mk-transpose-line-up)
-(τ haskell-cabal    haskell-cabal       "C-c h"   #'haskell-hoogle)
+(τ haskell-cabal    haskell-cabal       "C-c h"   #'mk-haskell-hoogle)
 (τ haskell-cabal    haskell-cabal       "M-n"     #'mk-transpose-line-down)
 (τ haskell-cabal    haskell-cabal       "M-p"     #'mk-transpose-line-up)
 (τ haskell-commands haskell             "M-."     #'haskell-mode-jump-to-def)
-(τ haskell-mode     haskell             "C-c h"   #'haskell-hoogle)
+(τ haskell-mode     haskell             "C-c h"   #'mk-haskell-hoogle)
 (τ haskell-mode     haskell             "M-,"     #'pop-tag-mark)
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
