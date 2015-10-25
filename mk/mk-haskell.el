@@ -36,7 +36,8 @@
  ebal-operation-mode                   'stack
  haskell-ask-also-kill-buffers         nil  ; don't ask
  haskell-process-load-or-reload-prompt t    ; please ask
- haskell-process-show-debug-tips       nil) ; don't show anything
+ haskell-process-show-debug-tips       nil  ; don't show anything
+ haskell-process-type                  'stack-ghci)
 
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
