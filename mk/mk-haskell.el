@@ -88,7 +88,6 @@ version components."
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook  #'haskell-doc-mode)
-(add-hook 'haskell-mode-hook  #'haskell-indentation-mode)
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
 
 (provide 'mk-haskell)
