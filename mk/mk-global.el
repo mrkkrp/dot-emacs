@@ -103,6 +103,7 @@
 (π "C-'"        #'ace-window)
 (π "C-,"        #'avy-goto-char)
 (π "C-SPC"      #'mk-mark-command)
+(π "C-]"        #'mk-smart-indent)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'mk-compile-init-files)
@@ -297,7 +298,7 @@
 (modalka-define-kbd "G" "C-`")
 ;; H
 ;; I
-;; J
+(modalka-define-kbd "J" "C-]")
 (modalka-define-kbd "K" "M-k")
 (modalka-define-kbd "L" "M-l")
 (modalka-define-kbd "M" "M-m")

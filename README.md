@@ -231,6 +231,7 @@ Input          | Result
 <kbd>E</kbd>   | <kbd>M-e</kbd>
 <kbd>F</kbd>   | <kbd>M-f</kbd>
 <kbd>G</kbd>   | <kbd>C-`</kbd>
+<kbd>J</kbd>   | <kbd>C-]</kbd>
 <kbd>K</kbd>   | <kbd>M-k</kbd>
 <kbd>L</kbd>   | <kbd>M-l</kbd>
 <kbd>M</kbd>   | <kbd>M-m</kbd>
@@ -286,6 +287,7 @@ Shortcut            | Description
 <kbd>C-'</kbd>      | switch to other buffer
 <kbd>C-,</kbd>      | avy: goto char
 <kbd>C-SPC</kbd>    | mark command (rectangular with prefix)
+<kbd>C-]</kbd>      | cute indent command
 <kbd>C-c C-o</kbd>  | find file at point (works for URLs too)
 <kbd>C-c a</kbd>    | org agenda (week)
 <kbd>C-c b</kbd>    | byte-compile initialization files

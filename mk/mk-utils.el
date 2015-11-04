@@ -84,6 +84,40 @@ performed."
       (forward-line -1)
       (move-to-column col))))
 
+(defun mk-saturated-occurence (&optional after-space)
+  "Return position of first non-white space character after point.
+
+If AFTER-SPACE is not NIL, require at least one space character
+before target non-white space character."
+  (save-excursion
+    (let ((this-end (line-end-position)))
+      (if (re-search-forward
+           (concat (when after-space "[[:blank:]]")
+                   "[^[:blank:]]")
+           this-end ; don't go after this position
+           t)       ; don't error
+          (1- (point))
+        this-end))))
+
+(defun mk-column-at (point)
+  "Return column number at POINT."
+  (save-excursion
+    (goto-char point)
+    (current-column)))
+
+(defun mk-smart-indent ()
+  "Align first non-white space char after point with content of previous line."
+  (interactive)
+  (let* ((this-edge (mk-column-at (mk-saturated-occurence)))
+         (that-edge
+          (save-excursion
+            (forward-line -1)
+            (move-to-column this-edge)
+            (mk-column-at (mk-saturated-occurence t)))))
+    (when (> that-edge this-edge)
+      (insert-char 32 (- that-edge this-edge))
+      (move-to-column that-edge))))
+
 (defun mk-copy-rest-of-line ()
   "Copy current line from point to end of line."
   (interactive)
