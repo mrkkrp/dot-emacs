@@ -176,14 +176,17 @@ move point."
   (auto-fill-mode  1)
   (flycheck-mode   1)
   (flyspell-prog-mode)
+  (hl-todo-mode    1)
   (modalka-mode    1)
   (whitespace-mode 1))
 
-(add-hook 'compilation-mode-hook #'modalka-mode)
-(add-hook 'flycheck-mode-hook #'flycheck-color-mode-line-mode)
-(add-hook 'prog-mode-hook     #'hl-todo-mode)
-(add-hook 'prog-mode-hook     #'mk-prepare-prog-mode)
-(add-hook 'text-mode-hook     #'mk-prepare-text-mode)
+(add-hook 'compilation-mode-hook   #'modalka-mode)
+(add-hook 'flycheck-mode-hook      #'flycheck-color-mode-line-mode)
+(add-hook 'gitignore-mode-hook     #'mk-prepare-prog-mode)
+(add-hook 'haskell-cabal-mode-hook #'mk-prepare-prog-mode)
+(add-hook 'prog-mode-hook          #'mk-prepare-prog-mode)
+(add-hook 'text-mode-hook          #'mk-prepare-text-mode)
+(add-hook 'yaml-mode-hook          #'mk-prepare-prog-mode)
 
 (provide 'mk-minor-modes)
 
