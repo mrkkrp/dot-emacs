@@ -12,6 +12,10 @@ Emacs is something that encourages its users to think about their
 productivity and once you started to search for ways to improve your
 workflow and efficiency — sky is the limit.
 
+I write almost exclusively in Haskell now, with bits of some scripting
+languages and Emacs Lisp, so setups for other languages may be kinda
+obsolete.
+
 * [Packages](#packages)
 * [Features](#features)
 * [Key Remapping](#key-remapping)
