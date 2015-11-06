@@ -27,57 +27,57 @@ workflow and efficiency — sky is the limit.
 
 Here is collection of packages that I use (in alphabetical order):
 
-Package/Repo | Source | Description
------------- | ------ | -----------
-[ace-link](https://github.com/abo-abo/ace-link) | [![MELPA](http://melpa.org/packages/ace-link-badge.svg)](http://melpa.org/#/ace-link) | Quickly follow links
-[ace-popup-menu](https://github.com/mrkkrp/ace-popup-menu) † | [![MELPA](http://melpa.org/packages/ace-popup-menu-badge.svg)](http://melpa.org/#/ace-popup-menu) | Replace GUI popup menus
-[ace-window](https://github.com/abo-abo/ace-window) | [![MELPA](http://melpa.org/packages/ace-window-badge.svg)](http://melpa.org/#/ace-window) | Quickly switch windows
-[aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode) | [![MELPA](http://melpa.org/packages/aggressive-indent-badge.svg)](http://melpa.org/#/aggressive-indent) | Keep code always indented
-[auctex](http://git.savannah.gnu.org/cgit/emacs/elpa.git/?h=externals/auctex) | [ELPA](http://elpa.gnu.org/packages/auctex.html) | Integrated environment for *TeX*
-[avy](https://github.com/abo-abo/avy) | [![MELPA](http://melpa.org/packages/avy-badge.svg)](http://melpa.org/#/avy) | Move cursor effectively
-[cider](https://github.com/clojure-emacs/cider) | [![MELPA](http://melpa.org/packages/cider-badge.svg)](http://melpa.org/#/cider) | Clojure IDE
-[common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | [![MELPA](http://melpa.org/packages/common-lisp-snippets-badge.svg)](http://melpa.org/#/common-lisp-snippets) | Yasnippets for Common Lisp
-[cyphejor](https://github.com/mrkkrp/cyphejor) † | [![MELPA](http://melpa.org/packages/cyphejor-badge.svg)](http://melpa.org/#/cyphejor) | Shorten names of major modes
-[ebal](https://github.com/mrkkrp/ebal) † | [![MELPA](http://melpa.org/packages/ebal-badge.svg)](http://melpa.org/#/ebal) | Emacs interface to Cabal
-[f](https://github.com/rejeep/f.el) | [![MELPA](http://melpa.org/packages/f-badge.svg)](http://melpa.org/#/f) | Modern API for working with files and dirs
-[fix-word](https://github.com/mrkkrp/fix-word) † | [![MELPA](http://melpa.org/packages/fix-word-badge.svg)](http://melpa.org/#/fix-word) | Convenient word transformation
-[flycheck](https://github.com/flycheck/flycheck) | [![MELPA](http://melpa.org/packages/flycheck-badge.svg)](http://melpa.org/#/flycheck) | On-the-fly syntax checking
-[flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | [![MELPA](http://melpa.org/packages/flycheck-color-mode-line-badge.svg)](http://melpa.org/#/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
-[flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | [![MELPA](http://melpa.org/packages/flycheck-haskell-badge.svg)](http://melpa.org/#/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
-[ghc](https://github.com/kazu-yamamoto/ghc-mod) | [![MELPA](http://melpa.org/packages/ghc-badge.svg)](http://melpa.org/#/ghc) | Improve Haskell REPL experience
-[gitignore-mode](https://github.com/magit/git-modes) | [![MELPA](http://melpa.org/packages/gitignore-mode-badge.svg)](http://melpa.org/#/gitignore-mode) | Major mode for editing .gitignore files
-[haskell-mode](https://github.com/haskell/haskell-mode) | [![MELPA](http://melpa.org/packages/haskell-mode-badge.svg)](http://melpa.org/#/haskell-mode) | A Haskell editing mode
-[highlight-line](https://github.com/mrkkrp/highlight-line) † | — | Highlight lines in list-like buffers
-[highlight-symbol](https://github.com/nschum/highlight-symbol.el) | [![MELPA](http://melpa.org/packages/highlight-symbol-badge.svg)](http://melpa.org/#/highlight-symbol) | Automatic and manual symbol highlighting
-[hl-todo](https://github.com/tarsius/hl-todo) | [![MELPA](http://melpa.org/packages/hl-todo-badge.svg)](http://melpa.org/#/hl-todo) | Highlight TODO and similar keywords
-[ido-hacks](https://github.com/scottjad/ido-hacks) | [![MELPA](http://melpa.org/packages/ido-hacks-badge.svg)](http://melpa.org/#/ido-hacks) | Put more IDO in your IDO
-[ido-ubiquitous](https://github.com/DarwinAwardWinner/ido-ubiquitous) | [![MELPA](http://melpa.org/packages/ido-ubiquitous-badge.svg)](http://melpa.org/#/ido-ubiquitous) | Use IDO (nearly) everywhere
-[ido-vertial-mode](https://github.com/creichert/ido-vertical-mode.el) | [![MELPA](http://melpa.org/packages/ido-vertical-mode-badge.svg)](http://melpa.org/#/ido-vertical-mode) | Makes IDO-mode display vertically
-[js2-mode](https://github.com/mooz/js2-mode) | [![MELPA](http://melpa.org/packages/js2-mode-badge.svg)](http://melpa.org/#/js2-mode) | Improved JavaScript editing mode
-[kill-or-bury-alive](https://github.com/mrkkrp/kill-or-bury-alive) † | [![MELPA](http://melpa.org/packages/kill-or-bury-alive-badge.svg)](http://melpa.org/#/kill-or-bury-alive) | Precise control over buffer killing in Emacs
-[magit](https://github.com/magit/magit) | [![MELPA](http://melpa.org/packages/magit-badge.svg)](http://melpa.org/#/magit) | A Git porcelain inside Emacs
-[markdown-mode](http://daringfireball.net/projects/markdown/) | [![MELPA](http://melpa.org/packages/markdown-mode-badge.svg)](http://melpa.org/#/markdown-mode) | Major mode for Markdown-formatted text files
-[mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | — | Peculiar way to use Emacs abbrevs
-[modalka](https://github.com/mrkkrp/modalka) † | [![MELPA](http://melpa.org/packages/modalka-badge.svg)](http://melpa.org/#/modalka) | Easily introduce native modal editing of your own design
-[org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | [ELPA](http://elpa.gnu.org/packages/org.html) | Outline-based template notes management
-[rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | [![MELPA](http://melpa.org/packages/rainbow-delimiters-badge.svg)](http://melpa.org/#/rainbow-delimiters) | Highlight brackets according to their depth
-[rich-minority](https://github.com/Malabarba/rich-minority) | [![MELPA](http://melpa.org/packages/rich-minority-badge.svg)](http://melpa.org/#/rich-minority) | Clean-up and beautify the list of minor-modes
-[shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | [![MELPA](http://melpa.org/packages/shakespeare-mode-badge.svg)](http://melpa.org/#/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
-[skewer-mode](https://github.com/skeeto/skewer-mode) | [![MELPA](http://melpa.org/packages/skewer-mode-badge.svg)](http://melpa.org/#/skewer-mode) | Live web development with Emacs
-[slime](https://github.com/slime/slime) | [![MELPA](http://melpa.org/packages/slime-badge.svg)](http://melpa.org/#/slime) | Superior Lisp Interaction Mode for Emacs
-[smart-mode-line](https://github.com/Malabarba/smart-mode-line) | [![MELPA](http://melpa.org/packages/smart-mode-line-badge.svg)](http://melpa.org/#/smart-mode-line) | A powerful and beautiful mode-line for Emacs
-[smartparens](https://github.com/Fuco1/smartparens) | [![MELPA](http://melpa.org/packages/smartparens-badge.svg)](http://melpa.org/#/smartparens) | Tricks for working with all kinds of parenthesis
-[smex](https://github.com/nonsequitur/smex) | [![MELPA](http://melpa.org/packages/smex-badge.svg)](http://melpa.org/#/smex) | M-x interface with IDO-style fuzzy matching
-[solarized-theme](https://github.com/bbatsov/solarized-emacs) | [![MELPA](http://melpa.org/packages/solarized-theme-badge.svg)](http://melpa.org/#/solarized-theme) | The Solarized color theme
-[speed-type](https://github.com/hagleitn/speed-type) | [![MELPA](http://melpa.org/packages/speed-type-badge.svg)](http://melpa.org/#/speed-type) | Practice touch typing in Emacs
-[vimish-fold](https://github.com/mrkkrp/vimish-fold) † | [![MELPA](http://melpa.org/packages/vimish-fold-badge.svg)](http://melpa.org/#/vimish-fold) | Fold text like in Vim
-[visual-regexp](https://github.com/benma/visual-regexp.el) | [![MELPA](http://melpa.org/packages/visual-regexp-badge.svg)](http://melpa.org/#/visual-regexp) | Regexp replace with interactive visual feedback
-[whole-line-or-region](https://github.com/purcell/whole-line-or-region) | [![MELPA](http://melpa.org/packages/whole-line-or-region-badge.svg)](http://melpa.org/#/whole-line-or-region) | Operate on current line if region undefined
-[yaml-mode](https://github.com/yoshiki/yaml-mode) | [![MELPA](http://melpa.org/packages/yaml-mode-badge.svg)](http://melpa.org/#/yaml-mode) | Major mode for editing YAML serialization format
-[yasnippet](https://github.com/capitaomorte/yasnippet) | [![MELPA](http://melpa.org/packages/yasnippet-badge.svg)](http://melpa.org/#/yasnippet) | Yet another snippet extension for Emacs
-[ztree](https://github.com/fourier/ztree) | [![MELPA](http://melpa.org/packages/ztree-badge.svg)](http://melpa.org/#/ztree) | Show directory structure as a tree
-[zygospore](https://github.com/louiskottmann/zygospore.el) | [![MELPA](http://melpa.org/packages/zygospore-badge.svg)](http://melpa.org/#/zygospore) | Reversible version of `delete-other-windows`
-[zzz-to-char](https://github.com/mrkkrp/zzz-to-char) † | [![MELPA](http://melpa.org/packages/zzz-to-char-badge.svg)](http://melpa.org/#/zzz-to-char) | Fancy version of `zap-to-char` command
+Package/Repo | Description
+------------ | -----------
+[ace-link](https://github.com/abo-abo/ace-link) |  Quickly follow links
+[ace-popup-menu](https://github.com/mrkkrp/ace-popup-menu) † | Replace GUI popup menus
+[ace-window](https://github.com/abo-abo/ace-window) | Quickly switch windows
+[aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode) | Keep code always indented
+[auctex](http://git.savannah.gnu.org/cgit/emacs/elpa.git/?h=externals/auctex) | Integrated environment for *TeX*
+[avy](https://github.com/abo-abo/avy) | Move cursor effectively
+[cider](https://github.com/clojure-emacs/cider) | Clojure IDE
+[common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
+[cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
+[ebal](https://github.com/mrkkrp/ebal) † | Emacs interface to Cabal
+[f](https://github.com/rejeep/f.el) | Modern API for working with files and dirs
+[fix-word](https://github.com/mrkkrp/fix-word) † | Convenient word transformation
+[flycheck](https://github.com/flycheck/flycheck) | On-the-fly syntax checking
+[flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
+[flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
+[ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
+[gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
+[haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
+[highlight-line](https://github.com/mrkkrp/highlight-line) † | Highlight lines in list-like buffers
+[highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
+[hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
+[ido-hacks](https://github.com/scottjad/ido-hacks) | Put more IDO in your IDO
+[ido-ubiquitous](https://github.com/DarwinAwardWinner/ido-ubiquitous) | Use IDO (nearly) everywhere
+[ido-vertial-mode](https://github.com/creichert/ido-vertical-mode.el) | Makes IDO-mode display vertically
+[js2-mode](https://github.com/mooz/js2-mode) | Improved JavaScript editing mode
+[kill-or-bury-alive](https://github.com/mrkkrp/kill-or-bury-alive) † | Precise control over buffer killing in Emacs
+[magit](https://github.com/magit/magit) | A Git porcelain inside Emacs
+[markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
+[mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | Peculiar way to use Emacs abbrevs
+[modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
+[org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | Outline-based template notes management
+[rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
+[rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes
+[shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
+[skewer-mode](https://github.com/skeeto/skewer-mode) | Live web development with Emacs
+[slime](https://github.com/slime/slime) | Superior Lisp Interaction Mode for Emacs
+[smart-mode-line](https://github.com/Malabarba/smart-mode-line) | A powerful and beautiful mode-line for Emacs
+[smartparens](https://github.com/Fuco1/smartparens) | Tricks for working with all kinds of parenthesis
+[smex](https://github.com/nonsequitur/smex) | M-x interface with IDO-style fuzzy matching
+[solarized-theme](https://github.com/bbatsov/solarized-emacs) | The Solarized color theme
+[speed-type](https://github.com/hagleitn/speed-type) | Practice touch typing in Emacs
+[vimish-fold](https://github.com/mrkkrp/vimish-fold) † | Fold text like in Vim
+[visual-regexp](https://github.com/benma/visual-regexp.el) | Regexp replace with interactive visual feedback
+[whole-line-or-region](https://github.com/purcell/whole-line-or-region) | Operate on current line if region undefined
+[yaml-mode](https://github.com/yoshiki/yaml-mode) | Major mode for editing YAML serialization format
+[yasnippet](https://github.com/capitaomorte/yasnippet) | Yet another snippet extension for Emacs
+[ztree](https://github.com/fourier/ztree) | Show directory structure as a tree
+[zygospore](https://github.com/louiskottmann/zygospore.el) | Reversible version of `delete-other-windows`
+[zzz-to-char](https://github.com/mrkkrp/zzz-to-char) † | Fancy version of `zap-to-char` command
 
 † These packages I wrote myself, I can't be sure, but it seems like other
   people find them useful too.
