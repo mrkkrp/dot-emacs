@@ -63,17 +63,24 @@ version components."
   (add-to-list 'flycheck-hlint-args "-XCPP")
   (dolist (item lib-list)
     (cl-destructuring-bind (lib a b c) item
-      (add-to-list
-       'flycheck-ghc-args
-       (format "-DMIN_VERSION_%s(a,b,c)=(a<=%d&&b<=%d&&c<=%d)"
-               lib a b c))
-      (add-to-list
-       'flycheck-hlint-args
-       (format "--cpp-define=MIN_VERSION_%s(a,b,c)=(a<=%d&&b<=%d&&c<=%d)"
-               lib a b c)))))
+      (let ((definition
+              (format
+               "((a<%d)||(a==%d&&b<%d)||(a==%d&&b==%d&&c<=%d))"
+               a a b a b c)))
+        (add-to-list
+         'flycheck-ghc-args
+         (format "-DMIN_VERSION_%s(a,b,c)=%s"
+                 lib definition))
+        (add-to-list
+         'flycheck-hlint-args
+         (format "--cpp-define=MIN_VERSION_%s(a,b,c)=%s"
+                 lib definition))))))
 
 (mk-haskell-set-min-versions
- '(("base" 4 8 0)))
+ '(("Cabal"   1 22 0)
+   ("base"    4 8 0)
+   ("process" 1 2 1)
+   ("time"    1 5 0)))
 
 (τ haskell          haskell-interactive "C-c h"   #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
