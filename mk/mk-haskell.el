@@ -66,8 +66,6 @@ LIB-LIST should of the following form:
 
 Where LIB-NAME is a string, name of library and V0, V1, V2 are
 version components."
-  (add-to-list 'flycheck-ghc-args   "-cpp")
-  (add-to-list 'flycheck-hlint-args "-XCPP")
   (dolist (item lib-list)
     (cl-destructuring-bind (lib a b c) item
       (let ((definition
