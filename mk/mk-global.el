@@ -117,6 +117,7 @@
 (π "M-c"        #'fix-word-capitalize)
 (π "M-e"        #'mk-eval-last-sexp)
 (π "M-h"        #'mark-word)
+(π "M-H"        #'mark-paragraph)
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'mk-transpose-line-down)
@@ -296,7 +297,7 @@
 (modalka-define-kbd "E" "M-e")
 (modalka-define-kbd "F" "M-f")
 (modalka-define-kbd "G" "C-`")
-;; H
+(modalka-define-kbd "H" "M-H")
 ;; I
 (modalka-define-kbd "J" "C-]")
 (modalka-define-kbd "K" "M-k")

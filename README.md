@@ -235,6 +235,7 @@ Input          | Result
 <kbd>E</kbd>   | <kbd>M-e</kbd>
 <kbd>F</kbd>   | <kbd>M-f</kbd>
 <kbd>G</kbd>   | <kbd>C-`</kbd>
+<kbd>H</kbd>   | <kbd>M-H</kbd>
 <kbd>J</kbd>   | <kbd>C-]</kbd>
 <kbd>K</kbd>   | <kbd>M-k</kbd>
 <kbd>L</kbd>   | <kbd>M-l</kbd>
@@ -305,6 +306,7 @@ Shortcut            | Description
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
 <kbd>M-h</kbd>      | mark word
+<kbd>M-H</kbd>      | mark paragraph
 <kbd>M-j</kbd>      | join the next line and the current one
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-n</kbd>      | transpose line down
