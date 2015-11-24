@@ -19,8 +19,7 @@
 
 ;;; Commentary:
 
-;; Everything I tweak for Haskell programming is here. Stuff here requires
-;; `happy', `alex', and `ghc-mod'.
+;; Everything I tweak for Haskell programming is here.
 
 ;;; Code:
 
@@ -85,6 +84,7 @@ version components."
  '(("Cabal"   1 22 0)
    ("base"    4 8 0)
    ("process" 1 2 1)
+   ("retry"   0 6 0)
    ("time"    1 5 0)))
 
 (τ haskell          haskell-interactive "C-c h"   #'mk-haskell-hoogle)
