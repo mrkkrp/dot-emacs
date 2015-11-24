@@ -31,6 +31,43 @@
 (require 'flycheck)
 (require 'mk-utils)
 
+(defvar mk-haskell-extensions
+  '("Arrows"
+    "AutoDeriveTypeable"
+    "BangPatterns"
+    "CPP"
+    "DataKinds"
+    "DeriveAnyClass"
+    "DeriveDataTypeable"
+    "DeriveFunctor"
+    "DeriveFoldable"
+    "DeriveGeneric"
+    "DeriveTraversable"
+    "EmptyDataDecls"
+    "ExistentialQuantification"
+    "ExplicitForAll"
+    "FlexibleContexts"
+    "FlexibleInstances"
+    "ForeignFunctionInterface"
+    "FunctionalDependencies"
+    "GADTs"
+    "GeneralizedNewtypeDeriving"
+    "NoImplicitPrelude"
+    "KindSignatures"
+    "MagicHash"
+    "OverloadedLists"
+    "OverloadedStrings"
+    "QuasiQuotes"
+    "Rank2Types"
+    "RankNTypes"
+    "RecordWildCards"
+    "StandaloneDeriving"
+    "TemplateHaskell"
+    "TupleSections"
+    "TypeFamilies"
+    "TypeOperators")
+  "List of Haskell language extensions I use.")
+
 (setq
  ebal-operation-mode                   'stack
  haskell-ask-also-kill-buffers         nil  ; don't ask
@@ -87,6 +124,37 @@ version components."
    ("retry"   0 6 0)
    ("time"    1 5 0)))
 
+(defun mk-haskell-add-pragma (pragma)
+  "Add new language PRAGMA to current file and re-format pragmas."
+  (interactive
+   (list
+    (completing-read "Extension: " mk-haskell-extensions)))
+  (save-excursion
+    (goto-char (point-min))
+    (if (re-search-forward
+         (concat "^{-#[[:blank:]]+LANGUAGE[[:blank:]]+"
+                 (regexp-quote pragma)
+                 "[[:blank:]]+#-}")
+         nil t 1)
+        (message "Already there.")
+      (let ((module-pos (re-search-forward "^module[[:blank:]]+" nil t 1)))
+        (when module-pos
+          (forward-line -1)
+          (insert (concat "{-# LANGUAGE " pragma " #-}\n"))
+          (goto-char (point-min))
+          (re-search-forward
+           "{-#\\(.\\|\n\\)*#-}"
+           (+ module-pos 80) t 1)
+          (let ((beg (match-beginning 0))
+                (end (match-end       0)))
+            (sort-lines nil beg end)
+            (align-regexp beg end "\\(\\s-*\\)#-}")
+            (goto-char beg)
+            (forward-line -1)
+            (unless (looking-at "^$")
+              (forward-line 1)
+              (insert "\n"))))))))
+
 (defun mk-haskell-add-import (import)
   "Add new IMPORT to current file and re-sort import declarations."
   (interactive (list (mk-grab-input "Import: " "import" t)))
@@ -114,6 +182,7 @@ version components."
 (τ haskell-mode     haskell             "C-c h"   #'mk-haskell-hoogle)
 (τ haskell-mode     haskell             "C-c i"   #'mk-haskell-add-import)
 (τ haskell-mode     haskell             "C-c n"   #'mk-haskell-package)
+(τ haskell-mode     haskell             "C-c y"   #'mk-haskell-add-pragma)
 (τ haskell-mode     haskell             "M-,"     #'pop-tag-mark)
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
