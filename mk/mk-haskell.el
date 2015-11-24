@@ -87,6 +87,20 @@ version components."
    ("retry"   0 6 0)
    ("time"    1 5 0)))
 
+(defun mk-haskell-add-import (import)
+  "Add new IMPORT to current file and re-sort import declarations."
+  (interactive (list (mk-grab-input "Import: " "import" t)))
+  (save-excursion
+    (goto-char (point-min))
+    (if (re-search-forward
+         (concat "^" (regexp-quote import))
+         nil t 1)
+        (message "Already there.")
+      (when (re-search-forward "^where\n+" nil t 1)
+        (insert import "\n")
+        (mark-paragraph)
+        (sort-lines nil (region-beginning) (region-end))))))
+
 (τ haskell          haskell-interactive "C-c h"   #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c n"   #'mk-haskell-package)
 (τ haskell          haskell-interactive "C-c r"   #'haskell-process-restart)
@@ -98,6 +112,7 @@ version components."
 (τ haskell-cabal    haskell-cabal       "M-p"     #'mk-transpose-line-up)
 (τ haskell-commands haskell             "M-."     #'haskell-mode-jump-to-def)
 (τ haskell-mode     haskell             "C-c h"   #'mk-haskell-hoogle)
+(τ haskell-mode     haskell             "C-c i"   #'mk-haskell-add-import)
 (τ haskell-mode     haskell             "C-c n"   #'mk-haskell-package)
 (τ haskell-mode     haskell             "M-,"     #'pop-tag-mark)
 
