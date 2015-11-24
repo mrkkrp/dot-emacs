@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Basic Haskell template
+# key: base
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+
+module `(haskell-guess-module-name)`
+  (  )
+where
