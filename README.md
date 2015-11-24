@@ -175,7 +175,7 @@ Currently I'm using `modalka-mode` that allows to edit text in modal
 fashion. Modal editing is fundamentally better for health and more efficient
 in general. Initially I considered learning `evil` to edit in «vim-style»,
 but I estimated resulting effect not superior to editing with familiar Emacs
-key bindings for basic movement (given I don't know to learn something).
+key bindings.
 
 I'm using the following translation map for modal editing:
 
