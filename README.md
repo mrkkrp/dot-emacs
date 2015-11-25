@@ -63,6 +63,7 @@ Package/Repo | Description
 [markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | Peculiar way to use Emacs abbrevs
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
+[mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes

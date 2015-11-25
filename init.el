@@ -64,6 +64,7 @@
    markdown-mode        ; Major mode for Markdown-formatted text files
    mk-abbrev            ; Peculiar way to use Emacs abbrevs
    modalka              ; Native modal editing of your own design
+   mustache-mode        ; Major mode for Mustache
    org                  ; Outline-based template notes management
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
