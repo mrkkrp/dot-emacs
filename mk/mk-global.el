@@ -114,10 +114,11 @@
 (π "C-c t"      (ε #'mk-visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
 (π "C-z"        #'mk-copy-rest-of-line)
+(π "M-H"        #'mark-paragraph)
+(π "M-S"        #'mk-eat-indentation)
 (π "M-c"        #'fix-word-capitalize)
 (π "M-e"        #'mk-eval-last-sexp)
 (π "M-h"        #'mark-word)
-(π "M-H"        #'mark-paragraph)
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'mk-transpose-line-down)
@@ -309,7 +310,7 @@
 (modalka-define-kbd "P" "M-p")
 ;; Q
 (modalka-define-kbd "R" "M-r")
-;; S
+(modalka-define-kbd "S" "M-S")
 (modalka-define-kbd "T" "M-t")
 (modalka-define-kbd "U" "M-u")
 (modalka-define-kbd "V" "M-v")

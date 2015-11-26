@@ -165,6 +165,16 @@ text."
       (forward-line 1)
       (setq i (1+ i)))))
 
+(defun mk-eat-indentation (&optional arg)
+  "Delete indentation of current line.
+
+ARG, if given, specifies how many symbols to eat."
+  (interactive "p")
+  (save-excursion
+    (beginning-of-line)
+    (when (looking-at "[[:blank:]]")
+      (delete-char (or arg 1)))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Navigation

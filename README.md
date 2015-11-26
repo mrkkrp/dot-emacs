@@ -245,6 +245,7 @@ Input          | Result
 <kbd>O</kbd>   | <kbd>M-o</kbd>
 <kbd>P</kbd>   | <kbd>M-p</kbd>
 <kbd>R</kbd>   | <kbd>M-r</kbd>
+<kbd>S</kbd>   | <kbd>M-S</kbd>
 <kbd>T</kbd>   | <kbd>M-t</kbd>
 <kbd>U</kbd>   | <kbd>M-u</kbd>
 <kbd>V</kbd>   | <kbd>M-v</kbd>
@@ -304,10 +305,11 @@ Shortcut            | Description
 <kbd>C-c s</kbd>    | search online with DuckDuckGo
 <kbd>C-c t</kbd>    | open org agenda file
 <kbd>C-z</kbd>      | copy rest of the line
+<kbd>M-H</kbd>      | mark paragraph
+<kbd>M-S</kbd>      | eat indentation
 <kbd>M-c</kbd>      | fix word: capitalize
 <kbd>M-e</kbd>      | replace last S-expression with its result
 <kbd>M-h</kbd>      | mark word
-<kbd>M-H</kbd>      | mark paragraph
 <kbd>M-j</kbd>      | join the next line and the current one
 <kbd>M-l</kbd>      | fix word: downcase
 <kbd>M-n</kbd>      | transpose line down
