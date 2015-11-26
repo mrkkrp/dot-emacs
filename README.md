@@ -357,6 +357,7 @@ Shortcut            | Description
 <kbd>menu e ;</kbd> | evaluate expression
 <kbd>menu e b</kbd> | erase buffer
 <kbd>menu e e</kbd> | evaluate last s-expression
+<kbd>menu e l</kbd> | and text to end of lines in region
 <kbd>menu e r</kbd> | ERC
 <kbd>menu e v</kbd> | eval current buffer
 <kbd>menu f f</kbd> | find Emacs Lisp function

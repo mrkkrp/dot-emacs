@@ -37,6 +37,8 @@
 (defvar mk-dir (f-expand "mk" user-emacs-directory)
   "This is directory where all the configuration files are kept.")
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Text Editing
 
 (defun mk-transpose-line-down (&optional arg)
@@ -146,6 +148,25 @@ before target non-white space character."
   (call-interactively #'narrow-to-region)
   (deactivate-mark))
 
+(defun mk-add-to-end-of-lines (beg end text)
+  "Append to end of lines between BEG and END given text TEXT.
+
+Interactively, apply it to lines in active region and prompt for
+text."
+  (interactive "r\nMAdd text: ")
+  (save-excursion
+    (deactivate-mark)
+    (goto-char beg)
+    (cl-do ((i 0)
+            (total (count-lines beg end)))
+        ((= i total))
+      (move-end-of-line 1)
+      (insert text)
+      (forward-line 1)
+      (setq i (1+ i)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Navigation
 
 (defun mk-first-line (&optional arg)
@@ -180,6 +201,8 @@ don't create new empty buffer."
     (split-window-sensibly)
     (other-window 1)))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Missing Commands for Package System
 
 (defun package-install-git (address)
@@ -198,9 +221,9 @@ This functionality requires git installed."
   (package-refresh-contents)
   (let (upgrades)
     (cl-flet ((get-version (name where)
-                (let ((pkg (cadr (assq name where))))
-                  (when pkg
-                    (package-desc-version pkg)))))
+                           (let ((pkg (cadr (assq name where))))
+                             (when pkg
+                               (package-desc-version pkg)))))
       (dolist (package (mapcar #'car package-alist))
         (let ((in-archive (get-version package package-archive-contents)))
           (when (and in-archive
@@ -222,6 +245,8 @@ This functionality requires git installed."
                 (package-delete  old-package)))))
       (message "All packages are up to date"))))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Utility Functions
 
 (defun mk-shell-quote-arg (arg)
@@ -302,6 +327,8 @@ BODY."
              ,@body)
          (message ,(format "Cannot find file matching %s" regexp))))))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Utility Commands
 
 (defun mk-switch-theme (theme)
@@ -441,6 +468,8 @@ exit."
   (when (or arg (yes-or-no-p "Exit Emacs?"))
     (save-buffers-kill-terminal)))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My little helpers from Greece…
 
 (defmacro σ (&rest args)

@@ -167,6 +167,7 @@
 (π "<menu> e ;" #'eval-expression)
 (π "<menu> e b" #'erase-buffer)
 (π "<menu> e e" #'eval-last-sexp)
+(π "<menu> e l" #'mk-add-to-end-of-lines)
 (π "<menu> e r" #'erc)
 (π "<menu> e v" #'eval-buffer)
 (π "<menu> f f" #'find-function)
