@@ -129,45 +129,47 @@ version components."
   (interactive
    (list
     (completing-read "Extension: " mk-haskell-extensions)))
-  (save-excursion
-    (goto-char (point-min))
-    (if (re-search-forward
-         (concat "^{-#[[:blank:]]+LANGUAGE[[:blank:]]+"
-                 (regexp-quote pragma)
-                 "[[:blank:]]+#-}")
-         nil t 1)
-        (message "Already there.")
-      (let ((module-pos (re-search-forward "^module[[:blank:]]+" nil t 1)))
-        (when module-pos
-          (forward-line -1)
-          (insert (concat "{-# LANGUAGE " pragma " #-}\n"))
-          (goto-char (point-min))
-          (re-search-forward
-           "{-#\\(.\\|\n\\)*#-}"
-           (+ module-pos 80) t 1)
-          (let ((beg (match-beginning 0))
-                (end (match-end       0)))
-            (sort-lines nil beg end)
-            (align-regexp beg end "\\(\\s-*\\)#-}")
-            (goto-char beg)
+  (save-window-excursion
+    (save-excursion
+      (goto-char (point-min))
+      (if (re-search-forward
+           (concat "^{-#[[:blank:]]+LANGUAGE[[:blank:]]+"
+                   (regexp-quote pragma)
+                   "[[:blank:]]+#-}")
+           nil t 1)
+          (message "Already there.")
+        (let ((module-pos (re-search-forward "^module[[:blank:]]+" nil t 1)))
+          (when module-pos
             (forward-line -1)
-            (unless (looking-at "^$")
-              (forward-line 1)
-              (insert "\n"))))))))
+            (insert (concat "{-# LANGUAGE " pragma " #-}\n"))
+            (goto-char (point-min))
+            (re-search-forward
+             "{-#\\(.\\|\n\\)*#-}"
+             (+ module-pos 80) t 1)
+            (let ((beg (match-beginning 0))
+                  (end (match-end       0)))
+              (sort-lines nil beg end)
+              (align-regexp beg end "\\(\\s-*\\)#-}")
+              (goto-char beg)
+              (forward-line -1)
+              (unless (looking-at "^$")
+                (forward-line 1)
+                (insert "\n")))))))))
 
 (defun mk-haskell-add-import (import)
   "Add new IMPORT to current file and re-sort import declarations."
   (interactive (list (mk-grab-input "Import: " "import" t)))
-  (save-excursion
-    (goto-char (point-min))
-    (if (re-search-forward
-         (concat "^" (regexp-quote import))
-         nil t 1)
-        (message "Already there.")
-      (when (re-search-forward "^where\n+" nil t 1)
-        (insert import "\n")
-        (mark-paragraph)
-        (sort-lines nil (region-beginning) (region-end))))))
+  (save-window-excursion
+    (save-excursion
+      (goto-char (point-min))
+      (if (re-search-forward
+           (concat "^" (regexp-quote import))
+           nil t 1)
+          (message "Already there.")
+        (when (re-search-forward "^where\n+" nil t 1)
+          (insert import "\n")
+          (mark-paragraph)
+          (sort-lines nil (region-beginning) (region-end)))))))
 
 (τ haskell          haskell-interactive "C-c h"   #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c n"   #'mk-haskell-package)
