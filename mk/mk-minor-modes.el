@@ -43,6 +43,7 @@
  fill-column                       76      ; set fill column
  flycheck-emacs-lisp-initialize-packages t ; always initialize packages
  flycheck-emacs-lisp-load-path     'inherit
+ flycheck-temp-prefix              ".flycheck"
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ido-auto-merge-work-directories-length -1 ; disable it
  ido-create-new-buffer             'always
