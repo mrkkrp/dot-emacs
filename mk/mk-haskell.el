@@ -55,6 +55,7 @@
     "NoImplicitPrelude"
     "KindSignatures"
     "MagicHash"
+    "MultiParamTypeClasses"
     "OverloadedLists"
     "OverloadedStrings"
     "QuasiQuotes"
