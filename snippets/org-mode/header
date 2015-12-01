@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Standard header for writing
+# key: header
+# --
+#+TITLE: $1
+#+AUTHOR: ${2:`user-full-name`}
+#+DATE: ${3:`(mk-show-date)`}
+$0
