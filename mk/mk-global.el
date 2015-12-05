@@ -191,6 +191,7 @@
 (π "<menu> k r" #'kill-rectangle)
 (π "<menu> l b" #'list-buffers)
 (π "<menu> l i" #'slime)
+(π "<menu> l l" #'list-processes)
 (π "<menu> l p" #'list-packages)
 (π "<menu> m a" #'magit-dispatch-popup)
 (π "<menu> m c" #'magit-clone)

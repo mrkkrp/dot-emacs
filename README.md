@@ -382,6 +382,7 @@ Shortcut            | Description
 <kbd>menu k r</kbd> | kill rectangle
 <kbd>menu l b</kbd> | list buffers
 <kbd>menu l i</kbd> | SLIME
+<kbd>menu l l</kbd> | list processes
 <kbd>menu l p</kbd> | list packages
 <kbd>menu m a</kbd> | magit dispatch popup
 <kbd>menu m c</kbd> | magit clone
