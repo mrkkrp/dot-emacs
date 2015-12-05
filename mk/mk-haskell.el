@@ -66,7 +66,8 @@
     "TemplateHaskell"
     "TupleSections"
     "TypeFamilies"
-    "TypeOperators")
+    "TypeOperators"
+    "ViewPatterns")
   "List of Haskell language extensions I use.")
 
 (setq
