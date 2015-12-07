@@ -43,7 +43,7 @@
  blink-matching-delay             0.5
  blink-matching-paren             'jump-offscreen
  browse-url-browser-function      'browse-url-generic
- browse-url-generic-program       "icecat"
+ browse-url-generic-program       "firefox"
  compilation-read-command         nil
  cursor-type                      '(bar . 1) ; thin vertical bar
  cursor-in-non-selected-windows   nil        ; don't show it there
