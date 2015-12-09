@@ -36,7 +36,8 @@
 
 (setq
  gnus-novice-user                  nil
- gnus-permanently-visible-groups   ""      ; always show all groups
+ gnus-permanently-visible-groups
+ (regexp-opt '("INBOX" "Sent" "Trash" "Drafts"))
  send-mail-function                'smtpmail-send-it
  gnus-select-method       '(nnimap "openmailbox"
                                    (nnimap-address "imap.openmailbox.org")
