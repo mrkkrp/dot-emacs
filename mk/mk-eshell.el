@@ -25,8 +25,6 @@
 
 (require 'mk-utils)
 
-(add-to-list 'kill-or-bury-alive-must-die-list 'eshell-mode)
-
 (defun eshell-other-window (fnc &optional arg)
   "Open Emacs shell (via FNC) in other window.
 
@@ -35,6 +33,7 @@ ARG is argument to pass to Emacs shell."
     (switch-to-prev-buffer)
     (switch-to-buffer-other-window eshell-buffer)))
 
+(add-hook 'eshell-mode-hook #'compilation-shell-minor-mode)
 (add-hook 'eshell-mode-hook #'smartparens-mode)
 
 (advice-add 'eshell :around #'eshell-other-window)
