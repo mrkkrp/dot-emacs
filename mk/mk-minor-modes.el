@@ -62,7 +62,7 @@
  sp-highlight-wrap-overlay         nil
  sp-highlight-wrap-tag-overlay     nil
  whitespace-line-column            80
- whitespace-style '(face trailing tabs empty lines-tail indentation)
+ whitespace-style '(face trailing empty lines-tail) ; tabs indentation
  yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
 
 (ace-popup-menu-mode              1) ; replace GUI popup menus
@@ -170,7 +170,8 @@ move point."
   (flyspell-mode   1)
   (unless (string-equal (buffer-name) "COMMIT_EDITMSG")
     (modalka-mode  1))
-  (whitespace-mode 1))
+  (whitespace-mode 1)
+  (highlight-regexp "\t" 'whitespace-trailing))
 
 (defun mk-prepare-prog-mode ()
   "Enables some minor modes for programming."
@@ -180,7 +181,8 @@ move point."
   (flyspell-prog-mode)
   (hl-todo-mode    1)
   (modalka-mode    1)
-  (whitespace-mode 1))
+  (whitespace-mode 1)
+  (highlight-regexp "\t" 'whitespace-trailing))
 
 (add-hook 'compilation-mode-hook   #'modalka-mode)
 (add-hook 'flycheck-mode-hook      #'flycheck-color-mode-line-mode)
