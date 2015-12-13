@@ -179,7 +179,7 @@ ARG, if given, specifies how many symbols to eat."
   "Make sure we don't have too wide gaps."
   (save-excursion
     (goto-char (point-min))
-    (while (re-search-forward "\n\n\n*" nil t)
+    (while (re-search-forward "\n\n\n+" nil t)
       (replace-match "\n\n"))))
 
 
