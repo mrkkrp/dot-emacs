@@ -326,7 +326,8 @@
 (defalias 'list-buffers #'ibuffer)
 (defalias 'yes-or-no-p #'y-or-n-p)
 
-(add-hook 'before-save-hook #'delete-trailing-whitespace)
+(add-hook 'before-save-hook #'whitespace-cleanup)
+(add-hook 'before-save-hook #'mk-single-empty-line)
 
 (advice-add 'package-install :filter-args (lambda (args) (list (car args) t)))
 (advice-add 'process-kill-buffer-query-function :override (σ t))

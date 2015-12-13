@@ -175,6 +175,13 @@ ARG, if given, specifies how many symbols to eat."
     (when (looking-at "[[:blank:]]")
       (delete-char (or arg 1)))))
 
+(defun mk-single-empty-line ()
+  "Make sure we don't have too wide gaps."
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "\n\n\n*" nil t)
+      (replace-match "\n\n"))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Navigation

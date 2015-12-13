@@ -62,7 +62,7 @@
  sp-highlight-wrap-overlay         nil
  sp-highlight-wrap-tag-overlay     nil
  whitespace-line-column            80
- whitespace-style                  '(face lines-tail)
+ whitespace-style '(face trailing tabs empty lines-tail indentation)
  yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
 
 (ace-popup-menu-mode              1) ; replace GUI popup menus
