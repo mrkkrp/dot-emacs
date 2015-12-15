@@ -31,6 +31,9 @@
 (setq magit-completing-read-function #'magit-ido-completing-read
       magit-push-always-verify       nil)
 
+(τ git-commit git-commit "M-n" #'mk-transpose-line-down)
+(τ git-commit git-commit "M-p" #'mk-transpose-line-up)
+
 (provide 'mk-magit)
 
 ;;; mk-magit.el ends here
