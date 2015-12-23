@@ -81,6 +81,7 @@
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
+(add-to-list 'sp-no-reindent-after-kill-modes 'haskell-cabal-mode)
 (add-to-list 'sp-no-reindent-after-kill-modes 'haskell-mode)
 
 (defun mk-haskell-hoogle (symbol)
