@@ -25,7 +25,8 @@
 
 (eval-when-compile
   (require 'ebal)
-  (require 'haskell))
+  (require 'haskell)
+  (require 'smartparens))
 
 (require 'cl-lib)
 (require 'flycheck)
@@ -39,8 +40,8 @@
     "DataKinds"
     "DeriveAnyClass"
     "DeriveDataTypeable"
-    "DeriveFunctor"
     "DeriveFoldable"
+    "DeriveFunctor"
     "DeriveGeneric"
     "DeriveTraversable"
     "EmptyDataDecls"
@@ -80,6 +81,7 @@
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
+(add-to-list 'sp-no-reindent-after-kill-modes 'haskell-mode)
 
 (defun mk-haskell-hoogle (symbol)
   "Find documentation for given symbol SYMBOL online."
