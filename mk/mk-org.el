@@ -35,7 +35,8 @@
  org-completion-use-ido    t
  org-hide-emphasis-markers t)
 
-(τ org org "C-'" #'ace-window)
+(τ org org "C-'"   #'ace-window)
+(τ org org "C-c i" #'org-insert-link)
 
 (advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)
 
