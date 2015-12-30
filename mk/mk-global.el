@@ -103,6 +103,7 @@
 (π "C-'"        #'ace-window)
 (π "C-,"        #'avy-goto-char)
 (π "C-SPC"      #'mk-mark-command)
+(π "C-\\"       (ε #'mk-use-lang "russian-computer" "ru"))
 (π "C-]"        #'mk-smart-indent)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
