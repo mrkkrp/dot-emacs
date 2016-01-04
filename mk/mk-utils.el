@@ -28,7 +28,8 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'dired))
+  (require 'dired)
+  (require 'magit))
 
 (require 'cl-lib)
 (require 'f)
@@ -228,7 +229,8 @@ don't create new empty buffer."
 This functionality requires git installed."
   (interactive (list (read-string "Address: ")))
   (save-window-excursion
-    (let ((temp-dir (make-temp-file "emacs-package-" t)))
+    (let ((temp-dir (make-temp-file "emacs-package-" t))
+          (magit-clone-set-remote.pushDefault t))
       (magit-clone address temp-dir)
       (package-install-file temp-dir))))
 
