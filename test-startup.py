@@ -8,6 +8,7 @@ import subprocess
 
 initial_startup = '''
 (let ((debug-on-error t)
+      (url-show-status nil)
       (user-emacs-directory default-directory)
       (user-init-file (expand-file-name "init.el"))
       (load-path (delq default-directory load-path)))
@@ -18,6 +19,7 @@ initial_startup = '''
 
 secondary_startup = '''
 (let ((debug-on-error t)
+      (url-show-status nil)
       (user-emacs-directory default-directory)
       (user-init-file (expand-file-name "init.el"))
       (load-path (delq default-directory load-path)))
