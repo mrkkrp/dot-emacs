@@ -31,9 +31,6 @@
 (when window-system
   (mk-set-font "DejaVu Sans Mono" 105)
   (load-theme 'solarized-dark t)
-  (custom-theme-set-faces
-   'solarized-dark
-   '(whitespace-tab ((t (:foreground "#dc322f" :inverse-video t)))))
   (let ((sml/no-confirm-load-theme t))
     (sml/setup))
   (toggle-frame-fullscreen))
