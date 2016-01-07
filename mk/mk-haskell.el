@@ -123,11 +123,14 @@ version components."
                  lib definition))))))
 
 (mk-haskell-set-min-versions
- '(("Cabal"   1 22 0)
-   ("base"    4 8 0)
-   ("process" 1 2 1)
-   ("retry"   0 6 0)
-   ("time"    1 5 0)))
+ '(("Cabal"      1 22 0)
+   ("base"       4 8 0)
+   ("bytestring" 0 10 6)
+   ("containers" 0 5 7)
+   ("directory"  1 2 5)
+   ("process"    1 2 1)
+   ("retry"      0 6 0)
+   ("time"       1 5 0)))
 
 (defun mk-haskell-add-pragma (pragma)
   "Add new language PRAGMA to current file and re-format pragmas."
