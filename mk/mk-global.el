@@ -30,6 +30,7 @@
 
 (require 'cl-lib)
 (require 'misc)
+(require 'mk-dvorak-russian)
 (require 'mk-python)
 (require 'mk-utils)
 
@@ -104,7 +105,7 @@
 (π "C--"        #'ace-window)
 (π "C-."        #'undo)
 (π "C-SPC"      #'mk-mark-command)
-(π "C-\\"       (ε #'mk-use-lang "dvorak-russian" "ru"))
+(π "C-\\"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
 (π "C-]"        #'mk-smart-indent)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
@@ -133,7 +134,7 @@
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
-(π "<f8>"       (ε #'mk-use-lang "dvorak-russian" "ru"))
+(π "<f8>"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
 (π "<f9>"       #'kill-or-bury-alive)
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
