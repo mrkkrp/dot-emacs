@@ -116,8 +116,9 @@
 (require 'mk-utils)
 
 (defvar package-selected-git-packages
-  '((highlight-line . "https://github.com/mrkkrp/highlight-line.git")
-    (mk-abbrev      . "https://github.com/mrkkrp/mk-abbrev.git"))
+  '((highlight-line    . "https://github.com/mrkkrp/highlight-line.git")
+    (mk-abbrev         . "https://github.com/mrkkrp/mk-abbrev.git")
+    (mk-dvorak-russian . "https://github.com/mrkkrp/mk-dvorak-russian.git"))
   "Alist of packages that are installed from git repositories.")
 
 (dolist (package package-selected-git-packages)

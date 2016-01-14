@@ -100,10 +100,11 @@
 
 ;; Global Key Map
 
-(π "C-'"        #'ace-window)
-(π "C-,"        #'avy-goto-char)
+(π "C-,"        #'dabbrev-expand)
+(π "C--"        #'ace-window)
+(π "C-."        #'undo)
 (π "C-SPC"      #'mk-mark-command)
-(π "C-\\"       (ε #'mk-use-lang "russian-computer" "ru"))
+(π "C-\\"       (ε #'mk-use-lang "dvorak-russian" "ru"))
 (π "C-]"        #'mk-smart-indent)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
@@ -132,8 +133,7 @@
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
-(π "<f7>"       (ε #'mk-use-lang "french-keyboard"  "fr"))
-(π "<f8>"       (ε #'mk-use-lang "russian-computer" "ru"))
+(π "<f8>"       (ε #'mk-use-lang "dvorak-russian" "ru"))
 (π "<f9>"       #'kill-or-bury-alive)
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
 (π "<f11>"      #'switch-to-buffer)
@@ -245,12 +245,12 @@
 (modalka-define-kbd "SPC" "C-SPC")
 ;; '
 (modalka-define-kbd "," "C-,")
-;; .
 (modalka-define-kbd "-" "C--")
-(modalka-define-kbd "/" "C-/")
+;; /
+(modalka-define-kbd "." "C-.")
 (modalka-define-kbd ":" "M-;")
 (modalka-define-kbd ";" "C-;")
-(modalka-define-kbd "?" "M-/")
+;; ?
 
 (modalka-define-kbd "0" "C-0")
 (modalka-define-kbd "1" "C-1")
