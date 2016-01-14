@@ -20,6 +20,7 @@ obsolete.
 * [Features](#features)
 * [Key Remapping](#key-remapping)
 * [Sticky Keys](#sticky-keys)
+* [Dvorak Layout](#dvorak-layout)
 * [Modal Editing](#modal-editing)
 * [Key Bindings](#key-bindings)
 * [Keyboard Layouts and Abbreviations](#keyboard-layouts-and-abbreviations)
@@ -62,6 +63,7 @@ Package/Repo | Description
 [magit](https://github.com/magit/magit) | A Git porcelain inside Emacs
 [markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | Peculiar way to use Emacs abbrevs
+[mk-dvorak-russian](https://github.com/mrkkrp/mk-dvorak-russian) † | Type Russian in Emacs with Dvorak layout on system level
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
 [mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | Outline-based template notes management
@@ -84,8 +86,8 @@ Package/Repo | Description
 [zygospore](https://github.com/louiskottmann/zygospore.el) | Reversible version of `delete-other-windows`
 [zzz-to-char](https://github.com/mrkkrp/zzz-to-char) † | Fancy version of `zap-to-char` command
 
-† These packages I wrote myself, I can't be sure, but it seems like other
-  people find them useful too.
+† These packages I wrote myself, it seems like other people find them useful
+  too.
 
 Thanks to all Emacs developers, GNU team and all the people who hack Emacs
 and publish their code so others can use it. The whole thing is something
@@ -107,9 +109,7 @@ hacking):
   query depending on major mode, so if I edit Python source, my query will
   start with `"python "` automatically, it's configurable thing);
 
-* upgrading of all packages without displaying of `*Packages*` buffer;
-
-* smart switching between default input method, French, and Russian.
+* upgrading of all packages without displaying of `*Packages*` buffer.
 
 ## Key Remapping
 
@@ -170,6 +170,11 @@ If you ask yourself if I have RSI or some kind disability, I have to say
 that if you care about your health, you don't need to wait until you have
 RSI to optimize your interaction with computer.
 
+## Dvorak Layout
+
+I recently switched to the Dvorak layout and it's fantastic. Typing is a lot
+more comfortable now.
+
 ## Modal Editing
 
 Currently I'm using `modalka-mode` that allows to edit text in modal
@@ -197,7 +202,7 @@ Next, Emacs allows us to define some custom key bindings: <kbd>C-c</kbd>
 prefix followed by a single key. I've assigned some commands this way. The
 bad thing about these shortcuts is that you have to start them with a chord
 <kbd>C-c</kbd> (this paragraph is a bit obsolete I wrote it before I started
-using «Sticky Keys»), while it's way better than <kbd>C-c C-o C-l</kbd>
+to use «Sticky Keys»), while it's way better than <kbd>C-c C-o C-l</kbd>
 (such shortcuts shouldn't be used at all!), I don't like to press several
 keys simultaneously (unless such a combination is self-sufficient, like
 <kbd>C-n</kbd>). Also, there are not so many combinations starting with this
@@ -231,7 +236,7 @@ languages — a horrible thing.
 
 For peculiar use case of Emacs abbreviations see
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev). It now has its own
-repository. It's possible that this will be implemented in more flashy way
+repository. It's possible that this will be implemented in more a flashy way
 some day.
 
 ## GNUS
