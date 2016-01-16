@@ -36,7 +36,7 @@
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
- aw-keys                           '(?a ?s ?d ?f ?g ?h ?j ?k ?l)
+ aw-keys                           '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s)
  column-number-mode                t       ; display column number
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line

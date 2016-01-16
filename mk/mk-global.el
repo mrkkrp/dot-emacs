@@ -37,6 +37,7 @@
 (setq-default
  apropos-do-all                   t ; more extensive search
  auto-save-default                nil ; don't ever create autosaves
+ avy-keys                         '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s)
  avy-style                        'at-full ; can't use the default
  backup-by-copying                t
  backup-directory-alist
