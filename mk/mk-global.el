@@ -247,7 +247,7 @@
 (modalka-define-kbd "SPC" "C-SPC")
 ;; '
 (modalka-define-kbd "," "C-,")
-(modalka-define-kbd "-" "C--")
+;; -
 ;; /
 (modalka-define-kbd "." "C-.")
 (modalka-define-kbd ":" "M-;")
