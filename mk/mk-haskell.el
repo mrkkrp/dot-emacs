@@ -127,7 +127,7 @@ version components."
    ("base"       4 8 0)
    ("bytestring" 0 10 6)
    ("containers" 0 5 7)
-   ("directory"  1 2 5)
+   ("directory"  1 2 2)
    ("process"    1 2 1)
    ("retry"      0 6 0)
    ("time"       1 5 0)))
