@@ -135,6 +135,7 @@
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
+(π "<f7>"       (ε #'mk-use-lang "french-keyboard" "fr"))
 (π "<f8>"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
 (π "<f9>"       #'kill-or-bury-alive)
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
