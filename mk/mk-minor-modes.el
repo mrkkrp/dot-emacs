@@ -72,7 +72,7 @@
 (display-time-mode                1) ; display time
 (electric-indent-mode             0) ; I use aggressive indent mode instead
 (global-auto-revert-mode          1) ; revert buffers automatically
-(highlight-line-mode              1) ; highlight lines in list-like buffers
+(mk-highlight-line-mode           1) ; highlight lines in list-like buffers
 (ido-mode                         1) ; ido for `switch-buffer' and `find-file'
 (ido-ubiquitous-mode              1) ; use IDO everywhere
 (ido-vertical-mode                1) ; display IDO vertically

@@ -53,7 +53,6 @@ Package/Repo | Description
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
-[highlight-line](https://github.com/mrkkrp/highlight-line) † | Highlight lines in list-like buffers
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
 [ido-hacks](https://github.com/scottjad/ido-hacks) | Put more IDO in your IDO
