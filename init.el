@@ -30,7 +30,9 @@
            emacs-version
            emacs-version-needed)))
 
-;; Install packages from MELPA and ELPA.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Install packages from MELPA and ELPA
 
 (setq
  package-selected-packages
@@ -101,7 +103,9 @@
              (not (package-installed-p package)))
     (package-install package t)))
 
-;; Set up directories.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set up directories
 
 (require 'f)
 
@@ -112,7 +116,9 @@
 
 (setq custom-file (f-expand ".emacs-custom.el" user-emacs-directory))
 
-;; Now we should be able to install directly from git repositories.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Install directly from git repositories
 
 (require 'mk-utils)
 
@@ -124,14 +130,18 @@
   (unless (package-installed-p (car package))
     (package-install-git (cdr package))))
 
-;; Start Emacs server.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Start Emacs server
 
 (require 'server)
 
 (unless (server-running-p)
   (server-start))
 
-;; Require meat of the configuration.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Require meat of the config
 
 (require 'mk-global)      ; global settings
 (require 'mk-highlight-line) ; highlight lines in list-like buffers

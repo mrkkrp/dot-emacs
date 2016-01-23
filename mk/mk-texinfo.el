@@ -19,7 +19,7 @@
 
 ;;; Commentary:
 
-;; Texinfo settings. Currently I mainly translate Texinfo files into HTML
+;; Texinfo settings.  Currently I mainly translate Texinfo files into HTML
 ;; documents, this setup reflects the fact.
 
 ;;; Code:

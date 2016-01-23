@@ -24,6 +24,7 @@
 ;;; Code:
 
 (eval-when-compile
+  (require 'avy)
   (require 'cyphejor)
   (require 'flyspell)
   (require 'ido)
@@ -33,10 +34,14 @@
 (require 'mk-utils)
 (require 'smartparens-config)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set variables
+
 (setq-default
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
- aw-keys                           '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s)
+ aw-keys                           avy-keys ; see `mk-global'
  column-number-mode                t       ; display column number
  display-time-24hr-format          t       ; 24 hours format for time
  display-time-default-load-average nil     ; don't clutter my status line
@@ -65,6 +70,10 @@
  whitespace-style                  '(face trailing tabs empty lines-tail)
  yas-snippet-dirs (list (expand-file-name "snippets" user-emacs-directory)))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Globally activate minor modes
+
 (ace-popup-menu-mode              1) ; replace GUI popup menus
 (blink-cursor-mode                0) ; my cursor doesn't blink, man
 (cyphejor-mode                    1) ; shorten names of major modes
@@ -88,6 +97,10 @@
 (whole-line-or-region-mode        1) ; operate on current line
 (yas-global-mode                  1) ; enable Yasnippet
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Various
+
 (setq
  cyphejor-rules
  '(:upcase
@@ -97,7 +110,6 @@
    ("dired"       "δ")
    ("emacs"       "ε")
    ("eshell"      "εsh")
-   ("fundamental" "Ⓕ")
    ("inferior"    "i" :prefix)
    ("interaction" "i" :prefix)
    ("interactive" "i" :prefix)

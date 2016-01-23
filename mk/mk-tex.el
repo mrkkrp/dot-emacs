@@ -19,7 +19,7 @@
 
 ;;; Commentary:
 
-;; Some tweaks of Tex/LaTeX mode. I mainly use LaTeX to create good-looking
+;; Some tweaks of Tex/LaTeX mode.  I mainly use LaTeX to create good-looking
 ;; PDF documents, so my setup is quite narrowly targeted.
 
 ;;; Code:

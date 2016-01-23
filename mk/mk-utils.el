@@ -20,10 +20,10 @@
 ;;; Commentary:
 
 ;; I've collected various auxiliary functions here to avoid cluttering of
-;; other files. Note that this file is loaded before installation of some
-;; packages (those that are installed directly from git repositories). Thus,
-;; we should use here only packages listed in `package-selected-packages',
-;; not `package-selected-git-packages'.
+;; other files.  Note that this file is loaded before installation of some
+;; packages (those that are installed directly from git repositories).
+;; Thus, we should use here only packages listed in
+;; `package-selected-packages', not `package-selected-git-packages'.
 
 ;;; Code:
 
@@ -40,7 +40,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Text Editing
+;; Text editing
 
 (defun mk-transpose-line-down (&optional arg)
   "Move current line and cursor down.
@@ -221,7 +221,7 @@ don't create new empty buffer."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Missing Commands for Package System
+;; Missing commands for package system
 
 (defun package-install-git (address)
   "Install package directly from git repository at ADDRESS.
@@ -266,7 +266,7 @@ This functionality requires git installed."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Utility Functions
+;; Utility functions
 
 (defun mk-shell-quote-arg (arg)
   "Quote ARG for using in shell.
@@ -348,7 +348,7 @@ BODY."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Utility Commands
+;; Utility commands
 
 (defun mk-switch-theme (theme)
   "Switch to theme THEME, loading it if necessary.

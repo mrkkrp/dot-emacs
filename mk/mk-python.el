@@ -19,7 +19,7 @@
 
 ;;; Commentary:
 
-;; Some variables, key bindings, etc. that I modify to code in Python.
+;; Some variables, key bindings, etc.  that I modify to code in Python.
 
 ;;; Code:
 

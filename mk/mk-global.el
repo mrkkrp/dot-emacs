@@ -19,7 +19,7 @@
 
 ;;; Commentary:
 
-;; Here are various settings not specific to any major mode. You can see
+;; Here are various settings not specific to any major mode.  You can see
 ;; settings of various minor modes in `mk-minor-modes.el'.
 
 ;;; Code:
@@ -33,10 +33,14 @@
 (require 'mk-python)
 (require 'mk-utils)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set variables
+
 (setq-default
  apropos-do-all                   t ; more extensive search
  auto-save-default                nil ; don't ever create autosaves
- avy-keys                         '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s)
+ avy-keys                         '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s) ; Dvorak
  avy-style                        'at-full ; can't use the default
  backup-by-copying                t
  backup-directory-alist
@@ -86,7 +90,9 @@
 
 (ace-link-setup-default) ; use ace-link in various major modes
 
-;; Handy translations for use with «Sticky Keys»
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Handy translations for use with “Sticky Keys”
 
 (mk-translate-kbd "<C-menu>"      "<menu>")
 (mk-translate-kbd "<C-return>"    "<return>")
@@ -99,11 +105,15 @@
 (mk-translate-kbd "C-x ;"         "C-x C-;")
 (mk-translate-kbd "C-x o"         "C-x C-o")
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Generate Russian input-method to compensate Dvorak in OS level
 
 (fix-input "english-dvorak" "russian-computer" "mk-dvorak-russian")
 
-;; Global Key Map
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Global key map
 
 (π "C-,"        #'dabbrev-expand)
 (π "C--"        #'ace-window)
@@ -246,7 +256,9 @@
 (π "<menu> y p" #'mk-yank-primary)
 (π "<menu> y r" #'yank-rectangle)
 
-;; Modal Editing
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Modal editing
 
 (modalka-define-kbd "SPC" "C-SPC")
 ;; '
@@ -327,7 +339,9 @@
 (modalka-define-kbd "Y" "M-y")
 (modalka-define-kbd "Z" "C-z")
 
-;; Other
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Other trickery
 
 (defalias 'display-startup-echo-area-message (ε #'mk-show-date))
 (defalias 'list-buffers #'ibuffer)

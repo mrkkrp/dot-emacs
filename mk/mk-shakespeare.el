@@ -20,7 +20,7 @@
 ;;; Commentary:
 
 ;; Shakespearean templates are used in Haskell web development with
-;; Yesod. Here are some tweaks.
+;; Yesod.  Here are some tweaks.
 
 ;;; Code:
 

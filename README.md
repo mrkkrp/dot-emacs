@@ -112,10 +112,6 @@ hacking):
 
 ## Key Remapping
 
-If you do text editing professionally and you have no ergonomic keyboard,
-get one. I use «Truly Ergonomic Keyboard» (no, they don't pay me for the
-advertising… I think they should).
-
 It's common knowledge that if you use a laptop, you should remap <kbd>⇪ Caps
 Lock</kbd> to <kbd>⎈ Ctrl</kbd> (at least if you're an Emacs user). It's
 undoubtedly true, but what about <kbd>↹ Tab</kbd> key and <kbd>⌫
@@ -150,14 +146,14 @@ keysym Tab = BackSpace
 keysym BackSpace = Tab
 ```
 
-I recommend changing shortcut for «window cycling», it's usually <kbd>⎇
+I recommend changing shortcut for “window cycling”, it's usually <kbd>⎇
 Alt</kbd> + <kbd>↹ Tab</kbd>, now it should be <kbd>⎇ Alt</kbd> + <kbd>⌫
 Backspace</kbd>, because this key combination is comfortable and shouldn't
 change.
 
 ## Sticky Keys
 
-I'm a big fan of «Sticky Keys» feature. Most major operating systems and
+I'm a big fan of “Sticky Keys” feature. Most major operating systems and
 desktop environments provide this feature, it allows to press modifier keys,
 such as <kbd>⎈ Ctrl</kbd>, <kbd>⎇ Alt</kbd>, and <kbd>⇧ Shift</kbd>
 sequentially, instead of pressing multiple keys at a time — that's how all
@@ -178,11 +174,11 @@ ability to type Russian in Emacs when Dvorak is my layout in OS level. Nice!
 
 ## Modal Editing
 
-Currently I'm using `modalka-mode` that allows to edit text in modal
-fashion. Modal editing is fundamentally better for health and more efficient
-in general. Initially I considered learning `evil` to edit in «vim-style»,
-but I estimated resulting effect not superior to editing with familiar Emacs
-key bindings.
+Currently I'm using [`modalka-mode`](https://github.com/mrkkrp/modalka) that
+allows to edit text in modal fashion. Modal editing is fundamentally better
+for health and more efficient in general. Initially I considered learning
+`evil` to edit in «vim-style», but I estimated resulting effect not superior
+to editing with familiar Emacs key bindings.
 
 See my key translation map in `mk/mk-global.el` file.
 
@@ -203,13 +199,14 @@ Next, Emacs allows us to define some custom key bindings: <kbd>C-c</kbd>
 prefix followed by a single key. I've assigned some commands this way. The
 bad thing about these shortcuts is that you have to start them with a chord
 <kbd>C-c</kbd> (this paragraph is a bit obsolete I wrote it before I started
-to use «Sticky Keys»), while it's way better than <kbd>C-c C-o C-l</kbd>
-(such shortcuts shouldn't be used at all!), I don't like to press several
-keys simultaneously (unless such a combination is self-sufficient, like
+to use “Sticky Keys”, but it's still relevant for those who don't use that
+feature), while it's way better than <kbd>C-c C-o C-l</kbd> (such shortcuts
+shouldn't be used at all!), I don't like to press several keys
+simultaneously (unless such a combination is self-sufficient, like
 <kbd>C-n</kbd>). Also, there are not so many combinations starting with this
 common prefix, if we want to avoid too long key sequences.
 
-Here key sequences starting with «introducing key» come into play. We can
+Here key sequences starting with “introducing key” come into play. We can
 choose single key, whose seul rôle will be starting key sequences. How long
 should every such a key sequence be?  Of course, we want it to be as short
 as possible, but we cannot use only one key after the introducing key,
@@ -228,12 +225,10 @@ See my key-bindings in `mk/mk-global.el` file.
 
 It's true that standard keyboards have too few keys. We should be able to
 input many-many different fancy symbols and switch languages very easily,
-with one key pressing. I use <kbd>F7</kbd> and <kbd>F8</kbd> for this
-task. Every key performs switching to input method of some language or
-disables input method of that language when this it's already active (it
-also switches dictionaries used for spell checking, note that you need to
-install `aspell` for that). This way I don't need to «cycle» through all the
-languages — a horrible thing.
+with one key pressing. I use <kbd>F8</kbd> for this task. That key performs
+switching to Russian input method or disables it when this it's already
+active (it also switches dictionaries used for spell checking, note that you
+need to install `aspell` for that).
 
 For peculiar use case of Emacs abbreviations see
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev). It now has its own

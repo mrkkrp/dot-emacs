@@ -22,7 +22,7 @@
 ;; Emacs has that pretty minor mode for highlighting current line:
 ;; `hl-line-mode', not many people use it all the time, but it's worth
 ;; enabling in many types of buffers that deal with lists of items, one item
-;; per line. This packages allows to enable it everywhere for readability.
+;; per line.  This packages allows to enable it everywhere for readability.
 
 ;;; Code:
 
