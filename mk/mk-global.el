@@ -30,7 +30,6 @@
 
 (require 'cl-lib)
 (require 'misc)
-(require 'mk-dvorak-russian)
 (require 'mk-python)
 (require 'mk-utils)
 
@@ -99,6 +98,10 @@
 (mk-translate-kbd "C-c v"         "C-c C-v")
 (mk-translate-kbd "C-x ;"         "C-x C-;")
 (mk-translate-kbd "C-x o"         "C-x C-o")
+
+;; Generate Russian input-method to compensate Dvorak in OS level
+
+(fix-input "english-dvorak" "russian-computer" "mk-dvorak-russian")
 
 ;; Global Key Map
 

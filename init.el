@@ -45,6 +45,7 @@
    cyphejor             ; Shorten names of major modes
    ebal                 ; Emacs interface to Cabal
    f                    ; Modern API for working with files and dirs
+   fix-input            ; Make input methods work with Dvorak
    fix-word             ; Convenient word transformation
    flycheck             ; On-the-fly syntax checking
    flycheck-color-mode-line ; Colorize mode line according to Flycheck status
@@ -117,8 +118,7 @@
 
 (defvar package-selected-git-packages
   '((highlight-line    . "https://github.com/mrkkrp/highlight-line.git")
-    (mk-abbrev         . "https://github.com/mrkkrp/mk-abbrev.git")
-    (mk-dvorak-russian . "https://github.com/mrkkrp/mk-dvorak-russian.git"))
+    (mk-abbrev         . "https://github.com/mrkkrp/mk-abbrev.git"))
   "Alist of packages that are installed from git repositories.")
 
 (dolist (package package-selected-git-packages)

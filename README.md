@@ -45,6 +45,7 @@ Package/Repo | Description
 [cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
 [ebal](https://github.com/mrkkrp/ebal) † | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | Modern API for working with files and dirs
+[fix-input](https://github.com/mrkkrp/fix-input) † | Type Russian in Emacs with Dvorak layout on system level
 [fix-word](https://github.com/mrkkrp/fix-word) † | Convenient word transformation
 [flycheck](https://github.com/flycheck/flycheck) | On-the-fly syntax checking
 [flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
@@ -63,7 +64,6 @@ Package/Repo | Description
 [magit](https://github.com/magit/magit) | A Git porcelain inside Emacs
 [markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
 [mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | Peculiar way to use Emacs abbrevs
-[mk-dvorak-russian](https://github.com/mrkkrp/mk-dvorak-russian) † | Type Russian in Emacs with Dvorak layout on system level
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
 [mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | Outline-based template notes management
@@ -173,7 +173,9 @@ RSI to optimize your interaction with computer.
 ## Dvorak Layout
 
 I recently switched to the Dvorak layout and it's fantastic. Typing is a lot
-more comfortable now.
+more comfortable now. I've created the
+[`fix-word`](https://github.com/mrkkrp/fix-word) package to preserve my
+ability to type Russian in Emacs when Dvorak is my layout in OS level. Nice!
 
 ## Modal Editing
 
