@@ -3,7 +3,6 @@
 # name: GNU GPL 3 Header
 # key: gnugpl
 # --
--- -*- Mode: Haskell; -*-
 --
 -- ${1:description}
 --
