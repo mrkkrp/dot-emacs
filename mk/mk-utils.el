@@ -20,10 +20,7 @@
 ;;; Commentary:
 
 ;; I've collected various auxiliary functions here to avoid cluttering of
-;; other files.  Note that this file is loaded before installation of some
-;; packages (those that are installed directly from git repositories).
-;; Thus, we should use here only packages listed in
-;; `package-selected-packages', not `package-selected-git-packages'.
+;; other files.
 
 ;;; Code:
 

@@ -42,6 +42,7 @@
    aggressive-indent    ; Keep code always indented
    auctex               ; Integrated environment for *TeX*
    avy                  ; Move cursor effectively
+   char-menu            ; Fast insertion of arbitrary symbols
    cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
    cyphejor             ; Shorten names of major modes
@@ -115,20 +116,6 @@
 (add-to-list 'load-path mk-dir)
 
 (setq custom-file (f-expand ".emacs-custom.el" user-emacs-directory))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Install directly from git repositories
-
-(require 'mk-utils)
-
-(defvar package-selected-git-packages
-  '((mk-abbrev . "https://github.com/mrkkrp/mk-abbrev.git"))
-  "Alist of packages that are installed from git repositories.")
-
-(dolist (package package-selected-git-packages)
-  (unless (package-installed-p (car package))
-    (package-install-git (cdr package))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

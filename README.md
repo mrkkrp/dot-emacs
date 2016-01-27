@@ -40,6 +40,7 @@ Package/Repo | Description
 [aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode) | Keep code always indented
 [auctex](http://git.savannah.gnu.org/cgit/emacs/elpa.git/?h=externals/auctex) | Integrated environment for *TeX*
 [avy](https://github.com/abo-abo/avy) | Move cursor effectively
+[char-menu](https://github.com/mrkkrp/char-menu) † | Fast insertion of arbitrary symbols
 [cider](https://github.com/clojure-emacs/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
 [cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
@@ -62,7 +63,6 @@ Package/Repo | Description
 [kill-or-bury-alive](https://github.com/mrkkrp/kill-or-bury-alive) † | Precise control over buffer killing in Emacs
 [magit](https://github.com/magit/magit) | A Git porcelain inside Emacs
 [markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
-[mk-abbrev](https://github.com/mrkkrp/mk-abbrev) † | Peculiar way to use Emacs abbrevs
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
 [mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
 [org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | Outline-based template notes management
@@ -230,10 +230,8 @@ switching to Russian input method or disables it when this it's already
 active (it also switches dictionaries used for spell checking, note that you
 need to install `aspell` for that).
 
-For peculiar use case of Emacs abbreviations see
-[mk-abbrev](https://github.com/mrkkrp/mk-abbrev). It now has its own
-repository. It's possible that this will be implemented in more a flashy way
-some day.
+To insert various Unicode characters I use
+[`char-menu`](https://github.com/mrkkrp/char-menu) package, which see.
 
 ## GNUS
 

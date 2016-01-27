@@ -49,6 +49,17 @@
  blink-matching-paren             'jump-offscreen
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "firefox"
+ char-menu
+ '("—" "‘’" "“”" "…" "«»" "–"
+   ("Typography"
+    "•" "©" "†" "‡" "°" "·" "§" "№" "★" "■")
+   ("Math"
+    "≈" "≡" "≠" "∞" "×" "±" "∓" "÷" "√" "∇")
+   ("Arrows"
+    "←" "→" "↑" "↓" "⇐" "⇒" "⇑" "⇓")
+   ("Greek"
+    "α" "β" "Δ" "δ" "ε" "ζ" "η" "θ" "λ" "μ" "ν" "ξ"
+    "Ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω" "Ω"))
  compilation-read-command         nil
  cursor-type                      '(bar . 1) ; thin vertical bar
  cursor-in-non-selected-windows   nil        ; don't show it there
@@ -160,7 +171,7 @@
 (π "<menu> ,"   #'beginning-of-buffer)
 (π "<menu> ."   #'end-of-buffer)
 (π "<menu> - -" #'center-line)
-(π "<menu> SPC" #'mk-abbrev-insert)
+(π "<menu> SPC" #'char-menu)
 (π "<menu> a f" #'auto-fill-mode)
 (π "<menu> a g" #'aggressive-indent-mode)
 (π "<menu> a p" #'apropos)
