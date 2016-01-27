@@ -201,6 +201,8 @@
 (π "<menu> h e" #'ebal-execute)
 (π "<menu> h i" #'ebal-init)
 (π "<menu> h r" #'split-window-below)
+(π "<menu> h n" #'highlight-symbol-next)
+(π "<menu> h p" #'highlight-symbol-prev)
 (π "<menu> h s" #'highlight-symbol)
 (π "<menu> i r" #'indent-region)
 (π "<menu> j r" #'skewer-repl)
