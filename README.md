@@ -43,6 +43,7 @@ Package/Repo | Description
 [char-menu](https://github.com/mrkkrp/char-menu) † | Fast insertion of arbitrary symbols
 [cider](https://github.com/clojure-emacs/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
+[counsel](https://github.com/abo-abo/swiper) | Various completion functions using Ivy
 [cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
 [ebal](https://github.com/mrkkrp/ebal) † | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | Modern API for working with files and dirs
@@ -56,9 +57,6 @@ Package/Repo | Description
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
-[ido-hacks](https://github.com/scottjad/ido-hacks) | Put more IDO in your IDO
-[ido-ubiquitous](https://github.com/DarwinAwardWinner/ido-ubiquitous) | Use IDO (nearly) everywhere
-[ido-vertial-mode](https://github.com/creichert/ido-vertical-mode.el) | Makes IDO-mode display vertically
 [js2-mode](https://github.com/mooz/js2-mode) | Improved JavaScript editing mode
 [kill-or-bury-alive](https://github.com/mrkkrp/kill-or-bury-alive) † | Precise control over buffer killing in Emacs
 [magit](https://github.com/magit/magit) | A Git porcelain inside Emacs
@@ -73,9 +71,9 @@ Package/Repo | Description
 [slime](https://github.com/slime/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | Tricks for working with all kinds of parenthesis
-[smex](https://github.com/nonsequitur/smex) | M-x interface with IDO-style fuzzy matching
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | The Solarized color theme
 [speed-type](https://github.com/hagleitn/speed-type) | Practice touch typing in Emacs
+[swiper](https://github.com/abo-abo/swiper) | Isearch with overview
 [vimish-fold](https://github.com/mrkkrp/vimish-fold) † | Fold text like in Vim
 [visual-regexp](https://github.com/benma/visual-regexp.el) | Regexp replace with interactive visual feedback
 [whole-line-or-region](https://github.com/purcell/whole-line-or-region) | Operate on current line if region undefined

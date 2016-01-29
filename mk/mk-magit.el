@@ -28,7 +28,7 @@
 
 (require 'mk-utils)
 
-(setq magit-completing-read-function #'magit-ido-completing-read
+(setq magit-completing-read-function #'ivy-completing-read
       magit-push-always-verify       nil
       magit-clone-set-remote.pushDefault t) ;; don't ask, just set
 

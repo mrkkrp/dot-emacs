@@ -36,6 +36,7 @@
 
 (setq
  gnus-novice-user                  nil
+ gnus-completing-read-function     #'ivy-completing-read
  gnus-permanently-visible-groups
  (regexp-opt '("INBOX" "Sent" "Trash" "Drafts"))
  send-mail-function                'smtpmail-send-it

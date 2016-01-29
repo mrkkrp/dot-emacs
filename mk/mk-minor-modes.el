@@ -50,14 +50,6 @@
  flycheck-emacs-lisp-load-path     'inherit
  flycheck-temp-prefix              ".flycheck"
  global-auto-revert-non-file-buffers t     ; mainly for Dired
- ido-auto-merge-work-directories-length -1 ; disable it
- ido-create-new-buffer             'always
- ido-decorations '("" "" "·" "…" "" "" " ×" " ✔" " ⊥" " ⊥" " ↯")
- ido-enable-flex-matching          t
- ido-everywhere                    t
- ido-vertical-decorations          '("\n→ " "" "\n  " "\n  …" "[" "]"
-                                     " ×" " ✔" " ⊥" " ⊥" " ↯" "\n→ " "")
- ido-vertical-define-keys          'C-n-and-C-p-only
  ispell-dictionary                 "en"    ; default dictionary
  modalka-cursor-type               'box
  rm-whitelist                      "^↑$"
@@ -82,9 +74,7 @@
 (electric-indent-mode             0) ; I use aggressive indent mode instead
 (global-auto-revert-mode          1) ; revert buffers automatically
 (mk-highlight-line-mode           1) ; highlight lines in list-like buffers
-(ido-mode                         1) ; ido for `switch-buffer' and `find-file'
-(ido-ubiquitous-mode              1) ; use IDO everywhere
-(ido-vertical-mode                1) ; display IDO vertically
+(ivy-mode                         1) ; enable ivy completion
 (menu-bar-mode                    0) ; hide menu bar
 (minibuffer-electric-default-mode 1) ; electric minibuffer
 (mouse-wheel-mode                 0) ; ignore mouse wheel
@@ -122,19 +112,19 @@
    ("text"        "ξ")
    ("wdired"      "↯δ")))
 
-(dolist (buffer '("^\\*Backtrace\\*$"
-                  "^\\*Compile-Log\\*$"
-                  "^\\*.+Completions\\*$"
-                  "^\\*Flycheck error messages\\*$"
-                  "^\\*Help\\*$"
-                  "^\\*Ibuffer\\*$"
-                  "^\\*Messages\\*$"
-                  "^\\*inferior-lisp\\*$"
-                  "^\\*scratch\\*$"
-                  "^\\*slime-compilation\\*$"
-                  "^\\*slime-description\\*$"
-                  "^\\*slime-events\\*$"))
-  (add-to-list 'ido-ignore-buffers buffer))
+;; (dolist (buffer '("^\\*Backtrace\\*$"
+;;                   "^\\*Compile-Log\\*$"
+;;                   "^\\*.+Completions\\*$"
+;;                   "^\\*Flycheck error messages\\*$"
+;;                   "^\\*Help\\*$"
+;;                   "^\\*Ibuffer\\*$"
+;;                   "^\\*Messages\\*$"
+;;                   "^\\*inferior-lisp\\*$"
+;;                   "^\\*scratch\\*$"
+;;                   "^\\*slime-compilation\\*$"
+;;                   "^\\*slime-description\\*$"
+;;                   "^\\*slime-events\\*$"))
+;;   (add-to-list 'ido-ignore-buffers buffer))
 
 (defun flyspell-correct-previous (&optional words)
   "Correct word before point, reach distant words.

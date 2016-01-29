@@ -45,6 +45,7 @@
    char-menu            ; Fast insertion of arbitrary symbols
    cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
+   counsel              ; Various completion functions using Ivy
    cyphejor             ; Shorten names of major modes
    ebal                 ; Emacs interface to Cabal
    f                    ; Modern API for working with files and dirs
@@ -59,9 +60,6 @@
    highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
-   ido-hacks            ; Put more IDO in your IDO
-   ido-ubiquitous       ; Use IDO (nearly) everywhere
-   ido-vertical-mode    ; Makes IDO-mode display vertically
    js2-mode             ; Improved JavaScript editing mode
    kill-or-bury-alive   ; Precise control over buffer killing in Emacs
    magit                ; A Git porcelain inside Emacs
@@ -77,9 +75,9 @@
    slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis
-   smex                 ; M-x interface with IDO-style fuzzy matching
    solarized-theme      ; The Solarized color theme
    speed-type           ; Practice touch typing in Emacs
+   swiper               ; Isearch with an overview
    vimish-fold          ; Fold text like in Vim
    visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
