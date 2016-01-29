@@ -27,7 +27,7 @@
   (require 'avy)
   (require 'cyphejor)
   (require 'flyspell)
-  (require 'ido)
+  (require 'ivy)
   (require 'smartparens))
 
 (require 'cl-lib)
@@ -112,19 +112,19 @@
    ("text"        "ξ")
    ("wdired"      "↯δ")))
 
-;; (dolist (buffer '("^\\*Backtrace\\*$"
-;;                   "^\\*Compile-Log\\*$"
-;;                   "^\\*.+Completions\\*$"
-;;                   "^\\*Flycheck error messages\\*$"
-;;                   "^\\*Help\\*$"
-;;                   "^\\*Ibuffer\\*$"
-;;                   "^\\*Messages\\*$"
-;;                   "^\\*inferior-lisp\\*$"
-;;                   "^\\*scratch\\*$"
-;;                   "^\\*slime-compilation\\*$"
-;;                   "^\\*slime-description\\*$"
-;;                   "^\\*slime-events\\*$"))
-;;   (add-to-list 'ido-ignore-buffers buffer))
+(dolist (buffer '("^\\*Backtrace\\*$"
+                  "^\\*Compile-Log\\*$"
+                  "^\\*.+Completions\\*$"
+                  "^\\*Flycheck error messages\\*$"
+                  "^\\*Help\\*$"
+                  "^\\*Ibuffer\\*$"
+                  "^\\*Messages\\*$"
+                  "^\\*inferior-lisp\\*$"
+                  "^\\*scratch\\*$"
+                  "^\\*slime-compilation\\*$"
+                  "^\\*slime-description\\*$"
+                  "^\\*slime-events\\*$"))
+  (add-to-list 'ivy-ignore-buffers buffer))
 
 (defun flyspell-correct-previous (&optional words)
   "Correct word before point, reach distant words.
