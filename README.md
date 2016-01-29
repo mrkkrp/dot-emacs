@@ -167,7 +167,7 @@ RSI to optimize your interaction with computer.
 
 I recently switched to the Dvorak layout and it's fantastic. Typing is a lot
 more comfortable now. I've created the
-[`fix-word`](https://github.com/mrkkrp/fix-word) package to preserve my
+[`fix-input`](https://github.com/mrkkrp/fix-input) package to preserve my
 ability to type Russian in Emacs when Dvorak is my layout in OS level. Nice!
 
 ## Modal Editing
