@@ -50,16 +50,18 @@
  browse-url-browser-function      'browse-url-generic
  browse-url-generic-program       "firefox"
  char-menu
- '("—" "‘’" "“”" "…" "«»" "–"
+ '("—" "‘’" "“”" "…" "«»"
    ("Typography"
-    "•" "©" "†" "‡" "°" "·" "§" "№" "★" "■")
+    "–" "•" "©" "†" "‡" "°" "·" "§" "№" "★")
    ("Math"
     "≈" "≡" "≠" "∞" "×" "±" "∓" "÷" "√" "∇")
    ("Arrows"
     "←" "→" "↑" "↓" "⇐" "⇒" "⇑" "⇓")
    ("Greek"
     "α" "β" "Δ" "δ" "ε" "ζ" "η" "θ" "λ" "μ" "ν" "ξ"
-    "Ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω" "Ω"))
+    "Ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω" "Ω")
+   ("Diacritics"
+    "́" "â" "à" "ô" "ê" "é" "è" "û" "ù" "ü" "î" "ï" "ç"))
  compilation-read-command         nil
  cursor-type                      '(bar . 1) ; thin vertical bar
  cursor-in-non-selected-windows   nil        ; don't show it there
@@ -159,7 +161,6 @@
 (π "<f2>"       #'save-buffer)
 (π "<f5>"       #'find-file)
 (π "<f6>"       #'find-file-other-window)
-(π "<f7>"       (ε #'mk-use-lang "french-keyboard" "fr"))
 (π "<f8>"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
 (π "<f9>"       #'kill-or-bury-alive)
 (π "<f10>"      #'zygospore-toggle-delete-other-windows)
