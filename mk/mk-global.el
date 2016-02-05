@@ -133,7 +133,6 @@
 (π "C-."        #'undo)
 (π "C-SPC"      #'mk-mark-command)
 (π "C-\\"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
-(π "C-]"        #'mk-smart-indent)
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'mk-compile-init-files)
@@ -143,6 +142,7 @@
 (π "C-c s"      #'mk-search)
 (π "C-c t"      (ε #'mk-visit-file (car org-agenda-files)))
 (π "C-j"        #'newline)
+(π "C-r"        #'mk-smart-indent)
 (π "C-s"        #'swiper)
 (π "C-z"        #'mk-copy-rest-of-line)
 (π "M-H"        #'mark-paragraph)
@@ -336,7 +336,7 @@
 (modalka-define-kbd "G" "C-`")
 (modalka-define-kbd "H" "M-H")
 ;; I
-(modalka-define-kbd "J" "C-]")
+;; J
 (modalka-define-kbd "K" "M-k")
 (modalka-define-kbd "L" "M-l")
 (modalka-define-kbd "M" "M-m")
