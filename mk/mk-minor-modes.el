@@ -31,6 +31,7 @@
   (require 'smartparens))
 
 (require 'cl-lib)
+(require 'mk-highlight-line)
 (require 'mk-utils)
 (require 'smartparens-config)
 
