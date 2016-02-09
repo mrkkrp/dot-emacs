@@ -25,9 +25,11 @@
 ;;; Code:
 
 (eval-when-compile
+  (require 'bookmark)
   (require 'dired)
   (require 'magit))
 
+(require 'avy-menu)
 (require 'cl-lib)
 (require 'f)
 (require 'subr-x)
@@ -346,6 +348,35 @@ BODY."
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Utility commands
+
+(defun mk-bookmark-jump (arg)
+  "Jump to a bookmark.
+
+By default open new location in the left window, but when ARG is
+given open it in the right window.
+
+Any-menu is used to select bookmark."
+  (interactive "P")
+  (require 'bookmark)
+  (bookmark-maybe-load-default-file)
+  (unless bookmark-alist
+    (error "You better create some bookmarks first"))
+  (let ((bookmark
+         (avy-menu
+          "*bookmarks*"
+          (list "Jump to Bookmark"
+                (cons "Pane"
+                      (mapcar (lambda (x) (cons (car x) x))
+                              bookmark-alist)))))
+        (in-first-window
+         (eq (frame-first-window)
+             (selected-window))))
+    (when bookmark
+      (bookmark-jump
+       bookmark
+       (if (if in-first-window (not arg) arg)
+           #'switch-to-buffer
+         #'switch-to-buffer-other-window)))))
 
 (defun mk-switch-theme (theme)
   "Switch to theme THEME, loading it if necessary.

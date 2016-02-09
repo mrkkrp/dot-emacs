@@ -42,6 +42,7 @@
    aggressive-indent    ; Keep code always indented
    auctex               ; Integrated environment for *TeX*
    avy                  ; Move cursor effectively
+   avy-menu             ; Any-powered popup menu
    char-menu            ; Fast insertion of arbitrary symbols
    cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp

@@ -40,6 +40,7 @@ Package/Repo | Description
 [aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode) | Keep code always indented
 [auctex](http://git.savannah.gnu.org/cgit/emacs/elpa.git/?h=externals/auctex) | Integrated environment for *TeX*
 [avy](https://github.com/abo-abo/avy) | Move cursor effectively
+[avy-menu](https://github.com/mrkkrp/avy-menu) † | Avy-powered popup menu
 [char-menu](https://github.com/mrkkrp/char-menu) † | Fast insertion of arbitrary symbols
 [cider](https://github.com/clojure-emacs/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
