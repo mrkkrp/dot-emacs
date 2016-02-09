@@ -175,8 +175,8 @@ ability to type Russian in Emacs when Dvorak is my layout in OS level. Nice!
 Currently I'm using [`modalka-mode`](https://github.com/mrkkrp/modalka) that
 allows to edit text in modal fashion. Modal editing is fundamentally better
 for health and more efficient in general. Initially I considered learning
-`evil` to edit in «vim-style», but I estimated resulting effect not superior
-to editing with familiar Emacs key bindings.
+`evil` to edit “vi-style”, but I estimated resulting effect not superior to
+editing with familiar Emacs key bindings.
 
 See my key translation map in `mk/mk-global.el` file.
 
