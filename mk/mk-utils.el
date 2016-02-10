@@ -349,7 +349,7 @@ BODY."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Utility commands
 
-(defun mk-bookmark-jump (arg)
+(defun mk-bookmark-jump (&optional arg)
   "Jump to a bookmark.
 
 By default open new location in the left window, but when ARG is
