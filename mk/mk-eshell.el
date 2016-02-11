@@ -25,7 +25,7 @@
 
 (require 'mk-utils)
 
-(defun eshell-other-window (fnc &optional arg)
+(defun mk-eshell-other-window (fnc &optional arg)
   "Open Emacs shell (via FNC) in other window.
 
 ARG is argument to pass to Emacs shell."
@@ -36,7 +36,7 @@ ARG is argument to pass to Emacs shell."
 (add-hook 'eshell-mode-hook #'compilation-shell-minor-mode)
 (add-hook 'eshell-mode-hook #'smartparens-mode)
 
-(advice-add 'eshell :around #'eshell-other-window)
+(advice-add 'eshell :around #'mk-eshell-other-window)
 
 (provide 'mk-eshell)
 

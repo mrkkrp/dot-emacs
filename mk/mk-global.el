@@ -239,7 +239,7 @@
 (π "<menu> p i" #'package-install)
 (π "<menu> p j" #'mk-python-run-dev-server)
 (π "<menu> p r" #'print-buffer)
-(π "<menu> p u" #'package-upgrade-all)
+(π "<menu> p u" #'mk-package-upgrade-all)
 (π "<menu> p y" #'run-python)
 (π "<menu> q e" #'vr/query-replace)
 (π "<menu> q r" #'query-replace)

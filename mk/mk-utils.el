@@ -222,7 +222,7 @@ don't create new empty buffer."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Missing commands for package system
 
-(defun package-install-git (address)
+(defun mk-package-install-git (address)
   "Install package directly from git repository at ADDRESS.
 
 This functionality requires git installed."
@@ -233,7 +233,7 @@ This functionality requires git installed."
       (magit-clone address temp-dir)
       (package-install-file temp-dir))))
 
-(defun package-upgrade-all ()
+(defun mk-package-upgrade-all ()
   "Upgrade all packages automatically without showing *Packages* buffer."
   (interactive)
   (package-refresh-contents)

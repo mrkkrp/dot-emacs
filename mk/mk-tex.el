@@ -28,7 +28,7 @@
 
 (add-to-list 'mk-search-prefix '(latex-mode . "latex"))
 
-(defun pdf-latex-generate (&optional output-dir)
+(defun mk-pdf-latex-generate (&optional output-dir)
   "Generate PDF document from currently opened LaTeX document.
 
 If given, OUTPUT-DIR specifies directory where all the temporary
@@ -51,18 +51,18 @@ produced."
       (message "Written %s" output-pdf)
       output-pdf)))
 
-(defun pdf-latex-preview ()
+(defun mk-pdf-latex-preview ()
   "Generate temporary PDF file and open it with external application."
   (interactive)
-  (call-process "xdg-open" nil 0 nil (pdf-latex-generate)))
+  (call-process "xdg-open" nil 0 nil (mk-pdf-latex-generate)))
 
-(defun pdf-latex-export ()
+(defun mk-pdf-latex-export ()
   "Create PDF document based on current TeX/LaTeX file."
   (interactive)
-  (pdf-latex-generate default-directory))
+  (mk-pdf-latex-generate default-directory))
 
-(τ latex LaTeX "C-c C-l" #'pdf-latex-export)
-(τ latex LaTeX "C-c C-v" #'pdf-latex-preview)
+(τ latex LaTeX "C-c C-l" #'mk-pdf-latex-export)
+(τ latex LaTeX "C-c C-v" #'mk-pdf-latex-preview)
 
 (advice-add 'TeX-insert-quote :filter-args (σ t))
 

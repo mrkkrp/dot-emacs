@@ -58,11 +58,11 @@
 (add-to-list 'kill-or-bury-alive-must-die-list 'gnus-group-mode)
 (add-to-list 'kill-or-bury-alive-must-die-list 'gnus-summary-mode)
 
-(defun gnus-save-window-config (&rest _rest)
+(defun mk-gnus-save-window-config (&rest _rest)
   "Save current window configuration in `gnus-saved-window-config'."
   (setq gnus-saved-window-config (current-window-configuration)))
 
-(defun gnus-restore-window-config (&rest _rest)
+(defun mk-gnus-restore-window-config (&rest _rest)
   "Restore window configuration after exiting GNUS.
 
 Configuration is supposed to be stored in
@@ -71,7 +71,7 @@ be understaken to restore the configuraiton."
   (when gnus-saved-window-config
     (set-window-configuration gnus-saved-window-config)))
 
-(defun gnus-go-to-inbox (&rest _rest)
+(defun mk-gnus-go-to-inbox (&rest _rest)
   "Go to line that has title \"INBOX\"."
   (search-forward "INBOX"))
 
@@ -81,9 +81,9 @@ be understaken to restore the configuraiton."
 (τ gnus-sum   gnus-summary "d"        #'gnus-summary-delete-article)
 (τ gnus-sum   gnus-summary "o"        #'ace-link-gnus)
 
-(advice-add 'gnus            :after  #'gnus-go-to-inbox)
-(advice-add 'gnus            :before #'gnus-save-window-config)
-(advice-add 'gnus-group-exit :after  #'gnus-restore-window-config)
+(advice-add 'gnus            :after  #'mk-gnus-go-to-inbox)
+(advice-add 'gnus            :before #'mk-gnus-save-window-config)
+(advice-add 'gnus-group-exit :after  #'mk-gnus-restore-window-config)
 (advice-add 'gnus-summary-delete-article :after (η #'forward-line))
 
 (provide 'mk-gnus)

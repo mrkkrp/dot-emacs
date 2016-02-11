@@ -26,17 +26,17 @@
 
 (require 'mk-utils)
 
-(defvar texinfo-html-output-buffer-name "*texinfo-html-output*"
+(defvar mk-texinfo-html-output-buffer-name "*texinfo-html-output*"
   "Name of buffer where HTML version of Texinfo document is written.")
 
-(defun texinfo-html-standalone (&optional output-buffer-name)
+(defun mk-texinfo-html-standalone (&optional output-buffer-name)
   "Generate standalone HTML version of currently open Texinfo document.
 
 Output goes to OUTPUT-BUFFER-NAME, or, if it's not supplied, to
-buffer named by `texinfo-html-output-buffer-name'.  Return name
+buffer named by `mk-texinfo-html-output-buffer-name'.  Return name
 of the buffer."
   (let ((output-buffer-name (or output-buffer-name
-                                texinfo-html-output-buffer-name))
+                                mk-texinfo-html-output-buffer-name))
         (buffer-file-name (buffer-file-name))
         (css-file (car (f-glob "*.css" default-directory))))
     (if (not buffer-file-name)
@@ -52,15 +52,15 @@ of the buffer."
          output-buffer-name))
       output-buffer-name)))
 
-(defun texinfo-html-preview (&optional output-buffer-name)
+(defun mk-texinfo-html-preview (&optional output-buffer-name)
   "Preview current Texinfo file as HTML document.
 
 When OUTPUT-BUFFER-NAME is given, insert the output in the buffer
 with that name."
   (interactive)
-  (browse-url-of-buffer (texinfo-html-standalone output-buffer-name)))
+  (browse-url-of-buffer (mk-texinfo-html-standalone output-buffer-name)))
 
-(defun texinfo-html-export (&optional output-file)
+(defun mk-texinfo-html-export (&optional output-file)
   "Translate current Texinfo file into an HTML document.
 
 Result file will be named as specified by OUTPUT-FILE argument.
@@ -78,7 +78,7 @@ and include it in the result document."
          (init-buf-string (buffer-string))
          (output-buffer (find-file-noselect output-file))
          (output-buffer-name (buffer-name output-buffer)))
-    (texinfo-html-standalone output-buffer-name)
+    (mk-texinfo-html-standalone output-buffer-name)
     (with-current-buffer output-buffer
       (save-buffer))
     (when (buffer-modified-p init-buf)
@@ -88,8 +88,8 @@ and include it in the result document."
       (goto-char init-point))
     output-file))
 
-(τ tex-info Texinfo "C-c C-l" #'texinfo-html-export)
-(τ tex-info Texinfo "C-c C-v" #'texinfo-html-preview)
+(τ tex-info Texinfo "C-c C-l" #'mk-texinfo-html-export)
+(τ tex-info Texinfo "C-c C-v" #'mk-texinfo-html-preview)
 
 (provide 'mk-texinfo)
 
