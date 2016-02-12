@@ -30,6 +30,7 @@
 
 (require 'cl-lib)
 (require 'misc)
+(require 'mk-haskell)
 (require 'mk-python)
 (require 'mk-utils)
 
@@ -234,6 +235,7 @@
 (π "<menu> m s" #'magit-status)
 (π "<menu> n n" #'mk-narrow-to-region)
 (π "<menu> n w" #'widen)
+(π "<menu> o"   #'mk-haskell-insert-symbol)
 (π "<menu> p a" #'package-autoremove)
 (π "<menu> p f" #'package-install-file)
 (π "<menu> p i" #'package-install)

@@ -24,9 +24,9 @@
 ;;; Code:
 
 (eval-when-compile
+  (require 'char-menu)
   (require 'ebal)
-  (require 'haskell)
-  (require 'smartparens))
+  (require 'haskell))
 
 (require 'cl-lib)
 (require 'flycheck)
@@ -81,8 +81,10 @@
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
-(add-to-list 'sp-no-reindent-after-kill-modes 'haskell-cabal-mode)
-(add-to-list 'sp-no-reindent-after-kill-modes 'haskell-mode)
+
+(with-eval-after-load 'smartparens
+  (add-to-list 'sp-no-reindent-after-kill-modes 'haskell-cabal-mode)
+  (add-to-list 'sp-no-reindent-after-kill-modes 'haskell-mode))
 
 (defun mk-haskell-hoogle (symbol)
   "Find documentation for given symbol SYMBOL online."
@@ -178,6 +180,20 @@ version components."
           (insert import "\n")
           (mark-paragraph)
           (sort-lines nil (region-beginning) (region-end)))))))
+
+(defun mk-haskell-insert-symbol ()
+  "Insert one of the Haskell symbols that are difficult to type."
+  (interactive)
+  (char-menu
+   '("=" "==" "/=" "->" "<-" "<>"
+     ("Applicative"
+      "<$>" "<|>" "<*" "*>" "<$" "<**>")
+     ("Monad"
+      ">>=" ">>" "=<<" ">=>" "<=<")
+     ("Arrow"
+      "***" "&&&" ">>>" "<<<" "<+>" "^>>" ">>^" "<<^" "^<<")
+     ("Conduit"
+      "$$" "$=" "=$" "=$="))))
 
 (τ haskell          haskell-interactive "C-c h" #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c n" #'mk-haskell-package)
