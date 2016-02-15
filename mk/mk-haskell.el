@@ -26,7 +26,8 @@
 (eval-when-compile
   (require 'char-menu)
   (require 'ebal)
-  (require 'haskell))
+  (require 'haskell)
+  (require 'smartparens))
 
 (require 'cl-lib)
 (require 'flycheck)
@@ -185,9 +186,11 @@ version components."
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
   (char-menu
-   '("=" "==" "/=" "->" "<-" "<>"
+   '("=" "::" "->" "<-"
+     ("Bool"
+      "==" "/=" "&&" "||")
      ("Applicative"
-      "<$>" "<|>" "<*" "*>" "<$" "<**>")
+      "<$>" "<*>" "<|>" "<*" "*>" "<$" "<**>")
      ("Monad"
       ">>=" ">>" "=<<" ">=>" "<=<")
      ("Arrow"
