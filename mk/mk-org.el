@@ -32,6 +32,7 @@
  org-agenda-files
  (f-glob "*.org" (f-expand "org" user-emacs-directory))
  org-catch-invisible-edits 'show ; make point visible
+ org-ellipsis              "…"   ; alternative ellipsis symbol
  org-hide-emphasis-markers t)
 
 (τ org org "C-'"   #'ace-window)
