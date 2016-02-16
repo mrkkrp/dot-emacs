@@ -107,13 +107,15 @@ before target non-white space character."
     (goto-char point)
     (current-column)))
 
-(defun mk-smart-indent ()
-  "Align first non-white space char after point with content of previous line."
-  (interactive)
+(defun mk-smart-indent (&optional arg)
+  "Align first non-white space char after point with content of previous line.
+
+With prefix argument ARG, align to next line instead."
+  (interactive "P")
   (let* ((this-edge (mk-column-at (mk-saturated-occurence)))
          (that-edge
           (save-excursion
-            (forward-line -1)
+            (forward-line (if arg 1 -1))
             (move-to-column this-edge)
             (mk-column-at (mk-saturated-occurence t)))))
     (when (> that-edge this-edge)
