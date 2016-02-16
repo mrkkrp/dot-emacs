@@ -184,6 +184,7 @@
 (π "<menu> b s" #'bookmark-set)
 (π "<menu> c a" #'calc)
 (π "<menu> c c" #'mk-copy-buffer)
+(π "<menu> c g" #'customize-group)
 (π "<menu> c i" #'cider-jack-in)
 (π "<menu> c l" #'calendar)
 (π "<menu> c r" #'copy-rectangle-as-kill)
