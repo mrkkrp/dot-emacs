@@ -64,6 +64,7 @@
     "Rank2Types"
     "RankNTypes"
     "RecordWildCards"
+    "ScopedTypeVariables"
     "StandaloneDeriving"
     "TemplateHaskell"
     "TupleSections"
