@@ -69,7 +69,6 @@
  delete-old-versions              t ;  delete excess backups silently
  echo-keystrokes                  0.1 ; show keystrokes asap
  enable-recursive-minibuffers     t ; use minibuffer recursively
- gc-cons-threshold                10240000 ; garbage collection every 10 Mb
  indent-tabs-mode                 nil ; only spaces
  indicate-empty-lines             t ; show where buffer's content ends
  inhibit-startup-screen           t ; remove welcome screen
