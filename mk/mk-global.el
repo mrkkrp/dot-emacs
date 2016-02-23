@@ -73,6 +73,7 @@
  indicate-empty-lines             t ; show where buffer's content ends
  inhibit-startup-screen           t ; remove welcome screen
  initial-scratch-message          (concat ";; GNU Emacs " emacs-version "\n\n")
+ gc-cons-threshold                2000000
  kept-new-versions                4
  kept-old-versions                2
  kill-read-only-ok                t ; don't rise errors, it's OK
