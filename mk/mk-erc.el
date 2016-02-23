@@ -26,13 +26,14 @@
 (eval-when-compile
   (require 'erc))
 
+(require 'mk-minor-modes)
 (require 'mk-utils)
 
 (setq erc-nick "mrkkrp")
 
 (τ erc erc "C-c C-o" #'find-file-at-point)
 
-(add-hook 'erc-mode-hook #'flyspell-mode)
+(add-hook 'erc-mode-hook #'mk-prepare-text-mode)
 
 (provide 'mk-erc)
 

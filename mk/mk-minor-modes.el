@@ -26,11 +26,12 @@
 (eval-when-compile
   (require 'avy)
   (require 'cyphejor)
-  (require 'flyspell)
   (require 'ivy)
   (require 'smartparens))
 
 (require 'cl-lib)
+(require 'flyspell-lazy)
+(require 'flyspell)
 (require 'mk-highlight-line)
 (require 'mk-utils)
 (require 'smartparens-config)
@@ -50,6 +51,7 @@
  flycheck-emacs-lisp-initialize-packages t ; always initialize packages
  flycheck-emacs-lisp-load-path     'inherit
  flycheck-temp-prefix              ".flycheck"
+ flyspell-lazy-idle-seconds        1       ; a bit faster
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ispell-dictionary                 "en"    ; default dictionary
  modalka-cursor-type               'box
@@ -127,6 +129,8 @@
                   "^\\*slime-events\\*$"))
   (add-to-list 'ivy-ignore-buffers buffer))
 
+(add-to-list 'ispell-extra-args "--sug-mode=ultra")
+
 (defun flyspell-correct-previous (&optional words)
   "Correct word before point, reach distant words.
 
@@ -169,20 +173,22 @@ move point."
 
 (defun mk-prepare-text-mode ()
   "Enable some minor modes for text editing."
-  (auto-fill-mode  1)
-  (flyspell-mode   1)
+  (auto-fill-mode 1)
+  (flyspell-lazy-mode 1)
+  (flyspell-mode 1)
   (unless (string-equal (buffer-name) "COMMIT_EDITMSG")
-    (modalka-mode  1))
+    (modalka-mode 1))
   (whitespace-mode 1))
 
 (defun mk-prepare-prog-mode ()
   "Enables some minor modes for programming."
   (setq-local comment-auto-fill-only-comments t)
-  (auto-fill-mode  1)
-  (flycheck-mode   1)
+  (auto-fill-mode 1)
+  (flycheck-mode 1)
+  (flyspell-lazy-mode 1)
   (flyspell-prog-mode)
-  (hl-todo-mode    1)
-  (modalka-mode    1)
+  (hl-todo-mode 1)
+  (modalka-mode 1)
   (whitespace-mode 1))
 
 (add-hook 'compilation-mode-hook   #'modalka-mode)

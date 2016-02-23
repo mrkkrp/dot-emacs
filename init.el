@@ -55,6 +55,7 @@
    flycheck             ; On-the-fly syntax checking
    flycheck-color-mode-line ; Colorize mode line according to Flycheck status
    flycheck-haskell     ; Flycheck: Cabal projects and sandboxes
+   flyspell-lazy        ; Improve Flyspell responsiveness using idle timers
    ghc                  ; Improve Haskell REPL experience
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode

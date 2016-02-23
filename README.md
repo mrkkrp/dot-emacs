@@ -53,6 +53,7 @@ Package/Repo | Description
 [flycheck](https://github.com/flycheck/flycheck) | On-the-fly syntax checking
 [flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
 [flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
+[flyspell-lazy](https://github.com/rolandwalker/flyspell-lazy) | Improve Flyspell responsiveness using idle timers
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
