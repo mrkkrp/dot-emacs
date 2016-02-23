@@ -33,6 +33,7 @@
 (require 'mk-haskell)
 (require 'mk-python)
 (require 'mk-utils)
+(require 'xref)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -97,7 +98,9 @@
  user-mail-address                "markkarpov@openmailbox.org"
  vc-display-status                nil ; don't bloat mode line
  version-control                  t ; make numeric backups unconditionally
- x-underline-at-descent-line      t) ; improve rendering (mode line)
+ x-underline-at-descent-line      t ; improve rendering (mode line)
+ xref-after-jump-hook             (list #'recenter)
+ xref-after-return-hook           nil)
 
 (put 'erase-buffer     'disabled nil) ; don't ever question my power
 (put 'narrow-to-region 'disabled nil) ; ^
@@ -282,11 +285,11 @@
 ;; '
 (modalka-define-kbd "," "C-,")
 ;; -
-;; /
+(modalka-define-kbd "/" "M-.")
 (modalka-define-kbd "." "C-.")
 (modalka-define-kbd ":" "M-;")
 (modalka-define-kbd ";" "C-;")
-;; ?
+(modalka-define-kbd "?" "M-,")
 
 (modalka-define-kbd "0" "C-0")
 (modalka-define-kbd "1" "C-1")

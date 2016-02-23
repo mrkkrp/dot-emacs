@@ -19,7 +19,8 @@
 
 ;;; Commentary:
 
-;; Everything I tweak for Haskell programming is here.
+;; Everything I tweak for Haskell programming is here.  To generate tags, I
+;; use `hasktags' package.
 
 ;;; Code:
 
@@ -212,6 +213,7 @@ version components."
 (τ haskell-mode     haskell             "C-c h" #'mk-haskell-hoogle)
 (τ haskell-mode     haskell             "C-c i" #'mk-haskell-add-import)
 (τ haskell-mode     haskell             "C-c n" #'mk-haskell-package)
+(τ haskell-mode     haskell             "C-c u" #'haskell-process-generate-tags)
 (τ haskell-mode     haskell             "C-c y" #'mk-haskell-add-pragma)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
 
