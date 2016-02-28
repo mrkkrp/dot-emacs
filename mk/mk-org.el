@@ -33,7 +33,8 @@
  (f-glob "*.org" (f-expand "org" user-emacs-directory))
  org-catch-invisible-edits 'show ; make point visible
  org-ellipsis              "…"   ; alternative ellipsis symbol
- org-hide-emphasis-markers t)
+ org-hide-emphasis-markers t
+ org-tags-column           54)
 
 (τ org org "C-'"   #'ace-window)
 (τ org org "C-c i" #'org-insert-link)
