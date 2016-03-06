@@ -188,7 +188,7 @@ version components."
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
   (char-menu
-   '("=" "::" "->" "<-" "=>"
+   '("<>" "::" "->" "<-" "=>"
      ("Bool"
       "==" "/=" "&&" "||")
      ("Applicative"
