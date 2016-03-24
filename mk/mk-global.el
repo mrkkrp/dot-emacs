@@ -92,6 +92,7 @@
    (Syntax  . COMMON-LISP))
  scroll-margin                    3
  scroll-step                      1
+ sentence-end-double-space        nil ; I prefer single space
  suggest-key-bindings             nil
  tab-width                        4 ; tab width for text-mode
  user-full-name                   "Mark Karpov"
