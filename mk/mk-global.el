@@ -259,7 +259,6 @@
 (π "<menu> s h" #'eshell)
 (π "<menu> s l" #'sort-lines)
 (π "<menu> s n" #'sort-numeric-fields)
-(π "<menu> s p" #'speed-type-text)
 (π "<menu> s r" #'string-rectangle)
 (π "<menu> s s" (ε #'switch-to-buffer "*scratch*"))
 (π "<menu> s t" (ε #'mk-show-date t))

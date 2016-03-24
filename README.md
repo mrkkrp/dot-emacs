@@ -74,7 +74,6 @@ Package/Repo | Description
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | Tricks for working with all kinds of parenthesis
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | The Solarized color theme
-[speed-type](https://github.com/hagleitn/speed-type) | Practice touch typing in Emacs
 [swiper](https://github.com/abo-abo/swiper) | Isearch with overview
 [vimish-fold](https://github.com/mrkkrp/vimish-fold) † | Fold text like in Vim
 [visual-regexp](https://github.com/benma/visual-regexp.el) | Regexp replace with interactive visual feedback

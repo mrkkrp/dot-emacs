@@ -78,7 +78,6 @@
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis
    solarized-theme      ; The Solarized color theme
-   speed-type           ; Practice touch typing in Emacs
    swiper               ; Isearch with an overview
    vimish-fold          ; Fold text like in Vim
    visual-regexp        ; Regexp replace with interactive visual feedback
