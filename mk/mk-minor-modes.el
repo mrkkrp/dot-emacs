@@ -51,6 +51,7 @@
  flycheck-emacs-lisp-initialize-packages t ; always initialize packages
  flycheck-emacs-lisp-load-path     'inherit
  flycheck-temp-prefix              ".flycheck"
+ flyspell-lazy-disallow-buffers    nil     ; do spell checking everywhere
  flyspell-lazy-idle-seconds        1       ; a bit faster
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ispell-dictionary                 "en"    ; default dictionary
