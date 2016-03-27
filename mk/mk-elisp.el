@@ -37,6 +37,7 @@
 
 (add-hook 'emacs-lisp-mode-hook       #'aggressive-indent-mode)
 (add-hook 'emacs-lisp-mode-hook       #'eldoc-mode)
+(add-hook 'emacs-lisp-mode-hook       #'mk-set-sentence-end-double-space)
 (add-hook 'emacs-lisp-mode-hook       #'rainbow-delimiters-mode)
 (add-hook 'lisp-interaction-mode-hook #'eldoc-mode)
 

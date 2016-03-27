@@ -272,7 +272,7 @@ This functionality requires git installed."
 (defun mk-shell-quote-arg (arg)
   "Quote ARG for using in shell.
 
-This function is different from `shell-quote-argument' in that it
+This function is different from ‘shell-quote-argument’ in that it
 can be used for text transformations in Yasnippet without
 backslash flood."
   (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
@@ -288,6 +288,10 @@ backslash flood."
 (defun mk-disable-ido (command)
   "Disable IDO when command COMMAND is called."
   (advice-add command :around #'mk-anti-ido-advice))
+
+(defun mk-set-sentence-end-double-space ()
+  "Set ‘sentence-end-double-space’ to T locally."
+  (setq-local sentence-end-double-space t))
 
 (defun mk-use-lang (input-method dictionary)
   "Switch between input methods and Ispell dictionaries.
@@ -335,9 +339,9 @@ failure."
 (defmacro mk-with-directory-of-file (regexp &rest body)
   "Find file with name matching REGEXP and operate in its directory.
 
-Searching for file is performed with `mk-find-file'.  If the
+Searching for file is performed with ‘mk-find-file’.  If the
 function returns NIL, don't execute BODY.  Otherwise temporarily
-bind `default-directory' to directory of found file and execute
+bind ‘default-directory’ to directory of found file and execute
 BODY."
   (declare (indent defun))
   (let ((dir (cl-gensym)))
@@ -423,7 +427,7 @@ If STAMP is not NIL, insert date at point."
   "Put name of file into kill ring.
 
 If user's visiting a buffer that's associated with a file, use
-name of the file.  If major mode is `dired-mode', use name of
+name of the file.  If major mode is ‘dired-mode’, use name of
 file at point, but if point is not placed at any file, put name
 of actual directory into kill ring.  Argument ARG, if given,
 makes result string be quoted as for yanking into shell."
@@ -450,7 +454,7 @@ Prefixes are picked up according to currect major mode.")
   "Search Internet for WHAT thing, with DuckDuckGo.
 
 When called interactively, it uses prefix corresponding to
-current major mode, as specified in `mk-search-prefix'."
+current major mode, as specified in ‘mk-search-prefix’."
   (interactive
    (list (mk-grab-input "DuckDuckGo: "
                         (cdr (assoc major-mode
@@ -461,7 +465,7 @@ current major mode, as specified in `mk-search-prefix'."
            (url-hexify-string what))))
 
 (defun mk-compile-init-files ()
-  "Byte compile init files (all *.el files under `mk-dir' directory)."
+  "Byte compile init files (all *.el files under ‘mk-dir’ directory)."
   (interactive)
   (let (once)
     (save-window-excursion
@@ -483,15 +487,15 @@ current major mode, as specified in `mk-search-prefix'."
     (insert (format "%S" value))))
 
 (defun mk-make ()
-  "Find makefile of current project and execute `make'."
+  "Find makefile of current project and execute ‘make’."
   (interactive)
   (mk-with-directory-of-file "^[Mm]akefile$"
     (compile "make -k")))
 
 (defun mk-install ()
-  "Find `install.sh' script of current project and execute it.
+  "Find ‘install.sh’ script of current project and execute it.
 
-`sudo' is used automatically, you'll need to enter your `sudo'
+‘sudo’ is used automatically, you'll need to enter your ‘sudo’
 password."
   (interactive)
   (mk-with-directory-of-file "^install.sh$"
@@ -499,9 +503,9 @@ password."
       (compile "sudo sh install.sh" t))))
 
 (defun mk-uninstall ()
-  "Find `uninstall.sh' script of current project and execute it.
+  "Find ‘uninstall.sh’ script of current project and execute it.
 
-`sudo' is used automatically, you'll need to enter your `sudo'
+‘sudo’ is used automatically, you'll need to enter your ‘sudo’
 password."
   (interactive)
   (mk-with-directory-of-file "^uninstall.sh$"

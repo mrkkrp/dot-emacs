@@ -20,7 +20,7 @@
 ;;; Commentary:
 
 ;; Emacs has that pretty minor mode for highlighting current line:
-;; `hl-line-mode', not many people use it all the time, but it's worth
+;; ‘hl-line-mode’, not many people use it all the time, but it's worth
 ;; enabling in many types of buffers that deal with lists of items, one item
 ;; per line.  This packages allows to enable it everywhere for readability.
 
@@ -34,7 +34,7 @@
     gnus-summary-mode
     ibuffer-mode
     package-menu-mode)
-  "List of modes that are affected by `mk-highlight-line-mode'.")
+  "List of modes that are affected by ‘mk-highlight-line-mode’.")
 
 ;;;###autoload
 (define-minor-mode mk-highlight-line-mode
@@ -43,10 +43,10 @@
 With a prefix argument ARG, enable highlight-line if ARG is
 positive, and disable it otherwise.  If called from Lisp, enable
 the mode if ARG is omitted or NIL, and toggle it if ARG is
-`toggle'.
+‘toggle’.
 
 This minor mode is global. When it's active, major modes listed
-in `mk-highlight-line-target-modes' activate `hl-line-mode'
+in ‘mk-highlight-line-target-modes’ activate ‘hl-line-mode’
 automatically."
   :global t
   (dolist (mode mk-highlight-line-target-modes)

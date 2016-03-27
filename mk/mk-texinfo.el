@@ -33,7 +33,7 @@
   "Generate standalone HTML version of currently open Texinfo document.
 
 Output goes to OUTPUT-BUFFER-NAME, or, if it's not supplied, to
-buffer named by `mk-texinfo-html-output-buffer-name'.  Return name
+buffer named by ‘mk-texinfo-html-output-buffer-name’.  Return name
 of the buffer."
   (let ((output-buffer-name (or output-buffer-name
                                 mk-texinfo-html-output-buffer-name))

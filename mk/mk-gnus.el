@@ -59,14 +59,14 @@
 (add-to-list 'kill-or-bury-alive-must-die-list 'gnus-summary-mode)
 
 (defun mk-gnus-save-window-config (&rest _rest)
-  "Save current window configuration in `gnus-saved-window-config'."
+  "Save current window configuration in ‘gnus-saved-window-config’."
   (setq gnus-saved-window-config (current-window-configuration)))
 
 (defun mk-gnus-restore-window-config (&rest _rest)
   "Restore window configuration after exiting GNUS.
 
 Configuration is supposed to be stored in
-`gnus-saved-window-config'.  However, if it's NIL, nothing will
+‘gnus-saved-window-config’.  However, if it's NIL, nothing will
 be understaken to restore the configuraiton."
   (when gnus-saved-window-config
     (set-window-configuration gnus-saved-window-config)))

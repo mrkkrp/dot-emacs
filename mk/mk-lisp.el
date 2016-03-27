@@ -19,7 +19,7 @@
 
 ;;; Commentary:
 
-;; Let's load SLIME and Slime Helper, if there is `slime-helper.el' file, we
+;; Let's load SLIME and Slime Helper, if there is ‘slime-helper.el’ file, we
 ;; byte-compile it and entire SLIME, and next time we will be able to load
 ;; SLIME faster.
 

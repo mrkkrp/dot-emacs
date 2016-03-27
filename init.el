@@ -85,8 +85,8 @@
    yaml-mode            ; Major mode for editing YAML serialization format
    yasnippet            ; Yet another snippet extension for Emacs
    ztree                ; Show directory structure as a tree
-   zygospore            ; Reversible version of `delete-other-windows'
-   zzz-to-char))        ; Fancy version of `zap-to-char' command
+   zygospore            ; Reversible version of ‘delete-other-windows’
+   zzz-to-char))        ; Fancy version of ‘zap-to-char’ command
 
 (require 'package)
 (require 'bytecomp)
@@ -133,27 +133,27 @@
 (require 'mk-highlight-line) ; highlight lines in list-like buffers
 (require 'mk-minor-modes) ; minor modes
 (require 'mk-c)           ; major modes
-(require 'mk-calendar)    ; ^
-(require 'mk-clojure)     ; ^
-(require 'mk-dired)       ; ^
-(require 'mk-elisp)       ; ^
-(require 'mk-erc)         ; ^
-(require 'mk-eshell)      ; ^
-(require 'mk-gnus)        ; ^
-(require 'mk-haskell)     ; ^
-(require 'mk-html)        ; ^
-(require 'mk-ibuffer)     ; ^
-(require 'mk-js)          ; ^
-(require 'mk-lisp)        ; ^
-(require 'mk-magit)       ; ^
-(require 'mk-man)         ; ^
-(require 'mk-markdown)    ; ^
-(require 'mk-org)         ; ^
-(require 'mk-prolog)      ; ^
-(require 'mk-python)      ; ^
-(require 'mk-shakespeare) ; ^
-(require 'mk-tex)         ; ^
-(require 'mk-texinfo)     ; ^
+(require 'mk-calendar)    ; ↑
+(require 'mk-clojure)     ; ↑
+(require 'mk-dired)       ; ↑
+(require 'mk-elisp)       ; ↑
+(require 'mk-erc)         ; ↑
+(require 'mk-eshell)      ; ↑
+(require 'mk-gnus)        ; ↑
+(require 'mk-haskell)     ; ↑
+(require 'mk-html)        ; ↑
+(require 'mk-ibuffer)     ; ↑
+(require 'mk-js)          ; ↑
+(require 'mk-lisp)        ; ↑
+(require 'mk-magit)       ; ↑
+(require 'mk-man)         ; ↑
+(require 'mk-markdown)    ; ↑
+(require 'mk-org)         ; ↑
+(require 'mk-prolog)      ; ↑
+(require 'mk-python)      ; ↑
+(require 'mk-shakespeare) ; ↑
+(require 'mk-tex)         ; ↑
+(require 'mk-texinfo)     ; ↑
 (require 'mk-visual)      ; control appearance
 
 ;;; init.el ends here

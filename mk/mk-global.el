@@ -20,7 +20,7 @@
 ;;; Commentary:
 
 ;; Here are various settings not specific to any major mode.  You can see
-;; settings of various minor modes in `mk-minor-modes.el'.
+;; settings of various minor modes in ‘mk-minor-modes.el’.
 
 ;;; Code:
 
