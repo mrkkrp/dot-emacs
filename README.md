@@ -24,7 +24,7 @@ obsolete.
 * [Modal Editing](#modal-editing)
 * [Key Bindings](#key-bindings)
 * [Keyboard Layouts and Abbreviations](#keyboard-layouts-and-abbreviations)
-* [GNUS](#gnus)
+* [MU4E](#mu4e)
 * [Appearance](#appearance)
 * [License](#license)
 
@@ -233,26 +233,92 @@ need to install `aspell` for that).
 To insert various Unicode characters I use
 [`char-menu`](https://github.com/mrkkrp/char-menu) package, which see.
 
-## GNUS
+## MU4E
 
-To send emails with Emacs and read emails with GNUS, you need to create a
-file called `.authinfo.gpg` in your home directory. As its extension
-suggests, you better encrypt this sort of information. The file should have
-the following form:
+I currently use [mu4e](http://www.djcbsoftware.nl/code/mu/) as mail client
+and I'm quite satisfied with it (previously I used GNUS, and MU4E is a great
+improvement IMO). You can see my configuration in `mk/mk-mu4e.el`. Here I'm
+going to explain how to make it work.
 
-```
-machine HOST port NUMBER login NAME password VALUE
-```
-
-You need two such lines: one for SMTP and another one for IMAP. For example,
-I use:
+First of all, you need to install `offlineimap`, it's written in Python, so
+you will need to get Python too:
 
 ```
-machine smtp.openmailbox.org port 587 login myemail@opmbx.org password "foo"
-machine imap.openmailbox.org port 993 login myemail@opmbx.org password "foo"
+# pacman -S offlineimap
 ```
 
-Also, I've taught GNUS to restore my window configuration when I exit it.
+Create `~/.offlineimaprc` file. I use something like this (I'm on Arch
+Linux, change this as necessary if you're using another Linux distro):
+
+```
+[general]
+accounts = main
+pythonfile = ~/.emacs.d/.offlineimap.py
+
+[Account main]
+localrepository = main_local
+remoterepository = main_remote
+status_backend = sqlite
+
+[Repository main_local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository main_remote]
+type = IMAP
+remotehost = imap.openmailbox.org
+remoteuser = user@openmailbox.org
+remotepasseval = get_password("imap.openmailbox.org", "user@openmailbox.org", "993")
+ssl = yes
+maxconnections = 1
+realdelete = no
+folderfilter = lambda f: f != "Spam"
+holdconnectionopen = true
+keepalive = 60
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+```
+
+Note that I put custom Python bits in `~/.emacs.d/.offlineimap.py` and it's
+in this repo, just copy it.
+
+Create `~/.authinfo.gpg` that should look like this:
+
+```
+machine imap.openmailbox.com login user@openmailbox.com port 993 password yourpass
+machine smtp.openmailbox.com login user@openmailbox.com port 587 password yourpass
+```
+
+Keep it encrypted with GPG (Emacs should figure out that you want to use GPG
+and encrypt it automatically).
+
+Now launch `offlineimap` and wait while it syncs your email box:
+
+```
+$ offlineimap
+```
+
+At this point you also need `mu` software itself (`mu4e` client comes with
+it):
+
+```
+# yaourt -S mu
+```
+
+Tell `mu` index your mail box:
+
+```
+$ mu index --maildir=~/Maildir
+```
+
+To send mails with `smtpmail.el` and use `gnutls`, we need install the
+package:
+
+```
+# pacman -S gnutls
+```
+
+Done. Now you can try <kbd>M-x mu4e</kbd>. I've made some costmetic
+adjustments, but it mostly works out-of-box very well.
 
 ## Appearance
 

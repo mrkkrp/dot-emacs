@@ -33,6 +33,7 @@
 (require 'mk-haskell)
 (require 'mk-python)
 (require 'mk-utils)
+(require 'mu4e)
 (require 'xref)
 
 
@@ -212,7 +213,6 @@
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'avy-goto-line)
-(π "<menu> g n" #'gnus)
 (π "<menu> g r" #'rgrep)
 (π "<menu> h a" #'highlight-symbol-remove-all)
 (π "<menu> h e" #'ebal-execute)
@@ -238,6 +238,7 @@
 (π "<menu> m m" (ε #'switch-to-buffer "*Messages*"))
 (π "<menu> m n" #'man)
 (π "<menu> m s" #'magit-status)
+(π "<menu> m u" #'mu4e)
 (π "<menu> n n" #'mk-narrow-to-region)
 (π "<menu> n w" #'widen)
 (π "<menu> o"   #'mk-haskell-insert-symbol)
