@@ -79,6 +79,7 @@
    smartparens          ; Tricks for working with all kinds of parenthesis
    solarized-theme      ; The Solarized color theme
    swiper               ; Isearch with an overview
+   typit                ; A cool typing game
    vimish-fold          ; Fold text like in Vim
    visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
