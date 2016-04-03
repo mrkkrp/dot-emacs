@@ -240,8 +240,8 @@ and I'm quite satisfied with it (previously I used GNUS, and MU4E is a great
 improvement IMO). You can see my configuration in `mk/mk-mu4e.el`. Here I'm
 going to explain how to make it work.
 
-First of all, you need to install `offlineimap`, it's written in Python, so
-you will need to get Python too:
+First of all, you need to install `offlineimap` (it's written in Python, so
+you will need to get Python too):
 
 ```
 # pacman -S offlineimap

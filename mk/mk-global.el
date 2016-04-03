@@ -33,7 +33,7 @@
 (require 'mk-haskell)
 (require 'mk-python)
 (require 'mk-utils)
-(require 'mu4e)
+(require 'mu4e nil t)
 (require 'xref)
 
 

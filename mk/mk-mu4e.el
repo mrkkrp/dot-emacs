@@ -35,7 +35,7 @@
   (require 'starttls))
 
 (require 'f)
-(require 'mu4e)
+(require 'mu4e nil t)
 
 (setq
  mu4e-maildir                  (f-expand "~/Maildir")
