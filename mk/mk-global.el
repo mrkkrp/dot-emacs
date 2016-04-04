@@ -275,6 +275,7 @@
 (π "<menu> v v" #'vimish-fold-delete)
 (π "<menu> x i" #'mk-install)
 (π "<menu> x u" #'mk-uninstall)
+(π "<menu> x x" #'counsel-linux-app)
 (π "<menu> y a" #'yas-reload-all)
 (π "<menu> y p" #'mk-yank-primary)
 (π "<menu> y r" #'yank-rectangle)
