@@ -199,6 +199,7 @@ move point."
 (add-hook 'prog-mode-hook          #'mk-prepare-prog-mode)
 (add-hook 'text-mode-hook          #'mk-prepare-text-mode)
 (add-hook 'yaml-mode-hook          #'mk-prepare-prog-mode)
+(add-hook 'ztree-mode-hook         #'modalka-mode)
 
 (provide 'mk-minor-modes)
 
