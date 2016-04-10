@@ -57,7 +57,10 @@
  smtpmail-smtp-service         587
  smtpmail-debug-info           t)
 
-(add-to-list 'mu4e-view-actions '("in browser" . mu4e-action-view-in-browser))
+(eval-after-load 'mu4e
+  '(add-to-list
+    'mu4e-view-actions
+    '("in browser" . mu4e-action-view-in-browser)))
 
 (τ mu4e mu4e-headers "C--" #'ace-window)
 (τ mu4e mu4e-view    "C--" #'ace-window)
