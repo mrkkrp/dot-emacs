@@ -58,6 +58,7 @@
    flyspell-lazy        ; Improve Flyspell responsiveness using idle timers
    ghc                  ; Improve Haskell REPL experience
    gitignore-mode       ; Major mode for editing .gitignore files
+   gnugo                ; Emacs frontend to GNUGO
    haskell-mode         ; A Haskell editing mode
    highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting

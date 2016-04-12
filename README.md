@@ -38,7 +38,7 @@ Package/Repo | Description
 [ace-popup-menu](https://github.com/mrkkrp/ace-popup-menu) † | Replace GUI popup menus
 [ace-window](https://github.com/abo-abo/ace-window) | Quickly switch windows
 [aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode) | Keep code always indented
-[auctex](http://git.savannah.gnu.org/cgit/emacs/elpa.git/?h=externals/auctex) | Integrated environment for *TeX*
+[auctex](https://elpa.gnu.org/packages/auctex.html) | Integrated environment for *TeX*
 [avy](https://github.com/abo-abo/avy) | Move cursor effectively
 [avy-menu](https://github.com/mrkkrp/avy-menu) † | Avy-powered popup menu
 [char-menu](https://github.com/mrkkrp/char-menu) † | Fast insertion of arbitrary symbols
@@ -56,6 +56,7 @@ Package/Repo | Description
 [flyspell-lazy](https://github.com/rolandwalker/flyspell-lazy) | Improve Flyspell responsiveness using idle timers
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
+[gnugo](https://elpa.gnu.org/packages/gnugo.html)
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
@@ -65,7 +66,7 @@ Package/Repo | Description
 [markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
 [mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
-[org](http://git.savannah.gnu.org/cgit/emacs/elpa.git/tree/packages/org) | Outline-based template notes management
+[org](https://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes
 [shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
