@@ -2,6 +2,7 @@
 # contributor: Mark Karpov
 # name: GNU GPL 3 Header
 # key: gnugpl
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 --
 -- ${1:description}

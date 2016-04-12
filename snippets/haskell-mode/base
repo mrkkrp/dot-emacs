@@ -4,7 +4,6 @@
 # key: base
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-
 module `(haskell-guess-module-name)`
-  (  )
+  ( $0 )
 where

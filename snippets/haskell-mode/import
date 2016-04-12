@@ -2,6 +2,7 @@
 # contributor: Mark Karpov
 # name: import
 # key: import
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 import${2:$(if (> (length yas-text) 0) " qualified" "")} ${1:Module}${2: as ${3:Alias}}${4: (${5:symbols})}
 $0

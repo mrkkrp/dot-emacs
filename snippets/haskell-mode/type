@@ -2,5 +2,6 @@
 # contributor: Mark Karpov
 # name: type
 # key: type
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 type ${1:Type} = $2

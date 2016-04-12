@@ -2,6 +2,7 @@
 # contributor: Mark Karpov
 # name: Standard Haskell header
 # key: header
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 -- |
 -- Module      :  `(haskell-guess-module-name)`

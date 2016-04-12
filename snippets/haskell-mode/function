@@ -2,6 +2,7 @@
 # contributor: Mark Karpov
 # name: function definition
 # key: fn
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 ${1:name} :: ${2:Type}
 $1 ${3:args }= $0
