@@ -56,7 +56,7 @@ Package/Repo | Description
 [flyspell-lazy](https://github.com/rolandwalker/flyspell-lazy) | Improve Flyspell responsiveness using idle timers
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
-[gnugo](https://elpa.gnu.org/packages/gnugo.html)
+[gnugo](https://elpa.gnu.org/packages/gnugo.html) | Emacs frontend for GNUGO
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
