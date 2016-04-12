@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Basic info about Cabal package
+# key: base
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+name:                 ${1:`(f-filename default-directory)`}
+version:              0.1.0
+cabal-version:        >= 1.10
+license:              ${2:BSD3}
+license-file:         LICENSE.md
+author:               `user-full-name` <`user-mail-address`>
+maintainer:           `user-full-name` <`user-mail-address`>
+homepage:             https://github.com/mrkkrp/$1
+bug-reports:          https://github.com/mrkkrp/$1/issues
+category:             ${3:Categories}
+synopsis:             ${4:Description}
+build-type:           Simple
+description:          $4.
+extra-source-files:   CHANGELOG.md
+                    , README.md
+
+source-repository head
+  type:               git
+  location:           https://github.com/mrkkrp/$1.git

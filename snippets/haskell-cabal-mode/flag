@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Cabal package flag
+# key: flag
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+flag ${1:dev}
+  description:        ${2:Turn on development settings}.
+  manual:             True
+  default:            False
