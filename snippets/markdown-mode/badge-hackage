@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Hackage badge
+# key: bhackage
+# --
+[![Hackage](https://img.shields.io/hackage/v/${1:`(f-filename default-directory)`}.svg?style=flat)](https://hackage.haskell.org/package/$1)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Stackage nightly badge
+# key: bnightly
+# --
+[![Stackage Nightly](http://stackage.org/package/${1:`(f-filename default-directory)`}/badge/nightly)](http://stackage.org/nightly/package/$1)

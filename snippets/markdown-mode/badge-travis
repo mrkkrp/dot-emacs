@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Travis bulid status badge
+# key: btravis
+# --
+[![Build Status](https://travis-ci.org/mrkkrp/${1:`(f-filename default-directory)`}.svg?branch=master)](https://travis-ci.org/mrkkrp/$1)

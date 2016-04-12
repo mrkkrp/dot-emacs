@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Stackage LTS badge
+# key: blts
+# --
+[![Stackage LTS](http://stackage.org/package/${1:`(f-filename default-directory)`}/badge/lts)](http://stackage.org/lts/package/$1)
