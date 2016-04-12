@@ -344,7 +344,7 @@
 (modalka-define-kbd "F" "M-f")
 (modalka-define-kbd "G" "C-`")
 (modalka-define-kbd "H" "M-H")
-;; I
+(define-key modalka-mode-map (kbd "I") #'suspend-frame)
 ;; J
 (modalka-define-kbd "K" "M-k")
 (modalka-define-kbd "L" "M-l")
