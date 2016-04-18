@@ -213,6 +213,7 @@
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
 (π "<menu> g l" #'avy-goto-line)
+(π "<menu> g o" #'gnugo)
 (π "<menu> g r" #'rgrep)
 (π "<menu> h a" #'highlight-symbol-remove-all)
 (π "<menu> h e" #'ebal-execute)
