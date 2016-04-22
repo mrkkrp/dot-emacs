@@ -44,7 +44,7 @@
 
 (defun mk-clojure-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (mk-grab-input "Clojure Docs: ")))
+  (interactive (list (mk-grab-input "Clojure Docs: " (mk-name-at-point))))
   (cl-destructuring-bind (x &optional y)
       (split-string symbol "/")
     (browse-url

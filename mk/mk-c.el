@@ -29,7 +29,7 @@
 
 (defun mk-c-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (mk-grab-input "C Docs: ")))
+  (interactive (list (mk-grab-input "C Docs: " (mk-name-at-point))))
   (man (concat "3 " symbol)))
 
 (τ cc-mode c "C-c h" #'mk-c-docs)

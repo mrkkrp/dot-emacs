@@ -30,7 +30,7 @@
 
 (defun mk-swi-prolog-search (symbol)
   "Search for SYMBOL at official site of SWI Prolog."
-  (interactive (list (mk-grab-input "Prolog Docs: ")))
+  (interactive (list (mk-grab-input "Prolog Docs: " (mk-name-at-point))))
   (browse-url
    (concat "http://www.swi-prolog.org/search?for="
            (url-hexify-string symbol))))

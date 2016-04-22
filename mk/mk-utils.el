@@ -318,6 +318,12 @@ ADD-SPACE are not NIL, add one space after the initial input."
                  (concat initial-input
                          (when (and initial-input add-space) " ")))))
 
+(defun mk-name-at-point ()
+  "Return function or variable's name at point as string without properties."
+  (let ((symbol (symbol-at-point)))
+    (when symbol
+      (substring-no-properties (symbol-name symbol)))))
+
 (defmacro mk-translate-kbd (from to)
   "Translate combinations of keys FROM to TO combination.
 

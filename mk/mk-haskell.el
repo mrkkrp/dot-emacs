@@ -94,7 +94,7 @@
 
 (defun mk-haskell-hoogle (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (mk-grab-input "Hoogle: ")))
+  (interactive (list (mk-grab-input "Hoogle: " (mk-name-at-point))))
   (browse-url
    (concat "https://www.stackage.org/nightly/hoogle?q="
            (url-hexify-string symbol))))
