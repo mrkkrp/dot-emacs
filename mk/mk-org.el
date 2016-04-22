@@ -39,7 +39,7 @@
 (τ org org "C-'"   #'ace-window)
 (τ org org "C-c i" #'org-insert-link)
 
-(advice-add 'org-agenda-todo :after #'org-save-all-org-buffers)
+(advice-add 'org-todo :after (η #'org-save-all-org-buffers))
 
 (provide 'mk-org)
 
