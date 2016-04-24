@@ -33,7 +33,7 @@
 
 (defun mk-js-docs (symbol)
   "Find documentation for given SYMBOL online."
-  (interactive (list (mk-grab-input "Java Script Docs: " (mk-name-at-point))))
+  (interactive (list (mk-grab-input "Java Script Docs: ")))
   (browse-url
    (concat "https://developer.mozilla.org/en-US/search?q="
            (url-hexify-string symbol)
@@ -41,7 +41,7 @@
 
 (defun mk-jquery-docs (symbol)
   "Find documentation for given SYMBOL online."
-  (interactive (list (mk-grab-input "jQuery Docs: " (mk-name-at-point))))
+  (interactive (list (mk-grab-input "jQuery Docs: ")))
   (browse-url
    (concat "https://api.jquery.com/?s="
            (url-hexify-string symbol))))

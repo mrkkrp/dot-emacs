@@ -50,7 +50,7 @@
 
 (defun mk-python-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (mk-grab-input "Python Docs: " (mk-name-at-point))))
+  (interactive (list (mk-grab-input "Python Docs: ")))
   (browse-url
    (concat "https://docs.python.org/3/search.html?q="
            (url-hexify-string symbol)
@@ -58,7 +58,7 @@
 
 (defun mk-django-docs (symbol)
   "Find documentation for given symbol SYMBOL online."
-  (interactive (list (mk-grab-input "Django Docs: " (mk-name-at-point))))
+  (interactive (list (mk-grab-input "Django Docs: ")))
   (browse-url
    (concat "https://docs.djangoproject.com/en/1.8/search/?q="
            (url-hexify-string symbol))))
