@@ -277,17 +277,17 @@ can be used for text transformations in Yasnippet without
 backslash flood."
   (replace-regexp-in-string "\\W" "\\\\\\&" (remove ?\\ arg)))
 
-(defun mk-anti-ido-advice (func &rest args)
-  "Temporarily disable IDO and call function FUNC with arguments ARGS."
+(defun mk-anti-ivy-advice (func &rest args)
+  "Temporarily disable Ivy and call function FUNC with arguments ARGS."
   (interactive)
-  (let ((read-file-name-function #'read-file-name-default))
+  (let ((completing-read-function #'completing-read-default))
     (if (called-interactively-p 'any)
         (call-interactively func)
       (apply func args))))
 
-(defun mk-disable-ido (command)
+(defun mk-disable-ivy (command)
   "Disable IDO when command COMMAND is called."
-  (advice-add command :around #'mk-anti-ido-advice))
+  (advice-add command :around #'mk-anti-ivy-advice))
 
 (defun mk-set-sentence-end-double-space ()
   "Set ‘sentence-end-double-space’ to T locally."

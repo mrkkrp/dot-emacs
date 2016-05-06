@@ -46,7 +46,7 @@
 (put 'dired-do-copy   'ido nil) ; use ido there
 (put 'dired-do-rename 'ido nil) ; ^
 
-(mk-disable-ido 'dired-create-directory)
+(mk-disable-ivy 'dired-create-directory)
 
 (defun mk-dired-first-file ()
   "Jump to the first file in current directory."
