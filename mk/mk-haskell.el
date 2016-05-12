@@ -220,9 +220,14 @@ version components."
 (τ haskell-mode     haskell             "C-c y" #'mk-haskell-add-pragma)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
 
+(defun mk-purge-the-fucking-thing ()
+  "Purge the fucking thing."
+  (define-key haskell-indentation-mode-map (kbd ";") nil))
+
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook  #'haskell-doc-mode)
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
+(add-hook 'haskell-indentation-mode-hook #'mk-purge-the-fucking-thing)
 
 (provide 'mk-haskell)
 
