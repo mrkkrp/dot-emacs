@@ -37,6 +37,7 @@
  org-tags-column           54)
 
 (τ org org "C-'"   #'ace-window)
+(τ org org "C-,"   #'dabbrev-expand)
 (τ org org "C-c i" #'org-insert-link)
 
 (advice-add 'org-deadline :after (η #'org-save-all-org-buffers))
