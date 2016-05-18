@@ -10,8 +10,6 @@ test-suite ${1:tests}
   type:               exitcode-stdio-1.0
   build-depends:      base             >= 4.8 && < 5
                     , ${2:`(f-filename default-directory)`} >= 0.1.0
-  default-extensions: RecordWildCards
-                    , TupleSections
   other-modules:      ${3:Module}
   if flag(dev)
     ghc-options:      -Wall -Werror

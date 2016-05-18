@@ -7,8 +7,6 @@
 executable ${1:`(f-filename default-directory)`}
   main-is:            Main.hs
   build-depends:      base             >= 4.8 && < 5
-  default-extensions: RecordWildCards
-                    , TupleSections
   other-modules:      ${2:Module}
   if flag(dev)
     ghc-options:      -Wall -Werror

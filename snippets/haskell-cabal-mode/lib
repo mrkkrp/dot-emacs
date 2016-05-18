@@ -6,8 +6,6 @@
 # --
 library
   build-depends:      base             >= 4.8 && < 5
-  default-extensions: RecordWildCards
-                    , TupleSections
   exposed-modules:    ${1:Module}
   if flag(dev)
     ghc-options:      -Wall -Werror
