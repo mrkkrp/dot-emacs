@@ -41,7 +41,9 @@
  dired-recursive-copies             'always  ; don't ask me, just do it
  dired-recursive-deletes            'always  ; ^
  image-dired-show-all-from-dir-max-files 127 ; a bit more
- wdired-allow-to-change-permissions t)       ; change permissions with Dired
+ wdired-allow-to-change-permissions t        ; change permissions with Dired
+ ztree-dir-filter-list              nil      ; don't hide anything
+ ztree-draw-unicode-lines           t)       ; I like Unicode
 
 (put 'dired-do-copy   'ido nil) ; use ido there
 (put 'dired-do-rename 'ido nil) ; ^
