@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: MELPA badge
+# key: bmelpa
+# --
+[![MELPA](https://melpa.org/packages/${1:`(f-filename default-directory)`}.svg)](https://melpa.org/#/$1)
