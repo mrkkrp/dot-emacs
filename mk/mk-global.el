@@ -140,6 +140,7 @@
 (π "C-SPC"      #'mk-mark-command)
 (π "C-\\"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
 (π "C-c C-o"    #'find-file-at-point)
+(π "C-c R"      #'revert-buffer-with-coding-system)
 (π "C-c a"      #'org-agenda-list)
 (π "C-c b"      #'mk-compile-init-files)
 (π "C-c e"      (ε #'mk-visit-file mk-dir))
