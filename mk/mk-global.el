@@ -213,6 +213,7 @@
 (π "<menu> f o" #'mk-set-font)
 (π "<menu> f v" #'find-variable)
 (π "<menu> g d" #'gdb)
+(π "<menu> g g" #'git-link)
 (π "<menu> g l" #'avy-goto-line)
 (π "<menu> g o" #'gnugo)
 (π "<menu> g r" #'rgrep)

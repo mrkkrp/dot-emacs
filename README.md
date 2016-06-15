@@ -55,6 +55,7 @@ Package/Repo | Description
 [flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
 [flyspell-lazy](https://github.com/rolandwalker/flyspell-lazy) | Improve Flyspell responsiveness using idle timers
 [ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
+[git-link](https://github.com/sshaw/git-link) | Get GitHub URL for a buffer location
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
 [gnugo](https://elpa.gnu.org/packages/gnugo.html) | Emacs frontend for GNUGO
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode

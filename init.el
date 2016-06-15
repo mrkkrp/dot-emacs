@@ -57,6 +57,7 @@
    flycheck-haskell     ; Flycheck: Cabal projects and sandboxes
    flyspell-lazy        ; Improve Flyspell responsiveness using idle timers
    ghc                  ; Improve Haskell REPL experience
+   git-link             ; Get GitHub URL for a buffer location
    gitignore-mode       ; Major mode for editing .gitignore files
    gnugo                ; Emacs frontend to GNUGO
    haskell-mode         ; A Haskell editing mode
