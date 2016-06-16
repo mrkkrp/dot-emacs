@@ -470,6 +470,16 @@ current major mode, as specified in ‘mk-search-prefix’."
    (concat "https://duckduckgo.com/html/?k1=-1&q="
            (url-hexify-string what))))
 
+(defun mk-melpa-page (package)
+  "Go to the MELPA page of PACKAGE."
+  (interactive
+   (list
+    (completing-read "MELPA: "
+                     (mapcar #'car package-archive-contents))))
+  (browse-url
+   (concat "https://melpa.org/#/"
+           (url-hexify-string package))))
+
 (defun mk-compile-init-files ()
   "Byte compile init files (all *.el files under ‘mk-dir’ directory)."
   (interactive)

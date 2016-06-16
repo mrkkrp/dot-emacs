@@ -235,6 +235,7 @@
 (π "<menu> l p" #'list-packages)
 (π "<menu> m a" #'magit-dispatch-popup)
 (π "<menu> m c" #'magit-clone)
+(π "<menu> m e" #'mk-melpa-page)
 (π "<menu> m d" #'markdown-mode)
 (π "<menu> m i" #'magit-init)
 (π "<menu> m k" #'mk-make)
