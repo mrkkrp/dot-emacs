@@ -250,6 +250,7 @@
 (π "<menu> p f" #'package-install-file)
 (π "<menu> p i" #'package-install)
 (π "<menu> p j" #'mk-python-run-dev-server)
+(π "<menu> p p" #'mk-package-page)
 (π "<menu> p r" #'print-buffer)
 (π "<menu> p u" #'mk-package-upgrade-all)
 (π "<menu> p y" #'run-python)

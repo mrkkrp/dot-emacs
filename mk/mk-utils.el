@@ -480,6 +480,22 @@ current major mode, as specified in ‘mk-search-prefix’."
    (concat "https://melpa.org/#/"
            (url-hexify-string package))))
 
+(defun mk-package-page (package)
+  "Go to the PACKAGE home page if it exists."
+  (interactive
+   (list
+    (intern
+     (completing-read "Package's home page: "
+                      (mapcar #'car package-archive-contents)))))
+  (message "%s "package)
+  (let ((home-page
+         (cdr
+          (assq :url
+                (package-desc-extras
+                 (cadr (assq package package-archive-contents)))))))
+    (when home-page
+      (browse-url home-page))))
+
 (defun mk-compile-init-files ()
   "Byte compile init files (all *.el files under ‘mk-dir’ directory)."
   (interactive)
