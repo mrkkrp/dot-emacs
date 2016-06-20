@@ -26,8 +26,7 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'slime)
-  (require 'slime-repl))
+  (require 'slime))
 
 (require 'mk-utils)
 
