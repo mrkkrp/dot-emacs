@@ -8,7 +8,7 @@ benchmark bench
   main-is:            Main.hs
   hs-source-dirs:     bench
   type:               exitcode-stdio-1.0
-  build-depends:      base             >= 4.8 && < 5
+  build-depends:      base             >= 4.8 && < 5.0
                     , ${1:`(f-filename default-directory)`} >= 0.1.0
   other-modules:      ${2:Module}
   if flag(dev)
