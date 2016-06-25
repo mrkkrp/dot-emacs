@@ -167,6 +167,45 @@ text."
       (forward-line 1)
       (setq i (1+ i)))))
 
+(defun mk-sort-lines-dwim (&optional arg)
+  "Automatically detect and sort block of lines with point in it.
+
+This detects where block of lines with the same indentation
+begins and ends and then sorts the entire block.  The block is
+not necessarily forms a paragraph, sometimes it's just part of a
+paragraph.
+
+With prefix argument ARG, use descending sort."
+  (interactive "P")
+  (cl-destructuring-bind (beg . end)
+      (save-excursion
+        (let* ((origin
+                (progn
+                  (back-to-indentation)
+                  (point)))
+               (indent (current-column))
+               (beg
+                (progn
+                  (while (and (= (current-column) indent)
+                              (not (looking-at "^[[:space:]]*$"))
+                              (/= (point) (point-min)))
+                    (backward-to-indentation 1))
+                  (unless (= (point) (point-min))
+                    (forward-line 1))
+                  (point-at-bol)))
+               (end
+                (progn
+                  (goto-char origin)
+                  (while (and (= (current-column) indent)
+                              (not (looking-at "^[[:space:]]*$"))
+                              (/= (point) (point-max)))
+                    (forward-to-indentation 1))
+                  (point-at-bol))))
+          (cons beg end)))
+    (let ((origin (point)))
+      (sort-lines arg beg end)
+      (goto-char origin))))
+
 (defun mk-eat-indentation (&optional arg)
   "Delete indentation of current line.
 

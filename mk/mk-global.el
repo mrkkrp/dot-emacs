@@ -357,7 +357,7 @@
 (modalka-define-kbd "N" "M-n")
 (modalka-define-kbd "O" "M-o")
 (modalka-define-kbd "P" "M-p")
-;; Q
+(define-key modalka-mode-map (kbd "Q") #'mk-sort-lines-dwim)
 (modalka-define-kbd "R" "M-r")
 (modalka-define-kbd "S" "M-S")
 (modalka-define-kbd "T" "M-t")
