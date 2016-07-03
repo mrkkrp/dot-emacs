@@ -269,6 +269,7 @@
 (π "<menu> s r" #'string-rectangle)
 (π "<menu> s s" (ε #'switch-to-buffer "*scratch*"))
 (π "<menu> s t" (ε #'mk-show-date t))
+(π "<menu> t f" #'toggle-frame-fullscreen)
 (π "<menu> t h" #'mk-switch-theme)
 (π "<menu> t y" #'typit-advanced-test)
 (π "<menu> u h" (ε #'mk-bookmark-jump t))
