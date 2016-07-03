@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: hpsec discover
+# key: hspec
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
+$0
