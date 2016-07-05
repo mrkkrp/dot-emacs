@@ -167,7 +167,7 @@ text."
       (forward-line 1)
       (setq i (1+ i)))))
 
-(defun mk-sort-lines-dwim (&optional reverse beg end)
+(defun mk-sort-lines-dwim (&optional reverse)
   "Automatically detect and sort block of lines with point in it.
 
 This detects where block of lines with the same indentation
@@ -179,10 +179,10 @@ When argument REVERSE is not NIL, use descending sort.
 
 When region is active, the command operates within the selected
 region between BEG and END."
-  (interactive "P\nr")
+  (interactive "P")
   (cl-destructuring-bind (beg* . end*)
       (if (region-active-p)
-          (cons beg end)
+          (cons (point) (mark))
         (save-excursion
           (let* ((origin
                   (progn
