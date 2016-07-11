@@ -6,7 +6,7 @@
 # --
 executable ${1:`(f-filename default-directory)`}
   main-is:            Main.hs
-  build-depends:      base             >= 4.8 && < 5.0
+  build-depends:      base             >= 4.7 && < 5.0
   other-modules:      ${2:Module}
   if flag(dev)
     ghc-options:      -Wall -Werror
