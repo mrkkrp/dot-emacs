@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: don't warn orphan instances
+# key: orphans
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+{-# OPTIONS_GHC -fno-warn-orphans #-}
+$0
