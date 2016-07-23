@@ -17,7 +17,7 @@ category:             ${3:Categories}
 synopsis:             ${4:Description}
 build-type:           Simple
 description:          $4.
-extra-source-files:   CHANGELOG.md
+extra-doc-files:      CHANGELOG.md
                     , README.md
 
 source-repository head
