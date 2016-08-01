@@ -75,6 +75,7 @@
     "TupleSections"
     "TypeFamilies"
     "TypeOperators"
+    "TypeSynonymInstances"
     "UndecidableInstances"
     "ViewPatterns")
   "List of Haskell language extensions I use.")
