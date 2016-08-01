@@ -106,7 +106,7 @@
   "Find documentation for given package SYMBOL online."
   (interactive (list (mk-grab-input "Stackage: ")))
   (browse-url
-   (concat "https://www.stackage.org/package/"
+   (concat "https://hackage.haskell.org/package/"
            (url-hexify-string symbol))))
 
 (defun mk-haskell-set-min-versions (lib-list)
