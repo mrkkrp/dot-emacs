@@ -135,6 +135,7 @@ version components."
 
 (mk-haskell-set-min-versions
  '(("Cabal"      1 22 0)
+   ("QuickCheck" 2 8 2)
    ("base"       4 8 0)
    ("bytestring" 0 10 6)
    ("containers" 0 5 7)
