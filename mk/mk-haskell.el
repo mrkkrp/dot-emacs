@@ -104,7 +104,7 @@
 
 (defun mk-haskell-package (symbol)
   "Find documentation for given package SYMBOL online."
-  (interactive (list (mk-grab-input "Stackage: ")))
+  (interactive (list (mk-grab-input "Hackage: ")))
   (browse-url
    (concat "https://hackage.haskell.org/package/"
            (url-hexify-string symbol))))
