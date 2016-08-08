@@ -153,6 +153,7 @@
 (require 'mk-man)         ; ↑
 (require 'mk-markdown)    ; ↑
 (require 'mk-mu4e)        ; ↑
+(require 'mk-mustache)    ; ↑
 (require 'mk-org)         ; ↑
 (require 'mk-prolog)      ; ↑
 (require 'mk-python)      ; ↑
