@@ -61,6 +61,7 @@
    gitignore-mode       ; Major mode for editing .gitignore files
    gnugo                ; Emacs frontend to GNUGO
    haskell-mode         ; A Haskell editing mode
+   hasky-extensions     ; Toggle Haskell language extensions
    highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords

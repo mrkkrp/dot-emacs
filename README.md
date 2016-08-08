@@ -59,6 +59,7 @@ Package/Repo | Description
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
 [gnugo](https://elpa.gnu.org/packages/gnugo.html) | Emacs frontend for GNUGO
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
+[hasky-extensions](https://github.com/hasky-mode/hasky-extensions) | † Easily toggle Haskell language extensions
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
 [js2-mode](https://github.com/mooz/js2-mode) | Improved JavaScript editing mode

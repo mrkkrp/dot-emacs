@@ -34,52 +34,6 @@
 (require 'flycheck)
 (require 'mk-utils)
 
-(defvar mk-haskell-extensions
-  '("Arrows"
-    "AutoDeriveTypeable"
-    "BangPatterns"
-    "CPP"
-    "DataKinds"
-    "DeriveAnyClass"
-    "DeriveDataTypeable"
-    "DeriveFoldable"
-    "DeriveFunctor"
-    "DeriveGeneric"
-    "DeriveTraversable"
-    "EmptyDataDecls"
-    "ExistentialQuantification"
-    "ExplicitForAll"
-    "FlexibleContexts"
-    "FlexibleInstances"
-    "ForeignFunctionInterface"
-    "FunctionalDependencies"
-    "GADTs"
-    "GeneralizedNewtypeDeriving"
-    "InstanceSigs"
-    "KindSignatures"
-    "MagicHash"
-    "MultiParamTypeClasses"
-    "MultiWayIf"
-    "NoImplicitPrelude"
-    "OverloadedLists"
-    "OverloadedStrings"
-    "PolyKinds"
-    "QuasiQuotes"
-    "Rank2Types"
-    "RankNTypes"
-    "RecordWildCards"
-    "RecursiveDo"
-    "ScopedTypeVariables"
-    "StandaloneDeriving"
-    "TemplateHaskell"
-    "TupleSections"
-    "TypeFamilies"
-    "TypeOperators"
-    "TypeSynonymInstances"
-    "UndecidableInstances"
-    "ViewPatterns")
-  "List of Haskell language extensions I use.")
-
 (setq
  ebal-operation-mode                   'stack
  haskell-ask-also-kill-buffers         nil  ; don't ask
@@ -144,53 +98,6 @@ version components."
    ("retry"      0 6 0)
    ("time"       1 5 0)))
 
-(defun mk-haskell-add-pragma (pragma)
-  "Add new language PRAGMA to current file and re-format pragmas."
-  (interactive
-   (list
-    (completing-read "Extension: " mk-haskell-extensions)))
-  (save-window-excursion
-    (save-excursion
-      (goto-char (point-min))
-      (if (re-search-forward
-           (concat "^{-#[[:blank:]]+LANGUAGE[[:blank:]]+"
-                   (regexp-quote pragma)
-                   "[[:blank:]]+#-}")
-           nil t 1)
-          (message "Already there.")
-        (let ((module-pos (re-search-forward "^module[[:blank:]]+" nil t 1)))
-          (when module-pos
-            (forward-line -1)
-            (insert (concat "{-# LANGUAGE " pragma " #-}\n"))
-            (goto-char (point-min))
-            (re-search-forward
-             "{-#\\(.\\|\n\\)*#-}"
-             (+ module-pos 80) t 1)
-            (let ((beg (match-beginning 0))
-                  (end (match-end       0)))
-              (sort-lines nil beg end)
-              (align-regexp beg end "\\(\\s-*\\)#-}")
-              (goto-char beg)
-              (forward-line -1)
-              (unless (looking-at "^$")
-                (forward-line 1)
-                (insert "\n")))))))))
-
-(defun mk-haskell-add-import (import)
-  "Add new IMPORT to current file and re-sort import declarations."
-  (interactive (list (mk-grab-input "Import: " "import" t)))
-  (save-window-excursion
-    (save-excursion
-      (goto-char (point-min))
-      (if (re-search-forward
-           (concat "^" (regexp-quote import))
-           nil t 1)
-          (message "Already there.")
-        (when (re-search-forward "^where\n+" nil t 1)
-          (insert import "\n")
-          (mark-paragraph)
-          (sort-lines nil (region-beginning) (region-end)))))))
-
 (defun mk-haskell-insert-symbol ()
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
@@ -221,7 +128,7 @@ version components."
 (τ haskell-mode     haskell             "C-c i" #'mk-haskell-add-import)
 (τ haskell-mode     haskell             "C-c n" #'mk-haskell-package)
 (τ haskell-mode     haskell             "C-c u" #'haskell-mode-generate-tags)
-(τ haskell-mode     haskell             "C-c y" #'mk-haskell-add-pragma)
+(τ haskell-mode     haskell             "C-c y" #'hasky-extensions)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
 
 (defun mk-purge-the-fucking-thing ()
@@ -229,9 +136,11 @@ version components."
   (define-key haskell-indentation-mode-map (kbd ";") nil))
 
 (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
+(add-hook 'haskell-indentation-mode-hook #'mk-purge-the-fucking-thing)
 (add-hook 'haskell-mode-hook  #'haskell-doc-mode)
 (add-hook 'haskell-mode-hook  #'interactive-haskell-mode)
-(add-hook 'haskell-indentation-mode-hook #'mk-purge-the-fucking-thing)
+(add-hook 'hasky-extensions-prettifying-hook #'whitespace-cleanup)
+(add-hook 'hasky-extensions-prettifying-hook #'mk-single-empty-line)
 
 (provide 'mk-haskell)
 
