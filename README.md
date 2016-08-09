@@ -18,12 +18,12 @@ obsolete.
 
 * [Packages](#packages)
 * [Features](#features)
-* [Key Remapping](#key-remapping)
-* [Sticky Keys](#sticky-keys)
-* [Dvorak Layout](#dvorak-layout)
-* [Modal Editing](#modal-editing)
-* [Key Bindings](#key-bindings)
-* [Keyboard Layouts and Abbreviations](#keyboard-layouts-and-abbreviations)
+* [The keyboard](#the-keyboard)
+* [Sticky keys](#sticky-keys)
+* [Dvorak layout](#dvorak-layout)
+* [Modal editing](#modal-editing)
+* [Key bindings](#key-bindings)
+* [Keyboard layouts and abbreviations](#keyboard-layouts-and-abbreviations)
 * [MU4E](#mu4e)
 * [Appearance](#appearance)
 * [License](#license)
@@ -59,7 +59,7 @@ Package/Repo | Description
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
 [gnugo](https://elpa.gnu.org/packages/gnugo.html) | Emacs frontend for GNUGO
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
-[hasky-extensions](https://github.com/hasky-mode/hasky-extensions) | † Easily toggle Haskell language extensions
+[hasky-extensions](https://github.com/hasky-mode/hasky-extensions) † | Easily toggle Haskell language extensions
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
 [js2-mode](https://github.com/mooz/js2-mode) | Improved JavaScript editing mode
@@ -93,8 +93,7 @@ Package/Repo | Description
 
 Thanks to all Emacs developers, GNU team and all the people who hack Emacs
 and publish their code so others can use it. The whole thing is something
-you can contribute to, improve it and help other by doing so. This is truly
-exiting.
+you can contribute to, improve it and help other by doing so.
 
 ## Features
 
@@ -113,50 +112,46 @@ hacking):
 
 * upgrading of all packages without displaying of `*Packages*` buffer.
 
-## Key Remapping
+## The keyboard
 
-It's common knowledge that if you use a laptop, you should remap <kbd>⇪ Caps
-Lock</kbd> to <kbd>⎈ Ctrl</kbd> (at least if you're an Emacs user). It's
-undoubtedly true, but what about <kbd>↹ Tab</kbd> key and <kbd>⌫
-Backspace</kbd>? There are three things to consider:
+Any work with a text editor begins with keyboard. To avoid suffering pain
+now or in the future, do editing fast and easily, one has to get a *proper*
+keyboard. Most people do not understand the value of proper keyboard and use
+traditional, nonsensical keyboard designs. Do not do that, get a proper
+keyboard now.
 
-1. You need to press <kbd>⌫ Backspace</kbd> more often or just as often as
-   <kbd>↹ Tab</kbd> (when editing code, in other cases you usually don't
-   need <kbd>↹ Tab</kbd> at all).
+Proper keyboard should satisfy the following criteria:
 
-2. On standard laptop keyboard <kbd>↹ Tab</kbd> occupies very comfortable
-   position right above <kbd>⇪ Caps Lock</kbd>, while <kbd>⌫ Backspace</kbd>
-   is far away and you need to *change* position of your hand a little to
-   reach it.
+* It should not have staggered keys. Keys should form a matrix. This way you
+  avoid stretching your fingers *without any reason at all*.
 
-3. There is no other way in Emacs to invoke `backward-delete-char` command,
-   than via <kbd>⌫ Backspace</kbd>, there is no handy alternative key
-   binding for it, while <kbd>↹ Tab</kbd> has comfortable alternative
-   <kbd>C-i</kbd>.
+* It should be split or have enough space between each hand's cluster. This
+  allows to keep hands in natural position.
 
-So why not swap <kbd>↹ Tab</kbd> key and <kbd>⌫ Backspace</kbd>? If you're a
-GNU/Linux user, here is `~/.Xmodmap` file that may be helpful:
+* It should have mechanical switches. Of course it should.
 
-```
-! Laptop setting:
-! First, make CapsLock third control:
-remove Lock = Caps_Lock
-remove Control = Control_L
-keysym Caps_Lock = Control_L
-add Control = Control_L
-! Second, swap Tab and BackSpace:
-keysym Tab = BackSpace
-keysym BackSpace = Tab
-```
+* It should have clusters for thumbs because thumbs are the strongest
+  fingers. On the other hand it should not force the user use pinkies too
+  much.
 
-I recommend changing shortcut for “window cycling”, it's usually <kbd>⎇
-Alt</kbd> + <kbd>↹ Tab</kbd>, now it should be <kbd>⎇ Alt</kbd> + <kbd>⌫
-Backspace</kbd>, because this key combination is comfortable and shouldn't
-change.
+* It should be symmetric with two <kbd>⇧ Shift</kbd> keys, <kbd>⎈ Ctrl</kbd>
+  keys, and two <kbd>⎇ Alt</kbd> keys, so when one hand taps a regular key,
+  the other hand always has a modifier to add to that regular key.
 
-## Sticky Keys
+* Ideally, it should have a bowl-shaped surface so hands can easily reach
+  any key without stretching.
 
-I'm a big fan of “Sticky Keys” feature. Most major operating systems and
+Only two companies produce keyboards that satisfy all these requirements:
+[Maltron](https://maltron.com) and [Kinesis](https://kinesis-ergo.com). I
+use the
+[Kinesis Advantage](https://www.kinesis-ergo.com/shop/advantage-for-pc-mac/)
+keyboard and so this setup is tailored to be used with this keyboard. I
+would not use any other keyboard but that. The default layout is so good
+that I only swapped <kbd>⎋ Esc</kbd> and <kbd>⇪ Caps Lock</kbd>.
+
+## Sticky keys
+
+I'm a big fan of the “sticky Keys” feature. Most major operating systems and
 desktop environments provide this feature, it allows to press modifier keys,
 such as <kbd>⎈ Ctrl</kbd>, <kbd>⎇ Alt</kbd>, and <kbd>⇧ Shift</kbd>
 sequentially, instead of pressing multiple keys at a time — that's how all
@@ -164,24 +159,20 @@ computers should work by default. Anyway, for some commands I hold <kbd>⎈
 Ctrl</kbd> (navigation commands and a few others), but there are not so many
 of them.
 
-If you ask yourself if I have RSI or some kind disability, I have to say
-that if you care about your health, you don't need to wait until you have
-RSI to optimize your interaction with computer.
+## Dvorak layout
 
-## Dvorak Layout
-
-I recently switched to the Dvorak layout and it's fantastic. Typing is a lot
-more comfortable now. I've created the
+I use the Dvorak layout to type English and it's fantastic. Typing is a lot
+more comfortable and efficient. I've created the
 [`fix-input`](https://github.com/mrkkrp/fix-input) package to preserve my
 ability to type Russian in Emacs when Dvorak is my layout in OS level. Nice!
 
-## Modal Editing
+## Modal editing
 
-Currently I'm using [`modalka-mode`](https://github.com/mrkkrp/modalka) that
-allows to edit text in modal fashion. Modal editing is fundamentally better
-for health and more efficient in general. Initially I considered learning
-`evil` to edit “vi-style”, but I estimated resulting effect not superior to
-editing with familiar Emacs key bindings.
+Currently I'm using the [`modalka-mode`](https://github.com/mrkkrp/modalka)
+that allows to edit text in modal fashion. Modal editing is fundamentally
+better for health and more efficient in general. Initially I considered
+learning `evil` to edit “vi-style”, but I estimated resulting effect not
+superior to editing with familiar Emacs key bindings.
 
 See my key translation map in `mk/mk-global.el` file.
 
@@ -191,36 +182,32 @@ I don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. I prefer single keys and key sequences over
 key-chords. Even if it's not faster, it's better for health.
 
-I make use of <kbd>F</kbd> keys. There are not so many of them (I could bind
-only 9 commands this way, since <kbd>F1</kbd>, <kbd>F3</kbd>, and
-<kbd>F4</kbd> are already used by Emacs) so we have to use them
-wisely. <kbd>F</kbd> keys are precious because single key pressing is the
-most efficient thing you can do and on most keyboards you can easily reach
-the keys.
+With my Kinesis Advantage keyboard, I make use of keys in thumb clusters. I
+measured that I hit the “save” button often enough to put it to prominent
+position and that I did. My thumb clusters also contain functions like “find
+file”, “switch to buffer”, “switch window”, and a key that start a lot of
+sequential commands that I will describe in a moment.
 
 Next, Emacs allows us to define some custom key bindings: <kbd>C-c</kbd>
 prefix followed by a single key. I've assigned some commands this way. The
-bad thing about these shortcuts is that you have to start them with a chord
-<kbd>C-c</kbd> (this paragraph is a bit obsolete I wrote it before I started
-to use “Sticky Keys”, but it's still relevant for those who don't use that
-feature), while it's way better than <kbd>C-c C-o C-l</kbd> (such shortcuts
-shouldn't be used at all!), I don't like to press several keys
-simultaneously (unless such a combination is self-sufficient, like
-<kbd>C-n</kbd>). Also, there are not so many combinations starting with this
-common prefix, if we want to avoid too long key sequences.
+bad thing about these shortcuts is that you have to start them with a
+chord/key combination <kbd>C-c</kbd>, while it's way better than <kbd>C-c
+C-o C-l</kbd> (such shortcuts shouldn't be used at all!), I don't like to
+press several keys simultaneously (unless such a combination is
+self-sufficient, like <kbd>C-n</kbd>). Also, there are not so many
+combinations starting with this common prefix, if we want to avoid too long
+key sequences.
 
 Here key sequences starting with “introducing key” come into play. We can
 choose single key, whose seul rôle will be starting key sequences. How long
-should every such a key sequence be?  Of course, we want it to be as short
-as possible, but we cannot use only one key after the introducing key,
-because total number of combinations won't be satisfactory. But we can use
-two keys after the introducing key (<kbd>▤ Menu</kbd> in my case, if you
-don't have <kbd>▤ Menu</kbd> on your keyboard you can remap something with
-help of specialized software), then we get 26 × 26 = 676 combinations! (In
-practice you get even more because of punctuation and numbers.) Not bad at
-all. There are enough combinations for us to prefer those that have some
-mnemonic value. Give this technique a try and you will see how productive
-you can be!
+should every such a key sequence be? Of course, we want it to be as short as
+possible, but we cannot use only one key after the introducing key, because
+total number of combinations won't be satisfactory. But we can use two keys
+after the introducing key (<kbd>Page Down</kbd> in my case), then we get 26
+× 26 = 676 combinations! (In practice you get even more because of
+punctuation and numbers.) Not bad at all. There are enough combinations for
+us to prefer those that have some mnemonic value. Give this technique a try
+and you will see how productive you can be!
 
 See my key-bindings in `mk/mk-global.el` file.
 
