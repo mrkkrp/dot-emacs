@@ -72,15 +72,15 @@
   (interactive)
   (image-dired-show-all-from-dir dired-directory))
 
-(τ dired dired   "<menu> ," #'mk-dired-first-file)
-(τ dired dired   "<menu> ." #'mk-dired-last-file)
+(τ dired dired   "<down>"   #'mk-dired-last-file)
+(τ dired dired   "<up>"     #'mk-dired-first-file)
 (τ dired dired   "b"        #'dired-up-directory)
 (τ dired dired   "e"        #'mk-dired-open-external)
 (τ dired dired   "i"        #'mk-image-dired-show-current)
 (τ dired dired   "w"        #'wdired-change-to-wdired-mode)
 (τ dired dired   "z"        (ε #'ztree-dir default-directory))
-(τ wdired wdired "<menu> ," #'mk-dired-first-file)
-(τ wdired wdired "<menu> ." #'mk-dired-last-file)
+(τ wdired wdired "<down>"   #'mk-dired-last-file)
+(τ wdired wdired "<up>"     #'mk-dired-first-file)
 
 (add-hook 'dired-mode-hook #'toggle-truncate-lines)
 
