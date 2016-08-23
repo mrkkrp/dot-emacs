@@ -125,7 +125,6 @@ version components."
 (τ haskell-cabal    haskell-cabal       "M-p"   #'mk-transpose-line-up)
 (τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
 (τ haskell-mode     haskell             "C-c h" #'mk-haskell-hoogle)
-(τ haskell-mode     haskell             "C-c i" #'mk-haskell-add-import)
 (τ haskell-mode     haskell             "C-c n" #'mk-haskell-package)
 (τ haskell-mode     haskell             "C-c u" #'haskell-mode-generate-tags)
 (τ haskell-mode     haskell             "C-c y" #'hasky-extensions)
