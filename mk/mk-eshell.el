@@ -38,6 +38,8 @@ ARG is argument to pass to Emacs shell."
 
 (advice-add 'eshell :around #'mk-eshell-other-window)
 
+(τ em-basic eshell "C-c C-o" nil)
+
 (provide 'mk-eshell)
 
 ;;; mk-eshell.el ends here
