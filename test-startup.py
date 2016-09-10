@@ -14,8 +14,7 @@ initial_startup = '''
       (load-path (delq default-directory load-path)))
   (load-file user-init-file)
   (run-hooks (quote after-init-hook))
-  (mk-compile-init-files))
-'''
+  (mk-compile-init-files))'''
 
 secondary_startup = '''
 (let ((debug-on-error t)
@@ -24,8 +23,7 @@ secondary_startup = '''
       (user-init-file (expand-file-name "init.el"))
       (load-path (delq default-directory load-path)))
   (load-file user-init-file)
-  (run-hooks (quote after-init-hook)))
-'''
+  (run-hooks (quote after-init-hook)))'''
 
 def start_emacs(title, eval_str):
     """
