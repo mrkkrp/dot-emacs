@@ -5,6 +5,7 @@
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 library
+  hs-source-dirs:     src
   build-depends:      base             >= 4.7 && < 5.0
   exposed-modules:    ${1:Module}
   if flag(dev)
