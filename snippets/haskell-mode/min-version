@@ -4,6 +4,6 @@
 # key: minv
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
-#if !MIN_VERSION_${1:base}(4,8,0)
+#if MIN_VERSION_${1:base}(4,8,0)
 $0
 #endif
