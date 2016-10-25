@@ -466,7 +466,7 @@ HEIGHT, if supplied, specifies height of letters to use."
 If STAMP is not NIL, insert date at point."
   (interactive)
   (funcall (if stamp #'insert #'message)
-           (format-time-string "%B %e, %Y")))
+           (format-time-string "%A, %e %B, %Y")))
 
 (defun mk-show-default-dir ()
   "Show default directory in the minibuffer."
