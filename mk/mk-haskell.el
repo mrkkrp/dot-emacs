@@ -79,6 +79,12 @@
      ("Conduit"
       "$$" "$=" "=$" "=$="))))
 
+(τ haskell          haskell-interactive "<end>"      nil)
+(τ haskell          haskell-interactive "<escape>"   nil)
+(τ haskell          haskell-interactive "<home>"     nil)
+(τ haskell          haskell-interactive "<next>"     nil)
+(τ haskell          haskell-interactive "<prior>"    nil)
+(τ haskell          haskell-interactive "C-<prior>"  nil)
 (τ haskell          haskell-interactive "C-c h" #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c n" #'mk-haskell-package)
 (τ haskell          haskell-interactive "C-c r" #'haskell-process-restart)
