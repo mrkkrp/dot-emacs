@@ -116,6 +116,7 @@
 (mk-translate-kbd "<C-menu>"      "<next>")
 (mk-translate-kbd "<C-return>"    "<return>")
 (mk-translate-kbd "<next> <next>" "M-x")
+(mk-translate-kbd "C-c C-u"       "C-c u")
 (mk-translate-kbd "C-c c"         "C-c C-c")
 (mk-translate-kbd "C-c k"         "C-c C-k")
 (mk-translate-kbd "C-c l"         "C-c C-l")
