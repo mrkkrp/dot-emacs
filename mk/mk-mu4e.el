@@ -1,6 +1,6 @@
 ;;; mk-mu4e.el --- MU4E config -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2016 Mark Karpov <markkarpov@openmailbox.org>
+;; Copyright © 2015–2017 Mark Karpov <markkarpov@openmailbox.org>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;

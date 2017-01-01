@@ -1,6 +1,6 @@
 ;;; mk-prolog.el --- Prolog settings -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015–2016 Mark Karpov <markkarpov@opmbx.org>
+;; Copyright © 2015–2017 Mark Karpov <markkarpov@opmbx.org>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
