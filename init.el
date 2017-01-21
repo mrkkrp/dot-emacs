@@ -44,7 +44,6 @@
    avy                  ; Move cursor effectively
    avy-menu             ; Any-powered popup menu
    char-menu            ; Fast insertion of arbitrary symbols
-   cider                ; Clojure IDE
    common-lisp-snippets ; Yasnippets for Common Lisp
    counsel              ; Various completion functions using Ivy
    cyphejor             ; Shorten names of major modes
@@ -56,13 +55,10 @@
    flycheck-color-mode-line ; Colorize mode line according to Flycheck status
    flycheck-haskell     ; Flycheck: Cabal projects and sandboxes
    flyspell-lazy        ; Improve Flyspell responsiveness using idle timers
-   ghc                  ; Improve Haskell REPL experience
    git-link             ; Get GitHub URL for a buffer location
    gitignore-mode       ; Major mode for editing .gitignore files
-   gnugo                ; Emacs frontend to GNUGO
    haskell-mode         ; A Haskell editing mode
    hasky-extensions     ; Toggle Haskell language extensions
-   highlight-line       ; Highlight lines in list-like buffers
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    js2-mode             ; Improved JavaScript editing mode
@@ -76,7 +72,6 @@
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
    shakespeare-mode     ; Support for Hamlet, Lucius, and Julius templates
-   skewer-mode          ; Live web development in Emacs
    slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis
@@ -139,7 +134,6 @@
 (require 'mk-minor-modes) ; minor modes
 (require 'mk-c)           ; major modes
 (require 'mk-calendar)    ; ↑
-(require 'mk-clojure)     ; ↑
 (require 'mk-dired)       ; ↑
 (require 'mk-elisp)       ; ↑
 (require 'mk-erc)         ; ↑
@@ -148,14 +142,12 @@
 (require 'mk-html)        ; ↑
 (require 'mk-ibuffer)     ; ↑
 (require 'mk-js)          ; ↑
-(require 'mk-lisp)        ; ↑
 (require 'mk-magit)       ; ↑
 (require 'mk-man)         ; ↑
 (require 'mk-markdown)    ; ↑
 (require 'mk-mu4e)        ; ↑
 (require 'mk-mustache)    ; ↑
 (require 'mk-org)         ; ↑
-(require 'mk-prolog)      ; ↑
 (require 'mk-python)      ; ↑
 (require 'mk-shakespeare) ; ↑
 (require 'mk-tex)         ; ↑

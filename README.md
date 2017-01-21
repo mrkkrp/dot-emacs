@@ -37,7 +37,6 @@ Package/Repo | Description
 [avy](https://github.com/abo-abo/avy) | Move cursor effectively
 [avy-menu](https://github.com/mrkkrp/avy-menu) † | Avy-powered popup menu
 [char-menu](https://github.com/mrkkrp/char-menu) † | Fast insertion of arbitrary symbols
-[cider](https://github.com/clojure-emacs/cider) | Clojure IDE
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
 [counsel](https://github.com/abo-abo/swiper) | Various completion functions using Ivy
 [cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
@@ -49,10 +48,8 @@ Package/Repo | Description
 [flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
 [flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
 [flyspell-lazy](https://github.com/rolandwalker/flyspell-lazy) | Improve Flyspell responsiveness using idle timers
-[ghc](https://github.com/kazu-yamamoto/ghc-mod) | Improve Haskell REPL experience
 [git-link](https://github.com/sshaw/git-link) | Get GitHub URL for a buffer location
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
-[gnugo](https://elpa.gnu.org/packages/gnugo.html) | Emacs frontend for GNUGO
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
 [hasky-extensions](https://github.com/hasky-mode/hasky-extensions) † | Easily toggle Haskell language extensions
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
@@ -67,7 +64,6 @@ Package/Repo | Description
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes
 [shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
-[skewer-mode](https://github.com/skeeto/skewer-mode) | Live web development with Emacs
 [slime](https://github.com/slime/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | Tricks for working with all kinds of parenthesis

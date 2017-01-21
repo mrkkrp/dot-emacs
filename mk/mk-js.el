@@ -23,9 +23,6 @@
 
 ;;; Code:
 
-(eval-when-compile
-  (require 'skewer-mode))
-
 (require 'mk-utils)
 
 (add-to-list 'mk-search-prefix '(js2-mode . "java script "))
@@ -46,11 +43,6 @@
    (concat "https://api.jquery.com/?s="
            (url-hexify-string symbol))))
 
-(add-hook 'css-mode-hook  #'skewer-css-mode)
-(add-hook 'html-mode-hook #'skewer-html-mode)
-(add-hook 'js2-mode-hook  #'skewer-mode)
-
-(τ js2-mode js2 "C-c C-l" #'skewer-load-buffer)
 (τ js2-mode js2 "C-c h"   #'mk-js-docs)
 (τ js2-mode js2 "C-c i"   #'mk-jquery-docs)
 (τ js2-mode js2 "M-j"     (ε #'delete-indentation t))
