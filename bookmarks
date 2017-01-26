@@ -1,0 +1,65 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("hasky-extensions"
+ (filename . "~/projects/programs/hasky-mode/hasky-extensions/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "0K May 31 22:28 ")
+ (position . 148))
+("svod"
+ (filename . "~/projects/programs/svod/")
+ (front-context-string . "svod\n  drwxr-xr-")
+ (rear-context-string . "0K Oct 28 16:48 ")
+ (position . 126))
+("books"
+ (filename . "~/store/books/")
+ (front-context-string . "asm\n  drwxr-xr-x")
+ (rear-context-string . "0K Jul 10 21:58 ")
+ (position . 132))
+("work"
+ (filename . "~/projects/work/")
+ (front-context-string)
+ (rear-context-string . "0K May 17 15:01 ")
+ (position . 433))
+("megaparsec"
+ (filename . "~/projects/programs/haskell/megaparsec/")
+ (front-context-string . "benchmarks\n  drw")
+ (rear-context-string . "0K Sep 11 14:21 ")
+ (position . 139))
+("python"
+ (filename . "~/projects/programs/python/")
+ (front-context-string . "flacize\n  drwxr-")
+ (rear-context-string . "0K Jul 10 18:45 ")
+ (position . 127))
+("other"
+ (filename . "~/projects/programs/other/")
+ (front-context-string . "shtookovina-conf")
+ (rear-context-string . "0K Jul 16 13:36 ")
+ (position . 407))
+("haskell"
+ (filename . "~/projects/programs/haskell/")
+ (front-context-string)
+ (rear-context-string . "0K Jul 13 22:10 ")
+ (position . 220))
+("emacs-lisp"
+ (filename . "~/projects/programs/emacs-lisp/")
+ (front-context-string . "ace-popup-menu\n ")
+ (rear-context-string . "0K Sep 10 18:28 ")
+ (position . 132))
+("common-lisp"
+ (filename . "~/projects/programs/common-lisp/")
+ (front-context-string . "cl-ansi-term\n  d")
+ (rear-context-string . "0K Jul 13 22:08 ")
+ (position . 132))
+("programs"
+ (filename . "~/projects/programs/")
+ (front-context-string . "ace-popup-menu\n ")
+ (rear-context-string . "0K Jul 10 18:43 ")
+ (position . 121))
+("store"
+ (filename . "~/store/")
+ (front-context-string . "books\n  drwxrwxr")
+ (rear-context-string . "4K Jan 14 16:49 ")
+ (position . 112))
+)
