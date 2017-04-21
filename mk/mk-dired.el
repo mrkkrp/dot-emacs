@@ -74,6 +74,7 @@
 
 (τ dired dired   "<down>"   #'mk-dired-last-file)
 (τ dired dired   "<up>"     #'mk-dired-first-file)
+(τ dired dired   "I"        #'zygospore-toggle-delete-other-windows)
 (τ dired dired   "b"        #'dired-up-directory)
 (τ dired dired   "e"        #'mk-dired-open-external)
 (τ dired dired   "i"        #'mk-image-dired-show-current)
