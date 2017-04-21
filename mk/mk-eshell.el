@@ -23,15 +23,19 @@
 
 ;;; Code:
 
+(require 'ace-window)
 (require 'mk-utils)
 
 (defun mk-eshell-other-window (fnc &optional arg)
   "Open Emacs shell (via FNC) in other window.
 
 ARG is argument to pass to Emacs shell."
-  (let ((eshell-buffer (funcall fnc arg)))
-    (switch-to-prev-buffer)
-    (switch-to-buffer-other-window eshell-buffer)))
+  (unless (cdr (window-list))
+    (split-window-right))
+  (aw-select " Ace - Shell"
+             (lambda (window)
+               (select-window window)
+               (switch-to-buffer (funcall fnc arg)))))
 
 (add-hook 'eshell-mode-hook #'compilation-shell-minor-mode)
 (add-hook 'eshell-mode-hook #'smartparens-mode)
