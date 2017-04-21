@@ -32,10 +32,16 @@
 ARG is argument to pass to Emacs shell."
   (unless (cdr (window-list))
     (split-window-right))
-  (aw-select " Ace - Shell"
-             (lambda (window)
-               (select-window window)
-               (switch-to-buffer (funcall fnc arg)))))
+  (let ((original-window (selected-window))
+        (original-buffer (current-buffer)))
+    (aw-select
+     " Ace - Shell"
+     (lambda (window)
+       (let ((eshell-buffer (funcall fnc arg)))
+         (select-window window)
+         (switch-to-buffer eshell-buffer)
+         (with-selected-window original-window
+           (switch-to-buffer original-buffer)))))))
 
 (add-hook 'eshell-mode-hook #'compilation-shell-minor-mode)
 (add-hook 'eshell-mode-hook #'smartparens-mode)
