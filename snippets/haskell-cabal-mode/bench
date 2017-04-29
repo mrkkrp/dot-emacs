@@ -9,7 +9,7 @@ benchmark bench
   hs-source-dirs:     bench
   type:               exitcode-stdio-1.0
   build-depends:      base             >= 4.7 && < 5.0
-                    , ${1:`(f-filename default-directory)`} >= 0.1.0
+                    , ${1:`(f-filename default-directory)`}
   if flag(dev)
     ghc-options:      -O2 -Wall -Werror
   else

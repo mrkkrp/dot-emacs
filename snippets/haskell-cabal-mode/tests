@@ -9,7 +9,7 @@ test-suite ${1:tests}
   hs-source-dirs:     tests
   type:               exitcode-stdio-1.0
   build-depends:      base             >= 4.7 && < 5.0
-                    , ${2:`(f-filename default-directory)`} >= 0.1.0
+                    , ${2:`(f-filename default-directory)`}
   if flag(dev)
     ghc-options:      -Wall -Werror
   else
