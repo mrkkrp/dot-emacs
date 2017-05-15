@@ -90,7 +90,7 @@
 (require 'package)
 (require 'bytecomp)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e/")
 
 (package-initialize)
