@@ -33,7 +33,6 @@
 (require 'mk-haskell)
 (require 'mk-python)
 (require 'mk-utils)
-(require 'mu4e nil t)
 (require 'xref)
 
 
@@ -236,7 +235,6 @@
 (π "<next> m m" (ε #'switch-to-buffer "*Messages*"))
 (π "<next> m n" #'man)
 (π "<next> m s" #'magit-status)
-(π "<next> m u" #'mu4e)
 (π "<next> n f" #'make-frame)
 (π "<next> n n" #'mk-narrow-to-region)
 (π "<next> n w" #'widen)

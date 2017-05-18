@@ -91,7 +91,6 @@
 (require 'bytecomp)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e/")
 
 (package-initialize)
 
@@ -145,7 +144,6 @@
 (require 'mk-magit)       ; ↑
 (require 'mk-man)         ; ↑
 (require 'mk-markdown)    ; ↑
-(require 'mk-mu4e)        ; ↑
 (require 'mk-mustache)    ; ↑
 (require 'mk-org)         ; ↑
 (require 'mk-python)      ; ↑
