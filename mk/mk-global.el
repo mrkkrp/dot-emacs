@@ -211,6 +211,7 @@
 (π "<next> g d" #'gdb)
 (π "<next> g g" #'git-link)
 (π "<next> g l" #'avy-goto-line)
+(π "<next> g m" #'mk-google-mail)
 (π "<next> g r" #'rgrep)
 (π "<next> h a" #'highlight-symbol-remove-all)
 (π "<next> h e" #'ebal-execute)

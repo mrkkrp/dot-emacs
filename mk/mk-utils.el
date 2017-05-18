@@ -514,6 +514,11 @@ current major mode, as specified in ‘mk-search-prefix’."
    (concat "https://duckduckgo.com/?q="
            (url-hexify-string what))))
 
+(defun mk-google-mail ()
+  "Open Gmail in browser."
+  (interactive)
+  (browse-url "https://mail.google.com"))
+
 (defun mk-melpa-page (package)
   "Go to the MELPA page of PACKAGE."
   (interactive
