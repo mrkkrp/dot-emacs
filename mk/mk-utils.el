@@ -511,7 +511,7 @@ current major mode, as specified in ‘mk-search-prefix’."
                                     mk-search-prefix))
                         t)))
   (browse-url
-   (concat "https://duckduckgo.com/html/?k1=-1&q="
+   (concat "https://duckduckgo.com/?q="
            (url-hexify-string what))))
 
 (defun mk-melpa-page (package)
