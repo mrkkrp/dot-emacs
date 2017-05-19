@@ -133,11 +133,12 @@ Proper keyboard should satisfy the following criteria:
 
 Only two companies produce keyboards that satisfy all these
 requirements: [Maltron](https://maltron.com)
-and [Kinesis](https://kinesis-ergo.com). I use the
-[Kinesis Advantage 2 QD](https://www.kinesis-ergo.com/shop/advantage2-qd/)
-keyboard and so this setup is tailored to be used with it. I would not use
-any other keyboard. The default layout is so good that I only swapped <kbd>⎋
-Esc</kbd> and <kbd>⇪ Caps Lock</kbd>.
+and [Kinesis](https://kinesis-ergo.com). I use
+the [Kinesis Advantage 2 QD](https://www.kinesis-ergo.com/shop/advantage2-qd/)
+keyboard ([a bigger picture](https://www.kinesis-ergo.com/wp-content/uploads/2016/07/kb600qd-oh-1977x1024.png))
+and so this setup is tailored to be used with it. I would not use any other
+keyboard. The default layout is so good that I only swapped <kbd>⎋ Esc</kbd>
+and <kbd>⇪ Caps Lock</kbd>.
 
 ## Sticky keys
 
