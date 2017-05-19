@@ -96,7 +96,7 @@
  suggest-key-bindings             nil
  tab-width                        4 ; tab width for text-mode
  user-full-name                   "Mark Karpov"
- user-mail-address                "markkarpov@openmailbox.org"
+ user-mail-address                "markkarpov92@gmail.com"
  vc-display-status                nil ; don't bloat mode line
  version-control                  t ; make numeric backups unconditionally
  x-underline-at-descent-line      t ; improve rendering (mode line)
