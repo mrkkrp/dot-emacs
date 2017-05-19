@@ -1,0 +1,29 @@
+# -*- mode: snippet -*-
+# contributor: Mark Karpov
+# name: Haskell OSS project readme template
+# key: haskell-readme
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
+# --
+# ${1:Project}
+
+[![License BSD3](https://img.shields.io/badge/license-BSD3-brightgreen.svg)](http://opensource.org/licenses/BSD-3-Clause)
+[![Hackage](https://img.shields.io/hackage/v/${2:`(f-filename default-directory)`}.svg?style=flat)](https://hackage.haskell.org/package/$2)
+[![Stackage Nightly](http://stackage.org/package/$2/badge/nightly)](http://stackage.org/nightly/package/$2)
+[![Stackage LTS](http://stackage.org/package/$2/badge/lts)](http://stackage.org/lts/package/$2)
+[![Build Status](https://travis-ci.org/mrkkrp/$2.svg?branch=master)](https://travis-ci.org/mrkkrp/$2)
+[![Coverage Status](https://coveralls.io/repos/mrkkrp/$2/badge.svg?branch=master&service=github)](https://coveralls.io/github/mrkkrp/$2?branch=master)
+
+Proper description pending.
+
+## Contribution
+
+Issues, bugs, and questions may be reported in [the GitHub issue tracker for
+this project](https://github.com/mrkkrp/$2/issues).
+
+Pull requests are also welcome and will be reviewed quickly.
+
+## License
+
+Copyright © ${3:`(format-time-string "%Y")`} `user-full-name`
+
+Distributed under BSD 3 clause license.
