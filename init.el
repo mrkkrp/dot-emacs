@@ -1,6 +1,6 @@
 ;;; init.el --- Emacs configuration of Mark Karpov -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015–2017 Mark Karpov <markkarpov@openmailbox.org>
+;; Copyright © 2015–2017 Mark Karpov <markkarpov92@gmail.com>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;

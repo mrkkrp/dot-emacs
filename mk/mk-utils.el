@@ -1,6 +1,6 @@
 ;;; mk-utils.el --- Various utility functions -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015–2017 Mark Karpov <markkarpov@opmbx.org>
+;; Copyright © 2015–2017 Mark Karpov <markkarpov@gmail.com>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
