@@ -65,7 +65,6 @@
    kill-or-bury-alive   ; Precise control over buffer killing in Emacs
    magit                ; A Git porcelain inside Emacs
    markdown-mode        ; Major mode for Markdown-formatted text files
-   mk-abbrev            ; Peculiar way to use Emacs abbrevs
    modalka              ; Native modal editing of your own design
    mustache-mode        ; Major mode for Mustache
    org                  ; Outline-based template notes management
