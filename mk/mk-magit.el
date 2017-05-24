@@ -28,9 +28,7 @@
 
 (require 'mk-utils)
 
-(setq magit-completing-read-function #'ivy-completing-read
-      magit-push-always-verify       nil
-      magit-clone-set-remote.pushDefault t) ;; don't ask, just set
+(setq magit-clone-set-remote.pushDefault t)
 
 (τ git-commit git-commit "M-n" #'mk-transpose-line-down)
 (τ git-commit git-commit "M-p" #'mk-transpose-line-up)
