@@ -159,7 +159,7 @@
 (π "M-j"        (ε #'delete-indentation t))
 (π "M-l"        #'fix-word-downcase)
 (π "M-n"        #'mk-transpose-line-down)
-(π "M-o"        #'ace-link-org)
+(π "M-o"        #'ace-link)
 (π "M-p"        #'mk-transpose-line-up)
 (π "M-r"        #'mk-duplicate-line)
 (π "M-u"        #'fix-word-upcase)
