@@ -29,7 +29,7 @@ be obsolete.
 
 ## Packages
 
-Here is collection of packages that I use (in alphabetical order):
+Here is a collection of packages that I use (in alphabetical order):
 
 Package/Repo | Description
 ------------ | -----------
@@ -88,17 +88,15 @@ Package/Repo | Description
 ## Features
 
 Some minor features I have implemented (nothing special, interesting things
-are usually published as separate packages, so people can benefit from my
-hacking):
+are usually published as packages, so people can benefit from my hacking):
 
-* automatic installation of all necessary packages (including packages from
-  directly cloned git repositories);
+* automatic installation of all necessary packages on startup;
 
 * many peculiar editing primitives;
 
 * searching online with DuckDuckGo (it also knows how to prefix my search
-  query depending on major mode, so if I edit Python source, my query will
-  start with `"python "` automatically, it's configurable thing);
+  query depending on major mode, so if I edit a Python source, my query will
+  start with `"python "` automatically, it's a configurable thing);
 
 * upgrading of all packages without displaying the `*Packages*` buffer.
 
@@ -110,13 +108,13 @@ Most people do not understand the value of proper keyboard and use
 traditional, nonsensical keyboard designs. Do not do that, *get a proper
 keyboard now*.
 
-Proper keyboard should satisfy the following criteria:
+I believe that a proper keyboard should satisfy the following criteria:
 
 * It should not have staggered keys. Keys should form a matrix. This way you
-  avoid stretching your fingers.
+  avoid stretching your fingers in weird ways.
 
 * It should be split or have enough space between each hand's cluster. This
-  allows to keep hands in natural position.
+  allows to keep hands in the natural position.
 
 * It should have mechanical switches. Of course it should.
 
@@ -142,7 +140,7 @@ and <kbd>⇪ Caps Lock</kbd>.
 
 ## Sticky keys
 
-I'm a big fan of the “sticky Keys” feature. Most major operating systems and
+I'm a big fan of the “sticky keys” feature. Most major operating systems and
 desktop environments provide this feature. It allows to press modifier keys,
 such as <kbd>⎈ Ctrl</kbd>, <kbd>⎇ Alt</kbd>, and <kbd>⇧ Shift</kbd>
 sequentially, instead of pressing multiple keys at a time—that's how all
@@ -166,17 +164,17 @@ better for health and more efficient in general. Initially I considered
 learning `evil` to edit “vi-style”, but I estimated resulting effect to be
 not superior to editing with familiar Emacs key bindings.
 
-See my key translation map in `mk/mk-global.el` file.
+See my key translation map may be found in the `mk/mk-global.el` file.
 
 ## Key Bindings
 
 I don't use hairy default Emacs shortcuts. All frequently used commands must
 be as simple as possible. I prefer single keys and key sequences over
-key-chords. Even if it's not faster, it's better for health.
+key-chords. Even if it's not faster, it's better for my health.
 
-With my Kinesis Advantage 2 QD keyboard, I make use of the keys in thumb
-clusters. I measured that I hit the “save” button often enough to put it to
-prominent position and so I did. My thumb clusters also contain functions
+With my **Kinesis Advantage 2 QD** keyboard, I make use of the keys in thumb
+clusters. I measured that I hit the “save” button often enough to put it in
+a prominent position and so I did. My thumb clusters also contain functions
 like “find file”, “switch to buffer”, “switch window”, and a key that starts
 a lot of sequential commands that I will describe in a moment.
 
@@ -190,13 +188,13 @@ self-sufficient, like <kbd>C-n</kbd>). Also, there are not so many
 combinations starting with this common prefix, if we want to avoid too long
 key sequences.
 
-Here key sequences starting with “introducing key” come into play. We can
-choose single key, whose seul rôle will be starting key sequences. How long
-should every such a key sequence be? Of course, we want it to be as short as
-possible, but we cannot use only one key after the introducing key, because
-total number of combinations won't be satisfactory. But we can use two keys
-after the introducing key (<kbd>Page Down</kbd> in my case), then we get 26
-× 26 = 676 combinations! (In practice we get even more because of
+Here key sequences starting with an “introducing key” come into play. We can
+choose a single key, whose seul rôle will be starting key sequences. How
+long should every such a key sequence be? Of course, we want it to be as
+short as possible, but we cannot use only one key after the introducing key,
+because total number of combinations won't be satisfactory. But we can use
+two keys after the introducing key (<kbd>Page Down</kbd> in my case), then
+we get 26 × 26 = 676 combinations! (In practice, we get even more because of
 punctuation and numbers.) Not bad at all. There are enough combinations for
 us to prefer those that have some mnemonic value. Give this technique a try
 and you will see how productive you can be!
@@ -204,17 +202,15 @@ and you will see how productive you can be!
 To insert various Unicode characters I use
 the [`char-menu`](https://github.com/mrkkrp/char-menu) package, which see.
 
-See my key-bindings in `mk/mk-global.el` file.
-
 ## Appearance
 
-I use `solarized-dark` theme. It's the only theme I feel comfortable with.
-My font of choice is `DejaVu Sans Mono`, because it's free, easy to get on
-Arch Linux and it supports all scripts that I need: Latin, Cyrillic, Greek,
-and who knows what else. It's also quite pretty. I had been a big fan of
-`Inconsolata` (and then `Ubuntu Mono`) before I've switched to `DejaVu Sans
-Mono`. The reason for switching is that there is no normal version of the
-font supporting Cyrillic script (yes, I've tried modifications à la
+I use the `solarized-dark` theme. It's the only theme I feel comfortable
+with. My font of choice is `DejaVu Sans Mono`, because it's free, easy to
+get on Arch Linux and it supports all scripts that I need: Latin, Cyrillic,
+Greek, and who knows what else. It's also quite pretty. I was a big fan of
+`Inconsolata` (and `Ubuntu Mono` after that) before I switched to `DejaVu
+Sans Mono`. The reason for switching is that there is no normal version of
+the font supporting Cyrillic script (yes, I've tried modifications à la
 Inconsolata LCG, they suck or I'm not sufficiently dedicated person to make
 them look properly).
 
