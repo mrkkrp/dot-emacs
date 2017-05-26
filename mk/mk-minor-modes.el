@@ -197,6 +197,8 @@ move point."
 (add-hook 'flycheck-mode-hook      #'flycheck-color-mode-line-mode)
 (add-hook 'gitignore-mode-hook     #'mk-prepare-prog-mode)
 (add-hook 'haskell-cabal-mode-hook #'mk-prepare-prog-mode)
+(add-hook 'help-mode-hook          #'modalka-mode)
+(add-hook 'info-mode-hook          #'modalka-mode)
 (add-hook 'mustache-mode-hook      #'modalka-mode)
 (add-hook 'prog-mode-hook          #'mk-prepare-prog-mode)
 (add-hook 'text-mode-hook          #'mk-prepare-text-mode)
