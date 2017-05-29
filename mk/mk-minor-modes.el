@@ -41,6 +41,7 @@
 ;; Set variables
 
 (setq-default
+ ace-link-fallback-function        #'ace-link-org
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
  aw-keys                           avy-keys ; see ‘mk-global’
