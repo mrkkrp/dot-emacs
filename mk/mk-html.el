@@ -25,7 +25,8 @@
 
 (require 'mk-utils)
 
-(add-to-list 'auto-mode-alist  '("\\.tpl$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache$" . html-mode))
 (add-hook 'html-mode-hook #'aggressive-indent-mode)
 
 (provide 'mk-html)

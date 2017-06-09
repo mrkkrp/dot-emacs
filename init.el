@@ -143,7 +143,6 @@
 (require 'mk-magit)       ; ↑
 (require 'mk-man)         ; ↑
 (require 'mk-markdown)    ; ↑
-(require 'mk-mustache)    ; ↑
 (require 'mk-org)         ; ↑
 (require 'mk-python)      ; ↑
 (require 'mk-shakespeare) ; ↑
