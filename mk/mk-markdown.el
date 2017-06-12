@@ -28,6 +28,8 @@
 
 (require 'mk-utils)
 
+(setq markdown-url-compose-char ?…)
+
 (τ markdown-mode markdown "C-c C-l" #'markdown-export)
 (τ markdown-mode markdown "C-c C-v" #'markdown-preview)
 (τ markdown-mode markdown "M-n"     #'mk-transpose-line-down)
