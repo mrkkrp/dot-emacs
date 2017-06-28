@@ -36,6 +36,9 @@
 (τ markdown-mode markdown "M-n"     #'mk-transpose-line-down)
 (τ markdown-mode markdown "M-p"     #'mk-transpose-line-up)
 
+(with-eval-after-load 'markdown-mode
+  (set-face-font 'markdown-code-face "DejaVu Sans Mono"))
+
 (provide 'mk-markdown)
 
 ;;; mk-markdown.el ends here
