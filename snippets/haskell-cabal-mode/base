@@ -5,7 +5,7 @@
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 name:                 ${1:`(f-filename default-directory)`}
-version:              0.1.0
+version:              0.0.1.0
 cabal-version:        >= 1.18
 tested-with:          GHC==8.0.2
 license:              ${2:BSD3}
