@@ -199,6 +199,7 @@
 (π "<next> d i" #'diff)
 (π "<next> e ;" #'eval-expression)
 (π "<next> e b" #'erase-buffer)
+(π "<next> e d" #'eval-defun)
 (π "<next> e e" #'eval-last-sexp)
 (π "<next> e l" #'mk-add-to-end-of-lines)
 (π "<next> e r" #'erc)
