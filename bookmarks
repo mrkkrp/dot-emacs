@@ -1,12 +1,12 @@
-;;;; Emacs Bookmark Format Version 1 ;;;;
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("hasky-extensions"
- (filename . "~/projects/programs/hasky-mode/hasky-extensions/")
- (front-context-string . ".git\n  -rw-r--r-")
- (rear-context-string . "0K May 31 22:28 ")
- (position . 148))
+(("hasky-stack"
+ (filename . "~/projects/programs/hasky-mode/hasky-stack/")
+ (front-context-string . "  total used in ")
+ (rear-context-string . "de/hasky-stack:\n")
+ (position . 56))
 ("svod"
  (filename . "~/projects/programs/svod/")
  (front-context-string . "svod\n  drwxr-xr-")
