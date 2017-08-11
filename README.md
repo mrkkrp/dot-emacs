@@ -44,7 +44,6 @@ Package/Repo | Description
 [common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
 [counsel](https://github.com/abo-abo/swiper) | Various completion functions using Ivy
 [cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
-[ebal](https://github.com/mrkkrp/ebal) † | Emacs interface to Cabal
 [f](https://github.com/rejeep/f.el) | Modern API for working with files and dirs
 [fix-input](https://github.com/mrkkrp/fix-input) † | Type Russian in Emacs with Dvorak layout on system level
 [fix-word](https://github.com/mrkkrp/fix-word) † | Convenient word transformation
@@ -56,6 +55,7 @@ Package/Repo | Description
 [gitignore-mode](https://github.com/magit/git-modes) | Major mode for editing .gitignore files
 [haskell-mode](https://github.com/haskell/haskell-mode) | A Haskell editing mode
 [hasky-extensions](https://github.com/hasky-mode/hasky-extensions) † | Easily toggle Haskell language extensions
+[hasky-stack](https://github.com/hasky-mode/hasky-stack) † | Interface to the Stack Haskell development tool
 [highlight-symbol](https://github.com/nschum/highlight-symbol.el) | Automatic and manual symbol highlighting
 [hl-todo](https://github.com/tarsius/hl-todo) | Highlight TODO and similar keywords
 [js2-mode](https://github.com/mooz/js2-mode) | Improved JavaScript editing mode

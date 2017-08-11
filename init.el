@@ -47,7 +47,6 @@
    common-lisp-snippets ; Yasnippets for Common Lisp
    counsel              ; Various completion functions using Ivy
    cyphejor             ; Shorten names of major modes
-   ebal                 ; Emacs interface to Cabal
    f                    ; Modern API for working with files and dirs
    fix-input            ; Make input methods work with Dvorak
    fix-word             ; Convenient word transformation
@@ -59,6 +58,7 @@
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode
    hasky-extensions     ; Toggle Haskell language extensions
+   hasky-stack          ; Interface to the Stack Haskell development tool
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    js2-mode             ; Improved JavaScript editing mode

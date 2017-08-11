@@ -26,16 +26,15 @@
 
 (eval-when-compile
   (require 'char-menu)
-  (require 'ebal)
   (require 'haskell)
-  (require 'smartparens))
+  (require 'smartparens)
+  (require 'hasky-stack))
 
 (require 'cl-lib)
 (require 'flycheck)
 (require 'mk-utils)
 
 (setq
- ebal-operation-mode                   'stack
  haskell-ask-also-kill-buffers         nil  ; don't ask
  haskell-process-load-or-reload-prompt t    ; please ask
  haskell-process-show-debug-tips       nil  ; don't show anything
