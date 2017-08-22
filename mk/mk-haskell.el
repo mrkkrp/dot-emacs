@@ -65,41 +65,6 @@
    (concat "https://hackage.haskell.org/package/"
            (url-hexify-string symbol))))
 
-(defun mk-haskell-set-min-versions (lib-list)
-  "Help Flycheck handle Cabal MIN_VERSION_ definitions.
-
-LIB-LIST should of the following form:
-
-  (LIB-NAME V0 V1 V2)
-
-Where LIB-NAME is a string, name of library and V0, V1, V2 are
-version components."
-  (dolist (item lib-list)
-    (cl-destructuring-bind (lib a b c) item
-      (let ((definition
-              (format
-               "((a<%d)||(a==%d&&b<%d)||(a==%d&&b==%d&&c<=%d))"
-               a a b a b c)))
-        (add-to-list
-         'flycheck-ghc-args
-         (format "-DMIN_VERSION_%s(a,b,c)=%s"
-                 lib definition))
-        (add-to-list
-         'flycheck-hlint-args
-         (format "--cpp-define=MIN_VERSION_%s(a,b,c)=%s"
-                 lib definition))))))
-
-(mk-haskell-set-min-versions
- '(("Cabal"      1 22 0)
-   ("QuickCheck" 2 8 2)
-   ("base"       4 8 0)
-   ("bytestring" 0 10 6)
-   ("containers" 0 5 7)
-   ("directory"  1 2 2)
-   ("process"    1 2 1)
-   ("retry"      0 6 0)
-   ("time"       1 5 0)))
-
 (defun mk-haskell-insert-symbol ()
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
