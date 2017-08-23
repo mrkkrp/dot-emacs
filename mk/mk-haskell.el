@@ -69,17 +69,8 @@
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
   (char-menu
-   '("<>" "::" "->" "<-" "=>"
-     ("Bool"
-      "==" "/=" "&&" "||")
-     ("Applicative"
-      "<$>" "<*>" "<|>" "<*" "*>" "<$" "<**>")
-     ("Monad"
-      ">>=" ">>" "=<<" ">=>" "<=<")
-     ("Arrow"
-      "***" "&&&" ">>>" "<<<" "<+>" "^>>" ">>^" "<<^" "^<<")
-     ("Conduit"
-      "$$" "$=" "=$" "=$="))))
+   '("<- " ":: "  "-> "  "=> "  "= "     ;; aoeui
+     "<* " "<$> " "<*> " "<|> " "*> "))) ;; dhtns
 
 (τ haskell          haskell-interactive "<end>"      nil)
 (τ haskell          haskell-interactive "<escape>"   nil)
