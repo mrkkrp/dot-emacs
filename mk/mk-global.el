@@ -216,6 +216,7 @@
 (π "<next> g r" #'rgrep)
 (π "<next> h a" #'highlight-symbol-remove-all)
 (π "<next> h e" #'hasky-stack-execute)
+(π "<next> h h" #'hasky-stack-package-action)
 (π "<next> h i" #'hasky-stack-new)
 (π "<next> h n" #'highlight-symbol-next)
 (π "<next> h p" #'highlight-symbol-prev)

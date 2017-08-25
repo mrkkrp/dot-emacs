@@ -41,7 +41,8 @@
  haskell-process-type                  'stack-ghci
  haskell-process-args-stack-ghci       '("--ghci-options=-ferror-spans")
  hasky-stack-auto-target               t
- hasky-stack-auto-open-coverage-reports t)
+ hasky-stack-auto-open-coverage-reports t
+ hasky-stack-auto-newest-version       t)
 
 (add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
 (add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
@@ -58,13 +59,6 @@
    (concat "https://www.stackage.org/nightly/hoogle?q="
            (url-hexify-string symbol))))
 
-(defun mk-haskell-package (symbol)
-  "Find documentation for given package SYMBOL online."
-  (interactive (list (mk-grab-input "Hackage: ")))
-  (browse-url
-   (concat "https://hackage.haskell.org/package/"
-           (url-hexify-string symbol))))
-
 (defun mk-haskell-insert-symbol ()
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
@@ -79,17 +73,14 @@
 (τ haskell          haskell-interactive "<prior>"    nil)
 (τ haskell          haskell-interactive "C-<prior>"  nil)
 (τ haskell          haskell-interactive "C-c h" #'mk-haskell-hoogle)
-(τ haskell          haskell-interactive "C-c n" #'mk-haskell-package)
 (τ haskell          haskell-interactive "C-c r" #'haskell-process-restart)
 (τ haskell          interactive-haskell "M-n"   #'mk-transpose-line-down)
 (τ haskell          interactive-haskell "M-p"   #'mk-transpose-line-up)
 (τ haskell-cabal    haskell-cabal       "C-c h" #'mk-haskell-hoogle)
-(τ haskell-cabal    haskell-cabal       "C-c n" #'mk-haskell-package)
 (τ haskell-cabal    haskell-cabal       "M-n"   #'mk-transpose-line-down)
 (τ haskell-cabal    haskell-cabal       "M-p"   #'mk-transpose-line-up)
 (τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
 (τ haskell-mode     haskell             "C-c h" #'mk-haskell-hoogle)
-(τ haskell-mode     haskell             "C-c n" #'mk-haskell-package)
 (τ haskell-mode     haskell             "C-c u" #'haskell-mode-generate-tags)
 (τ haskell-mode     haskell             "C-c y" #'hasky-extensions)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
