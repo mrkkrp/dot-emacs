@@ -63,8 +63,8 @@
   "Insert one of the Haskell symbols that are difficult to type."
   (interactive)
   (char-menu
-   '("<- " ":: "  "-> "  "=> "  "= "     ;; aoeui
-     "<* " "<$> " "<*> " "<|> " "*> "))) ;; dhtns
+   '("<-" "::"  "->"  "=>"  "="     ;; aoeui
+     "<*" "<$>" "<*>" "<|>" "*>"))) ;; dhtns
 
 (τ haskell          haskell-interactive "<end>"      nil)
 (τ haskell          haskell-interactive "<escape>"   nil)
