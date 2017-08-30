@@ -223,6 +223,7 @@
 (π "<next> h r" #'split-window-below)
 (π "<next> h s" #'highlight-symbol)
 (π "<next> h u" #'mk-bookmark-jump)
+(π "<next> h x" #'hasky-extensions-browse-docs)
 (π "<next> i r" #'indent-region)
 (π "<next> k r" #'kill-rectangle)
 (π "<next> l b" #'list-buffers)
