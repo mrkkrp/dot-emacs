@@ -90,7 +90,7 @@
 (smartparens-global-mode          1) ; smart editing of parenthesis
 (tool-bar-mode                    0) ; hide tool bar
 (vimish-fold-global-mode          1) ; persistent test folding
-(whole-line-or-region-mode        1) ; operate on current line
+(whole-line-or-region-global-mode 1) ; operate on current line
 (yas-global-mode                  1) ; enable Yasnippet
 
 
