@@ -44,6 +44,7 @@
  ace-link-fallback-function        #'ace-link-org
  auto-fill-mode                    1       ; wrapping lines beyond limit
  auto-revert-verbose               nil     ; be quiet
+ aw-background                     nil     ; do not make background gray
  aw-keys                           avy-keys ; see ‘mk-global’
  column-number-mode                t       ; display column number
  display-time-24hr-format          t       ; 24 hours format for time
