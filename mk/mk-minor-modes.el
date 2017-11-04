@@ -56,6 +56,7 @@
  flyspell-lazy-idle-seconds        1       ; a bit faster
  global-auto-revert-non-file-buffers t     ; mainly for Dired
  ispell-dictionary                 "en"    ; default dictionary
+ ivy-use-selectable-prompt         t       ; make prompt selectable
  modalka-cursor-type               'box
  rm-whitelist                      "^↑$"
  rm-text-properties                '(("^↑$" 'face 'font-lock-doc-face))
