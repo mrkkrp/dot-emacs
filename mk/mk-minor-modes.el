@@ -135,7 +135,7 @@
 
 (add-to-list 'ispell-extra-args "--sug-mode=ultra")
 
-(defun flyspell-correct-previous (&optional words)
+(defun mk-flyspell-correct-previous (&optional words)
   "Correct word before point, reach distant words.
 
 WORDS words at maximum are traversed backward until misspelled
@@ -162,7 +162,7 @@ move point."
 
 (τ flyspell flyspell "C-," nil)
 (τ flyspell flyspell "C-." nil)
-(τ flyspell flyspell "C-;" #'flyspell-correct-previous)
+(τ flyspell flyspell "C-;" #'mk-flyspell-correct-previous)
 
 (τ smartparens smartparens "<C-backspace>" #'sp-backward-kill-sexp)
 (τ smartparens smartparens "M-b"           #'sp-backward-sexp)
