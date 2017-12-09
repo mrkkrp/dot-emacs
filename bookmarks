@@ -1,17 +1,17 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("hasky-stack"
+(("dist-systems"
+ (filename . "~/store/books/programming/")
+ (front-context-string . "distributed-syst")
+ (rear-context-string . "7M Dec  8 21:53 ")
+ (position . 865))
+("hasky-stack"
  (filename . "~/projects/programs/hasky-mode/hasky-stack/")
  (front-context-string . "  total used in ")
  (rear-context-string . "de/hasky-stack:\n")
  (position . 56))
-("svod"
- (filename . "~/projects/programs/svod/")
- (front-context-string . "svod\n  drwxr-xr-")
- (rear-context-string . "0K Oct 28 16:48 ")
- (position . 126))
 ("books"
  (filename . "~/store/books/")
  (front-context-string . "asm\n  drwxr-xr-x")
@@ -27,36 +27,21 @@
  (front-context-string . "benchmarks\n  drw")
  (rear-context-string . "0K Sep 11 14:21 ")
  (position . 139))
-("python"
- (filename . "~/projects/programs/python/")
- (front-context-string . "flacize\n  drwxr-")
- (rear-context-string . "0K Jul 10 18:45 ")
- (position . 127))
 ("other"
  (filename . "~/projects/programs/other/")
  (front-context-string . "shtookovina-conf")
  (rear-context-string . "0K Jul 16 13:36 ")
  (position . 407))
-("haskell"
- (filename . "~/projects/programs/haskell/")
- (front-context-string)
- (rear-context-string . "0K Jul 13 22:10 ")
- (position . 220))
 ("emacs-lisp"
  (filename . "~/projects/programs/emacs-lisp/")
  (front-context-string . "ace-popup-menu\n ")
  (rear-context-string . "0K Sep 10 18:28 ")
  (position . 132))
-("common-lisp"
- (filename . "~/projects/programs/common-lisp/")
- (front-context-string . "cl-ansi-term\n  d")
- (rear-context-string . "0K Jul 13 22:08 ")
- (position . 132))
-("programs"
- (filename . "~/projects/programs/")
- (front-context-string . "ace-popup-menu\n ")
- (rear-context-string . "0K Jul 10 18:43 ")
- (position . 121))
+("haskell"
+ (filename . "~/projects/programs/haskell/")
+ (front-context-string)
+ (rear-context-string . "0K Jul 13 22:10 ")
+ (position . 220))
 ("store"
  (filename . "~/store/")
  (front-context-string . "books\n  drwxrwxr")
