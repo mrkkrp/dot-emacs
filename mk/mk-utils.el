@@ -110,7 +110,7 @@ before target non-white space character."
 (defun mk-smart-indent (&optional arg)
   "Align first non-white space char after point with content of previous line.
 
-With prefix argument ARG, align to next line instead."
+With prefix argument ARG, align to the next line instead."
   (interactive "P")
   (let* ((this-edge (mk-column-at (mk-saturated-occurence)))
          (that-edge
@@ -218,8 +218,9 @@ ARG, if given, specifies how many symbols to eat."
   (interactive "p")
   (save-excursion
     (beginning-of-line)
-    (when (looking-at "[[:blank:]]")
-      (delete-char (or arg 1)))))
+    (dotimes (_ (or arg 1))
+      (when (looking-at "[[:blank:]]")
+        (delete-char 1)))))
 
 (defun mk-single-empty-line ()
   "Make sure we don't have too wide gaps."
