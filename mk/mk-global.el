@@ -198,6 +198,7 @@
 (π "<next> d f" #'delete-frame)
 (π "<next> d i" #'diff)
 (π "<next> e ;" #'eval-expression)
+(π "<next> e a" #'mk-update-year)
 (π "<next> e b" #'erase-buffer)
 (π "<next> e d" #'eval-defun)
 (π "<next> e e" #'eval-last-sexp)

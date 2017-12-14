@@ -267,7 +267,7 @@ don't create new empty buffer."
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Missing commands for package system
+;; Missing commands for the package system
 
 (defun mk-package-install-git (address)
   "Install package directly from git repository at ADDRESS.
@@ -315,7 +315,7 @@ This functionality requires git installed."
 ;; Utility functions
 
 (defun mk-shell-quote-arg (arg)
-  "Quote ARG for using in shell.
+  "Quote ARG for using in the shell.
 
 This function is different from ‘shell-quote-argument’ in that it
 can be used for text transformations in Yasnippet without
@@ -495,6 +495,32 @@ makes result string be quoted as for yanking into shell."
                  (if arg
                      (shell-quote-argument φ)
                    φ)))))))
+
+(defun mk-update-year (&optional arg)
+  "Update all copyright years in the current buffer.
+
+ARG, if specified, is the year to update the copyright range to."
+  (interactive "P")
+  (let ((new-year (or arg (format-time-string "%Y")))
+        (origin   (point))
+        (n        0))
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward
+              "\\b[[:digit:]]\\{4\\}\\(–[[:digit:]]\\{4\\}\\)?\\b" nil t)
+        (let ((old-year
+               (buffer-substring
+                (match-beginning 0)
+                (+ 4 (match-beginning 0))))
+              (old-year-point (match-beginning 1)))
+          (when (match-beginning 1)
+            (goto-char old-year-point)
+            (delete-char 5))
+          (unless (string= new-year old-year)
+            (insert "–" new-year)))
+        (setq n (+ n 1)))
+      (goto-char origin)
+      (message "Updated %d occurrence(s)" n))))
 
 (defvar mk-search-prefix nil
   "This is an alist that contains some prefixes for online search query.
