@@ -2,11 +2,11 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("dist-systems"
- (filename . "~/store/books/programming/")
- (front-context-string . "distributed-syst")
- (rear-context-string . "7M Dec  8 21:53 ")
- (position . 865))
+(("mmark"
+ (filename . "~/projects/programs/mmark/")
+ (front-context-string . "  total used in ")
+ (rear-context-string . "programs/mmark:\n")
+ (position . 39))
 ("hasky-stack"
  (filename . "~/projects/programs/hasky-mode/hasky-stack/")
  (front-context-string . "  total used in ")
