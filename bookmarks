@@ -47,4 +47,8 @@
  (front-context-string . "books\n  drwxrwxr")
  (rear-context-string . "4K Jan 14 16:49 ")
  (position . 112))
-)
+("coq"
+ (filename . "~/projects/programs/coq/")
+ (front-context-string)
+ (rear-context-string . "ilable 93937844\n")
+ (position . 84)))
