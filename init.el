@@ -145,7 +145,6 @@
 (require 'mk-markdown)    ; ↑
 (require 'mk-org)         ; ↑
 (require 'mk-python)      ; ↑
-(require 'mk-shakespeare) ; ↑
 (require 'mk-tex)         ; ↑
 (require 'mk-texinfo)     ; ↑
 (require 'mk-visual)      ; control appearance
