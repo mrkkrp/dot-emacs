@@ -1,6 +1,6 @@
 ;;; mk-shakespeare.el --- Shakespearean templates -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015–2017 Mark Karpov <markkarpov92@gmail.com>
+;; Copyright © 2015–2018 Mark Karpov <markkarpov92@gmail.com>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
