@@ -32,8 +32,8 @@
     (load proof-loader)))
 
 (setq
- proof-splash-enable nil ; what a stupid idea anyway
- )
+ proof-splash-enable       nil ; what a stupid idea anyway
+ proof-three-window-enable nil)
 
 (τ proof-script proof "M-n" #'mk-transpose-line-down)
 (τ proof-script proof "M-p" #'mk-transpose-line-up)
