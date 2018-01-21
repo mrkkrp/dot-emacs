@@ -127,26 +127,27 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Require meat of the config
 
-(require 'mk-global)      ; global settings
+(require 'mk-global)         ; global settings
 (require 'mk-highlight-line) ; highlight lines in list-like buffers
-(require 'mk-minor-modes) ; minor modes
-(require 'mk-c)           ; major modes
-(require 'mk-calendar)    ; ↑
-(require 'mk-dired)       ; ↑
-(require 'mk-elisp)       ; ↑
-(require 'mk-erc)         ; ↑
-(require 'mk-eshell)      ; ↑
-(require 'mk-haskell)     ; ↑
-(require 'mk-html)        ; ↑
-(require 'mk-ibuffer)     ; ↑
-(require 'mk-js)          ; ↑
-(require 'mk-magit)       ; ↑
-(require 'mk-man)         ; ↑
-(require 'mk-markdown)    ; ↑
-(require 'mk-org)         ; ↑
-(require 'mk-python)      ; ↑
-(require 'mk-tex)         ; ↑
-(require 'mk-texinfo)     ; ↑
-(require 'mk-visual)      ; control appearance
+(require 'mk-visual)         ; control appearance
+(require 'mk-minor-modes)    ; minor modes
+(require 'mk-c)              ; major modes
+(require 'mk-calendar)       ; ↑
+(require 'mk-dired)          ; ↑
+(require 'mk-elisp)          ; ↑
+(require 'mk-erc)            ; ↑
+(require 'mk-eshell)         ; ↑
+(require 'mk-haskell)        ; ↑
+(require 'mk-html)           ; ↑
+(require 'mk-ibuffer)        ; ↑
+(require 'mk-js)             ; ↑
+(require 'mk-proof-general)  ; ↑
+(require 'mk-magit)          ; ↑
+(require 'mk-man)            ; ↑
+(require 'mk-markdown)       ; ↑
+(require 'mk-org)            ; ↑
+(require 'mk-python)         ; ↑
+(require 'mk-tex)            ; ↑
+(require 'mk-texinfo)        ; ↑
 
 ;;; init.el ends here

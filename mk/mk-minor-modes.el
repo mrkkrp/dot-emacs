@@ -204,6 +204,7 @@ move point."
 (add-hook 'info-mode-hook          #'modalka-mode)
 (add-hook 'mustache-mode-hook      #'modalka-mode)
 (add-hook 'prog-mode-hook          #'mk-prepare-prog-mode)
+(add-hook 'proof-mode-hook         #'mk-prepare-prog-mode)
 (add-hook 'text-mode-hook          #'mk-prepare-text-mode)
 (add-hook 'yaml-mode-hook          #'mk-prepare-prog-mode)
 (add-hook 'ztree-mode-hook         #'modalka-mode)
