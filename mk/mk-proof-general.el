@@ -35,8 +35,9 @@
  proof-splash-enable       nil ; what a stupid idea anyway
  proof-three-window-enable nil)
 
-(τ proof-script proof "M-n" #'mk-transpose-line-down)
-(τ proof-script proof "M-p" #'mk-transpose-line-up)
+(τ proof-script proof "C-c C-s" #'proof-goto-point)
+(τ proof-script proof "M-n"     #'mk-transpose-line-down)
+(τ proof-script proof "M-p"     #'mk-transpose-line-up)
 
 (provide 'mk-proof-general)
 
