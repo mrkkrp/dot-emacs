@@ -202,12 +202,16 @@ move point."
 (add-hook 'haskell-cabal-mode-hook #'mk-prepare-prog-mode)
 (add-hook 'help-mode-hook          #'modalka-mode)
 (add-hook 'info-mode-hook          #'modalka-mode)
+(add-hook 'markdown-mode-hook      #'flycheck-mode)
 (add-hook 'mustache-mode-hook      #'modalka-mode)
 (add-hook 'prog-mode-hook          #'mk-prepare-prog-mode)
 (add-hook 'proof-mode-hook         #'mk-prepare-prog-mode)
 (add-hook 'text-mode-hook          #'mk-prepare-text-mode)
 (add-hook 'yaml-mode-hook          #'mk-prepare-prog-mode)
 (add-hook 'ztree-mode-hook         #'modalka-mode)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-mmark-setup))
 
 (provide 'mk-minor-modes)
 
