@@ -22,11 +22,11 @@
  (front-context-string)
  (rear-context-string . "0K May 17 15:01 ")
  (position . 433))
-("megaparsec"
- (filename . "~/projects/programs/haskell/megaparsec/")
- (front-context-string . "benchmarks\n  drw")
- (rear-context-string . "0K Sep 11 14:21 ")
- (position . 139))
+("tweag"
+ (filename . "~/projects/tweag/")
+ (front-context-string)
+ (rear-context-string . "lable 128483304\n")
+ (position . 78))
 ("other"
  (filename . "~/projects/programs/other/")
  (front-context-string . "shtookovina-conf")
@@ -51,4 +51,5 @@
  (filename . "~/projects/programs/coq/")
  (front-context-string)
  (rear-context-string . "ilable 93937844\n")
- (position . 84)))
+ (position . 84))
+)
