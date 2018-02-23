@@ -29,9 +29,10 @@
 (require 'mk-utils)
 
 (setq-default
- python-fill-docstring-style 'django
- python-indent-offset        4)
+ python-fill-docstring-style 'pep-257-nn
+ python-indent-offset        2)
 
+(add-to-list 'auto-mode-alist  '("\\.bzl$" . python-mode))
 (add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
 (add-to-list 'mk-search-prefix '(python-mode          . "python"))
 

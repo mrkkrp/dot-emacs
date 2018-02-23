@@ -255,7 +255,7 @@
 (π "<next> p p" #'mk-package-page)
 (π "<next> p r" #'print-buffer)
 (π "<next> p u" #'mk-package-upgrade-all)
-(π "<next> p y" #'run-python)
+(π "<next> p y" #'python-mode)
 (π "<next> q e" #'vr/query-replace)
 (π "<next> q r" #'query-replace)
 (π "<next> r b" #'report-emacs-bug)
