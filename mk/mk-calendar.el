@@ -26,7 +26,11 @@
 (eval-when-compile
   (require 'calendar))
 
+(require 'mk-utils)
+
 (setq calendar-week-start-day 1) ; Monday
+
+(τ calendar calendar "<prior>" #'ace-window)
 
 (provide 'mk-calendar)
 
