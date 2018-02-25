@@ -80,8 +80,8 @@
 (τ haskell-cabal    haskell-cabal       "M-n"   #'mk-transpose-line-down)
 (τ haskell-cabal    haskell-cabal       "M-p"   #'mk-transpose-line-up)
 (τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
+(τ haskell-mode     haskell             "C-c C-u" #'haskell-mode-generate-tags)
 (τ haskell-mode     haskell             "C-c h" #'mk-haskell-hoogle)
-(τ haskell-mode     haskell             "C-c u" #'haskell-mode-generate-tags)
 (τ haskell-mode     haskell             "C-c y" #'hasky-extensions)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
 
