@@ -130,7 +130,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Generate Russian input-method to compensate Dvorak in OS level
+;; Generate Russian input-method to compensate Dvorak on OS level
 
 (fix-input "english-dvorak" "russian-computer" "mk-dvorak-russian")
 
