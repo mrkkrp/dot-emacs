@@ -7,11 +7,11 @@
  (front-context-string . "  total used in ")
  (rear-context-string . "programs/mmark:\n")
  (position . 39))
-("hasky-stack"
- (filename . "~/projects/programs/hasky-mode/hasky-stack/")
- (front-context-string . "  total used in ")
- (rear-context-string . "de/hasky-stack:\n")
- (position . 56))
+("hasky-cabal"
+ (filename . "~/projects/programs/hasky-mode/hasky-cabal/")
+ (front-context-string)
+ (rear-context-string . "lable 107134500\n")
+ (position . 104))
 ("books"
  (filename . "~/store/books/")
  (front-context-string . "asm\n  drwxr-xr-x")
