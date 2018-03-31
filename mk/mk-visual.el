@@ -29,7 +29,7 @@
 (require 'mk-utils)
 
 (when window-system
-  (mk-set-font "DejaVu Sans Mono" 105)
+  (mk-set-font "DejaVu Sans Mono" 120)
   (load-theme 'solarized-dark t)
   (let ((sml/no-confirm-load-theme t))
     (sml/setup))
