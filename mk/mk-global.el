@@ -144,7 +144,6 @@
 (π "C-\\"       (ε #'mk-use-lang "mk-dvorak-russian" "ru"))
 (π "C-c C-o"    #'find-file-at-point)
 (π "C-c R"      #'revert-buffer-with-coding-system)
-(π "C-c a"      #'org-agenda-list)
 (π "C-c e"      (ε #'mk-visit-file mk-dir))
 (π "C-c p"      #'kill-or-bury-alive-purge-buffers)
 (π "C-c r"      #'revert-buffer)
