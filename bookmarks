@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("mmark"
+(("nix-workstation"
+ (filename . "~/nix-workstation/")
+ (front-context-string . "configuration.ni")
+ (rear-context-string . "3K Apr  4 15:55 ")
+ (position . 206))
+("mmark"
  (filename . "~/projects/programs/mmark/")
  (front-context-string . "  total used in ")
  (rear-context-string . "programs/mmark:\n")
@@ -12,11 +17,6 @@
  (front-context-string)
  (rear-context-string . "lable 107134500\n")
  (position . 104))
-("books"
- (filename . "~/store/books/")
- (front-context-string . "asm\n  drwxr-xr-x")
- (rear-context-string . "0K Jul 10 21:58 ")
- (position . 132))
 ("work"
  (filename . "~/projects/work/")
  (front-context-string)
