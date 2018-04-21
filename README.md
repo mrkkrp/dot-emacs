@@ -75,7 +75,6 @@ Package/Repo | Description
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | The Solarized color theme
 [swiper](https://github.com/abo-abo/swiper) | Isearch with overview
 [typit](https://github.com/mrkkrp/typit) † | A typing game similar to the tests on 10 fast fingers
-[vimish-fold](https://github.com/mrkkrp/vimish-fold) † | Fold text like in Vim
 [visual-regexp](https://github.com/benma/visual-regexp.el) | Regexp replace with interactive visual feedback
 [whole-line-or-region](https://github.com/purcell/whole-line-or-region) | Operate on current line if region undefined
 [yaml-mode](https://github.com/yoshiki/yaml-mode) | Major mode for editing YAML serialization format
