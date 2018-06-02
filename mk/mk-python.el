@@ -33,6 +33,7 @@
  python-indent-offset        2)
 
 (add-to-list 'auto-mode-alist  '("\\.bzl$" . python-mode))
+(add-to-list 'auto-mode-alist  '("BUILD$" . python-mode))
 (add-to-list 'mk-search-prefix '(inferior-python-mode . "python"))
 (add-to-list 'mk-search-prefix '(python-mode          . "python"))
 
