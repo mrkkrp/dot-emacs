@@ -23,7 +23,12 @@
 
 ;;; Code:
 
+(eval-when-compile
+  (require 'nix))
+
 (require 'mk-utils)
+
+(add-to-list 'auto-mode-alist '("\\.nix$" . nix-mode))
 
 (defun mk-nixos-package (symbol)
   "Find information about a NixOS package given SYMBOL."
