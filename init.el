@@ -70,6 +70,7 @@
    mustache-mode        ; Major mode for Mustache
    nix-mode             ; Major mode for editing Nix expressions
    org                  ; Outline-based template notes management
+   proof-general        ; A generic front-end for proof assistants
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
    shakespeare-mode     ; Support for Hamlet, Lucius, and Julius templates

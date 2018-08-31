@@ -66,6 +66,7 @@ Package/Repo | Description
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
 [mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
 [org](https://elpa.gnu.org/packages/org.html) | Outline-based template notes management
+[proof-general](https://github.com/ProofGeneral/PG/) | A generic front-end for proof assistants
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes
 [shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates

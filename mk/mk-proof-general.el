@@ -25,12 +25,6 @@
 
 (require 'mk-utils)
 
-(let ((proof-loader
-       (f-expand "proof-general/generic/proof-site.el"
-                 user-emacs-directory)))
-  (when (f-file? proof-loader)
-    (load proof-loader)))
-
 (setq
  proof-splash-enable       nil ; what a stupid idea anyway
  proof-three-window-enable nil)
