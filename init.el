@@ -73,6 +73,7 @@
    proof-general        ; A generic front-end for proof assistants
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
+   rust-mode            ; A major mode for editing Rust source code
    shakespeare-mode     ; Support for Hamlet, Lucius, and Julius templates
    slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs

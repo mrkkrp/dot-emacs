@@ -69,6 +69,7 @@ Package/Repo | Description
 [proof-general](https://github.com/ProofGeneral/PG/) | A generic front-end for proof assistants
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes
+[rust-mode](https://github.com/rust-lang/rust-mode) | A major mode for editing Rust source code
 [shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
 [slime](https://github.com/slime/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | A powerful and beautiful mode-line for Emacs

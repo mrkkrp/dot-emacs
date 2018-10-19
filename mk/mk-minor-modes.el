@@ -195,6 +195,7 @@ move point."
   (whitespace-mode 1))
 
 (add-hook 'compilation-mode-hook   #'modalka-mode)
+(add-hook 'conf-toml-mode-hook     #'modalka-mode)
 (add-hook 'conf-unix-mode-hook     #'modalka-mode)
 (add-hook 'flycheck-mode-hook      #'flycheck-color-mode-line-mode)
 (add-hook 'gitignore-mode-hook     #'mk-prepare-prog-mode)
