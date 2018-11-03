@@ -119,6 +119,15 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Agda setup
+
+(when (locate-file "agda-mode" exec-path nil #'file-executable-p)
+  (load-file
+   (let ((coding-system-for-read 'utf-8))
+     (shell-command-to-string "agda-mode locate"))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start Emacs server
 
 (require 'server)

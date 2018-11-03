@@ -1,4 +1,4 @@
-;;;; Emacs Bookmark Format Version 1 ;;;;
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
@@ -42,11 +42,11 @@
  (front-context-string)
  (rear-context-string . "0K Jul 13 22:10 ")
  (position . 220))
-("store"
- (filename . "~/store/")
- (front-context-string . "books\n  drwxrwxr")
- (rear-context-string . "4K Jan 14 16:49 ")
- (position . 112))
+("agda"
+ (filename . "~/projects/programs/agda/")
+ (front-context-string)
+ (rear-context-string . "ailable 7896016\n")
+ (position . 84))
 ("coq"
  (filename . "~/projects/programs/coq/")
  (front-context-string)
