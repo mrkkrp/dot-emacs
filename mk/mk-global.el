@@ -51,7 +51,7 @@
  blink-matching-delay             0.5
  blink-matching-paren             'jump-offscreen
  browse-url-browser-function      'browse-url-generic
- browse-url-generic-program       "google-chrome-unstable"
+ browse-url-generic-program       "google-chrome-stable"
  char-menu
  '("—" "‘’" "“”" "…" "«»"
    ("Typography"
