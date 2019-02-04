@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Mark Karpov
-# name: inline pragma
-# key: inl
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
-# --
-{-# INLINE ${1:foo} #-}
-$0

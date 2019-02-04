@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Mark Karpov
-# name: data
-# key: data
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
-# --
-data ${1:Type} = $2
