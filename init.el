@@ -143,7 +143,6 @@
 (require 'mk-calendar)       ; ↑
 (require 'mk-dired)          ; ↑
 (require 'mk-elisp)          ; ↑
-(require 'mk-erc)            ; ↑
 (require 'mk-eshell)         ; ↑
 (require 'mk-haskell)        ; ↑
 (require 'mk-html)           ; ↑
