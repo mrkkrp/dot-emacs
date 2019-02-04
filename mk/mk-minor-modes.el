@@ -126,10 +126,7 @@
                   "^\\*Ibuffer\\*$"
                   "^\\*Messages\\*$"
                   "^\\*inferior-lisp\\*$"
-                  "^\\*scratch\\*$"
-                  "^\\*slime-compilation\\*$"
-                  "^\\*slime-description\\*$"
-                  "^\\*slime-events\\*$"))
+                  "^\\*scratch\\*$"))
   (add-to-list 'ivy-ignore-buffers buffer))
 
 (add-to-list 'ispell-extra-args "--sug-mode=ultra")

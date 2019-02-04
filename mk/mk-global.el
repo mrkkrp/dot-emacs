@@ -232,7 +232,6 @@
 (π "<next> i r" #'indent-region)
 (π "<next> k r" #'kill-rectangle)
 (π "<next> l b" #'list-buffers)
-(π "<next> l i" #'slime)
 (π "<next> l l" #'list-processes)
 (π "<next> l p" #'list-packages)
 (π "<next> m a" #'magit-dispatch-popup)
