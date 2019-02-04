@@ -44,7 +44,6 @@
    avy                  ; Move cursor effectively
    avy-menu             ; Any-powered popup menu
    char-menu            ; Fast insertion of arbitrary symbols
-   common-lisp-snippets ; Yasnippets for Common Lisp
    counsel              ; Various completion functions using Ivy
    cyphejor             ; Shorten names of major modes
    f                    ; Modern API for working with files and dirs
@@ -68,13 +67,11 @@
    modalka              ; Native modal editing of your own design
    mustache-mode        ; Major mode for Mustache
    nix-mode             ; Major mode for editing Nix expressions
-   org                  ; Outline-based template notes management
    proof-general        ; A generic front-end for proof assistants
    rainbow-delimiters   ; Highlight brackets according to their depth
    rich-minority        ; Clean-up and beautify the list of minor-modes
    rust-mode            ; A major mode for editing Rust source code
    shakespeare-mode     ; Support for Hamlet, Lucius, and Julius templates
-   slime                ; Superior Lisp Interaction Mode for Emacs
    smart-mode-line      ; A powerful and beautiful mode-line for Emacs
    smartparens          ; Tricks for working with all kinds of parenthesis
    solarized-theme      ; The Solarized color theme

@@ -41,7 +41,6 @@ Package/Repo | Description
 [avy](https://github.com/abo-abo/avy) | Move cursor effectively
 [avy-menu](https://github.com/mrkkrp/avy-menu) † | Avy-powered popup menu
 [char-menu](https://github.com/mrkkrp/char-menu) † | Fast insertion of arbitrary symbols
-[common-lisp-snippets](https://github.com/mrkkrp/common-lisp-snippets) † | Yasnippets for Common Lisp
 [counsel](https://github.com/abo-abo/swiper) | Various completion functions using Ivy
 [cyphejor](https://github.com/mrkkrp/cyphejor) † | Shorten names of major modes
 [f](https://github.com/rejeep/f.el) | Modern API for working with files and dirs
@@ -64,13 +63,11 @@ Package/Repo | Description
 [markdown-mode](http://daringfireball.net/projects/markdown/) | Major mode for Markdown-formatted text files
 [modalka](https://github.com/mrkkrp/modalka) † | Easily introduce native modal editing of your own design
 [mustache-mode](https://github.com/mustache/emacs) | Major mode for Mustache
-[org](https://elpa.gnu.org/packages/org.html) | Outline-based template notes management
 [proof-general](https://github.com/ProofGeneral/PG/) | A generic front-end for proof assistants
 [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters) | Highlight brackets according to their depth
 [rich-minority](https://github.com/Malabarba/rich-minority) | Clean-up and beautify the list of minor-modes
 [rust-mode](https://github.com/rust-lang/rust-mode) | A major mode for editing Rust source code
 [shakespeare-mode](https://github.com/CodyReichert/shakespeare-mode) | Support for Hamlet, Lucius, and Julius templates
-[slime](https://github.com/slime/slime) | Superior Lisp Interaction Mode for Emacs
 [smart-mode-line](https://github.com/Malabarba/smart-mode-line) | A powerful and beautiful mode-line for Emacs
 [smartparens](https://github.com/Fuco1/smartparens) | Tricks for working with all kinds of parenthesis
 [solarized-theme](https://github.com/bbatsov/solarized-emacs) | The Solarized color theme
