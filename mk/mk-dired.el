@@ -27,7 +27,8 @@
   (require 'dired)
   (require 'dired-x)
   (require 'image-dired)
-  (require 'wdired))
+  (require 'wdired)
+  (require 'ztree))
 
 (require 'mk-utils)
 
