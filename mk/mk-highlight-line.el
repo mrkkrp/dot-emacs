@@ -1,6 +1,6 @@
 ;;; mk-highlight-line.el --- Highlight lines in list-like buffers -*- lexical-binding: t; -*-
 ;;
-;; Copyright © 2015–2018 Mark Karpov <markkarpov92@gmail.com>
+;; Copyright © 2015–2019 Mark Karpov <markkarpov92@gmail.com>
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
