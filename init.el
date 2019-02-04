@@ -52,7 +52,6 @@
    fix-word             ; Convenient word transformation
    flycheck             ; On-the-fly syntax checking
    flycheck-color-mode-line ; Colorize mode line according to Flycheck status
-   flycheck-haskell     ; Flycheck: Cabal projects and sandboxes
    flycheck-mmark       ; Flycheck support for MMark markdown processor
    flyspell-lazy        ; Improve Flyspell responsiveness using idle timers
    git-link             ; Get GitHub URL for a buffer location

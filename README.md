@@ -49,7 +49,6 @@ Package/Repo | Description
 [fix-word](https://github.com/mrkkrp/fix-word) † | Convenient word transformation
 [flycheck](https://github.com/flycheck/flycheck) | On-the-fly syntax checking
 [flycheck-color-mode-line](https://github.com/flycheck/flycheck-color-mode-line) | Colorize mode line according to Flycheck status
-[flycheck-haskell](https://github.com/flycheck/flycheck-haskell) | Flycheck: Cabal projects and sandboxes
 [flycheck-mmark](https://github.com/mmark-md/flycheck-mmark) | Flycheck checker for the MMark markdown processor
 [flyspell-lazy](https://github.com/rolandwalker/flyspell-lazy) | Improve Flyspell responsiveness using idle timers
 [git-link](https://github.com/sshaw/git-link) | Get GitHub URL for a buffer location

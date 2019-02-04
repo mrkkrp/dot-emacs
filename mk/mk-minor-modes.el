@@ -187,7 +187,8 @@ move point."
   "Enables some minor modes for programming."
   (setq-local comment-auto-fill-only-comments t)
   (auto-fill-mode 1)
-  (flycheck-mode 1)
+  (unless (eq major-mode 'haskell-mode)
+    (flycheck-mode 1))
   (flyspell-lazy-mode 1)
   (flyspell-prog-mode)
   (hl-todo-mode 1)
@@ -209,9 +210,6 @@ move point."
 (add-hook 'text-mode-hook          #'mk-prepare-text-mode)
 (add-hook 'yaml-mode-hook          #'mk-prepare-prog-mode)
 (add-hook 'ztree-mode-hook         #'modalka-mode)
-
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-mmark-setup))
 
 (provide 'mk-minor-modes)
 

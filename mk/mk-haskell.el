@@ -96,7 +96,6 @@
   (define-key haskell-indentation-mode-map (kbd "]") nil))
 
 (add-hook 'haskell-indentation-mode-hook     #'mk-purge-the-fucking-thing)
-(add-hook 'haskell-mode-hook                 #'flycheck-haskell-setup)
 (add-hook 'haskell-mode-hook                 #'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook                 #'mk-purge-the-fucking-thing)
 (add-hook 'hasky-extensions-prettifying-hook #'mk-single-empty-line)

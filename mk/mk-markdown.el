@@ -36,6 +36,9 @@
 (τ markdown-mode markdown "M-n"     #'mk-transpose-line-down)
 (τ markdown-mode markdown "M-p"     #'mk-transpose-line-up)
 
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-mmark-setup))
+
 (with-eval-after-load 'markdown-mode
   (set-face-font 'markdown-code-face "DejaVu Sans Mono"))
 
