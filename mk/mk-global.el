@@ -234,7 +234,6 @@
 (π "<next> l b" #'list-buffers)
 (π "<next> l l" #'list-processes)
 (π "<next> l p" #'list-packages)
-(π "<next> m a" #'magit-dispatch-popup)
 (π "<next> m c" #'magit-clone)
 (π "<next> m e" #'mk-melpa-page)
 (π "<next> m d" #'markdown-mode)
