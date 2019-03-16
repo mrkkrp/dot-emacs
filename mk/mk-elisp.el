@@ -29,9 +29,6 @@
 
 (add-to-list 'mk-search-prefix '(emacs-lisp-mode . "emacs lisp"))
 
-(τ lisp-mode emacs-lisp       "C-c h" #'hyperspec-lookup)
-(τ lisp-mode lisp-interaction "C-c h" #'hyperspec-lookup)
-
 (add-hook 'emacs-lisp-mode-hook       #'aggressive-indent-mode)
 (add-hook 'emacs-lisp-mode-hook       #'eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook       #'mk-set-sentence-end-double-space)
