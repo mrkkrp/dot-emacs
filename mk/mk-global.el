@@ -62,9 +62,7 @@
     "←" "→" "↑" "↓" "⇐" "⇒" "⇑" "⇓")
    ("Greek"
     "α" "β" "Δ" "δ" "ε" "ζ" "η" "θ" "λ" "μ" "ν" "ξ"
-    "Ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω" "Ω")
-   ("Diacritics"
-    "́" "â" "à" "ô" "ê" "é" "è" "û" "ù" "ü" "î" "ï" "ç"))
+    "Ξ" "ο" "π" "ρ" "σ" "τ" "υ" "φ" "χ" "ψ" "ω" "Ω"))
  compilation-read-command         nil
  cursor-type                      '(bar . 1) ; thin vertical bar
  cursor-in-non-selected-windows   nil        ; don't show it there
