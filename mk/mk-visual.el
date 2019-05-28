@@ -30,7 +30,7 @@
 
 (when window-system
   (mk-set-font "DejaVu Sans Mono" 120)
-  (load-theme 'solarized-dark t)
+  (load-theme 'zenburn t)
   (let ((sml/no-confirm-load-theme t))
     (sml/setup))
   (toggle-frame-fullscreen))
