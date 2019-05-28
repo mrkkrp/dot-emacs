@@ -287,7 +287,7 @@
 ;; Modal editing
 
 (modalka-define-kbd "SPC" "C-SPC")
-;; '
+(define-key modalka-mode-map (kbd "'") #'avy-goto-line)
 (modalka-define-kbd "," "C-,")
 ;; -
 (modalka-define-kbd "/" "M-.")
