@@ -19,8 +19,8 @@
 
 ;;; Commentary:
 
-;; I've collected various auxiliary functions here to avoid cluttering of
-;; other files.
+;; I've collected various auxiliary functions here to avoid cluttering other
+;; files.
 
 ;;; Code:
 
@@ -171,9 +171,9 @@ text."
   "Automatically detect and sort block of lines with point in it.
 
 This detects where block of lines with the same indentation
-begins and ends and then sorts the entire block.  The block is
-not necessarily forms a paragraph, sometimes it's just part of a
-paragraph.
+begins and ends and then sorts the entire block.  The block
+doesn't not necessarily form a paragraph, sometimes it's just a
+part of a paragraph.
 
 When argument REVERSE is not NIL, use descending sort.
 
@@ -269,17 +269,6 @@ don't create new empty buffer."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Missing commands for the package system
 
-(defun mk-package-install-git (address)
-  "Install package directly from git repository at ADDRESS.
-
-This functionality requires git installed."
-  (interactive (list (read-string "Address: ")))
-  (save-window-excursion
-    (let ((temp-dir (make-temp-file "emacs-package-" t))
-          (magit-clone-set-remote.pushDefault t))
-      (magit-clone address temp-dir)
-      (package-install-file temp-dir))))
-
 (defun mk-package-upgrade-all ()
   "Upgrade all packages automatically without showing *Packages* buffer."
   (interactive)
@@ -331,7 +320,7 @@ backslash flood."
       (apply func args))))
 
 (defun mk-disable-ivy (command)
-  "Disable IDO when command COMMAND is called."
+  "Disable Ivy when command COMMAND is called."
   (advice-add command :around #'mk-anti-ivy-advice))
 
 (defun mk-set-sentence-end-double-space ()
@@ -341,7 +330,8 @@ backslash flood."
 (defun mk-use-lang (input-method dictionary)
   "Switch between input methods and Ispell dictionaries.
 
-Switch between given INPUT-METHOD and DICTIONARY and their defaults."
+Switch between given INPUT-METHOD and DICTIONARY and their
+defaults."
   (if (eq current-input-method input-method)
       (progn
         (deactivate-input-method)
