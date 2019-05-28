@@ -287,7 +287,7 @@
 ;; Modal editing
 
 (modalka-define-kbd "SPC" "C-SPC")
-(define-key modalka-mode-map (kbd "'") #'avy-goto-line)
+;; '
 (modalka-define-kbd "," "C-,")
 ;; -
 (modalka-define-kbd "/" "M-.")
@@ -351,7 +351,7 @@
 (modalka-define-kbd "G" "C-`")
 (modalka-define-kbd "H" "M-H")
 (define-key modalka-mode-map (kbd "I") #'zygospore-toggle-delete-other-windows)
-;; J
+(define-key modalka-mode-map (kbd "J") #'avy-goto-line)
 (modalka-define-kbd "K" "M-k")
 (modalka-define-kbd "L" "M-l")
 (modalka-define-kbd "M" "M-m")
