@@ -57,6 +57,7 @@
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode
    hasky-extensions     ; Toggle Haskell language extensions
+   hasky-stack          ; Interface to the Stack Haskell development tool
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    js2-mode             ; Improved JavaScript editing mode

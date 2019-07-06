@@ -27,6 +27,7 @@
 (eval-when-compile
   (require 'char-menu)
   (require 'haskell)
+  (require 'hasky-stack)
   (require 'smartparens))
 
 (require 'cl-lib)
@@ -38,7 +39,10 @@
  haskell-process-load-or-reload-prompt t    ; please ask
  haskell-process-show-debug-tips       nil  ; don't show anything
  haskell-process-type                  'stack-ghci
- haskell-process-args-stack-ghci       '("--ghci-options=-ferror-spans"))
+ haskell-process-args-stack-ghci       '("--ghci-options=-ferror-spans")
+ hasky-stack-auto-target               t
+ hasky-stack-auto-open-coverage-reports t
+ hasky-stack-auto-newest-version       t)
 
 (with-eval-after-load 'smartparens
   (add-to-list 'sp-no-reindent-after-kill-modes 'haskell-cabal-mode)
