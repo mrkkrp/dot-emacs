@@ -27,8 +27,6 @@
 
 (setq eldoc-idle-delay 0.1) ; default is way too long
 
-(add-to-list 'mk-search-prefix '(emacs-lisp-mode . "emacs lisp"))
-
 (add-hook 'emacs-lisp-mode-hook       #'aggressive-indent-mode)
 (add-hook 'emacs-lisp-mode-hook       #'eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook       #'mk-set-sentence-end-double-space)

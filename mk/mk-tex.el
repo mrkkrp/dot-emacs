@@ -26,8 +26,6 @@
 
 (require 'mk-utils)
 
-(add-to-list 'mk-search-prefix '(latex-mode . "latex"))
-
 (defun mk-pdf-latex-generate (&optional output-dir)
   "Generate PDF document from currently opened LaTeX document.
 

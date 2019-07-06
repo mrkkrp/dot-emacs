@@ -27,7 +27,6 @@
 (eval-when-compile
   (require 'char-menu)
   (require 'haskell)
-  (require 'hasky-stack)
   (require 'smartparens))
 
 (require 'cl-lib)
@@ -39,25 +38,11 @@
  haskell-process-load-or-reload-prompt t    ; please ask
  haskell-process-show-debug-tips       nil  ; don't show anything
  haskell-process-type                  'stack-ghci
- haskell-process-args-stack-ghci       '("--ghci-options=-ferror-spans")
- hasky-stack-auto-target               t
- hasky-stack-auto-open-coverage-reports t
- hasky-stack-auto-newest-version       t)
-
-(add-to-list 'mk-search-prefix '(haskell-cabal-mode       . "haskell"))
-(add-to-list 'mk-search-prefix '(haskell-interactive-mode . "haskell"))
-(add-to-list 'mk-search-prefix '(haskell-mode             . "haskell"))
+ haskell-process-args-stack-ghci       '("--ghci-options=-ferror-spans"))
 
 (with-eval-after-load 'smartparens
   (add-to-list 'sp-no-reindent-after-kill-modes 'haskell-cabal-mode)
   (add-to-list 'sp-no-reindent-after-kill-modes 'haskell-mode))
-
-(defun mk-haskell-hoogle (symbol)
-  "Find documentation for given symbol SYMBOL online."
-  (interactive (list (mk-grab-input "Hoogle: ")))
-  (browse-url
-   (concat "https://www.stackage.org/nightly/hoogle?q="
-           (url-hexify-string symbol))))
 
 (defun mk-haskell-insert-symbol ()
   "Insert one of the Haskell symbols that are difficult to type."
@@ -72,7 +57,6 @@
 (τ haskell          haskell-interactive "<next>"     nil)
 (τ haskell          haskell-interactive "<prior>"    nil)
 (τ haskell          haskell-interactive "C-<prior>"  nil)
-(τ haskell          haskell-interactive "C-c h" #'mk-haskell-hoogle)
 (τ haskell          haskell-interactive "C-c r" #'haskell-process-restart)
 (τ haskell          interactive-haskell "M-n"   #'mk-transpose-line-down)
 (τ haskell          interactive-haskell "M-p"   #'mk-transpose-line-up)
@@ -81,7 +65,6 @@
 (τ haskell-cabal    haskell-cabal       "M-p"   #'mk-transpose-line-up)
 (τ haskell-commands haskell             "M-."   #'haskell-mode-jump-to-def)
 (τ haskell-mode     haskell             "C-c C-u" #'haskell-mode-generate-tags)
-(τ haskell-mode     haskell             "C-c h" #'mk-haskell-hoogle)
 (τ haskell-mode     haskell             "C-c y" #'hasky-extensions)
 (τ haskell-mode     haskell             "M-,"   #'pop-tag-mark)
 

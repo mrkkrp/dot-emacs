@@ -353,12 +353,6 @@ ADD-SPACE are not NIL, add one space after the initial input."
                  (concat initial-input
                          (when (and initial-input add-space) " ")))))
 
-(defun mk-name-at-point ()
-  "Return function or variable's name at point as string without properties."
-  (let ((symbol (symbol-at-point)))
-    (when symbol
-      (substring-no-properties (symbol-name symbol)))))
-
 (defmacro mk-translate-kbd (from to)
   "Translate combinations of keys FROM to TO combination.
 
@@ -486,51 +480,6 @@ makes result string be quoted as for yanking into shell."
                      (shell-quote-argument φ)
                    φ)))))))
 
-(defun mk-update-year (&optional arg)
-  "Update all copyright years in the current buffer.
-
-ARG, if specified, is the year to update the copyright range to."
-  (interactive "P")
-  (let ((new-year (or arg (format-time-string "%Y")))
-        (origin   (point))
-        (n        0))
-    (save-excursion
-      (goto-char (point-min))
-      (while (re-search-forward
-              "\\b[[:digit:]]\\{4\\}\\(–[[:digit:]]\\{4\\}\\)?\\b" nil t)
-        (let ((old-year
-               (buffer-substring
-                (match-beginning 0)
-                (+ 4 (match-beginning 0))))
-              (old-year-point (match-beginning 1)))
-          (when (match-beginning 1)
-            (goto-char old-year-point)
-            (delete-char 5))
-          (unless (string= new-year old-year)
-            (insert "–" new-year)))
-        (setq n (+ n 1)))
-      (goto-char origin)
-      (message "Updated %d occurrence(s)" n))))
-
-(defvar mk-search-prefix nil
-  "This is an alist that contains some prefixes for online search query.
-
-Prefixes are picked up according to currect major mode.")
-
-(defun mk-search (what)
-  "Search Internet for WHAT thing, with DuckDuckGo.
-
-When called interactively, it uses prefix corresponding to
-current major mode, as specified in ‘mk-search-prefix’."
-  (interactive
-   (list (mk-grab-input "DuckDuckGo: "
-                        (cdr (assoc major-mode
-                                    mk-search-prefix))
-                        t)))
-  (browse-url
-   (concat "https://duckduckgo.com/?q="
-           (url-hexify-string what))))
-
 (defun mk-melpa-page (package)
   "Go to the MELPA page of PACKAGE."
   (interactive
@@ -578,32 +527,6 @@ current major mode, as specified in ‘mk-search-prefix’."
   (let ((value (eval (elisp--preceding-sexp))))
     (kill-sexp -1)
     (insert (format "%S" value))))
-
-(defun mk-make ()
-  "Find makefile of current project and execute ‘make’."
-  (interactive)
-  (mk-with-directory-of-file "^[Mm]akefile$"
-    (compile "make -k")))
-
-(defun mk-install ()
-  "Find ‘install.sh’ script of current project and execute it.
-
-‘sudo’ is used automatically, you'll need to enter your ‘sudo’
-password."
-  (interactive)
-  (mk-with-directory-of-file "^install.sh$"
-    (save-window-excursion
-      (compile "sudo sh install.sh" t))))
-
-(defun mk-uninstall ()
-  "Find ‘uninstall.sh’ script of current project and execute it.
-
-‘sudo’ is used automatically, you'll need to enter your ‘sudo’
-password."
-  (interactive)
-  (mk-with-directory-of-file "^uninstall.sh$"
-    (save-window-excursion
-      (compile "sudo sh uninstall.sh" t))))
 
 (defun mk-exit-emacs (&optional arg)
   "Exit Emacs: save all file-visiting buffers, kill terminal.

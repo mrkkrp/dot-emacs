@@ -57,7 +57,6 @@
    gitignore-mode       ; Major mode for editing .gitignore files
    haskell-mode         ; A Haskell editing mode
    hasky-extensions     ; Toggle Haskell language extensions
-   hasky-stack          ; Interface to the Stack Haskell development tool
    highlight-symbol     ; Automatic and manual symbol highlighting
    hl-todo              ; Highlight TODO and similar keywords
    js2-mode             ; Improved JavaScript editing mode
@@ -140,8 +139,7 @@
 (require 'mk-highlight-line) ; highlight lines in list-like buffers
 (require 'mk-visual)         ; control appearance
 (require 'mk-minor-modes)    ; minor modes
-(require 'mk-c)              ; major modes
-(require 'mk-calendar)       ; ↑
+(require 'mk-calendar)       ; major-modes
 (require 'mk-dired)          ; ↑
 (require 'mk-elisp)          ; ↑
 (require 'mk-eshell)         ; ↑
@@ -153,10 +151,8 @@
 (require 'mk-man)            ; ↑
 (require 'mk-markdown)       ; ↑
 (require 'mk-nix)            ; ↑
-(require 'mk-org)            ; ↑
 (require 'mk-proof-general)  ; ↑
 (require 'mk-python)         ; ↑
 (require 'mk-tex)            ; ↑
-(require 'mk-texinfo)        ; ↑
 
 ;;; init.el ends here
