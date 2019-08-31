@@ -76,6 +76,7 @@
    smartparens          ; Tricks for working with all kinds of parenthesis
    solarized-theme      ; The Solarized color theme
    swiper               ; Isearch with an overview
+   terraform-mode       ; Major mode for Terraform
    typit                ; A cool typing game
    visual-regexp        ; Regexp replace with interactive visual feedback
    whole-line-or-region ; Operate on current line if region undefined
