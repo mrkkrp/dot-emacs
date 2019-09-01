@@ -25,7 +25,6 @@
 ;;; Code:
 
 (eval-when-compile
-  (require 'bookmark)
   (require 'dired)
   (require 'magit))
 
@@ -386,38 +385,30 @@ BODY."
              ,@body)
          (message ,(format "Cannot find file matching %s" regexp))))))
 
+(defun mk-get-existing-projects (dir)
+  "Return a list of existing projects under DIR.
+
+All projects are combinations of two directory segments (org or
+user, then project name, slash separated) immediately under the
+specified directory."
+  (cl-sort
+   (mapcar (lambda (path)
+             (f-relative path "~/projects"))
+           (f-glob "~/projects/*/*"))
+   #'string-lessp))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Utility commands
 
-(defun mk-bookmark-jump (&optional arg)
-  "Jump to a bookmark.
-
-By default open new location in the left window, but when ARG is
-given open it in the right window.
-
-Any-menu is used to select bookmark."
-  (interactive "P")
-  (require 'bookmark)
-  (bookmark-maybe-load-default-file)
-  (unless bookmark-alist
-    (error "You better create some bookmarks first"))
-  (let ((bookmark
-         (avy-menu
-          "*bookmarks*"
-          (list "Jump to Bookmark"
-                (cons "Pane"
-                      (mapcar (lambda (x) (cons (car x) x))
-                              bookmark-alist)))))
-        (in-first-window
-         (eq (frame-first-window)
-             (selected-window))))
-    (when bookmark
-      (bookmark-jump
-       bookmark
-       (if (if in-first-window (not arg) arg)
-           #'switch-to-buffer
-         #'switch-to-buffer-other-window)))))
+(defun mk-project-jump (project-name)
+  "Jump to PROJECT-NAME opening it in Dired."
+  (interactive
+   (list
+    (completing-read "Projects: "
+                     (mk-get-existing-projects "~/projects"))))
+  (find-file
+   (f-expand project-name "~/projects")))
 
 (defun mk-switch-theme (theme)
   "Switch to theme THEME, loading it if necessary.
@@ -428,7 +419,7 @@ THEME.  This is what you usually want."
    (list
     (intern
      (completing-read "Switch to theme: "
-                      (mapcar 'symbol-name
+                      (mapcar #'symbol-name
                               (custom-available-themes))))))
   (dolist (enabled-theme custom-enabled-themes)
     (disable-theme enabled-theme))
