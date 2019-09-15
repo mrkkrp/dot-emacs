@@ -155,6 +155,7 @@
 (require 'mk-man)            ; ↑
 (require 'mk-markdown)       ; ↑
 (require 'mk-nix)            ; ↑
+(require 'mk-ocaml)          ; ↑
 (require 'mk-proof-general)  ; ↑
 (require 'mk-python)         ; ↑
 (require 'mk-tex)            ; ↑
