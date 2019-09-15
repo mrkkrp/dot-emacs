@@ -46,6 +46,7 @@
    char-menu            ; Fast insertion of arbitrary symbols
    counsel              ; Various completion functions using Ivy
    cyphejor             ; Shorten names of major modes
+   dune                 ; Mode for the Dune build system
    f                    ; Modern API for working with files and dirs
    fix-input            ; Make input methods work with Dvorak
    fix-word             ; Convenient word transformation
