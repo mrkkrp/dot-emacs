@@ -46,6 +46,7 @@
    char-menu            ; Fast insertion of arbitrary symbols
    counsel              ; Various completion functions using Ivy
    cyphejor             ; Shorten names of major modes
+   direnv               ; Direnv support
    dune                 ; Mode for the Dune build system
    f                    ; Modern API for working with files and dirs
    fix-input            ; Make input methods work with Dvorak
@@ -65,6 +66,7 @@
    kill-or-bury-alive   ; Precise control over buffer killing in Emacs
    magit                ; A Git porcelain inside Emacs
    markdown-mode        ; Major mode for Markdown-formatted text files
+   merlin               ; Context sensitive completion for OCaml
    modalka              ; Native modal editing of your own design
    mustache-mode        ; Major mode for Mustache
    nix-mode             ; Major mode for editing Nix expressions

@@ -298,6 +298,7 @@
 (modalka-define-kbd "c s" "C-c C-s")
 (modalka-define-kbd "c u" "C-c C-u")
 (modalka-define-kbd "c v" "C-c C-v")
+(modalka-define-kbd "c x" "C-c C-x")
 (modalka-define-kbd "d" "C-d")
 (modalka-define-kbd "e" "C-e")
 (modalka-define-kbd "f" "C-f")
@@ -365,6 +366,8 @@
 (advice-add 'package-install :filter-args (lambda (args) (list (car args) t)))
 (advice-add 'process-kill-buffer-query-function :override (σ t))
 (advice-add 'revert-buffer :filter-args (σ nil t))
+
+(direnv-mode)
 
 (provide 'mk-global)
 
