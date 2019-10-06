@@ -5,7 +5,7 @@
 # --
 ## License
 
-Copyright © ${1:`(format-time-string "%Y")`} `user-full-name`
+Copyright © ${1:`(format-time-string "%Y")`}-present `user-full-name`
 
 Distributed under ${2:BSD 3 clause license}.
 $0

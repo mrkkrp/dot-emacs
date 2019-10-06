@@ -7,14 +7,13 @@
 executable ${1:`(f-filename default-directory)`}
   main-is:            Main.hs
   hs-source-dirs:     app
-  build-depends:      base             >= 4.8 && < 5.0
+  build-depends:      base             >= 4.11 && < 5.0
   other-modules:      ${2:Module}
   if flag(dev)
     ghc-options:      -Wall -Werror -Wcompat
                       -Wincomplete-record-updates
                       -Wincomplete-uni-patterns
                       -Wnoncanonical-monad-instances
-                      -Wnoncanonical-monadfail-instances
   else
     ghc-options:      -O2 -Wall
   default-language:   Haskell2010

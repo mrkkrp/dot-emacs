@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Mark Karpov
-# name: compiler options
-# key: opts
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
-# --
-{-# OPTIONS ${1:-fno-warn-orphans} #-}
-$0

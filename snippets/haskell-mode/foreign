@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Mark Karpov
-# name: foreign import
-# key: foreign
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
-# --
-foreign import ccall unsafe "${1:name}"
-  c_$1 :: $0IO ()

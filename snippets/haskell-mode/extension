@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Mark Karpov
-# name: language extension
-# key: ext
-# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
-# --
-{-# LANGUAGE ${1:OverloadedStrings} #-}
-$0

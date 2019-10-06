@@ -7,7 +7,7 @@
 name:                 ${1:`(f-filename default-directory)`}
 version:              0.0.1.0
 cabal-version:        1.18
-tested-with:          GHC==8.4.4
+tested-with:          GHC==8.6.5
 license:              ${2:BSD3}
 license-file:         LICENSE.md
 author:               `user-full-name` <`user-mail-address`>

@@ -5,15 +5,13 @@
 # expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 library
-  hs-source-dirs:     src
-  build-depends:      base             >= 4.7 && < 5.0
+  build-depends:      base             >= 4.11 && < 5.0
   exposed-modules:    ${1:Module}
   if flag(dev)
     ghc-options:      -Wall -Werror -Wcompat
                       -Wincomplete-record-updates
                       -Wincomplete-uni-patterns
                       -Wnoncanonical-monad-instances
-                      -Wnoncanonical-monadfail-instances
   else
     ghc-options:      -O2 -Wall
   default-language:   Haskell2010

@@ -1,28 +1,11 @@
-;;; mk-highlight-line.el --- Highlight lines in list-like buffers -*- lexical-binding: t; -*-
-;;
-;; Copyright © 2015–present Mark Karpov <markkarpov92@gmail.com>
-;;
-;; This file is not part of GNU Emacs.
-;;
-;; This program is free software: you can redistribute it and/or modify it
-;; under the terms of the GNU General Public License as published by the
-;; Free Software Foundation, either version 3 of the License, or (at your
-;; option) any later version.
-;;
-;; This program is distributed in the hope that it will be useful, but
-;; WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-;; Public License for more details.
-;;
-;; You should have received a copy of the GNU General Public License along
-;; with this program. If not, see <http://www.gnu.org/licenses/>.
+;;; mk-highlight-line.el --- -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
-;; Emacs has that pretty minor mode for highlighting current line:
-;; ‘hl-line-mode’, not many people use it all the time, but it's worth
-;; enabling in many types of buffers that deal with lists of items, one item
-;; per line.  This packages allows to enable it everywhere for readability.
+;; Emacs has a minor mode for highlighting current line: ‘hl-line-mode’.
+;; It's worth enabling in many types of buffers that deal with lists of
+;; items, one item per line.  This package allows us to enable it everywhere
+;; for readability.
 
 ;;; Code:
 

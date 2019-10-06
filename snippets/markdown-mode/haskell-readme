@@ -11,7 +11,6 @@
 [![Stackage Nightly](http://stackage.org/package/$2/badge/nightly)](http://stackage.org/nightly/package/$2)
 [![Stackage LTS](http://stackage.org/package/$2/badge/lts)](http://stackage.org/lts/package/$2)
 [![Build Status](https://travis-ci.org/mrkkrp/$2.svg?branch=master)](https://travis-ci.org/mrkkrp/$2)
-[![Coverage Status](https://coveralls.io/repos/mrkkrp/$2/badge.svg?branch=master&service=github)](https://coveralls.io/github/mrkkrp/$2?branch=master)
 
 Proper description pending.
 
@@ -20,10 +19,10 @@ Proper description pending.
 Issues, bugs, and questions may be reported in [the GitHub issue tracker for
 this project](https://github.com/mrkkrp/$2/issues).
 
-Pull requests are also welcome and will be reviewed quickly.
+Pull requests are also welcome.
 
 ## License
 
-Copyright © ${3:`(format-time-string "%Y")`} `user-full-name`
+Copyright © ${3:`(format-time-string "%Y")`}–present `user-full-name`
 
 Distributed under BSD 3 clause license.
