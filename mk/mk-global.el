@@ -59,10 +59,14 @@
 ;; Global key map
 
 (mk-set-key "<next>" nil)
+
 (mk-set-key "<next> c i" 'mk-compile-init-files)
 (mk-set-key "<next> d a" (mk-iwrap 'mk-show-date))
+(mk-set-key "<next> d b" 'mk-double-buffer)
 (mk-set-key "<next> e c" (mk-iwrap 'mk-visit-file mk-dir))
 (mk-set-key "<next> f n" 'mk-file-name-to-kill-ring)
+(mk-set-key "<next> m m" 'mk-switch-to-messages)
+(mk-set-key "<next> s s" 'mk-switch-to-scratch)
 (mk-set-key "<next> s t" (mk-iwrap 'mk-show-date t))
 (mk-set-key "<next> u u" 'mk-project-jump)
 

@@ -1085,34 +1085,9 @@ produced."
   (whole-line-or-region-global-mode 1))
 
 (use-package window
-  :config
-
-  (defun mk-double-buffer ()
-    "Show currect buffer in other window and switch to that window."
-    (interactive)
-    (if (> (length (window-list)) 1)
-        (let ((original-buffer (buffer-name)))
-          (other-window 1)
-          (switch-to-buffer original-buffer))
-      (split-window-sensibly)
-      (other-window 1)))
-
-  (defun mk-switch-to-messages ()
-    "Switch to the *Messages* buffer."
-    (interactive)
-    (switch-to-buffer "*Messages*"))
-
-  (defun mk-switch-to-scratch ()
-    "Switch to the *scratch* buffer."
-    (interactive)
-    (switch-to-buffer "*scratch*"))
-
   :bind
   ("C-<prior>" . switch-to-buffer)
-  ("<next> d b" . mk-double-buffer)
   ("<next> h h" . split-window-below)
-  ("<next> m m" . mk-switch-to-messages)
-  ("<next> s s" . mk-switch-to-scratch)
   ("<next> v v" . split-window-right))
 
 (use-package xref

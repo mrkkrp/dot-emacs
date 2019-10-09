@@ -41,6 +41,26 @@ don't create new empty buffer."
         (find-file filename)
       (message "%s does not exist" filename))))
 
+(defun mk-switch-to-messages ()
+  "Switch to the *Messages* buffer."
+  (interactive)
+  (switch-to-buffer "*Messages*"))
+
+(defun mk-switch-to-scratch ()
+  "Switch to the *scratch* buffer."
+  (interactive)
+  (switch-to-buffer "*scratch*"))
+
+(defun mk-double-buffer ()
+  "Show current buffer in other window and switch to that window."
+  (interactive)
+  (if (> (length (window-list)) 1)
+      (let ((original-buffer (buffer-name)))
+        (other-window 1)
+        (switch-to-buffer original-buffer))
+    (split-window-sensibly)
+    (other-window 1)))
+
 (defun mk-shell-quote-arg (arg)
   "Quote ARG for using in the shell.
 
