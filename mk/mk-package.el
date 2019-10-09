@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 
-;; Custom function for package management.
+;; Custom functions for package management.
 
 ;;; Code:
 
