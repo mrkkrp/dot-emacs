@@ -816,13 +816,14 @@ produced."
    mk-add-to-end-of-lines
    mk-sort-lines-dwim)
   :bind
+  ("C-SPC" . mk-mark-command)
+  ("C-r" . mk-smart-indent)
+  ("C-z" . mk-copy-rest-of-line)
+  ("M-S" . mk-eat-indent)
+  ("M-j" . mk-join-lines)
   ("M-n" . mk-transpose-line-down)
   ("M-p" . mk-transpose-line-up)
   ("M-r" . mk-duplicate-line)
-  ("C-SPC" . mk-mark-command)
-  ("C-r" . mk-smart-indent)
-  ("M-j" . mk-join-lines)
-  ("C-z" . mk-copy-rest-of-line)
   ("<next> e l" . mk-add-to-end-of-lines)
   ("<next> n n" . mk-narrow-to-region)
   ("<next> n w" . widen)
@@ -1028,8 +1029,7 @@ produced."
 
 (use-package swiper
   :bind
-  ("C-s" . swiper)
-  ("M-S" . swiper-all))
+  ("C-s" . swiper))
 
 (use-package tabify
   :config
