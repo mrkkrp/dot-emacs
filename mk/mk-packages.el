@@ -1035,6 +1035,7 @@ produced."
   :config
   (defun mk-untabify ()
     "Untabify the current buffer."
+    (interactive)
     (untabify (point-min) (point-max)))
   :bind
   ("<next> u t" . mk-untabify))
