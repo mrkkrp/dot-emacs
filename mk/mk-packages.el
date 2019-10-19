@@ -498,9 +498,9 @@ HEIGHT, if supplied, specifies height of letters to use."
    ("]" . nil)
    :map
    haskell-mode-map
+   ("M-," . pop-tag-mark)
    ("M-." . haskell-mode-jump-to-def)
-   ("C-c C-u" . haskell-mode-generate-tags)
-   ("M-," . pop-tag-mark))
+   ("<next> g t" . haskell-mode-generate-tags))
   :hook
   ((haskell-mode . interactive-haskell-mode)))
 
