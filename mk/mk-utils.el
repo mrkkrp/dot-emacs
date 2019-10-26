@@ -83,18 +83,6 @@ ADD-SPACE are not NIL, add one space after the initial input."
                  (concat initial-input
                          (when (and initial-input add-space) " ")))))
 
-(defun mk-find-file (regexp)
-  "Find file whose name satisfies REGEXP traversing upwards.
-
-Return absolute path to directory containing that file or NIL on
-failure."
-  (let ((dir (f-traverse-upwards
-              (lambda (path)
-                (directory-files path t regexp t))
-              (f-full default-directory))))
-    (when dir
-      (f-slash dir))))
-
 (defun mk-get-existing-projects (dir)
   "Return a list of existing projects under DIR.
 
