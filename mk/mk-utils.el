@@ -92,7 +92,7 @@ specified directory."
   (cl-sort
    (mapcar (lambda (path)
              (f-relative path "~/projects"))
-           (f-glob "~/projects/*/*"))
+           (f-glob "*/*" dir))
    #'string-lessp))
 
 (defun mk-project-jump (project-name)
