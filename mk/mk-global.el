@@ -68,6 +68,7 @@
 (mk-set-key "<next> m m" 'mk-switch-to-messages)
 (mk-set-key "<next> s s" 'mk-switch-to-scratch)
 (mk-set-key "<next> s t" (mk-iwrap 'mk-show-date t))
+(mk-set-key "<next> t t" 'mk-find-file)
 (mk-set-key "<next> u u" 'mk-project-jump)
 
 

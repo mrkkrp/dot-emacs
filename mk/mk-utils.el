@@ -104,6 +104,20 @@ specified directory."
   (find-file
    (f-expand project-name "~/projects")))
 
+(defun mk-find-file (file)
+  "Find a FILE under current ‘default-directory’."
+  (interactive
+   (list
+    (completing-read
+     "Files: "
+     (cl-sort
+      (mapcar (lambda (path)
+                (f-relative path default-directory))
+              (f-files default-directory nil t))
+      #'string-lessp))))
+  (find-file
+   (f-expand file default-directory)))
+
 (defun mk-show-date (&optional stamp)
   "Show current date in the minibuffer.
 
