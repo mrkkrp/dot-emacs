@@ -291,11 +291,6 @@ exit."
   ((before-save . whitespace-cleanup)
    (before-save . mk-single-empty-line)))
 
-(use-package find-func
-  :bind
-  ("<next> f f" . find-function)
-  ("<next> f v" . find-variable))
-
 (use-package fix-input
   :demand
   :config
@@ -530,6 +525,11 @@ HEIGHT, if supplied, specifies height of letters to use."
 (use-package help
   :bind
   ("<next> f k" . describe-key))
+
+(use-package help-fns
+  :bind
+  ("<next> f f" . describe-function)
+  ("<next> f v" . describe-variable))
 
 (use-package highlight-symbol
   :commands
