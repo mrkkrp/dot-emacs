@@ -416,7 +416,7 @@ HEIGHT, if supplied, specifies height of letters to use."
 (use-package grep
   :commands (rgrep)
   :bind
-  ("<next> g r" . rgrep))
+  ("<next> g r" . mk-grep))
 
 (use-package ispell
   :after (fix-input)
