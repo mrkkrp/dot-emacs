@@ -414,7 +414,7 @@ HEIGHT, if supplied, specifies height of letters to use."
   ("<next> g g" . git-link))
 
 (use-package grep
-  :commands (rgrep)
+  :after (ripgrep)
   :bind
   ("<next> g r" . mk-grep))
 
@@ -938,6 +938,10 @@ produced."
    rm-text-properties '(("^↑$" 'face 'font-lock-doc-face)))
   :config
   (rich-minority-mode 1))
+
+(use-package ripgrep
+  :demand
+  :commands (ripgrep-regexp))
 
 (use-package scroll-bar
   :demand

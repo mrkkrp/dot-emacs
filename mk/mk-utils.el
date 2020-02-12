@@ -109,8 +109,7 @@ specified directory."
   (interactive
    (list
     (read-string "Grep: ")))
-  (grep-compute-defaults)
-  (rgrep regexp "*" default-directory))
+  (ripgrep-regexp regexp default-directory))
 
 (defun mk-find-file (file)
   "Find a FILE under current ‘default-directory’."
