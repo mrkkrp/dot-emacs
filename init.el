@@ -32,6 +32,7 @@
    direnv               ; Direnv support
    dune                 ; Mode for the Dune build system
    f                    ; Modern API for working with files and dirs
+   fish-mode            ; Major mode for fish shell scripts
    fix-input            ; Make input methods work with Dvorak
    fix-word             ; Convenient word transformation
    flycheck             ; On-the-fly syntax checking
