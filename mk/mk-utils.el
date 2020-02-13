@@ -118,12 +118,13 @@ specified directory."
     (completing-read
      "Files: "
      (cl-sort
-      (mapcar (lambda (path)
-                (f-relative path default-directory))
-              (f-files default-directory nil t))
+      (with-temp-buffer
+        (call-process
+         "fd" nil (current-buffer) nil
+         "--type" "file" "--ignore-case" ".")
+        (split-string (buffer-string) "\n" t " "))
       #'string-lessp))))
-  (find-file
-   (f-expand file default-directory)))
+  (find-file (f-expand file default-directory)))
 
 (defun mk-show-date (&optional stamp)
   "Show current date in the minibuffer.
