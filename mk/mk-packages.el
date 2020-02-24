@@ -952,7 +952,9 @@ produced."
   :demand
   :config
   (unless (server-running-p)
-    (server-start)))
+    (server-start))
+  :bind
+  ("<next> s e" . server-edit))
 
 (use-package sgml-mode
   :mode
